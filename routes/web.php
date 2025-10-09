@@ -1,0 +1,352 @@
+<?php
+
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FileController;
+use Illuminate\Support\Facades\Response;
+use App\Http\Controllers\FormBacController;
+use App\Http\Controllers\supAdmin\HomeController;
+use App\Http\Controllers\supAdmin\UserController;
+use App\Http\Controllers\adminEtab\FiliereController;
+use App\Http\Controllers\supAdmin\SerieBacController;
+use App\Http\Controllers\adminEtab\CandidatController;
+use App\Http\Controllers\adminEtab\ProvinceController;
+use App\Http\Controllers\supAdmin\ActualiteController;
+use App\Http\Controllers\adminFiliere\ProfileController;
+use App\Http\Controllers\etudiant\CandidatureController;
+use App\Http\Controllers\supAdmin\ResponsableController;
+use App\Http\Controllers\supAdmin\EtablissementController;
+use App\Http\Controllers\supAdmin\DiplomeBacPlusDeuxController;
+use App\Http\Controllers\HomeController as ControllersHomeController;
+use App\Http\Controllers\etudiant\HomeController as EtudiantHomeController;
+use App\Http\Controllers\visiteur\HomeController as VisiteurHomeController;
+use App\Http\Controllers\adminEtab\HomeController as AdminEtabHomeController;
+use App\Http\Controllers\supAdmin\FiliereController as SupAdminFiliereController;
+use App\Http\Controllers\supAdmin\ProfileController as SupAdminProfileController;
+use App\Http\Controllers\visiteur\ProfileController as VisiteurProfileController;
+use App\Http\Controllers\adminEtab\ProfileController as AdminEtabProfileController;
+use App\Http\Controllers\adminFiliere\HomeController as AdminFiliereHomeController;
+use App\Http\Controllers\supAdmin\ProvinceController as SupAdminProvinceController;
+use App\Http\Controllers\adminEtab\ActualiteController as AdminEtabActualiteController;
+use App\Http\Controllers\adminFiliere\FiliereController as AdminFiliereFiliereController;
+use App\Http\Controllers\adminEtab\ResponsableController as AdminEtabResponsableController;
+use App\Http\Controllers\adminEtab\EtablissementController as AdminEtabEtablissementController;
+use App\Http\Controllers\adminEtab\NotificationController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+Route::get('login',[AuthController::class, 'showFormLogin'])->name('login')->middleware('guest');
+Route::post('login',[AuthController::class, 'login'])->name('auth.login');
+Route::post('logout',[AuthController::class, 'logout'])->name('logout');
+
+
+//Acceuil
+Route::get('/',[ControllersHomeController::class, 'welcome'])->name('welcome');
+Route::get('/etablissements',[ControllersHomeController::class, 'etablissements'])->name('etablissements');
+Route::get('/contact',[ControllersHomeController::class, 'contact'])->name('contact');
+Route::get('/licenceMaster',[ControllersHomeController::class, 'licenceExcellenceMaster'])->name('welcomeLicenceExcelllenceMaster');
+Route::get('/bachelier',[ControllersHomeController::class, 'bacheliers'])->name('bacheliers');
+Route::get('/annonce/{actualite}',[ControllersHomeController::class, 'showActualite'])->name('actualite.show');
+
+//Nos Programme formation
+Route::get('/nos-formation',[ControllersHomeController::class,'nosFormation'])->name('nosformation');
+Route::get('/nos-formation/{etablissement}/master',[ControllersHomeController::class,'nosFormationMaster'])->name('formationMaster');
+Route::get('/nos-formation/{etablissement}/licence',[ControllersHomeController::class,'nosFormationLicence'])->name('formationLicence');
+Route::get('/nos-formation/{id}/choix',[ControllersHomeController::class,'nosFormationChosisr'])->name('nosformationChoisen');
+
+//Quick preinscription
+Route::get('/preiscnription',[ControllersHomeController::class,'quickpreinscription'])->name('preinscription');
+
+//Master
+Route::get('/master/{etablissement}',[ControllersHomeController::class, 'welcomeMaster'])->name('welcomeMaster');
+Route::post('/master/{etablissement}',[ControllersHomeController::class, 'welcomeMasterApply'])->name('welcomeMaster.apply');
+Route::get('/master/{etablissement}/form',[ControllersHomeController::class, 'welcomeMasterApplyForm'])->name('welcomeMaster.apply.form');
+
+
+//Licence
+Route::get('/licenceExcellence/{etablissement}',[ControllersHomeController::class, 'welcomeLicenceExcellence'])->name('welcomeLicenceExcelllence');
+Route::post('/licenceExcellence/{etablissement}',[ControllersHomeController::class, 'welcomeLicenceExcellenceApply'])->name('welcomeLicenceExcelllence.apply');
+Route::get('/licenceExcellence/{etablissement}/form',[ControllersHomeController::class, 'welcomeLicenceExcellenceApplyForm'])->name('welcomeLicenceExcelllence.apply.form');
+
+
+//bac
+Route::get('/bachelier/acceeouvert',[ControllersHomeController::class, 'bacheliersAcceOuvert'])->name('bacheliers.acceeOuvert');
+Route::get('/bachelier/acceeouvert/{etablissement}/form',[FormBacController::class, 'bacheliersAcceOuvertShowForm'])->name('bacheliers.acceeOuvert.etablissement.showForm');
+Route::post('/bachelier/acceeouvert/{etablissement}/form',[FormBacController::class, 'bacheliersAcceOuvertFormApply'])->name('bacheliers.welcomeBacAcceOuvert.apply');
+Route::post('/bachelier/acceeouvert/{etablissement}/form/postuler',[FormBacController::class, 'bacheliersAcceOuvertFormApplyFinal'])->name('bacheliers.welcomeBacAcceOuvert.form.apply');
+
+
+
+Route::get('/filiere', function () {
+    return view('filiere');
+});
+// Route::get('/pre-inscription', function () {
+//     return view('preinscription-master-form');
+// });
+
+Route::group(['as'=>'sup-admin.', 'prefix' => 'sup-admin','middleware' => ['auth','isSupAdmin']] ,function () {
+
+
+    Route::get('/dashboard',[HomeController::class, 'index'])->name('dashboard');
+
+    //etablissements management
+    Route::get('/etablissement',[EtablissementController::class, 'index'])->name('etablissement.index');
+    Route::get('/etablissement/create',[EtablissementController::class, 'create'])->name('etablissement.create');
+    Route::post('/etablissement/store',[EtablissementController::class, 'store'])->name('etablissement.store');
+    Route::get('/etablissement/{etablissement}/edit',[EtablissementController::class, 'edit'])->name('etablissement.edit');
+    Route::put('/etablissement/{etablissement}/update',[EtablissementController::class, 'update'])->name('etablissement.update');
+    Route::get('/etablissement/{etablissement}/show',[EtablissementController::class, 'show'])->name('etablissement.show');
+    Route::delete('/etablissement/{etablissement}/delete',[EtablissementController::class, 'destroy'])->name('etablissement.delete');
+    Route::patch('/etablissement/togglePreInscription', [EtablissementController::class, 'togglePreInscription'])->name('etablissement.togglePreInscription');
+    Route::post('/etablissement/storemedia',[EtablissementController::class, 'storeMedia'])->name('etablissement.storeMedia');
+
+
+    Route::post('/etablissement/reponsable/create',[ResponsableController::class, 'store'])->name('responsable.create');
+
+
+
+    //Filieres
+    Route::get('/etablissement/{etablissement}/filieres',[SupAdminFiliereController::class, 'categorie'])->name('etablissement.categorie.filiere');
+    Route::get('/etablissement/master/{filiere}/etudiants',[SupAdminFiliereController::class, 'showEtudiantsMaster'])->name('etablissement.filiere.master.etudiants');
+    Route::get('/filiere/{filiere}/master/etudiant/{etudiant}',[SupAdminFiliereController::class, 'showDetailStudentMaster'])->name('filiere.master.etudiants.show');
+    Route::get('/etablissement/passerelle/{filiere}/etudiants',[SupAdminFiliereController::class, 'showEtudiantsPasserelle'])->name('etablissement.filiere.passerelle.etudiants');
+    Route::get('/filiere/{filiere}/licenceExcellence/etudiant/{etudiant}',[SupAdminFiliereController::class, 'showDetailStudentLicenceExcellence'])->name('filiere.licenceExcellence.etudiants.show');
+    Route::get('master/candidats/{candidat}/edit',[SupAdminFiliereController::class, 'editMasterCandidat'])->name('master.candidat.edit');
+    Route::put('master/candidats/{candidat}/update',[SupAdminFiliereController::class, 'updateMasterCandidat'])->name('master.candidat.update');
+    Route::get('passerelle/candidats/{candidat}/edit',[SupAdminFiliereController::class, 'editPasserelleCandidat'])->name('passerelle.candidat.edit');
+    Route::put('passerelle/candidats/{candidat}/update',[SupAdminFiliereController::class, 'updatePasserelleCandidat'])->name('passerelle.candidat.update');
+
+    //actualite management
+    Route::get('actualite',[ActualiteController::class, 'index'])->name('actualite.index');
+    Route::get('actualite/create',[ActualiteController::class, 'create'])->name('actualite.create');
+    Route::post('actualite/store',[ActualiteController::class, 'store'])->name('actualite.store');
+    Route::get('actualite/{actualite}/show',[ActualiteController::class, 'show'])->name('actualite.show');
+    Route::get('actualite/{actualite}/edit',[ActualiteController::class, 'edit'])->name('actualite.edit');
+    Route::put('actualite/{actualite}/update',[ActualiteController::class, 'update'])->name('actualite.update');
+    Route::post('/actualite/storemedia',[EtablissementController::class, 'storeMedia'])->name('actualite.storeMedia');
+
+
+    //User
+    Route::get('/user',[UserController::class, 'index'])->name('user.index');
+    Route::get('user/create',[UserController::class, 'create'])->name('user.create');
+    Route::post('user/store',[UserController::class, 'store'])->name('user.store');
+    Route::get('user/{user}/edit',[UserController::class, 'edit'])->name('user.edit');
+    Route::put('user/{user}/update',[UserController::class, 'update'])->name('user.update');
+    Route::post('user/{user}/active',[UserController::class, 'activer'])->name('user.active');
+    Route::post('user/{user}/desactive',[UserController::class, 'desactiver'])->name('user.desactive');
+
+
+
+    //Serie Bac
+    Route::get('/serie_bac',[SerieBacController::class, 'index'])->name('serie_bac.index');
+    Route::get('serie_bac/create',[SerieBacController::class, 'create'])->name('serie_bac.create');
+    Route::post('serie_bac/store',[SerieBacController::class, 'store'])->name('serie_bac.store');
+    Route::get('serie_bac/{serie_bac}/edit',[SerieBacController::class, 'edit'])->name('serie_bac.edit');
+    Route::put('serie_bac/{serie_bac}/update',[SerieBacController::class, 'update'])->name('serie_bac.update');
+
+
+    //Serie Bac
+    Route::get('/diplomebacplusdeux',[DiplomeBacPlusDeuxController::class, 'index'])->name('diplomebacplusdeux.index');
+    Route::get('diplomebacplusdeux/create',[DiplomeBacPlusDeuxController::class, 'create'])->name('diplomebacplusdeux.create');
+    Route::post('diplomebacplusdeux/store',[DiplomeBacPlusDeuxController::class, 'store'])->name('diplomebacplusdeux.store');
+    Route::get('diplomebacplusdeux/{diplomebacplusdeux}/edit',[DiplomeBacPlusDeuxController::class, 'edit'])->name('diplomebacplusdeux.edit');
+    Route::put('diplomebacplusdeux/{diplomebacplusdeux}/update',[DiplomeBacPlusDeuxController::class, 'update'])->name('diplomebacplusdeux.update');
+
+
+
+    //Province
+    Route::get('/province',[SupAdminProvinceController::class, 'index'])->name('province.index');
+    Route::get('/province/create',[SupAdminProvinceController::class, 'create'])->name('province.create');
+    Route::post('/province/store',[SupAdminProvinceController::class, 'store'])->name('province.store');
+    Route::get('/province/{province}/edit',[SupAdminProvinceController::class, 'edit'])->name('province.edit');
+    Route::put('/province/{province}/update',[SupAdminProvinceController::class, 'update'])->name('province.update');
+
+
+
+    //Profile
+    Route::get('/profile',[SupAdminProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile/update',[SupAdminProfileController::class, 'update'])->name('profile.update');
+});
+
+Route::group(['as'=>'admin-etab.', 'prefix' => 'admin-etab','middleware' => ['auth','isAdminEtab']] ,function () {
+    Route::get('/dashboard',[AdminEtabHomeController::class, 'index'])->name('dashboard');
+    Route::get('etablissement/parametre',[AdminEtabEtablissementController::class, 'edit'])->name('etablissement.parametre.edit');
+    Route::put('etablissement/{etablissement}/parametre/update',[AdminEtabEtablissementController::class, 'update'])->name('etablissement.parametre.update');
+    Route::put('etablissement/{etablissement}/parametre/master/update',[AdminEtabEtablissementController::class, 'updateParametreMaster'])->name('etablissement.parametre.master.update');
+    Route::put('etablissement/{etablissement}/parametre/passerelle/update',[AdminEtabEtablissementController::class, 'updateParametrePasserelle'])->name('etablissement.parametre.passerelle.update');
+    Route::put('etablissement/{etablissement}/parametre/diplomebac/update',[AdminEtabEtablissementController::class, 'updateParametreDiplomeBac'])->name('etablissement.parametre.diplomeBac.update');
+    Route::put('etablissement/{etablissement}/parametre/diplomeBacplus2/update',[AdminEtabEtablissementController::class, 'updateParametreDiplomeBacPlus2'])->name('etablissement.parametre.diplomeBacplus2.update');
+    Route::post('/etablissement/storemedia',[AdminEtabEtablissementController::class, 'storeMedia'])->name('etablissement.storeMedia');
+    Route::get('licence/filiere/AcceeOuvert',[FiliereController::class, 'indexLicenceAcceOuvert'])->name('filiere.licence.acceeouvert.index');
+    Route::get('licence/filiere/AcceeRegule',[FiliereController::class, 'indexLicenceAcceRegule'])->name('filiere.licence.acceeregule.index');
+    Route::get('licence-Excellence/filiere',[FiliereController::class, 'indexLicenceExcellence'])->name('filiere.licencexcellence.index');
+    Route::get('master/filiere',[FiliereController::class, 'indexMaster'])->name('filiere.master.index');
+    Route::get('/filiere/create',[FiliereController::class, 'create'])->name('filiere.create');
+    Route::post('/filiere/store',[FiliereController::class, 'store'])->name('filiere.store');
+    Route::get('/filiere/{filiere}/show',[FiliereController::class, 'show'])->name('filiere.show');
+
+
+    Route::get('/filiere/{filiere}/master/etudiant',[FiliereController::class, 'showStudentsMaster'])->name('filiere.master.etudiants.index');
+    Route::post('/filiere/{filiere}/master/etudiant/excel/download',[FiliereController::class, 'downloadStudentsMaster'])->name('filiere.master.etudiants.excel.download');
+    Route::get('/filiere/{etablissement}/multiplechoix/master/etudiant/excel/download',[FiliereController::class, 'downloadStudentsMasterMultiplechoix'])->name('filiere.multiplechoix.master.etudiants.excel.download');
+    Route::get('/filiere/{filiere}/master/etudiant/{etudiant}',[FiliereController::class, 'showDetailStudentMaster'])->name('filiere.master.etudiants.show');
+    Route::get('/filiere/{filiere}/master/listStudentsToSelect',[FiliereController::class, 'ShowStudentsMasterToSelect'])->name('filiere.master.etudiants.listToselect');
+
+
+    Route::get('/filiere/{filiere}/licenceExcellence/etudiant',[FiliereController::class, 'showStudentsLicenceExcellence'])->name('filiere.licenceExcellence.etudiants.index');
+    Route::get('/filiere/{filiere}/licenceExcellence/etudiant/{etudiant}',[FiliereController::class, 'showDetailStudentLicenceExcellence'])->name('filiere.licenceExcellence.etudiants.show');
+    Route::post('/filiere/{filiere}/licenceExcellence/etudiant/excel/download',[FiliereController::class, 'downloadStudentsLicenceExcellence'])->name('filiere.licenceExcellence.etudiants.excel.download');
+    Route::get('/filiere/{etablissement}/multiplechoix/licenceExcellence/etudiant/excel/download',[FiliereController::class, 'downloadStudentsLicenceExcellenceMultiplechoix'])->name('filiere.multiplechoix.licenceExcellence.etudiants.excel.download');
+    Route::get('/filiere/{filiere}/licenceExcellence/listStudentsToSelect',[FiliereController::class, 'ShowStudentsLicenceExcellenceToSelect'])->name('filiere.licenceExcellence.etudiants.listToselect');
+
+
+
+    Route::get('/filiere/{filiere}/licenceAcceeOuvert/etudiant',[FiliereController::class, 'showStudentsLicenceAcceeOuvert'])->name('filiere.licenceAcceeOuvert.etudiants.index');
+    Route::get('/filiere/{filiere}/licenceAcceeOuvert/etudiant/{etudiant}',[FiliereController::class, 'showDetailStudentLicenceAcceeOuvert'])->name('filiere.licenceAcceeOuvert.etudiants.show');
+    Route::post('/filiere/{filiere}/licenceAcceeOuvert/etudiant/excel/download',[FiliereController::class, 'downloadStudentsLicenceAcceeOuvert'])->name('filiere.licenceAcceeOuvert.etudiants.excel.download');
+
+
+
+    Route::get('licence/filiere/{filiere}/province/edit',[FiliereController::class, 'editProvinceFiliere'])->name('filiere.licence.province.edit');
+
+    Route::get('/filiere/{filiere}/edit',[FiliereController::class, 'edit'])->name('filiere.edit');
+    Route::put('/filiere/{filiere}/update',[FiliereController::class, 'update'])->name('filiere.update');
+    Route::post('filiere/{filiere}/active',[FiliereController::class, 'activer'])->name('filiere.active');
+    Route::post('filiere/{filiere}/desactive',[FiliereController::class, 'desactiver'])->name('filiere.desactive');
+    Route::post('/filiere/storemedia',[FiliereController::class, 'storeMedia'])->name('filiere.storeMedia');
+
+
+
+    Route::get('/responsable',[AdminEtabResponsableController::class, 'index'])->name('responsable.index');
+    Route::post('/filiere/reponsable/create',[AdminEtabResponsableController::class, 'store'])->name('responsable.create');
+    Route::get('/edit/{user}/responsable',[AdminEtabResponsableController::class, 'edit'])->name('responsable.edit');
+    Route::put('/update/{user}/responsable',[AdminEtabResponsableController::class, 'update'])->name('responsable.update');
+    Route::post('responsable/{user}/active',[AdminEtabResponsableController::class, 'activer'])->name('responsable.active');
+    Route::post('responsable/{user}/desactive',[AdminEtabResponsableController::class, 'desactiver'])->name('responsable.desactive');
+
+
+
+    Route::get('master/candidats/list',[CandidatController::class, 'indexMaster'])->name('master.candidat.index');
+    Route::get('master/candidats/{candidat}/',[CandidatController::class, 'showMasterCandidat'])->name('master.candidat.show');
+    Route::get('master/candidats/{candidat}/edit',[CandidatController::class, 'editMasterCandidat'])->name('master.candidat.edit');
+    Route::put('master/candidats/{candidat}/update',[CandidatController::class, 'updateMasterCandidat'])->name('master.candidat.update');
+    Route::get('master/candidats/{candidat}/telechargerRecu',[CandidatController::class, 'telechargrRecuMasterCandidat'])->name('master.candidat.telechargerrecu');
+    Route::put('master/candidats/{candidat}/annulerConfirmation',[CandidatController::class, 'annulerConfirmationMasterCandidat'])->name('master.candidat.annulerConfirmation');
+    Route::get('passerelle/candidats/list',[CandidatController::class, 'indexPasserelle'])->name('passerelle.candidat.index');
+    Route::get('passerelle/candidats/{candidat}/',[CandidatController::class, 'showPasserelleCandidat'])->name('passerelle.candidat.show');
+    Route::get('passerelle/candidats/{candidat}/edit',[CandidatController::class, 'editPasserelleCandidat'])->name('passerelle.candidat.edit');
+    Route::put('passerelle/candidats/{candidat}/update',[CandidatController::class, 'updatePasserelleCandidat'])->name('passerelle.candidat.update');
+    Route::put('passerelle/candidats/{candidat}/annulerConfirmation',[CandidatController::class, 'annulerConfirmationPasserelleCandidat'])->name('passerelle.candidat.annulerConfirmation');
+    Route::get('passerelle/candidats/{candidat}/telechargerRecu',[CandidatController::class, 'telechargrRecuPasserelleCandidat'])->name('passerelle.candidat.telechargerrecu');
+
+
+
+
+    //actualite management
+    Route::get('actualite',[AdminEtabActualiteController::class, 'index'])->name('actualite.index');
+    Route::get('actualite/create',[AdminEtabActualiteController::class, 'create'])->name('actualite.create');
+    Route::post('actualite/store',[AdminEtabActualiteController::class, 'store'])->name('actualite.store');
+    Route::get('actualite/{actualite}/show',[AdminEtabActualiteController::class, 'show'])->name('actualite.show');
+    Route::get('actualite/{actualite}/edit',[AdminEtabActualiteController::class, 'edit'])->name('actualite.edit');
+    Route::put('actualite/{actualite}/update',[AdminEtabActualiteController::class, 'update'])->name('actualite.update');
+    Route::post('/actualite/storemedia',[AdminEtabActualiteController::class, 'storeMedia'])->name('actualite.storeMedia');
+
+
+
+    //notification
+    Route::get('/notification/create',[NotificationController::class, 'create'])->name('notification.create');
+    Route::post('/notification/store',[NotificationController::class, 'store'])->name('notification.store');
+
+
+    Route::get('/profile',[AdminEtabProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile/update',[AdminEtabProfileController::class, 'update'])->name('profile.update');
+
+
+});
+
+
+Route::group(['as'=>'admin-filiere.', 'prefix' => 'admin-filiere','middleware' => ['auth','isAdminFiliere']] ,function () {
+    Route::get('/dashboard',[AdminFiliereHomeController::class, 'index'])->name('dashboard');
+
+    Route::get('master/filieres',[AdminFiliereFiliereController::class, 'indexMaster'])->name('filiere.master.index');
+    Route::get('/filiere/{filiere}/master/etudiant',[AdminFiliereFiliereController::class, 'showStudentsMaster'])->name('filiere.master.etudiants.index');
+    Route::post('/filiere/{filiere}/master/etudiant/excel/download',[AdminFiliereFiliereController::class, 'downloadStudentsMaster'])->name('filiere.master.etudiants.excel.download');
+    Route::get('/filiere/{filiere}/master/etudiant/{etudiant}',[AdminFiliereFiliereController::class, 'showDetailStudentMaster'])->name('filiere.master.etudiants.show');
+    Route::get('/filiere/{filiere}/master/etudiant/{etudiant}/selection',[AdminFiliereFiliereController::class, 'showDetailStudentMasterToSelect'])->name('filiere.master.etudiants.show.selection');
+    Route::post('filiere/{filiere}/etudiants/{etudiant}/validation', [AdminFiliereFiliereController::class, 'validerOuRejeterEtudiant'])->name('filiere.etudiant.validation');
+    Route::get('/filiere/{filiere}/master/listStudentsToSelect',[AdminFiliereFiliereController::class, 'ShowStudentsMasterToSelect'])->name('filiere.master.etudiants.listToselect');
+    Route::post('/filiere/{filiere}/master/DlowloadListStudentsToSelect',[AdminFiliereFiliereController::class, 'DonwloadStudentsMasterToSelect'])->name('filiere.master.etudiants.downloadListToselect');
+
+
+
+    Route::get('licenceExcellence/filieres',[AdminFiliereFiliereController::class, 'indexLicenceExcellence'])->name('filiere.licencexcellence.index');
+    Route::get('/filiere/{filiere}/show',[AdminFiliereFiliereController::class, 'show'])->name('filiere.show');
+    Route::get('/filiere/{filiere}/licenceExcellence/etudiant',[AdminFiliereFiliereController::class, 'showStudentsLicenceExcellence'])->name('filiere.licenceExcellence.etudiants.index');
+    Route::get('/filiere/{filiere}/licenceExcellence/etudiant/{etudiant}',[AdminFiliereFiliereController::class, 'showDetailStudentLicenceExcellence'])->name('filiere.licenceExcellence.etudiants.show.selection');
+    Route::get('/filiere/{filiere}/licenceExcellence/etudiant/{etudiant}/selection',[AdminFiliereFiliereController::class, 'showDetailStudentLicenceExcellenceToSelect'])->name('filiere.licenceExcellence.etudiants.show');
+    Route::post('/filiere/{filiere}/licenceExcellence/etudiant/excel/download',[AdminFiliereFiliereController::class, 'downloadStudentsLicenceExcellence'])->name('filiere.licenceExcellence.etudiants.excel.download');
+    Route::get('/filiere/{filiere}/licenceExcellence/listStudentsToSelect',[AdminFiliereFiliereController::class, 'ShowStudentsLicenceExcellenceToSelect'])->name('filiere.licenceExcellence.etudiants.listToselect');
+    Route::post('/filiere/{filiere}/licenceExcellence/DlowloadListStudentsToSelect',[AdminFiliereFiliereController::class, 'DonwloadStudentsLicenceExcellenceToSelect'])->name('filiere.licenceExcellence.etudiants.downloadListToselect');
+
+
+    Route::get('/profile',[ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile/update',[ProfileController::class, 'update'])->name('profile.update');
+
+});
+
+
+Route::group(['as'=>'etudiant.', 'prefix' => 'etudiant','middleware' => ['auth','isStudent']] ,function () {
+    Route::get('/dashboard',[EtudiantHomeController::class, 'index'])->name('dashboard');
+    Route::get('/candidatures',[CandidatureController::class, 'index'])->name('candidatures.index');
+
+    Route::get('/candidatures/{id}/master/afficher',[CandidatureController::class, 'showMaster'])->name('candidatures.master.show');
+    Route::get('/candidatures/{id}/master/edit',[CandidatureController::class, 'editMaster'])->name('candidatures.master.edit');
+    Route::put('/candidatures/{id}/master/confirmer',[CandidatureController::class, 'confirmerMaster'])->name('candidatures.master.confirmer');
+    Route::post('/candidatures/{id}/master/telecharger',[CandidatureController::class, 'telechargerMaster'])->name('candidatures.master.telecharger');
+    Route::put('/candidatures/{etudiant}/master/identite/update',[CandidatureController::class, 'updateMasterIdentite'])->name('candidatures.master.identite.update');
+    Route::put('/candidatures/{etudiant}/master/academique/update',[CandidatureController::class, 'updateMasterAcademique'])->name('candidatures.master.academique.update');
+    Route::put('/candidatures/{etudiant}/master/document/update',[CandidatureController::class, 'updateMasterDocument'])->name('candidatures.master.document.update');
+    Route::put('/candidatures/{etudiant}/master/choixFiliere/update',[CandidatureController::class, 'updateChoixFiliereMaster'])->name('candidatures.master.choixFiliere.update');
+
+    Route::get('/candidatures/{id}/passerelle/afficher',[CandidatureController::class, 'showPasserelle'])->name('candidatures.passerelle.show');
+    Route::get('/candidatures/{id}/passerelle/edit',[CandidatureController::class, 'editPasserelle'])->name('candidatures.passerelle.edit');
+    Route::put('/candidatures/{id}/passerelle/confirmer',[CandidatureController::class, 'confirmerPasserelle'])->name('candidatures.passerelle.confirmer');
+    Route::post('/candidatures/{id}/passerelle/telecharger',[CandidatureController::class, 'telechargerPasserelle'])->name('candidatures.passerelle.telecharger');
+    Route::put('/candidatures/{etudiant}/passerelle/identite/update',[CandidatureController::class, 'updatePasserelleIdentite'])->name('candidatures.passerelle.identite.update');
+    Route::put('/candidatures/{etudiant}/passerelle/academique/update',[CandidatureController::class, 'updatePasserelleAcademique'])->name('candidatures.passerelle.academique.update');
+    Route::put('/candidatures/{etudiant}/passerelle/document/update',[CandidatureController::class, 'updatePasserelleDocument'])->name('candidatures.passerelle.document.update');
+    Route::put('/candidatures/{etudiant}/passerelle/choixFiliere/update',[CandidatureController::class, 'updateChoixFilierePasserelle'])->name('candidatures.passerelle.choixFiliere.update');
+
+
+    //notification
+    Route::get('/notifications/{id}', [NotificationController::class, 'show'])->name('notification.show');
+
+});
+
+
+Route::group(['as'=>'visiteur.', 'prefix' => 'visiteur','middleware' => ['auth','isVisiteur']] ,function () {
+    Route::get('/dashboard',[VisiteurHomeController::class, 'index'])->name('dashboard');
+
+    Route::post('/data/telecharger',[VisiteurHomeController::class, 'downloadDataByEtab'])->name('data.telecharger.etablissement');
+    Route::post('/data/telecharger/filiere', [VisiteurHomeController::class, 'downloadDataByFiliere'])
+    ->name('data.telecharger.filiere');
+
+    Route::get('/profile',[VisiteurProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile/update',[VisiteurProfileController::class, 'update'])->name('profile.update');
+});
+
+Route::get('/secure-file/{hashedPath}', [FileController::class, 'showFile'])->name('secure.file');
+
+Route::get('/candidatures/{encryptedId}/master/telecharger/visiteur', [CandidatureController::class, 'telechargerMasterVisiteur']);
+Route::get('/candidatures/{encryptedId}/passerelle/telecharger/visiteur', [CandidatureController::class, 'telechargerPasserelleVisiteur']);

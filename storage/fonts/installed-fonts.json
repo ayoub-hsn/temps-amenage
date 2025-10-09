@@ -1,0 +1,11 @@
+{
+    "amiri": {
+        "normal": "amiri_normal_b63de709391eff6b19438390ef1fe5a8"
+    },
+    "dejavu sans": {
+        "bold": "C:\\laragon\\www\\pre-inscription-uh1\\vendor\\dompdf\\dompdf\/lib\/fonts\/DejaVuSans-Bold",
+        "bold_italic": "C:\\laragon\\www\\pre-inscription-uh1\\vendor\\dompdf\\dompdf\/lib\/fonts\/DejaVuSans-BoldOblique",
+        "italic": "C:\\laragon\\www\\pre-inscription-uh1\\vendor\\dompdf\\dompdf\/lib\/fonts\/DejaVuSans-Oblique",
+        "normal": "dejavu_sans_normal_6c47a0c7c4a8f59c10505f394b08635b"
+    }
+}

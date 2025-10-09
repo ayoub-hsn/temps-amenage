@@ -1,0 +1,194 @@
+/* General body settings */
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: #f9f9f9; /* Light background */
+}
+
+
+/* Filieres section styling */
+.filiere-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Flexible grid */
+    gap: 40px; /* Space between cards */
+    padding: 4rem 3rem; /* Outer padding */
+    max-width: 1200px; /* Center content */
+    margin: 0 auto; /* Align content to center */
+}
+
+.filiere-card {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.filiere-card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: #00c4b5; /* Accent color */
+    border-radius: 20px 20px 0 0;
+}
+
+.filiere-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+.filiere-card i {
+    font-size: 4rem;
+    color: #00c4b5;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.filiere-card i:hover {
+    transform: rotate(15deg);
+}
+
+.filiere-card h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.filiere-card p {
+    color: #777;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+
+
+.filiere-card .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #00c4b5;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px;
+}
+
+
+/* Add a nice hover effect on the navbar logo */
+.navbar-logo img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+
+/* Filieres section styling */
+.filiere-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 4rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto; /* Center content */
+}
+
+/* Filieres card */
+.filiere-card {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.filiere-card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: #00c4b5; /* Accent color */
+    border-radius: 20px 20px 0 0;
+}
+
+
+
+.filiere-card i {
+    font-size: 4rem;
+    color: #00c4b5;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.filiere-card:hover i {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+.filiere-card h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filiere-card p {
+    color: #777;
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+.filiere-card .btn:hover {
+    background-color: #0073e6;
+    transform: translateY(-5px);
+}
+
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .filiere-container {
+        grid-template-columns: 1fr; /* Single column layout */
+        padding: 2rem 1rem;
+    }
+
+    .filiere-card {
+        padding: 20px;
+    }
+
+    .filiere-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .filiere-card p {
+        font-size: 0.9rem;
+    }
+
+    .filiere-card .btn {
+        font-size: 0.9rem;
+        padding: 10px 25px;
+    }
+}
+
+

@@ -1,0 +1,38 @@
+@extends('sup-admin.layouts.master')
+@section('content')
+
+<div class="main-content">
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header" style="justify-content: space-between;">
+                        <h4>Modifier une diplomes du Bac+2</h4>
+                        <a href="{{route('sup-admin.user.index')}}" class="btn btn-primary">Liste des diplomes du Bac+2</a>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{route('sup-admin.diplomebacplusdeux.update',['diplomebacplusdeux' => $diplomebacplusdeux->id])}}" method="post">
+                            @csrf
+                            @method('PUT')
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="nom">Nom complet</label>
+                                        <input type="text" name="nom" value="{{ old('nom',$diplomebacplusdeux->nom) }}" class="form-control {{ $errors->has('nom') ? 'is-invalid' : '' }}" id="nom">
+                                        @if($errors->has('nom'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('nom') }}
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary btn-block">Modifier</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@endsection
