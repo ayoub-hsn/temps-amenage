@@ -11,61 +11,18 @@
                 <th>CIN</th>
                 <th>Nom</th>
                 <th>Prénom</th>
-                <th>Nom Arabe</th>
-                <th>Prénom Arabe</th>
-                <th>Date Naissance</th>
-                <th>Sexe</th>
-                <th>Pays</th>
-                <th>Ville Naissance</th>
-                <th>Ville (Arabe)</th>
-                <th>Adresse</th>
                 <th>Email</th>
                 <th>Téléphone</th>
-                <th>Série</th>
-                <th>Année Bac</th>
-                <th>Dernier Diplôme Obtenu</th>
-                <th>Type de Diplôme</th>
-                <th>Spécialité du Diplôme</th>
-                <th>Établissement du Diplôme</th>
+                <th>Série de Bac</th>
+                <th>Diplôme Bac+2</th>
+                <th>Mention</th>
+                <th>Spécialité du Diplome</th>
+                <th>Etablissement</th>
                 <th>Date Obtention du Diplôme</th>
-                <th>Fonctionnaire</th>
+                <th>Moyenne du Diplome</th>
                 <th>Secteur</th>
-                <th>Nombre Années</th>
                 <th>Poste</th>
-                <th>Lieu Travail</th>
-                <th>Ville Travail</th>
-                @if ($etablissement->multiple_choix_filiere_passerelle == 0)
                 <th>Filière</th>
-                @else
-                <th>Filière Choix 1</th>
-                <th>Filière Choix 2</th>
-                <th>Filière Choix 3</th>
-                @endif
-
-                @if ($etablissement->show_photo_input_passerelle)
-                <th>Lien Photo</th>
-                @endif
-
-                @if ($etablissement->show_cin_input_passerelle)
-                <th>Lien CIN</th>
-                @endif
-
-                @if ($etablissement->show_bac_input_passerelle)
-                <th>Lien Diplome Baccalauréat</th>
-                @endif
-
-                @if ($etablissement->show_diplome_deug_input_passerelle)
-                    <th>Diplome Bac+2</th>
-                @endif
-
-
-                @if ($etablissement->show_attestation_no_emploi_input_passerelle)
-                    <th>Attestation du non-emploi</th>
-                @endif
-
-                @if ($etablissement->show_cv_input_passerelle)
-                <th>Lien CV</th>
-                @endif
                 <th>Vérification</th>
                 <th>Motif</th>
             </tr>
@@ -77,63 +34,18 @@
                     <td>{{ $etudiant->CIN }}</td>
                     <td>{{ $etudiant->nom }}</td>
                     <td>{{ $etudiant->prenom }}</td>
-                    <td>{{ $etudiant->nomar }}</td>
-                    <td>{{ $etudiant->prenomar }}</td>
-                    <td>{{ $etudiant->datenais }}</td>
-                    <td>{{ $etudiant->sexe }}</td>
-                    <td>{{ $etudiant->payschamp }}</td>
-                    <td>{{ $etudiant->villenais }}</td>
-                    <td>{{ $etudiant->villechamp }}</td>
-                    <td>{{ $etudiant->adresse }}</td>
                     <td>{{ $etudiant->email }}</td>
                     <td>{{ $etudiant->phone }}</td>
                     <td>{{ $etudiant->serie }}</td>
-                    <td>{{ $etudiant->Anneebac }}</td>
-
-                    <td>{{ $etudiant->dernier_diplome_obtenu }}</td>
-                    <td>{{ $etudiant->type_diplome_obtenu }}</td>
-                    <td>{{ $etudiant->specialitediplome }}</td>
-                    <td>{{ $etudiant->ville_etablissement_diplome }}</td>
-                    <td>{{ $etudiant->date_optention_diplome }}</td>
-
-                    <td>{{ $etudiant->fonctionnaire == 1 ? "OUI" : "NON" }}</td>
-                    <td>{{ $etudiant->secteur }}</td>
-                    <td>{{ $etudiant->nombreannee }}</td>
+                    <td>{{ $etudiant->diplomedeug }}</td>
+                    <td>{{ $etudiant->mentiondeug }}</td>
+                    <td>{{ $etudiant->specialitedeug }}</td>
+                    <td>{{ $etudiant->etblsmtdeug }}</td>
+                    <td>{{ $etudiant->date_obtention_deug }}</td>
+                    <td>{{ $etudiant->moyenne_deug }}</td>
+                    <td>{{ $etudiant->secteur }}</td>  
                     <td>{{ $etudiant->poste }}</td>
-                    <td>{{ $etudiant->lieutravail }}</td>
-                    <td>{{ $etudiant->villetravail }}</td>
-                    @if ($etablissement->multiple_choix_filiere_passerelle == 0)
                     <td>{{ $etudiant->filiere_name }}</td>
-                    @else
-                    <td>{{ $etudiant->filiere_choix_1_name }}</td>
-                    <td>{{ $etudiant->filiere_choix_2_name }}</td>
-                    <td>{{ $etudiant->filiere_choix_3_name }}</td>
-                    @endif
-
-
-                    @if ($etablissement->show_photo_input_passerelle)
-                    <td><a href="{{ route('secure.file', ['hashedPath' => urlencode(Crypt::encryptString($etudiant->path_photo))]) }}" target="_blank">Afficher Photo</a></td>
-                    @endif
-
-                    @if ($etablissement->show_cin_input_passerelle)
-                    <td><a href="{{ route('secure.file', ['hashedPath' => urlencode(Crypt::encryptString($etudiant->path_cin))]) }}" target="_blank">Afficher CIN</a></td>
-                    @endif
-
-                    @if ($etablissement->show_bac_input_passerelle)
-                    <td><a href="{{ route('secure.file', ['hashedPath' => urlencode(Crypt::encryptString($etudiant->path_bac))]) }}" target="_blank">Afficher Diplome BAC</a></td>
-                    @endif
-
-                    @if ($etablissement->show_diplome_deug_input_passerelle)
-                        <td><a href="{{ route('secure.file', ['hashedPath' => urlencode(Crypt::encryptString($etudiant->path_diplomedeug))]) }}" target="_blank">Afficher Diplome BAC+2</a></td>
-                    @endif
-
-                    @if ($etablissement->show_attestation_no_emploi_input_passerelle)
-                        <td><a href="{{ route('secure.file', ['hashedPath' => urlencode(Crypt::encryptString($etudiant->path_attestation_non_emploi))]) }}" target="_blank">Afficher Attestation du non-emploi</a></td>
-                    @endif
-
-                    @if ($etablissement->show_cv_input_passerelle)
-                    <td><a href="{{ route('secure.file', ['hashedPath' => urlencode(Crypt::encryptString($etudiant->path_cv))]) }}" target="_blank">Afficher CV</a></td>
-                    @endif
                     <td>{{ $etudiant->verif ?? '' }}</td>
                     <td>{{ $etudiant->motif ?? '' }}</td>
                 </tr>

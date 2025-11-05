@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\supAdmin;
 
 use App\Models\User;
+use App\Models\Bachelier;
 use Illuminate\Http\Request;
 use App\Models\Etablissement;
+use App\Models\StudentMaster;
+use App\Models\StudentPasserelle;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 
@@ -139,9 +142,18 @@ class EtablissementController extends Controller
         switch ($request->type) {
             case 'passerelle':
                 $etablissement->passerelle_ouvert = !$etablissement->passerelle_ouvert;
+                    StudentPasserelle::where('etablissement_id', $etablissement->id)
+                        ->update(['confirmation_student' => 1]);
                 break;
             case 'master':
                 $etablissement->master_ouvert = !$etablissement->master_ouvert;
+                    StudentMaster::where('etablissement_id', $etablissement->id)
+                        ->update(['confirmation_student' => 1]);
+                break;
+            case 'bachelier':
+                $etablissement->bachelier_ouvert = !$etablissement->bachelier_ouvert;
+                    Bachelier::where('etablissement_id', $etablissement->id)
+                        ->update(['confirmation_student' => 1]);
                 break;
             default:
                 return response()->json(['message' => 'Type invalide'], 400);

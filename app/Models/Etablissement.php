@@ -23,6 +23,7 @@ class Etablissement extends Model
         'bac_accee_regule_ouvert',
         'passerelle_ouvert',
         'master_ouvert',
+        'bachelier_ouvert',
         'show_cin_input_master',
         'show_photo_input_master',
         'show_cv_input_master',
@@ -74,11 +75,26 @@ class Etablissement extends Model
                     ->where('active', 1);
     }
 
+    public function filiereBachelier()
+    {
+        return $this->hasMany(Filiere::class, 'etablissement_id')
+                    ->where('type', 3)  // 3 = Bachelier
+                    ->where('active', 1);
+    }
+
     public function studentMaster(){
         return $this->hasMany(StudentMaster::class, 'etablissement_id');
     }
 
     public function studentPasserelle(){
         return $this->hasMany(StudentPasserelle::class, 'etablissement_id');
+    }
+
+    public function studentBachelier(){
+        return $this->hasMany(Bachelier::class, 'etablissement_id');
+    }
+
+    public function calendrier(){
+        return $this->hasOne(Calendrier::class, 'etablissement_id');
     }
 }

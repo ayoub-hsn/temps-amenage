@@ -4,6 +4,7 @@ namespace App\Http\Controllers\etudiant;
 
 use App\Models\User;
 use App\Models\Filiere;
+use App\Models\Bachelier;
 use Illuminate\Http\Request;
 use App\Models\Etablissement;
 use App\Models\StudentMaster;
@@ -84,9 +85,38 @@ class CandidatureController extends Controller
         )
         ->get();
 
+        $candidaturesBachelier = DB::table('bacheliers')
+        ->join('filieres', function ($join) {
+            $join->on('bacheliers.filiere', '=', 'filieres.id')
+                ->orOn('bacheliers.filiere_choix_1', '=', 'filieres.id')
+                ->orOn('bacheliers.filiere_choix_2', '=', 'filieres.id')
+                ->orOn('bacheliers.filiere_choix_3', '=', 'filieres.id');
+        })
+        ->join('etablissements', 'filieres.etablissement_id', '=', 'etablissements.id')
+        ->where('bacheliers.user_id', Auth::id())
+        ->select(
+            'filieres.id as filiere_id',
+            'filieres.nom_complet as filiere_nom',
+            'filieres.nom_abrv as filiere_abrev',
+            'filieres.type',
+            'etablissements.nom_abrev as etablissement_nom_abrev',
+            'etablissements.nom as etablissement_nom',
+            'etablissements.logo as etablissement_logo',
+            'etablissements.multiple_choix_filiere_passerelle as multiple_choix_filiere_passerelle',
+            'bacheliers.confirmation_student',
+            'bacheliers.filiere as filiere',
+            'bacheliers.filiere_choix_1',
+            'bacheliers.filiere_choix_2',
+            'bacheliers.filiere_choix_3',
+            'bacheliers.id as candidature_id',
+            'bacheliers.verif as verif',
+            'bacheliers.created_at as date_candidature'
+        )
+        ->get();
 
 
-        return view('etudiant.candidatures.index',compact('filieres','candidaturesMaster','candidaturesPasserelle'));
+
+        return view('etudiant.candidatures.index',compact('filieres','candidaturesMaster','candidaturesPasserelle','candidaturesBachelier'));
     }
 
     /**
@@ -140,149 +170,7 @@ class CandidatureController extends Controller
         return view('etudiant.candidatures.showCandidatureMaster',compact('etudiant','etablissement'));
     }
 
-    public function confirmerMaster($id){
-        $etudiant = StudentMaster::whereId($id)->first();
-        $etudiant->update([
-            'confirmation_student' => 1
-        ]);
-        return back()->with('message','Vous avez confirmé avec succées');
-    }
-
-    public function telechargerMaster($id)
-    {
-        $etudiant = StudentMaster::findOrFail($id);
-        $etablissement = Etablissement::findOrFail($etudiant->etablissement_id);
-        $filieres = Filiere::where('type',1)->get();
-
-        // Short and clean ID
-        $hashedId = Hashids::encode($etudiant->id);
-
-        // URL with short hash
-        $url = url("/candidatures/{$hashedId}/master/telecharger/visiteur");
-
-        $qrContent = "Établissement: {$etablissement->nom} - Formation Initiale à Temps Aménagé\n"
-        . "Nom: {$etudiant->nom}\n"
-        . "Prénom: {$etudiant->prenom}\n"
-        . "Lien: {$url}";
-        $qrCode = QrCode::size(200)->generate($qrContent);
-
-        $photoPath = public_path($etudiant->path_photo);
-
-        if ($etudiant->path_photo && file_exists($photoPath)) {
-            // Fix the corrupted JPEG
-            $image = @imagecreatefromjpeg($photoPath);
-            if ($image !== false) {
-                imagejpeg($image, $photoPath, 100);
-                imagedestroy($image);
-            }
-        }
-
-        $data = [
-            'etudiant' => $etudiant,
-            'registrationDate' => now()->format('d/m/Y'),
-            'qrCode' => base64_encode($qrCode),
-            'etablissement' => $etablissement,
-            'filieres'  => $filieres,
-        ];
-
-        $pdf = Pdf::loadView('etudiant.PDF.recuMaster', $data);
-
-        //return $pdf->stream('reçu_master_' . $etudiant->CNE . '.pdf');
-        return $pdf->download('reçu_master_' . $etudiant->CNE . '.pdf');
-    }
-
-
-
-    public function telechargerMasterVisiteur($id)
-    {
-        // 🔓 Decode the hashed ID
-        $decoded = Hashids::decode($id);
-
-        if (empty($decoded)) {
-            abort(404, 'ID invalide');
-        }
-
-        $realId = $decoded[0];
-
-        // 📦 Retrieve the student and establishment data
-        // Short and clean ID
-        $hashedId = Hashids::encode($realId);
-        $etudiant = StudentMaster::findOrFail($realId);
-        $etablissement = Etablissement::findOrFail($etudiant->etablissement_id);
-        $filieres = Filiere::where('type',1)->get();
-
-        $url = url("/candidatures/{$hashedId}/master/telecharger/visiteur");
-
-        // 📄 Compose QR content (no need to regenerate here if not needed)
-        $qrContent = "Établissement: {$etablissement->nom} - Formation Initiale à Temps Aménagé\n"
-        . "Nom: {$etudiant->nom}\n"
-        . "Prénom: {$etudiant->prenom}\n"
-        . "Lien: {$url}";
-        $qrCode = QrCode::size(200)->generate($qrContent);
-
-        $photoPath = public_path($etudiant->path_photo);
-
-        if ($etudiant->path_photo && file_exists($photoPath)) {
-            // Fix the corrupted JPEG
-            $image = @imagecreatefromjpeg($photoPath);
-            if ($image !== false) {
-                imagejpeg($image, $photoPath, 100);
-                imagedestroy($image);
-            }
-        }
-
-        $data = [
-            'etudiant' => $etudiant,
-            'registrationDate' => now()->format('d/m/Y'),
-            'qrCode' => base64_encode($qrCode),
-            'etablissement' => $etablissement,
-            'filieres'  => $filieres,
-        ];
-
-        // 📄 Generate the PDF using the same view
-        $pdf = Pdf::loadView('etudiant.PDF.recuMaster', $data);
-
-        // 📤 Stream the generated PDF
-        return $pdf->stream('reçu_master_' . $etudiant->CNE . '.pdf');
-    }
-
-
-
-
-
-
-
-    public function showPasserelle($id){
-        $etudiant = StudentPasserelle::whereId($id)->first();
-        $etablissement = Etablissement::whereId($etudiant->etablissement_id)->first();
-        $multipleChoixFiliereMaster = $etablissement->multiple_choix_filiere_master == 1;
-
-        $etudiant = DB::table('student_passerelles')
-        ->select('student_passerelles.*',
-            // Separate columns for each filiere choice if multiple choices are allowed
-            DB::raw($multipleChoixFiliereMaster ?
-                "filiere1.nom_complet AS filiere_choix_1_name,
-                filiere2.nom_complet AS filiere_choix_2_name,
-                filiere3.nom_complet AS filiere_choix_3_name"
-                :
-                "filiere.nom_complet AS filiere_name" // Only one column for the single filiere
-            )
-        )
-        ->leftJoin('filieres AS filiere1', 'student_passerelles.filiere_choix_1', '=', 'filiere1.id')
-        ->leftJoin('filieres AS filiere2', 'student_passerelles.filiere_choix_2', '=', 'filiere2.id')
-        ->leftJoin('filieres AS filiere3', 'student_passerelles.filiere_choix_3', '=', 'filiere3.id')
-        ->leftJoin('filieres AS filiere', function ($join) {
-            $join->on('student_passerelles.filiere', '=', 'filiere.id');
-        })
-        ->where('student_passerelles.id', $id)  // Filter by the student ID
-        ->first(); // Use `first()` to get a single record
-        return view('etudiant.candidatures.showCanadidaturePasserelle',compact('etudiant','etablissement'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function editMaster($id)
+     public function editMaster($id)
     {
         $etudiant = StudentMaster::whereId($id)->first();
         if($etudiant){
@@ -302,27 +190,19 @@ class CandidatureController extends Controller
         }
     }
 
-    public function confirmerPasserelle($id){
-        $etudiant = StudentPasserelle::whereId($id)->first();
-        $etudiant->update([
-            'confirmation_student' => 1
-        ]);
-        return back()->with('message','Vous avez confirmé avec succées');
-    }
-
     public function updateMasterIdentite(StudentMaster $etudiant,Request $request){
         // return $request->all();
         $request->validate([
                 'nom' => 'nullable|min:2|max:50',
                 'prenom' => 'nullable|min:2|max:50',
-                'nomar' => ['nullable', 'min:2', 'max:50', 'regex:/^[\p{Arabic}\s]+$/u'],
-                'prenomar' => ['nullable', 'min:2', 'max:50', 'regex:/^[\p{Arabic}\s]+$/u'],
-                'datenais' => 'nullable',
-                'sexe' => 'nullable',
-                'payschamp' => 'nullable|min:2|max:70',
-                'villenais' => 'nullable|min:2|max:70',
-                'villechamp' => ['nullable', 'min:2', 'max:70', 'regex:/^[\p{Arabic}\s]+$/u'],
-                'adresse' => 'nullable|min:10|max:250',
+                // 'nomar' => ['nullable', 'min:2', 'max:50', 'regex:/^[\p{Arabic}\s]+$/u'],
+                // 'prenomar' => ['nullable', 'min:2', 'max:50', 'regex:/^[\p{Arabic}\s]+$/u'],
+                // 'datenais' => 'nullable',
+                // 'sexe' => 'nullable',
+                // 'payschamp' => 'nullable|min:2|max:70',
+                // 'villenais' => 'nullable|min:2|max:70',
+                // 'villechamp' => ['nullable', 'min:2', 'max:70', 'regex:/^[\p{Arabic}\s]+$/u'],
+                // 'adresse' => 'nullable|min:10|max:250',
                 'phone' => 'nullable|digits:10',
 
             ], [
@@ -372,24 +252,15 @@ class CandidatureController extends Controller
     public function updateMasterAcademique(StudentMaster $etudiant,Request $request){
         $request->validate([
             'serie' => 'nullable',
-            'Anneebac' => 'nullable',
-            'dernier_diplome_obtenu' => 'nullable|min:2|max:200',
-            'type_diplome_obtenu' => 'nullable|min:2|max:200',
-            'ville_etablissement_diplome' => 'nullable|min:2|max:150',
-            'specialitediplome' => 'nullable|min:2|max:150',
-            'date_optention_diplome' => 'nullable',
-            'fonctionnaire' => 'nullable',
-
+            'typelicence' => 'nullable|max:200',
+            'mentionlp' => 'nullable',
+            'specialitelp' => 'nullable|min:2|max:200',
+            'etblsmtLp' => 'nullable|min:2|max:200',
+            'date_obtention_LP' => 'nullable',
+            'moyenne_licence' => 'nullable',
+            'secteur' => 'nullable|max:200',
+            'poste' => 'nullable|max:200',
         ]);
-        if($request->fonctionnaire){
-            $request->validate([
-                'secteur' => 'nullable|max:200',
-                'nombreannee' => 'nullable|max:200',
-                'poste' => 'nullable|max:200',
-                'lieutravail' => 'nullable|max:200',
-                'villetravail' => 'nullable|max:200',
-            ]);
-        }
 
         $etudiant->update($request->all());
         return back()->with('message','Vos informations sont modifié avec succées');
@@ -468,6 +339,151 @@ class CandidatureController extends Controller
     }
 
 
+    public function confirmerMaster($id){
+        $etudiant = StudentMaster::whereId($id)->first();
+        $etudiant->update([
+            'confirmation_student' => 1
+        ]);
+        return back()->with('message','Vous avez confirmé avec succées');
+    }
+
+    public function telechargerMaster($id)
+    {
+        $etudiant = StudentMaster::findOrFail($id);
+        $etablissement = Etablissement::findOrFail($etudiant->etablissement_id);
+        $filieres = Filiere::where('type',1)->get();
+
+        // Short and clean ID
+        $hashedId = Hashids::encode($etudiant->id);
+
+        // URL with short hash
+        $url = url("/candidatures/{$hashedId}/master/telecharger/visiteur");
+
+        $qrContent = "Établissement: {$etablissement->nom} - Master - Formation Initiale en Temps Aménagé\n"
+        . "Nom: {$etudiant->nom}\n"
+        . "Prénom: {$etudiant->prenom}\n"
+        . "Lien: {$url}";
+        $qrCode = QrCode::size(200)->generate($qrContent);
+
+        $photoPath = public_path($etudiant->path_photo);
+
+        if ($etudiant->path_photo && file_exists($photoPath)) {
+            // Fix the corrupted JPEG
+            $image = @imagecreatefromjpeg($photoPath);
+            if ($image !== false) {
+                imagejpeg($image, $photoPath, 100);
+                imagedestroy($image);
+            }
+        }
+
+        $data = [
+            'etudiant' => $etudiant,
+            'registrationDate' => now()->format('d/m/Y'),
+            'qrCode' => base64_encode($qrCode),
+            'etablissement' => $etablissement,
+            'filieres'  => $filieres,
+        ];
+
+        $pdf = Pdf::loadView('etudiant.PDF.recuMaster', $data);
+
+        // return $pdf->stream('reçu_master_' . $etudiant->CNE . '.pdf');
+        return $pdf->download('reçu_master_' . $etudiant->CNE . '.pdf');
+    }
+
+
+
+    public function telechargerMasterVisiteur($id)
+    {
+        // 🔓 Decode the hashed ID
+        $decoded = Hashids::decode($id);
+
+        if (empty($decoded)) {
+            abort(404, 'ID invalide');
+        }
+
+        $realId = $decoded[0];
+
+        // 📦 Retrieve the student and establishment data
+        // Short and clean ID
+        $hashedId = Hashids::encode($realId);
+        $etudiant = StudentMaster::findOrFail($realId);
+        $etablissement = Etablissement::findOrFail($etudiant->etablissement_id);
+        $filieres = Filiere::where('type',1)->get();
+
+        $url = url("/candidatures/{$hashedId}/master/telecharger/visiteur");
+
+        // 📄 Compose QR content (no need to regenerate here if not needed)
+        $qrContent = "Établissement: {$etablissement->nom} - Master - Formation Initiale en Temps Aménagé\n"
+        . "Nom: {$etudiant->nom}\n"
+        . "Prénom: {$etudiant->prenom}\n"
+        . "Lien: {$url}";
+        $qrCode = QrCode::size(200)->generate($qrContent);
+
+        $photoPath = public_path($etudiant->path_photo);
+
+        if ($etudiant->path_photo && file_exists($photoPath)) {
+            // Fix the corrupted JPEG
+            $image = @imagecreatefromjpeg($photoPath);
+            if ($image !== false) {
+                imagejpeg($image, $photoPath, 100);
+                imagedestroy($image);
+            }
+        }
+
+        $data = [
+            'etudiant' => $etudiant,
+            'registrationDate' => now()->format('d/m/Y'),
+            'qrCode' => base64_encode($qrCode),
+            'etablissement' => $etablissement,
+            'filieres'  => $filieres,
+        ];
+
+        // 📄 Generate the PDF using the same view
+        $pdf = Pdf::loadView('etudiant.PDF.recuMaster', $data);
+
+        // 📤 Stream the generated PDF
+        return $pdf->stream('reçu_master_' . $etudiant->CNE . '.pdf');
+    }
+
+
+
+    public function showPasserelle($id){
+        $etudiant = StudentPasserelle::whereId($id)->first();
+        $etablissement = Etablissement::whereId($etudiant->etablissement_id)->first();
+        $multipleChoixFiliereMaster = $etablissement->multiple_choix_filiere_master == 1;
+
+        $etudiant = DB::table('student_passerelles')
+        ->select('student_passerelles.*',
+            // Separate columns for each filiere choice if multiple choices are allowed
+            DB::raw($multipleChoixFiliereMaster ?
+                "filiere1.nom_complet AS filiere_choix_1_name,
+                filiere2.nom_complet AS filiere_choix_2_name,
+                filiere3.nom_complet AS filiere_choix_3_name"
+                :
+                "filiere.nom_complet AS filiere_name" // Only one column for the single filiere
+            )
+        )
+        ->leftJoin('filieres AS filiere1', 'student_passerelles.filiere_choix_1', '=', 'filiere1.id')
+        ->leftJoin('filieres AS filiere2', 'student_passerelles.filiere_choix_2', '=', 'filiere2.id')
+        ->leftJoin('filieres AS filiere3', 'student_passerelles.filiere_choix_3', '=', 'filiere3.id')
+        ->leftJoin('filieres AS filiere', function ($join) {
+            $join->on('student_passerelles.filiere', '=', 'filiere.id');
+        })
+        ->where('student_passerelles.id', $id)  // Filter by the student ID
+        ->first(); // Use `first()` to get a single record
+        return view('etudiant.candidatures.showCanadidaturePasserelle',compact('etudiant','etablissement'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+   
+
+    
+
+    
+
+
     public function editPasserelle($id){
         $etudiant = StudentPasserelle::whereId($id)->first();
         if($etudiant){
@@ -492,14 +508,14 @@ class CandidatureController extends Controller
         $request->validate([
                 'nom' => 'nullable|min:2|max:50',
                 'prenom' => 'nullable|min:2|max:50',
-                'nomar' => ['nullable', 'min:2', 'max:50', 'regex:/^[\p{Arabic}\s]+$/u'],
-                'prenomar' => ['nullable', 'min:2', 'max:50', 'regex:/^[\p{Arabic}\s]+$/u'],
-                'datenais' => 'nullable',
-                'sexe' => 'nullable',
-                'payschamp' => 'nullable|min:2|max:70',
-                'villenais' => 'nullable|min:2|max:70',
-                'villechamp' => ['nullable', 'min:2', 'max:70', 'regex:/^[\p{Arabic}\s]+$/u'],
-                'adresse' => 'nullable|min:10|max:250',
+                // 'nomar' => ['nullable', 'min:2', 'max:50', 'regex:/^[\p{Arabic}\s]+$/u'],
+                // 'prenomar' => ['nullable', 'min:2', 'max:50', 'regex:/^[\p{Arabic}\s]+$/u'],
+                // 'datenais' => 'nullable',
+                // 'sexe' => 'nullable',
+                // 'payschamp' => 'nullable|min:2|max:70',
+                // 'villenais' => 'nullable|min:2|max:70',
+                // 'villechamp' => ['nullable', 'min:2', 'max:70', 'regex:/^[\p{Arabic}\s]+$/u'],
+                // 'adresse' => 'nullable|min:10|max:250',
                 'phone' => 'nullable|digits:10',
             ], [
                 // Français pour les champs en français
@@ -549,25 +565,18 @@ class CandidatureController extends Controller
     public function updatePasserelleAcademique(StudentPasserelle $etudiant,Request $request){
         $request->validate([
             'serie' => 'nullable',
-            'Anneebac' => 'nullable',
 
-            'dernier_diplome_obtenu' => 'nullable|min:2|max:200',
-            'type_diplome_obtenu' => 'nullable|min:2|max:200',
-            'ville_etablissement_diplome' => 'nullable|min:2|max:150',
-            'specialitediplome' => 'nullable|min:2|max:150',
-            'date_optention_diplome' => 'nullable',
-
-            'fonctionnaire' => 'nullable',
+            'diplomedeug' => 'nullable',
+            'mentiondeug' => 'nullable',
+            'specialitedeug' => 'nullable|min:2|max:200',
+            'etblsmtdeug' => 'nullable|min:2|max:200',
+            'date_obtention_deug' => 'nullable',
+            'moyenne_deug' => 'nullable',
+            'secteur' => 'nullable|max:200',
+            'poste' => 'nullable|max:200',
+            // 'lieutravail' => 'nullable|max:200',
+            // 'villetravail' => 'nullable|max:200',
         ]);
-        if($request->fonctionnaire){
-            $request->validate([
-                'secteur' => 'nullable|max:200',
-                'nombreannee' => 'nullable|max:200',
-                'poste' => 'nullable|max:200',
-                'lieutravail' => 'nullable|max:200',
-                'villetravail' => 'nullable|max:200',
-            ]);
-        }
 
         $etudiant->update($request->all());
         return back()->with('message','Vos informations sont modifié avec succées');
@@ -643,6 +652,14 @@ class CandidatureController extends Controller
         return back()->with('message','Votre choix de Filieres est modifié avec succées');
     }
 
+    public function confirmerPasserelle($id){
+        $etudiant = StudentPasserelle::whereId($id)->first();
+        $etudiant->update([
+            'confirmation_student' => 1
+        ]);
+        return back()->with('message','Vous avez confirmé avec succées');
+    }
+
     public function telechargerPasserelle($id)
     {
         $etudiant = StudentPasserelle::findOrFail($id);
@@ -655,7 +672,7 @@ class CandidatureController extends Controller
         // URL with short hash
         $url = url("/candidatures/{$hashedId}/passerelle/telecharger/visiteur");
 
-        $qrContent = "Établissement: {$etablissement->nom} - Formation Initiale à Temps Aménagé\n"
+        $qrContent = "Établissement: {$etablissement->nom} - Licences (Accès S5) - Formation Initiale en Temps Aménagé\n"
         . "Nom: {$etudiant->nom}\n"
         . "Prénom: {$etudiant->prenom}\n"
         . "Lien: {$url}";
@@ -709,7 +726,7 @@ class CandidatureController extends Controller
         $url = url("/candidatures/{$hashedId}/passerelle/telecharger/visiteur");
 
         // 📄 Compose QR content (no need to regenerate here if not needed)
-        $qrContent = "Établissement: {$etablissement->nom} - Formation Initiale à Temps Aménagé\n"
+        $qrContent = "Établissement: {$etablissement->nom} - Licences (Accès S5) - Formation Initiale en Temps Aménagé\n"
         . "Nom: {$etudiant->nom}\n"
         . "Prénom: {$etudiant->prenom}\n"
         . "Lien: {$url}";
@@ -741,6 +758,254 @@ class CandidatureController extends Controller
 
         // 📤 Stream the generated PDF
         return $pdf->stream('reçu_licence_' . $etudiant->CNE . '.pdf');
+    }
+
+
+
+    public function showBachelier($id){
+        $etudiant = Bachelier::whereId($id)->first();
+        $etablissement = Etablissement::whereId($etudiant->etablissement_id)->first();
+        $multipleChoixFiliereMaster = $etablissement->multiple_choix_filiere_master == 1;
+
+        $etudiant = DB::table('bacheliers')
+        ->select('bacheliers.*',
+            // Separate columns for each filiere choice if multiple choices are allowed
+            DB::raw($multipleChoixFiliereMaster ?
+                "filiere1.nom_complet AS filiere_choix_1_name,
+                filiere2.nom_complet AS filiere_choix_2_name,
+                filiere3.nom_complet AS filiere_choix_3_name"
+                :
+                "filiere.nom_complet AS filiere_name" // Only one column for the single filiere
+            )
+        )
+        ->leftJoin('filieres AS filiere1', 'bacheliers.filiere_choix_1', '=', 'filiere1.id')
+        ->leftJoin('filieres AS filiere2', 'bacheliers.filiere_choix_2', '=', 'filiere2.id')
+        ->leftJoin('filieres AS filiere3', 'bacheliers.filiere_choix_3', '=', 'filiere3.id')
+        ->leftJoin('filieres AS filiere', function ($join) {
+            $join->on('bacheliers.filiere', '=', 'filiere.id');
+        })
+        ->where('bacheliers.id', $id)  // Filter by the student ID
+        ->first(); // Use `first()` to get a single record
+        return view('etudiant.candidatures.showCandidatureBachelier',compact('etudiant','etablissement'));
+    }
+
+
+    public function editBachelier($id){
+        $etudiant = Bachelier::whereId($id)->first();
+        if($etudiant){
+            if($etudiant->confirmation_student == 0){
+                $etablissement = Etablissement::whereId($etudiant->etablissement_id)->first();
+                $etablissement->load(['serie_bac']);
+                $filieres = Filiere::where('etablissement_id',$etablissement->id)
+                ->where('type',3)
+                ->where('active',1)
+                ->get();
+                return view('etudiant.candidatures.editBachelier',compact('etudiant','etablissement','filieres'));
+            }else{
+                return back()->with('warning',"Votre ne pouvez pas modifié votre candidature");
+            }
+        }else{
+            return back()->with('error',"Votre candidature n'est pas trouvé");
+        }
+    }
+
+    public function updateBachelierIdentite(Bachelier $etudiant,Request $request){
+        // return $request->all();
+        $request->validate([
+                'nom' => 'nullable|min:2|max:50',
+                'prenom' => 'nullable|min:2|max:50',
+                // 'nomar' => ['nullable', 'min:2', 'max:50', 'regex:/^[\p{Arabic}\s]+$/u'],
+                // 'prenomar' => ['nullable', 'min:2', 'max:50', 'regex:/^[\p{Arabic}\s]+$/u'],
+                // 'datenais' => 'nullable',
+                // 'sexe' => 'nullable',
+                // 'payschamp' => 'nullable|min:2|max:70',
+                // 'villenais' => 'nullable|min:2|max:70',
+                // 'villechamp' => ['nullable', 'min:2', 'max:70', 'regex:/^[\p{Arabic}\s]+$/u'],
+                // 'adresse' => 'nullable|min:10|max:250',
+                'phone' => 'nullable|digits:10',
+            ], [
+                // Français pour les champs en français
+                'nullable' => 'Le champ :attribute est obligatoire.',
+                'min' => 'Le champ :attribute doit contenir au moins :min caractères.',
+                'max' => 'Le champ :attribute ne peut pas dépasser :max caractères.',
+                'digits' => 'Le champ :attribute doit contenir exactement :digits chiffres.',
+                'email' => 'Le champ :attribute doit être une adresse email valide.',
+
+                // Messages personnalisés pour les champs en arabe
+                'nomar.nullable' => 'الاسم العائلي باللغة العربية إجباري.',
+                'nomar.min' => 'الاسم العائلي يجب أن يحتوي على حرفين على الأقل.',
+                'nomar.max' => 'الاسم العائلي لا يجب أن يتجاوز 50 حرفًا.',
+                'nomar.regex' => 'الاسم العائلي يجب أن يكون باللغة العربية فقط.',
+
+                'prenomar.nullable' => 'الاسم الشخصي باللغة العربية إجباري.',
+                'prenomar.min' => 'الاسم الشخصي يجب أن يحتوي على حرفين على الأقل.',
+                'prenomar.max' => 'الاسم الشخصي لا يجب أن يتجاوز 50 حرفًا.',
+                'prenomar.regex' => 'الاسم الشخصي يجب أن يكون باللغة العربية فقط.',
+
+                'villechamp.nullable' => 'مدينة الازدياد بالعربية إجبارية.',
+                'villechamp.min' => 'مدينة الازدياد يجب أن تحتوي على حرفين على الأقل.',
+                'villechamp.max' => 'مدينة الازدياد لا يجب أن تتجاوز 70 حرفًا.',
+                'villechamp.regex' => 'مدينة الازدياد يجب أن تكون باللغة العربية فقط.',
+            ], [
+                // Aliases français
+                'nom' => 'Nom',
+                'prenom' => 'Prénom',
+                'datenais' => 'Date de naissance',
+                'sexe' => 'Sexe',
+                'payschamp' => 'Pays',
+                'villenais' => 'Ville de naissance (Fr)',
+                'adresse' => 'Adresse',
+                'phone' => 'Téléphone',
+        ]);
+
+
+        $user = User::whereId(Auth::id())->first();
+        $user->update([
+            'telephone' => $request->phone
+        ]);
+        $etudiant->update($request->except(['CNE','CIN']));
+
+        return back()->with('message','Vos informations sont modifié avec succées');
+    }
+
+    public function updateBachelierAcademique(Bachelier $etudiant,Request $request){
+        $request->validate([
+            'serie' => 'nullable',
+            'moyenne_bac' => 'nullable',
+
+            'secteur' => 'nullable|max:200',
+            'poste' => 'nullable|max:200',
+            // 'lieutravail' => 'nullable|max:200',
+            // 'villetravail' => 'nullable|max:200',
+        ]);
+
+        $etudiant->update($request->all());
+        return back()->with('message','Vos informations sont modifié avec succées');
+    }
+
+
+    public function updateChoixFiliereBachelier(Bachelier $etudiant,Request $request){
+        $etablissement = Etablissement::whereId($etudiant->etablissement_id)->first();
+        if($etablissement->multiple_choix_filiere_passerelle){
+            if(!$request->filiere_choix_1 || !$request->filiere_choix_2 || !$request->filiere_choix_3){
+                return back()->with('warning','Veuillez Choisir 3 Choix');
+            }
+            $etudiant->filiere_choix_1 = $request->filiere_choix_1;
+            $etudiant->filiere_choix_2 = $request->filiere_choix_2;
+            $etudiant->filiere_choix_3 = $request->filiere_choix_3;
+        }else{
+            $etudiant->filiere = $request->filieres[0];
+        }
+
+        $etudiant->save();
+
+        return back()->with('message','Votre choix de Filieres est modifié avec succées');
+    }
+
+    public function confirmerBachelier($id){
+        $etudiant = Bachelier::whereId($id)->first();
+        $etudiant->update([
+            'confirmation_student' => 1
+        ]);
+        return back()->with('message','Vous avez confirmé avec succées');
+    }
+
+    public function telechargerBachelier($id)
+    {
+        $etudiant = Bachelier::findOrFail($id);
+        $etablissement = Etablissement::findOrFail($etudiant->etablissement_id);
+        $filieres = Filiere::where('type',3)->get();
+
+        // Short and clean ID
+        $hashedId = Hashids::encode($etudiant->id);
+
+        // URL with short hash
+        $url = url("/candidatures/{$hashedId}/bachelier/telecharger/visiteur");
+
+        $qrContent = "Établissement: {$etablissement->nom} - Licences (Accès S1) - Formation Initiale en Temps Aménagé\n"
+        . "Nom: {$etudiant->nom}\n"
+        . "Prénom: {$etudiant->prenom}\n"
+        . "Lien: {$url}";
+        $qrCode = QrCode::size(200)->generate($qrContent);
+
+        $photoPath = public_path($etudiant->path_photo);
+
+        if ($etudiant->path_photo && file_exists($photoPath)) {
+            // Fix the corrupted JPEG
+            $image = @imagecreatefromjpeg($photoPath);
+            if ($image !== false) {
+                imagejpeg($image, $photoPath, 100);
+                imagedestroy($image);
+            }
+        }
+
+        $data = [
+            'etudiant' => $etudiant,
+            'registrationDate' => now()->format('d/m/Y'),
+            'qrCode' => base64_encode($qrCode),
+            'etablissement' => $etablissement,
+            'filieres'  => $filieres,
+        ];
+
+        $pdf = Pdf::loadView('etudiant.PDF.recuBachelier', $data);
+
+        //return $pdf->stream('reçu_licence_' . $etudiant->CNE . '.pdf');
+        return $pdf->download('reçu_licence_S1_' . $etudiant->CNE . '.pdf');
+    }
+
+    public function telechargerBechelierVisiteur($id)
+    {
+        // 🔓 Decode the hashed ID
+        $decoded = Hashids::decode($id);
+
+        if (empty($decoded)) {
+            abort(404, 'ID invalide');
+        }
+
+        $realId = $decoded[0];
+
+        // 📦 Retrieve the student and establishment data
+        // Short and clean ID
+        $hashedId = Hashids::encode($realId);
+        $etudiant = Bachelier::findOrFail($realId);
+        $etablissement = Etablissement::findOrFail($etudiant->etablissement_id);
+        $filieres = Filiere::where('type',3)->get();
+
+        $url = url("/candidatures/{$hashedId}/bachelier/telecharger/visiteur");
+
+        // 📄 Compose QR content (no need to regenerate here if not needed)
+        $qrContent = "Établissement: {$etablissement->nom} - Licences (Accès S1) - Formation Initiale en Temps Aménagé\n"
+        . "Nom: {$etudiant->nom}\n"
+        . "Prénom: {$etudiant->prenom}\n"
+        . "Lien: {$url}";
+
+        $qrCode = QrCode::size(200)->generate($qrContent);
+
+
+        $photoPath = public_path($etudiant->path_photo);
+
+        if ($etudiant->path_photo && file_exists($photoPath)) {
+            // Fix the corrupted JPEG
+            $image = @imagecreatefromjpeg($photoPath);
+            if ($image !== false) {
+                imagejpeg($image, $photoPath, 100);
+                imagedestroy($image);
+            }
+        }
+
+        $data = [
+            'etudiant' => $etudiant,
+            'registrationDate' => now()->format('d/m/Y'),
+            'qrCode' => base64_encode($qrCode),
+            'etablissement' => $etablissement,
+            'filieres'  => $filieres,
+        ];
+
+        // 📄 Generate the PDF using the same view
+        $pdf = Pdf::loadView('etudiant.PDF.recuBachelier', $data);
+
+        // 📤 Stream the generated PDF
+        return $pdf->stream('reçu_licence_S1_' . $etudiant->CNE . '.pdf');
     }
 
     /**

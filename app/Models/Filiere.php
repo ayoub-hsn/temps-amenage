@@ -17,7 +17,7 @@ class Filiere extends Model
         'document',
         'etablissement_id',
         'responsable_id',
-        'type',//Master ou bien licence: 1=Master;2=Licence
+        'type',//Master ou bien licence: 1=Master;2=Licence;3=Bachelier
         'active',
 
     ];
@@ -25,7 +25,7 @@ class Filiere extends Model
     public  const TYPE = [
         1 => "Master",
         2 => "Licence",
-        // 3 => "Licence"
+        3 => "Bachelier"
     ];
 
 

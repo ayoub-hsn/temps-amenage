@@ -8,6 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="{{ asset('css/style-welcome.css') }}" />
+    <link rel="icon" href="{{ asset('images/favicon-uh1.png') }}" type="image/x-icon">
     <style>
         /* ======= MAIN - Design harmonisé ======= */
 
@@ -466,6 +467,12 @@
             overflow: hidden;
         }
 
+        .hero-slider .slide-content {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
         /* Overlay dynamique */
         .dynamic-overlay {
             position: absolute;
@@ -706,10 +713,11 @@
                             <div class="dynamic-overlay"></div>
                             <div class="content-wrapper text-center text-white">
                                 <h1 class="display-4 fw-bold mb-3 animate-slide">
-                                    Bienvenue aux <span class="highlight">Programmes de Formation Initiale à Temps Aménagé</span> de l’Université Hassan Premier
+                                    Bienvenue aux <span class="highlight">Programmes de Formation Initiale en Temps Aménagé</span> (soirs et week-ends)
                                 </h1>
                                 <p class="lead mb-4 animate-slide-delay">
-                                    Étudiez tout en travaillant grâce à des programmes diplômants officiels, avec un emploi du temps adapté en soirées et week-ends.
+                                    Destinés spécialement aux fonctionnaires, salariés et
+                                        professionnels en activité, désireux de poursuivre leurs études. 
                                 </p>
                                 <a href="{{ route('nosformation') }}" class="btn btn-primary btn-lg shadow-lg animate-btn">
                                     Découvrir nos formations
@@ -726,12 +734,12 @@
 
                                 <!-- Grand titre -->
                                 <h1 class="main-title animate-slide">
-                                    <span class="highlight">FORMATION INITIALE À TEMPS AMÉNAGÉ</span>
+                                    <span class="highlight">FORMATION INITIALE EN TEMPS AMÉNAGÉ</span>
                                 </h1>
 
                                 <!-- Titre secondaire -->
                                 <h2 class="sub-title animate-slide">
-                                    <span>Licences et Masters Universitaires Nationaux</span>
+                                    <span>Licences et Masters</span>
                                 </h2>
 
                                 <!-- Sous-titre -->
@@ -741,21 +749,21 @@
 
                                 <!-- Texte -->
                                 <p class="lead mb-4 animate-slide-delay">
-                                    L’Université Hassan 1er informe les étudiants et les professionnels de l’ouverture des inscriptions 
-                                    en licences et masters universitaires en <strong>temps aménagé</strong> pour l’année universitaire 2025-2026, 
-                                    avec des cours organisés en <strong>soirées et week-ends</strong>, permettant de concilier études et activité professionnelle.
+                                    À l’Université Hassan 1er, des cours organisés le soir et le weekend, 
+                                    permettant de concilier études et activité professionnelle. <br>
+                                    <strong>Institutions concernées pour l’année 2025-2026 :</strong>
                                 </p>
 
                                 <!-- Institutions responsive grid -->
                                  <div class="institutions-grid">
-                                    <div class="etab-wrapper"><span data-id="8">🎭 FLASH</span></div>
+                                    {{-- <div class="etab-wrapper"><span data-id="8">🎭 FLASH</span></div>
                                     <div class="etab-wrapper"><span data-id="2">💼 ENCG</span></div>
-                                    <div class="etab-wrapper"><span data-id="4">⚙️ ENSA</span></div>
+                                    <div class="etab-wrapper"><span data-id="4">⚙️ ENSA</span></div> --}}
                                     <div class="etab-wrapper"><span data-id="1">⚖️ FSJP</span></div>
                                     <div class="etab-wrapper"><span data-id="7">📚 ESEF</span></div>
-                                    <div class="etab-wrapper"><span data-id="3">🔬 FST</span></div>
-                                    <div class="etab-wrapper"><span data-id="5">🩺 I3S</span></div>
-                                    <div class="etab-wrapper"><span data-id="6">🏃‍♂️ ISS</span></div>
+                                    {{-- <div class="etab-wrapper"><span data-id="3">🔬 FST</span></div> --}}
+                                    <div class="etab-wrapper"><span data-id="5">🩺 ISSS</span></div>
+                                    {{-- <div class="etab-wrapper"><span data-id="6">🏃‍♂️ ISS</span></div> --}}
                                     <div class="etab-wrapper"><span data-id="9">📊 FEG</span></div>
                                 </div>
 
@@ -779,7 +787,6 @@
 
 
 
-
         <!-- Introduction Temps Aménagé -->
         <section class="py-5 bg-light">
             <div class="container">
@@ -789,49 +796,49 @@
                     Des études supérieures adaptées à votre rythme et à vos ambitions
                 </h2>
                 <p class="text-muted mt-3 text-justify">
-                    L’Université Hassan 1er met à votre disposition un dispositif de <strong>formation diplômante en temps aménagé</strong>,
-                    spécialement conçu pour les professionnels, les salariés, les fonctionnaires et toute personne souhaitant poursuivre ses
-                    études tout en conciliant <strong>vie professionnelle, personnelle et académique</strong>.
+                    L’Université Hassan 1er offre des <strong>formations initiales en temps aménagé</strong>, spécialement destinées aux
+                    fonctionnaires, salariés et professionnels en activité, désireux de poursuivre leurs études sans interrompre leurs
+                    responsabilités professionnelles.
                     <br>
-                    Grâce à des <strong>emplois du temps flexibles</strong> (cours en soirées et/ou week-ends) et un encadrement de qualité assuré
-                    par des enseignants-chercheurs expérimentés, le temps aménagé vous permet d’acquérir un diplôme national reconnu, sans
-                    interrompre votre carrière ni vos engagements personnels.
+                    Ces formations sont organisées selon un <strong>emploi du temps adapté</strong>, avec des cours programmés après 16h et durant
+                    les week-ends, afin de concilier au mieux <strong>vie professionnelle, personnelle et académique</strong>.
+                    <br>
+                    Encadrées par des <strong>enseignants-chercheurs expérimentés</strong>, elles dispensent un enseignement de qualité tout en
+                    développant des compétences en phase avec les besoins actuels du marché du travail.
                 </p>
                 </div>
 
                 <!-- Phrase avant domaines -->
                 <div class="text-justify mb-3">
                 <p class="fw-semibold">
-                    Les domaines de formation proposés en temps aménagé couvrent un large éventail de disciplines modernes et porteuses :
+                    Les domaines de formation proposés en temps aménagé couvrent un large éventail de disciplines modernes et à fort potentiel d’insertion professionnelle :
                 </p>
                 </div>
 
                 <!-- Domaines de formation -->
                 <div class="row text-start">
-                <div class="col-md-6 mb-3">
-                    <ul class="list-unstyled">
-                    <li>⚡ Sciences et Techniques Industrielles</li>
-                    <li>🤖 Informatique, Digitalisation et Intelligence Artificielle</li>
-                    <li>📡 Réseaux, Télécommunications et Cybersécurité</li>
-                    <li>🌱 Environnement, Énergies Renouvelables et Développement Durable</li>
-                    <li>💼 Gestion, Administration et Entrepreneuriat</li>
-                    <li>💰 Finance, Comptabilité, Audit et Contrôle de Gestion</li>
-                    <li>📊 Management de Projet, Stratégie et Leadership</li>
-                    </ul>
+                    <div class="col-md-6 mb-3">
+                        <ul class="list-unstyled">
+                            <li>⚖️ Sciences juridiques</li>
+                            <li>💻 Droit et droit numérique</li>
+                            <li>📚 Droit, Administration, Management et Ingénierie des Systèmes</li>
+                            <li>💼 Gestion, Administration et Entrepreneuriat</li>
+                            <li>💰 Finance, Comptabilité, Audit et Contrôle de Gestion</li>
+                            <li>📊 Management de Projet, Stratégie et Leadership</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <ul class="list-unstyled">
+                            <li>👥 Gestion des Ressources Humaines et Ingénierie des Compétences</li>
+                            <li>📘 Sciences de l’Éducation, Ingénierie Pédagogique et Formation</li>
+                            <li>🩺 Sciences de la Santé</li>
+                            <li>🔧 Instrumentation et maintenance médicale</li>
+                            <li>⚗️ Physique médicale</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="col-md-6 mb-3">
-                    <ul class="list-unstyled">
-                    <li>🚀 Innovation, Transformation Digitale et Systèmes d’Information</li>
-                    <li>👥 Gestion des Ressources Humaines et Ingénierie des Compétences</li>
-                    <li>📘 Sciences de l’Éducation, Ingénierie Pédagogique et Formation</li>
-                    <li>✅ Qualité, Sécurité, Environnement et Amélioration Continue</li>
-                    <li>🛡 Prévention, Sécurité au Travail et Gestion des Risques</li>
-                    <li>🏃 Sciences du Sport, Santé et Performance Physique</li>
-                    <li>📚 Droit, Administration, Management et Ingénierie des Systèmes</li>
-                    </ul>
-                </div>
-                </div>
 
                 <!-- Conclusion -->
                 <div class="text-center mt-4">
@@ -848,9 +855,9 @@
         <section class="py-5 bg-primary text-white promo-section">
             <div class="container">
                 <div class="text-center mb-4">
-                    <h2 class="fw-bold">Boostez votre avenir académique avec nos formations à temps aménagé</h2>
+                    <h2 class="fw-bold">Boostez votre avenir académique avec nos formations en temps aménagé</h2>
                     <p class="lead">
-                        Grâce à des programmes flexibles et adaptés aux étudiants actifs, l’Université Hassan 1er propose des parcours initiaux à temps aménagé, conçus pour concilier études et obligations professionnelles ou personnelles. Ces formations vous permettent de développer vos compétences, approfondir vos connaissances et construire un projet académique solide, favorisant la <strong style="color: #ff8c02;">réussite universitaire</strong>, la <strong style="color: #ff8c02;">progression personnelle</strong>, et l’accès à un <strong style="color: #ff8c02;">avenir professionnel prometteur</strong>.
+                        Grâce à des programmes flexibles et adaptés aux étudiants actifs, l’Université Hassan 1er propose des parcours initiaux en temps aménagé, conçus pour concilier études et obligations professionnelles ou personnelles. Ces formations vous permettent de développer vos compétences, approfondir vos connaissances et construire un projet académique solide, favorisant la <strong style="color: #ff8c02;">réussite universitaire</strong>, la <strong style="color: #ff8c02;">progression personnelle</strong>, et l’accès à un <strong style="color: #ff8c02;">avenir professionnel prometteur</strong>.
                     </p>
                 </div>
                 <div class="row text-center">
@@ -876,27 +883,6 @@
             </div>
         </section>
 
-
-        <!-- Chiffres clés -->
-        <section class="py-5 text-center" id="stats-section">
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <h3 class="fw-bold text-primary" data-target="30000">0</h3>
-                        <p class="text-muted">Diplômés en formation initiale à Temps Aménagé</p>
-                    </div>
-                    <div class="col-md-4">
-                        <h3 class="fw-bold text-primary" data-target="95">0%</h3>
-                        <p class="text-muted">Taux de satisfaction</p>
-                    </div>
-                    <div class="col-md-4">
-                        <h3 class="fw-bold text-primary" data-target="90">0</h3>
-                        <p class="text-muted">Programmes disponibles</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
        
         <!-- Avantages -->
         <section class="py-5 bg-light" id="formations">
@@ -909,7 +895,7 @@
                         <div class="card h-100 shadow-sm p-4">
                             <i class="fas fa-briefcase fa-3x text-primary mb-3"></i>
                             <h5 class="card-title">Opportunités académiques et professionnelles</h5>
-                            <p class="card-text text-muted">Un programme conçu pour préparer efficacement les étudiants à la fois aux études et au marché du travail.</p>
+                            <p class="card-text text-muted">Un programme conçu pour assurer la formation académique de l’apprenant et développer ses compétences en rapport avec le besoin du marché de l’emploi.</p>
                         </div>
                     </div>
 
@@ -945,7 +931,7 @@
                         <div class="card h-100 shadow-sm p-4">
                             <i class="fas fa-clock fa-3x text-primary mb-3"></i>
                             <h5 class="card-title">Horaires flexibles</h5>
-                            <p class="card-text text-muted">Suivez vos cours à temps aménagé pour concilier études, travail et obligations personnelles.</p>
+                            <p class="card-text text-muted">Suivez vos cours en temps aménagé pour concilier études, travail et obligations personnelles.</p>
                         </div>
                     </div>
 
@@ -954,7 +940,7 @@
                         <div class="card h-100 shadow-sm p-4">
                             <i class="fas fa-lightbulb fa-3x text-primary mb-3"></i>
                             <h5 class="card-title">Épanouissement personnel</h5>
-                            <p class="card-text text-muted">Une formation à temps aménagé pour développer vos compétences, votre autonomie et votre confiance.</p>
+                            <p class="card-text text-muted">Une formation en temps aménagé pour développer vos compétences, votre autonomie et votre confiance.</p>
                         </div>
                     </div>
 
@@ -967,170 +953,178 @@
         <!-- Domaines -->
         <section class="py-5">
             <div class="container text-center">
-                <h2 class="section-title mb-5">Domaines de formation à temps aménagé</h2>
+                <h2 class="section-title mb-5">Domaines de formation en temps aménagé</h2>
                 <div class="row row-cols-1 row-cols-md-3 g-4">
+
                     <div class="col">
                         <div class="p-4 border rounded shadow-sm">
-                            ⚡ Sciences & Techniques Industrielles
+                            ⚖️ Sciences juridiques
                         </div>
                     </div>
+
                     <div class="col">
                         <div class="p-4 border rounded shadow-sm">
-                            🤖 Informatique, Digitalisation & Intelligence Artificielle
+                            💻 Droit et droit numérique
                         </div>
                     </div>
+
                     <div class="col">
                         <div class="p-4 border rounded shadow-sm">
-                            📡 Réseaux, Télécommunications & Cybersécurité
+                            📚 Droit, Administration, Management et Ingénierie des Systèmes
                         </div>
                     </div>
+
                     <div class="col">
                         <div class="p-4 border rounded shadow-sm">
-                            💼 Gestion, Commerce & Management
+                            💼 Gestion, Administration et Entrepreneuriat
                         </div>
                     </div>
+
                     <div class="col">
                         <div class="p-4 border rounded shadow-sm">
-                            🏥 Santé, Paramédical & Sciences du Sport
+                            💰 Finance, Comptabilité, Audit et Contrôle de Gestion
                         </div>
                     </div>
+
                     <div class="col">
                         <div class="p-4 border rounded shadow-sm">
-                            📘 Éducation, Ingénierie Pédagogique & Formation
+                            📊 Management de Projet, Stratégie et Leadership
                         </div>
                     </div>
+
                     <div class="col">
                         <div class="p-4 border rounded shadow-sm">
-                            🌱 Environnement, Énergies Renouvelables & Développement Durable
+                            👥 Gestion des Ressources Humaines et Ingénierie des Compétences
                         </div>
                     </div>
+
                     <div class="col">
                         <div class="p-4 border rounded shadow-sm">
-                            🛡 Droit, Gouvernance & Sécurité
+                            📘 Sciences de l’Éducation, Ingénierie Pédagogique et Formation
                         </div>
                     </div>
+
                     <div class="col">
                         <div class="p-4 border rounded shadow-sm">
-                            💡 Innovation, Marketing & Stratégie d’Entreprise
+                            🩺 Sciences de la Santé
                         </div>
                     </div>
+
+                    <div class="col">
+                        <div class="p-4 border rounded shadow-sm">
+                            🔧 Instrumentation et maintenance médicale
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="p-4 border rounded shadow-sm">
+                            ⚗️ Physique médicale
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
-
-
-        <!-- Témoignages -->
-        <section class="py-5 bg-light">
-            <div class="container text-center">
-                <h2 class="section-title mb-5">Ils témoignent</h2>
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="p-4 border rounded shadow-sm">
-                            <p class="text-muted">"Grâce au programme à temps aménagé, j’ai pu poursuivre mes études en conciliant mon emploi tout en suivant un cursus enrichissant."</p>
-                            <strong>- Amina, étudiante FSJP</strong>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="p-4 border rounded shadow-sm">
-                            <p class="text-muted">"Le programme est parfaitement adapté pour gérer travail et études. J’ai acquis des compétences très utiles pour ma carrière."</p>
-                            <strong>- Karim, étudiant FEG</strong>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="p-4 border rounded shadow-sm">
-                            <p class="text-muted">"Cette formation à temps aménagé m’a permis d’approfondir mes connaissances et de progresser tout en respectant mon emploi du temps."</p>
-                            <strong>- Salma, étudiante FST</strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-
-        <!-- Section : Comment intégrer nos formations -->
-        <section class="admission-steps py-5">
-            <div class="container">
-                <h2 class="section-title text-center mb-5">
-                    🎓 Comment intégrer nos <span class="highlight">Formations Initiales à Temps Aménagé</span> :
-                    Masters & Licences Universitaires Professionnels
-                </h2>
-
-                <!-- Barre de progression globale -->
-                <div class="steps-progress">
-                    <div class="progress-fill"></div>
-                </div>
-
-                <div class="row g-4 justify-content-center">
-                    <!-- Step 1 -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="step-card" data-step="1">
-                            <div class="step-number"><span>1</span></div>
-                            <div class="step-icon"><i class="fas fa-laptop"></i></div>
-                            <h4>Inscription en ligne</h4>
-                            <p>Remplissez le formulaire d'inscription en ligne pour débuter votre candidature.</p>
-                        </div>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="step-card" data-step="2">
-                            <div class="step-number"><span>2</span></div>
-                            <div class="step-icon"><i class="fas fa-search"></i></div>
-                            <h4>Préselection</h4>
-                            <p>Le dossier est examiné pour déterminer la présélection des candidats admissibles.</p>
-                        </div>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="step-card" data-step="3">
-                            <div class="step-number"><span>3</span></div>
-                            <div class="step-icon"><i class="fas fa-clipboard-check"></i></div>
-                            <h4>Admission</h4>
-                            <p>Les candidats présélectionnés passent un test ou entretien d'admission.</p>
-                        </div>
-                    </div>
-
-                    <!-- Step 4 -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="step-card" data-step="4">
-                            <div class="step-number"><span>4</span></div>
-                            <div class="step-icon"><i class="fas fa-file-signature"></i></div>
-                            <h4>Inscription définitive</h4>
-                            <p>Complétez les formalités finales : dépôt du dossier physique et versement de la première tranche.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
 
 
 
         <!-- Call to Action -->
-        <section class="py-5 text-center text-white" style="background: linear-gradient(135deg, #0059b3, #007bff); border-radius: 25px; box-shadow: 0 8px 35px rgba(0, 123, 255, 0.5); max-width: 2000px; margin: 0 auto 100px auto;">
+        <section class="py-5 text-center text-white" 
+                style="background: linear-gradient(135deg, #0059b3, #007bff); 
+                    border-radius: 25px; 
+                    box-shadow: 0 8px 35px rgba(0, 123, 255, 0.5); 
+                    max-width: 2000px; 
+                    margin: 0 auto 100px auto;">
             <div class="container">
-                <h2 class="mb-3">Votre avenir à temps aménagé commence ici</h2>
+                <h2 class="mb-3">Valoriser vos compétences et transformer votre avenir professionnel</h2>
+
                 <p class="mb-4">
-                    Faites votre préinscription dès aujourd’hui et rejoignez nos formations initiales à temps aménagé pour suivre vos études tout en conciliant vos activités.
+                    Faites votre préinscription dès aujourd’hui et rejoignez nos formations initiales en temps aménagé, 
+                    vous permettant de suivre vos études tout en conciliant vos activités.
                 </p>
-                <a
-                    href="{{ route('preinscription') }}"
-                    class="btn btn-primary btn-lg px-4 py-3 shadow"
-                    style="border-radius: 50px; font-weight: bold;"
-                >
+
+                <a href="{{ route('preinscription') }}" 
+                class="btn btn-primary btn-lg px-4 py-3 shadow" 
+                style="border-radius: 50px; font-weight: bold;">
                     🚀 Je fais ma préinscription maintenant
                 </a>
             </div>
         </section>
 
+
+
+        <section class="text-center py-5" 
+            style="position: relative;
+                z-index: 2;
+                margin: -40px auto 100px auto;
+                max-width: 900px;
+                border-radius: 20px;
+                overflow: hidden;
+                background: rgba(255, 255, 255, 0.85);
+                backdrop-filter: blur(12px);
+                box-shadow: 0 10px 35px rgba(0, 89, 179, 0.15);">
+            
+            <!-- Decorative gradient overlay -->
+            <div style="position: absolute; inset: 0;
+                background: linear-gradient(135deg, rgba(0,89,179,0.08), rgba(0,123,255,0.12));
+                z-index: 0;">
+            </div>
+
+            <div class="container position-relative" style="z-index: 2;">
+                <!-- Decorative top bar -->
+                <div style="width: 90px; height: 5px; 
+                    background: linear-gradient(90deg, #0059b3, #007bff);
+                    margin: 0 auto 18px auto; 
+                    border-radius: 3px;">
+                </div>
+
+                <p style="font-size: 1rem;
+                    color: #222;
+                    line-height: 1.9;
+                    max-width: 820px;
+                    margin: 0 auto;
+                    background: rgba(255,255,255,0.6);
+                    padding: 18px 30px;
+                    border-radius: 15px;
+                    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.08);
+                    letter-spacing: 0.3px;
+                    font-weight: 400;">
+                    Étant donné que l’enseignement en temps adapté se déroule le soir et le week-end 
+                    (hors horaires de travail pour les enseignants et l’administration de l’établissement universitaire),
+                    et afin d’adapter les horaires de l’enseignement à la disponibilité des apprenants
+                    (fonctionnaires et salariés),
+                        une contribution financière est nécessaire* lors de l’inscription définitive.
+                </p>
+
+                <p style="font-size: 0.85rem;
+                    color: #555;
+                    margin-top: 12px;
+                    font-style: italic;
+                    letter-spacing: 0.2px;">
+                    *:Résolution du Conseil de l’Université
+                </p>
+
+                <!-- Decorative floating circles -->
+                <div style="position: absolute; top: -60px; left: -60px; 
+                    width: 140px; height: 140px; 
+                    background: radial-gradient(circle, rgba(0,123,255,0.15), transparent 70%);
+                    border-radius: 50%;">
+                </div>
+                <div style="position: absolute; bottom: -60px; right: -60px; 
+                    width: 150px; height: 150px; 
+                    background: radial-gradient(circle, rgba(0,89,179,0.15), transparent 70%);
+                    border-radius: 50%;">
+                </div>
+            </div>
+        </section>
+
+
+
+
     </main>
 
     <footer>
-        <p>&copy; 2025 Université Hassan 1er. Tous droits réservés.</p>
+        <p>&copy; 2025 Made By Ayoub Hassnioui. Tous droits réservés.</p>
         <div class="social-links">
             <a href="https://www.instagram.com/universitehassan/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com/uh1" target="_blank"><i class="fab fa-facebook"></i></a>

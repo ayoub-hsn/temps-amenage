@@ -14,9 +14,11 @@ use App\Http\Controllers\supAdmin\SerieBacController;
 use App\Http\Controllers\adminEtab\CandidatController;
 use App\Http\Controllers\adminEtab\ProvinceController;
 use App\Http\Controllers\supAdmin\ActualiteController;
+use App\Http\Controllers\supAdmin\CalendrierController;
 use App\Http\Controllers\adminFiliere\ProfileController;
 use App\Http\Controllers\etudiant\CandidatureController;
 use App\Http\Controllers\supAdmin\ResponsableController;
+use App\Http\Controllers\adminEtab\NotificationController;
 use App\Http\Controllers\supAdmin\EtablissementController;
 use App\Http\Controllers\supAdmin\DiplomeBacPlusDeuxController;
 use App\Http\Controllers\HomeController as ControllersHomeController;
@@ -33,7 +35,6 @@ use App\Http\Controllers\adminEtab\ActualiteController as AdminEtabActualiteCont
 use App\Http\Controllers\adminFiliere\FiliereController as AdminFiliereFiliereController;
 use App\Http\Controllers\adminEtab\ResponsableController as AdminEtabResponsableController;
 use App\Http\Controllers\adminEtab\EtablissementController as AdminEtabEtablissementController;
-use App\Http\Controllers\adminEtab\NotificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,7 +64,13 @@ Route::get('/annonce/{actualite}',[ControllersHomeController::class, 'showActual
 Route::get('/nos-formation',[ControllersHomeController::class,'nosFormation'])->name('nosformation');
 Route::get('/nos-formation/{etablissement}/master',[ControllersHomeController::class,'nosFormationMaster'])->name('formationMaster');
 Route::get('/nos-formation/{etablissement}/licence',[ControllersHomeController::class,'nosFormationLicence'])->name('formationLicence');
-Route::get('/nos-formation/{id}/choix',[ControllersHomeController::class,'nosFormationChosisr'])->name('nosformationChoisen');
+Route::get('/nos-formation/{etablissement}/bachelier',[ControllersHomeController::class,'nosFormationBachelier'])->name('formationBachelier');
+Route::get('/nos-formation/{id}/master/choix',[ControllersHomeController::class,'nosFormationMasterChosisir'])->name('master.nosformationChoisen');
+Route::get('/nos-formation/{id}/licence/choix',[ControllersHomeController::class,'nosFormationLicenceChosisir'])->name('licence.nosformationChoisen');
+Route::get('/nos-formation/{id}/bachelier/choix',[ControllersHomeController::class,'nosFormationBachelierChosisir'])->name('bachelier.nosformationChoisen');
+
+
+
 
 //Quick preinscription
 Route::get('/preiscnription',[ControllersHomeController::class,'quickpreinscription'])->name('preinscription');
@@ -126,7 +133,21 @@ Route::group(['as'=>'sup-admin.', 'prefix' => 'sup-admin','middleware' => ['auth
     Route::put('master/candidats/{candidat}/update',[SupAdminFiliereController::class, 'updateMasterCandidat'])->name('master.candidat.update');
     Route::get('passerelle/candidats/{candidat}/edit',[SupAdminFiliereController::class, 'editPasserelleCandidat'])->name('passerelle.candidat.edit');
     Route::put('passerelle/candidats/{candidat}/update',[SupAdminFiliereController::class, 'updatePasserelleCandidat'])->name('passerelle.candidat.update');
+    Route::get('/etablissement/bachelier/{filiere}/etudiants',[SupAdminFiliereController::class, 'showStudentsBacheliers'])->name('etablissement.filiere.bachelier.etudiants');
+    Route::get('/filiere/{filiere}/bachelier/etudiant/{etudiant}',[SupAdminFiliereController::class, 'showDetailStudentBachelier'])->name('filiere.bachelier.etudiants.show');
+    Route::get('bachelier/candidats/{candidat}/edit',[SupAdminFiliereController::class, 'editBachelierCandidat'])->name('bachelier.candidat.edit');
+    Route::put('bachelier/candidats/{candidat}/update',[SupAdminFiliereController::class, 'updateBachelierCandidat'])->name('bachelier.candidat.update');
 
+
+    
+    //Download
+    Route::post('/filiere/{filiere}/master/etudiant/excel/download',[SupAdminFiliereController::class, 'downloadStudentsMaster'])->name('filiere.master.etudiants.excel.download');
+    Route::post('/filiere/{filiere}/licence/etudiant/excel/download',[SupAdminFiliereController::class, 'downloadStudentsLicence'])->name('filiere.licence.etudiants.excel.download');
+    Route::post('/filiere/{filiere}/bachelier/etudiant/excel/download',[SupAdminFiliereController::class, 'downloadStudentsBachelier'])->name('filiere.bachelier.etudiants.excel.download');
+
+
+    
+    
     //actualite management
     Route::get('actualite',[ActualiteController::class, 'index'])->name('actualite.index');
     Route::get('actualite/create',[ActualiteController::class, 'create'])->name('actualite.create');
@@ -173,6 +194,14 @@ Route::group(['as'=>'sup-admin.', 'prefix' => 'sup-admin','middleware' => ['auth
     Route::put('/province/{province}/update',[SupAdminProvinceController::class, 'update'])->name('province.update');
 
 
+    //Calendrier
+    Route::get('calendrier',[CalendrierController::class, 'index'])->name('calendrier.index');
+    Route::get('calendrier/create',[CalendrierController::class, 'create'])->name('calendrier.create');
+    Route::post('calendrier/store',[CalendrierController::class, 'store'])->name('calendrier.store');
+    Route::get('calendrier/{calendrier}/edit',[CalendrierController::class, 'edit'])->name('calendrier.edit');
+    Route::put('calendrier/{calendrier}/update',[CalendrierController::class, 'update'])->name('calendrier.update');
+
+
 
     //Profile
     Route::get('/profile',[SupAdminProfileController::class, 'edit'])->name('profile.edit');
@@ -190,6 +219,7 @@ Route::group(['as'=>'admin-etab.', 'prefix' => 'admin-etab','middleware' => ['au
     Route::post('/etablissement/storemedia',[AdminEtabEtablissementController::class, 'storeMedia'])->name('etablissement.storeMedia');
     Route::get('licence/filiere/AcceeOuvert',[FiliereController::class, 'indexLicenceAcceOuvert'])->name('filiere.licence.acceeouvert.index');
     Route::get('licence/filiere/AcceeRegule',[FiliereController::class, 'indexLicenceAcceRegule'])->name('filiere.licence.acceeregule.index');
+    Route::get('bachelier/filiere',[FiliereController::class, 'indexBachelier'])->name('filiere.bachelier.index');
     Route::get('licence-Excellence/filiere',[FiliereController::class, 'indexLicenceExcellence'])->name('filiere.licencexcellence.index');
     Route::get('master/filiere',[FiliereController::class, 'indexMaster'])->name('filiere.master.index');
     Route::get('/filiere/create',[FiliereController::class, 'create'])->name('filiere.create');
@@ -209,6 +239,11 @@ Route::group(['as'=>'admin-etab.', 'prefix' => 'admin-etab','middleware' => ['au
     Route::post('/filiere/{filiere}/licenceExcellence/etudiant/excel/download',[FiliereController::class, 'downloadStudentsLicenceExcellence'])->name('filiere.licenceExcellence.etudiants.excel.download');
     Route::get('/filiere/{etablissement}/multiplechoix/licenceExcellence/etudiant/excel/download',[FiliereController::class, 'downloadStudentsLicenceExcellenceMultiplechoix'])->name('filiere.multiplechoix.licenceExcellence.etudiants.excel.download');
     Route::get('/filiere/{filiere}/licenceExcellence/listStudentsToSelect',[FiliereController::class, 'ShowStudentsLicenceExcellenceToSelect'])->name('filiere.licenceExcellence.etudiants.listToselect');
+
+
+
+    Route::get('/filiere/{filiere}/bachelier/etudiant',[FiliereController::class, 'showStudentsBacheliers'])->name('filiere.bachelier.etudiants.index');
+    Route::get('/filiere/{filiere}/bachelier/etudiant/{etudiant}',[FiliereController::class, 'showDetailStudentBachelier'])->name('filiere.bachelier.etudiants.show');
 
 
 
@@ -328,6 +363,14 @@ Route::group(['as'=>'etudiant.', 'prefix' => 'etudiant','middleware' => ['auth',
     Route::put('/candidatures/{etudiant}/passerelle/document/update',[CandidatureController::class, 'updatePasserelleDocument'])->name('candidatures.passerelle.document.update');
     Route::put('/candidatures/{etudiant}/passerelle/choixFiliere/update',[CandidatureController::class, 'updateChoixFilierePasserelle'])->name('candidatures.passerelle.choixFiliere.update');
 
+    Route::get('/candidatures/{id}/bachelier/afficher',[CandidatureController::class, 'showBachelier'])->name('candidatures.bachelier.show');
+    Route::get('/candidatures/{id}/bachelier/edit',[CandidatureController::class, 'editBachelier'])->name('candidatures.bachelier.edit');
+    Route::put('/candidatures/{id}/bachelier/confirmer',[CandidatureController::class, 'confirmerBachelier'])->name('candidatures.bachelier.confirmer');
+    Route::post('/candidatures/{id}/bachelier/telecharger',[CandidatureController::class, 'telechargerBachelier'])->name('candidatures.bachelier.telecharger');
+    Route::put('/candidatures/{etudiant}/bachelier/identite/update',[CandidatureController::class, 'updateBachelierIdentite'])->name('candidatures.bachelier.identite.update');
+    Route::put('/candidatures/{etudiant}/bachelier/academique/update',[CandidatureController::class, 'updateBachelierAcademique'])->name('candidatures.bachelier.academique.update');
+    Route::put('/candidatures/{etudiant}/bachelier/choixFiliere/update',[CandidatureController::class, 'updateChoixFiliereBachelier'])->name('candidatures.bachelier.choixFiliere.update');
+
 
     //notification
     Route::get('/notifications/{id}', [NotificationController::class, 'show'])->name('notification.show');
@@ -350,3 +393,4 @@ Route::get('/secure-file/{hashedPath}', [FileController::class, 'showFile'])->na
 
 Route::get('/candidatures/{encryptedId}/master/telecharger/visiteur', [CandidatureController::class, 'telechargerMasterVisiteur']);
 Route::get('/candidatures/{encryptedId}/passerelle/telecharger/visiteur', [CandidatureController::class, 'telechargerPasserelleVisiteur']);
+Route::get('/candidatures/{encryptedId}/bachelier/telecharger/visiteur', [CandidatureController::class, 'telechargerBechelierVisiteur']);

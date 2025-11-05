@@ -23,38 +23,10 @@ class StudentPasserelle extends Model
         'sexe',
         'payschamp',
         'villenais',
-        'villechamp',//en arabe
+        'villechamp',
         'adresse',
         'email',
         'phone',
-
-
-        'serie',
-        'Anneebac',
-
-        'dernier_diplome_obtenu',// bac+2; bac+3; bac+4; bac+5
-        'type_diplome_obtenu',//privee; public; autre
-        'specialitediplome',
-        'ville_etablissement_diplome',
-        'date_optention_diplome',
-
-        'fonctionnaire',
-        'secteur',
-        'nombreannee',
-        'poste',
-        'lieutravail',
-        'villetravail',
-
-
-
-        'path_photo',
-        'path_cin',
-        'path_bac',
-        'path_diplomedeug',
-        'path_attestation_non_emploi',
-        'path_cv',
-
-
 
 
         'filiere',
@@ -63,14 +35,31 @@ class StudentPasserelle extends Model
         'filiere_choix_3',
 
 
+        'serie',
 
-       'etablissement_id',
 
-        'verif',
-        'motif',
+        'secteur',
+        'lieutravail',
+        'villetravail',
+        'poste',
+
+
+        'diplomedeug',
+        'specialitedeug',
+        'etblsmtdeug',
+        'date_obtention_deug',
+        'mentiondeug',
+        'moyenne_deug',
+
+
         'user_id',
+        'confirmation_student',
 
-        'confirmation_student'
+        'etablissement_id',
+        
+        
+        'verif',
+        'motif'
     ];
 
     public function etablissement(){

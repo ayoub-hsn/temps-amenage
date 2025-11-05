@@ -93,22 +93,38 @@
         color: #004e92;
     }
 
-    .filiere-description {
-        font-size: 0.9rem;
-        color: #6c757d;
-        margin-top: 14px;
-        flex-grow: 1;
-    }
-
-    .btn-view, .btn-doc {
-        margin-top: 12px;
+    .btn-view, .btn-doc, .btn-download {
+        margin-top: 10px;
         width: 100%;
         font-weight: 600;
-        transition: all 0.2s;
+        transition: all 0.3s ease;
+        border-radius: 10px;
     }
 
-    .btn-view:hover, .btn-doc:hover {
+    .btn-view:hover, .btn-doc:hover, .btn-download:hover {
         transform: scale(1.05);
+    }
+
+    /* Modern gradient buttons */
+    .btn-download {
+        background: linear-gradient(90deg, #004e92, #007bff);
+        color: white;
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    }
+
+    .btn-download.green {
+        background: linear-gradient(90deg, #2ecc71, #27ae60);
+        box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+    }
+
+    .btn-download.gold {
+        background: linear-gradient(90deg, #f1c40f, #f39c12);
+        box-shadow: 0 5px 15px rgba(241, 196, 15, 0.3);
+    }
+
+    .btn-download i {
+        margin-right: 8px;
     }
 
     .section-title {
@@ -139,7 +155,7 @@
 
         <div class="container">
 
-            {{-- Container for Filières Master --}}
+            {{-- Filières Master --}}
             <div class="background-container">
                 <h5 class="section-title">
                     <i data-feather="layers"></i> Filières Master ({{ $filieresMaster->count() }})
@@ -166,8 +182,6 @@
                                     Responsable : <strong>{{ $filiere->responsable ?? '-' }}</strong>
                                 </p>
 
-                                {{-- <p class="filiere-description">{{ $filiere->description }}</p> --}}
-
                                 @if($filiere->document)
                                     <a href="{{ asset($filiere->document) }}" target="_blank" class="btn btn-outline-secondary btn-doc">
                                         <i data-feather="file-text"></i> Consulter le document
@@ -177,6 +191,14 @@
                                 <a href="{{ route('sup-admin.etablissement.filiere.master.etudiants', $filiere->id) }}" class="btn btn-outline-primary btn-view">
                                     <i data-feather="eye"></i> Voir les étudiants
                                 </a>
+
+                                {{-- Download Excel --}}
+                                <form action="{{ route('sup-admin.filiere.master.etudiants.excel.download', $filiere->id) }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-download">
+                                        <i data-feather="download"></i> Télécharger la liste
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     @empty
@@ -187,10 +209,10 @@
                 </div>
             </div>
 
-            {{-- Container for Licences d'Excellence --}}
+            {{-- Licences (Accès S5) --}}
             <div class="background-container">
                 <h5 class="section-title text-success">
-                    <i data-feather="award"></i> Licences d'Excellence ({{ $filieresPasserelle->count() }})
+                    <i data-feather="award"></i> Licences (Accès S5) ({{ $filieresPasserelle->count() }})
                 </h5>
 
                 <div class="row">
@@ -214,8 +236,6 @@
                                     Responsable : <strong>{{ $filiere->responsable ?? '-' }}</strong>
                                 </p>
 
-                                {{-- <p class="filiere-description">{{ $filiere->description }}</p> --}}
-
                                 @if($filiere->document)
                                     <a href="{{ asset($filiere->document) }}" target="_blank" class="btn btn-outline-secondary btn-doc">
                                         <i data-feather="file-text"></i> Consulter le document
@@ -225,6 +245,14 @@
                                 <a href="{{ route('sup-admin.etablissement.filiere.passerelle.etudiants', $filiere->id) }}" class="btn btn-outline-success btn-view">
                                     <i data-feather="eye"></i> Voir les étudiants
                                 </a>
+
+                                {{-- Download Excel --}}
+                                <form action="{{ route('sup-admin.filiere.licence.etudiants.excel.download', $filiere->id) }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-download green">
+                                        <i data-feather="download"></i> Télécharger la liste
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     @empty
@@ -235,6 +263,59 @@
                 </div>
             </div>
 
+            {{-- Licences (Accès S1) --}}
+            <div class="background-container">
+                <h5 class="section-title text-warning">
+                    <i data-feather="award"></i> Licences (Accès S1) ({{ $filieresBachelier->count() }})
+                </h5>
+
+                <div class="row">
+                    @forelse($filieresBachelier as $filiere)
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="filiere-card h-100 green-border">
+                                <div class="filiere-abbr">{{ $filiere->nom_abrv }}</div>
+                                <div class="filiere-name">{{ $filiere->nom_complet }}</div>
+
+                                <span class="badge-status {{ $filiere->active == 1 ? 'badge-active' : 'badge-inactive' }}">
+                                    {{ $filiere->active == 1 ? 'Active' : 'Non active' }}
+                                </span>
+
+                                <p class="filiere-info">
+                                    <i data-feather="users"></i>
+                                    Étudiants postulants : <strong>{{ $filiere->students_count }}</strong>
+                                </p>
+
+                                <p class="filiere-info">
+                                    <i data-feather="user"></i>
+                                    Responsable : <strong>{{ $filiere->responsable ?? '-' }}</strong>
+                                </p>
+
+                                @if($filiere->document)
+                                    <a href="{{ asset($filiere->document) }}" target="_blank" class="btn btn-outline-secondary btn-doc">
+                                        <i data-feather="file-text"></i> Consulter le document
+                                    </a>
+                                @endif
+
+                                <a href="{{ route('sup-admin.etablissement.filiere.bachelier.etudiants', $filiere->id) }}" class="btn btn-outline-success btn-view">
+                                    <i data-feather="eye"></i> Voir les étudiants
+                                </a>
+
+                                {{-- Download Excel --}}
+                                <form action="{{ route('sup-admin.filiere.bachelier.etudiants.excel.download', $filiere->id) }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-download gold">
+                                        <i data-feather="download"></i> Télécharger la liste
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    @empty
+                        <div class="col-12">
+                            <div class="alert alert-info">Aucune filière Licence trouvée.</div>
+                        </div>
+                    @endforelse
+                </div>
+            </div>
         </div>
     </section>
 </div>

@@ -33,12 +33,11 @@
                                         <th>CIN</th>
                                         <th>Email</th>
                                         <th>Téléphone</th>
-                                        <th>Dernier Diplome</th>
-                                        <th>Type de diplome</th>
+                                        <th>Licence</th>
                                         <th>Spécialité</th>
-                                        <th>Etablissement</th>
+                                        <th>Moyenne</th>
                                         <th>Verification</th>
-                                        {{-- <th class="no-export">Action</th> --}}
+                                        <th class="no-export">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -80,19 +79,18 @@
                 { data: 'CIN', name: 'CIN' },
                 { data: 'email', name: 'email' },
                 { data: 'phone', name: 'phone' },
-                { data: 'dernier_diplome_obtenu', name: 'dernier_diplome_obtenu' },
-                { data: 'type_diplome_obtenu', name: 'type_diplome_obtenu' },
-                { data: 'specialitediplome', name: 'specialitediplome' },
-                { data: 'ville_etablissement_diplome', name: 'ville_etablissement_diplome' },
+                { data: 'typelicence', name: 'typelicence' },
+                { data: 'specialitelp', name: 'specialitelp' },
+                { data: 'moyenne_licence', name: 'moyenne_licence' },
                 { data: 'verif', name: 'verif' },
-                // {
-                //     data: 'id',
-                //     orderable: false,
-                //     searchable: false,
-                //     render: function (data, type, row) {
-                //         return '<a href="/admin-etab/filiere/' + filiereId + '/master/etudiant/' + data + '" class="btn btn-info btn-sm mr-1">Afficher</a>';
-                //     }
-                // }
+                {
+                    data: 'id',
+                    orderable: false,
+                    searchable: false,
+                    render: function (data, type, row) {
+                        return '<a href="/admin-etab/filiere/' + filiereId + '/master/etudiant/' + data + '" class="btn btn-info btn-sm mr-1">Afficher</a>';
+                    }
+                }
             ],
             order: [[0, 'desc']], // Default sorting by first column
             pageLength: 10, // Number of records per page

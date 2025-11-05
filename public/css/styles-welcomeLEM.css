@@ -413,7 +413,7 @@ footer .social-links a:hover {
     margin-top: 20px;
     flex-wrap: wrap
 }
-.btn.licence, .btn.master {
+.btn.licence, .btn.master, .btn.bachelier {
     flex: 1;
     min-width: 160px;
     max-width: 180px
@@ -701,6 +701,13 @@ footer .social-links a:hover {
 .btn:hover {
     transform: scale(1.07);
     box-shadow: 0 8px 18px rgba(0, 0, 0, .15)
+}
+.btn.bachelier {
+    background: linear-gradient(135deg, #0073e6, #00bcd4);
+}
+
+.btn.bachelier:hover {
+    background: linear-gradient(135deg, #005bb5, #0097a7);
 }
 #university-location {
     background: linear-gradient(180deg, #fff, #f9faff);

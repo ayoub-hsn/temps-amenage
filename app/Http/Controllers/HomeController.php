@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Filiere;
 use App\Models\Actualite;
+use App\Models\Calendrier;
 use Illuminate\Http\Request;
 use App\Models\Etablissement;
 use App\Models\StudentMaster;
@@ -191,30 +192,74 @@ class HomeController extends Controller
     }
 
    public function quickpreinscription(){
-    $etablissements = Etablissement::with(['filiereMaster','filiereLicence'])->get();
+    $etablissements = Etablissement::has('filiere')->with(['filiereMaster','filiereLicence','filiereBachelier'])->get();
     return view('front-end.form-quick',compact('etablissements'));
    }
 
     public function nosFormation(){
-        $etablissements = Etablissement::all();
+        $etablissements = Etablissement::has('filiere')->get();
         return view('front-end.nos-formation',compact('etablissements'));
     }
 
     public function nosFormationMaster(Etablissement $etablissement){
         $filieresMaster = Filiere::where('etablissement_id',$etablissement->id)->where('type',1)->where('active',1)->get();
-        return view('front-end.nos-formation-master',compact('etablissement','filieresMaster'));
+        $calendrier = Calendrier::where('etablissement_id',$etablissement->id)->with('etablissement')->first();
+        return view('front-end.nos-formation-master',compact('etablissement','filieresMaster','calendrier'));
     }
 
     public function nosFormationLicence(Etablissement $etablissement){
         $filieresLicence = Filiere::where('etablissement_id',$etablissement->id)->where('type',2)->where('active',1)->get();
-        return view('front-end.nos-formation-licence',compact('etablissement','filieresLicence'));
+        $calendrier = Calendrier::where('etablissement_id',$etablissement->id)->with('etablissement')->first();
+        return view('front-end.nos-formation-licence',compact('etablissement','filieresLicence','calendrier'));
     }
 
-    public function nosFormationChosisr($id){
-        $filiere = Filiere::whereId($id)
-        ->with('etablissement')
+    public function nosFormationBachelier(Etablissement $etablissement){
+        $filieresLicence = Filiere::where('etablissement_id',$etablissement->id)->where('type',3)->where('active',1)->get();
+        $calendrier = Calendrier::where('etablissement_id',$etablissement->id)->with('etablissement')->first();
+        return view('front-end.nos-formation-bachelier',compact('etablissement','filieresLicence','calendrier'));
+    }
+
+    public function nosFormationMasterChosisir($id){
+       $filiere = Filiere::whereId($id)
+        ->with(['etablissement' => function($q){
+            $q->with(['serie_bac']);
+        }])
         ->first();
-        return view('front-end.form-formation-choisen',compact('filiere'));
+       $etablissement = $filiere->etablissement;
+        $filieres = Filiere::where('etablissement_id',$filiere->etablissement_id)->where('type',1)->where('active',1)->get();
+        return view('front-end.form-formation-master-choisen',compact('etablissement','filiere','filieres'));
+    }
+    
+    public function nosFormationLicenceChosisir($id){
+        $filiere = Filiere::whereId($id)
+        ->with(['etablissement' => function($q){
+            $q->with(['serie_bac','diplomebacplus2']);
+        }])
+        ->first();
+
+
+        $etablissement = $filiere->etablissement;
+        $filieres = Filiere::where('etablissement_id',$filiere->etablissement_id)->where('type',2)->where('active',1)->get();
+       
+        return view('front-end.form-formation-licence-choisen',compact('filiere','etablissement','filieres'));
+    }
+
+    public function nosFormationBachelierChosisir($id){
+        $filiere = Filiere::whereId($id)
+        ->with(['etablissement' => function($q){
+            $q->with(['serie_bac']);
+        }])
+        ->first();
+
+
+        $etablissement = $filiere->etablissement;
+        $filieres = Filiere::where('etablissement_id',$filiere->etablissement_id)->where('type',3)->where('active',1)->get();
+       
+        return view('front-end.form-formation-bachelier-choisen',compact('filiere','etablissement','filieres'));
+    }
+
+    public function guideFilieres(){
+        return view('front-end.parcours');
     }
 
     public function showActualite(Actualite $actualite){

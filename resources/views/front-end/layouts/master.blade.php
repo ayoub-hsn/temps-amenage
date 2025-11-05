@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Université UH1</title>
+        <link rel="icon" href="{{ asset('images/favicon-uh1.png') }}" type="image/x-icon">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
        <style>
@@ -117,6 +118,9 @@
                     position: absolute;
                     right: 30px;
                 }
+                .nav-links a:hover, .nav-links a.active {
+                    padding: 9px 23px;
+                }
 
                 .navbar-links {
                     top: 100px; /* Position the navbar-links below the navbar */
@@ -181,7 +185,7 @@
         </main>
 
         <footer>
-            <p>&copy; 2025 Université Hassan 1er. Tous droits réservés.</p>
+            <p>&copy; 2025 Made By Ayoub Hassnioui. Tous droits réservés.</p>
             <div class="social-links">
                 <a href="https://www.instagram.com/universitehassan/" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com/uh1" target="_blank"><i class="fab fa-facebook"></i></a>

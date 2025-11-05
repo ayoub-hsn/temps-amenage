@@ -21424,10 +21424,10 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsExcellence.vue?vue&type=script&lang=js":
-/*!*************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsExcellence.vue?vue&type=script&lang=js ***!
-  \*************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsBachelier.vue?vue&type=script&lang=js":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsBachelier.vue?vue&type=script&lang=js ***!
+  \************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -21443,12 +21443,15 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['appurl', 'cne', 'cin', 'etablissement', 'filieres'],
+  props: ['appurl', 'etablissement', 'filieres', 'filiere'],
   components: {
     ErrorPopup: _ErrorPopup_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -21468,115 +21471,70 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
       }, {
         title: "INFORMATIONS\nACADEMIQUES"
       }, {
-        title: "DOCUMENT"
-      }, {
         title: "CHOIX\nDE FILIERE"
       }, {
         title: "CONFIRMATION"
       }],
-      etudiant: {
+      etudiant: _defineProperty(_defineProperty({
         etablissement_id: "",
         CNE: "",
         CIN: "",
         nom: "",
         prenom: "",
-        nomar: "",
-        prenomar: "",
-        datenais: "",
-        sexe: "",
-        payschamp: "",
-        villenais: "",
-        villechamp: "",
-        adresse: "",
+        // nomar: "",
+        // prenomar: "",
+        // datenais: "",
+        // sexe: "",
+        // payschamp: "",
+        // villenais: "",
+        // villechamp: "",
+        // adresse: "",
         email: "",
         phone: "",
         serie: "",
         //bac
-        Anneebac: "",
-        dernier_diplome_obtenu: "",
-        //Diplome
-        type_diplome_obtenu: "",
-        specialitediplome: "",
-        ville_etablissement_diplome: "",
-        date_optention_diplome: "",
-        fonctionnaire: "",
+        moyenne_bac: "",
         secteur: "",
-        nombreannee: "",
         poste: "",
-        lieutravail: "",
-        villetravail: "",
-        path_photo: {
-          file: null,
-          preview: null
-        },
-        path_cin: {
-          file: null,
-          preview: null
-        },
-        path_bac: {
-          file: null,
-          preview: null
-        },
-        path_licence: {
-          file: null,
-          preview: null
-        },
-        path_attestation_non_emploi: {
-          file: null,
-          preview: null
-        },
-        path_cv: {
-          file: null,
-          preview: null
-        },
+        // lieutravail: "",
+        // villetravail: "",
+
         filiere: "",
         filiere_choix_1: "",
         filiere_choix_2: "",
-        filiere_choix_3: "",
-        confirmation: ""
-      },
+        filiere_choix_3: ""
+      }, "etablissement_id", ""), "confirmation", ""),
       selectedFiliereChoices: [],
       errors: {
         CNE: null,
         CIN: null,
         nom: null,
         prenom: null,
-        nomar: null,
-        prenomar: null,
-        datenais: null,
-        sexe: null,
-        payschamp: null,
-        villenais: null,
-        villechamp: null,
-        adresse: null,
+        //   nomar: null,
+        //   prenomar: null,
+        //   datenais: null,
+        //   sexe: null,
+        //   payschamp: null,
+        //   villenais: null,
+        //   villechamp: null,
+        //   adresse: null,
         email: null,
         phone: null,
         serie: null,
-        Anneebac: null,
-        dernier_diplome_obtenu: null,
-        type_diplome_obtenu: null,
-        specialitediplome: null,
-        ville_etablissement_diplome: null,
-        date_optention_diplome: null,
-        fonctionnaire: null,
+        moyenne_bac: null,
         secteur: null,
         nombreannee: null,
         poste: null,
-        lieutravail: null,
-        villetravail: null,
-        path_photo: null,
-        path_cin: null,
-        path_bac: null,
-        path_licence: null,
-        path_attestation_non_emploi: null,
-        path_cv: null,
+        //   lieutravail: null,
+        //   villetravail: null,
+
         filiere: null,
         filiere_choix_1: null,
         filiere_choix_2: null,
         filiere_choix_3: null,
         confirmation: null
       },
-      showInputTypeDiplome: false,
+      showInputDiplome: false,
       showInputSerie: false,
       showNotification: false
     };
@@ -21663,49 +21621,14 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
         this.validateStep("serie_bac");
       }
     },
-    "etudiant.Anneebac": function etudiantAnneebac(newValue) {
-      if (this.currentField === "Anneebac") {
-        this.validateStep("Anneebac");
-      }
-    },
-    "etudiant.dernier_diplome_obtenu": function etudiantDernier_diplome_obtenu(newValue) {
-      if (this.currentField === "dernier_diplome_obtenu") {
-        this.validateStep("dernier_diplome_obtenu");
-      }
-    },
-    "etudiant.type_diplome_obtenu": function etudiantType_diplome_obtenu(newValue) {
-      if (this.currentField === "type_diplome_obtenu") {
-        this.validateStep("type_diplome_obtenu");
-      }
-    },
-    "etudiant.specialitediplome": function etudiantSpecialitediplome(newValue) {
-      if (this.currentField === "specialitediplome") {
-        this.validateStep("specialitediplome");
-      }
-    },
-    "etudiant.ville_etablissement_diplome": function etudiantVille_etablissement_diplome(newValue) {
-      if (this.currentField === "ville_etablissement_diplome") {
-        this.validateStep("ville_etablissement_diplome");
-      }
-    },
-    "etudiant.date_optention_diplome": function etudiantDate_optention_diplome(newValue) {
-      if (this.currentField === "date_optention_diplome") {
-        this.validateStep("date_optention_diplome");
-      }
-    },
-    "etudiant.fonctionnaire": function etudiantFonctionnaire(newValue) {
-      if (this.currentField === "fonctionnaire") {
-        this.validateStep("fonctionnaire");
+    "etudiant.moyenne_bac": function etudiantMoyenne_bac(newValue) {
+      if (this.currentField === "moyenne_bac") {
+        this.validateStep("moyenne_bac");
       }
     },
     "etudiant.secteur": function etudiantSecteur(newValue) {
       if (this.currentField === "secteur") {
         this.validateStep("secteur");
-      }
-    },
-    "etudiant.nombreannee": function etudiantNombreannee(newValue) {
-      if (this.currentField === "nombreannee") {
-        this.validateStep("nombreannee");
       }
     },
     "etudiant.poste": function etudiantPoste(newValue) {
@@ -21767,140 +21690,17 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
       this.etudiant.serie = "";
     },
     handleDiplomeChange: function handleDiplomeChange() {
-      if (this.etudiant.type_diplome_obtenu === "AUTRES") {
-        this.showInputTypeDiplome = true;
-        this.etudiant.type_diplome_obtenu = "";
+      if (this.etudiant.diplomedeug === "AUTRES") {
+        this.showInputDiplome = true;
+        this.etudiant.diplomedeug = "";
       } else {
-        this.showInputTypeDiplome = false;
-        this.validateStep("type_diplome_obtenu");
+        this.showInputDiplome = false;
+        this.validateStep("diplomedeug");
       }
     },
     cancelInputDiplome: function cancelInputDiplome() {
-      this.showInputTypeDiplome = false;
-      this.etudiant.type_diplome_obtenu = "";
-    },
-    triggerFileInput: function triggerFileInput(refName) {
-      // Check if the reference exists before attempting to click
-      var input = this.$refs[refName];
-      if (input) {
-        input.click();
-      } else {
-        console.error("Reference ".concat(refName, " not found in $refs"));
-      }
-    },
-    // Function to handle file upload and validation
-    handleFileUpload: function handleFileUpload(event, path) {
-      var file = event.target.files[0]; // Obtenir le premier fichier sélectionné
-
-      if (!file) return;
-      var maxSize = 300 * 1024; // 300 KB
-      var allowedTypes = ["image/jpeg", "image/png", "image/jpg"];
-      if (!allowedTypes.includes(file.type)) {
-        this.errors[path] = "Seules les images (.jpg, .jpeg, .png) sont autorisées.";
-        return; // Arrêter l'exécution si le type de fichier n'est pas valide
-      }
-      if (file.size > maxSize) {
-        this.errors[path] = "La taille de l'image ne doit pas dépasser 300 Ko.";
-        return; // Arrêter l'exécution si le fichier est trop volumineux
-      }
-      this.etudiant[path] = file; // Stocker uniquement l'objet fichier
-      this.previewImage(file, path); // Générer un aperçu si nécessaire
-      this.errors[path] = null; // Effacer les erreurs précédentes si le fichier est valide
-    },
-    previewImage: function previewImage(file, path) {
-      var _this = this;
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        // Storing preview along with the file object
-        _this.etudiant[path] = {
-          file: file,
-          // Keep the original file object
-          preview: e.target.result // Store preview separately
-        };
-      };
-      reader.readAsDataURL(file);
-    },
-    // Function to remove the uploaded file and clear input
-    removeFile: function removeFile(path) {
-      console.log("Removing file for ".concat(path));
-      console.log('Current file data:', this.etudiant[path]);
-      if (this.etudiant[path]) {
-        this.etudiant[path] = {
-          file: null,
-          preview: null
-        };
-        console.log('After removal:', this.etudiant[path]);
-      } else {
-        console.error('No file found for', path);
-      }
-    },
-    triggerFileInputPDF: function triggerFileInputPDF() {
-      this.$refs.fileInput.click();
-    },
-    handleFileUploadPDF: function handleFileUploadPDF(event) {
-      var file = event.target.files[0];
-      if (!file) return;
-      var maxSize = 350 * 1024; // 350 KB
-
-      if (file.type !== "application/pdf") {
-        this.errors["path_cv"] = "Veuillez sélectionner un fichier PDF valide.";
-        return;
-      }
-      if (file.size > maxSize) {
-        this.errors["path_cv"] = "La taille du fichier ne doit pas dépasser 350 Ko.";
-        return;
-      }
-      this.pdfUrl = URL.createObjectURL(file);
-      this.etudiant.path_cv = {
-        file: file,
-        preview: this.pdfUrl
-      };
-      this.renderPdf(this.pdfUrl);
-      this.errors["path_cv"] = null; // Effacer les erreurs précédentes si le fichier est valide
-    },
-    renderPdf: function renderPdf(pdfUrl) {
-      var _this2 = this;
-      var loadingTask = pdfjs_dist_webpack__WEBPACK_IMPORTED_MODULE_2__.getDocument(pdfUrl);
-      loadingTask.promise.then(function (pdf) {
-        pdf.getPage(1).then(function (page) {
-          (0,vue__WEBPACK_IMPORTED_MODULE_1__.nextTick)(function () {
-            var canvas = _this2.$refs.pdfCanvas;
-            var container = _this2.$refs.pdfContainer; // Ensure container reference exists
-
-            if (!canvas || !container) {
-              console.error('Canvas element not found!');
-              return;
-            }
-            var context = canvas.getContext('2d');
-            var viewport = page.getViewport({
-              scale: 1
-            });
-
-            // Use container width to adjust scale dynamically
-            var containerWidth = container.getBoundingClientRect().width;
-            var scale = containerWidth / viewport.width;
-            var scaledViewport = page.getViewport({
-              scale: scale
-            });
-
-            // Set canvas size dynamically
-            canvas.width = scaledViewport.width;
-            canvas.height = scaledViewport.height;
-            var renderContext = {
-              canvasContext: context,
-              viewport: scaledViewport
-            };
-            page.render(renderContext).promise.then(function () {
-              // Ensure full top view on all devices
-              container.scrollTop = 0;
-            });
-          });
-        });
-      });
-    },
-    removeFilePDF: function removeFilePDF() {
-      this.pdfUrl = null;
-      this.$refs.fileInput.value = null;
+      this.showInputDiplome = false;
+      this.etudiant.diplomedeug = "";
     },
     toggleSelection: function toggleSelection(id) {
       this.etudiant.filiere = id;
@@ -21957,86 +21757,96 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
               this.errors.prenom = null;
             }
             break;
-          case "nomar":
-            if (!this.etudiant.nomar) {
-              this.errors.nomar = "الاسم العائلي مطلوب";
-            } else if (this.etudiant.nomar.length < 2 || this.etudiant.nomar.length > 50) {
-              this.errors.nomar = "يجب أن يحتوي الاسم العائلي على ما بين 2 و 50 حرفًا.";
-            } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.nomar)) {
-              this.errors.nomar = "يرجى إدخال الاسم العائلي باللغة العربية فقط";
-            } else {
-              this.errors.nomar = null;
-            }
-            break;
-          case "prenomar":
-            if (!this.etudiant.prenomar) {
-              this.errors.prenomar = "الاسم الشخصي مطلوب";
-            } else if (this.etudiant.prenomar.length < 2 || this.etudiant.prenomar.length > 50) {
-              this.errors.prenomar = "يجب أن يحتوي الاسم الشخصي على ما بين 2 و 50 حرفًا.";
-            } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.prenomar)) {
-              this.errors.prenomar = "يرجى إدخال الاسم الشخصي باللغة العربية فقط";
-            } else {
-              this.errors.prenomar = null;
-            }
-            break;
-          case "datenais":
-            if (!this.etudiant.datenais) {
-              this.errors.datenais = "La date de naissance est requis.";
-            } else {
-              this.errors.datenais = null;
-            }
-            break;
-          case "sexe":
-            if (!this.etudiant.sexe) {
-              this.errors.sexe = "Le sexe est requis.";
-            } else {
-              this.errors.sexe = null;
-            }
-            break;
-          case "payschamp":
-            if (!this.etudiant.payschamp) {
-              this.errors.payschamp = "Le nom du pays est requis.";
-            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.payschamp)) {
-              this.errors.payschamp = "Le nom du pays doit être écrit uniquement en français.";
-            } else if (this.etudiant.payschamp.length < 2 || this.etudiant.payschamp.length > 70) {
-              this.errors.payschamp = "Le nom du pays doit contenir entre 2 et 70 caractères.";
-            } else {
-              this.errors.payschamp = null;
-            }
-            break;
-          case "villenais":
-            if (!this.etudiant.villenais) {
-              this.errors.villenais = "Le nom de la ville est requis.";
-            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.villenais)) {
-              this.errors.villenais = "Le nom de la ville doit être écrit uniquement en français.";
-            } else if (this.etudiant.villenais.length < 2 || this.etudiant.villenais.length > 70) {
-              this.errors.villenais = "Le nom de la ville doit contenir entre 2 et 70 caractères.";
-            } else {
-              this.errors.villenais = null;
-            }
-            break;
-          case "villechamp":
-            if (!this.etudiant.villechamp) {
-              this.errors.villechamp = "مكان الازدياد مطلوب";
-            } else if (this.etudiant.villechamp.length < 2 || this.etudiant.villechamp.length > 70) {
-              this.errors.villechamp = "يجب أن يحتوي مكان الازدياد على ما بين 2 و 70 حرفًا.";
-            } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.villechamp)) {
-              this.errors.villechamp = "يرجى إدخال مكان الازدياد باللغة العربية فقط";
-            } else {
-              this.errors.villechamp = null;
-            }
-            break;
-          case "adresse":
-            if (!this.etudiant.adresse) {
-              this.errors.adresse = "L'adresse est requise.";
-            } else if (/[^A-Za-zÀ-ÿ0-9\s-]/.test(this.etudiant.adresse)) {
-              this.errors.adresse = "L'adresse doit être écrite uniquement en français et peut contenir des chiffres.";
-            } else if (this.etudiant.adresse.length < 10 || this.etudiant.adresse.length > 250) {
-              this.errors.adresse = "L'adresse doit contenir entre 10 et 250 caractères.";
-            } else {
-              this.errors.adresse = null;
-            }
-            break;
+
+          // case "nomar":
+          // 	if (!this.etudiant.nomar) {
+          // 	this.errors.nomar = "الاسم العائلي مطلوب";
+          // 	} else if (this.etudiant.nomar.length < 2 || this.etudiant.nomar.length > 50) {
+          // 	this.errors.nomar = "يجب أن يحتوي الاسم العائلي على ما بين 2 و 50 حرفًا.";
+          // 	} else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.nomar)) {
+          // 	this.errors.nomar = "يرجى إدخال الاسم العائلي باللغة العربية فقط";
+          // 	} else {
+          // 	this.errors.nomar = null;
+          // 	}
+          // 	break;
+
+          // case "prenomar":
+          // 	if (!this.etudiant.prenomar) {
+          // 	this.errors.prenomar = "الاسم الشخصي مطلوب";
+          // 	} else if (this.etudiant.prenomar.length < 2 || this.etudiant.prenomar.length > 50) {
+          // 	this.errors.prenomar = "يجب أن يحتوي الاسم الشخصي على ما بين 2 و 50 حرفًا.";
+          // 	} else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.prenomar)) {
+          // 	this.errors.prenomar = "يرجى إدخال الاسم الشخصي باللغة العربية فقط";
+          // 	} else {
+          // 	this.errors.prenomar = null;
+          // 	}
+
+          // 	break;
+
+          // case "datenais":
+          // 	if (!this.etudiant.datenais) {
+          // 	this.errors.datenais = "La date de naissance est requis.";
+          // 	} else {
+          // 	this.errors.datenais = null;
+          // 	}
+          // 	break;
+
+          // case "sexe":
+          // 	if (!this.etudiant.sexe) {
+          // 	this.errors.sexe = "Le sexe est requis.";
+          // 	} else {
+          // 	this.errors.sexe = null;
+          // 	}
+          // 	break;
+
+          // case "payschamp":
+          // 	if (!this.etudiant.payschamp) {
+          // 	this.errors.payschamp = "Le nom du pays est requis.";
+          // 	}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.payschamp)) {
+          // 		this.errors.payschamp = "Le nom du pays doit être écrit uniquement en français.";
+          // 	} else if (this.etudiant.payschamp.length < 2 || this.etudiant.payschamp.length > 70) {
+          // 	this.errors.payschamp = "Le nom du pays doit contenir entre 2 et 70 caractères.";
+          // 	} else {
+          // 	this.errors.payschamp = null;
+          // 	}
+          // 	break;
+
+          // case "villenais":
+          // 	if (!this.etudiant.villenais) {
+          // 	this.errors.villenais = "Le nom de la ville est requis.";
+          // 	}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.villenais)) {
+          // 		this.errors.villenais = "Le nom de la ville doit être écrit uniquement en français.";
+          // 	} else if (this.etudiant.villenais.length < 2 || this.etudiant.villenais.length > 70) {
+          // 	this.errors.villenais = "Le nom de la ville doit contenir entre 2 et 70 caractères.";
+          // 	} else {
+          // 	this.errors.villenais = null;
+          // 	}
+          // 	break;
+
+          // case "villechamp":
+          // 	if (!this.etudiant.villechamp) {
+          // 	this.errors.villechamp = "مكان الازدياد مطلوب";
+          // 	} else if (this.etudiant.villechamp.length < 2 || this.etudiant.villechamp.length > 70) {
+          // 	this.errors.villechamp = "يجب أن يحتوي مكان الازدياد على ما بين 2 و 70 حرفًا.";
+          // 	} else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.villechamp)) {
+          // 	this.errors.villechamp = "يرجى إدخال مكان الازدياد باللغة العربية فقط";
+          // 	} else {
+          // 	this.errors.villechamp = null;
+          // 	}
+          // 	break;
+
+          // case "adresse":
+          // if (!this.etudiant.adresse) {
+          // 	this.errors.adresse = "L'adresse est requise.";
+          // } else if (/[^A-Za-zÀ-ÿ0-9\s-]/.test(this.etudiant.adresse)) {
+          // 	this.errors.adresse = "L'adresse doit être écrite uniquement en français et peut contenir des chiffres.";
+          // } else if (this.etudiant.adresse.length < 10 || this.etudiant.adresse.length > 250) {
+          // 	this.errors.adresse = "L'adresse doit contenir entre 10 et 250 caractères.";
+          // } else {
+          // 	this.errors.adresse = null;
+          // }
+          // 	break;
+
           case "email":
             if (!this.etudiant.email) {
               this.errors.email = "L'email est requis.";
@@ -22065,168 +21875,63 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
           case "serie":
             if (!this.etudiant.serie) {
               this.errors.serie = "Série de bac est requise.";
-            } else if (this.etudiant.serie !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\(\)\-]{2,200}$/.test(this.etudiant.serie)) {
+            } else if (this.etudiant.serie !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s()\/:\-\.]{2,200}$/.test(this.etudiant.serie)) {
               this.errors.serie = "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
             } else {
               this.errors.serie = null;
             }
             break;
-          case "Anneebac":
-            if (!this.etudiant.Anneebac) {
-              this.errors.Anneebac = "Année de bac est requis.";
+          case "moyenne_bac":
+            if (!this.etudiant.moyenne_bac) {
+              this.errors.moyenne_bac = "Ce champ est requis.";
+            } else if (!notePattern.test(this.etudiant.moyenne_bac)) {
+              this.errors.moyenne_bac = "Entrez une note valide (exemple: 16 | 16.50).";
             } else {
-              this.errors.Anneebac = null;
-            }
-            break;
-          case "dernier_diplome_obtenu":
-            if (!this.etudiant.dernier_diplome_obtenu) {
-              this.errors.dernier_diplome_obtenu = "Ce champs est requis.";
-            } else {
-              this.errors.dernier_diplome_obtenu = null;
-            }
-            break;
-          case "type_diplome_obtenu":
-            if (!this.etudiant.type_diplome_obtenu) {
-              this.errors.type_diplome_obtenu = "Ce champ est requis.";
-            } else if (this.etudiant.type_diplome_obtenu !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\(\)\-]{2,200}$/.test(this.etudiant.type_diplome_obtenu)) {
-              this.errors.type_diplome_obtenu = "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
-            } else {
-              this.errors.type_diplome_obtenu = null;
-            }
-            break;
-          case "specialitediplome":
-            if (!this.etudiant.specialitediplome) {
-              this.errors.specialitediplome = "Le spécialité du diplome est requis.";
-            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.specialitediplome)) {
-              this.errors.specialitediplome = "Ce champs doit être écrit uniquement en français.";
-            } else if (this.etudiant.specialitediplome.length < 2 || this.etudiant.specialitediplome.length > 200) {
-              this.errors.specialitediplome = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
-            } else {
-              this.errors.specialitediplome = null;
-            }
-            break;
-
-          // case "etblsmtdeug":
-          // 	if (!this.etudiant.etblsmtdeug) {
-          // 	this.errors.etblsmtdeug = "Ce champs est requis.";
-          // 	}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.etblsmtdeug)) {
-          // 	this.errors.etblsmtdeug = "Ce champs doit être écrit uniquement en français.";
-          // 	} else if (this.etudiant.etblsmtdeug.length < 2 || this.etudiant.etblsmtdeug.length > 200) {
-          // 	this.errors.etblsmtdeug = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
-          // 	} else {
-          // 	this.errors.etblsmtdeug = null;
-          // 	}
-          // 	break;
-
-          case "ville_etablissement_diplome":
-            if (!this.etudiant.ville_etablissement_diplome) {
-              this.errors.ville_etablissement_diplome = "Ce champs est requis.";
-            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.ville_etablissement_diplome)) {
-              this.errors.ville_etablissement_diplome = "Ce champs doit être écrit uniquement en français.";
-            } else if (this.etudiant.ville_etablissement_diplome.length < 2 || this.etudiant.ville_etablissement_diplome.length > 150) {
-              this.errors.ville_etablissement_diplome = "Ce champs doit contenir entre 2 et 150 caractères alphanumériques.";
-            } else {
-              this.errors.ville_etablissement_diplome = null;
-            }
-            break;
-          case "date_optention_diplome":
-            if (!this.etudiant.date_optention_diplome) {
-              this.errors.date_optention_diplome = "Ce champs est requis.";
-            } else {
-              this.errors.date_optention_diplome = null;
-            }
-            break;
-          case "fonctionnaire":
-            if (!this.etudiant.fonctionnaire) {
-              this.errors.fonctionnaire = "Ce champ est requis.";
-            } else {
-              this.errors.fonctionnaire = null;
-              // Si "NON" est sélectionné, vider les autres champs
-              if (this.etudiant.fonctionnaire === "NON") {
-                this.etudiant.secteur = "";
-                this.etudiant.nombreannee = "";
-                this.etudiant.poste = "";
-                this.etudiant.lieutravail = "";
-                this.etudiant.villetravail = "";
-                this.errors.secteur = null;
-                this.errors.nombreannee = null;
-                this.errors.poste = null;
-                this.errors.lieutravail = null;
-                this.errors.villetravail = null;
-              }
+              this.errors.moyenne_bac = null;
             }
             break;
           case "secteur":
-            if (this.etudiant.fonctionnaire === "OUI") {
-              if (!this.etudiant.secteur) {
-                this.errors.secteur = "Ce champ est requis.";
-              } else if (this.etudiant.secteur.length < 2 || this.etudiant.secteur.length > 200) {
-                this.errors.secteur = "Le secteur doit contenir entre 2 et 200 caractères.";
-              } else {
-                this.errors.secteur = null;
-              }
-            }
-            break;
-          case "nombreannee":
-            if (this.etudiant.fonctionnaire === "OUI") {
-              if (!this.etudiant.nombreannee) {
-                this.errors.nombreannee = "Ce champ est requis.";
-              } else if (!Number.isInteger(Number(this.etudiant.nombreannee))) {
-                this.errors.nombreannee = "Entrez un nombre entier valide.";
-              } else if (this.etudiant.nombreannee < 0) {
-                this.errors.nombreannee = "Le nombre d'années ne peut pas être négatif.";
-              } else {
-                this.errors.nombreannee = null;
-              }
+            if (!this.etudiant.secteur) {
+              this.errors.secteur = "Ce champ est requis.";
+            } else if (this.etudiant.secteur.length < 2 || this.etudiant.secteur.length > 200) {
+              this.errors.secteur = "Le secteur doit contenir entre 2 et 200 caractères.";
+            } else {
+              this.errors.secteur = null;
             }
             break;
           case "poste":
-            if (this.etudiant.fonctionnaire === "OUI") {
-              if (!this.etudiant.poste) {
-                this.errors.poste = "Ce champ est requis.";
-              } else if (this.etudiant.poste.length < 2 || this.etudiant.poste.length > 200) {
-                this.errors.poste = "Le poste doit contenir entre 2 et 200 caractères.";
-              } else {
-                this.errors.poste = null;
-              }
-            }
-            break;
-          case "lieutravail":
-            if (this.etudiant.fonctionnaire === "OUI") {
-              if (!this.etudiant.lieutravail) {
-                this.errors.lieutravail = "Ce champ est requis.";
-              } else if (this.etudiant.lieutravail.length < 2 || this.etudiant.lieutravail.length > 200) {
-                this.errors.lieutravail = "Le lieu de travail doit contenir entre 2 et 200 caractères.";
-              } else {
-                this.errors.lieutravail = null;
-              }
-            }
-            break;
-          case "villetravail":
-            if (this.etudiant.fonctionnaire === "OUI") {
-              if (!this.etudiant.villetravail) {
-                this.errors.villetravail = "Ce champ est requis.";
-              } else if (this.etudiant.villetravail.length < 2 || this.etudiant.villetravail.length > 200) {
-                this.errors.villetravail = "La ville de travail doit contenir entre 2 et 200 caractères.";
-              } else {
-                this.errors.villetravail = null;
-              }
-            }
-            break;
-          case "type_bac":
-            if (!this.etudiant.type_bac) {
-              this.errors.type_bac = "Veuillez sélectionner ce champs.";
+            if (!this.etudiant.poste) {
+              this.errors.poste = "Ce champ est requis.";
+            } else if (this.etudiant.poste.length < 2 || this.etudiant.poste.length > 200) {
+              this.errors.poste = "Le poste doit contenir entre 2 et 200 caractères.";
             } else {
-              this.errors.type_bac = null;
+              this.errors.poste = null;
             }
             break;
+
+          // case "lieutravail":
+          // 	if (!this.etudiant.lieutravail) {
+          // 	this.errors.lieutravail = "Ce champ est requis.";
+          // 	} else if (this.etudiant.lieutravail.length < 2 || this.etudiant.lieutravail.length > 200) {
+          // 	this.errors.lieutravail = "Le lieu de travail doit contenir entre 2 et 200 caractères.";
+          // 	} else {
+          // 	this.errors.lieutravail = null;
+          // 	}
+          // 	break;
+
+          // case "villetravail":
+          // 	if (!this.etudiant.villetravail) {
+          // 	this.errors.villetravail = "Ce champ est requis.";
+          // 	} else if (this.etudiant.villetravail.length < 2 || this.etudiant.villetravail.length > 200) {
+          // 	this.errors.villetravail = "La ville de travail doit contenir entre 2 et 200 caractères.";
+          // 	} else {
+          // 	this.errors.villetravail = null;
+          // 	}
+          // 	break;
         }
       }
       if (this.currentStep == 3) {
-        //empty
-      }
-      if (this.currentStep == 4) {
-        if (this.etablissement.multiple_choix_filiere_passerelle == 0) {
+        if (this.etablissement.multiple_choix_filiere_master == 0) {
           switch (field) {
             case "filiere":
               if (!this.etudiant.filiere) {
@@ -22266,13 +21971,13 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
           }
         }
       }
-      if (this.currentStep == 5) {
+      if (this.currentStep == 4) {
         //empty
       }
     },
     validateStepp: function validateStepp() {
-      var _this3 = this;
       this.errors = {};
+      var notePattern = /^(?:\d{1,2}(?:\.\d{1,2})?)$/;
       if (this.currentStep == 1) {
         if (!this.etudiant.CNE) {
           this.errors.CNE = "Le CNE est requis.";
@@ -22306,70 +22011,79 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
         } else {
           this.errors.prenom = null;
         }
-        if (!this.etudiant.nomar) {
-          this.errors.nomar = "الاسم العائلي مطلوب";
-        } else if (this.etudiant.nomar.length < 2 || this.etudiant.nomar.length > 50) {
-          this.errors.nomar = "يجب أن يحتوي الاسم العائلي على ما بين 2 و 50 حرفًا.";
-        } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.nomar)) {
-          this.errors.nomar = "يرجى إدخال الاسم العائلي باللغة العربية فقط";
-        } else {
-          this.errors.nomar = null;
-        }
-        if (!this.etudiant.prenomar) {
-          this.errors.prenomar = "الاسم الشخصي مطلوب";
-        } else if (this.etudiant.prenomar.length < 2 || this.etudiant.prenomar.length > 50) {
-          this.errors.prenomar = "يجب أن يحتوي الاسم الشخصي على ما بين 2 و 50 حرفًا.";
-        } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.prenomar)) {
-          this.errors.prenomar = "يرجى إدخال الاسم الشخصي باللغة العربية فقط";
-        } else {
-          this.errors.prenomar = null;
-        }
-        if (!this.etudiant.datenais) {
-          this.errors.datenais = "La date de naissance est requis.";
-        } else {
-          this.errors.datenais = null;
-        }
-        if (!this.etudiant.sexe) {
-          this.errors.sexe = "Le sexe est requis.";
-        } else {
-          this.errors.sexe = null;
-        }
-        if (!this.etudiant.payschamp) {
-          this.errors.payschamp = "Le nom du pays est requis.";
-        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.payschamp)) {
-          this.errors.payschamp = "Le nom du pays doit être écrit uniquement en français.";
-        } else if (this.etudiant.payschamp.length < 2 || this.etudiant.payschamp.length > 70) {
-          this.errors.payschamp = "Le nom du pays doit contenir entre 2 et 70 caractères.";
-        } else {
-          this.errors.payschamp = null;
-        }
-        if (!this.etudiant.villenais) {
-          this.errors.villenais = "Le nom de la ville est requis.";
-        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.villenais)) {
-          this.errors.villenais = "Le nom de la ville doit être écrit uniquement en français.";
-        } else if (this.etudiant.villenais.length < 2 || this.etudiant.villenais.length > 70) {
-          this.errors.villenais = "Le nom de la ville doit contenir entre 2 et 70 caractères.";
-        } else {
-          this.errors.villenais = null;
-        }
-        if (!this.etudiant.villechamp) {
-          this.errors.villechamp = "مكان الازدياد مطلوب";
-        } else if (this.etudiant.villechamp.length < 2 || this.etudiant.villechamp.length > 70) {
-          this.errors.villechamp = "يجب أن يحتوي مكان الازدياد على ما بين 2 و 70 حرفًا.";
-        } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.villechamp)) {
-          this.errors.villechamp = "يرجى إدخال مكان الازدياد باللغة العربية فقط";
-        } else {
-          this.errors.villechamp = null;
-        }
-        if (!this.etudiant.adresse) {
-          this.errors.adresse = "L'adresse est requise.";
-        } else if (/[^A-Za-zÀ-ÿ0-9\s-]/.test(this.etudiant.adresse)) {
-          this.errors.adresse = "L'adresse doit être écrite uniquement en français et peut contenir des chiffres.";
-        } else if (this.etudiant.adresse.length < 10 || this.etudiant.adresse.length > 250) {
-          this.errors.adresse = "L'adresse doit contenir entre 10 et 250 caractères.";
-        } else {
-          this.errors.adresse = null;
-        }
+
+        // if (!this.etudiant.nomar) {
+        // this.errors.nomar = "الاسم العائلي مطلوب";
+        // } else if (this.etudiant.nomar.length < 2 || this.etudiant.nomar.length > 50) {
+        // this.errors.nomar = "يجب أن يحتوي الاسم العائلي على ما بين 2 و 50 حرفًا.";
+        // } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.nomar)) {
+        // this.errors.nomar = "يرجى إدخال الاسم العائلي باللغة العربية فقط";
+        // } else {
+        // this.errors.nomar = null;
+        // }
+
+        // if (!this.etudiant.prenomar) {
+        // this.errors.prenomar = "الاسم الشخصي مطلوب";
+        // } else if (this.etudiant.prenomar.length < 2 || this.etudiant.prenomar.length > 50) {
+        // this.errors.prenomar = "يجب أن يحتوي الاسم الشخصي على ما بين 2 و 50 حرفًا.";
+        // } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.prenomar)) {
+        // this.errors.prenomar = "يرجى إدخال الاسم الشخصي باللغة العربية فقط";
+        // } else {
+        // this.errors.prenomar = null;
+        // }
+
+        // if (!this.etudiant.datenais) {
+        // this.errors.datenais = "La date de naissance est requis.";
+        // } else {
+        // this.errors.datenais = null;
+        // }
+
+        // if (!this.etudiant.sexe) {
+        // this.errors.sexe = "Le sexe est requis.";
+        // } else {
+        // this.errors.sexe = null;
+        // }
+
+        // if (!this.etudiant.payschamp) {
+        // this.errors.payschamp = "Le nom du pays est requis.";
+        // }else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.payschamp)) {
+        // 	this.errors.payschamp = "Le nom du pays doit être écrit uniquement en français.";
+        // } else if (this.etudiant.payschamp.length < 2 || this.etudiant.payschamp.length > 70) {
+        // this.errors.payschamp = "Le nom du pays doit contenir entre 2 et 70 caractères.";
+        // } else {
+        // this.errors.payschamp = null;
+        // }
+
+        // if (!this.etudiant.villenais) {
+        // this.errors.villenais = "Le nom de la ville est requis.";
+        // }else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.villenais)) {
+        // 	this.errors.villenais = "Le nom de la ville doit être écrit uniquement en français.";
+        // } else if (this.etudiant.villenais.length < 2 || this.etudiant.villenais.length > 70) {
+        // this.errors.villenais = "Le nom de la ville doit contenir entre 2 et 70 caractères.";
+        // } else {
+        // this.errors.villenais = null;
+        // }
+
+        // if (!this.etudiant.villechamp) {
+        // this.errors.villechamp = "مكان الازدياد مطلوب";
+        // } else if (this.etudiant.villechamp.length < 2 || this.etudiant.villechamp.length > 70) {
+        // this.errors.villechamp = "يجب أن يحتوي مكان الازدياد على ما بين 2 و 70 حرفًا.";
+        // } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.villechamp)) {
+        // this.errors.villechamp = "يرجى إدخال مكان الازدياد باللغة العربية فقط";
+        // } else {
+        // this.errors.villechamp = null;
+        // }
+
+        // if (!this.etudiant.adresse) {
+        // 	this.errors.adresse = "L'adresse est requise.";
+        // } else if (/[^A-Za-zÀ-ÿ0-9\s-]/.test(this.etudiant.adresse)) {
+        // 	this.errors.adresse = "L'adresse doit être écrite uniquement en français et peut contenir des chiffres.";
+        // } else if (this.etudiant.adresse.length < 10 || this.etudiant.adresse.length > 250) {
+        // 	this.errors.adresse = "L'adresse doit contenir entre 10 et 250 caractères.";
+        // } else {
+        // 	this.errors.adresse = null;
+        // }
+
         if (!this.etudiant.email) {
           this.errors.email = "L'email est requis.";
         } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,100}$/.test(this.etudiant.email)) {
@@ -22388,178 +22102,51 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
       if (this.currentStep == 2) {
         if (!this.etudiant.serie) {
           this.errors.serie = "Série de bac est requise.";
-        } else if (this.etudiant.serie !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\(\)\-]{2,200}$/.test(this.etudiant.serie)) {
+        } else if (this.etudiant.serie !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s()\/:\-\.]{2,200}$/.test(this.etudiant.serie)) {
           this.errors.serie = "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
         } else {
           this.errors.serie = null;
         }
-        if (!this.etudiant.Anneebac) {
-          this.errors.Anneebac = "Année de bac est requis.";
+        if (!this.etudiant.moyenne_bac) {
+          this.errors.moyenne_bac = "Ce champ est requis.";
+        } else if (!notePattern.test(this.etudiant.moyenne_bac)) {
+          this.errors.moyenne_bac = "Entrez une note valide (exemple: 16 | 16.50).";
         } else {
-          this.errors.Anneebac = null;
+          this.errors.moyenne_bac = null;
         }
-        if (!this.etudiant.dernier_diplome_obtenu) {
-          this.errors.dernier_diplome_obtenu = "Ce champs est requis.";
+        if (!this.etudiant.secteur) {
+          this.errors.secteur = "Ce champ est requis.";
+        } else if (this.etudiant.secteur.length < 2 || this.etudiant.secteur.length > 200) {
+          this.errors.secteur = "Le secteur doit contenir entre 2 et 200 caractères.";
         } else {
-          this.errors.dernier_diplome_obtenu = null;
+          this.errors.secteur = null;
         }
-        if (!this.etudiant.type_diplome_obtenu) {
-          this.errors.type_diplome_obtenu = "Ce champ est requis.";
-        } else if (this.etudiant.type_diplome_obtenu !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\(\)\-]{2,200}$/.test(this.etudiant.type_diplome_obtenu)) {
-          this.errors.type_diplome_obtenu = "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
+        if (!this.etudiant.poste) {
+          this.errors.poste = "Ce champ est requis.";
+        } else if (this.etudiant.poste.length < 2 || this.etudiant.poste.length > 200) {
+          this.errors.poste = "Le poste doit contenir entre 2 et 200 caractères.";
         } else {
-          this.errors.type_diplome_obtenu = null;
+          this.errors.poste = null;
         }
-        if (!this.etudiant.specialitediplome) {
-          this.errors.specialitediplome = "Le spécialité du diplome est requis.";
-        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.specialitediplome)) {
-          this.errors.specialitediplome = "Ce champs doit être écrit uniquement en français.";
-        } else if (this.etudiant.specialitediplome.length < 2 || this.etudiant.specialitediplome.length > 200) {
-          this.errors.specialitediplome = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
-        } else {
-          this.errors.specialitediplome = null;
-        }
-        if (!this.etudiant.ville_etablissement_diplome) {
-          this.errors.ville_etablissement_diplome = "Ce champs est requis.";
-        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.ville_etablissement_diplome)) {
-          this.errors.ville_etablissement_diplome = "Ce champs doit être écrit uniquement en français.";
-        } else if (this.etudiant.ville_etablissement_diplome.length < 2 || this.etudiant.ville_etablissement_diplome.length > 150) {
-          this.errors.ville_etablissement_diplome = "Ce champs doit contenir entre 2 et 150 caractères alphanumériques.";
-        } else {
-          this.errors.ville_etablissement_diplome = null;
-        }
-        if (!this.etudiant.date_optention_diplome) {
-          this.errors.date_optention_diplome = "Ce champs est requis.";
-        } else {
-          this.errors.date_optention_diplome = null;
-        }
-        if (!this.etudiant.fonctionnaire) {
-          this.errors.fonctionnaire = "Ce champ est requis.";
-        } else {
-          this.errors.fonctionnaire = null;
-          // Si "NON" est sélectionné, vider les autres champs
-          if (this.etudiant.fonctionnaire === "NON") {
-            this.etudiant.secteur = "";
-            this.etudiant.nombreannee = "";
-            this.etudiant.poste = "";
-            this.etudiant.lieutravail = "";
-            this.etudiant.villetravail = "";
-            this.errors.secteur = null;
-            this.errors.nombreannee = null;
-            this.errors.poste = null;
-            this.errors.lieutravail = null;
-            this.errors.villetravail = null;
-          }
-        }
-        if (this.etudiant.fonctionnaire === "OUI") {
-          if (!this.etudiant.secteur) {
-            this.errors.secteur = "Ce champ est requis.";
-          } else if (this.etudiant.secteur.length < 2 || this.etudiant.secteur.length > 200) {
-            this.errors.secteur = "Le secteur doit contenir entre 2 et 200 caractères.";
-          } else {
-            this.errors.secteur = null;
-          }
-        }
-        if (this.etudiant.fonctionnaire === "OUI") {
-          if (!this.etudiant.nombreannee) {
-            this.errors.nombreannee = "Ce champ est requis.";
-          } else if (!Number.isInteger(Number(this.etudiant.nombreannee))) {
-            this.errors.nombreannee = "Entrez un nombre entier valide.";
-          } else if (this.etudiant.nombreannee < 0) {
-            this.errors.nombreannee = "Le nombre d'années ne peut pas être négatif.";
-          } else {
-            this.errors.nombreannee = null;
-          }
-        }
-        if (this.etudiant.fonctionnaire === "OUI") {
-          if (!this.etudiant.poste) {
-            this.errors.poste = "Ce champ est requis.";
-          } else if (this.etudiant.poste.length < 2 || this.etudiant.poste.length > 200) {
-            this.errors.poste = "Le poste doit contenir entre 2 et 200 caractères.";
-          } else {
-            this.errors.poste = null;
-          }
-        }
-        if (this.etudiant.fonctionnaire === "OUI") {
-          if (!this.etudiant.lieutravail) {
-            this.errors.lieutravail = "Ce champ est requis.";
-          } else if (this.etudiant.lieutravail.length < 2 || this.etudiant.lieutravail.length > 200) {
-            this.errors.lieutravail = "Le lieu de travail doit contenir entre 2 et 200 caractères.";
-          } else {
-            this.errors.lieutravail = null;
-          }
-        }
-        if (this.etudiant.fonctionnaire === "OUI") {
-          if (!this.etudiant.villetravail) {
-            this.errors.villetravail = "Ce champ est requis.";
-          } else if (this.etudiant.villetravail.length < 2 || this.etudiant.villetravail.length > 200) {
-            this.errors.villetravail = "La ville de travail doit contenir entre 2 et 200 caractères.";
-          } else {
-            this.errors.villetravail = null;
-          }
-        }
+
+        // if (!this.etudiant.lieutravail) {
+        // this.errors.lieutravail = "Ce champ est requis.";
+        // } else if (this.etudiant.lieutravail.length < 2 || this.etudiant.lieutravail.length > 200) {
+        // this.errors.lieutravail = "Le lieu de travail doit contenir entre 2 et 200 caractères.";
+        // } else {
+        // this.errors.lieutravail = null;
+        // }
+
+        // if (!this.etudiant.villetravail) {
+        // this.errors.villetravail = "Ce champ est requis.";
+        // } else if (this.etudiant.villetravail.length < 2 || this.etudiant.villetravail.length > 200) {
+        // this.errors.villetravail = "La ville de travail doit contenir entre 2 et 200 caractères.";
+        // } else {
+        // this.errors.villetravail = null;
+        // }
       }
       if (this.currentStep == 3) {
-        var fileFields = [];
-        if (this.etablissement.show_photo_input_passerelle) {
-          fileFields.push("path_photo");
-        }
-        if (this.etablissement.show_cin_input_passerelle) {
-          fileFields.push("path_cin");
-        }
-        if (this.etablissement.show_bac_input_passerelle) {
-          fileFields.push("path_bac");
-        }
-        if (this.etablissement.show_diplome_deug_input_passerelle) {
-          fileFields.push("path_diplomedeug");
-        }
-        if (this.etablissement.show_attestation_no_emploi_input_passerelle) {
-          fileFields.push("path_attestation_non_emploi");
-        }
-        fileFields.forEach(function (path) {
-          var file = _this3.etudiant[path];
-
-          // Check if a file is selected
-          if (!file || !file.preview) {
-            _this3.errors[path] = "Ce fichier est requis.";
-          } else {
-            // Validate file type (Only images allowed)
-            var allowedTypes = ["image/jpeg", "image/png", "image/jpg"];
-            if (!allowedTypes.includes(file.file.type)) {
-              _this3.errors[path] = "Seules les images (.jpg, .jpeg, .png) sont autorisées.";
-            }
-
-            // Validate file size (Max 300 Ko)
-            var maxSize = 300 * 1024; // 300 Ko in bytes
-            if (file.size > maxSize) {
-              _this3.errors[path] = "Le fichier ne doit pas dépasser 300 Ko.";
-            }
-          }
-        });
-
-        // Validation for CV PDF
-        if (this.etablissement.show_cv_input_passerelle) {
-          var cvFile = this.etudiant["path_cv"];
-          if (!cvFile || !cvFile.preview) {
-            this.errors["path_cv"] = "Le CV est requis.";
-          } else {
-            // Validate file type (Only PDF allowed)
-            if (cvFile.file.type !== "application/pdf") {
-              this.errors["path_cv"] = "Seul le format PDF est autorisé.";
-            }
-
-            // Validate file size (Max 2 MB)
-            var maxCVSize = 2 * 1024 * 1024; // 2 MB in bytes
-            if (cvFile.size > maxCVSize) {
-              this.errors["path_cv"] = "Le fichier ne doit pas dépasser 2 Mo.";
-            }
-          }
-        }
-        console.log(fileFields);
-        console.log(this.errors);
-      }
-      if (this.currentStep == 4) {
-        if (this.etablissement.multiple_choix_filiere_passerelle == 0) {
+        if (this.etablissement.multiple_choix_filiere_master == 0) {
           if (!this.etudiant.filiere) {
             this.errors.filiere = "Le choix d'une seule filière est requis. Veuillez sélectionner une seule filière.";
           } else {
@@ -22583,7 +22170,7 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
           }
         }
       }
-      if (this.currentStep == 5) {
+      if (this.currentStep == 4) {
         if (!this.etudiant.confirmation) {
           this.errors.confirmation = "L'inscription ne peut pas être validée sans confirmation. Veuillez cocher la case pour continuer.";
         } else {
@@ -22595,1359 +22182,13 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
       });
     },
     nextStep: function nextStep() {
-      // if(this.currentStep == 1 || this.currentStep == 2 || this.currentStep == 2){
+      // if(this.currentStep == 1 || this.currentStep == 1 || this.currentStep == 2){
       // 	if (this.currentStep < this.steps.length) {
       // 		this.currentStep++;
       // 		// document.querySelector('.section-title')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       // 	}
       // }
       // else{
-      if (this.validateStepp()) {
-        if (this.currentStep < this.steps.length) {
-          var _document$querySelect;
-          (_document$querySelect = document.querySelector('.section-title')) === null || _document$querySelect === void 0 || _document$querySelect.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-          this.currentStep++;
-        } else {
-          console.log('submit');
-          this.submitForm();
-        }
-      } else {
-        this.$nextTick(function () {
-          var firstErrorField = document.querySelector('.input-error');
-          if (firstErrorField) {
-            firstErrorField.scrollIntoView({
-              behavior: 'smooth',
-              block: 'center'
-            });
-            firstErrorField.focus();
-          }
-        });
-      }
-      // }
-    },
-    prevStep: function prevStep() {
-      if (this.currentStep > 1) {
-        var _document$querySelect2;
-        (_document$querySelect2 = document.querySelector('.section-title')) === null || _document$querySelect2 === void 0 || _document$querySelect2.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-        this.currentStep--;
-      }
-    },
-    clearError: function clearError(field) {
-      this.errors[field] = null;
-    },
-    goToStep: function goToStep(step) {
-      if (step <= this.currentStep) {
-        this.currentStep = step;
-      }
-    },
-    submitForm: function submitForm() {
-      var _this4 = this;
-      return _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var formData, key, fileFields, response, errorMessages;
-        return _regeneratorRuntime().wrap(function _callee$(_context) {
-          while (1) switch (_context.prev = _context.next) {
-            case 0:
-              _this4.loading = true; // Show loading screen
-              _context.prev = 1;
-              if (!_this4.etablissement.show_photo_input_passerelle) {
-                _this4.etudiant.path_photo = null;
-              }
-              if (!_this4.etablissement.show_cin_input_passerelle) {
-                _this4.etudiant.path_cin = null;
-              }
-              if (!_this4.etablissement.show_bac_input_passerelle) {
-                _this4.etudiant.path_bac = null;
-              }
-              if (!_this4.etablissement.show_diplome_deug_input_passerelle) {
-                _this4.etudiant.path_diplomedeug = null;
-              }
-              if (!_this4.etablissement.show_attestation_no_emploi_input_passerelle) {
-                _this4.etudiant.path_attestation_non_emploi = null;
-              }
-              if (!_this4.etablissement.show_cv_input_passerelle) {
-                _this4.etudiant.path_cv = null;
-              }
-              formData = new FormData(); // Append text fields
-              for (key in _this4.etudiant) {
-                if (_this4.etudiant[key] !== null && _this4.etudiant[key] !== undefined && !(_this4.etudiant[key] instanceof File)) {
-                  formData.append(key, _this4.etudiant[key]);
-                }
-              }
-
-              // Append files to FormData
-              fileFields = [];
-              if (_this4.etablissement.show_photo_input_passerelle) {
-                fileFields.push("path_photo");
-              }
-              if (_this4.etablissement.show_cin_input_passerelle) {
-                fileFields.push("path_cin");
-              }
-              if (_this4.etablissement.show_bac_input_passerelle) {
-                fileFields.push("path_bac");
-              }
-              if (_this4.etablissement.show_diplome_deug_input_passerelle) {
-                fileFields.push("path_diplomedeug");
-              }
-              if (_this4.etablissement.show_attestation_no_emploi_input_passerelle) {
-                fileFields.push("path_attestation_non_emploi");
-              }
-              if (_this4.etablissement.show_cv_input_passerelle) {
-                fileFields.push("path_cv");
-              }
-              fileFields.forEach(function (path) {
-                var fileData = _this4.etudiant[path];
-                if (fileData && fileData.file instanceof File) {
-                  formData.append(path, fileData.file, fileData.file.name); // Append the actual file
-                } else {
-                  console.warn("\u26A0\uFE0F File missing or invalid for: ".concat(path));
-                }
-              });
-
-              // Debugging: Log formData entries to the console
-              // for (let pair of formData.entries()) {
-              // 	console.log(pair[0], pair[1]);
-              // }
-
-              // Send form data
-              _context.next = 20;
-              return axios__WEBPACK_IMPORTED_MODULE_3__["default"].post("/api/submit/form/licencexcellence", formData, {
-                headers: {
-                  "Content-Type": "multipart/form-data"
-                }
-              });
-            case 20:
-              response = _context.sent;
-              if (response.data.status == 1) {
-                _this4.successForm = true;
-              } else {
-                _this4.$refs.errorPopup.show("Une erreur au niveau du serveur est survenue.");
-              }
-              _context.next = 28;
-              break;
-            case 24:
-              _context.prev = 24;
-              _context.t0 = _context["catch"](1);
-              console.error("Error submitting form:", _context.t0);
-              if (_context.t0.response && _context.t0.response.data && _context.t0.response.data.errors) {
-                errorMessages = Object.values(_context.t0.response.data.errors).flat();
-                _this4.$refs.errorPopup.show(errorMessages[0]);
-              } else {
-                _this4.$refs.errorPopup.show("Une erreur au niveau du serveur est survenue.");
-              }
-            case 28:
-              _context.prev = 28;
-              _this4.loading = false; // Hide loading screen
-              return _context.finish(28);
-            case 31:
-            case "end":
-              return _context.stop();
-          }
-        }, _callee, null, [[1, 24, 28, 31]]);
-      }))();
-    },
-    togglePassword: function togglePassword() {
-      this.showPassword = !this.showPassword;
-    }
-  },
-  mounted: function mounted() {
-    this.etudiant.CNE = this.cne;
-    this.etudiant.CIN = this.cin;
-    this.serie_bac = this.etablissement.serie_bac;
-    this.etudiant.etablissement_id = this.etablissement.id;
-    this.diplomeBacPlus2 = this.etablissement.diplomebacplus2;
-    // console.log(this.appurl)
-    // console.log(this.cne)
-    // console.log(this.cin)
-    // console.log(this.etablissement)
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsMaster.vue?vue&type=script&lang=js":
-/*!*********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsMaster.vue?vue&type=script&lang=js ***!
-  \*********************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
-/* harmony import */ var _ErrorPopup_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ErrorPopup.vue */ "./resources/js/components/ErrorPopup.vue");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var pdfjs_dist_webpack__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! pdfjs-dist/webpack */ "./node_modules/pdfjs-dist/webpack.mjs");
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
-function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
-function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
-
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['appurl', 'cne', 'cin', 'etablissement', 'filieres'],
-  components: {
-    ErrorPopup: _ErrorPopup_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  data: function data() {
-    return {
-      currentStep: 1,
-      currentField: null,
-      serie_bac: [],
-      diplomeBacPlus2: [],
-      loading: false,
-      successForm: false,
-      showPassword: false,
-      showTooltip: false,
-      pdfUrl: null,
-      steps: [{
-        title: "IDENTITE"
-      }, {
-        title: "INFORMATIONS\nACADEMIQUES"
-      }, {
-        title: "DOCUMENT"
-      }, {
-        title: "CHOIX\nDE FILIERE"
-      }, {
-        title: "CONFIRMATION"
-      }],
-      etudiant: {
-        etablissement_id: "",
-        CNE: "",
-        CIN: "",
-        nom: "",
-        prenom: "",
-        nomar: "",
-        prenomar: "",
-        datenais: "",
-        sexe: "",
-        payschamp: "",
-        villenais: "",
-        villechamp: "",
-        adresse: "",
-        email: "",
-        phone: "",
-        serie: "",
-        //bac
-        Anneebac: "",
-        dernier_diplome_obtenu: "",
-        //Diplome
-        type_diplome_obtenu: "",
-        specialitediplome: "",
-        ville_etablissement_diplome: "",
-        date_optention_diplome: "",
-        fonctionnaire: "",
-        secteur: "",
-        nombreannee: "",
-        poste: "",
-        lieutravail: "",
-        villetravail: "",
-        path_photo: {
-          file: null,
-          preview: null
-        },
-        path_cin: {
-          file: null,
-          preview: null
-        },
-        path_bac: {
-          file: null,
-          preview: null
-        },
-        path_licence: {
-          file: null,
-          preview: null
-        },
-        path_attestation_non_emploi: {
-          file: null,
-          preview: null
-        },
-        path_cv: {
-          file: null,
-          preview: null
-        },
-        filiere: "",
-        filiere_choix_1: "",
-        filiere_choix_2: "",
-        filiere_choix_3: "",
-        confirmation: ""
-      },
-      selectedFiliereChoices: [],
-      errors: {
-        CNE: null,
-        CIN: null,
-        nom: null,
-        prenom: null,
-        nomar: null,
-        prenomar: null,
-        datenais: null,
-        sexe: null,
-        payschamp: null,
-        villenais: null,
-        villechamp: null,
-        adresse: null,
-        email: null,
-        phone: null,
-        serie: null,
-        Anneebac: null,
-        dernier_diplome_obtenu: null,
-        type_diplome_obtenu: null,
-        specialitediplome: null,
-        ville_etablissement_diplome: null,
-        date_optention_diplome: null,
-        fonctionnaire: null,
-        secteur: null,
-        nombreannee: null,
-        poste: null,
-        lieutravail: null,
-        villetravail: null,
-        path_photo: null,
-        path_cin: null,
-        path_bac: null,
-        path_licence: null,
-        path_attestation_non_emploi: null,
-        path_cv: null,
-        filiere: null,
-        filiere_choix_1: null,
-        filiere_choix_2: null,
-        filiere_choix_3: null,
-        confirmation: null
-      },
-      showInputTypeDiplome: false,
-      showInputSerie: false,
-      showNotification: false
-    };
-  },
-  watch: {
-    etudiant: {
-      deep: true,
-      handler: function handler(newVal) {
-        console.log("Updated etudiant data:", newVal);
-      }
-    },
-    "etudiant.CNE": function etudiantCNE(newValue) {
-      if (this.currentField === "CNE") {
-        this.validateStep("CNE");
-      }
-    },
-    "etudiant.CIN": function etudiantCIN(newValue) {
-      if (this.currentField === "CIN") {
-        this.validateStep("CIN");
-      }
-    },
-    "etudiant.nom": function etudiantNom(newValue) {
-      if (this.currentField === "nom") {
-        this.validateStep("nom");
-      }
-    },
-    "etudiant.prenom": function etudiantPrenom(newValue) {
-      if (this.currentField === "prenom") {
-        this.validateStep("prenom");
-      }
-    },
-    "etudiant.nomar": function etudiantNomar(newValue) {
-      if (this.currentField === "nomar") {
-        this.validateStep("nomar");
-      }
-    },
-    "etudiant.prenomar": function etudiantPrenomar(newValue) {
-      if (this.currentField === "prenomar") {
-        this.validateStep("prenomar");
-      }
-    },
-    "etudiant.datenais": function etudiantDatenais(newValue) {
-      if (this.currentField === "datenais") {
-        this.validateStep("datenais");
-      }
-    },
-    "etudiant.sexe": function etudiantSexe(newValue) {
-      if (this.currentField === "sexe") {
-        this.validateStep("sexe");
-      }
-    },
-    "etudiant.payschamp": function etudiantPayschamp(newValue) {
-      if (this.currentField === "payschamp") {
-        this.validateStep("payschamp");
-      }
-    },
-    "etudiant.villenais": function etudiantVillenais(newValue) {
-      if (this.currentField === "villenais") {
-        this.validateStep("villenais");
-      }
-    },
-    "etudiant.villechamp": function etudiantVillechamp(newValue) {
-      if (this.currentField === "villechamp") {
-        this.validateStep("villechamp");
-      }
-    },
-    "etudiant.adresse": function etudiantAdresse(newValue) {
-      if (this.currentField === "adresse") {
-        this.validateStep("adresse");
-      }
-    },
-    "etudiant.email": function etudiantEmail(newValue) {
-      if (this.currentField === "email") {
-        this.validateStep("email");
-      }
-    },
-    "etudiant.phone": function etudiantPhone(newValue) {
-      if (this.currentField === "phone") {
-        this.validateStep("phone");
-      }
-    },
-    "etudiant.serie_bac": function etudiantSerie_bac(newValue) {
-      if (this.currentField === "serie_bac") {
-        this.validateStep("serie_bac");
-      }
-    },
-    "etudiant.Anneebac": function etudiantAnneebac(newValue) {
-      if (this.currentField === "Anneebac") {
-        this.validateStep("Anneebac");
-      }
-    },
-    "etudiant.dernier_diplome_obtenu": function etudiantDernier_diplome_obtenu(newValue) {
-      if (this.currentField === "dernier_diplome_obtenu") {
-        this.validateStep("dernier_diplome_obtenu");
-      }
-    },
-    "etudiant.type_diplome_obtenu": function etudiantType_diplome_obtenu(newValue) {
-      if (this.currentField === "type_diplome_obtenu") {
-        this.validateStep("type_diplome_obtenu");
-      }
-    },
-    "etudiant.specialitediplome": function etudiantSpecialitediplome(newValue) {
-      if (this.currentField === "specialitediplome") {
-        this.validateStep("specialitediplome");
-      }
-    },
-    "etudiant.ville_etablissement_diplome": function etudiantVille_etablissement_diplome(newValue) {
-      if (this.currentField === "ville_etablissement_diplome") {
-        this.validateStep("ville_etablissement_diplome");
-      }
-    },
-    "etudiant.date_optention_diplome": function etudiantDate_optention_diplome(newValue) {
-      if (this.currentField === "date_optention_diplome") {
-        this.validateStep("date_optention_diplome");
-      }
-    },
-    "etudiant.fonctionnaire": function etudiantFonctionnaire(newValue) {
-      if (this.currentField === "fonctionnaire") {
-        this.validateStep("fonctionnaire");
-      }
-    },
-    "etudiant.secteur": function etudiantSecteur(newValue) {
-      if (this.currentField === "secteur") {
-        this.validateStep("secteur");
-      }
-    },
-    "etudiant.nombreannee": function etudiantNombreannee(newValue) {
-      if (this.currentField === "nombreannee") {
-        this.validateStep("nombreannee");
-      }
-    },
-    "etudiant.poste": function etudiantPoste(newValue) {
-      if (this.currentField === "poste") {
-        this.validateStep("poste");
-      }
-    },
-    "etudiant.lieutravail": function etudiantLieutravail(newValue) {
-      if (this.currentField === "lieutravail") {
-        this.validateStep("lieutravail");
-      }
-    },
-    "etudiant.villetravail": function etudiantVilletravail(newValue) {
-      if (this.currentField === "villetravail") {
-        this.validateStep("villetravail");
-      }
-    },
-    selectedFiliereChoices: function selectedFiliereChoices(newVal, oldVal) {
-      this.updateFiliereChoices(newVal);
-    },
-    "etudiant.filiere": function etudiantFiliere(newValue) {
-      if (this.currentField === "filiere") {
-        this.validateStep("filiere");
-      }
-    },
-    "etudiant.filiere_choix_1": function etudiantFiliere_choix_1(newValue) {
-      if (this.currentField === "filiere_choix_1") {
-        this.validateStep("filiere_choix_1");
-      }
-    },
-    "etudiant.filiere_choix_2": function etudiantFiliere_choix_2(newValue) {
-      if (this.currentField === "filiere_choix_2") {
-        this.validateStep("filiere_choix_2");
-      }
-    },
-    "etudiant.filiere_choix_3": function etudiantFiliere_choix_3(newValue) {
-      if (this.currentField === "filiere_choix_3") {
-        this.validateStep("filiere_choix_3");
-      }
-    },
-    "etudiant.confirmation": function etudiantConfirmation(newValue) {
-      if (this.currentField === "confirmation") {
-        this.validateStep("confirmation");
-      }
-    }
-  },
-  methods: {
-    handleSerieChange: function handleSerieChange() {
-      if (this.etudiant.serie === "AUTRES") {
-        this.showInputSerie = true;
-        this.etudiant.serie = "";
-      } else {
-        this.showInputSerie = false;
-        this.validateStep("serie");
-      }
-    },
-    cancelInputSerie: function cancelInputSerie() {
-      this.showInputSerie = false;
-      this.etudiant.serie = "";
-    },
-    handleDiplomeChange: function handleDiplomeChange() {
-      if (this.etudiant.type_diplome_obtenu === "AUTRES") {
-        this.showInputTypeDiplome = true;
-        this.etudiant.type_diplome_obtenu = "";
-      } else {
-        this.showInputTypeDiplome = false;
-        this.validateStep("type_diplome_obtenu");
-      }
-    },
-    cancelInputDiplome: function cancelInputDiplome() {
-      this.showInputTypeDiplome = false;
-      this.etudiant.type_diplome_obtenu = "";
-    },
-    triggerFileInput: function triggerFileInput(refName) {
-      // Check if the reference exists before attempting to click
-      var input = this.$refs[refName];
-      if (input) {
-        input.click();
-      } else {
-        console.error("Reference ".concat(refName, " not found in $refs"));
-      }
-    },
-    // Function to handle file upload and validation
-    handleFileUpload: function handleFileUpload(event, path) {
-      var file = event.target.files[0]; // Obtenir le premier fichier sélectionné
-
-      if (!file) return;
-      var maxSize = 300 * 1024; // 300 KB
-      var allowedTypes = ["image/jpeg", "image/png", "image/jpg"];
-      if (!allowedTypes.includes(file.type)) {
-        this.errors[path] = "Seules les images (.jpg, .jpeg, .png) sont autorisées.";
-        return; // Arrêter l'exécution si le type de fichier n'est pas valide
-      }
-      if (file.size > maxSize) {
-        this.errors[path] = "La taille de l'image ne doit pas dépasser 300 Ko.";
-        return; // Arrêter l'exécution si le fichier est trop volumineux
-      }
-      this.etudiant[path] = file; // Stocker uniquement l'objet fichier
-      this.previewImage(file, path); // Générer un aperçu si nécessaire
-      this.errors[path] = null; // Effacer les erreurs précédentes si le fichier est valide
-    },
-    previewImage: function previewImage(file, path) {
-      var _this = this;
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        // Storing preview along with the file object
-        _this.etudiant[path] = {
-          file: file,
-          // Keep the original file object
-          preview: e.target.result // Store preview separately
-        };
-      };
-      reader.readAsDataURL(file);
-    },
-    // Function to remove the uploaded file and clear input
-    removeFile: function removeFile(path) {
-      console.log("Removing file for ".concat(path));
-      console.log('Current file data:', this.etudiant[path]);
-      if (this.etudiant[path]) {
-        this.etudiant[path] = {
-          file: null,
-          preview: null
-        };
-        console.log('After removal:', this.etudiant[path]);
-      } else {
-        console.error('No file found for', path);
-      }
-    },
-    triggerFileInputPDF: function triggerFileInputPDF() {
-      this.$refs.fileInput.click();
-    },
-    handleFileUploadPDF: function handleFileUploadPDF(event) {
-      var file = event.target.files[0];
-      if (!file) return;
-      var maxSize = 350 * 1024; // 350 KB
-
-      if (file.type !== "application/pdf") {
-        this.errors["path_cv"] = "Veuillez sélectionner un fichier PDF valide.";
-        return;
-      }
-      if (file.size > maxSize) {
-        this.errors["path_cv"] = "La taille du fichier ne doit pas dépasser 350 Ko.";
-        return;
-      }
-      this.pdfUrl = URL.createObjectURL(file);
-      this.etudiant.path_cv = {
-        file: file,
-        preview: this.pdfUrl
-      };
-      this.renderPdf(this.pdfUrl);
-      this.errors["path_cv"] = null; // Effacer les erreurs précédentes si le fichier est valide
-    },
-    renderPdf: function renderPdf(pdfUrl) {
-      var _this2 = this;
-      var loadingTask = pdfjs_dist_webpack__WEBPACK_IMPORTED_MODULE_2__.getDocument(pdfUrl);
-      loadingTask.promise.then(function (pdf) {
-        pdf.getPage(1).then(function (page) {
-          (0,vue__WEBPACK_IMPORTED_MODULE_1__.nextTick)(function () {
-            var canvas = _this2.$refs.pdfCanvas;
-            var container = _this2.$refs.pdfContainer; // Ensure container reference exists
-
-            if (!canvas || !container) {
-              console.error('Canvas element not found!');
-              return;
-            }
-            var context = canvas.getContext('2d');
-            var viewport = page.getViewport({
-              scale: 1
-            });
-
-            // Use container width to adjust scale dynamically
-            var containerWidth = container.getBoundingClientRect().width;
-            var scale = containerWidth / viewport.width;
-            var scaledViewport = page.getViewport({
-              scale: scale
-            });
-
-            // Set canvas size dynamically
-            canvas.width = scaledViewport.width;
-            canvas.height = scaledViewport.height;
-            var renderContext = {
-              canvasContext: context,
-              viewport: scaledViewport
-            };
-            page.render(renderContext).promise.then(function () {
-              // Ensure full top view on all devices
-              container.scrollTop = 0;
-            });
-          });
-        });
-      });
-    },
-    removeFilePDF: function removeFilePDF() {
-      this.pdfUrl = null;
-      this.$refs.fileInput.value = null;
-    },
-    toggleSelection: function toggleSelection(id) {
-      this.etudiant.filiere = id;
-    },
-    choixText: function choixText(index) {
-      var labels = ["Premier Choix", "Deuxième Choix", "Troisième Choix"];
-      return labels[index - 1] || "";
-    },
-    updateFiliereChoices: function updateFiliereChoices(selectedFiliereChoices) {
-      this.etudiant.filiere_choix_1 = selectedFiliereChoices[0] || "";
-      this.etudiant.filiere_choix_2 = selectedFiliereChoices[1] || "";
-      this.etudiant.filiere_choix_3 = selectedFiliereChoices[2] || "";
-    },
-    validateStep: function validateStep(field) {
-      if (this.currentStep == 1) {
-        switch (field) {
-          case "CNE":
-            if (!this.etudiant.CNE) {
-              this.errors.CNE = "Le CNE est requis.";
-            } else if (!/^[A-Za-z0-9]{7,20}$/.test(this.etudiant.CNE)) {
-              this.errors.CNE = "Le CNE doit contenir entre 7 et 20 caractères alphanumériques.";
-            } else {
-              this.errors.CNE = null;
-            }
-            break;
-          case "CIN":
-            if (!this.etudiant.CIN) {
-              this.errors.CIN = "Le CIN est requis.";
-            } else if (!/^[A-Za-z0-9]{3,10}$/.test(this.etudiant.CIN)) {
-              this.errors.CIN = "Le CIN doit contenir entre 3 et 10 caractères alphanumériques.";
-            } else {
-              this.errors.CIN = null;
-            }
-            break;
-          case "nom":
-            if (!this.etudiant.nom) {
-              this.errors.nom = "Le nom est requis.";
-            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.nom)) {
-              this.errors.nom = "Le nom doit être écrit uniquement en français.";
-            } else if (this.etudiant.nom.length < 2 || this.etudiant.nom.length > 50) {
-              this.errors.nom = "Le nom doit contenir entre 2 et 50 caractères";
-            } else {
-              this.errors.nom = null;
-            }
-            break;
-          case "prenom":
-            if (!this.etudiant.prenom) {
-              this.errors.prenom = "Le prénom est requis.";
-            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.prenom)) {
-              this.errors.prenom = "Le prenom doit être écrit uniquement en français.";
-            } else if (this.etudiant.prenom.length < 2 || this.etudiant.prenom.length > 50) {
-              this.errors.prenom = "Le prenom doit contenir entre 2 et 50 caractères";
-            } else {
-              this.errors.prenom = null;
-            }
-            break;
-          case "nomar":
-            if (!this.etudiant.nomar) {
-              this.errors.nomar = "الاسم العائلي مطلوب";
-            } else if (this.etudiant.nomar.length < 2 || this.etudiant.nomar.length > 50) {
-              this.errors.nomar = "يجب أن يحتوي الاسم العائلي على ما بين 2 و 50 حرفًا.";
-            } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.nomar)) {
-              this.errors.nomar = "يرجى إدخال الاسم العائلي باللغة العربية فقط";
-            } else {
-              this.errors.nomar = null;
-            }
-            break;
-          case "prenomar":
-            if (!this.etudiant.prenomar) {
-              this.errors.prenomar = "الاسم الشخصي مطلوب";
-            } else if (this.etudiant.prenomar.length < 2 || this.etudiant.prenomar.length > 50) {
-              this.errors.prenomar = "يجب أن يحتوي الاسم الشخصي على ما بين 2 و 50 حرفًا.";
-            } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.prenomar)) {
-              this.errors.prenomar = "يرجى إدخال الاسم الشخصي باللغة العربية فقط";
-            } else {
-              this.errors.prenomar = null;
-            }
-            break;
-          case "datenais":
-            if (!this.etudiant.datenais) {
-              this.errors.datenais = "La date de naissance est requis.";
-            } else {
-              this.errors.datenais = null;
-            }
-            break;
-          case "sexe":
-            if (!this.etudiant.sexe) {
-              this.errors.sexe = "Le sexe est requis.";
-            } else {
-              this.errors.sexe = null;
-            }
-            break;
-          case "payschamp":
-            if (!this.etudiant.payschamp) {
-              this.errors.payschamp = "Le nom du pays est requis.";
-            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.payschamp)) {
-              this.errors.payschamp = "Le nom du pays doit être écrit uniquement en français.";
-            } else if (this.etudiant.payschamp.length < 2 || this.etudiant.payschamp.length > 70) {
-              this.errors.payschamp = "Le nom du pays doit contenir entre 2 et 70 caractères.";
-            } else {
-              this.errors.payschamp = null;
-            }
-            break;
-          case "villenais":
-            if (!this.etudiant.villenais) {
-              this.errors.villenais = "Le nom de la ville est requis.";
-            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.villenais)) {
-              this.errors.villenais = "Le nom de la ville doit être écrit uniquement en français.";
-            } else if (this.etudiant.villenais.length < 2 || this.etudiant.villenais.length > 70) {
-              this.errors.villenais = "Le nom de la ville doit contenir entre 2 et 70 caractères.";
-            } else {
-              this.errors.villenais = null;
-            }
-            break;
-          case "villechamp":
-            if (!this.etudiant.villechamp) {
-              this.errors.villechamp = "مكان الازدياد مطلوب";
-            } else if (this.etudiant.villechamp.length < 2 || this.etudiant.villechamp.length > 70) {
-              this.errors.villechamp = "يجب أن يحتوي مكان الازدياد على ما بين 2 و 70 حرفًا.";
-            } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.villechamp)) {
-              this.errors.villechamp = "يرجى إدخال مكان الازدياد باللغة العربية فقط";
-            } else {
-              this.errors.villechamp = null;
-            }
-            break;
-          case "adresse":
-            if (!this.etudiant.adresse) {
-              this.errors.adresse = "L'adresse est requise.";
-            } else if (/[^A-Za-zÀ-ÿ0-9\s-]/.test(this.etudiant.adresse)) {
-              this.errors.adresse = "L'adresse doit être écrite uniquement en français et peut contenir des chiffres.";
-            } else if (this.etudiant.adresse.length < 10 || this.etudiant.adresse.length > 250) {
-              this.errors.adresse = "L'adresse doit contenir entre 10 et 250 caractères.";
-            } else {
-              this.errors.adresse = null;
-            }
-            break;
-          case "email":
-            if (!this.etudiant.email) {
-              this.errors.email = "L'email est requis.";
-            } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,100}$/.test(this.etudiant.email)) {
-              this.errors.email = "Veuillez saisir une adresse email valide, en évitant les espaces au début et à la fin.";
-            } else {
-              this.errors.email = null;
-            }
-            break;
-          case "phone":
-            if (!this.etudiant.phone) {
-              this.errors.phone = "Le téléphone est requis.";
-            } else if (!/^\d{10}$/.test(this.etudiant.phone)) {
-              this.errors.phone = "Le téléphone doit contenir exactement 10 chiffres, en évitant les espaces au début et à la fin.";
-            } else {
-              this.errors.phone = null;
-            }
-            break;
-          default:
-            console.warn("No validation rule defined for the field: ".concat(field));
-        }
-      }
-      if (this.currentStep == 2) {
-        var notePattern = /^(?:\d{1,2}(?:\.\d{1,2})?)$/;
-        switch (field) {
-          case "serie":
-            if (!this.etudiant.serie) {
-              this.errors.serie = "Série de bac est requise.";
-            } else if (this.etudiant.serie !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\(\)\-]{2,200}$/.test(this.etudiant.serie)) {
-              this.errors.serie = "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
-            } else {
-              this.errors.serie = null;
-            }
-            break;
-          case "Anneebac":
-            if (!this.etudiant.Anneebac) {
-              this.errors.Anneebac = "Année de bac est requis.";
-            } else {
-              this.errors.Anneebac = null;
-            }
-            break;
-          case "dernier_diplome_obtenu":
-            if (!this.etudiant.dernier_diplome_obtenu) {
-              this.errors.dernier_diplome_obtenu = "Ce champs est requis.";
-            } else {
-              this.errors.dernier_diplome_obtenu = null;
-            }
-            break;
-          case "type_diplome_obtenu":
-            if (!this.etudiant.type_diplome_obtenu) {
-              this.errors.type_diplome_obtenu = "Ce champ est requis.";
-            } else if (this.etudiant.type_diplome_obtenu !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\(\)\-]{2,200}$/.test(this.etudiant.type_diplome_obtenu)) {
-              this.errors.type_diplome_obtenu = "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
-            } else {
-              this.errors.type_diplome_obtenu = null;
-            }
-            break;
-          case "specialitediplome":
-            if (!this.etudiant.specialitediplome) {
-              this.errors.specialitediplome = "Le spécialité du diplome est requis.";
-            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.specialitediplome)) {
-              this.errors.specialitediplome = "Ce champs doit être écrit uniquement en français.";
-            } else if (this.etudiant.specialitediplome.length < 2 || this.etudiant.specialitediplome.length > 200) {
-              this.errors.specialitediplome = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
-            } else {
-              this.errors.specialitediplome = null;
-            }
-            break;
-
-          // case "etblsmtdeug":
-          // 	if (!this.etudiant.etblsmtdeug) {
-          // 	this.errors.etblsmtdeug = "Ce champs est requis.";
-          // 	}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.etblsmtdeug)) {
-          // 	this.errors.etblsmtdeug = "Ce champs doit être écrit uniquement en français.";
-          // 	} else if (this.etudiant.etblsmtdeug.length < 2 || this.etudiant.etblsmtdeug.length > 200) {
-          // 	this.errors.etblsmtdeug = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
-          // 	} else {
-          // 	this.errors.etblsmtdeug = null;
-          // 	}
-          // 	break;
-
-          case "ville_etablissement_diplome":
-            if (!this.etudiant.ville_etablissement_diplome) {
-              this.errors.ville_etablissement_diplome = "Ce champs est requis.";
-            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.ville_etablissement_diplome)) {
-              this.errors.ville_etablissement_diplome = "Ce champs doit être écrit uniquement en français.";
-            } else if (this.etudiant.ville_etablissement_diplome.length < 2 || this.etudiant.ville_etablissement_diplome.length > 150) {
-              this.errors.ville_etablissement_diplome = "Ce champs doit contenir entre 2 et 150 caractères alphanumériques.";
-            } else {
-              this.errors.ville_etablissement_diplome = null;
-            }
-            break;
-          case "date_optention_diplome":
-            if (!this.etudiant.date_optention_diplome) {
-              this.errors.date_optention_diplome = "Ce champs est requis.";
-            } else {
-              this.errors.date_optention_diplome = null;
-            }
-            break;
-          case "fonctionnaire":
-            if (!this.etudiant.fonctionnaire) {
-              this.errors.fonctionnaire = "Ce champ est requis.";
-            } else {
-              this.errors.fonctionnaire = null;
-              // Si "NON" est sélectionné, vider les autres champs
-              if (this.etudiant.fonctionnaire === "NON") {
-                this.etudiant.secteur = "";
-                this.etudiant.nombreannee = "";
-                this.etudiant.poste = "";
-                this.etudiant.lieutravail = "";
-                this.etudiant.villetravail = "";
-                this.errors.secteur = null;
-                this.errors.nombreannee = null;
-                this.errors.poste = null;
-                this.errors.lieutravail = null;
-                this.errors.villetravail = null;
-              }
-            }
-            break;
-          case "secteur":
-            if (this.etudiant.fonctionnaire === "OUI") {
-              if (!this.etudiant.secteur) {
-                this.errors.secteur = "Ce champ est requis.";
-              } else if (this.etudiant.secteur.length < 2 || this.etudiant.secteur.length > 200) {
-                this.errors.secteur = "Le secteur doit contenir entre 2 et 200 caractères.";
-              } else {
-                this.errors.secteur = null;
-              }
-            }
-            break;
-          case "nombreannee":
-            if (this.etudiant.fonctionnaire === "OUI") {
-              if (!this.etudiant.nombreannee) {
-                this.errors.nombreannee = "Ce champ est requis.";
-              } else if (!Number.isInteger(Number(this.etudiant.nombreannee))) {
-                this.errors.nombreannee = "Entrez un nombre entier valide.";
-              } else if (this.etudiant.nombreannee < 0) {
-                this.errors.nombreannee = "Le nombre d'années ne peut pas être négatif.";
-              } else {
-                this.errors.nombreannee = null;
-              }
-            }
-            break;
-          case "poste":
-            if (this.etudiant.fonctionnaire === "OUI") {
-              if (!this.etudiant.poste) {
-                this.errors.poste = "Ce champ est requis.";
-              } else if (this.etudiant.poste.length < 2 || this.etudiant.poste.length > 200) {
-                this.errors.poste = "Le poste doit contenir entre 2 et 200 caractères.";
-              } else {
-                this.errors.poste = null;
-              }
-            }
-            break;
-          case "lieutravail":
-            if (this.etudiant.fonctionnaire === "OUI") {
-              if (!this.etudiant.lieutravail) {
-                this.errors.lieutravail = "Ce champ est requis.";
-              } else if (this.etudiant.lieutravail.length < 2 || this.etudiant.lieutravail.length > 200) {
-                this.errors.lieutravail = "Le lieu de travail doit contenir entre 2 et 200 caractères.";
-              } else {
-                this.errors.lieutravail = null;
-              }
-            }
-            break;
-          case "villetravail":
-            if (this.etudiant.fonctionnaire === "OUI") {
-              if (!this.etudiant.villetravail) {
-                this.errors.villetravail = "Ce champ est requis.";
-              } else if (this.etudiant.villetravail.length < 2 || this.etudiant.villetravail.length > 200) {
-                this.errors.villetravail = "La ville de travail doit contenir entre 2 et 200 caractères.";
-              } else {
-                this.errors.villetravail = null;
-              }
-            }
-            break;
-          case "type_bac":
-            if (!this.etudiant.type_bac) {
-              this.errors.type_bac = "Veuillez sélectionner ce champs.";
-            } else {
-              this.errors.type_bac = null;
-            }
-            break;
-        }
-      }
-      if (this.currentStep == 3) {
-        //empty
-      }
-      if (this.currentStep == 4) {
-        if (this.etablissement.multiple_choix_filiere_master == 0) {
-          switch (field) {
-            case "filiere":
-              if (!this.etudiant.filiere) {
-                this.errors.filiere = "Le choix d'une seule filière est requis. Veuillez sélectionner une seule filière.";
-              } else {
-                this.errors.filiere = null;
-              }
-              break;
-            default:
-              break;
-          }
-        } else {
-          switch (field) {
-            case "filiere_choix_1":
-              if (!this.etudiant.filiere_choix_1) {
-                this.errors.filiere_choix_1 = "Le choix de trois filières est requis. Veuillez sélectionner trois filières.";
-              } else {
-                this.errors.filiere_choix_1 = null;
-              }
-              break;
-            case "filiere_choix_2":
-              if (!this.etudiant.filiere_choix_2) {
-                this.errors.filiere_choix_2 = "Il vous reste deux filières à sélectionner.";
-              } else {
-                this.errors.filiere_choix_2 = null;
-              }
-              break;
-            case "filiere_choix_3":
-              if (!this.etudiant.filiere_choix_3) {
-                this.errors.filiere_choix_3 = "Il vous reste une seule filière à sélectionner.";
-              } else {
-                this.errors.filiere_choix_3 = null;
-              }
-              break;
-            default:
-              break;
-          }
-        }
-      }
-      if (this.currentStep == 5) {
-        //empty
-      }
-    },
-    validateStepp: function validateStepp() {
-      var _this3 = this;
-      this.errors = {};
-      if (this.currentStep == 1) {
-        if (!this.etudiant.CNE) {
-          this.errors.CNE = "Le CNE est requis.";
-        } else if (!/^[A-Za-z0-9]{7,20}$/.test(this.etudiant.CNE)) {
-          this.errors.CNE = "Le CNE doit contenir entre 7 et 20 caractères alphanumériques.";
-        } else {
-          this.errors.CNE = null;
-        }
-        if (!this.etudiant.CIN) {
-          this.errors.CIN = "Le CIN est requis.";
-        } else if (!/^[A-Za-z0-9]{3,10}$/.test(this.etudiant.CIN)) {
-          this.errors.CIN = "Le CIN doit contenir entre 3 et 10 caractères alphanumériques.";
-        } else {
-          this.errors.CIN = null;
-        }
-        if (!this.etudiant.nom) {
-          this.errors.nom = "Le nom est requis.";
-        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.nom)) {
-          this.errors.nom = "Le nom doit être écrit uniquement en français.";
-        } else if (this.etudiant.nom.length < 2 || this.etudiant.nom.length > 50) {
-          this.errors.nom = "Le nom doit contenir entre 2 et 50 caractères";
-        } else {
-          this.errors.nom = null;
-        }
-        if (!this.etudiant.prenom) {
-          this.errors.prenom = "Le prénom est requis.";
-        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.prenom)) {
-          this.errors.prenom = "Le prenom doit être écrit uniquement en français.";
-        } else if (this.etudiant.prenom.length < 2 || this.etudiant.prenom.length > 50) {
-          this.errors.prenom = "Le prenom doit contenir entre 2 et 50 caractères";
-        } else {
-          this.errors.prenom = null;
-        }
-        if (!this.etudiant.nomar) {
-          this.errors.nomar = "الاسم العائلي مطلوب";
-        } else if (this.etudiant.nomar.length < 2 || this.etudiant.nomar.length > 50) {
-          this.errors.nomar = "يجب أن يحتوي الاسم العائلي على ما بين 2 و 50 حرفًا.";
-        } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.nomar)) {
-          this.errors.nomar = "يرجى إدخال الاسم العائلي باللغة العربية فقط";
-        } else {
-          this.errors.nomar = null;
-        }
-        if (!this.etudiant.prenomar) {
-          this.errors.prenomar = "الاسم الشخصي مطلوب";
-        } else if (this.etudiant.prenomar.length < 2 || this.etudiant.prenomar.length > 50) {
-          this.errors.prenomar = "يجب أن يحتوي الاسم الشخصي على ما بين 2 و 50 حرفًا.";
-        } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.prenomar)) {
-          this.errors.prenomar = "يرجى إدخال الاسم الشخصي باللغة العربية فقط";
-        } else {
-          this.errors.prenomar = null;
-        }
-        if (!this.etudiant.datenais) {
-          this.errors.datenais = "La date de naissance est requis.";
-        } else {
-          this.errors.datenais = null;
-        }
-        if (!this.etudiant.sexe) {
-          this.errors.sexe = "Le sexe est requis.";
-        } else {
-          this.errors.sexe = null;
-        }
-        if (!this.etudiant.payschamp) {
-          this.errors.payschamp = "Le nom du pays est requis.";
-        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.payschamp)) {
-          this.errors.payschamp = "Le nom du pays doit être écrit uniquement en français.";
-        } else if (this.etudiant.payschamp.length < 2 || this.etudiant.payschamp.length > 70) {
-          this.errors.payschamp = "Le nom du pays doit contenir entre 2 et 70 caractères.";
-        } else {
-          this.errors.payschamp = null;
-        }
-        if (!this.etudiant.villenais) {
-          this.errors.villenais = "Le nom de la ville est requis.";
-        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.villenais)) {
-          this.errors.villenais = "Le nom de la ville doit être écrit uniquement en français.";
-        } else if (this.etudiant.villenais.length < 2 || this.etudiant.villenais.length > 70) {
-          this.errors.villenais = "Le nom de la ville doit contenir entre 2 et 70 caractères.";
-        } else {
-          this.errors.villenais = null;
-        }
-        if (!this.etudiant.villechamp) {
-          this.errors.villechamp = "مكان الازدياد مطلوب";
-        } else if (this.etudiant.villechamp.length < 2 || this.etudiant.villechamp.length > 70) {
-          this.errors.villechamp = "يجب أن يحتوي مكان الازدياد على ما بين 2 و 70 حرفًا.";
-        } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.villechamp)) {
-          this.errors.villechamp = "يرجى إدخال مكان الازدياد باللغة العربية فقط";
-        } else {
-          this.errors.villechamp = null;
-        }
-        if (!this.etudiant.adresse) {
-          this.errors.adresse = "L'adresse est requise.";
-        } else if (/[^A-Za-zÀ-ÿ0-9\s-]/.test(this.etudiant.adresse)) {
-          this.errors.adresse = "L'adresse doit être écrite uniquement en français et peut contenir des chiffres.";
-        } else if (this.etudiant.adresse.length < 10 || this.etudiant.adresse.length > 250) {
-          this.errors.adresse = "L'adresse doit contenir entre 10 et 250 caractères.";
-        } else {
-          this.errors.adresse = null;
-        }
-        if (!this.etudiant.email) {
-          this.errors.email = "L'email est requis.";
-        } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,100}$/.test(this.etudiant.email)) {
-          this.errors.email = "Veuillez saisir une adresse email valide, en évitant les espaces au début et à la fin.";
-        } else {
-          this.errors.email = null;
-        }
-        if (!this.etudiant.phone) {
-          this.errors.phone = "Le téléphone est requis.";
-        } else if (!/^\d{10}$/.test(this.etudiant.phone)) {
-          this.errors.phone = "Le téléphone doit contenir exactement 10 chiffres, en évitant les espaces au début et à la fin.";
-        } else {
-          this.errors.phone = null;
-        }
-      }
-      if (this.currentStep == 2) {
-        if (!this.etudiant.serie) {
-          this.errors.serie = "Série de bac est requise.";
-        } else if (this.etudiant.serie !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\(\)\-]{2,200}$/.test(this.etudiant.serie)) {
-          this.errors.serie = "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
-        } else {
-          this.errors.serie = null;
-        }
-        if (!this.etudiant.Anneebac) {
-          this.errors.Anneebac = "Année de bac est requis.";
-        } else {
-          this.errors.Anneebac = null;
-        }
-        if (!this.etudiant.dernier_diplome_obtenu) {
-          this.errors.dernier_diplome_obtenu = "Ce champs est requis.";
-        } else {
-          this.errors.dernier_diplome_obtenu = null;
-        }
-        if (!this.etudiant.type_diplome_obtenu) {
-          this.errors.type_diplome_obtenu = "Ce champ est requis.";
-        } else if (this.etudiant.type_diplome_obtenu !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\(\)\-]{2,200}$/.test(this.etudiant.type_diplome_obtenu)) {
-          this.errors.type_diplome_obtenu = "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
-        } else {
-          this.errors.type_diplome_obtenu = null;
-        }
-        if (!this.etudiant.specialitediplome) {
-          this.errors.specialitediplome = "Le spécialité du diplome est requis.";
-        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.specialitediplome)) {
-          this.errors.specialitediplome = "Ce champs doit être écrit uniquement en français.";
-        } else if (this.etudiant.specialitediplome.length < 2 || this.etudiant.specialitediplome.length > 200) {
-          this.errors.specialitediplome = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
-        } else {
-          this.errors.specialitediplome = null;
-        }
-        if (!this.etudiant.ville_etablissement_diplome) {
-          this.errors.ville_etablissement_diplome = "Ce champs est requis.";
-        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.ville_etablissement_diplome)) {
-          this.errors.ville_etablissement_diplome = "Ce champs doit être écrit uniquement en français.";
-        } else if (this.etudiant.ville_etablissement_diplome.length < 2 || this.etudiant.ville_etablissement_diplome.length > 150) {
-          this.errors.ville_etablissement_diplome = "Ce champs doit contenir entre 2 et 150 caractères alphanumériques.";
-        } else {
-          this.errors.ville_etablissement_diplome = null;
-        }
-        if (!this.etudiant.date_optention_diplome) {
-          this.errors.date_optention_diplome = "Ce champs est requis.";
-        } else {
-          this.errors.date_optention_diplome = null;
-        }
-        if (!this.etudiant.fonctionnaire) {
-          this.errors.fonctionnaire = "Ce champ est requis.";
-        } else {
-          this.errors.fonctionnaire = null;
-          // Si "NON" est sélectionné, vider les autres champs
-          if (this.etudiant.fonctionnaire === "NON") {
-            this.etudiant.secteur = "";
-            this.etudiant.nombreannee = "";
-            this.etudiant.poste = "";
-            this.etudiant.lieutravail = "";
-            this.etudiant.villetravail = "";
-            this.errors.secteur = null;
-            this.errors.nombreannee = null;
-            this.errors.poste = null;
-            this.errors.lieutravail = null;
-            this.errors.villetravail = null;
-          }
-        }
-        if (this.etudiant.fonctionnaire === "OUI") {
-          if (!this.etudiant.secteur) {
-            this.errors.secteur = "Ce champ est requis.";
-          } else if (this.etudiant.secteur.length < 2 || this.etudiant.secteur.length > 200) {
-            this.errors.secteur = "Le secteur doit contenir entre 2 et 200 caractères.";
-          } else {
-            this.errors.secteur = null;
-          }
-        }
-        if (this.etudiant.fonctionnaire === "OUI") {
-          if (!this.etudiant.nombreannee) {
-            this.errors.nombreannee = "Ce champ est requis.";
-          } else if (!Number.isInteger(Number(this.etudiant.nombreannee))) {
-            this.errors.nombreannee = "Entrez un nombre entier valide.";
-          } else if (this.etudiant.nombreannee < 0) {
-            this.errors.nombreannee = "Le nombre d'années ne peut pas être négatif.";
-          } else {
-            this.errors.nombreannee = null;
-          }
-        }
-        if (this.etudiant.fonctionnaire === "OUI") {
-          if (!this.etudiant.poste) {
-            this.errors.poste = "Ce champ est requis.";
-          } else if (this.etudiant.poste.length < 2 || this.etudiant.poste.length > 200) {
-            this.errors.poste = "Le poste doit contenir entre 2 et 200 caractères.";
-          } else {
-            this.errors.poste = null;
-          }
-        }
-        if (this.etudiant.fonctionnaire === "OUI") {
-          if (!this.etudiant.lieutravail) {
-            this.errors.lieutravail = "Ce champ est requis.";
-          } else if (this.etudiant.lieutravail.length < 2 || this.etudiant.lieutravail.length > 200) {
-            this.errors.lieutravail = "Le lieu de travail doit contenir entre 2 et 200 caractères.";
-          } else {
-            this.errors.lieutravail = null;
-          }
-        }
-        if (this.etudiant.fonctionnaire === "OUI") {
-          if (!this.etudiant.villetravail) {
-            this.errors.villetravail = "Ce champ est requis.";
-          } else if (this.etudiant.villetravail.length < 2 || this.etudiant.villetravail.length > 200) {
-            this.errors.villetravail = "La ville de travail doit contenir entre 2 et 200 caractères.";
-          } else {
-            this.errors.villetravail = null;
-          }
-        }
-      }
-      if (this.currentStep == 3) {
-        var fileFields = [];
-        if (this.etablissement.show_photo_input_master) {
-          fileFields.push("path_photo");
-        }
-        if (this.etablissement.show_cin_input_master) {
-          fileFields.push("path_cin");
-        }
-        if (this.etablissement.show_bac_input_master) {
-          fileFields.push("path_bac");
-        }
-        if (this.etablissement.show_licence_input_master) {
-          fileFields.push("path_licence");
-        }
-        if (this.etablissement.show_attestation_no_emploi_input_master) {
-          fileFields.push("path_attestation_non_emploi");
-        }
-        fileFields.forEach(function (path) {
-          var file = _this3.etudiant[path];
-
-          // Check if a file is selected
-          if (!file || !file.preview) {
-            _this3.errors[path] = "Ce fichier est requis.";
-          } else {
-            // Validate file type (Only images allowed)
-            var allowedTypes = ["image/jpeg", "image/png", "image/jpg"];
-            if (!allowedTypes.includes(file.file.type)) {
-              _this3.errors[path] = "Seules les images (.jpg, .jpeg, .png) sont autorisées.";
-            }
-
-            // Validate file size (Max 300 Ko)
-            var maxSize = 300 * 1024; // 300 Ko in bytes
-            if (file.size > maxSize) {
-              _this3.errors[path] = "Le fichier ne doit pas dépasser 300 Ko.";
-            }
-          }
-        });
-
-        // Validation for CV PDF
-        if (this.etablissement.show_cv_input_master) {
-          var cvFile = this.etudiant["path_cv"];
-          if (!cvFile || !cvFile.preview) {
-            this.errors["path_cv"] = "Le CV est requis.";
-          } else {
-            // Validate file type (Only PDF allowed)
-            if (cvFile.file.type !== "application/pdf") {
-              this.errors["path_cv"] = "Seul le format PDF est autorisé.";
-            }
-
-            // Validate file size (Max 2 MB)
-            var maxCVSize = 2 * 1024 * 1024; // 2 MB in bytes
-            if (cvFile.size > maxCVSize) {
-              this.errors["path_cv"] = "Le fichier ne doit pas dépasser 2 Mo.";
-            }
-          }
-        }
-        console.log(fileFields);
-        console.log(this.errors);
-      }
-      if (this.currentStep == 4) {
-        if (this.etablissement.multiple_choix_filiere_master == 0) {
-          if (!this.etudiant.filiere) {
-            this.errors.filiere = "Le choix d'une seule filière est requis. Veuillez sélectionner une seule filière.";
-          } else {
-            this.errors.filiere = null;
-          }
-        } else {
-          if (!this.etudiant.filiere_choix_1) {
-            this.errors.filiere_choix_1 = "Le choix de trois filières est requis. Veuillez sélectionner trois filières.";
-          } else {
-            this.errors.filiere_choix_1 = null;
-          }
-          if (!this.etudiant.filiere_choix_2) {
-            this.errors.filiere_choix_2 = "Le choix de trois filières est requis. Veuillez sélectionner trois filières.";
-          } else {
-            this.errors.filiere_choix_2 = null;
-          }
-          if (!this.etudiant.filiere_choix_3) {
-            this.errors.filiere_choix_3 = "Le choix de trois filières est requis. Veuillez sélectionner trois filières.";
-          } else {
-            this.errors.filiere_choix_3 = null;
-          }
-        }
-      }
-      if (this.currentStep == 5) {
-        if (!this.etudiant.confirmation) {
-          this.errors.confirmation = "L'inscription ne peut pas être validée sans confirmation. Veuillez cocher la case pour continuer.";
-        } else {
-          this.errors.confirmation = null;
-        }
-      }
-      return !Object.values(this.errors).some(function (error) {
-        return error !== null;
-      });
-    },
-    nextStep: function nextStep() {
-      /*if(this.currentStep == 1 || this.currentStep == 1 || this.currentStep == 2){
-      	if (this.currentStep < this.steps.length) {
-      		this.currentStep++;
-      		// document.querySelector('.section-title')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      	}
-      }
-      else{*/
       if (this.validateStepp()) {
         if (this.currentStep < this.steps.length) {
           var _document$querySelect;
@@ -23993,113 +22234,73 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
       }
     },
     submitForm: function submitForm() {
-      var _this4 = this;
+      var _this = this;
       return _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var formData, key, fileFields, response, errorMessages;
+        var formData, key, fileFields, response, email, CIN, errorMessages;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              _this4.loading = true; // Show loading screen
+              _this.loading = true; // Show loading screen
               _context.prev = 1;
-              if (!_this4.etablissement.show_photo_input_master) {
-                _this4.etudiant.path_photo = null;
-              }
-              if (!_this4.etablissement.show_cin_input_master) {
-                _this4.etudiant.path_cin = null;
-              }
-              if (!_this4.etablissement.show_bac_input_master) {
-                _this4.etudiant.path_bac = null;
-              }
-              if (!_this4.etablissement.show_licence_input_master) {
-                _this4.etudiant.path_licence = null;
-              }
-              if (!_this4.etablissement.show_attestation_no_emploi_input_master) {
-                _this4.etudiant.path_attestation_non_emploi = null;
-              }
-              if (!_this4.etablissement.show_cv_input_master) {
-                _this4.etudiant.path_cv = null;
-              }
-              if (_this4.etudiant.type_bac === "bac+3") {
-                _this4.etudiant.path_note7 = null;
-                _this4.etudiant.path_note8 = null;
-              }
               formData = new FormData(); // Append text fields
-              for (key in _this4.etudiant) {
-                if (_this4.etudiant[key] !== null && _this4.etudiant[key] !== undefined && !(_this4.etudiant[key] instanceof File)) {
-                  formData.append(key, _this4.etudiant[key]);
+              for (key in _this.etudiant) {
+                if (_this.etudiant[key] !== null && _this.etudiant[key] !== undefined && !(_this.etudiant[key] instanceof File)) {
+                  formData.append(key, _this.etudiant[key]);
                 }
               }
 
               // Append files to FormData
-              fileFields = [];
-              if (_this4.etablissement.show_photo_input_master) {
-                fileFields.push("path_photo");
-              }
-              if (_this4.etablissement.show_cin_input_master) {
-                fileFields.push("path_cin");
-              }
-              if (_this4.etablissement.show_bac_input_master) {
-                fileFields.push("path_bac");
-              }
-              if (_this4.etablissement.show_licence_input_master) {
-                fileFields.push("path_licence");
-              }
-              if (_this4.etablissement.show_attestation_no_emploi_input_master) {
-                fileFields.push("path_attestation_non_emploi");
-              }
-              if (_this4.etablissement.show_cv_input_master) {
-                fileFields.push("path_cv");
-              }
-              fileFields.forEach(function (path) {
-                console.log(path);
-                var fileData = _this4.etudiant[path];
-                if (fileData && fileData.file instanceof File) {
-                  formData.append(path, fileData.file, fileData.file.name); // Append the actual file
-                } else {
-                  console.warn("\u26A0\uFE0F File missing or invalid for: ".concat(path));
-                }
-              });
-
-              // Debugging: Log formData entries to the console
-              // for (let pair of formData.entries()) {
-              // 	console.log(pair[0], pair[1]);
-              // }
-
-              // Send form data
-              _context.next = 21;
-              return axios__WEBPACK_IMPORTED_MODULE_3__["default"].post("/api/submit/form/master", formData, {
+              fileFields = []; // Send form data
+              _context.next = 7;
+              return axios__WEBPACK_IMPORTED_MODULE_3__["default"].post("/api/submit/form/bachelier", formData, {
                 headers: {
                   "Content-Type": "multipart/form-data"
                 }
               });
-            case 21:
+            case 7:
               response = _context.sent;
-              if (response.data.status == 1) {
-                _this4.successForm = true;
-              } else {
-                _this4.$refs.errorPopup.show("Une erreur au niveau du serveur est survenue.");
+              if (!(response.data.status === 2)) {
+                _context.next = 12;
+                break;
               }
-              _context.next = 29;
+              _this.loading = false;
+              _this.$refs.errorPopup.show(response.data.message);
+              return _context.abrupt("return");
+            case 12:
+              if (response.data.status === 1) {
+                // Mettre à jour les infos pour affichage dans la modale
+                email = _this.etudiant.email;
+                CIN = _this.etudiant.CIN;
+                _this.etudiant = {
+                  email: email,
+                  CIN: CIN,
+                  exists: response.data.user.exists
+                };
+                _this.successForm = true;
+              } else {
+                alert("\u26A0\uFE0F ".concat(response.data.message));
+              }
+              _context.next = 19;
               break;
-            case 25:
-              _context.prev = 25;
+            case 15:
+              _context.prev = 15;
               _context.t0 = _context["catch"](1);
               console.error("Error submitting form:", _context.t0);
               if (_context.t0.response && _context.t0.response.data && _context.t0.response.data.errors) {
                 errorMessages = Object.values(_context.t0.response.data.errors).flat();
-                _this4.$refs.errorPopup.show(errorMessages[0]);
+                _this.$refs.errorPopup.show(errorMessages[0]);
               } else {
-                _this4.$refs.errorPopup.show("Une erreur au niveau du serveur est survenue.");
+                _this.$refs.errorPopup.show("Une erreur au niveau du serveur est survenue.");
               }
-            case 29:
-              _context.prev = 29;
-              _this4.loading = false; // Hide loading screen
-              return _context.finish(29);
-            case 32:
+            case 19:
+              _context.prev = 19;
+              _this.loading = false; // Hide loading screen
+              return _context.finish(19);
+            case 22:
             case "end":
               return _context.stop();
           }
-        }, _callee, null, [[1, 25, 29, 32]]);
+        }, _callee, null, [[1, 15, 19, 22]]);
       }))();
     },
     togglePassword: function togglePassword() {
@@ -24107,9 +22308,2081 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
     }
   },
   mounted: function mounted() {
-    this.etudiant.CNE = this.cne;
-    this.etudiant.CIN = this.cin;
     this.serie_bac = this.etablissement.serie_bac;
+    this.etudiant.etablissement_id = this.etablissement.id;
+    this.etudiant.filiere = this.filiere.id;
+    this.etudiant.etablissement_id = this.etablissement.id;
+    this.diplomeBacPlus2 = this.etablissement.diplomebacplus2;
+    // console.log(this.appurl)
+    // console.log(this.cne)
+    // console.log(this.cin)
+    // console.log(this.etablissement)
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsExcellence.vue?vue&type=script&lang=js":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsExcellence.vue?vue&type=script&lang=js ***!
+  \*************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+/* harmony import */ var _ErrorPopup_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ErrorPopup.vue */ "./resources/js/components/ErrorPopup.vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var pdfjs_dist_webpack__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! pdfjs-dist/webpack */ "./node_modules/pdfjs-dist/webpack.mjs");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['appurl', 'etablissement', 'filieres', 'filiere'],
+  components: {
+    ErrorPopup: _ErrorPopup_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      currentStep: 1,
+      currentField: null,
+      serie_bac: [],
+      diplomeBacPlus2: [],
+      loading: false,
+      successForm: false,
+      showPassword: false,
+      showTooltip: false,
+      pdfUrl: null,
+      steps: [{
+        title: "IDENTITE"
+      }, {
+        title: "INFORMATIONS\nACADEMIQUES"
+      }, {
+        title: "CHOIX\nDE FILIERE"
+      }, {
+        title: "CONFIRMATION"
+      }],
+      etudiant: _defineProperty(_defineProperty({
+        etablissement_id: "",
+        CNE: "",
+        CIN: "",
+        nom: "",
+        prenom: "",
+        // nomar: "",
+        // prenomar: "",
+        // datenais: "",
+        // sexe: "",
+        // payschamp: "",
+        // villenais: "",
+        // villechamp: "",
+        // adresse: "",
+
+        email: "",
+        phone: "",
+        serie: "",
+        //bac
+
+        diplomedeug: "",
+        specialitedeug: "",
+        etblsmtdeug: "",
+        date_obtention_deug: "",
+        mentiondeug: "",
+        moyenne_deug: "",
+        secteur: "",
+        poste: "",
+        // lieutravail: "",
+        // villetravail: "",
+
+        filiere: "",
+        filiere_choix_1: "",
+        filiere_choix_2: "",
+        filiere_choix_3: ""
+      }, "etablissement_id", ""), "confirmation", ""),
+      selectedFiliereChoices: [],
+      errors: {
+        CNE: null,
+        CIN: null,
+        nom: null,
+        prenom: null,
+        //   nomar: null,
+        //   prenomar: null,
+        //   datenais: null,
+        //   sexe: null,
+        //   payschamp: null,
+        //   villenais: null,
+        //   villechamp: null,
+        //   adresse: null,
+
+        email: null,
+        phone: null,
+        serie: null,
+        diplomedeug: null,
+        specialitedeug: null,
+        etblsmtdeug: null,
+        date_obtention_deug: null,
+        mentiondeug: null,
+        moyenne_deug: null,
+        secteur: null,
+        nombreannee: null,
+        poste: null,
+        //   lieutravail: null,
+        //   villetravail: null,
+
+        filiere: null,
+        filiere_choix_1: null,
+        filiere_choix_2: null,
+        filiere_choix_3: null,
+        confirmation: null
+      },
+      showInputDiplome: false,
+      showInputSerie: false,
+      showNotification: false
+    };
+  },
+  watch: {
+    etudiant: {
+      deep: true,
+      handler: function handler(newVal) {
+        console.log("Updated etudiant data:", newVal);
+      }
+    },
+    "etudiant.CNE": function etudiantCNE(newValue) {
+      if (this.currentField === "CNE") {
+        this.validateStep("CNE");
+      }
+    },
+    "etudiant.CIN": function etudiantCIN(newValue) {
+      if (this.currentField === "CIN") {
+        this.validateStep("CIN");
+      }
+    },
+    "etudiant.nom": function etudiantNom(newValue) {
+      if (this.currentField === "nom") {
+        this.validateStep("nom");
+      }
+    },
+    "etudiant.prenom": function etudiantPrenom(newValue) {
+      if (this.currentField === "prenom") {
+        this.validateStep("prenom");
+      }
+    },
+    "etudiant.nomar": function etudiantNomar(newValue) {
+      if (this.currentField === "nomar") {
+        this.validateStep("nomar");
+      }
+    },
+    "etudiant.prenomar": function etudiantPrenomar(newValue) {
+      if (this.currentField === "prenomar") {
+        this.validateStep("prenomar");
+      }
+    },
+    "etudiant.datenais": function etudiantDatenais(newValue) {
+      if (this.currentField === "datenais") {
+        this.validateStep("datenais");
+      }
+    },
+    "etudiant.sexe": function etudiantSexe(newValue) {
+      if (this.currentField === "sexe") {
+        this.validateStep("sexe");
+      }
+    },
+    "etudiant.payschamp": function etudiantPayschamp(newValue) {
+      if (this.currentField === "payschamp") {
+        this.validateStep("payschamp");
+      }
+    },
+    "etudiant.villenais": function etudiantVillenais(newValue) {
+      if (this.currentField === "villenais") {
+        this.validateStep("villenais");
+      }
+    },
+    "etudiant.villechamp": function etudiantVillechamp(newValue) {
+      if (this.currentField === "villechamp") {
+        this.validateStep("villechamp");
+      }
+    },
+    "etudiant.adresse": function etudiantAdresse(newValue) {
+      if (this.currentField === "adresse") {
+        this.validateStep("adresse");
+      }
+    },
+    "etudiant.email": function etudiantEmail(newValue) {
+      if (this.currentField === "email") {
+        this.validateStep("email");
+      }
+    },
+    "etudiant.phone": function etudiantPhone(newValue) {
+      if (this.currentField === "phone") {
+        this.validateStep("phone");
+      }
+    },
+    "etudiant.serie_bac": function etudiantSerie_bac(newValue) {
+      if (this.currentField === "serie_bac") {
+        this.validateStep("serie_bac");
+      }
+    },
+    "etudiant.typelicence": function etudiantTypelicence(newValue) {
+      if (this.currentField === "typelicence") {
+        this.validateStep("typelicence");
+      }
+    },
+    "etudiant.mentionlp": function etudiantMentionlp(newValue) {
+      if (this.currentField === "mentionlp") {
+        this.validateStep("mentionlp");
+      }
+    },
+    "etudiant.specialitelp": function etudiantSpecialitelp(newValue) {
+      if (this.currentField === "specialitelp") {
+        this.validateStep("specialitelp");
+      }
+    },
+    "etudiant.etblsmtLp": function etudiantEtblsmtLp(newValue) {
+      if (this.currentField === "etblsmtLp") {
+        this.validateStep("etblsmtLp");
+      }
+    },
+    "etudiant.ville_etablissement_licence": function etudiantVille_etablissement_licence(newValue) {
+      if (this.currentField === "ville_etablissement_licence") {
+        this.validateStep("ville_etablissement_licence");
+      }
+    },
+    "etudiant.date_obtention_LP": function etudiantDate_obtention_LP(newValue) {
+      if (this.currentField === "date_obtention_LP") {
+        this.validateStep("date_obtention_LP");
+      }
+    },
+    "etudiant.secteur": function etudiantSecteur(newValue) {
+      if (this.currentField === "secteur") {
+        this.validateStep("secteur");
+      }
+    },
+    "etudiant.poste": function etudiantPoste(newValue) {
+      if (this.currentField === "poste") {
+        this.validateStep("poste");
+      }
+    },
+    "etudiant.lieutravail": function etudiantLieutravail(newValue) {
+      if (this.currentField === "lieutravail") {
+        this.validateStep("lieutravail");
+      }
+    },
+    "etudiant.villetravail": function etudiantVilletravail(newValue) {
+      if (this.currentField === "villetravail") {
+        this.validateStep("villetravail");
+      }
+    },
+    selectedFiliereChoices: function selectedFiliereChoices(newVal, oldVal) {
+      this.updateFiliereChoices(newVal);
+    },
+    "etudiant.filiere": function etudiantFiliere(newValue) {
+      if (this.currentField === "filiere") {
+        this.validateStep("filiere");
+      }
+    },
+    "etudiant.filiere_choix_1": function etudiantFiliere_choix_1(newValue) {
+      if (this.currentField === "filiere_choix_1") {
+        this.validateStep("filiere_choix_1");
+      }
+    },
+    "etudiant.filiere_choix_2": function etudiantFiliere_choix_2(newValue) {
+      if (this.currentField === "filiere_choix_2") {
+        this.validateStep("filiere_choix_2");
+      }
+    },
+    "etudiant.filiere_choix_3": function etudiantFiliere_choix_3(newValue) {
+      if (this.currentField === "filiere_choix_3") {
+        this.validateStep("filiere_choix_3");
+      }
+    },
+    "etudiant.confirmation": function etudiantConfirmation(newValue) {
+      if (this.currentField === "confirmation") {
+        this.validateStep("confirmation");
+      }
+    }
+  },
+  methods: {
+    handleSerieChange: function handleSerieChange() {
+      if (this.etudiant.serie === "AUTRES") {
+        this.showInputSerie = true;
+        this.etudiant.serie = "";
+      } else {
+        this.showInputSerie = false;
+        this.validateStep("serie");
+      }
+    },
+    cancelInputSerie: function cancelInputSerie() {
+      this.showInputSerie = false;
+      this.etudiant.serie = "";
+    },
+    handleDiplomeChange: function handleDiplomeChange() {
+      if (this.etudiant.diplomedeug === "AUTRES") {
+        this.showInputDiplome = true;
+        this.etudiant.diplomedeug = "";
+      } else {
+        this.showInputDiplome = false;
+        this.validateStep("diplomedeug");
+      }
+    },
+    cancelInputDiplome: function cancelInputDiplome() {
+      this.showInputDiplome = false;
+      this.etudiant.diplomedeug = "";
+    },
+    toggleSelection: function toggleSelection(id) {
+      this.etudiant.filiere = id;
+    },
+    choixText: function choixText(index) {
+      var labels = ["Premier Choix", "Deuxième Choix", "Troisième Choix"];
+      return labels[index - 1] || "";
+    },
+    updateFiliereChoices: function updateFiliereChoices(selectedFiliereChoices) {
+      this.etudiant.filiere_choix_1 = selectedFiliereChoices[0] || "";
+      this.etudiant.filiere_choix_2 = selectedFiliereChoices[1] || "";
+      this.etudiant.filiere_choix_3 = selectedFiliereChoices[2] || "";
+    },
+    validateStep: function validateStep(field) {
+      if (this.currentStep == 1) {
+        switch (field) {
+          case "CNE":
+            if (!this.etudiant.CNE) {
+              this.errors.CNE = "Le CNE est requis.";
+            } else if (!/^[A-Za-z0-9]{7,20}$/.test(this.etudiant.CNE)) {
+              this.errors.CNE = "Le CNE doit contenir entre 7 et 20 caractères alphanumériques.";
+            } else {
+              this.errors.CNE = null;
+            }
+            break;
+          case "CIN":
+            if (!this.etudiant.CIN) {
+              this.errors.CIN = "Le CIN est requis.";
+            } else if (!/^[A-Za-z0-9]{3,10}$/.test(this.etudiant.CIN)) {
+              this.errors.CIN = "Le CIN doit contenir entre 3 et 10 caractères alphanumériques.";
+            } else {
+              this.errors.CIN = null;
+            }
+            break;
+          case "nom":
+            if (!this.etudiant.nom) {
+              this.errors.nom = "Le nom est requis.";
+            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.nom)) {
+              this.errors.nom = "Le nom doit être écrit uniquement en français.";
+            } else if (this.etudiant.nom.length < 2 || this.etudiant.nom.length > 50) {
+              this.errors.nom = "Le nom doit contenir entre 2 et 50 caractères";
+            } else {
+              this.errors.nom = null;
+            }
+            break;
+          case "prenom":
+            if (!this.etudiant.prenom) {
+              this.errors.prenom = "Le prénom est requis.";
+            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.prenom)) {
+              this.errors.prenom = "Le prenom doit être écrit uniquement en français.";
+            } else if (this.etudiant.prenom.length < 2 || this.etudiant.prenom.length > 50) {
+              this.errors.prenom = "Le prenom doit contenir entre 2 et 50 caractères";
+            } else {
+              this.errors.prenom = null;
+            }
+            break;
+
+          // case "nomar":
+          // 	if (!this.etudiant.nomar) {
+          // 	this.errors.nomar = "الاسم العائلي مطلوب";
+          // 	} else if (this.etudiant.nomar.length < 2 || this.etudiant.nomar.length > 50) {
+          // 	this.errors.nomar = "يجب أن يحتوي الاسم العائلي على ما بين 2 و 50 حرفًا.";
+          // 	} else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.nomar)) {
+          // 	this.errors.nomar = "يرجى إدخال الاسم العائلي باللغة العربية فقط";
+          // 	} else {
+          // 	this.errors.nomar = null;
+          // 	}
+          // 	break;
+
+          // case "prenomar":
+          // 	if (!this.etudiant.prenomar) {
+          // 	this.errors.prenomar = "الاسم الشخصي مطلوب";
+          // 	} else if (this.etudiant.prenomar.length < 2 || this.etudiant.prenomar.length > 50) {
+          // 	this.errors.prenomar = "يجب أن يحتوي الاسم الشخصي على ما بين 2 و 50 حرفًا.";
+          // 	} else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.prenomar)) {
+          // 	this.errors.prenomar = "يرجى إدخال الاسم الشخصي باللغة العربية فقط";
+          // 	} else {
+          // 	this.errors.prenomar = null;
+          // 	}
+
+          // 	break;
+
+          // case "datenais":
+          // 	if (!this.etudiant.datenais) {
+          // 	this.errors.datenais = "La date de naissance est requis.";
+          // 	} else {
+          // 	this.errors.datenais = null;
+          // 	}
+          // 	break;
+
+          // case "sexe":
+          // 	if (!this.etudiant.sexe) {
+          // 	this.errors.sexe = "Le sexe est requis.";
+          // 	} else {
+          // 	this.errors.sexe = null;
+          // 	}
+          // 	break;
+
+          // case "payschamp":
+          // 	if (!this.etudiant.payschamp) {
+          // 	this.errors.payschamp = "Le nom du pays est requis.";
+          // 	}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.payschamp)) {
+          // 		this.errors.payschamp = "Le nom du pays doit être écrit uniquement en français.";
+          // 	} else if (this.etudiant.payschamp.length < 2 || this.etudiant.payschamp.length > 70) {
+          // 	this.errors.payschamp = "Le nom du pays doit contenir entre 2 et 70 caractères.";
+          // 	} else {
+          // 	this.errors.payschamp = null;
+          // 	}
+          // 	break;
+
+          // case "villenais":
+          // 	if (!this.etudiant.villenais) {
+          // 	this.errors.villenais = "Le nom de la ville est requis.";
+          // 	}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.villenais)) {
+          // 		this.errors.villenais = "Le nom de la ville doit être écrit uniquement en français.";
+          // 	} else if (this.etudiant.villenais.length < 2 || this.etudiant.villenais.length > 70) {
+          // 	this.errors.villenais = "Le nom de la ville doit contenir entre 2 et 70 caractères.";
+          // 	} else {
+          // 	this.errors.villenais = null;
+          // 	}
+          // 	break;
+
+          // case "villechamp":
+          // 	if (!this.etudiant.villechamp) {
+          // 	this.errors.villechamp = "مكان الازدياد مطلوب";
+          // 	} else if (this.etudiant.villechamp.length < 2 || this.etudiant.villechamp.length > 70) {
+          // 	this.errors.villechamp = "يجب أن يحتوي مكان الازدياد على ما بين 2 و 70 حرفًا.";
+          // 	} else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.villechamp)) {
+          // 	this.errors.villechamp = "يرجى إدخال مكان الازدياد باللغة العربية فقط";
+          // 	} else {
+          // 	this.errors.villechamp = null;
+          // 	}
+          // 	break;
+
+          // case "adresse":
+          // if (!this.etudiant.adresse) {
+          // 	this.errors.adresse = "L'adresse est requise.";
+          // } else if (/[^A-Za-zÀ-ÿ0-9\s-]/.test(this.etudiant.adresse)) {
+          // 	this.errors.adresse = "L'adresse doit être écrite uniquement en français et peut contenir des chiffres.";
+          // } else if (this.etudiant.adresse.length < 10 || this.etudiant.adresse.length > 250) {
+          // 	this.errors.adresse = "L'adresse doit contenir entre 10 et 250 caractères.";
+          // } else {
+          // 	this.errors.adresse = null;
+          // }
+          // 	break;
+
+          case "email":
+            if (!this.etudiant.email) {
+              this.errors.email = "L'email est requis.";
+            } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,100}$/.test(this.etudiant.email)) {
+              this.errors.email = "Veuillez saisir une adresse email valide, en évitant les espaces au début et à la fin.";
+            } else {
+              this.errors.email = null;
+            }
+            break;
+          case "phone":
+            if (!this.etudiant.phone) {
+              this.errors.phone = "Le téléphone est requis.";
+            } else if (!/^\d{10}$/.test(this.etudiant.phone)) {
+              this.errors.phone = "Le téléphone doit contenir exactement 10 chiffres, en évitant les espaces au début et à la fin.";
+            } else {
+              this.errors.phone = null;
+            }
+            break;
+          default:
+            console.warn("No validation rule defined for the field: ".concat(field));
+        }
+      }
+      if (this.currentStep == 2) {
+        var notePattern = /^(?:\d{1,2}(?:\.\d{1,2})?)$/;
+        switch (field) {
+          case "serie":
+            if (!this.etudiant.serie) {
+              this.errors.serie = "Série de bac est requise.";
+            } else if (this.etudiant.serie !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s()\/:\-\.]{2,200}$/.test(this.etudiant.serie)) {
+              this.errors.serie = "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
+            } else {
+              this.errors.serie = null;
+            }
+            break;
+          case "diplomedeug":
+            if (!this.etudiant.diplomedeug) {
+              this.errors.diplomedeug = "Diplôme Bac+2 est requis.";
+            } else if (this.etudiant.diplomedeug !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\(\)\-]{2,200}$/.test(this.etudiant.diplomedeug)) {
+              this.errors.diplomedeug = "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
+            } else {
+              this.errors.diplomedeug = null;
+            }
+            break;
+          case "mentiondeug":
+            if (!this.etudiant.mentiondeug) {
+              this.errors.mentiondeug = "Mention de bac +2 est requis.";
+            } else {
+              this.errors.mentiondeug = null;
+            }
+            break;
+          case "specialitedeug":
+            if (!this.etudiant.specialitedeug) {
+              this.errors.specialitedeug = "Le spécialité du diplome est requis.";
+            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.specialitedeug)) {
+              this.errors.specialitedeug = "Ce champs doit être écrit uniquement en français.";
+            } else if (this.etudiant.specialitedeug.length < 2 || this.etudiant.specialitedeug.length > 200) {
+              this.errors.specialitedeug = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
+            } else {
+              this.errors.specialitedeug = null;
+            }
+            break;
+          case "etblsmtdeug":
+            if (!this.etudiant.etblsmtdeug) {
+              this.errors.etblsmtdeug = "Ce champs est requis.";
+            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.etblsmtdeug)) {
+              this.errors.etblsmtdeug = "Ce champs doit être écrit uniquement en français.";
+            } else if (this.etudiant.etblsmtdeug.length < 2 || this.etudiant.etblsmtdeug.length > 200) {
+              this.errors.etblsmtdeug = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
+            } else {
+              this.errors.etblsmtdeug = null;
+            }
+            break;
+          case "ville_etablissement_deug":
+            if (!this.etudiant.ville_etablissement_deug) {
+              this.errors.ville_etablissement_deug = "Ce champs est requis.";
+            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.ville_etablissement_deug)) {
+              this.errors.ville_etablissement_deug = "Ce champs doit être écrit uniquement en français.";
+            } else if (this.etudiant.ville_etablissement_deug.length < 2 || this.etudiant.ville_etablissement_deug.length > 150) {
+              this.errors.ville_etablissement_deug = "Ce champs doit contenir entre 2 et 150 caractères alphanumériques.";
+            } else {
+              this.errors.ville_etablissement_deug = null;
+            }
+            break;
+          case "date_obtention_deug":
+            if (!this.etudiant.date_obtention_deug) {
+              this.errors.date_obtention_deug = "Ce champs est requis.";
+            } else {
+              this.errors.date_obtention_deug = null;
+            }
+            break;
+          case "moyenne_deug":
+            if (!this.etudiant.moyenne_deug) {
+              this.errors.moyenne_deug = "Ce champ est requis.";
+            } else if (!notePattern.test(this.etudiant.moyenne_deug)) {
+              this.errors.moyenne_deug = "Entrez une note valide (exemple: 16 | 16.50).";
+            } else {
+              this.errors.moyenne_deug = null;
+            }
+            break;
+          case "secteur":
+            if (!this.etudiant.secteur) {
+              this.errors.secteur = "Ce champ est requis.";
+            } else if (this.etudiant.secteur.length < 2 || this.etudiant.secteur.length > 200) {
+              this.errors.secteur = "Le secteur doit contenir entre 2 et 200 caractères.";
+            } else {
+              this.errors.secteur = null;
+            }
+            break;
+          case "poste":
+            if (!this.etudiant.poste) {
+              this.errors.poste = "Ce champ est requis.";
+            } else if (this.etudiant.poste.length < 2 || this.etudiant.poste.length > 200) {
+              this.errors.poste = "Le poste doit contenir entre 2 et 200 caractères.";
+            } else {
+              this.errors.poste = null;
+            }
+            break;
+
+          // case "lieutravail":
+          // 	if (!this.etudiant.lieutravail) {
+          // 	this.errors.lieutravail = "Ce champ est requis.";
+          // 	} else if (this.etudiant.lieutravail.length < 2 || this.etudiant.lieutravail.length > 200) {
+          // 	this.errors.lieutravail = "Le lieu de travail doit contenir entre 2 et 200 caractères.";
+          // 	} else {
+          // 	this.errors.lieutravail = null;
+          // 	}
+          // 	break;
+
+          // case "villetravail":
+          // 	if (!this.etudiant.villetravail) {
+          // 	this.errors.villetravail = "Ce champ est requis.";
+          // 	} else if (this.etudiant.villetravail.length < 2 || this.etudiant.villetravail.length > 200) {
+          // 	this.errors.villetravail = "La ville de travail doit contenir entre 2 et 200 caractères.";
+          // 	} else {
+          // 	this.errors.villetravail = null;
+          // 	}
+          // 	break;
+        }
+      }
+      if (this.currentStep == 3) {
+        if (this.etablissement.multiple_choix_filiere_master == 0) {
+          switch (field) {
+            case "filiere":
+              if (!this.etudiant.filiere) {
+                this.errors.filiere = "Le choix d'une seule filière est requis. Veuillez sélectionner une seule filière.";
+              } else {
+                this.errors.filiere = null;
+              }
+              break;
+            default:
+              break;
+          }
+        } else {
+          switch (field) {
+            case "filiere_choix_1":
+              if (!this.etudiant.filiere_choix_1) {
+                this.errors.filiere_choix_1 = "Le choix de trois filières est requis. Veuillez sélectionner trois filières.";
+              } else {
+                this.errors.filiere_choix_1 = null;
+              }
+              break;
+            case "filiere_choix_2":
+              if (!this.etudiant.filiere_choix_2) {
+                this.errors.filiere_choix_2 = "Il vous reste deux filières à sélectionner.";
+              } else {
+                this.errors.filiere_choix_2 = null;
+              }
+              break;
+            case "filiere_choix_3":
+              if (!this.etudiant.filiere_choix_3) {
+                this.errors.filiere_choix_3 = "Il vous reste une seule filière à sélectionner.";
+              } else {
+                this.errors.filiere_choix_3 = null;
+              }
+              break;
+            default:
+              break;
+          }
+        }
+      }
+      if (this.currentStep == 4) {
+        //empty
+      }
+    },
+    validateStepp: function validateStepp() {
+      this.errors = {};
+      var notePattern = /^(?:\d{1,2}(?:\.\d{1,2})?)$/;
+      if (this.currentStep == 1) {
+        if (!this.etudiant.CNE) {
+          this.errors.CNE = "Le CNE est requis.";
+        } else if (!/^[A-Za-z0-9]{7,20}$/.test(this.etudiant.CNE)) {
+          this.errors.CNE = "Le CNE doit contenir entre 7 et 20 caractères alphanumériques.";
+        } else {
+          this.errors.CNE = null;
+        }
+        if (!this.etudiant.CIN) {
+          this.errors.CIN = "Le CIN est requis.";
+        } else if (!/^[A-Za-z0-9]{3,10}$/.test(this.etudiant.CIN)) {
+          this.errors.CIN = "Le CIN doit contenir entre 3 et 10 caractères alphanumériques.";
+        } else {
+          this.errors.CIN = null;
+        }
+        if (!this.etudiant.nom) {
+          this.errors.nom = "Le nom est requis.";
+        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.nom)) {
+          this.errors.nom = "Le nom doit être écrit uniquement en français.";
+        } else if (this.etudiant.nom.length < 2 || this.etudiant.nom.length > 50) {
+          this.errors.nom = "Le nom doit contenir entre 2 et 50 caractères";
+        } else {
+          this.errors.nom = null;
+        }
+        if (!this.etudiant.prenom) {
+          this.errors.prenom = "Le prénom est requis.";
+        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.prenom)) {
+          this.errors.prenom = "Le prenom doit être écrit uniquement en français.";
+        } else if (this.etudiant.prenom.length < 2 || this.etudiant.prenom.length > 50) {
+          this.errors.prenom = "Le prenom doit contenir entre 2 et 50 caractères";
+        } else {
+          this.errors.prenom = null;
+        }
+
+        // if (!this.etudiant.nomar) {
+        // this.errors.nomar = "الاسم العائلي مطلوب";
+        // } else if (this.etudiant.nomar.length < 2 || this.etudiant.nomar.length > 50) {
+        // this.errors.nomar = "يجب أن يحتوي الاسم العائلي على ما بين 2 و 50 حرفًا.";
+        // } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.nomar)) {
+        // this.errors.nomar = "يرجى إدخال الاسم العائلي باللغة العربية فقط";
+        // } else {
+        // this.errors.nomar = null;
+        // }
+
+        // if (!this.etudiant.prenomar) {
+        // this.errors.prenomar = "الاسم الشخصي مطلوب";
+        // } else if (this.etudiant.prenomar.length < 2 || this.etudiant.prenomar.length > 50) {
+        // this.errors.prenomar = "يجب أن يحتوي الاسم الشخصي على ما بين 2 و 50 حرفًا.";
+        // } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.prenomar)) {
+        // this.errors.prenomar = "يرجى إدخال الاسم الشخصي باللغة العربية فقط";
+        // } else {
+        // this.errors.prenomar = null;
+        // }
+
+        // if (!this.etudiant.datenais) {
+        // this.errors.datenais = "La date de naissance est requis.";
+        // } else {
+        // this.errors.datenais = null;
+        // }
+
+        // if (!this.etudiant.sexe) {
+        // this.errors.sexe = "Le sexe est requis.";
+        // } else {
+        // this.errors.sexe = null;
+        // }
+
+        // if (!this.etudiant.payschamp) {
+        // this.errors.payschamp = "Le nom du pays est requis.";
+        // }else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.payschamp)) {
+        // 	this.errors.payschamp = "Le nom du pays doit être écrit uniquement en français.";
+        // } else if (this.etudiant.payschamp.length < 2 || this.etudiant.payschamp.length > 70) {
+        // this.errors.payschamp = "Le nom du pays doit contenir entre 2 et 70 caractères.";
+        // } else {
+        // this.errors.payschamp = null;
+        // }
+
+        // if (!this.etudiant.villenais) {
+        // this.errors.villenais = "Le nom de la ville est requis.";
+        // }else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.villenais)) {
+        // 	this.errors.villenais = "Le nom de la ville doit être écrit uniquement en français.";
+        // } else if (this.etudiant.villenais.length < 2 || this.etudiant.villenais.length > 70) {
+        // this.errors.villenais = "Le nom de la ville doit contenir entre 2 et 70 caractères.";
+        // } else {
+        // this.errors.villenais = null;
+        // }
+
+        // if (!this.etudiant.villechamp) {
+        // this.errors.villechamp = "مكان الازدياد مطلوب";
+        // } else if (this.etudiant.villechamp.length < 2 || this.etudiant.villechamp.length > 70) {
+        // this.errors.villechamp = "يجب أن يحتوي مكان الازدياد على ما بين 2 و 70 حرفًا.";
+        // } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.villechamp)) {
+        // this.errors.villechamp = "يرجى إدخال مكان الازدياد باللغة العربية فقط";
+        // } else {
+        // this.errors.villechamp = null;
+        // }
+
+        // if (!this.etudiant.adresse) {
+        // 	this.errors.adresse = "L'adresse est requise.";
+        // } else if (/[^A-Za-zÀ-ÿ0-9\s-]/.test(this.etudiant.adresse)) {
+        // 	this.errors.adresse = "L'adresse doit être écrite uniquement en français et peut contenir des chiffres.";
+        // } else if (this.etudiant.adresse.length < 10 || this.etudiant.adresse.length > 250) {
+        // 	this.errors.adresse = "L'adresse doit contenir entre 10 et 250 caractères.";
+        // } else {
+        // 	this.errors.adresse = null;
+        // }
+
+        if (!this.etudiant.email) {
+          this.errors.email = "L'email est requis.";
+        } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,100}$/.test(this.etudiant.email)) {
+          this.errors.email = "Veuillez saisir une adresse email valide, en évitant les espaces au début et à la fin.";
+        } else {
+          this.errors.email = null;
+        }
+        if (!this.etudiant.phone) {
+          this.errors.phone = "Le téléphone est requis.";
+        } else if (!/^\d{10}$/.test(this.etudiant.phone)) {
+          this.errors.phone = "Le téléphone doit contenir exactement 10 chiffres, en évitant les espaces au début et à la fin.";
+        } else {
+          this.errors.phone = null;
+        }
+      }
+      if (this.currentStep == 2) {
+        if (!this.etudiant.serie) {
+          this.errors.serie = "Série de bac est requise.";
+        } else if (this.etudiant.serie !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s()\/:\-\.]{2,200}$/.test(this.etudiant.serie)) {
+          this.errors.serie = "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
+        } else {
+          this.errors.serie = null;
+        }
+        if (!this.etudiant.diplomedeug) {
+          this.errors.diplomedeug = "Diplôme Bac+2 est requis.";
+        } else if (this.etudiant.diplomedeug !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\(\)\-]{2,200}$/.test(this.etudiant.diplomedeug)) {
+          this.errors.diplomedeug = "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
+        } else {
+          this.errors.diplomedeug = null;
+        }
+        if (!this.etudiant.mentiondeug) {
+          this.errors.mentiondeug = "Mention de bac +2 est requis.";
+        } else {
+          this.errors.mentiondeug = null;
+        }
+        if (!this.etudiant.specialitedeug) {
+          this.errors.specialitedeug = "Le spécialité du diplome est requis.";
+        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.specialitedeug)) {
+          this.errors.specialitedeug = "Ce champs doit être écrit uniquement en français.";
+        } else if (this.etudiant.specialitedeug.length < 2 || this.etudiant.specialitedeug.length > 200) {
+          this.errors.specialitedeug = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
+        } else {
+          this.errors.specialitedeug = null;
+        }
+        if (!this.etudiant.etblsmtdeug) {
+          this.errors.etblsmtdeug = "Ce champs est requis.";
+        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.etblsmtdeug)) {
+          this.errors.etblsmtdeug = "Ce champs doit être écrit uniquement en français.";
+        } else if (this.etudiant.etblsmtdeug.length < 2 || this.etudiant.etblsmtdeug.length > 200) {
+          this.errors.etblsmtdeug = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
+        } else {
+          this.errors.etblsmtdeug = null;
+        }
+        if (!this.etudiant.ville_etablissement_deug) {
+          this.errors.ville_etablissement_deug = "Ce champs est requis.";
+        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.ville_etablissement_deug)) {
+          this.errors.ville_etablissement_deug = "Ce champs doit être écrit uniquement en français.";
+        } else if (this.etudiant.ville_etablissement_deug.length < 2 || this.etudiant.ville_etablissement_deug.length > 150) {
+          this.errors.ville_etablissement_deug = "Ce champs doit contenir entre 2 et 150 caractères alphanumériques.";
+        } else {
+          this.errors.ville_etablissement_deug = null;
+        }
+        if (!this.etudiant.date_obtention_deug) {
+          this.errors.date_obtention_deug = "Ce champs est requis.";
+        } else {
+          this.errors.date_obtention_deug = null;
+        }
+        if (!this.etudiant.moyenne_deug) {
+          this.errors.moyenne_deug = "Ce champ est requis.";
+        } else if (!notePattern.test(this.etudiant.moyenne_deug)) {
+          this.errors.moyenne_deug = "Entrez une note valide (exemple: 16 | 16.50).";
+        } else {
+          this.errors.moyenne_deug = null;
+        }
+        if (!this.etudiant.secteur) {
+          this.errors.secteur = "Ce champ est requis.";
+        } else if (this.etudiant.secteur.length < 2 || this.etudiant.secteur.length > 200) {
+          this.errors.secteur = "Le secteur doit contenir entre 2 et 200 caractères.";
+        } else {
+          this.errors.secteur = null;
+        }
+        if (!this.etudiant.poste) {
+          this.errors.poste = "Ce champ est requis.";
+        } else if (this.etudiant.poste.length < 2 || this.etudiant.poste.length > 200) {
+          this.errors.poste = "Le poste doit contenir entre 2 et 200 caractères.";
+        } else {
+          this.errors.poste = null;
+        }
+
+        // if (!this.etudiant.lieutravail) {
+        // this.errors.lieutravail = "Ce champ est requis.";
+        // } else if (this.etudiant.lieutravail.length < 2 || this.etudiant.lieutravail.length > 200) {
+        // this.errors.lieutravail = "Le lieu de travail doit contenir entre 2 et 200 caractères.";
+        // } else {
+        // this.errors.lieutravail = null;
+        // }
+
+        // if (!this.etudiant.villetravail) {
+        // this.errors.villetravail = "Ce champ est requis.";
+        // } else if (this.etudiant.villetravail.length < 2 || this.etudiant.villetravail.length > 200) {
+        // this.errors.villetravail = "La ville de travail doit contenir entre 2 et 200 caractères.";
+        // } else {
+        // this.errors.villetravail = null;
+        // }
+      }
+      if (this.currentStep == 3) {
+        if (this.etablissement.multiple_choix_filiere_master == 0) {
+          if (!this.etudiant.filiere) {
+            this.errors.filiere = "Le choix d'une seule filière est requis. Veuillez sélectionner une seule filière.";
+          } else {
+            this.errors.filiere = null;
+          }
+        } else {
+          if (!this.etudiant.filiere_choix_1) {
+            this.errors.filiere_choix_1 = "Le choix de trois filières est requis. Veuillez sélectionner trois filières.";
+          } else {
+            this.errors.filiere_choix_1 = null;
+          }
+          if (!this.etudiant.filiere_choix_2) {
+            this.errors.filiere_choix_2 = "Le choix de trois filières est requis. Veuillez sélectionner trois filières.";
+          } else {
+            this.errors.filiere_choix_2 = null;
+          }
+          if (!this.etudiant.filiere_choix_3) {
+            this.errors.filiere_choix_3 = "Le choix de trois filières est requis. Veuillez sélectionner trois filières.";
+          } else {
+            this.errors.filiere_choix_3 = null;
+          }
+        }
+      }
+      if (this.currentStep == 4) {
+        if (!this.etudiant.confirmation) {
+          this.errors.confirmation = "L'inscription ne peut pas être validée sans confirmation. Veuillez cocher la case pour continuer.";
+        } else {
+          this.errors.confirmation = null;
+        }
+      }
+      return !Object.values(this.errors).some(function (error) {
+        return error !== null;
+      });
+    },
+    nextStep: function nextStep() {
+      // if(this.currentStep == 1 || this.currentStep == 1 || this.currentStep == 2){
+      // 	if (this.currentStep < this.steps.length) {
+      // 		this.currentStep++;
+      // 		// document.querySelector('.section-title')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // 	}
+      // }
+      // else{
+      if (this.validateStepp()) {
+        if (this.currentStep < this.steps.length) {
+          var _document$querySelect;
+          (_document$querySelect = document.querySelector('.section-title')) === null || _document$querySelect === void 0 || _document$querySelect.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          this.currentStep++;
+        } else {
+          console.log('submit');
+          this.submitForm();
+        }
+      } else {
+        this.$nextTick(function () {
+          var firstErrorField = document.querySelector('.input-error');
+          if (firstErrorField) {
+            firstErrorField.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center'
+            });
+            firstErrorField.focus();
+          }
+        });
+      }
+      //}
+    },
+    prevStep: function prevStep() {
+      if (this.currentStep > 1) {
+        var _document$querySelect2;
+        (_document$querySelect2 = document.querySelector('.section-title')) === null || _document$querySelect2 === void 0 || _document$querySelect2.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        this.currentStep--;
+      }
+    },
+    clearError: function clearError(field) {
+      this.errors[field] = null;
+    },
+    goToStep: function goToStep(step) {
+      if (step <= this.currentStep) {
+        this.currentStep = step;
+      }
+    },
+    submitForm: function submitForm() {
+      var _this = this;
+      return _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+        var formData, key, fileFields, response, email, CIN, errorMessages;
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              _this.loading = true; // Show loading screen
+              _context.prev = 1;
+              formData = new FormData(); // Append text fields
+              for (key in _this.etudiant) {
+                if (_this.etudiant[key] !== null && _this.etudiant[key] !== undefined && !(_this.etudiant[key] instanceof File)) {
+                  formData.append(key, _this.etudiant[key]);
+                }
+              }
+
+              // Append files to FormData
+              fileFields = []; // Send form data
+              _context.next = 7;
+              return axios__WEBPACK_IMPORTED_MODULE_3__["default"].post("/api/submit/form/licencexcellence", formData, {
+                headers: {
+                  "Content-Type": "multipart/form-data"
+                }
+              });
+            case 7:
+              response = _context.sent;
+              if (!(response.data.status === 2)) {
+                _context.next = 12;
+                break;
+              }
+              _this.loading = false;
+              _this.$refs.errorPopup.show(response.data.message);
+              return _context.abrupt("return");
+            case 12:
+              if (response.data.status === 1) {
+                // Mettre à jour les infos pour affichage dans la modale
+                email = _this.etudiant.email;
+                CIN = _this.etudiant.CIN;
+                _this.etudiant = {
+                  email: email,
+                  CIN: CIN,
+                  exists: response.data.user.exists
+                };
+                _this.successForm = true;
+              } else {
+                alert("\u26A0\uFE0F ".concat(response.data.message));
+              }
+              _context.next = 19;
+              break;
+            case 15:
+              _context.prev = 15;
+              _context.t0 = _context["catch"](1);
+              console.error("Error submitting form:", _context.t0);
+              if (_context.t0.response && _context.t0.response.data && _context.t0.response.data.errors) {
+                errorMessages = Object.values(_context.t0.response.data.errors).flat();
+                _this.$refs.errorPopup.show(errorMessages[0]);
+              } else {
+                _this.$refs.errorPopup.show("Une erreur au niveau du serveur est survenue.");
+              }
+            case 19:
+              _context.prev = 19;
+              _this.loading = false; // Hide loading screen
+              return _context.finish(19);
+            case 22:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee, null, [[1, 15, 19, 22]]);
+      }))();
+    },
+    togglePassword: function togglePassword() {
+      this.showPassword = !this.showPassword;
+    }
+  },
+  mounted: function mounted() {
+    this.serie_bac = this.etablissement.serie_bac;
+    this.etudiant.etablissement_id = this.etablissement.id;
+    this.etudiant.filiere = this.filiere.id;
+    this.etudiant.etablissement_id = this.etablissement.id;
+    this.diplomeBacPlus2 = this.etablissement.diplomebacplus2;
+    // console.log(this.appurl)
+    // console.log(this.cne)
+    // console.log(this.cin)
+    // console.log(this.etablissement)
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsMaster.vue?vue&type=script&lang=js":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsMaster.vue?vue&type=script&lang=js ***!
+  \*********************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+/* harmony import */ var _ErrorPopup_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ErrorPopup.vue */ "./resources/js/components/ErrorPopup.vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var pdfjs_dist_webpack__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! pdfjs-dist/webpack */ "./node_modules/pdfjs-dist/webpack.mjs");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['appurl', 'etablissement', 'filieres', 'filiere'],
+  components: {
+    ErrorPopup: _ErrorPopup_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      currentStep: 1,
+      currentField: null,
+      serie_bac: [],
+      diplomeBacPlus2: [],
+      loading: false,
+      successForm: false,
+      showPassword: false,
+      showTooltip: false,
+      pdfUrl: null,
+      steps: [{
+        title: "IDENTITE"
+      }, {
+        title: "INFORMATIONS\nACADEMIQUES"
+      }, {
+        title: "CHOIX\nDE FILIERE"
+      }, {
+        title: "CONFIRMATION"
+      }],
+      etudiant: _defineProperty(_defineProperty({
+        etablissement_id: "",
+        CNE: "",
+        CIN: "",
+        nom: "",
+        prenom: "",
+        // nomar: "",
+        // prenomar: "",
+        // datenais: "",
+        // sexe: "",
+        // payschamp: "",
+        // villenais: "",
+        // villechamp: "",
+        // adresse: "",
+        email: "",
+        phone: "",
+        serie: "",
+        //bac
+
+        typelicence: "",
+        mentionlp: "",
+        specialitelp: "",
+        etblsmtLp: "",
+        ville_etablissement_licence: "",
+        date_obtention_LP: "",
+        moyenne_licence: "",
+        secteur: "",
+        poste: "",
+        // lieutravail: "",
+        // villetravail: "",
+
+        filiere: "",
+        filiere_choix_1: "",
+        filiere_choix_2: "",
+        filiere_choix_3: ""
+      }, "etablissement_id", ""), "confirmation", ""),
+      selectedFiliereChoices: [],
+      errors: {
+        CNE: null,
+        CIN: null,
+        nom: null,
+        prenom: null,
+        //   nomar: null,
+        //   prenomar: null,
+        //   datenais: null,
+        //   sexe: null,
+        //   payschamp: null,
+        //   villenais: null,
+        //   villechamp: null,
+        //   adresse: null,
+        email: null,
+        phone: null,
+        serie: null,
+        typelicence: null,
+        mentionlp: null,
+        specialitelp: null,
+        etblsmtLp: null,
+        ville_etablissement_licence: null,
+        date_obtention_LP: null,
+        moyenne_licence: null,
+        secteur: null,
+        nombreannee: null,
+        poste: null,
+        //   lieutravail: null,
+        //   villetravail: null,
+
+        filiere: null,
+        filiere_choix_1: null,
+        filiere_choix_2: null,
+        filiere_choix_3: null,
+        confirmation: null
+      },
+      showInputTypeLicence: false,
+      showInputSerie: false,
+      showNotification: false
+    };
+  },
+  watch: {
+    etudiant: {
+      deep: true,
+      handler: function handler(newVal) {
+        console.log("Updated etudiant data:", newVal);
+      }
+    },
+    "etudiant.CNE": function etudiantCNE(newValue) {
+      if (this.currentField === "CNE") {
+        this.validateStep("CNE");
+      }
+    },
+    "etudiant.CIN": function etudiantCIN(newValue) {
+      if (this.currentField === "CIN") {
+        this.validateStep("CIN");
+      }
+    },
+    "etudiant.nom": function etudiantNom(newValue) {
+      if (this.currentField === "nom") {
+        this.validateStep("nom");
+      }
+    },
+    "etudiant.prenom": function etudiantPrenom(newValue) {
+      if (this.currentField === "prenom") {
+        this.validateStep("prenom");
+      }
+    },
+    "etudiant.nomar": function etudiantNomar(newValue) {
+      if (this.currentField === "nomar") {
+        this.validateStep("nomar");
+      }
+    },
+    "etudiant.prenomar": function etudiantPrenomar(newValue) {
+      if (this.currentField === "prenomar") {
+        this.validateStep("prenomar");
+      }
+    },
+    "etudiant.datenais": function etudiantDatenais(newValue) {
+      if (this.currentField === "datenais") {
+        this.validateStep("datenais");
+      }
+    },
+    "etudiant.sexe": function etudiantSexe(newValue) {
+      if (this.currentField === "sexe") {
+        this.validateStep("sexe");
+      }
+    },
+    "etudiant.payschamp": function etudiantPayschamp(newValue) {
+      if (this.currentField === "payschamp") {
+        this.validateStep("payschamp");
+      }
+    },
+    "etudiant.villenais": function etudiantVillenais(newValue) {
+      if (this.currentField === "villenais") {
+        this.validateStep("villenais");
+      }
+    },
+    "etudiant.villechamp": function etudiantVillechamp(newValue) {
+      if (this.currentField === "villechamp") {
+        this.validateStep("villechamp");
+      }
+    },
+    "etudiant.adresse": function etudiantAdresse(newValue) {
+      if (this.currentField === "adresse") {
+        this.validateStep("adresse");
+      }
+    },
+    "etudiant.email": function etudiantEmail(newValue) {
+      if (this.currentField === "email") {
+        this.validateStep("email");
+      }
+    },
+    "etudiant.phone": function etudiantPhone(newValue) {
+      if (this.currentField === "phone") {
+        this.validateStep("phone");
+      }
+    },
+    "etudiant.serie_bac": function etudiantSerie_bac(newValue) {
+      if (this.currentField === "serie_bac") {
+        this.validateStep("serie_bac");
+      }
+    },
+    "etudiant.typelicence": function etudiantTypelicence(newValue) {
+      if (this.currentField === "typelicence") {
+        this.validateStep("typelicence");
+      }
+    },
+    "etudiant.mentionlp": function etudiantMentionlp(newValue) {
+      if (this.currentField === "mentionlp") {
+        this.validateStep("mentionlp");
+      }
+    },
+    "etudiant.specialitelp": function etudiantSpecialitelp(newValue) {
+      if (this.currentField === "specialitelp") {
+        this.validateStep("specialitelp");
+      }
+    },
+    "etudiant.etblsmtLp": function etudiantEtblsmtLp(newValue) {
+      if (this.currentField === "etblsmtLp") {
+        this.validateStep("etblsmtLp");
+      }
+    },
+    "etudiant.ville_etablissement_licence": function etudiantVille_etablissement_licence(newValue) {
+      if (this.currentField === "ville_etablissement_licence") {
+        this.validateStep("ville_etablissement_licence");
+      }
+    },
+    "etudiant.date_obtention_LP": function etudiantDate_obtention_LP(newValue) {
+      if (this.currentField === "date_obtention_LP") {
+        this.validateStep("date_obtention_LP");
+      }
+    },
+    "etudiant.secteur": function etudiantSecteur(newValue) {
+      if (this.currentField === "secteur") {
+        this.validateStep("secteur");
+      }
+    },
+    "etudiant.poste": function etudiantPoste(newValue) {
+      if (this.currentField === "poste") {
+        this.validateStep("poste");
+      }
+    },
+    "etudiant.lieutravail": function etudiantLieutravail(newValue) {
+      if (this.currentField === "lieutravail") {
+        this.validateStep("lieutravail");
+      }
+    },
+    "etudiant.villetravail": function etudiantVilletravail(newValue) {
+      if (this.currentField === "villetravail") {
+        this.validateStep("villetravail");
+      }
+    },
+    selectedFiliereChoices: function selectedFiliereChoices(newVal, oldVal) {
+      this.updateFiliereChoices(newVal);
+    },
+    "etudiant.filiere": function etudiantFiliere(newValue) {
+      if (this.currentField === "filiere") {
+        this.validateStep("filiere");
+      }
+    },
+    "etudiant.filiere_choix_1": function etudiantFiliere_choix_1(newValue) {
+      if (this.currentField === "filiere_choix_1") {
+        this.validateStep("filiere_choix_1");
+      }
+    },
+    "etudiant.filiere_choix_2": function etudiantFiliere_choix_2(newValue) {
+      if (this.currentField === "filiere_choix_2") {
+        this.validateStep("filiere_choix_2");
+      }
+    },
+    "etudiant.filiere_choix_3": function etudiantFiliere_choix_3(newValue) {
+      if (this.currentField === "filiere_choix_3") {
+        this.validateStep("filiere_choix_3");
+      }
+    },
+    "etudiant.confirmation": function etudiantConfirmation(newValue) {
+      if (this.currentField === "confirmation") {
+        this.validateStep("confirmation");
+      }
+    }
+  },
+  methods: {
+    handleSerieChange: function handleSerieChange() {
+      if (this.etudiant.serie === "AUTRES") {
+        this.showInputSerie = true;
+        this.etudiant.serie = "";
+      } else {
+        this.showInputSerie = false;
+        this.validateStep("serie");
+      }
+    },
+    cancelInputSerie: function cancelInputSerie() {
+      this.showInputSerie = false;
+      this.etudiant.serie = "";
+    },
+    handleLicenceChange: function handleLicenceChange() {
+      if (this.etudiant.typelicence === "AUTRES") {
+        this.showInputTypeLicence = true;
+        this.etudiant.typelicence = "";
+      } else {
+        this.showInputTypeLicence = false;
+        this.validateStep("typelicence");
+      }
+    },
+    cancelInput: function cancelInput() {
+      this.showInputTypeLicence = false;
+      this.etudiant.typelicence = "";
+    },
+    toggleSelection: function toggleSelection(id) {
+      this.etudiant.filiere = id;
+    },
+    choixText: function choixText(index) {
+      var labels = ["Premier Choix", "Deuxième Choix", "Troisième Choix"];
+      return labels[index - 1] || "";
+    },
+    updateFiliereChoices: function updateFiliereChoices(selectedFiliereChoices) {
+      this.etudiant.filiere_choix_1 = selectedFiliereChoices[0] || "";
+      this.etudiant.filiere_choix_2 = selectedFiliereChoices[1] || "";
+      this.etudiant.filiere_choix_3 = selectedFiliereChoices[2] || "";
+    },
+    validateStep: function validateStep(field) {
+      if (this.currentStep == 1) {
+        switch (field) {
+          case "CNE":
+            if (!this.etudiant.CNE) {
+              this.errors.CNE = "Le CNE est requis.";
+            } else if (!/^[A-Za-z0-9]{7,20}$/.test(this.etudiant.CNE)) {
+              this.errors.CNE = "Le CNE doit contenir entre 7 et 20 caractères alphanumériques.";
+            } else {
+              this.errors.CNE = null;
+            }
+            break;
+          case "CIN":
+            if (!this.etudiant.CIN) {
+              this.errors.CIN = "Le CIN est requis.";
+            } else if (!/^[A-Za-z0-9]{3,10}$/.test(this.etudiant.CIN)) {
+              this.errors.CIN = "Le CIN doit contenir entre 3 et 10 caractères alphanumériques.";
+            } else {
+              this.errors.CIN = null;
+            }
+            break;
+          case "nom":
+            if (!this.etudiant.nom) {
+              this.errors.nom = "Le nom est requis.";
+            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.nom)) {
+              this.errors.nom = "Le nom doit être écrit uniquement en français.";
+            } else if (this.etudiant.nom.length < 2 || this.etudiant.nom.length > 50) {
+              this.errors.nom = "Le nom doit contenir entre 2 et 50 caractères";
+            } else {
+              this.errors.nom = null;
+            }
+            break;
+          case "prenom":
+            if (!this.etudiant.prenom) {
+              this.errors.prenom = "Le prénom est requis.";
+            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.prenom)) {
+              this.errors.prenom = "Le prenom doit être écrit uniquement en français.";
+            } else if (this.etudiant.prenom.length < 2 || this.etudiant.prenom.length > 50) {
+              this.errors.prenom = "Le prenom doit contenir entre 2 et 50 caractères";
+            } else {
+              this.errors.prenom = null;
+            }
+            break;
+
+          // case "nomar":
+          // 	if (!this.etudiant.nomar) {
+          // 	this.errors.nomar = "الاسم العائلي مطلوب";
+          // 	} else if (this.etudiant.nomar.length < 2 || this.etudiant.nomar.length > 50) {
+          // 	this.errors.nomar = "يجب أن يحتوي الاسم العائلي على ما بين 2 و 50 حرفًا.";
+          // 	} else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.nomar)) {
+          // 	this.errors.nomar = "يرجى إدخال الاسم العائلي باللغة العربية فقط";
+          // 	} else {
+          // 	this.errors.nomar = null;
+          // 	}
+          // 	break;
+
+          // case "prenomar":
+          // 	if (!this.etudiant.prenomar) {
+          // 	this.errors.prenomar = "الاسم الشخصي مطلوب";
+          // 	} else if (this.etudiant.prenomar.length < 2 || this.etudiant.prenomar.length > 50) {
+          // 	this.errors.prenomar = "يجب أن يحتوي الاسم الشخصي على ما بين 2 و 50 حرفًا.";
+          // 	} else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.prenomar)) {
+          // 	this.errors.prenomar = "يرجى إدخال الاسم الشخصي باللغة العربية فقط";
+          // 	} else {
+          // 	this.errors.prenomar = null;
+          // 	}
+
+          // 	break;
+
+          // case "datenais":
+          // 	if (!this.etudiant.datenais) {
+          // 	this.errors.datenais = "La date de naissance est requis.";
+          // 	} else {
+          // 	this.errors.datenais = null;
+          // 	}
+          // 	break;
+
+          // case "sexe":
+          // 	if (!this.etudiant.sexe) {
+          // 	this.errors.sexe = "Le sexe est requis.";
+          // 	} else {
+          // 	this.errors.sexe = null;
+          // 	}
+          // 	break;
+
+          // case "payschamp":
+          // 	if (!this.etudiant.payschamp) {
+          // 	this.errors.payschamp = "Le nom du pays est requis.";
+          // 	}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.payschamp)) {
+          // 		this.errors.payschamp = "Le nom du pays doit être écrit uniquement en français.";
+          // 	} else if (this.etudiant.payschamp.length < 2 || this.etudiant.payschamp.length > 70) {
+          // 	this.errors.payschamp = "Le nom du pays doit contenir entre 2 et 70 caractères.";
+          // 	} else {
+          // 	this.errors.payschamp = null;
+          // 	}
+          // 	break;
+
+          // case "villenais":
+          // 	if (!this.etudiant.villenais) {
+          // 	this.errors.villenais = "Le nom de la ville est requis.";
+          // 	}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.villenais)) {
+          // 		this.errors.villenais = "Le nom de la ville doit être écrit uniquement en français.";
+          // 	} else if (this.etudiant.villenais.length < 2 || this.etudiant.villenais.length > 70) {
+          // 	this.errors.villenais = "Le nom de la ville doit contenir entre 2 et 70 caractères.";
+          // 	} else {
+          // 	this.errors.villenais = null;
+          // 	}
+          // 	break;
+
+          // case "villechamp":
+          // 	if (!this.etudiant.villechamp) {
+          // 	this.errors.villechamp = "مكان الازدياد مطلوب";
+          // 	} else if (this.etudiant.villechamp.length < 2 || this.etudiant.villechamp.length > 70) {
+          // 	this.errors.villechamp = "يجب أن يحتوي مكان الازدياد على ما بين 2 و 70 حرفًا.";
+          // 	} else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.villechamp)) {
+          // 	this.errors.villechamp = "يرجى إدخال مكان الازدياد باللغة العربية فقط";
+          // 	} else {
+          // 	this.errors.villechamp = null;
+          // 	}
+          // 	break;
+
+          // case "adresse":
+          // if (!this.etudiant.adresse) {
+          // 	this.errors.adresse = "L'adresse est requise.";
+          // } else if (/[^A-Za-zÀ-ÿ0-9\s-]/.test(this.etudiant.adresse)) {
+          // 	this.errors.adresse = "L'adresse doit être écrite uniquement en français et peut contenir des chiffres.";
+          // } else if (this.etudiant.adresse.length < 10 || this.etudiant.adresse.length > 250) {
+          // 	this.errors.adresse = "L'adresse doit contenir entre 10 et 250 caractères.";
+          // } else {
+          // 	this.errors.adresse = null;
+          // }
+          // 	break;
+
+          case "email":
+            if (!this.etudiant.email) {
+              this.errors.email = "L'email est requis.";
+            } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,100}$/.test(this.etudiant.email)) {
+              this.errors.email = "Veuillez saisir une adresse email valide, en évitant les espaces au début et à la fin.";
+            } else {
+              this.errors.email = null;
+            }
+            break;
+          case "phone":
+            if (!this.etudiant.phone) {
+              this.errors.phone = "Le téléphone est requis.";
+            } else if (!/^\d{10}$/.test(this.etudiant.phone)) {
+              this.errors.phone = "Le téléphone doit contenir exactement 10 chiffres, en évitant les espaces au début et à la fin.";
+            } else {
+              this.errors.phone = null;
+            }
+            break;
+          default:
+            console.warn("No validation rule defined for the field: ".concat(field));
+        }
+      }
+      if (this.currentStep == 2) {
+        var notePattern = /^(?:\d{1,2}(?:\.\d{1,2})?)$/;
+        switch (field) {
+          case "serie":
+            if (!this.etudiant.serie) {
+              this.errors.serie = "Série de bac est requise.";
+            } else if (this.etudiant.serie !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s()\/:\-\.]{2,200}$/.test(this.etudiant.serie)) {
+              this.errors.serie = "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
+            } else {
+              this.errors.serie = null;
+            }
+            break;
+          case "typelicence":
+            if (!this.etudiant.typelicence) {
+              this.errors.typelicence = "Ce champ est requis.";
+            } else if (this.etudiant.typelicence !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\(\)\-]{2,200}$/.test(this.etudiant.typelicence)) {
+              this.errors.typelicence = "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
+            } else {
+              this.errors.typelicence = null;
+            }
+            break;
+          case "mentionlp":
+            if (!this.etudiant.mentionlp) {
+              this.errors.mentionlp = "Mention de licence est requis.";
+            } else {
+              this.errors.mentionlp = null;
+            }
+            break;
+          case "specialitelp":
+            if (!this.etudiant.specialitelp) {
+              this.errors.specialitelp = "Le spécialité du licence est requis.";
+            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.specialitelp)) {
+              this.errors.specialitelp = "Ce champs doit être écrit uniquement en français.";
+            } else if (this.etudiant.specialitelp.length < 2 || this.etudiant.specialitelp.length > 200) {
+              this.errors.specialitelp = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
+            } else {
+              this.errors.specialitelp = null;
+            }
+            break;
+          case "etblsmtLp":
+            if (!this.etudiant.etblsmtLp) {
+              this.errors.etblsmtLp = "Ce champs est requis.";
+            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.etblsmtLp)) {
+              this.errors.etblsmtLp = "Ce champs doit être écrit uniquement en français.";
+            } else if (this.etudiant.etblsmtLp.length < 2 || this.etudiant.etblsmtLp.length > 200) {
+              this.errors.etblsmtLp = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
+            } else {
+              this.errors.etblsmtLp = null;
+            }
+            break;
+          case "ville_etablissement_licence":
+            if (!this.etudiant.ville_etablissement_licence) {
+              this.errors.ville_etablissement_licence = "Ce champs est requis.";
+            } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.ville_etablissement_licence)) {
+              this.errors.ville_etablissement_licence = "Ce champs doit être écrit uniquement en français.";
+            } else if (this.etudiant.ville_etablissement_licence.length < 2 || this.etudiant.ville_etablissement_licence.length > 150) {
+              this.errors.ville_etablissement_licence = "Ce champs doit contenir entre 2 et 150 caractères alphanumériques.";
+            } else {
+              this.errors.ville_etablissement_licence = null;
+            }
+            break;
+          case "date_obtention_LP":
+            if (!this.etudiant.date_obtention_LP) {
+              this.errors.date_obtention_LP = "Ce champs est requis.";
+            } else {
+              this.errors.date_obtention_LP = null;
+            }
+            break;
+          case "moyenne_licence":
+            if (!this.etudiant.moyenne_licence) {
+              this.errors.moyenne_licence = "Ce champ est requis.";
+            } else if (!notePattern.test(this.etudiant.moyenne_licence)) {
+              this.errors.moyenne_licence = "Entrez une note valide (exemple: 16 | 16.50).";
+            } else {
+              this.errors.moyenne_licence = null;
+            }
+            break;
+          case "secteur":
+            if (!this.etudiant.secteur) {
+              this.errors.secteur = "Ce champ est requis.";
+            } else if (this.etudiant.secteur.length < 2 || this.etudiant.secteur.length > 200) {
+              this.errors.secteur = "Le secteur doit contenir entre 2 et 200 caractères.";
+            } else {
+              this.errors.secteur = null;
+            }
+            break;
+          case "poste":
+            if (!this.etudiant.poste) {
+              this.errors.poste = "Ce champ est requis.";
+            } else if (this.etudiant.poste.length < 2 || this.etudiant.poste.length > 200) {
+              this.errors.poste = "Le poste doit contenir entre 2 et 200 caractères.";
+            } else {
+              this.errors.poste = null;
+            }
+            break;
+
+          // case "lieutravail":
+          // 	if (!this.etudiant.lieutravail) {
+          // 	this.errors.lieutravail = "Ce champ est requis.";
+          // 	} else if (this.etudiant.lieutravail.length < 2 || this.etudiant.lieutravail.length > 200) {
+          // 	this.errors.lieutravail = "Le lieu de travail doit contenir entre 2 et 200 caractères.";
+          // 	} else {
+          // 	this.errors.lieutravail = null;
+          // 	}
+          // 	break;
+
+          // case "villetravail":
+          // 	if (!this.etudiant.villetravail) {
+          // 	this.errors.villetravail = "Ce champ est requis.";
+          // 	} else if (this.etudiant.villetravail.length < 2 || this.etudiant.villetravail.length > 200) {
+          // 	this.errors.villetravail = "La ville de travail doit contenir entre 2 et 200 caractères.";
+          // 	} else {
+          // 	this.errors.villetravail = null;
+          // 	}
+          // 	break;
+        }
+      }
+      if (this.currentStep == 3) {
+        if (this.etablissement.multiple_choix_filiere_master == 0) {
+          switch (field) {
+            case "filiere":
+              if (!this.etudiant.filiere) {
+                this.errors.filiere = "Le choix d'une seule filière est requis. Veuillez sélectionner une seule filière.";
+              } else {
+                this.errors.filiere = null;
+              }
+              break;
+            default:
+              break;
+          }
+        } else {
+          switch (field) {
+            case "filiere_choix_1":
+              if (!this.etudiant.filiere_choix_1) {
+                this.errors.filiere_choix_1 = "Le choix de trois filières est requis. Veuillez sélectionner trois filières.";
+              } else {
+                this.errors.filiere_choix_1 = null;
+              }
+              break;
+            case "filiere_choix_2":
+              if (!this.etudiant.filiere_choix_2) {
+                this.errors.filiere_choix_2 = "Il vous reste deux filières à sélectionner.";
+              } else {
+                this.errors.filiere_choix_2 = null;
+              }
+              break;
+            case "filiere_choix_3":
+              if (!this.etudiant.filiere_choix_3) {
+                this.errors.filiere_choix_3 = "Il vous reste une seule filière à sélectionner.";
+              } else {
+                this.errors.filiere_choix_3 = null;
+              }
+              break;
+            default:
+              break;
+          }
+        }
+      }
+      if (this.currentStep == 4) {
+        //empty
+      }
+    },
+    validateStepp: function validateStepp() {
+      this.errors = {};
+      var notePattern = /^(?:\d{1,2}(?:\.\d{1,2})?)$/;
+      if (this.currentStep == 1) {
+        if (!this.etudiant.CNE) {
+          this.errors.CNE = "Le CNE est requis.";
+        } else if (!/^[A-Za-z0-9]{7,20}$/.test(this.etudiant.CNE)) {
+          this.errors.CNE = "Le CNE doit contenir entre 7 et 20 caractères alphanumériques.";
+        } else {
+          this.errors.CNE = null;
+        }
+        if (!this.etudiant.CIN) {
+          this.errors.CIN = "Le CIN est requis.";
+        } else if (!/^[A-Za-z0-9]{3,10}$/.test(this.etudiant.CIN)) {
+          this.errors.CIN = "Le CIN doit contenir entre 3 et 10 caractères alphanumériques.";
+        } else {
+          this.errors.CIN = null;
+        }
+        if (!this.etudiant.nom) {
+          this.errors.nom = "Le nom est requis.";
+        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.nom)) {
+          this.errors.nom = "Le nom doit être écrit uniquement en français.";
+        } else if (this.etudiant.nom.length < 2 || this.etudiant.nom.length > 50) {
+          this.errors.nom = "Le nom doit contenir entre 2 et 50 caractères";
+        } else {
+          this.errors.nom = null;
+        }
+        if (!this.etudiant.prenom) {
+          this.errors.prenom = "Le prénom est requis.";
+        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.prenom)) {
+          this.errors.prenom = "Le prenom doit être écrit uniquement en français.";
+        } else if (this.etudiant.prenom.length < 2 || this.etudiant.prenom.length > 50) {
+          this.errors.prenom = "Le prenom doit contenir entre 2 et 50 caractères";
+        } else {
+          this.errors.prenom = null;
+        }
+
+        // if (!this.etudiant.nomar) {
+        // this.errors.nomar = "الاسم العائلي مطلوب";
+        // } else if (this.etudiant.nomar.length < 2 || this.etudiant.nomar.length > 50) {
+        // this.errors.nomar = "يجب أن يحتوي الاسم العائلي على ما بين 2 و 50 حرفًا.";
+        // } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.nomar)) {
+        // this.errors.nomar = "يرجى إدخال الاسم العائلي باللغة العربية فقط";
+        // } else {
+        // this.errors.nomar = null;
+        // }
+
+        // if (!this.etudiant.prenomar) {
+        // this.errors.prenomar = "الاسم الشخصي مطلوب";
+        // } else if (this.etudiant.prenomar.length < 2 || this.etudiant.prenomar.length > 50) {
+        // this.errors.prenomar = "يجب أن يحتوي الاسم الشخصي على ما بين 2 و 50 حرفًا.";
+        // } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.prenomar)) {
+        // this.errors.prenomar = "يرجى إدخال الاسم الشخصي باللغة العربية فقط";
+        // } else {
+        // this.errors.prenomar = null;
+        // }
+
+        // if (!this.etudiant.datenais) {
+        // this.errors.datenais = "La date de naissance est requis.";
+        // } else {
+        // this.errors.datenais = null;
+        // }
+
+        // if (!this.etudiant.sexe) {
+        // this.errors.sexe = "Le sexe est requis.";
+        // } else {
+        // this.errors.sexe = null;
+        // }
+
+        // if (!this.etudiant.payschamp) {
+        // this.errors.payschamp = "Le nom du pays est requis.";
+        // }else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.payschamp)) {
+        // 	this.errors.payschamp = "Le nom du pays doit être écrit uniquement en français.";
+        // } else if (this.etudiant.payschamp.length < 2 || this.etudiant.payschamp.length > 70) {
+        // this.errors.payschamp = "Le nom du pays doit contenir entre 2 et 70 caractères.";
+        // } else {
+        // this.errors.payschamp = null;
+        // }
+
+        // if (!this.etudiant.villenais) {
+        // this.errors.villenais = "Le nom de la ville est requis.";
+        // }else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.villenais)) {
+        // 	this.errors.villenais = "Le nom de la ville doit être écrit uniquement en français.";
+        // } else if (this.etudiant.villenais.length < 2 || this.etudiant.villenais.length > 70) {
+        // this.errors.villenais = "Le nom de la ville doit contenir entre 2 et 70 caractères.";
+        // } else {
+        // this.errors.villenais = null;
+        // }
+
+        // if (!this.etudiant.villechamp) {
+        // this.errors.villechamp = "مكان الازدياد مطلوب";
+        // } else if (this.etudiant.villechamp.length < 2 || this.etudiant.villechamp.length > 70) {
+        // this.errors.villechamp = "يجب أن يحتوي مكان الازدياد على ما بين 2 و 70 حرفًا.";
+        // } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.villechamp)) {
+        // this.errors.villechamp = "يرجى إدخال مكان الازدياد باللغة العربية فقط";
+        // } else {
+        // this.errors.villechamp = null;
+        // }
+
+        // if (!this.etudiant.adresse) {
+        // 	this.errors.adresse = "L'adresse est requise.";
+        // } else if (/[^A-Za-zÀ-ÿ0-9\s-]/.test(this.etudiant.adresse)) {
+        // 	this.errors.adresse = "L'adresse doit être écrite uniquement en français et peut contenir des chiffres.";
+        // } else if (this.etudiant.adresse.length < 10 || this.etudiant.adresse.length > 250) {
+        // 	this.errors.adresse = "L'adresse doit contenir entre 10 et 250 caractères.";
+        // } else {
+        // 	this.errors.adresse = null;
+        // }
+
+        if (!this.etudiant.email) {
+          this.errors.email = "L'email est requis.";
+        } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,100}$/.test(this.etudiant.email)) {
+          this.errors.email = "Veuillez saisir une adresse email valide, en évitant les espaces au début et à la fin.";
+        } else {
+          this.errors.email = null;
+        }
+        if (!this.etudiant.phone) {
+          this.errors.phone = "Le téléphone est requis.";
+        } else if (!/^\d{10}$/.test(this.etudiant.phone)) {
+          this.errors.phone = "Le téléphone doit contenir exactement 10 chiffres, en évitant les espaces au début et à la fin.";
+        } else {
+          this.errors.phone = null;
+        }
+      }
+      if (this.currentStep == 2) {
+        if (!this.etudiant.serie) {
+          this.errors.serie = "Série de bac est requise.";
+        } else if (this.etudiant.serie !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s()\/:\-\.]{2,200}$/.test(this.etudiant.serie)) {
+          this.errors.serie = "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
+        } else {
+          this.errors.serie = null;
+        }
+        if (!this.etudiant.typelicence) {
+          this.errors.typelicence = "Ce champ est requis.";
+        } else if (this.etudiant.typelicence !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\(\)\-]{2,200}$/.test(this.etudiant.typelicence)) {
+          this.errors.typelicence = "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
+        } else {
+          this.errors.typelicence = null;
+        }
+        if (!this.etudiant.mentionlp) {
+          this.errors.mentionlp = "Mention de licence est requis.";
+        } else {
+          this.errors.mentionlp = null;
+        }
+        if (!this.etudiant.specialitelp) {
+          this.errors.specialitelp = "Le spécialité du licence est requis.";
+        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.specialitelp)) {
+          this.errors.specialitelp = "Ce champs doit être écrit uniquement en français.";
+        } else if (this.etudiant.specialitelp.length < 2 || this.etudiant.specialitelp.length > 200) {
+          this.errors.specialitelp = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
+        } else {
+          this.errors.specialitelp = null;
+        }
+        if (!this.etudiant.etblsmtLp) {
+          this.errors.etblsmtLp = "Ce champs est requis.";
+        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.etblsmtLp)) {
+          this.errors.etblsmtLp = "Ce champs doit être écrit uniquement en français.";
+        } else if (this.etudiant.etblsmtLp.length < 2 || this.etudiant.etblsmtLp.length > 200) {
+          this.errors.etblsmtLp = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
+        } else {
+          this.errors.etblsmtLp = null;
+        }
+        if (!this.etudiant.ville_etablissement_licence) {
+          this.errors.ville_etablissement_licence = "Ce champs est requis.";
+        } else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.ville_etablissement_licence)) {
+          this.errors.ville_etablissement_licence = "Ce champs doit être écrit uniquement en français.";
+        } else if (this.etudiant.ville_etablissement_licence.length < 2 || this.etudiant.ville_etablissement_licence.length > 150) {
+          this.errors.ville_etablissement_licence = "Ce champs doit contenir entre 2 et 150 caractères alphanumériques.";
+        } else {
+          this.errors.ville_etablissement_licence = null;
+        }
+        if (!this.etudiant.date_obtention_LP) {
+          this.errors.date_obtention_LP = "Ce champs est requis.";
+        } else {
+          this.errors.date_obtention_LP = null;
+        }
+        if (!this.etudiant.moyenne_licence) {
+          this.errors.moyenne_licence = "Ce champ est requis.";
+        } else if (!notePattern.test(this.etudiant.moyenne_licence)) {
+          this.errors.moyenne_licence = "Entrez une note valide (exemple: 16 | 16.50).";
+        } else {
+          this.errors.moyenne_licence = null;
+        }
+        if (!this.etudiant.secteur) {
+          this.errors.secteur = "Ce champ est requis.";
+        } else if (this.etudiant.secteur.length < 2 || this.etudiant.secteur.length > 200) {
+          this.errors.secteur = "Le secteur doit contenir entre 2 et 200 caractères.";
+        } else {
+          this.errors.secteur = null;
+        }
+        if (!this.etudiant.poste) {
+          this.errors.poste = "Ce champ est requis.";
+        } else if (this.etudiant.poste.length < 2 || this.etudiant.poste.length > 200) {
+          this.errors.poste = "Le poste doit contenir entre 2 et 200 caractères.";
+        } else {
+          this.errors.poste = null;
+        }
+
+        // if (!this.etudiant.lieutravail) {
+        // this.errors.lieutravail = "Ce champ est requis.";
+        // } else if (this.etudiant.lieutravail.length < 2 || this.etudiant.lieutravail.length > 200) {
+        // this.errors.lieutravail = "Le lieu de travail doit contenir entre 2 et 200 caractères.";
+        // } else {
+        // this.errors.lieutravail = null;
+        // }
+
+        // if (!this.etudiant.villetravail) {
+        // this.errors.villetravail = "Ce champ est requis.";
+        // } else if (this.etudiant.villetravail.length < 2 || this.etudiant.villetravail.length > 200) {
+        // this.errors.villetravail = "La ville de travail doit contenir entre 2 et 200 caractères.";
+        // } else {
+        // this.errors.villetravail = null;
+        // }
+      }
+      if (this.currentStep == 3) {
+        if (this.etablissement.multiple_choix_filiere_master == 0) {
+          if (!this.etudiant.filiere) {
+            this.errors.filiere = "Le choix d'une seule filière est requis. Veuillez sélectionner une seule filière.";
+          } else {
+            this.errors.filiere = null;
+          }
+        } else {
+          if (!this.etudiant.filiere_choix_1) {
+            this.errors.filiere_choix_1 = "Le choix de trois filières est requis. Veuillez sélectionner trois filières.";
+          } else {
+            this.errors.filiere_choix_1 = null;
+          }
+          if (!this.etudiant.filiere_choix_2) {
+            this.errors.filiere_choix_2 = "Le choix de trois filières est requis. Veuillez sélectionner trois filières.";
+          } else {
+            this.errors.filiere_choix_2 = null;
+          }
+          if (!this.etudiant.filiere_choix_3) {
+            this.errors.filiere_choix_3 = "Le choix de trois filières est requis. Veuillez sélectionner trois filières.";
+          } else {
+            this.errors.filiere_choix_3 = null;
+          }
+        }
+      }
+      if (this.currentStep == 4) {
+        if (!this.etudiant.confirmation) {
+          this.errors.confirmation = "L'inscription ne peut pas être validée sans confirmation. Veuillez cocher la case pour continuer.";
+        } else {
+          this.errors.confirmation = null;
+        }
+      }
+      return !Object.values(this.errors).some(function (error) {
+        return error !== null;
+      });
+    },
+    nextStep: function nextStep() {
+      // if(this.currentStep == 1 || this.currentStep == 1 || this.currentStep == 2){
+      // 	if (this.currentStep < this.steps.length) {
+      // 		this.currentStep++;
+      // 		// document.querySelector('.section-title')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // 	}
+      // }
+      // else{
+      if (this.validateStepp()) {
+        if (this.currentStep < this.steps.length) {
+          var _document$querySelect;
+          (_document$querySelect = document.querySelector('.section-title')) === null || _document$querySelect === void 0 || _document$querySelect.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          this.currentStep++;
+        } else {
+          console.log('submit');
+          this.submitForm();
+        }
+      } else {
+        this.$nextTick(function () {
+          var firstErrorField = document.querySelector('.input-error');
+          if (firstErrorField) {
+            firstErrorField.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center'
+            });
+            firstErrorField.focus();
+          }
+        });
+      }
+      //}
+    },
+    prevStep: function prevStep() {
+      if (this.currentStep > 1) {
+        var _document$querySelect2;
+        (_document$querySelect2 = document.querySelector('.section-title')) === null || _document$querySelect2 === void 0 || _document$querySelect2.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        this.currentStep--;
+      }
+    },
+    clearError: function clearError(field) {
+      this.errors[field] = null;
+    },
+    goToStep: function goToStep(step) {
+      if (step <= this.currentStep) {
+        this.currentStep = step;
+      }
+    },
+    submitForm: function submitForm() {
+      var _this = this;
+      return _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+        var formData, key, fileFields, response, email, CIN, errorMessages;
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              _this.loading = true; // Show loading screen
+              _context.prev = 1;
+              formData = new FormData(); // Append text fields
+              for (key in _this.etudiant) {
+                if (_this.etudiant[key] !== null && _this.etudiant[key] !== undefined && !(_this.etudiant[key] instanceof File)) {
+                  formData.append(key, _this.etudiant[key]);
+                }
+              }
+
+              // Append files to FormData
+              fileFields = []; // Send form data
+              _context.next = 7;
+              return axios__WEBPACK_IMPORTED_MODULE_3__["default"].post("/api/submit/form/master", formData, {
+                headers: {
+                  "Content-Type": "multipart/form-data"
+                }
+              });
+            case 7:
+              response = _context.sent;
+              if (!(response.data.status === 2)) {
+                _context.next = 12;
+                break;
+              }
+              _this.loading = false;
+              _this.$refs.errorPopup.show(response.data.message);
+              return _context.abrupt("return");
+            case 12:
+              if (response.data.status === 1) {
+                // Mettre à jour les infos pour affichage dans la modale
+                email = _this.etudiant.email;
+                CIN = _this.etudiant.CIN;
+                _this.etudiant = {
+                  email: email,
+                  CIN: CIN,
+                  exists: response.data.user.exists
+                };
+                _this.successForm = true;
+              } else {
+                alert("\u26A0\uFE0F ".concat(response.data.message));
+              }
+              _context.next = 19;
+              break;
+            case 15:
+              _context.prev = 15;
+              _context.t0 = _context["catch"](1);
+              console.error("Error submitting form:", _context.t0);
+              if (_context.t0.response && _context.t0.response.data && _context.t0.response.data.errors) {
+                errorMessages = Object.values(_context.t0.response.data.errors).flat();
+                _this.$refs.errorPopup.show(errorMessages[0]);
+              } else {
+                _this.$refs.errorPopup.show("Une erreur au niveau du serveur est survenue.");
+              }
+            case 19:
+              _context.prev = 19;
+              _this.loading = false; // Hide loading screen
+              return _context.finish(19);
+            case 22:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee, null, [[1, 15, 19, 22]]);
+      }))();
+    },
+    togglePassword: function togglePassword() {
+      this.showPassword = !this.showPassword;
+    }
+  },
+  mounted: function mounted() {
+    this.serie_bac = this.etablissement.serie_bac;
+    this.etudiant.etablissement_id = this.etablissement.id;
+    this.etudiant.filiere = this.filiere.id;
     this.etudiant.etablissement_id = this.etablissement.id;
     this.diplomeBacPlus2 = this.etablissement.diplomebacplus2;
     // console.log(this.appurl)
@@ -25647,10 +25920,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsExcellence.vue?vue&type=template&id=7e511e68":
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsExcellence.vue?vue&type=template&id=7e511e68 ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsBachelier.vue?vue&type=template&id=5558ae93":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsBachelier.vue?vue&type=template&id=5558ae93 ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -25659,12 +25932,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   render: () => (/* binding */ render)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
-function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
-function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
-function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 
 var _hoisted_1 = {
   key: 0,
@@ -25740,59 +26007,59 @@ var _hoisted_20 = {
 };
 var _hoisted_21 = {
   "class": "form-group",
-  dir: "rtl"
+  dir: "ltr"
 };
 var _hoisted_22 = {
   key: 0,
-  "class": "error-message"
+  "class": "error-icon"
 };
 var _hoisted_23 = {
   "class": "form-group",
-  dir: "rtl"
+  dir: "ltr"
 };
 var _hoisted_24 = {
   key: 0,
-  "class": "error-message"
+  "class": "error-icon"
 };
 var _hoisted_25 = {
-  "class": "form-group",
-  dir: "ltr"
+  key: 1
 };
 var _hoisted_26 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_27 = {
   "class": "form-group",
+  style: {
+    "margin-top": "20px"
+  },
   dir: "ltr"
 };
+var _hoisted_27 = ["value"];
 var _hoisted_28 = {
-  key: 0,
-  "class": "error-icon"
+  style: {
+    "position": "relative"
+  }
 };
 var _hoisted_29 = {
-  "class": "form-group",
-  dir: "ltr"
+  key: 2,
+  "class": "error-icon"
 };
 var _hoisted_30 = {
-  key: 0,
-  "class": "error-icon"
+  "class": "form-group"
 };
 var _hoisted_31 = {
-  "class": "form-group",
-  dir: "ltr"
-};
-var _hoisted_32 = {
   key: 0,
   "class": "error-icon"
+};
+var _hoisted_32 = {
+  style: {
+    "margin-top": "20px"
+  }
 };
 var _hoisted_33 = {
   "class": "form-group",
-  dir: "rtl"
+  dir: "ltr"
 };
 var _hoisted_34 = {
   key: 0,
-  "class": "error-message"
+  "class": "error-icon"
 };
 var _hoisted_35 = {
   "class": "form-group",
@@ -25803,389 +26070,101 @@ var _hoisted_36 = {
   "class": "error-icon"
 };
 var _hoisted_37 = {
-  "class": "form-group",
-  dir: "ltr"
+  key: 2
 };
 var _hoisted_38 = {
-  key: 0,
-  "class": "error-icon"
+  "class": "form-groupp"
 };
 var _hoisted_39 = {
-  "class": "form-group",
-  dir: "ltr"
+  "class": "filiere-container"
 };
-var _hoisted_40 = {
-  key: 0,
-  "class": "error-icon"
+var _hoisted_40 = ["onClick"];
+var _hoisted_41 = ["id", "value"];
+var _hoisted_42 = ["for"];
+var _hoisted_43 = {
+  "class": "filiere-title"
 };
-var _hoisted_41 = {
-  key: 1
-};
-var _hoisted_42 = {
-  "class": "form-group",
-  style: {
-    "margin-top": "20px"
-  },
-  dir: "ltr"
-};
-var _hoisted_43 = ["value"];
 var _hoisted_44 = {
-  style: {
-    "position": "relative"
-  }
+  "class": "filiere-name"
 };
 var _hoisted_45 = {
-  key: 2,
-  "class": "error-icon"
+  key: 0,
+  "class": "selected-icon"
 };
 var _hoisted_46 = {
-  "class": "form-group",
-  dir: "ltr"
-};
-var _hoisted_47 = {
   key: 0,
   "class": "error-icon"
 };
+var _hoisted_47 = {
+  key: 3,
+  "class": "confirmation-container"
+};
 var _hoisted_48 = {
-  "class": "form-group",
-  style: {
-    "margin-top": "20px"
-  },
-  dir: "ltr"
+  "class": "checkbox-wrapper"
 };
 var _hoisted_49 = {
   key: 0,
   "class": "error-icon"
 };
 var _hoisted_50 = {
-  "class": "form-group",
-  dir: "ltr"
-};
-var _hoisted_51 = {
-  style: {
-    "position": "relative"
-  }
-};
-var _hoisted_52 = {
-  key: 2,
-  "class": "error-icon"
-};
-var _hoisted_53 = {
-  "class": "form-group",
-  dir: "ltr"
-};
-var _hoisted_54 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_55 = {
-  "class": "form-group",
-  dir: "ltr"
-};
-var _hoisted_56 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_57 = {
-  "class": "form-group",
-  dir: "ltr"
-};
-var _hoisted_58 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_59 = {
-  "class": "form-group",
-  style: {
-    "margin-top": "20px"
-  },
-  dir: "ltr"
-};
-var _hoisted_60 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_61 = {
-  key: 0
-};
-var _hoisted_62 = {
-  "class": "form-group",
-  dir: "ltr"
-};
-var _hoisted_63 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_64 = {
-  "class": "form-group",
-  dir: "ltr"
-};
-var _hoisted_65 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_66 = {
-  "class": "form-group",
-  dir: "ltr"
-};
-var _hoisted_67 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_68 = {
-  "class": "form-group",
-  dir: "ltr"
-};
-var _hoisted_69 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_70 = {
-  "class": "form-group",
-  dir: "ltr"
-};
-var _hoisted_71 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_72 = {
-  key: 2
-};
-var _hoisted_73 = {
-  key: 0,
-  "class": "form-group student-image-upload"
-};
-var _hoisted_74 = {
-  "class": "file-upload-wrapper-student"
-};
-var _hoisted_75 = {
-  "class": "file-upload-image-student"
-};
-var _hoisted_76 = ["src"];
-var _hoisted_77 = {
-  "class": "upload-text-student"
-};
-var _hoisted_78 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_79 = {
-  key: 1,
-  "class": "form-group",
-  style: {
-    "margin-top": "20px"
-  }
-};
-var _hoisted_80 = {
-  "class": "file-upload-wrapper"
-};
-var _hoisted_81 = {
-  key: 0,
-  "class": "file-preview"
-};
-var _hoisted_82 = {
-  "class": "preview-container"
-};
-var _hoisted_83 = ["src"];
-var _hoisted_84 = {
-  key: 1,
-  "class": "error-icon"
-};
-var _hoisted_85 = {
-  key: 2,
-  "class": "form-group",
-  style: {
-    "margin-top": "20px"
-  }
-};
-var _hoisted_86 = {
-  "class": "file-upload-wrapper"
-};
-var _hoisted_87 = {
-  key: 0,
-  "class": "file-preview"
-};
-var _hoisted_88 = {
-  "class": "preview-container"
-};
-var _hoisted_89 = ["src"];
-var _hoisted_90 = {
-  key: 1,
-  "class": "error-icon"
-};
-var _hoisted_91 = {
-  key: 3,
-  "class": "form-group",
-  style: {
-    "margin-top": "20px"
-  }
-};
-var _hoisted_92 = {
-  "class": "file-upload-wrapper"
-};
-var _hoisted_93 = {
-  key: 0,
-  "class": "file-preview"
-};
-var _hoisted_94 = {
-  "class": "preview-container"
-};
-var _hoisted_95 = ["src"];
-var _hoisted_96 = {
-  key: 1,
-  "class": "error-icon"
-};
-var _hoisted_97 = {
-  key: 4,
-  "class": "form-group",
-  style: {
-    "margin-top": "20px"
-  }
-};
-var _hoisted_98 = {
-  "class": "file-upload-wrapper"
-};
-var _hoisted_99 = {
-  key: 0,
-  "class": "file-preview"
-};
-var _hoisted_100 = {
-  "class": "preview-container"
-};
-var _hoisted_101 = ["src"];
-var _hoisted_102 = {
-  key: 1,
-  "class": "error-icon"
-};
-var _hoisted_103 = {
-  key: 5,
-  "class": "form-group student-pdf-upload"
-};
-var _hoisted_104 = {
-  key: 0,
-  ref: "pdfContainer",
-  "class": "pdf-preview-container"
-};
-var _hoisted_105 = {
-  ref: "pdfCanvas"
-};
-var _hoisted_106 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_107 = {
-  key: 3
-};
-var _hoisted_108 = {
-  key: 0,
-  "class": "form-groupp"
-};
-var _hoisted_109 = {
-  "class": "filiere-container"
-};
-var _hoisted_110 = ["onClick"];
-var _hoisted_111 = ["id", "value"];
-var _hoisted_112 = ["for"];
-var _hoisted_113 = {
-  "class": "filiere-title"
-};
-var _hoisted_114 = {
-  "class": "filiere-name"
-};
-var _hoisted_115 = ["href"];
-var _hoisted_116 = {
-  key: 0,
-  "class": "selected-icon"
-};
-var _hoisted_117 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_118 = {
-  key: 1,
-  "class": "form-groupp"
-};
-var _hoisted_119 = {
-  "class": "filiere-container"
-};
-var _hoisted_120 = ["id", "value", "disabled"];
-var _hoisted_121 = ["for"];
-var _hoisted_122 = {
-  "class": "filiere-title"
-};
-var _hoisted_123 = {
-  "class": "filiere-name"
-};
-var _hoisted_124 = ["href"];
-var _hoisted_125 = {
-  key: 0,
-  "class": "selected-icon"
-};
-var _hoisted_126 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_127 = {
-  key: 4,
-  "class": "confirmation-container"
-};
-var _hoisted_128 = {
-  "class": "checkbox-wrapper"
-};
-var _hoisted_129 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_130 = {
   "class": "form-actions"
 };
-var _hoisted_131 = ["disabled"];
-var _hoisted_132 = {
+var _hoisted_51 = ["disabled"];
+var _hoisted_52 = {
   type: "submit",
   "class": "btn btn-primary"
 };
-var _hoisted_133 = {
+var _hoisted_53 = {
   key: 2,
   "class": "success-container"
 };
-var _hoisted_134 = {
+var _hoisted_54 = {
   "class": "success-card"
 };
-var _hoisted_135 = {
+var _hoisted_55 = {
+  key: 0,
+  "class": "success-info text-dark p-3 rounded bg-light border"
+};
+var _hoisted_56 = {
+  key: 1,
   "class": "success-credentials"
 };
-var _hoisted_136 = {
+var _hoisted_57 = {
   key: 0
 };
-var _hoisted_137 = {
+var _hoisted_58 = {
   key: 1
 };
-var _hoisted_138 = {
+var _hoisted_59 = {
   key: 0
 };
-var _hoisted_139 = {
+var _hoisted_60 = {
   key: 1
 };
-var _hoisted_140 = {
+var _hoisted_61 = {
   key: 0,
   "class": "password-tooltip"
 };
-var _hoisted_141 = {
+var _hoisted_62 = {
   key: 0
 };
-var _hoisted_142 = {
+var _hoisted_63 = {
   key: 1
+};
+var _hoisted_64 = {
+  key: 2,
+  "class": "alert alert-warning text-dark p-3 rounded bg-light border"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ErrorPopup = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ErrorPopup");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [$data.loading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_cache[117] || (_cache[117] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [$data.loading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_cache[44] || (_cache[44] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "particles"
-  }, null, -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Effet magique "), _cache[118] || (_cache[118] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"loader-logo-container\"><div class=\"loader-glow\"></div><!-- Vague lumineuse --><img src=\"/form/images/uh1-vertical.png\" alt=\"Université Hassan 1er\" class=\"loader-logo\"></div><div class=\"spinner\"></div><p class=\"loading-text\">Veuillez patienter...</p>", 3)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Texte fixe ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$data.successForm ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Progress Bar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  }, null, -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Effet magique "), _cache[45] || (_cache[45] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"loader-logo-container\"><div class=\"loader-glow\"></div><!-- Vague lumineuse --><img src=\"/form/images/uh1-vertical.png\" alt=\"Université Hassan 1er\" class=\"loader-logo\"></div><div class=\"spinner\"></div><p class=\"loading-text\">Veuillez patienter...</p>", 3)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Texte fixe ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$data.successForm ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Progress Bar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "progress-bar",
     style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)({
       width: $data.currentStep / $data.steps.length * 100 + '%'
     })
-  }, null, 4 /* STYLE */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Header with Logo "), _cache[174] || (_cache[174] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"form-header\"><div class=\"logo-container\"><img src=\"/form/images/uh1-vertical.png\" alt=\"University Logo\" class=\"form-logo\"></div><h1 class=\"form-title\">Préinscription Universitaire</h1><p class=\"form-subtitle\">Remplissez les étapes ci-dessous pour finaliser votre inscription</p></div>", 1)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Progress Steps "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.steps, function (step, index) {
+  }, null, 4 /* STYLE */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Header with Logo "), _cache[65] || (_cache[65] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"form-header\"><div class=\"logo-container\"><img src=\"/form/images/uh1-vertical.png\" alt=\"University Logo\" class=\"form-logo\"></div><h1 class=\"form-title\">Préinscription Licences (Accès S1)</h1><p class=\"form-subtitle\">Remplissez les étapes ci-dessous pour finaliser votre inscription</p></div>", 1)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Progress Steps "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.steps, function (step, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       key: index,
       "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["step", {
@@ -26203,7 +26182,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(line), 1 /* TEXT */);
     }), 128 /* KEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Progress percentage displayed on hover "), $data.currentStep === index + 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Math.round((index + 1) / $data.steps.length * 100)) + "% ", 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])], 10 /* CLASS, PROPS */, _hoisted_5);
   }), 128 /* KEYED_FRAGMENT */))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Form Section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", _hoisted_11, "Étape " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.currentStep) + " : " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.steps[$data.currentStep - 1].title), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-    onSubmit: _cache[113] || (_cache[113] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+    onSubmit: _cache[40] || (_cache[40] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.nextStep && $options.nextStep.apply($options, arguments);
     }, ["prevent"])),
     enctype: "multipart/form-data"
@@ -26212,7 +26191,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $data.etudiant.etablissement_id = $event;
     })
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.etablissement_id]]), $data.currentStep === 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_cache[119] || (_cache[119] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.etablissement_id]]), $data.currentStep === 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_cache[46] || (_cache[46] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "CNE"
   }, "CNE", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
@@ -26229,10 +26208,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     onFocus: _cache[3] || (_cache[3] = function ($event) {
       return $data.currentField = 'CNE';
-    }),
-    readonly: "",
-    disabled: ""
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.CNE]]), $data.errors.CNE ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_14, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.CNE), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [_cache[120] || (_cache[120] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.CNE]]), $data.errors.CNE ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_14, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.CNE), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [_cache[47] || (_cache[47] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "CIN"
   }, "CIN", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
@@ -26249,10 +26226,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     onFocus: _cache[6] || (_cache[6] = function ($event) {
       return $data.currentField = 'CIN';
-    }),
-    readonly: "",
-    disabled: ""
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.CIN]]), $data.errors.CIN ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_16, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.CIN), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [_cache[121] || (_cache[121] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.CIN]]), $data.errors.CIN ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_16, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.CIN), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [_cache[48] || (_cache[48] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "Nom"
   }, "Nom", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
@@ -26270,7 +26245,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onFocus: _cache[9] || (_cache[9] = function ($event) {
       return $data.currentField = 'nom';
     })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.nom]]), $data.errors.nom ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_18, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.nom), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [_cache[122] || (_cache[122] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.nom]]), $data.errors.nom ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_18, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.nom), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [_cache[49] || (_cache[49] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "Prenom"
   }, "Prenom", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
@@ -26288,238 +26263,87 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onFocus: _cache[12] || (_cache[12] = function ($event) {
       return $data.currentField = 'prenom';
     })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.prenom]]), $data.errors.prenom ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_20, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.prenom), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Apply RTL to the entire form group for Arabic fields "), _cache[123] || (_cache[123] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "الاسم العائلي",
-    "class": "rtl-label"
-  }, "الاسم العائلي", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    id: "الاسم العائلي",
-    "onUpdate:modelValue": _cache[13] || (_cache[13] = function ($event) {
-      return $data.etudiant.nomar = $event;
-    }),
-    placeholder: "أدخل الاسم العائلي",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.nomar
-    }),
-    onInput: _cache[14] || (_cache[14] = function ($event) {
-      return $options.validateStep('nomar');
-    }),
-    onFocus: _cache[15] || (_cache[15] = function ($event) {
-      return $data.currentField = 'nomar';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.nomar]]), $data.errors.nomar ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_22, " ✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.nomar), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Apply RTL to the entire form group for Arabic fields "), _cache[124] || (_cache[124] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "الاسم الشخصي",
-    "class": "rtl-label"
-  }, " الاسم الشخصي", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    id: "الاسم الشخصي",
-    "onUpdate:modelValue": _cache[16] || (_cache[16] = function ($event) {
-      return $data.etudiant.prenomar = $event;
-    }),
-    placeholder: "أدخل الاسم الشخصي",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.prenomar
-    }),
-    onInput: _cache[17] || (_cache[17] = function ($event) {
-      return $options.validateStep('prenomar');
-    }),
-    onFocus: _cache[18] || (_cache[18] = function ($event) {
-      return $data.currentField = 'prenomar';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.prenomar]]), $data.errors.prenomar ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_24, " ✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.prenomar), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [_cache[125] || (_cache[125] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "Date Naissance"
-  }, "Date Naissance", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "date",
-    id: "Date Naissance",
-    "onUpdate:modelValue": _cache[19] || (_cache[19] = function ($event) {
-      return $data.etudiant.datenais = $event;
-    }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.datenais
-    }),
-    onInput: _cache[20] || (_cache[20] = function ($event) {
-      return $options.validateStep('datenais');
-    }),
-    onFocus: _cache[21] || (_cache[21] = function ($event) {
-      return $data.currentField = 'datenais';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.datenais]]), $data.errors.datenais ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_26, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.datenais), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [_cache[127] || (_cache[127] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "sexe"
-  }, "Sexe", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
-    id: "sexe",
-    "onUpdate:modelValue": _cache[22] || (_cache[22] = function ($event) {
-      return $data.etudiant.sexe = $event;
-    }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.sexe
-    }),
-    onChange: _cache[23] || (_cache[23] = function ($event) {
-      return $options.validateStep('sexe');
-    }),
-    onFocus: _cache[24] || (_cache[24] = function ($event) {
-      return $data.currentField = 'sexe';
-    })
-  }, _cache[126] || (_cache[126] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "",
-    disabled: ""
-  }, "Veuillez choisir", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "M"
-  }, "M", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "F"
-  }, "F", -1 /* HOISTED */)]), 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.etudiant.sexe]]), $data.errors.sexe ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_28, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.sexe), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [_cache[128] || (_cache[128] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "pays"
-  }, "Pays", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    id: "pays",
-    "onUpdate:modelValue": _cache[25] || (_cache[25] = function ($event) {
-      return $data.etudiant.payschamp = $event;
-    }),
-    placeholder: "Entrez votre Pays",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.payschamp
-    }),
-    onInput: _cache[26] || (_cache[26] = function ($event) {
-      return $options.validateStep('payschamp');
-    }),
-    onFocus: _cache[27] || (_cache[27] = function ($event) {
-      return $data.currentField = 'payschamp';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.payschamp]]), $data.errors.payschamp ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_30, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.payschamp), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [_cache[129] || (_cache[129] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "ville"
-  }, "Ville", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    id: "ville",
-    "onUpdate:modelValue": _cache[28] || (_cache[28] = function ($event) {
-      return $data.etudiant.villenais = $event;
-    }),
-    placeholder: "Entrez votre Ville de Naissance",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.villenais
-    }),
-    onInput: _cache[29] || (_cache[29] = function ($event) {
-      return $options.validateStep('villenais');
-    }),
-    onFocus: _cache[30] || (_cache[30] = function ($event) {
-      return $data.currentField = 'villenais';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.villenais]]), $data.errors.villenais ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_32, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.villenais), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Apply RTL to the entire form group for Arabic fields "), _cache[130] || (_cache[130] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "مكان الازدياد",
-    "class": "rtl-label"
-  }, "مكان الازدياد", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    id: "مكان الازدياد",
-    "onUpdate:modelValue": _cache[31] || (_cache[31] = function ($event) {
-      return $data.etudiant.villechamp = $event;
-    }),
-    placeholder: "مكان الازدياد",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.villechamp
-    }),
-    onInput: _cache[32] || (_cache[32] = function ($event) {
-      return $options.validateStep('villechamp');
-    }),
-    onFocus: _cache[33] || (_cache[33] = function ($event) {
-      return $data.currentField = 'villechamp';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.villechamp]]), $data.errors.villechamp ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_34, " ✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.villechamp), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [_cache[131] || (_cache[131] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "adresse"
-  }, "Adresse", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
-    id: "adresse",
-    "onUpdate:modelValue": _cache[34] || (_cache[34] = function ($event) {
-      return $data.etudiant.adresse = $event;
-    }),
-    placeholder: "Entrez votre Adresse",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.adresse
-    }),
-    onInput: _cache[35] || (_cache[35] = function ($event) {
-      return $options.validateStep('adresse');
-    }),
-    onFocus: _cache[36] || (_cache[36] = function ($event) {
-      return $data.currentField = 'adresse';
-    }),
-    rows: "4"
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.adresse]]), $data.errors.adresse ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_36, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.adresse), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [_cache[132] || (_cache[132] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.prenom]]), $data.errors.prenom ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_20, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.prenom), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \r\n\t\t\t\t\t<div class=\"form-group\" dir=\"rtl\">\r\n\t\t\t\t\t\t<label for=\"الاسم العائلي\" class=\"rtl-label\">الاسم العائلي</label>\r\n\t\t\t\t\t\t<input\r\n\t\t\t\t\t\t\ttype=\"text\"\r\n\t\t\t\t\t\t\tid=\"الاسم العائلي\"\r\n\t\t\t\t\t\t\tv-model=\"etudiant.nomar\"\r\n\t\t\t\t\t\t\tplaceholder=\"أدخل الاسم العائلي\"\r\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.nomar }\"\r\n\t\t\t\t\t\t\t@input=\"validateStep('nomar')\"\r\n\t\t\t\t\t\t\t@focus=\"currentField = 'nomar'\"\r\n\t\t\t\t\t\t/>\r\n\t\t\t\t\t\t<span v-if=\"errors.nomar\" class=\"error-message\">\r\n\t\t\t\t\t\t\t✖ {{ errors.nomar }}\r\n\t\t\t\t\t\t</span>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"form-group\" dir=\"rtl\">\r\n\t\t\t\t\t\t<label for=\"الاسم الشخصي\" class=\"rtl-label\"> الاسم الشخصي</label>\r\n\t\t\t\t\t\t<input\r\n\t\t\t\t\t\t\ttype=\"text\"\r\n\t\t\t\t\t\t\tid=\"الاسم الشخصي\"\r\n\t\t\t\t\t\t\tv-model=\"etudiant.prenomar\"\r\n\t\t\t\t\t\t\tplaceholder=\"أدخل الاسم الشخصي\"\r\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.prenomar }\"\r\n\t\t\t\t\t\t\t@input=\"validateStep('prenomar')\"\r\n\t\t\t\t\t\t\t@focus=\"currentField = 'prenomar'\"\r\n\t\t\t\t\t\t/>\r\n\t\t\t\t\t\t<span v-if=\"errors.prenomar\" class=\"error-message\">\r\n\t\t\t\t\t\t\t✖ {{ errors.prenomar }}\r\n\t\t\t\t\t\t</span>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"form-group\" dir=\"ltr\">\r\n\t\t\t\t\t\t<label for=\"Date Naissance\" >Date Naissance</label>\r\n\t\t\t\t\t\t<input\r\n\t\t\t\t\t\t\ttype=\"date\"\r\n\t\t\t\t\t\t\tid=\"Date Naissance\"\r\n\t\t\t\t\t\t\tv-model=\"etudiant.datenais\"\r\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.datenais }\"\r\n\t\t\t\t\t\t\t@input=\"validateStep('datenais')\"\r\n\t\t\t\t\t\t\t@focus=\"currentField = 'datenais'\"\r\n\r\n\t\t\t\t\t\t/>\r\n\t\t\t\t\t\t<span v-if=\"errors.datenais\" class=\"error-icon\" >✖ {{ errors.datenais }}</span>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"form-group\" dir=\"ltr\">\r\n\t\t\t\t\t\t<label for=\"sexe\">Sexe</label>\r\n\t\t\t\t\t\t<select\r\n\t\t\t\t\t\t\tid=\"sexe\"\r\n\t\t\t\t\t\t\tv-model=\"etudiant.sexe\"\r\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.sexe }\"\r\n\t\t\t\t\t\t\t@change=\"validateStep('sexe')\"\r\n\t\t\t\t\t\t\t@focus=\"currentField = 'sexe'\"\r\n\t\t\t\t\t\t>\r\n\t\t\t\t\t\t\t<option value=\"\" disabled>Veuillez choisir</option>\r\n\t\t\t\t\t\t\t<option value=\"M\">M</option>\r\n\t\t\t\t\t\t\t<option value=\"F\">F</option>\r\n\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t<span v-if=\"errors.sexe\" class=\"error-icon\">✖ {{ errors.sexe }}</span>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"form-group\" dir=\"ltr\">\r\n\t\t\t\t\t\t<label for=\"pays\" >Pays</label>\r\n\t\t\t\t\t\t<input\r\n\t\t\t\t\t\t\ttype=\"text\"\r\n\t\t\t\t\t\t\tid=\"pays\"\r\n\t\t\t\t\t\t\tv-model=\"etudiant.payschamp\"\r\n\t\t\t\t\t\t\tplaceholder=\"Entrez votre Pays\"\r\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.payschamp }\"\r\n\t\t\t\t\t\t\t@input=\"validateStep('payschamp')\"\r\n\t\t\t\t\t\t\t@focus=\"currentField = 'payschamp'\"\r\n\r\n\t\t\t\t\t\t/>\r\n\t\t\t\t\t\t<span v-if=\"errors.payschamp\" class=\"error-icon\" >✖ {{ errors.payschamp }}</span>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"form-group\" dir=\"ltr\">\r\n\t\t\t\t\t\t<label for=\"ville\" >Ville</label>\r\n\t\t\t\t\t\t<input\r\n\t\t\t\t\t\t\ttype=\"text\"\r\n\t\t\t\t\t\t\tid=\"ville\"\r\n\t\t\t\t\t\t\tv-model=\"etudiant.villenais\"\r\n\t\t\t\t\t\t\tplaceholder=\"Entrez votre Ville de Naissance\"\r\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.villenais }\"\r\n\t\t\t\t\t\t\t@input=\"validateStep('villenais')\"\r\n\t\t\t\t\t\t\t@focus=\"currentField = 'villenais'\"\r\n\r\n\t\t\t\t\t\t/>\r\n\t\t\t\t\t\t<span v-if=\"errors.villenais\" class=\"error-icon\" >✖ {{ errors.villenais }}</span>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"form-group\" dir=\"rtl\">\r\n\t\t\t\t\t\t<label for=\"مكان الازدياد\" class=\"rtl-label\">مكان الازدياد</label>\r\n\t\t\t\t\t\t<input\r\n\t\t\t\t\t\t\ttype=\"text\"\r\n\t\t\t\t\t\t\tid=\"مكان الازدياد\"\r\n\t\t\t\t\t\t\tv-model=\"etudiant.villechamp\"\r\n\t\t\t\t\t\t\tplaceholder=\"مكان الازدياد\"\r\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.villechamp }\"\r\n\t\t\t\t\t\t\t@input=\"validateStep('villechamp')\"\r\n\t\t\t\t\t\t\t@focus=\"currentField = 'villechamp'\"\r\n\t\t\t\t\t\t/>\r\n\t\t\t\t\t\t<span v-if=\"errors.villechamp\" class=\"error-message\">\r\n\t\t\t\t\t\t\t✖ {{ errors.villechamp }}\r\n\t\t\t\t\t\t</span>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"form-group\" dir=\"ltr\">\r\n\t\t\t\t\t\t<label for=\"adresse\">Adresse</label>\r\n\t\t\t\t\t\t<textarea\r\n\t\t\t\t\t\t\tid=\"adresse\"\r\n\t\t\t\t\t\t\tv-model=\"etudiant.adresse\"\r\n\t\t\t\t\t\t\tplaceholder=\"Entrez votre Adresse\"\r\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.adresse }\"\r\n\t\t\t\t\t\t\t@input=\"validateStep('adresse')\"\r\n\t\t\t\t\t\t\t@focus=\"currentField = 'adresse'\"\r\n\t\t\t\t\t\t\trows=\"4\"\r\n\t\t\t\t\t\t></textarea>\r\n\t\t\t\t\t\t<span v-if=\"errors.adresse\" class=\"error-icon\">✖ {{ errors.adresse }}</span>\r\n\t\t\t\t\t</div> \r\n\t\t\t\t"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [_cache[50] || (_cache[50] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "email"
   }, "Email", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "email",
-    "onUpdate:modelValue": _cache[37] || (_cache[37] = function ($event) {
+    "onUpdate:modelValue": _cache[13] || (_cache[13] = function ($event) {
       return $data.etudiant.email = $event;
     }),
     placeholder: "Entrez votre Email",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'input-error': $data.errors.email
     }),
-    onInput: _cache[38] || (_cache[38] = function ($event) {
+    onInput: _cache[14] || (_cache[14] = function ($event) {
       return $options.validateStep('email');
     }),
-    onFocus: _cache[39] || (_cache[39] = function ($event) {
+    onFocus: _cache[15] || (_cache[15] = function ($event) {
       return $data.currentField = 'email';
     })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.email]]), $data.errors.email ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_38, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.email), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [_cache[133] || (_cache[133] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.email]]), $data.errors.email ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_22, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.email), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [_cache[51] || (_cache[51] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "phone"
   }, "Télephone", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "phone",
-    "onUpdate:modelValue": _cache[40] || (_cache[40] = function ($event) {
+    "onUpdate:modelValue": _cache[16] || (_cache[16] = function ($event) {
       return $data.etudiant.phone = $event;
     }),
     placeholder: "Entrez votre Télephone",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'input-error': $data.errors.phone
     }),
-    onInput: _cache[41] || (_cache[41] = function ($event) {
+    onInput: _cache[17] || (_cache[17] = function ($event) {
       return $options.validateStep('phone');
     }),
-    onFocus: _cache[42] || (_cache[42] = function ($event) {
+    onFocus: _cache[18] || (_cache[18] = function ($event) {
       return $data.currentField = 'phone';
     })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.phone]]), $data.errors.phone ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_40, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.phone), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.currentStep === 2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_41, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("fieldset", null, [_cache[139] || (_cache[139] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.phone]]), $data.errors.phone ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_24, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.phone), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.currentStep === 2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("fieldset", null, [_cache[57] || (_cache[57] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
     "class": "legend1"
-  }, "Information de baccalauréat", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [_cache[137] || (_cache[137] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, "Information de baccalauréat", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [_cache[55] || (_cache[55] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "serie"
   }, "Série de BAC", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Select "), !$data.showInputSerie ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("select", {
     key: 0,
     id: "serie",
-    "onUpdate:modelValue": _cache[43] || (_cache[43] = function ($event) {
+    "onUpdate:modelValue": _cache[19] || (_cache[19] = function ($event) {
       return $data.etudiant.serie = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'input-error': $data.errors.serie
     }),
-    onChange: _cache[44] || (_cache[44] = function () {
+    onChange: _cache[20] || (_cache[20] = function () {
       return $options.handleSerieChange && $options.handleSerieChange.apply($options, arguments);
     }),
-    onFocus: _cache[45] || (_cache[45] = function ($event) {
+    onFocus: _cache[21] || (_cache[21] = function ($event) {
       return $data.currentField = 'serie';
     })
-  }, [_cache[134] || (_cache[134] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+  }, [_cache[52] || (_cache[52] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
     value: "",
     disabled: ""
   }, "SERIE DE BAC", -1 /* HOISTED */)), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.serie_bac, function (s) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
-      key: s.nom,
-      value: s.id
-    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(s.nom), 9 /* TEXT, PROPS */, _hoisted_43);
-  }), 128 /* KEYED_FRAGMENT */)), _cache[135] || (_cache[135] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+      key: s.id,
+      value: s.nom
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(s.nom), 9 /* TEXT, PROPS */, _hoisted_27);
+  }), 128 /* KEYED_FRAGMENT */)), _cache[53] || (_cache[53] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
     value: "AUTRES"
   }, "AUTRES", -1 /* HOISTED */))], 34 /* CLASS, NEED_HYDRATION */)), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.etudiant.serie]]) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     key: 1
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Input avec bouton annuler "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_44, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Input avec bouton annuler "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "serie",
-    "onUpdate:modelValue": _cache[46] || (_cache[46] = function ($event) {
+    "onUpdate:modelValue": _cache[22] || (_cache[22] = function ($event) {
       return $data.etudiant.serie = $event;
     }),
     placeholder: "Taper votre série de BAC",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'input-error': $data.errors.serie
     }),
-    onInput: _cache[47] || (_cache[47] = function ($event) {
+    onInput: _cache[23] || (_cache[23] = function ($event) {
       return $options.validateStep('serie');
     }),
-    onFocus: _cache[48] || (_cache[48] = function ($event) {
+    onFocus: _cache[24] || (_cache[24] = function ($event) {
       return $data.currentField = 'serie';
     }),
     style: {
@@ -26527,458 +26351,69 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }
   }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.serie]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "close-icon",
-    onClick: _cache[49] || (_cache[49] = function () {
+    onClick: _cache[25] || (_cache[25] = function () {
       return $options.cancelInputSerie && $options.cancelInputSerie.apply($options, arguments);
     }),
     title: "Annuler"
-  }, _cache[136] || (_cache[136] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "×", -1 /* HOISTED */)]))])], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Message d'erreur "), $data.errors.serie ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_45, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.serie), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_46, [_cache[138] || (_cache[138] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "Date BAC"
-  }, "Date D'obtention du BAC", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "date",
-    id: "Date BAC",
-    "onUpdate:modelValue": _cache[50] || (_cache[50] = function ($event) {
-      return $data.etudiant.Anneebac = $event;
-    }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.Anneebac
-    }),
-    onInput: _cache[51] || (_cache[51] = function ($event) {
-      return $options.validateStep('Anneebac');
-    }),
-    onFocus: _cache[52] || (_cache[52] = function ($event) {
-      return $data.currentField = 'Anneebac';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.Anneebac]]), $data.errors.Anneebac ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_47, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.Anneebac), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("fieldset", null, [_cache[148] || (_cache[148] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
-    "class": "legend2"
-  }, "Information du Diplome", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_48, [_cache[141] || (_cache[141] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "dernier_diplome_obtenu"
-  }, "Dernier Diplome Obtenu", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
-    id: "dernier_diplome_obtenu",
-    "onUpdate:modelValue": _cache[53] || (_cache[53] = function ($event) {
-      return $data.etudiant.dernier_diplome_obtenu = $event;
-    }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.dernier_diplome_obtenu
-    }),
-    onChange: _cache[54] || (_cache[54] = function ($event) {
-      return $options.validateStep('dernier_diplome_obtenu');
-    }),
-    onFocus: _cache[55] || (_cache[55] = function ($event) {
-      return $data.currentField = 'dernier_diplome_obtenu';
-    })
-  }, _cache[140] || (_cache[140] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"\" disabled>Choisir</option><option value=\"BAC+2\">Bac+2</option><option value=\"BAC+3\">Bac+3</option><option value=\"BAC+4\">Bac+4</option><option value=\"BAC+5\">Bac+5</option>", 5)]), 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.etudiant.dernier_diplome_obtenu]]), $data.errors.dernier_diplome_obtenu ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_49, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.dernier_diplome_obtenu), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_50, [_cache[144] || (_cache[144] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "type_diplome_obtenu"
-  }, "Type de Diplôme Obtenu", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Select "), !$data.showInputTypeDiplome ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("select", {
-    key: 0,
-    id: "type_diplome_obtenu",
-    "onUpdate:modelValue": _cache[56] || (_cache[56] = function ($event) {
-      return $data.etudiant.type_diplome_obtenu = $event;
-    }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.type_diplome_obtenu
-    }),
-    onChange: _cache[57] || (_cache[57] = function () {
-      return $options.handleDiplomeChange && $options.handleDiplomeChange.apply($options, arguments);
-    }),
-    onFocus: _cache[58] || (_cache[58] = function ($event) {
-      return $data.currentField = 'type_diplome_obtenu';
-    })
-  }, _cache[142] || (_cache[142] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "",
-    disabled: ""
-  }, "Choisir", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "PUBLIC"
-  }, "Public", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "PRIVEE"
-  }, "Privée", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "AUTRES"
-  }, "AUTRES", -1 /* HOISTED */)]), 34 /* CLASS, NEED_HYDRATION */)), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.etudiant.type_diplome_obtenu]]) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    key: 1
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Input avec bouton annuler "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_51, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, _cache[54] || (_cache[54] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "×", -1 /* HOISTED */)]))])], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Message d'erreur "), $data.errors.serie ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_29, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.serie), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [_cache[56] || (_cache[56] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "note"
+  }, "Moyenne du Bac", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
-    id: "type_diplome_obtenu",
-    "onUpdate:modelValue": _cache[59] || (_cache[59] = function ($event) {
-      return $data.etudiant.type_diplome_obtenu = $event;
+    id: "note",
+    "onUpdate:modelValue": _cache[26] || (_cache[26] = function ($event) {
+      return $data.etudiant.moyenne_bac = $event;
     }),
-    placeholder: "Taper le type de diplôme",
+    placeholder: "Entrez une note (ex: 16.50, 14)",
+    onInput: _cache[27] || (_cache[27] = function ($event) {
+      return $options.validateStep('moyenne_bac');
+    }),
+    onFocus: _cache[28] || (_cache[28] = function ($event) {
+      return $data.currentField = 'moyenne_bac';
+    }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.type_diplome_obtenu
-    }),
-    onInput: _cache[60] || (_cache[60] = function ($event) {
-      return $options.validateStep('type_diplome_obtenu');
-    }),
-    onFocus: _cache[61] || (_cache[61] = function ($event) {
-      return $data.currentField = 'type_diplome_obtenu';
-    }),
-    style: {
-      "padding-right": "3rem"
-    }
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.type_diplome_obtenu]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "close-icon",
-    onClick: _cache[62] || (_cache[62] = function () {
-      return $options.cancelInputDiplome && $options.cancelInputDiplome.apply($options, arguments);
-    }),
-    title: "Annuler"
-  }, _cache[143] || (_cache[143] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "×", -1 /* HOISTED */)]))])], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Message d'erreur "), $data.errors.type_diplome_obtenu ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_52, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.type_diplome_obtenu), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_53, [_cache[145] || (_cache[145] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "specialitediplome"
-  }, "Spécialité du Diplome", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    id: "specialitediplome",
-    "onUpdate:modelValue": _cache[63] || (_cache[63] = function ($event) {
-      return $data.etudiant.specialitediplome = $event;
-    }),
-    placeholder: "Entrez le spécialité du Diplome",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.specialitediplome
-    }),
-    onInput: _cache[64] || (_cache[64] = function ($event) {
-      return $options.validateStep('specialitediplome');
-    }),
-    onFocus: _cache[65] || (_cache[65] = function ($event) {
-      return $data.currentField = 'specialitediplome';
+      'input-error': $data.errors.moyenne_bac
     })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.specialitediplome]]), $data.errors.specialitediplome ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_54, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.specialitediplome), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"form-group\" dir=\"ltr\">\n\t\t\t\t\t<label for=\"etblsmtdeug\" >Etablissement</label>\n\t\t\t\t\t<input\n\t\t\t\t\t\ttype=\"text\"\n\t\t\t\t\t\tid=\"etblsmtdeug\"\n\t\t\t\t\t\tv-model=\"etudiant.etblsmtdeug\"\n\t\t\t\t\t\tplaceholder=\"Entrez l'établissement\"\n\t\t\t\t\t\t:class=\"{ 'input-error': errors.etblsmtdeug }\"\n\t\t\t\t\t\t@input=\"validateStep('etblsmtdeug')\"\n\t\t\t\t\t\t@focus=\"currentField = 'etblsmtdeug'\"\n\n\t\t\t\t\t/>\n\t\t\t\t\t<span v-if=\"errors.etblsmtdeug\" class=\"error-icon\" >✖ {{ errors.etblsmtdeug }}</span>\n\t\t\t\t</div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_55, [_cache[146] || (_cache[146] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "ville_etablissement_diplome"
-  }, "Etablissement", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    id: "ville_etablissement_diplome",
-    "onUpdate:modelValue": _cache[66] || (_cache[66] = function ($event) {
-      return $data.etudiant.ville_etablissement_diplome = $event;
-    }),
-    placeholder: "Entrez l'établissement",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.ville_etablissement_diplome
-    }),
-    onInput: _cache[67] || (_cache[67] = function ($event) {
-      return $options.validateStep('ville_etablissement_diplome');
-    }),
-    onFocus: _cache[68] || (_cache[68] = function ($event) {
-      return $data.currentField = 'ville_etablissement_diplome';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.ville_etablissement_diplome]]), $data.errors.ville_etablissement_diplome ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_56, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.ville_etablissement_diplome), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_57, [_cache[147] || (_cache[147] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "date_optention_diplome"
-  }, "Date Obtention de Diplome", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "date",
-    id: "date_optention_diplome",
-    "onUpdate:modelValue": _cache[69] || (_cache[69] = function ($event) {
-      return $data.etudiant.date_optention_diplome = $event;
-    }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.date_optention_diplome
-    }),
-    onInput: _cache[70] || (_cache[70] = function ($event) {
-      return $options.validateStep('date_optention_diplome');
-    }),
-    onFocus: _cache[71] || (_cache[71] = function ($event) {
-      return $data.currentField = 'date_optention_diplome';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.date_optention_diplome]]), $data.errors.date_optention_diplome ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_58, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.date_optention_diplome), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("fieldset", null, [_cache[156] || (_cache[156] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.moyenne_bac]]), $data.errors.moyenne_bac ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_31, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.moyenne_bac), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("fieldset", null, [_cache[60] || (_cache[60] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
     "class": "legend4"
-  }, "Expérience", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_59, [_cache[150] || (_cache[150] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "fonctionnaire"
-  }, "Fonctionnaire", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
-    id: "fonctionnaire",
-    "onUpdate:modelValue": _cache[72] || (_cache[72] = function ($event) {
-      return $data.etudiant.fonctionnaire = $event;
-    }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.fonctionnaire
-    }),
-    onChange: _cache[73] || (_cache[73] = function ($event) {
-      return $options.validateStep('fonctionnaire');
-    }),
-    onFocus: _cache[74] || (_cache[74] = function ($event) {
-      return $data.currentField = 'fonctionnaire';
-    })
-  }, _cache[149] || (_cache[149] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "",
-    disabled: ""
-  }, "Fonctionnaire", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "OUI"
-  }, "OUI", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "NON"
-  }, "NON", -1 /* HOISTED */)]), 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.etudiant.fonctionnaire]]), $data.errors.fonctionnaire ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_60, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.fonctionnaire), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), $data.etudiant.fonctionnaire === 'OUI' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_61, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_62, [_cache[151] || (_cache[151] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, "Expérience Professionnelle", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [_cache[58] || (_cache[58] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "secteur"
   }, "Secteur", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "secteur",
-    "onUpdate:modelValue": _cache[75] || (_cache[75] = function ($event) {
+    "onUpdate:modelValue": _cache[29] || (_cache[29] = function ($event) {
       return $data.etudiant.secteur = $event;
     }),
     placeholder: "Entrez le secteur",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'input-error': $data.errors.secteur
     }),
-    onInput: _cache[76] || (_cache[76] = function ($event) {
+    onInput: _cache[30] || (_cache[30] = function ($event) {
       return $options.validateStep('secteur');
     }),
-    onFocus: _cache[77] || (_cache[77] = function ($event) {
+    onFocus: _cache[31] || (_cache[31] = function ($event) {
       return $data.currentField = 'secteur';
     })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.secteur]]), $data.errors.secteur ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_63, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.secteur), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_64, [_cache[152] || (_cache[152] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "nombreannee"
-  }, "Nombre d'années", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "number",
-    id: "nombreannee",
-    "onUpdate:modelValue": _cache[78] || (_cache[78] = function ($event) {
-      return $data.etudiant.nombreannee = $event;
-    }),
-    min: "0",
-    step: "1",
-    placeholder: "Nombre d'années d'expérience",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.nombreannee
-    }),
-    onInput: _cache[79] || (_cache[79] = function ($event) {
-      return $options.validateStep('nombreannee');
-    }),
-    onFocus: _cache[80] || (_cache[80] = function ($event) {
-      return $data.currentField = 'nombreannee';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.nombreannee]]), $data.errors.nombreannee ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_65, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.nombreannee), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_66, [_cache[153] || (_cache[153] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.secteur]]), $data.errors.secteur ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_34, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.secteur), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [_cache[59] || (_cache[59] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "poste"
   }, "Poste", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "poste",
-    "onUpdate:modelValue": _cache[81] || (_cache[81] = function ($event) {
+    "onUpdate:modelValue": _cache[32] || (_cache[32] = function ($event) {
       return $data.etudiant.poste = $event;
     }),
     placeholder: "Entrez votre poste",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'input-error': $data.errors.poste
     }),
-    onInput: _cache[82] || (_cache[82] = function ($event) {
+    onInput: _cache[33] || (_cache[33] = function ($event) {
       return $options.validateStep('poste');
     }),
-    onFocus: _cache[83] || (_cache[83] = function ($event) {
+    onFocus: _cache[34] || (_cache[34] = function ($event) {
       return $data.currentField = 'poste';
     })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.poste]]), $data.errors.poste ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_67, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.poste), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_68, [_cache[154] || (_cache[154] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "lieutravail"
-  }, "Lieu de travail", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    id: "lieutravail",
-    "onUpdate:modelValue": _cache[84] || (_cache[84] = function ($event) {
-      return $data.etudiant.lieutravail = $event;
-    }),
-    placeholder: "Lieu de travail",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.lieutravail
-    }),
-    onInput: _cache[85] || (_cache[85] = function ($event) {
-      return $options.validateStep('lieutravail');
-    }),
-    onFocus: _cache[86] || (_cache[86] = function ($event) {
-      return $data.currentField = 'lieutravail';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.lieutravail]]), $data.errors.lieutravail ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_69, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.lieutravail), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_70, [_cache[155] || (_cache[155] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "villetravail"
-  }, "Ville de travail", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    id: "villetravail",
-    "onUpdate:modelValue": _cache[87] || (_cache[87] = function ($event) {
-      return $data.etudiant.villetravail = $event;
-    }),
-    placeholder: "Ville de travail",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.villetravail
-    }),
-    onInput: _cache[88] || (_cache[88] = function ($event) {
-      return $options.validateStep('villetravail');
-    }),
-    onFocus: _cache[89] || (_cache[89] = function ($event) {
-      return $data.currentField = 'villetravail';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.villetravail]]), $data.errors.villetravail ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_71, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.villetravail), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.currentStep === 3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_72, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" File Upload Field for PHOTO "), $props.etablissement.show_photo_input_passerelle ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_73, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_74, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "file",
-    id: "path_photo",
-    onChange: _cache[90] || (_cache[90] = function ($event) {
-      return $options.handleFileUpload($event, 'path_photo');
-    }),
-    accept: ".jpg, .jpeg, .png",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error-student': $data.errors['path_photo']
-    }),
-    ref: "fileInput8",
-    style: {
-      "display": "none"
-    }
-  }, null, 34 /* CLASS, NEED_HYDRATION */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "file-upload-btn-student",
-    onClick: _cache[91] || (_cache[91] = function ($event) {
-      return $options.triggerFileInput('fileInput8');
-    })
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_75, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: $data.etudiant['path_photo'] && $data.etudiant['path_photo'].preview ? $data.etudiant['path_photo'].preview : '/form/images/etudiant.png',
-    alt: "Preview",
-    "class": "upload-img-student"
-  }, null, 8 /* PROPS */, _hoisted_76)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_77, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.etudiant['path_photo'] && $data.etudiant['path_photo'].preview ? 'Changer l\'image' : 'Choisir votre photo'), 1 /* TEXT */)])]), $data.errors['path_photo'] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_78, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors['path_photo']), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" File Upload Field for CIN "), $props.etablissement.show_cin_input_passerelle ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_79, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" File Upload Field for Student Image "), _cache[158] || (_cache[158] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "class": "file-label"
-  }, "CIN", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_80, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "file",
-    id: "path_cin",
-    onChange: _cache[92] || (_cache[92] = function ($event) {
-      return $options.handleFileUpload($event, 'path_cin');
-    }),
-    accept: ".jpg, .jpeg, .png",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors['path_cin']
-    }),
-    ref: "fileInput7",
-    style: {
-      "display": "none"
-    }
-  }, null, 34 /* CLASS, NEED_HYDRATION */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "file-upload-btn",
-    onClick: _cache[93] || (_cache[93] = function ($event) {
-      return $options.triggerFileInput('fileInput7');
-    })
-  }, _cache[157] || (_cache[157] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-    "class": "btn-text"
-  }, "Choisir une image", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-    "class": "fa fa-upload"
-  }, null, -1 /* HOISTED */)])), $data.etudiant['path_cin'] && $data.etudiant['path_cin'].preview ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_81, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_82, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: $data.etudiant['path_cin'].preview,
-    alt: "Preview",
-    "class": "preview-img"
-  }, null, 8 /* PROPS */, _hoisted_83), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    onClick: _cache[94] || (_cache[94] = function ($event) {
-      return $options.removeFile('path_cin');
-    }),
-    "class": "remove-btn"
-  }, "✖")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.errors['path_cin'] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_84, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors['path_cin']), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" File Upload Field for Bac "), $props.etablissement.show_bac_input_passerelle ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_85, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" File Upload Field for Student Bac "), _cache[160] || (_cache[160] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "class": "file-label"
-  }, "Diplome de baccalauréat", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_86, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "file",
-    id: "path_bac",
-    onChange: _cache[95] || (_cache[95] = function ($event) {
-      return $options.handleFileUpload($event, 'path_bac');
-    }),
-    accept: ".jpg, .jpeg, .png",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors['path_bac']
-    }),
-    ref: "fileInput9",
-    style: {
-      "display": "none"
-    }
-  }, null, 34 /* CLASS, NEED_HYDRATION */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "file-upload-btn",
-    onClick: _cache[96] || (_cache[96] = function ($event) {
-      return $options.triggerFileInput('fileInput9');
-    })
-  }, _cache[159] || (_cache[159] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-    "class": "btn-text"
-  }, "Choisir une image", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-    "class": "fa fa-upload"
-  }, null, -1 /* HOISTED */)])), $data.etudiant['path_bac'] && $data.etudiant['path_bac'].preview ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_87, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_88, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: $data.etudiant['path_bac'].preview,
-    alt: "Preview",
-    "class": "preview-img"
-  }, null, 8 /* PROPS */, _hoisted_89), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    onClick: _cache[97] || (_cache[97] = function ($event) {
-      return $options.removeFile('path_bac');
-    }),
-    "class": "remove-btn"
-  }, "✖")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.errors['path_bac'] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_90, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors['path_bac']), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" File Upload Field for Diplome Bac+2 "), $props.etablissement.show_diplome_deug_input_passerelle ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_91, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" File Upload Field for Student Diplome bac+2 "), _cache[162] || (_cache[162] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "class": "file-label"
-  }, "Diplome de Bac+2 (Ou équivalent)", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_92, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "file",
-    id: "path_diplomedeug",
-    onChange: _cache[98] || (_cache[98] = function ($event) {
-      return $options.handleFileUpload($event, 'path_diplomedeug');
-    }),
-    accept: ".jpg, .jpeg, .png",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors['path_diplomedeug']
-    }),
-    ref: "fileInput10",
-    style: {
-      "display": "none"
-    }
-  }, null, 34 /* CLASS, NEED_HYDRATION */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "file-upload-btn",
-    onClick: _cache[99] || (_cache[99] = function ($event) {
-      return $options.triggerFileInput('fileInput10');
-    })
-  }, _cache[161] || (_cache[161] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-    "class": "btn-text"
-  }, "Choisir une image", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-    "class": "fa fa-upload"
-  }, null, -1 /* HOISTED */)])), $data.etudiant['path_diplomedeug'] && $data.etudiant['path_diplomedeug'].preview ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_93, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_94, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: $data.etudiant['path_diplomedeug'].preview,
-    alt: "Preview",
-    "class": "preview-img"
-  }, null, 8 /* PROPS */, _hoisted_95), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    onClick: _cache[100] || (_cache[100] = function ($event) {
-      return $options.removeFile('path_diplomedeug');
-    }),
-    "class": "remove-btn"
-  }, "✖")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.errors['path_diplomedeug'] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_96, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors['path_diplomedeug']), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" File Upload Field for Attestation non emploi "), $props.etablissement.show_attestation_no_emploi_input_passerelle ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_97, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" File Upload Field for Student Attestation non emploi "), _cache[164] || (_cache[164] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "class": "file-label"
-  }, "Attestation de non-emploi", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_98, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "file",
-    id: "path_attestation_non_emploi",
-    onChange: _cache[101] || (_cache[101] = function ($event) {
-      return $options.handleFileUpload($event, 'path_attestation_non_emploi');
-    }),
-    accept: ".jpg, .jpeg, .png",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors['path_attestation_non_emploi']
-    }),
-    ref: "fileInput11",
-    style: {
-      "display": "none"
-    }
-  }, null, 34 /* CLASS, NEED_HYDRATION */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "file-upload-btn",
-    onClick: _cache[102] || (_cache[102] = function ($event) {
-      return $options.triggerFileInput('fileInput11');
-    })
-  }, _cache[163] || (_cache[163] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-    "class": "btn-text"
-  }, "Choisir une image", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-    "class": "fa fa-upload"
-  }, null, -1 /* HOISTED */)])), $data.etudiant['path_attestation_non_emploi'] && $data.etudiant['path_attestation_non_emploi'].preview ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_99, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_100, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: $data.etudiant['path_attestation_non_emploi'].preview,
-    alt: "Preview",
-    "class": "preview-img"
-  }, null, 8 /* PROPS */, _hoisted_101), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    onClick: _cache[103] || (_cache[103] = function ($event) {
-      return $options.removeFile('path_attestation_non_emploi');
-    }),
-    "class": "remove-btn"
-  }, "✖")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.errors['path_attestation_non_emploi'] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_102, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors['path_attestation_non_emploi']), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.etablissement.show_cv_input_passerelle ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_103, [_cache[166] || (_cache[166] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "class": "file-label-student"
-  }, "Curriculum Vitae (PDF)", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" PDF Upload Box "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "pdf-upload-container",
-    onClick: _cache[106] || (_cache[106] = function () {
-      return $options.triggerFileInputPDF && $options.triggerFileInputPDF.apply($options, arguments);
-    })
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "file",
-    ref: "fileInput",
-    onChange: _cache[104] || (_cache[104] = function () {
-      return $options.handleFileUploadPDF && $options.handleFileUploadPDF.apply($options, arguments);
-    }),
-    accept: ".pdf",
-    hidden: ""
-  }, null, 544 /* NEED_HYDRATION, NEED_PATCH */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" PDF Content Preview "), $data.pdfUrl ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_104, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("canvas", _hoisted_105, null, 512 /* NEED_PATCH */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "remove-file-btn",
-    onClick: _cache[105] || (_cache[105] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
-      return $options.removeFilePDF && $options.removeFilePDF.apply($options, arguments);
-    }, ["stop"]))
-  }, "✖")], 512 /* NEED_PATCH */)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    key: 1
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Placeholder "), _cache[165] || (_cache[165] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "pdf-upload-placeholder"
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-    "class": "fas fa-file-upload pdf-upload-icon"
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-    "class": "upload-text"
-  }, "Cliquez pour sélectionner un fichier PDF")], -1 /* HOISTED */))], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Error Message "), $data.errors['path_cv'] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_106, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors['path_cv']), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.currentStep === 4 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_107, [$props.etablissement.multiple_choix_filiere_passerelle == 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_108, [_cache[168] || (_cache[168] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.poste]]), $data.errors.poste ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_36, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.poste), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"form-group\" dir=\"ltr\">\r\n\t\t\t\t\t\t<label for=\"lieutravail\">Lieu de travail</label>\r\n\t\t\t\t\t\t<input\r\n\t\t\t\t\t\t\ttype=\"text\"\r\n\t\t\t\t\t\t\tid=\"lieutravail\"\r\n\t\t\t\t\t\t\tv-model=\"etudiant.lieutravail\"\r\n\t\t\t\t\t\t\tplaceholder=\"Lieu de travail\"\r\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.lieutravail }\"\r\n\t\t\t\t\t\t\t@input=\"validateStep('lieutravail')\"\r\n\t\t\t\t\t\t\t@focus=\"currentField = 'lieutravail'\"\r\n\t\t\t\t\t\t/>\r\n\t\t\t\t\t\t<span v-if=\"errors.lieutravail\" class=\"error-icon\">✖ {{ errors.lieutravail }}</span>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div class=\"form-group\" dir=\"ltr\">\r\n\t\t\t\t\t\t<label for=\"villetravail\">Ville de travail</label>\r\n\t\t\t\t\t\t<input\r\n\t\t\t\t\t\t\ttype=\"text\"\r\n\t\t\t\t\t\t\tid=\"villetravail\"\r\n\t\t\t\t\t\t\tv-model=\"etudiant.villetravail\"\r\n\t\t\t\t\t\t\tplaceholder=\"Ville de travail\"\r\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.villetravail }\"\r\n\t\t\t\t\t\t\t@input=\"validateStep('villetravail')\"\r\n\t\t\t\t\t\t\t@focus=\"currentField = 'villetravail'\"\r\n\t\t\t\t\t\t/>\r\n\t\t\t\t\t\t<span v-if=\"errors.villetravail\" class=\"error-icon\">✖ {{ errors.villetravail }}</span>\r\n\t\t\t\t\t</div> ")])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.currentStep === 3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [_cache[61] || (_cache[61] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "class": "section-title"
-  }, "Sélectionnez une Filière", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_109, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.filieres, function (f) {
+  }, "Sélectionnez une Filière", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.filieres, function (f) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       key: f.id,
       "class": "filiere-card",
@@ -26988,62 +26423,31 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "radio",
       id: 'filiere_' + f.id,
-      "onUpdate:modelValue": _cache[107] || (_cache[107] = function ($event) {
+      "onUpdate:modelValue": _cache[35] || (_cache[35] = function ($event) {
         return $data.etudiant.filiere = $event;
       }),
       value: f.id,
       "class": "hidden-input",
-      onChange: _cache[108] || (_cache[108] = function ($event) {
+      onChange: _cache[36] || (_cache[36] = function ($event) {
         return $options.validateStep('filiere');
       })
-    }, null, 40 /* PROPS, NEED_HYDRATION */, _hoisted_111), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.etudiant.filiere]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    }, null, 40 /* PROPS, NEED_HYDRATION */, _hoisted_41), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.etudiant.filiere]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
       "for": 'filiere_' + f.id,
       "class": "filiere-content"
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_113, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(f.nom_abrv), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_114, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(f.nom_complet), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-      href: $props.appurl + f.document,
-      target: "_blank",
-      "class": "description-btn"
-    }, _toConsumableArray(_cache[167] || (_cache[167] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-      "class": "fas fa-file-alt"
-    }, null, -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Voir la description ")])), 8 /* PROPS */, _hoisted_115), $data.etudiant.filiere === f.id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_116, " ✔ Sélectionné ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 8 /* PROPS */, _hoisted_112)], 8 /* PROPS */, _hoisted_110);
-  }), 128 /* KEYED_FRAGMENT */))]), $data.errors.filiere ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_117, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.filiere), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_118, [_cache[170] || (_cache[170] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "class": "section-title"
-  }, "Choisissez jusqu'à 3 Filières", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_119, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.filieres, function (f) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-      key: f.id,
-      "class": "filiere-card"
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-      type: "checkbox",
-      id: 'filiere_choix_' + f.id,
-      value: f.id,
-      "onUpdate:modelValue": _cache[109] || (_cache[109] = function ($event) {
-        return $data.selectedFiliereChoices = $event;
-      }),
-      "class": "hidden-input",
-      disabled: $data.selectedFiliereChoices.length >= 3 && !$data.selectedFiliereChoices.includes(f.id)
-    }, null, 8 /* PROPS */, _hoisted_120), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.selectedFiliereChoices]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-      "for": 'filiere_choix_' + f.id,
-      "class": "filiere-content"
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_122, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(f.nom_abrv), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_123, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(f.nom_complet), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-      href: $props.appurl + f.document,
-      target: "_blank",
-      "class": "description-btn"
-    }, _toConsumableArray(_cache[169] || (_cache[169] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-      "class": "fas fa-file-alt"
-    }, null, -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Voir la description ")])), 8 /* PROPS */, _hoisted_124), $data.selectedFiliereChoices.includes(f.id) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_125, " ✔ Sélectionné (" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.choixText($data.selectedFiliereChoices.indexOf(f.id) + 1)) + ") ", 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 8 /* PROPS */, _hoisted_121)]);
-  }), 128 /* KEYED_FRAGMENT */))]), $data.errors.filiere_choix_1 || $data.errors.filiere_choix_2 || $data.errors.filiere_choix_3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_126, "✖ Le choix de trois filières est requis. Veuillez sélectionner trois filières.")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.currentStep === 5 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_127, [_cache[173] || (_cache[173] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_43, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(f.nom_abrv), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_44, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(f.nom_complet), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <a :href=\"appurl + f.document\" target=\"_blank\" class=\"description-btn\">\r\n\t\t\t\t\t\t\t\t<i class=\"fas fa-file-alt\"></i> Voir la description\r\n\t\t\t\t\t\t\t</a> "), $data.etudiant.filiere === f.id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_45, " ✔ Sélectionné ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 8 /* PROPS */, _hoisted_42)], 8 /* PROPS */, _hoisted_40);
+  }), 128 /* KEYED_FRAGMENT */))]), $data.errors.filiere ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_46, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.filiere), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.currentStep === 4 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_47, [_cache[64] || (_cache[64] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
     "class": "confirmation-note"
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "NB :"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Veuillez vérifier que vous avez rempli correctement toutes les informations demandées. L'inscription se fait uniquement une seule fois. ")], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_128, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Hidden checkbox for v-model "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "NB :"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Veuillez vérifier que vous avez rempli correctement toutes les informations demandées. L'inscription se fait uniquement une seule fois. ")], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_48, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Hidden checkbox for v-model "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     id: "check",
     type: "checkbox",
-    "onUpdate:modelValue": _cache[110] || (_cache[110] = function ($event) {
+    "onUpdate:modelValue": _cache[37] || (_cache[37] = function ($event) {
       return $data.etudiant.confirmation = $event;
     }),
     "class": "hidden-checkbox",
-    onChange: _cache[111] || (_cache[111] = function () {
+    onChange: _cache[38] || (_cache[38] = function () {
       return _ctx.validateCheckbox && _ctx.validateCheckbox.apply(_ctx, arguments);
     })
-  }, null, 544 /* NEED_HYDRATION, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.etudiant.confirmation]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Custom checkbox "), _cache[171] || (_cache[171] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, null, 544 /* NEED_HYDRATION, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.etudiant.confirmation]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Custom checkbox "), _cache[62] || (_cache[62] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "check",
     "class": "custom-checkbox"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
@@ -27051,24 +26455,24 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     viewBox: "0 0 24 24"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
     d: "M5 12l5 5L20 7"
-  })])], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Checkbox text "), _cache[172] || (_cache[172] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  })])], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Checkbox text "), _cache[63] || (_cache[63] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "checkbox-text"
-  }, " Je certifie sur l'honneur l'exactitude des informations déclarées et des documents téléchargés. ", -1 /* HOISTED */))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Error message "), $data.errors.confirmation ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_129, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.confirmation), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ErrorPopup, {
+  }, " Je certifie sur l'honneur l'exactitude des informations déclarées. ", -1 /* HOISTED */))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Error message "), $data.errors.confirmation ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_49, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.confirmation), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ErrorPopup, {
     ref: "errorPopup"
-  }, null, 512 /* NEED_PATCH */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Navigation Buttons "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_130, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, null, 512 /* NEED_PATCH */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Navigation Buttons "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_50, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn btn-secondary",
-    onClick: _cache[112] || (_cache[112] = function () {
+    onClick: _cache[39] || (_cache[39] = function () {
       return $options.prevStep && $options.prevStep.apply($options, arguments);
     }),
     disabled: $data.currentStep === 1
-  }, "Précédent", 8 /* PROPS */, _hoisted_131), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_132, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.currentStep === $data.steps.length ? 'Terminer' : 'Suivant'), 1 /* TEXT */)])], 32 /* NEED_HYDRATION */)])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_133, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_134, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Logo "), _cache[178] || (_cache[178] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  }, "Précédent", 8 /* PROPS */, _hoisted_51), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_52, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.currentStep === $data.steps.length ? 'Terminer' : 'Suivant'), 1 /* TEXT */)])], 32 /* NEED_HYDRATION */)])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_53, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_54, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Logo "), _cache[71] || (_cache[71] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "modern-logo-box"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
     src: "/form/images/uh1-vertical.png",
     alt: "University Logo",
     "class": "modern-logo"
-  })], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Success Icon "), _cache[179] || (_cache[179] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  })], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Success Icon "), _cache[72] || (_cache[72] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "success-icon"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
     viewBox: "0 0 24 24",
@@ -27089,26 +26493,826 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     fill: "none",
     "stroke-linecap": "round",
     "stroke-linejoin": "round"
-  })])], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Success Message "), _cache[180] || (_cache[180] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+  })])], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Success Message "), _cache[73] || (_cache[73] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
     "class": "success-title"
-  }, "🎉 Félicitations !", -1 /* HOISTED */)), _cache[181] || (_cache[181] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  }, "🎉 Félicitations !", -1 /* HOISTED */)), _cache[74] || (_cache[74] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
     "class": "success-text"
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Votre inscription est "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "validée"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" et sera traitée par notre équipe. ")], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Account Info "), _cache[182] || (_cache[182] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"success-info text-dark p-3 rounded bg-light border\"><p><strong>Votre compte étudiant a été créé avec succès.</strong></p><p>Veuillez vous connecter à votre espace personnel pour :</p><ul><li><strong>Modifier</strong> votre candidature si nécessaire,</li><li><strong>Confirmer</strong> définitivement votre candidature,</li><li>et <strong>télécharger le reçu</strong> de votre préinscription.</li></ul><p class=\"mt-3\">Nous vous invitons à finaliser ces étapes dans les meilleurs délais.</p></div>", 1)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" User Credentials "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_135, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_cache[175] || (_cache[175] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Email :", -1 /* HOISTED */)), _cache[176] || (_cache[176] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)()), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.etudiant.email), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Smart Password Toggle "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Password field with dynamic type change "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_cache[177] || (_cache[177] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Mot de passe :", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Password display container "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Votre inscription est "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "validée"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" et sera traitée par notre équipe. ")], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Account Info "), $data.etudiant.exists === false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_55, _cache[66] || (_cache[66] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<p><strong>Votre compte étudiant a été créé avec succès.</strong></p><p>Veuillez vous connecter à votre espace personnel pour :</p><ul><li><strong>Modifier</strong> votre candidature si nécessaire,</li><li><strong>Confirmer</strong> définitivement votre candidature,</li><li>et <strong>télécharger le reçu</strong> de votre préinscription.</li></ul><p class=\"mt-3\">Nous vous invitons à finaliser ces étapes dans les meilleurs délais.</p>", 4)]))) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" User Credentials "), $data.etudiant.exists === false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_56, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_cache[67] || (_cache[67] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Email :", -1 /* HOISTED */)), _cache[68] || (_cache[68] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)()), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.etudiant.email), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_cache[69] || (_cache[69] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Mot de passe :", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["password-box", {
       'blurred': !$data.showPassword
     }])
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Use a span to display the password, it won't show in HTML source directly "), $data.showPassword ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_136, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.etudiant.CIN) + "@2025", 1 /* TEXT */)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_137, "********************************"))], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, [$data.showPassword ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_57, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.etudiant.CIN) + "@2025", 1 /* TEXT */)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_58, "********************************"))], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": "toggle-password",
-    onClick: _cache[114] || (_cache[114] = function () {
+    onClick: _cache[41] || (_cache[41] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.togglePassword && $options.togglePassword.apply($options, arguments);
-    }),
-    onMouseenter: _cache[115] || (_cache[115] = function ($event) {
+    }, ["prevent"])),
+    onMouseenter: _cache[42] || (_cache[42] = function ($event) {
       return $data.showTooltip = true;
     }),
-    onMouseleave: _cache[116] || (_cache[116] = function ($event) {
+    onMouseleave: _cache[43] || (_cache[43] = function ($event) {
       return $data.showTooltip = false;
     })
-  }, [$data.showPassword ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_138, "👁️‍🗨️")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_139, "🔒"))], 32 /* NEED_HYDRATION */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Tooltip "), $data.showTooltip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_140, [$data.showPassword ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_141, "Cliquez pour masquer le mot de passe")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_142, "Cliquez pour afficher le mot de passe"))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Login Button "), _cache[183] || (_cache[183] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  }, [$data.showPassword ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_59, "👁️‍🗨️")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_60, "🔒"))], 32 /* NEED_HYDRATION */), $data.showTooltip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_61, [$data.showPassword ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_62, "Cliquez pour masquer le mot de passe")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_63, "Cliquez pour afficher le mot de passe"))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Account Already Exists "), $data.etudiant.exists === true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_64, _cache[70] || (_cache[70] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Un compte existe déjà pour cet étudiant.")], -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Vous pouvez utiliser votre compte existant pour vous connecter à votre espace personnel et suivre votre candidature.", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Accédez à votre espace avec votre "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "email"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(".")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("En cas d’oubli de mot de passe, vous pouvez nous contacter à notre "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "adresse e-mail indiquée dans la page de contact"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(".")])], -1 /* HOISTED */)]))) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Login Button "), _cache[75] || (_cache[75] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "/login",
+    "class": "modern-button"
+  }, "Se connecter", -1 /* HOISTED */))])]))], 64 /* STABLE_FRAGMENT */);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsExcellence.vue?vue&type=template&id=7e511e68":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsExcellence.vue?vue&type=template&id=7e511e68 ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  key: 0,
+  "class": "loading-overlay"
+};
+var _hoisted_2 = {
+  key: 1,
+  "class": "form-container"
+};
+var _hoisted_3 = {
+  "class": "progress-bar-container"
+};
+var _hoisted_4 = {
+  "class": "progress-steps"
+};
+var _hoisted_5 = ["onClick"];
+var _hoisted_6 = {
+  "class": "step-circle"
+};
+var _hoisted_7 = {
+  "class": "step-icon"
+};
+var _hoisted_8 = {
+  "class": "step-label"
+};
+var _hoisted_9 = {
+  key: 0,
+  "class": "progress-tooltip"
+};
+var _hoisted_10 = {
+  "class": "form-body"
+};
+var _hoisted_11 = {
+  "class": "section-title",
+  style: {
+    "text-align": "center"
+  }
+};
+var _hoisted_12 = {
+  key: 0
+};
+var _hoisted_13 = {
+  "class": "form-group",
+  dir: "ltr"
+};
+var _hoisted_14 = {
+  key: 0,
+  "class": "error-icon"
+};
+var _hoisted_15 = {
+  "class": "form-group",
+  dir: "ltr"
+};
+var _hoisted_16 = {
+  key: 0,
+  "class": "error-icon"
+};
+var _hoisted_17 = {
+  "class": "form-group",
+  dir: "ltr"
+};
+var _hoisted_18 = {
+  key: 0,
+  "class": "error-icon"
+};
+var _hoisted_19 = {
+  "class": "form-group",
+  dir: "ltr"
+};
+var _hoisted_20 = {
+  key: 0,
+  "class": "error-icon"
+};
+var _hoisted_21 = {
+  "class": "form-group",
+  dir: "ltr"
+};
+var _hoisted_22 = {
+  key: 0,
+  "class": "error-icon"
+};
+var _hoisted_23 = {
+  "class": "form-group",
+  dir: "ltr"
+};
+var _hoisted_24 = {
+  key: 0,
+  "class": "error-icon"
+};
+var _hoisted_25 = {
+  key: 1
+};
+var _hoisted_26 = {
+  "class": "form-group",
+  style: {
+    "margin-top": "20px"
+  },
+  dir: "ltr"
+};
+var _hoisted_27 = ["value"];
+var _hoisted_28 = {
+  style: {
+    "position": "relative"
+  }
+};
+var _hoisted_29 = {
+  key: 2,
+  "class": "error-icon"
+};
+var _hoisted_30 = {
+  "class": "form-group",
+  style: {
+    "margin-top": "20px"
+  },
+  dir: "ltr"
+};
+var _hoisted_31 = ["value"];
+var _hoisted_32 = {
+  style: {
+    "position": "relative"
+  }
+};
+var _hoisted_33 = {
+  key: 2,
+  "class": "error-icon"
+};
+var _hoisted_34 = {
+  "class": "form-group",
+  dir: "ltr"
+};
+var _hoisted_35 = {
+  key: 0,
+  "class": "error-icon"
+};
+var _hoisted_36 = {
+  "class": "form-group",
+  dir: "ltr"
+};
+var _hoisted_37 = {
+  key: 0,
+  "class": "error-icon"
+};
+var _hoisted_38 = {
+  "class": "form-group",
+  dir: "ltr"
+};
+var _hoisted_39 = {
+  key: 0,
+  "class": "error-icon"
+};
+var _hoisted_40 = {
+  "class": "form-group",
+  dir: "ltr"
+};
+var _hoisted_41 = {
+  key: 0,
+  "class": "error-icon"
+};
+var _hoisted_42 = {
+  "class": "form-group",
+  dir: "ltr"
+};
+var _hoisted_43 = {
+  key: 0,
+  "class": "error-icon"
+};
+var _hoisted_44 = {
+  "class": "form-group"
+};
+var _hoisted_45 = {
+  key: 0,
+  "class": "error-icon"
+};
+var _hoisted_46 = {
+  style: {
+    "margin-top": "20px"
+  }
+};
+var _hoisted_47 = {
+  "class": "form-group",
+  dir: "ltr"
+};
+var _hoisted_48 = {
+  key: 0,
+  "class": "error-icon"
+};
+var _hoisted_49 = {
+  "class": "form-group",
+  dir: "ltr"
+};
+var _hoisted_50 = {
+  key: 0,
+  "class": "error-icon"
+};
+var _hoisted_51 = {
+  key: 2
+};
+var _hoisted_52 = {
+  "class": "form-groupp"
+};
+var _hoisted_53 = {
+  "class": "filiere-container"
+};
+var _hoisted_54 = ["onClick"];
+var _hoisted_55 = ["id", "value"];
+var _hoisted_56 = ["for"];
+var _hoisted_57 = {
+  "class": "filiere-title"
+};
+var _hoisted_58 = {
+  "class": "filiere-name"
+};
+var _hoisted_59 = {
+  key: 0,
+  "class": "selected-icon"
+};
+var _hoisted_60 = {
+  key: 0,
+  "class": "error-icon"
+};
+var _hoisted_61 = {
+  key: 3,
+  "class": "confirmation-container"
+};
+var _hoisted_62 = {
+  "class": "checkbox-wrapper"
+};
+var _hoisted_63 = {
+  key: 0,
+  "class": "error-icon"
+};
+var _hoisted_64 = {
+  "class": "form-actions"
+};
+var _hoisted_65 = ["disabled"];
+var _hoisted_66 = {
+  type: "submit",
+  "class": "btn btn-primary"
+};
+var _hoisted_67 = {
+  key: 2,
+  "class": "success-container"
+};
+var _hoisted_68 = {
+  "class": "success-card"
+};
+var _hoisted_69 = {
+  key: 0,
+  "class": "success-info text-dark p-3 rounded bg-light border"
+};
+var _hoisted_70 = {
+  key: 1,
+  "class": "success-credentials"
+};
+var _hoisted_71 = {
+  key: 0
+};
+var _hoisted_72 = {
+  key: 1
+};
+var _hoisted_73 = {
+  key: 0
+};
+var _hoisted_74 = {
+  key: 1
+};
+var _hoisted_75 = {
+  key: 0,
+  "class": "password-tooltip"
+};
+var _hoisted_76 = {
+  key: 0
+};
+var _hoisted_77 = {
+  key: 1
+};
+var _hoisted_78 = {
+  key: 2,
+  "class": "alert alert-warning text-dark p-3 rounded bg-light border"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_ErrorPopup = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ErrorPopup");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [$data.loading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_cache[66] || (_cache[66] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "particles"
+  }, null, -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Effet magique "), _cache[67] || (_cache[67] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"loader-logo-container\"><div class=\"loader-glow\"></div><!-- Vague lumineuse --><img src=\"/form/images/uh1-vertical.png\" alt=\"Université Hassan 1er\" class=\"loader-logo\"></div><div class=\"spinner\"></div><p class=\"loading-text\">Veuillez patienter...</p>", 3)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Texte fixe ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$data.successForm ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Progress Bar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "progress-bar",
+    style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)({
+      width: $data.currentStep / $data.steps.length * 100 + '%'
+    })
+  }, null, 4 /* STYLE */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Header with Logo "), _cache[98] || (_cache[98] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"form-header\"><div class=\"logo-container\"><img src=\"/form/images/uh1-vertical.png\" alt=\"University Logo\" class=\"form-logo\"></div><h1 class=\"form-title\">Préinscription Licences (Accès S5)</h1><p class=\"form-subtitle\">Remplissez les étapes ci-dessous pour finaliser votre inscription</p></div>", 1)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Progress Steps "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.steps, function (step, index) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+      key: index,
+      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["step", {
+        completed: $data.currentStep > index + 1,
+        active: $data.currentStep === index + 1
+      }]),
+      onClick: function onClick($event) {
+        return $options.goToStep(index + 1);
+      },
+      title: "Click to navigate to step {{ index + 1 }}"
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(index + 1), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(step.title.split('\n'), function (line) {
+      return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", {
+        "class": "step-line",
+        key: line
+      }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(line), 1 /* TEXT */);
+    }), 128 /* KEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Progress percentage displayed on hover "), $data.currentStep === index + 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Math.round((index + 1) / $data.steps.length * 100)) + "% ", 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])], 10 /* CLASS, PROPS */, _hoisted_5);
+  }), 128 /* KEYED_FRAGMENT */))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Form Section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", _hoisted_11, "Étape " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.currentStep) + " : " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.steps[$data.currentStep - 1].title), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+    onSubmit: _cache[62] || (_cache[62] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return $options.nextStep && $options.nextStep.apply($options, arguments);
+    }, ["prevent"])),
+    enctype: "multipart/form-data"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "hidden",
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $data.etudiant.etablissement_id = $event;
+    })
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.etablissement_id]]), $data.currentStep === 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_cache[68] || (_cache[68] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "CNE"
+  }, "CNE", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "CNE",
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return $data.etudiant.CNE = $event;
+    }),
+    placeholder: "Entrez votre CNE",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.CNE
+    }),
+    onInput: _cache[2] || (_cache[2] = function ($event) {
+      return $options.validateStep('CNE');
+    }),
+    onFocus: _cache[3] || (_cache[3] = function ($event) {
+      return $data.currentField = 'CNE';
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.CNE]]), $data.errors.CNE ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_14, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.CNE), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [_cache[69] || (_cache[69] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "CIN"
+  }, "CIN", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "CIN",
+    "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
+      return $data.etudiant.CIN = $event;
+    }),
+    placeholder: "Entrez votre CIN",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.CIN
+    }),
+    onInput: _cache[5] || (_cache[5] = function ($event) {
+      return $options.validateStep('CIN');
+    }),
+    onFocus: _cache[6] || (_cache[6] = function ($event) {
+      return $data.currentField = 'CIN';
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.CIN]]), $data.errors.CIN ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_16, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.CIN), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [_cache[70] || (_cache[70] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "Nom"
+  }, "Nom", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "Nom",
+    "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
+      return $data.etudiant.nom = $event;
+    }),
+    placeholder: "Entrez votre Nom",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.nom
+    }),
+    onInput: _cache[8] || (_cache[8] = function ($event) {
+      return $options.validateStep('nom');
+    }),
+    onFocus: _cache[9] || (_cache[9] = function ($event) {
+      return $data.currentField = 'nom';
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.nom]]), $data.errors.nom ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_18, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.nom), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [_cache[71] || (_cache[71] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "Prenom"
+  }, "Prenom", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "Prenom",
+    "onUpdate:modelValue": _cache[10] || (_cache[10] = function ($event) {
+      return $data.etudiant.prenom = $event;
+    }),
+    placeholder: "Entrez votre Prenom",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.prenom
+    }),
+    onInput: _cache[11] || (_cache[11] = function ($event) {
+      return $options.validateStep('prenom');
+    }),
+    onFocus: _cache[12] || (_cache[12] = function ($event) {
+      return $data.currentField = 'prenom';
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.prenom]]), $data.errors.prenom ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_20, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.prenom), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n\t\t\t\t\t<div class=\"form-group\" dir=\"rtl\">\n\t\t\t\t\t\t<label for=\"الاسم العائلي\" class=\"rtl-label\">الاسم العائلي</label>\n\t\t\t\t\t\t<input\n\t\t\t\t\t\t\ttype=\"text\"\n\t\t\t\t\t\t\tid=\"الاسم العائلي\"\n\t\t\t\t\t\t\tv-model=\"etudiant.nomar\"\n\t\t\t\t\t\t\tplaceholder=\"أدخل الاسم العائلي\"\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.nomar }\"\n\t\t\t\t\t\t\t@input=\"validateStep('nomar')\"\n\t\t\t\t\t\t\t@focus=\"currentField = 'nomar'\"\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<span v-if=\"errors.nomar\" class=\"error-message\">\n\t\t\t\t\t\t\t✖ {{ errors.nomar }}\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"form-group\" dir=\"rtl\">\n\t\t\t\t\t\t<label for=\"الاسم الشخصي\" class=\"rtl-label\"> الاسم الشخصي</label>\n\t\t\t\t\t\t<input\n\t\t\t\t\t\t\ttype=\"text\"\n\t\t\t\t\t\t\tid=\"الاسم الشخصي\"\n\t\t\t\t\t\t\tv-model=\"etudiant.prenomar\"\n\t\t\t\t\t\t\tplaceholder=\"أدخل الاسم الشخصي\"\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.prenomar }\"\n\t\t\t\t\t\t\t@input=\"validateStep('prenomar')\"\n\t\t\t\t\t\t\t@focus=\"currentField = 'prenomar'\"\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<span v-if=\"errors.prenomar\" class=\"error-message\">\n\t\t\t\t\t\t\t✖ {{ errors.prenomar }}\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"form-group\" dir=\"ltr\">\n\t\t\t\t\t\t<label for=\"Date Naissance\" >Date Naissance</label>\n\t\t\t\t\t\t<input\n\t\t\t\t\t\t\ttype=\"date\"\n\t\t\t\t\t\t\tid=\"Date Naissance\"\n\t\t\t\t\t\t\tv-model=\"etudiant.datenais\"\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.datenais }\"\n\t\t\t\t\t\t\t@input=\"validateStep('datenais')\"\n\t\t\t\t\t\t\t@focus=\"currentField = 'datenais'\"\n\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<span v-if=\"errors.datenais\" class=\"error-icon\" >✖ {{ errors.datenais }}</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"form-group\" dir=\"ltr\">\n\t\t\t\t\t\t<label for=\"sexe\">Sexe</label>\n\t\t\t\t\t\t<select\n\t\t\t\t\t\t\tid=\"sexe\"\n\t\t\t\t\t\t\tv-model=\"etudiant.sexe\"\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.sexe }\"\n\t\t\t\t\t\t\t@change=\"validateStep('sexe')\"\n\t\t\t\t\t\t\t@focus=\"currentField = 'sexe'\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\t<option value=\"\" disabled>Veuillez choisir</option>\n\t\t\t\t\t\t\t<option value=\"M\">M</option>\n\t\t\t\t\t\t\t<option value=\"F\">F</option>\n\t\t\t\t\t\t</select>\n\t\t\t\t\t\t<span v-if=\"errors.sexe\" class=\"error-icon\">✖ {{ errors.sexe }}</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"form-group\" dir=\"ltr\">\n\t\t\t\t\t\t<label for=\"pays\" >Pays</label>\n\t\t\t\t\t\t<input\n\t\t\t\t\t\t\ttype=\"text\"\n\t\t\t\t\t\t\tid=\"pays\"\n\t\t\t\t\t\t\tv-model=\"etudiant.payschamp\"\n\t\t\t\t\t\t\tplaceholder=\"Entrez votre Pays\"\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.payschamp }\"\n\t\t\t\t\t\t\t@input=\"validateStep('payschamp')\"\n\t\t\t\t\t\t\t@focus=\"currentField = 'payschamp'\"\n\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<span v-if=\"errors.payschamp\" class=\"error-icon\" >✖ {{ errors.payschamp }}</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"form-group\" dir=\"ltr\">\n\t\t\t\t\t\t<label for=\"ville\" >Ville</label>\n\t\t\t\t\t\t<input\n\t\t\t\t\t\t\ttype=\"text\"\n\t\t\t\t\t\t\tid=\"ville\"\n\t\t\t\t\t\t\tv-model=\"etudiant.villenais\"\n\t\t\t\t\t\t\tplaceholder=\"Entrez votre Ville de Naissance\"\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.villenais }\"\n\t\t\t\t\t\t\t@input=\"validateStep('villenais')\"\n\t\t\t\t\t\t\t@focus=\"currentField = 'villenais'\"\n\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<span v-if=\"errors.villenais\" class=\"error-icon\" >✖ {{ errors.villenais }}</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"form-group\" dir=\"rtl\">\n\t\t\t\t\t\t<label for=\"مكان الازدياد\" class=\"rtl-label\">مكان الازدياد</label>\n\t\t\t\t\t\t<input\n\t\t\t\t\t\t\ttype=\"text\"\n\t\t\t\t\t\t\tid=\"مكان الازدياد\"\n\t\t\t\t\t\t\tv-model=\"etudiant.villechamp\"\n\t\t\t\t\t\t\tplaceholder=\"مكان الازدياد\"\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.villechamp }\"\n\t\t\t\t\t\t\t@input=\"validateStep('villechamp')\"\n\t\t\t\t\t\t\t@focus=\"currentField = 'villechamp'\"\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<span v-if=\"errors.villechamp\" class=\"error-message\">\n\t\t\t\t\t\t\t✖ {{ errors.villechamp }}\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"form-group\" dir=\"ltr\">\n\t\t\t\t\t<label for=\"adresse\">Adresse</label>\n\t\t\t\t\t<textarea\n\t\t\t\t\t\tid=\"adresse\"\n\t\t\t\t\t\tv-model=\"etudiant.adresse\"\n\t\t\t\t\t\tplaceholder=\"Entrez votre Adresse\"\n\t\t\t\t\t\t:class=\"{ 'input-error': errors.adresse }\"\n\t\t\t\t\t\t@input=\"validateStep('adresse')\"\n\t\t\t\t\t\t@focus=\"currentField = 'adresse'\"\n\t\t\t\t\t\trows=\"4\"\n\t\t\t\t\t></textarea>\n\t\t\t\t\t<span v-if=\"errors.adresse\" class=\"error-icon\">✖ {{ errors.adresse }}</span>\n\t\t\t\t\t</div> \n\t\t\t\t"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [_cache[72] || (_cache[72] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "email"
+  }, "Email", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "email",
+    "onUpdate:modelValue": _cache[13] || (_cache[13] = function ($event) {
+      return $data.etudiant.email = $event;
+    }),
+    placeholder: "Entrez votre Email",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.email
+    }),
+    onInput: _cache[14] || (_cache[14] = function ($event) {
+      return $options.validateStep('email');
+    }),
+    onFocus: _cache[15] || (_cache[15] = function ($event) {
+      return $data.currentField = 'email';
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.email]]), $data.errors.email ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_22, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.email), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [_cache[73] || (_cache[73] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "phone"
+  }, "Télephone", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "phone",
+    "onUpdate:modelValue": _cache[16] || (_cache[16] = function ($event) {
+      return $data.etudiant.phone = $event;
+    }),
+    placeholder: "Entrez votre Télephone",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.phone
+    }),
+    onInput: _cache[17] || (_cache[17] = function ($event) {
+      return $options.validateStep('phone');
+    }),
+    onFocus: _cache[18] || (_cache[18] = function ($event) {
+      return $data.currentField = 'phone';
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.phone]]), $data.errors.phone ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_24, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.phone), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.currentStep === 2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("fieldset", null, [_cache[78] || (_cache[78] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
+    "class": "legend1"
+  }, "Information de baccalauréat", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [_cache[77] || (_cache[77] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "serie"
+  }, "Série de BAC", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Select "), !$data.showInputSerie ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("select", {
+    key: 0,
+    id: "serie",
+    "onUpdate:modelValue": _cache[19] || (_cache[19] = function ($event) {
+      return $data.etudiant.serie = $event;
+    }),
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.serie
+    }),
+    onChange: _cache[20] || (_cache[20] = function () {
+      return $options.handleSerieChange && $options.handleSerieChange.apply($options, arguments);
+    }),
+    onFocus: _cache[21] || (_cache[21] = function ($event) {
+      return $data.currentField = 'serie';
+    })
+  }, [_cache[74] || (_cache[74] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+    value: "",
+    disabled: ""
+  }, "SERIE DE BAC", -1 /* HOISTED */)), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.serie_bac, function (s) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
+      key: s.id,
+      value: s.nom
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(s.nom), 9 /* TEXT, PROPS */, _hoisted_27);
+  }), 128 /* KEYED_FRAGMENT */)), _cache[75] || (_cache[75] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+    value: "AUTRES"
+  }, "AUTRES", -1 /* HOISTED */))], 34 /* CLASS, NEED_HYDRATION */)), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.etudiant.serie]]) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    key: 1
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Input avec bouton annuler "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "serie",
+    "onUpdate:modelValue": _cache[22] || (_cache[22] = function ($event) {
+      return $data.etudiant.serie = $event;
+    }),
+    placeholder: "Taper votre série de BAC",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.serie
+    }),
+    onInput: _cache[23] || (_cache[23] = function ($event) {
+      return $options.validateStep('serie');
+    }),
+    onFocus: _cache[24] || (_cache[24] = function ($event) {
+      return $data.currentField = 'serie';
+    }),
+    style: {
+      "padding-right": "3rem"
+    }
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.serie]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "close-icon",
+    onClick: _cache[25] || (_cache[25] = function () {
+      return $options.cancelInputSerie && $options.cancelInputSerie.apply($options, arguments);
+    }),
+    title: "Annuler"
+  }, _cache[76] || (_cache[76] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "×", -1 /* HOISTED */)]))])], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Message d'erreur "), $data.errors.serie ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_29, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.serie), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("fieldset", null, [_cache[90] || (_cache[90] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
+    "class": "legend2"
+  }, "Information de Bac+2", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [_cache[82] || (_cache[82] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "diplomedeug"
+  }, "Diplôme Bac+2", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Select "), !$data.showInputDiplome ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("select", {
+    key: 0,
+    id: "diplomedeug",
+    "onUpdate:modelValue": _cache[26] || (_cache[26] = function ($event) {
+      return $data.etudiant.diplomedeug = $event;
+    }),
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.diplomedeug
+    }),
+    onChange: _cache[27] || (_cache[27] = function () {
+      return $options.handleDiplomeChange && $options.handleDiplomeChange.apply($options, arguments);
+    }),
+    onFocus: _cache[28] || (_cache[28] = function ($event) {
+      return $data.currentField = 'diplomedeug';
+    })
+  }, [_cache[79] || (_cache[79] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+    value: "",
+    disabled: ""
+  }, "Diplôme Bac+2", -1 /* HOISTED */)), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.diplomeBacPlus2, function (d) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
+      key: d.id,
+      value: d.nom
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(d.nom), 9 /* TEXT, PROPS */, _hoisted_31);
+  }), 128 /* KEYED_FRAGMENT */)), _cache[80] || (_cache[80] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+    value: "AUTRES"
+  }, "AUTRES", -1 /* HOISTED */))], 34 /* CLASS, NEED_HYDRATION */)), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.etudiant.diplomedeug]]) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    key: 1
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Input avec bouton annuler "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "diplomedeug",
+    "onUpdate:modelValue": _cache[29] || (_cache[29] = function ($event) {
+      return $data.etudiant.diplomedeug = $event;
+    }),
+    placeholder: "Taper votre diplôme Bac+2",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.diplomedeug
+    }),
+    onInput: _cache[30] || (_cache[30] = function ($event) {
+      return $options.validateStep('diplomedeug');
+    }),
+    onFocus: _cache[31] || (_cache[31] = function ($event) {
+      return $data.currentField = 'diplomedeug';
+    }),
+    style: {
+      "padding-right": "3rem"
+    }
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.diplomedeug]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "close-icon",
+    onClick: _cache[32] || (_cache[32] = function () {
+      return $options.cancelInputDiplome && $options.cancelInputDiplome.apply($options, arguments);
+    }),
+    title: "Annuler"
+  }, _cache[81] || (_cache[81] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "×", -1 /* HOISTED */)]))])], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Message d'erreur "), $data.errors.diplomedeug ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_33, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.diplomedeug), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_34, [_cache[84] || (_cache[84] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "mentiondeug"
+  }, "Mention", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+    id: "mentiondeug",
+    "onUpdate:modelValue": _cache[33] || (_cache[33] = function ($event) {
+      return $data.etudiant.mentiondeug = $event;
+    }),
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.mentiondeug
+    }),
+    onChange: _cache[34] || (_cache[34] = function ($event) {
+      return $options.validateStep('mentiondeug');
+    }),
+    onFocus: _cache[35] || (_cache[35] = function ($event) {
+      return $data.currentField = 'mentiondeug';
+    })
+  }, _cache[83] || (_cache[83] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"\" disabled>MENTION Bac+2</option><option value=\"PASSABLE\">PASSABLE</option><option value=\"ASSEZ BIEN\">ASSEZ BIEN</option><option value=\"BIEN\">BIEN</option><option value=\"TRES BIEN\">TRES BIEN</option>", 5)]), 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.etudiant.mentiondeug]]), $data.errors.mentiondeug ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_35, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.mentiondeug), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [_cache[85] || (_cache[85] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "specialitedeug"
+  }, "Spécialité du Diplome", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "specialitedeug",
+    "onUpdate:modelValue": _cache[36] || (_cache[36] = function ($event) {
+      return $data.etudiant.specialitedeug = $event;
+    }),
+    placeholder: "Entrez le spécialité du Diplome",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.specialitedeug
+    }),
+    onInput: _cache[37] || (_cache[37] = function ($event) {
+      return $options.validateStep('specialitedeug');
+    }),
+    onFocus: _cache[38] || (_cache[38] = function ($event) {
+      return $data.currentField = 'specialitedeug';
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.specialitedeug]]), $data.errors.specialitedeug ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_37, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.specialitedeug), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [_cache[86] || (_cache[86] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "etblsmtdeug"
+  }, "Etablissement", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "etblsmtdeug",
+    "onUpdate:modelValue": _cache[39] || (_cache[39] = function ($event) {
+      return $data.etudiant.etblsmtdeug = $event;
+    }),
+    placeholder: "Entrez l'établissement",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.etblsmtdeug
+    }),
+    onInput: _cache[40] || (_cache[40] = function ($event) {
+      return $options.validateStep('etblsmtdeug');
+    }),
+    onFocus: _cache[41] || (_cache[41] = function ($event) {
+      return $data.currentField = 'etblsmtdeug';
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.etblsmtdeug]]), $data.errors.etblsmtdeug ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_39, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.etblsmtdeug), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [_cache[87] || (_cache[87] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "ville_etablissement_deug"
+  }, "Ville d'établissement", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "ville_etablissement_deug",
+    "onUpdate:modelValue": _cache[42] || (_cache[42] = function ($event) {
+      return $data.etudiant.ville_etablissement_deug = $event;
+    }),
+    placeholder: "Entrez la ville",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.ville_etablissement_deug
+    }),
+    onInput: _cache[43] || (_cache[43] = function ($event) {
+      return $options.validateStep('ville_etablissement_deug');
+    }),
+    onFocus: _cache[44] || (_cache[44] = function ($event) {
+      return $data.currentField = 'ville_etablissement_deug';
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.ville_etablissement_deug]]), $data.errors.ville_etablissement_deug ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_41, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.ville_etablissement_deug), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [_cache[88] || (_cache[88] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "Date obtention bac+2"
+  }, "Date Obtention de Diplome", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "date",
+    id: "Date obtention bac+2",
+    "onUpdate:modelValue": _cache[45] || (_cache[45] = function ($event) {
+      return $data.etudiant.date_obtention_deug = $event;
+    }),
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.date_obtention_deug
+    }),
+    onInput: _cache[46] || (_cache[46] = function ($event) {
+      return $options.validateStep('date_obtention_deug');
+    }),
+    onFocus: _cache[47] || (_cache[47] = function ($event) {
+      return $data.currentField = 'date_obtention_deug';
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.date_obtention_deug]]), $data.errors.date_obtention_deug ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_43, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.date_obtention_deug), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_44, [_cache[89] || (_cache[89] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "note"
+  }, "Moyenne du Diplome", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "note",
+    "onUpdate:modelValue": _cache[48] || (_cache[48] = function ($event) {
+      return $data.etudiant.moyenne_deug = $event;
+    }),
+    placeholder: "Entrez une note (ex: 16.50, 14)",
+    onInput: _cache[49] || (_cache[49] = function ($event) {
+      return $options.validateStep('moyenne_deug');
+    }),
+    onFocus: _cache[50] || (_cache[50] = function ($event) {
+      return $data.currentField = 'moyenne_deug';
+    }),
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.moyenne_deug
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.moyenne_deug]]), $data.errors.moyenne_deug ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_45, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.moyenne_deug), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("fieldset", null, [_cache[93] || (_cache[93] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
+    "class": "legend4"
+  }, "Expérience Professionnelle", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_46, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_47, [_cache[91] || (_cache[91] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "secteur"
+  }, "Secteur", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "secteur",
+    "onUpdate:modelValue": _cache[51] || (_cache[51] = function ($event) {
+      return $data.etudiant.secteur = $event;
+    }),
+    placeholder: "Entrez le secteur",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.secteur
+    }),
+    onInput: _cache[52] || (_cache[52] = function ($event) {
+      return $options.validateStep('secteur');
+    }),
+    onFocus: _cache[53] || (_cache[53] = function ($event) {
+      return $data.currentField = 'secteur';
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.secteur]]), $data.errors.secteur ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_48, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.secteur), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_49, [_cache[92] || (_cache[92] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "poste"
+  }, "Poste", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "poste",
+    "onUpdate:modelValue": _cache[54] || (_cache[54] = function ($event) {
+      return $data.etudiant.poste = $event;
+    }),
+    placeholder: "Entrez votre poste",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.poste
+    }),
+    onInput: _cache[55] || (_cache[55] = function ($event) {
+      return $options.validateStep('poste');
+    }),
+    onFocus: _cache[56] || (_cache[56] = function ($event) {
+      return $data.currentField = 'poste';
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.poste]]), $data.errors.poste ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_50, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.poste), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"form-group\" dir=\"ltr\">\n\t\t\t\t\t\t<label for=\"lieutravail\">Lieu de travail</label>\n\t\t\t\t\t\t<input\n\t\t\t\t\t\t\ttype=\"text\"\n\t\t\t\t\t\t\tid=\"lieutravail\"\n\t\t\t\t\t\t\tv-model=\"etudiant.lieutravail\"\n\t\t\t\t\t\t\tplaceholder=\"Lieu de travail\"\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.lieutravail }\"\n\t\t\t\t\t\t\t@input=\"validateStep('lieutravail')\"\n\t\t\t\t\t\t\t@focus=\"currentField = 'lieutravail'\"\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<span v-if=\"errors.lieutravail\" class=\"error-icon\">✖ {{ errors.lieutravail }}</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"form-group\" dir=\"ltr\">\n\t\t\t\t\t\t<label for=\"villetravail\">Ville de travail</label>\n\t\t\t\t\t\t<input\n\t\t\t\t\t\t\ttype=\"text\"\n\t\t\t\t\t\t\tid=\"villetravail\"\n\t\t\t\t\t\t\tv-model=\"etudiant.villetravail\"\n\t\t\t\t\t\t\tplaceholder=\"Ville de travail\"\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.villetravail }\"\n\t\t\t\t\t\t\t@input=\"validateStep('villetravail')\"\n\t\t\t\t\t\t\t@focus=\"currentField = 'villetravail'\"\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<span v-if=\"errors.villetravail\" class=\"error-icon\">✖ {{ errors.villetravail }}</span>\n\t\t\t\t\t</div> ")])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.currentStep === 3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_51, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_52, [_cache[94] || (_cache[94] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "class": "section-title"
+  }, "Sélectionnez une Filière", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_53, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.filieres, function (f) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+      key: f.id,
+      "class": "filiere-card",
+      onClick: function onClick($event) {
+        return $options.toggleSelection(f.id);
+      }
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+      type: "radio",
+      id: 'filiere_' + f.id,
+      "onUpdate:modelValue": _cache[57] || (_cache[57] = function ($event) {
+        return $data.etudiant.filiere = $event;
+      }),
+      value: f.id,
+      "class": "hidden-input",
+      onChange: _cache[58] || (_cache[58] = function ($event) {
+        return $options.validateStep('filiere');
+      })
+    }, null, 40 /* PROPS, NEED_HYDRATION */, _hoisted_55), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.etudiant.filiere]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+      "for": 'filiere_' + f.id,
+      "class": "filiere-content"
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_57, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(f.nom_abrv), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_58, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(f.nom_complet), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <a :href=\"appurl + f.document\" target=\"_blank\" class=\"description-btn\">\n\t\t\t\t\t\t\t\t<i class=\"fas fa-file-alt\"></i> Voir la description\n\t\t\t\t\t\t\t</a> "), $data.etudiant.filiere === f.id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_59, " ✔ Sélectionné ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 8 /* PROPS */, _hoisted_56)], 8 /* PROPS */, _hoisted_54);
+  }), 128 /* KEYED_FRAGMENT */))]), $data.errors.filiere ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_60, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.filiere), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.currentStep === 4 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_61, [_cache[97] || (_cache[97] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+    "class": "confirmation-note"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "NB :"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Veuillez vérifier que vous avez rempli correctement toutes les informations demandées. L'inscription se fait uniquement une seule fois. ")], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_62, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Hidden checkbox for v-model "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    id: "check",
+    type: "checkbox",
+    "onUpdate:modelValue": _cache[59] || (_cache[59] = function ($event) {
+      return $data.etudiant.confirmation = $event;
+    }),
+    "class": "hidden-checkbox",
+    onChange: _cache[60] || (_cache[60] = function () {
+      return _ctx.validateCheckbox && _ctx.validateCheckbox.apply(_ctx, arguments);
+    })
+  }, null, 544 /* NEED_HYDRATION, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.etudiant.confirmation]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Custom checkbox "), _cache[95] || (_cache[95] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "check",
+    "class": "custom-checkbox"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+    "class": "check-icon",
+    viewBox: "0 0 24 24"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+    d: "M5 12l5 5L20 7"
+  })])], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Checkbox text "), _cache[96] || (_cache[96] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    "class": "checkbox-text"
+  }, " Je certifie sur l'honneur l'exactitude des informations déclarées. ", -1 /* HOISTED */))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Error message "), $data.errors.confirmation ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_63, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.confirmation), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ErrorPopup, {
+    ref: "errorPopup"
+  }, null, 512 /* NEED_PATCH */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Navigation Buttons "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_64, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    type: "button",
+    "class": "btn btn-secondary",
+    onClick: _cache[61] || (_cache[61] = function () {
+      return $options.prevStep && $options.prevStep.apply($options, arguments);
+    }),
+    disabled: $data.currentStep === 1
+  }, "Précédent", 8 /* PROPS */, _hoisted_65), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_66, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.currentStep === $data.steps.length ? 'Terminer' : 'Suivant'), 1 /* TEXT */)])], 32 /* NEED_HYDRATION */)])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_67, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_68, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Logo "), _cache[104] || (_cache[104] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "modern-logo-box"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: "/form/images/uh1-vertical.png",
+    alt: "University Logo",
+    "class": "modern-logo"
+  })], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Success Icon "), _cache[105] || (_cache[105] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "success-icon"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+    viewBox: "0 0 24 24",
+    width: "100",
+    height: "100",
+    "class": "glow"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("circle", {
+    cx: "12",
+    cy: "12",
+    r: "10",
+    stroke: "#d4af37",
+    "stroke-width": "4",
+    fill: "none"
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+    d: "M7 12l3 3 6-6",
+    stroke: "#d4af37",
+    "stroke-width": "4",
+    fill: "none",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+  })])], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Success Message "), _cache[106] || (_cache[106] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+    "class": "success-title"
+  }, "🎉 Félicitations !", -1 /* HOISTED */)), _cache[107] || (_cache[107] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+    "class": "success-text"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Votre inscription est "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "validée"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" et sera traitée par notre équipe. ")], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Account Info "), $data.etudiant.exists === false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_69, _cache[99] || (_cache[99] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<p><strong>Votre compte étudiant a été créé avec succès.</strong></p><p>Veuillez vous connecter à votre espace personnel pour :</p><ul><li><strong>Modifier</strong> votre candidature si nécessaire,</li><li><strong>Confirmer</strong> définitivement votre candidature,</li><li>et <strong>télécharger le reçu</strong> de votre préinscription.</li></ul><p class=\"mt-3\">Nous vous invitons à finaliser ces étapes dans les meilleurs délais.</p>", 4)]))) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" User Credentials "), $data.etudiant.exists === false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_70, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_cache[100] || (_cache[100] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Email :", -1 /* HOISTED */)), _cache[101] || (_cache[101] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)()), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.etudiant.email), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_cache[102] || (_cache[102] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Mot de passe :", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["password-box", {
+      'blurred': !$data.showPassword
+    }])
+  }, [$data.showPassword ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_71, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.etudiant.CIN) + "@2025", 1 /* TEXT */)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_72, "********************************"))], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "toggle-password",
+    onClick: _cache[63] || (_cache[63] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return $options.togglePassword && $options.togglePassword.apply($options, arguments);
+    }, ["prevent"])),
+    onMouseenter: _cache[64] || (_cache[64] = function ($event) {
+      return $data.showTooltip = true;
+    }),
+    onMouseleave: _cache[65] || (_cache[65] = function ($event) {
+      return $data.showTooltip = false;
+    })
+  }, [$data.showPassword ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_73, "👁️‍🗨️")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_74, "🔒"))], 32 /* NEED_HYDRATION */), $data.showTooltip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_75, [$data.showPassword ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_76, "Cliquez pour masquer le mot de passe")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_77, "Cliquez pour afficher le mot de passe"))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Account Already Exists "), $data.etudiant.exists === true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_78, _cache[103] || (_cache[103] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Un compte existe déjà pour cet étudiant.")], -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Vous pouvez utiliser votre compte existant pour vous connecter à votre espace personnel et suivre votre candidature.", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Accédez à votre espace avec votre "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "email"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(".")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("En cas d’oubli de mot de passe, vous pouvez nous contacter à notre "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "adresse e-mail indiquée dans la page de contact"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(".")])], -1 /* HOISTED */)]))) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Login Button "), _cache[108] || (_cache[108] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     href: "/login",
     "class": "modern-button"
   }, "Se connecter", -1 /* HOISTED */))])]))], 64 /* STABLE_FRAGMENT */);
@@ -27128,12 +27332,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   render: () => (/* binding */ render)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
-function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
-function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
-function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 
 var _hoisted_1 = {
   key: 0,
@@ -27209,59 +27407,63 @@ var _hoisted_20 = {
 };
 var _hoisted_21 = {
   "class": "form-group",
-  dir: "rtl"
+  dir: "ltr"
 };
 var _hoisted_22 = {
   key: 0,
-  "class": "error-message"
+  "class": "error-icon"
 };
 var _hoisted_23 = {
   "class": "form-group",
-  dir: "rtl"
+  dir: "ltr"
 };
 var _hoisted_24 = {
   key: 0,
-  "class": "error-message"
+  "class": "error-icon"
 };
 var _hoisted_25 = {
-  "class": "form-group",
-  dir: "ltr"
+  key: 1
 };
 var _hoisted_26 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_27 = {
   "class": "form-group",
+  style: {
+    "margin-top": "20px"
+  },
   dir: "ltr"
 };
+var _hoisted_27 = ["value"];
 var _hoisted_28 = {
-  key: 0,
-  "class": "error-icon"
+  style: {
+    "position": "relative"
+  }
 };
 var _hoisted_29 = {
-  "class": "form-group",
-  dir: "ltr"
-};
-var _hoisted_30 = {
-  key: 0,
+  key: 2,
   "class": "error-icon"
 };
-var _hoisted_31 = {
+var _hoisted_30 = {
   "class": "form-group",
+  style: {
+    "margin-top": "20px"
+  },
   dir: "ltr"
 };
+var _hoisted_31 = {
+  style: {
+    "position": "relative"
+  }
+};
 var _hoisted_32 = {
-  key: 0,
+  key: 2,
   "class": "error-icon"
 };
 var _hoisted_33 = {
   "class": "form-group",
-  dir: "rtl"
+  dir: "ltr"
 };
 var _hoisted_34 = {
   key: 0,
-  "class": "error-message"
+  "class": "error-icon"
 };
 var _hoisted_35 = {
   "class": "form-group",
@@ -27288,24 +27490,24 @@ var _hoisted_40 = {
   "class": "error-icon"
 };
 var _hoisted_41 = {
-  key: 1
-};
-var _hoisted_42 = {
   "class": "form-group",
-  style: {
-    "margin-top": "20px"
-  },
   dir: "ltr"
 };
-var _hoisted_43 = ["value"];
+var _hoisted_42 = {
+  key: 0,
+  "class": "error-icon"
+};
+var _hoisted_43 = {
+  "class": "form-group"
+};
 var _hoisted_44 = {
-  style: {
-    "position": "relative"
-  }
+  key: 0,
+  "class": "error-icon"
 };
 var _hoisted_45 = {
-  key: 2,
-  "class": "error-icon"
+  style: {
+    "margin-top": "20px"
+  }
 };
 var _hoisted_46 = {
   "class": "form-group",
@@ -27317,9 +27519,6 @@ var _hoisted_47 = {
 };
 var _hoisted_48 = {
   "class": "form-group",
-  style: {
-    "margin-top": "20px"
-  },
   dir: "ltr"
 };
 var _hoisted_49 = {
@@ -27327,333 +27526,101 @@ var _hoisted_49 = {
   "class": "error-icon"
 };
 var _hoisted_50 = {
-  "class": "form-group",
-  dir: "ltr"
+  key: 2
 };
 var _hoisted_51 = {
-  style: {
-    "position": "relative"
-  }
+  "class": "form-groupp"
 };
 var _hoisted_52 = {
-  key: 2,
-  "class": "error-icon"
+  "class": "filiere-container"
 };
-var _hoisted_53 = {
-  "class": "form-group",
-  dir: "ltr"
-};
-var _hoisted_54 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_55 = {
-  "class": "form-group",
-  dir: "ltr"
-};
+var _hoisted_53 = ["onClick"];
+var _hoisted_54 = ["id", "value"];
+var _hoisted_55 = ["for"];
 var _hoisted_56 = {
-  key: 0,
-  "class": "error-icon"
+  "class": "filiere-title"
 };
 var _hoisted_57 = {
-  "class": "form-group",
-  dir: "ltr"
+  "class": "filiere-name"
 };
 var _hoisted_58 = {
   key: 0,
-  "class": "error-icon"
+  "class": "selected-icon"
 };
 var _hoisted_59 = {
-  "class": "form-group",
-  style: {
-    "margin-top": "20px"
-  },
-  dir: "ltr"
+  key: 0,
+  "class": "error-icon"
 };
 var _hoisted_60 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_61 = {
-  key: 0
-};
-var _hoisted_62 = {
-  "class": "form-group",
-  dir: "ltr"
-};
-var _hoisted_63 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_64 = {
-  "class": "form-group",
-  dir: "ltr"
-};
-var _hoisted_65 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_66 = {
-  "class": "form-group",
-  dir: "ltr"
-};
-var _hoisted_67 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_68 = {
-  "class": "form-group",
-  dir: "ltr"
-};
-var _hoisted_69 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_70 = {
-  "class": "form-group",
-  dir: "ltr"
-};
-var _hoisted_71 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_72 = {
-  key: 2
-};
-var _hoisted_73 = {
-  key: 0,
-  "class": "form-group student-image-upload"
-};
-var _hoisted_74 = {
-  "class": "file-upload-wrapper-student"
-};
-var _hoisted_75 = {
-  "class": "file-upload-image-student"
-};
-var _hoisted_76 = ["src"];
-var _hoisted_77 = {
-  "class": "upload-text-student"
-};
-var _hoisted_78 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_79 = {
-  key: 1,
-  "class": "form-group",
-  style: {
-    "margin-top": "20px"
-  }
-};
-var _hoisted_80 = {
-  "class": "file-upload-wrapper"
-};
-var _hoisted_81 = {
-  key: 0,
-  "class": "file-preview"
-};
-var _hoisted_82 = {
-  "class": "preview-container"
-};
-var _hoisted_83 = ["src"];
-var _hoisted_84 = {
-  key: 1,
-  "class": "error-icon"
-};
-var _hoisted_85 = {
-  key: 2,
-  "class": "form-group",
-  style: {
-    "margin-top": "20px"
-  }
-};
-var _hoisted_86 = {
-  "class": "file-upload-wrapper"
-};
-var _hoisted_87 = {
-  key: 0,
-  "class": "file-preview"
-};
-var _hoisted_88 = {
-  "class": "preview-container"
-};
-var _hoisted_89 = ["src"];
-var _hoisted_90 = {
-  key: 1,
-  "class": "error-icon"
-};
-var _hoisted_91 = {
   key: 3,
-  "class": "form-group",
-  style: {
-    "margin-top": "20px"
-  }
-};
-var _hoisted_92 = {
-  "class": "file-upload-wrapper"
-};
-var _hoisted_93 = {
-  key: 0,
-  "class": "file-preview"
-};
-var _hoisted_94 = {
-  "class": "preview-container"
-};
-var _hoisted_95 = ["src"];
-var _hoisted_96 = {
-  key: 1,
-  "class": "error-icon"
-};
-var _hoisted_97 = {
-  key: 4,
-  "class": "form-group",
-  style: {
-    "margin-top": "20px"
-  }
-};
-var _hoisted_98 = {
-  "class": "file-upload-wrapper"
-};
-var _hoisted_99 = {
-  key: 0,
-  "class": "file-preview"
-};
-var _hoisted_100 = {
-  "class": "preview-container"
-};
-var _hoisted_101 = ["src"];
-var _hoisted_102 = {
-  key: 1,
-  "class": "error-icon"
-};
-var _hoisted_103 = {
-  key: 5,
-  "class": "form-group student-pdf-upload"
-};
-var _hoisted_104 = {
-  key: 0,
-  ref: "pdfContainer",
-  "class": "pdf-preview-container"
-};
-var _hoisted_105 = {
-  ref: "pdfCanvas"
-};
-var _hoisted_106 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_107 = {
-  key: 3
-};
-var _hoisted_108 = {
-  key: 0,
-  "class": "form-groupp"
-};
-var _hoisted_109 = {
-  "class": "filiere-container"
-};
-var _hoisted_110 = ["onClick"];
-var _hoisted_111 = ["id", "value"];
-var _hoisted_112 = ["for"];
-var _hoisted_113 = {
-  "class": "filiere-title"
-};
-var _hoisted_114 = {
-  "class": "filiere-name"
-};
-var _hoisted_115 = ["href"];
-var _hoisted_116 = {
-  key: 0,
-  "class": "selected-icon"
-};
-var _hoisted_117 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_118 = {
-  key: 1,
-  "class": "form-groupp"
-};
-var _hoisted_119 = {
-  "class": "filiere-container"
-};
-var _hoisted_120 = ["id", "value", "disabled"];
-var _hoisted_121 = ["for"];
-var _hoisted_122 = {
-  "class": "filiere-title"
-};
-var _hoisted_123 = {
-  "class": "filiere-name"
-};
-var _hoisted_124 = ["href"];
-var _hoisted_125 = {
-  key: 0,
-  "class": "selected-icon"
-};
-var _hoisted_126 = {
-  key: 0,
-  "class": "error-icon"
-};
-var _hoisted_127 = {
-  key: 4,
   "class": "confirmation-container"
 };
-var _hoisted_128 = {
+var _hoisted_61 = {
   "class": "checkbox-wrapper"
 };
-var _hoisted_129 = {
+var _hoisted_62 = {
   key: 0,
   "class": "error-icon"
 };
-var _hoisted_130 = {
+var _hoisted_63 = {
   "class": "form-actions"
 };
-var _hoisted_131 = ["disabled"];
-var _hoisted_132 = {
+var _hoisted_64 = ["disabled"];
+var _hoisted_65 = {
   type: "submit",
   "class": "btn btn-primary"
 };
-var _hoisted_133 = {
+var _hoisted_66 = {
+  key: 2,
   "class": "success-container"
 };
-var _hoisted_134 = {
+var _hoisted_67 = {
   "class": "success-card"
 };
-var _hoisted_135 = {
+var _hoisted_68 = {
+  key: 0,
+  "class": "success-info text-dark p-3 rounded bg-light border"
+};
+var _hoisted_69 = {
+  key: 1,
   "class": "success-credentials"
 };
-var _hoisted_136 = {
+var _hoisted_70 = {
   key: 0
 };
-var _hoisted_137 = {
+var _hoisted_71 = {
   key: 1
 };
-var _hoisted_138 = {
+var _hoisted_72 = {
   key: 0
 };
-var _hoisted_139 = {
+var _hoisted_73 = {
   key: 1
 };
-var _hoisted_140 = {
+var _hoisted_74 = {
   key: 0,
   "class": "password-tooltip"
 };
-var _hoisted_141 = {
+var _hoisted_75 = {
   key: 0
 };
-var _hoisted_142 = {
+var _hoisted_76 = {
   key: 1
+};
+var _hoisted_77 = {
+  key: 2,
+  "class": "alert alert-warning text-dark p-3 rounded bg-light border"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ErrorPopup = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ErrorPopup");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [$data.loading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_cache[117] || (_cache[117] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [$data.loading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_cache[66] || (_cache[66] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "particles"
-  }, null, -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Effet magique "), _cache[118] || (_cache[118] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"loader-logo-container\"><div class=\"loader-glow\"></div><!-- Vague lumineuse --><img src=\"/form/images/uh1-vertical.png\" alt=\"Université Hassan 1er\" class=\"loader-logo\"></div><div class=\"spinner\"></div><p class=\"loading-text\">Veuillez patienter...</p>", 3)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Texte fixe ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$data.successForm ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Progress Bar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  }, null, -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Effet magique "), _cache[67] || (_cache[67] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"loader-logo-container\"><div class=\"loader-glow\"></div><!-- Vague lumineuse --><img src=\"/form/images/uh1-vertical.png\" alt=\"Université Hassan 1er\" class=\"loader-logo\"></div><div class=\"spinner\"></div><p class=\"loading-text\">Veuillez patienter...</p>", 3)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Texte fixe ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$data.successForm ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Progress Bar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "progress-bar",
     style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)({
       width: $data.currentStep / $data.steps.length * 100 + '%'
     })
-  }, null, 4 /* STYLE */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Header with Logo "), _cache[174] || (_cache[174] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"form-header\"><div class=\"logo-container\"><img src=\"/form/images/uh1-vertical.png\" alt=\"University Logo\" class=\"form-logo\"></div><h1 class=\"form-title\">Préinscription Universitaire</h1><p class=\"form-subtitle\">Remplissez les étapes ci-dessous pour finaliser votre inscription</p></div>", 1)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Progress Steps "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.steps, function (step, index) {
+  }, null, 4 /* STYLE */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Header with Logo "), _cache[97] || (_cache[97] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"form-header\"><div class=\"logo-container\"><img src=\"/form/images/uh1-vertical.png\" alt=\"University Logo\" class=\"form-logo\"></div><h1 class=\"form-title\">Préinscription Master</h1><p class=\"form-subtitle\">Remplissez les étapes ci-dessous pour finaliser votre inscription</p></div>", 1)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Progress Steps "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.steps, function (step, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       key: index,
       "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["step", {
@@ -27671,7 +27638,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(line), 1 /* TEXT */);
     }), 128 /* KEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Progress percentage displayed on hover "), $data.currentStep === index + 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Math.round((index + 1) / $data.steps.length * 100)) + "% ", 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])], 10 /* CLASS, PROPS */, _hoisted_5);
   }), 128 /* KEYED_FRAGMENT */))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Form Section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", _hoisted_11, "Étape " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.currentStep) + " : " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.steps[$data.currentStep - 1].title), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-    onSubmit: _cache[113] || (_cache[113] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+    onSubmit: _cache[62] || (_cache[62] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.nextStep && $options.nextStep.apply($options, arguments);
     }, ["prevent"])),
     enctype: "multipart/form-data"
@@ -27680,7 +27647,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $data.etudiant.etablissement_id = $event;
     })
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.etablissement_id]]), $data.currentStep === 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_cache[119] || (_cache[119] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.etablissement_id]]), $data.currentStep === 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_cache[68] || (_cache[68] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "CNE"
   }, "CNE", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
@@ -27697,10 +27664,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     onFocus: _cache[3] || (_cache[3] = function ($event) {
       return $data.currentField = 'CNE';
-    }),
-    readonly: "",
-    disabled: ""
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.CNE]]), $data.errors.CNE ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_14, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.CNE), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [_cache[120] || (_cache[120] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.CNE]]), $data.errors.CNE ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_14, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.CNE), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [_cache[69] || (_cache[69] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "CIN"
   }, "CIN", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
@@ -27717,10 +27682,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     onFocus: _cache[6] || (_cache[6] = function ($event) {
       return $data.currentField = 'CIN';
-    }),
-    readonly: "",
-    disabled: ""
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.CIN]]), $data.errors.CIN ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_16, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.CIN), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [_cache[121] || (_cache[121] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.CIN]]), $data.errors.CIN ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_16, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.CIN), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [_cache[70] || (_cache[70] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "Nom"
   }, "Nom", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
@@ -27738,7 +27701,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onFocus: _cache[9] || (_cache[9] = function ($event) {
       return $data.currentField = 'nom';
     })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.nom]]), $data.errors.nom ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_18, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.nom), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [_cache[122] || (_cache[122] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.nom]]), $data.errors.nom ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_18, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.nom), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [_cache[71] || (_cache[71] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "Prenom"
   }, "Prenom", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
@@ -27756,238 +27719,87 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onFocus: _cache[12] || (_cache[12] = function ($event) {
       return $data.currentField = 'prenom';
     })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.prenom]]), $data.errors.prenom ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_20, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.prenom), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Apply RTL to the entire form group for Arabic fields "), _cache[123] || (_cache[123] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "الاسم العائلي",
-    "class": "rtl-label"
-  }, "الاسم العائلي", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    id: "الاسم العائلي",
-    "onUpdate:modelValue": _cache[13] || (_cache[13] = function ($event) {
-      return $data.etudiant.nomar = $event;
-    }),
-    placeholder: "أدخل الاسم العائلي",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.nomar
-    }),
-    onInput: _cache[14] || (_cache[14] = function ($event) {
-      return $options.validateStep('nomar');
-    }),
-    onFocus: _cache[15] || (_cache[15] = function ($event) {
-      return $data.currentField = 'nomar';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.nomar]]), $data.errors.nomar ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_22, " ✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.nomar), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Apply RTL to the entire form group for Arabic fields "), _cache[124] || (_cache[124] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "الاسم الشخصي",
-    "class": "rtl-label"
-  }, " الاسم الشخصي", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    id: "الاسم الشخصي",
-    "onUpdate:modelValue": _cache[16] || (_cache[16] = function ($event) {
-      return $data.etudiant.prenomar = $event;
-    }),
-    placeholder: "أدخل الاسم الشخصي",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.prenomar
-    }),
-    onInput: _cache[17] || (_cache[17] = function ($event) {
-      return $options.validateStep('prenomar');
-    }),
-    onFocus: _cache[18] || (_cache[18] = function ($event) {
-      return $data.currentField = 'prenomar';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.prenomar]]), $data.errors.prenomar ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_24, " ✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.prenomar), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [_cache[125] || (_cache[125] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "Date Naissance"
-  }, "Date Naissance", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "date",
-    id: "Date Naissance",
-    "onUpdate:modelValue": _cache[19] || (_cache[19] = function ($event) {
-      return $data.etudiant.datenais = $event;
-    }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.datenais
-    }),
-    onInput: _cache[20] || (_cache[20] = function ($event) {
-      return $options.validateStep('datenais');
-    }),
-    onFocus: _cache[21] || (_cache[21] = function ($event) {
-      return $data.currentField = 'datenais';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.datenais]]), $data.errors.datenais ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_26, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.datenais), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [_cache[127] || (_cache[127] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "sexe"
-  }, "Sexe", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
-    id: "sexe",
-    "onUpdate:modelValue": _cache[22] || (_cache[22] = function ($event) {
-      return $data.etudiant.sexe = $event;
-    }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.sexe
-    }),
-    onChange: _cache[23] || (_cache[23] = function ($event) {
-      return $options.validateStep('sexe');
-    }),
-    onFocus: _cache[24] || (_cache[24] = function ($event) {
-      return $data.currentField = 'sexe';
-    })
-  }, _cache[126] || (_cache[126] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "",
-    disabled: ""
-  }, "Veuillez choisir", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "M"
-  }, "M", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "F"
-  }, "F", -1 /* HOISTED */)]), 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.etudiant.sexe]]), $data.errors.sexe ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_28, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.sexe), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [_cache[128] || (_cache[128] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "pays"
-  }, "Pays", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    id: "pays",
-    "onUpdate:modelValue": _cache[25] || (_cache[25] = function ($event) {
-      return $data.etudiant.payschamp = $event;
-    }),
-    placeholder: "Entrez votre Pays",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.payschamp
-    }),
-    onInput: _cache[26] || (_cache[26] = function ($event) {
-      return $options.validateStep('payschamp');
-    }),
-    onFocus: _cache[27] || (_cache[27] = function ($event) {
-      return $data.currentField = 'payschamp';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.payschamp]]), $data.errors.payschamp ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_30, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.payschamp), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [_cache[129] || (_cache[129] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "ville"
-  }, "Ville", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    id: "ville",
-    "onUpdate:modelValue": _cache[28] || (_cache[28] = function ($event) {
-      return $data.etudiant.villenais = $event;
-    }),
-    placeholder: "Entrez votre Ville de Naissance",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.villenais
-    }),
-    onInput: _cache[29] || (_cache[29] = function ($event) {
-      return $options.validateStep('villenais');
-    }),
-    onFocus: _cache[30] || (_cache[30] = function ($event) {
-      return $data.currentField = 'villenais';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.villenais]]), $data.errors.villenais ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_32, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.villenais), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Apply RTL to the entire form group for Arabic fields "), _cache[130] || (_cache[130] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "مكان الازدياد",
-    "class": "rtl-label"
-  }, "مكان الازدياد", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    id: "مكان الازدياد",
-    "onUpdate:modelValue": _cache[31] || (_cache[31] = function ($event) {
-      return $data.etudiant.villechamp = $event;
-    }),
-    placeholder: "مكان الازدياد",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.villechamp
-    }),
-    onInput: _cache[32] || (_cache[32] = function ($event) {
-      return $options.validateStep('villechamp');
-    }),
-    onFocus: _cache[33] || (_cache[33] = function ($event) {
-      return $data.currentField = 'villechamp';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.villechamp]]), $data.errors.villechamp ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_34, " ✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.villechamp), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [_cache[131] || (_cache[131] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "adresse"
-  }, "Adresse", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
-    id: "adresse",
-    "onUpdate:modelValue": _cache[34] || (_cache[34] = function ($event) {
-      return $data.etudiant.adresse = $event;
-    }),
-    placeholder: "Entrez votre Adresse",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.adresse
-    }),
-    onInput: _cache[35] || (_cache[35] = function ($event) {
-      return $options.validateStep('adresse');
-    }),
-    onFocus: _cache[36] || (_cache[36] = function ($event) {
-      return $data.currentField = 'adresse';
-    }),
-    rows: "4"
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.adresse]]), $data.errors.adresse ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_36, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.adresse), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [_cache[132] || (_cache[132] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.prenom]]), $data.errors.prenom ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_20, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.prenom), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n\n\t\t\t    <div class=\"form-group\" dir=\"rtl\">\n\t\t\t\t\t<label for=\"الاسم العائلي\" class=\"rtl-label\">الاسم العائلي</label>\n\t\t\t\t\t<input\n\t\t\t\t\t\ttype=\"text\"\n\t\t\t\t\t\tid=\"الاسم العائلي\"\n\t\t\t\t\t\tv-model=\"etudiant.nomar\"\n\t\t\t\t\t\tplaceholder=\"أدخل الاسم العائلي\"\n\t\t\t\t\t\t:class=\"{ 'input-error': errors.nomar }\"\n\t\t\t\t\t\t@input=\"validateStep('nomar')\"\n\t\t\t\t\t\t@focus=\"currentField = 'nomar'\"\n\t\t\t\t\t/>\n\t\t\t\t\t<span v-if=\"errors.nomar\" class=\"error-message\">\n\t\t\t\t\t\t✖ {{ errors.nomar }}\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"form-group\" dir=\"rtl\">\n\t\t\t\t\t<label for=\"الاسم الشخصي\" class=\"rtl-label\"> الاسم الشخصي</label>\n\t\t\t\t\t<input\n\t\t\t\t\t\ttype=\"text\"\n\t\t\t\t\t\tid=\"الاسم الشخصي\"\n\t\t\t\t\t\tv-model=\"etudiant.prenomar\"\n\t\t\t\t\t\tplaceholder=\"أدخل الاسم الشخصي\"\n\t\t\t\t\t\t:class=\"{ 'input-error': errors.prenomar }\"\n\t\t\t\t\t\t@input=\"validateStep('prenomar')\"\n\t\t\t\t\t\t@focus=\"currentField = 'prenomar'\"\n\t\t\t\t\t/>\n\t\t\t\t\t<span v-if=\"errors.prenomar\" class=\"error-message\">\n\t\t\t\t\t\t✖ {{ errors.prenomar }}\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"form-group\" dir=\"ltr\">\n\t\t\t\t\t<label for=\"Date Naissance\" >Date Naissance</label>\n\t\t\t\t\t<input\n\t\t\t\t\t\ttype=\"date\"\n\t\t\t\t\t\tid=\"Date Naissance\"\n\t\t\t\t\t\tv-model=\"etudiant.datenais\"\n\t\t\t\t\t\t:class=\"{ 'input-error': errors.datenais }\"\n\t\t\t\t\t\t@input=\"validateStep('datenais')\"\n\t\t\t\t\t\t@focus=\"currentField = 'datenais'\"\n\n\t\t\t\t\t/>\n\t\t\t\t\t<span v-if=\"errors.datenais\" class=\"error-icon\" >✖ {{ errors.datenais }}</span>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"form-group\" dir=\"ltr\">\n\t\t\t\t\t<label for=\"sexe\">Sexe</label>\n\t\t\t\t\t<select\n\t\t\t\t\t\tid=\"sexe\"\n\t\t\t\t\t\tv-model=\"etudiant.sexe\"\n\t\t\t\t\t\t:class=\"{ 'input-error': errors.sexe }\"\n\t\t\t\t\t\t@change=\"validateStep('sexe')\"\n\t\t\t\t\t\t@focus=\"currentField = 'sexe'\"\n\t\t\t\t\t>\n\t\t\t\t\t\t<option value=\"\" disabled>Veuillez choisir</option>\n\t\t\t\t\t\t<option value=\"M\">M</option>\n\t\t\t\t\t\t<option value=\"F\">F</option>\n\t\t\t\t\t</select>\n\t\t\t\t\t<span v-if=\"errors.sexe\" class=\"error-icon\">✖ {{ errors.sexe }}</span>\n\t\t\t\t </div>\n\t\t\t\t <div class=\"form-group\" dir=\"ltr\">\n\t\t\t\t\t<label for=\"pays\" >Pays</label>\n\t\t\t\t\t<input\n\t\t\t\t\t\ttype=\"text\"\n\t\t\t\t\t\tid=\"pays\"\n\t\t\t\t\t\tv-model=\"etudiant.payschamp\"\n\t\t\t\t\t\tplaceholder=\"Entrez votre Pays\"\n\t\t\t\t\t\t:class=\"{ 'input-error': errors.payschamp }\"\n\t\t\t\t\t\t@input=\"validateStep('payschamp')\"\n\t\t\t\t\t\t@focus=\"currentField = 'payschamp'\"\n\n\t\t\t\t\t/>\n\t\t\t\t\t<span v-if=\"errors.payschamp\" class=\"error-icon\" >✖ {{ errors.payschamp }}</span>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"form-group\" dir=\"ltr\">\n\t\t\t\t\t<label for=\"ville\" >Ville</label>\n\t\t\t\t\t<input\n\t\t\t\t\t\ttype=\"text\"\n\t\t\t\t\t\tid=\"ville\"\n\t\t\t\t\t\tv-model=\"etudiant.villenais\"\n\t\t\t\t\t\tplaceholder=\"Entrez votre Ville de Naissance\"\n\t\t\t\t\t\t:class=\"{ 'input-error': errors.villenais }\"\n\t\t\t\t\t\t@input=\"validateStep('villenais')\"\n\t\t\t\t\t\t@focus=\"currentField = 'villenais'\"\n\n\t\t\t\t\t/>\n\t\t\t\t\t<span v-if=\"errors.villenais\" class=\"error-icon\" >✖ {{ errors.villenais }}</span>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"form-group\" dir=\"rtl\">\n\t\t\t\t\t<label for=\"مكان الازدياد\" class=\"rtl-label\">مكان الازدياد</label>\n\t\t\t\t\t<input\n\t\t\t\t\t\ttype=\"text\"\n\t\t\t\t\t\tid=\"مكان الازدياد\"\n\t\t\t\t\t\tv-model=\"etudiant.villechamp\"\n\t\t\t\t\t\tplaceholder=\"مكان الازدياد\"\n\t\t\t\t\t\t:class=\"{ 'input-error': errors.villechamp }\"\n\t\t\t\t\t\t@input=\"validateStep('villechamp')\"\n\t\t\t\t\t\t@focus=\"currentField = 'villechamp'\"\n\t\t\t\t\t/>\n\t\t\t\t\t<span v-if=\"errors.villechamp\" class=\"error-message\">\n\t\t\t\t\t\t✖ {{ errors.villechamp }}\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"form-group\" dir=\"ltr\">\n\t\t\t\t\t<label for=\"adresse\">Adresse</label>\n\t\t\t\t\t<textarea\n\t\t\t\t\t\tid=\"adresse\"\n\t\t\t\t\t\tv-model=\"etudiant.adresse\"\n\t\t\t\t\t\tplaceholder=\"Entrez votre Adresse\"\n\t\t\t\t\t\t:class=\"{ 'input-error': errors.adresse }\"\n\t\t\t\t\t\t@input=\"validateStep('adresse')\"\n\t\t\t\t\t\t@focus=\"currentField = 'adresse'\"\n\t\t\t\t\t\trows=\"4\"\n\t\t\t\t\t></textarea>\n\t\t\t\t\t<span v-if=\"errors.adresse\" class=\"error-icon\">✖ {{ errors.adresse }}</span>\n\t\t\t\t</div> \n\t\t\t"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [_cache[72] || (_cache[72] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "email"
   }, "Email", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "email",
-    "onUpdate:modelValue": _cache[37] || (_cache[37] = function ($event) {
+    "onUpdate:modelValue": _cache[13] || (_cache[13] = function ($event) {
       return $data.etudiant.email = $event;
     }),
     placeholder: "Entrez votre Email",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'input-error': $data.errors.email
     }),
-    onInput: _cache[38] || (_cache[38] = function ($event) {
+    onInput: _cache[14] || (_cache[14] = function ($event) {
       return $options.validateStep('email');
     }),
-    onFocus: _cache[39] || (_cache[39] = function ($event) {
+    onFocus: _cache[15] || (_cache[15] = function ($event) {
       return $data.currentField = 'email';
     })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.email]]), $data.errors.email ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_38, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.email), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [_cache[133] || (_cache[133] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.email]]), $data.errors.email ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_22, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.email), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [_cache[73] || (_cache[73] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "phone"
   }, "Télephone", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "phone",
-    "onUpdate:modelValue": _cache[40] || (_cache[40] = function ($event) {
+    "onUpdate:modelValue": _cache[16] || (_cache[16] = function ($event) {
       return $data.etudiant.phone = $event;
     }),
     placeholder: "Entrez votre Télephone",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'input-error': $data.errors.phone
     }),
-    onInput: _cache[41] || (_cache[41] = function ($event) {
+    onInput: _cache[17] || (_cache[17] = function ($event) {
       return $options.validateStep('phone');
     }),
-    onFocus: _cache[42] || (_cache[42] = function ($event) {
+    onFocus: _cache[18] || (_cache[18] = function ($event) {
       return $data.currentField = 'phone';
     })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.phone]]), $data.errors.phone ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_40, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.phone), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.currentStep === 2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_41, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("fieldset", null, [_cache[139] || (_cache[139] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.phone]]), $data.errors.phone ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_24, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.phone), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.currentStep === 2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("fieldset", null, [_cache[78] || (_cache[78] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
     "class": "legend1"
-  }, "Information de baccalauréat", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [_cache[137] || (_cache[137] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, "Information de baccalauréat", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [_cache[77] || (_cache[77] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "serie"
   }, "Série de BAC", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Select "), !$data.showInputSerie ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("select", {
     key: 0,
     id: "serie",
-    "onUpdate:modelValue": _cache[43] || (_cache[43] = function ($event) {
+    "onUpdate:modelValue": _cache[19] || (_cache[19] = function ($event) {
       return $data.etudiant.serie = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'input-error': $data.errors.serie
     }),
-    onChange: _cache[44] || (_cache[44] = function () {
+    onChange: _cache[20] || (_cache[20] = function () {
       return $options.handleSerieChange && $options.handleSerieChange.apply($options, arguments);
     }),
-    onFocus: _cache[45] || (_cache[45] = function ($event) {
+    onFocus: _cache[21] || (_cache[21] = function ($event) {
       return $data.currentField = 'serie';
     })
-  }, [_cache[134] || (_cache[134] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+  }, [_cache[74] || (_cache[74] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
     value: "",
     disabled: ""
   }, "SERIE DE BAC", -1 /* HOISTED */)), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.serie_bac, function (s) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
       key: s.id,
       value: s.nom
-    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(s.nom), 9 /* TEXT, PROPS */, _hoisted_43);
-  }), 128 /* KEYED_FRAGMENT */)), _cache[135] || (_cache[135] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(s.nom), 9 /* TEXT, PROPS */, _hoisted_27);
+  }), 128 /* KEYED_FRAGMENT */)), _cache[75] || (_cache[75] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
     value: "AUTRES"
   }, "AUTRES", -1 /* HOISTED */))], 34 /* CLASS, NEED_HYDRATION */)), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.etudiant.serie]]) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     key: 1
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Input avec bouton annuler "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_44, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Input avec bouton annuler "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "serie",
-    "onUpdate:modelValue": _cache[46] || (_cache[46] = function ($event) {
+    "onUpdate:modelValue": _cache[22] || (_cache[22] = function ($event) {
       return $data.etudiant.serie = $event;
     }),
     placeholder: "Taper votre série de BAC",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'input-error': $data.errors.serie
     }),
-    onInput: _cache[47] || (_cache[47] = function ($event) {
+    onInput: _cache[23] || (_cache[23] = function ($event) {
       return $options.validateStep('serie');
     }),
-    onFocus: _cache[48] || (_cache[48] = function ($event) {
+    onFocus: _cache[24] || (_cache[24] = function ($event) {
       return $data.currentField = 'serie';
     }),
     style: {
@@ -27995,467 +27807,202 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }
   }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.serie]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "close-icon",
-    onClick: _cache[49] || (_cache[49] = function () {
+    onClick: _cache[25] || (_cache[25] = function () {
       return $options.cancelInputSerie && $options.cancelInputSerie.apply($options, arguments);
     }),
     title: "Annuler"
-  }, _cache[136] || (_cache[136] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "×", -1 /* HOISTED */)]))])], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Message d'erreur "), $data.errors.serie ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_45, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.serie), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_46, [_cache[138] || (_cache[138] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "Date BAC"
-  }, "Date D'obtention du BAC", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "date",
-    id: "Date BAC",
-    "onUpdate:modelValue": _cache[50] || (_cache[50] = function ($event) {
-      return $data.etudiant.Anneebac = $event;
-    }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.Anneebac
-    }),
-    onInput: _cache[51] || (_cache[51] = function ($event) {
-      return $options.validateStep('Anneebac');
-    }),
-    onFocus: _cache[52] || (_cache[52] = function ($event) {
-      return $data.currentField = 'Anneebac';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.Anneebac]]), $data.errors.Anneebac ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_47, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.Anneebac), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("fieldset", null, [_cache[148] || (_cache[148] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
-    "class": "legend2"
-  }, "Information du Diplome", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_48, [_cache[141] || (_cache[141] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "dernier_diplome_obtenu"
-  }, "Dernier Diplome Obtenu", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
-    id: "dernier_diplome_obtenu",
-    "onUpdate:modelValue": _cache[53] || (_cache[53] = function ($event) {
-      return $data.etudiant.dernier_diplome_obtenu = $event;
-    }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.dernier_diplome_obtenu
-    }),
-    onChange: _cache[54] || (_cache[54] = function ($event) {
-      return $options.validateStep('dernier_diplome_obtenu');
-    }),
-    onFocus: _cache[55] || (_cache[55] = function ($event) {
-      return $data.currentField = 'dernier_diplome_obtenu';
-    })
-  }, _cache[140] || (_cache[140] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "",
-    disabled: ""
-  }, "Choisir", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "BAC+3"
-  }, "Bac+3", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "BAC+4"
-  }, "Bac+4", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "BAC+5"
-  }, "Bac+5", -1 /* HOISTED */)]), 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.etudiant.dernier_diplome_obtenu]]), $data.errors.dernier_diplome_obtenu ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_49, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.dernier_diplome_obtenu), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_50, [_cache[144] || (_cache[144] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "type_diplome_obtenu"
-  }, "Type de Diplôme Obtenu", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Select "), !$data.showInputTypeDiplome ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("select", {
+  }, _cache[76] || (_cache[76] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "×", -1 /* HOISTED */)]))])], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Message d'erreur "), $data.errors.serie ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_29, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.serie), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("fieldset", null, [_cache[89] || (_cache[89] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
+    "class": "legend3"
+  }, "Information du Licence", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [_cache[81] || (_cache[81] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "typelicence"
+  }, "Type de licence", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Select Dropdown "), !$data.showInputTypeLicence ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("select", {
     key: 0,
-    id: "type_diplome_obtenu",
-    "onUpdate:modelValue": _cache[56] || (_cache[56] = function ($event) {
-      return $data.etudiant.type_diplome_obtenu = $event;
+    id: "typelicence",
+    "onUpdate:modelValue": _cache[26] || (_cache[26] = function ($event) {
+      return $data.etudiant.typelicence = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.type_diplome_obtenu
+      'input-error': $data.errors.typelicence
     }),
-    onChange: _cache[57] || (_cache[57] = function () {
-      return $options.handleDiplomeChange && $options.handleDiplomeChange.apply($options, arguments);
+    onChange: _cache[27] || (_cache[27] = function () {
+      return $options.handleLicenceChange && $options.handleLicenceChange.apply($options, arguments);
     }),
-    onFocus: _cache[58] || (_cache[58] = function ($event) {
-      return $data.currentField = 'type_diplome_obtenu';
+    onFocus: _cache[28] || (_cache[28] = function ($event) {
+      return $data.currentField = 'typelicence';
     })
-  }, _cache[142] || (_cache[142] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "",
-    disabled: ""
-  }, "Choisir", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "PUBLIC"
-  }, "Public", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "PRIVEE"
-  }, "Privée", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "AUTRES"
-  }, "AUTRES", -1 /* HOISTED */)]), 34 /* CLASS, NEED_HYDRATION */)), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.etudiant.type_diplome_obtenu]]) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+  }, _cache[79] || (_cache[79] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"\" disabled>Type de licence</option><option value=\"Licence Professionnelle (LP)\">Licence Professionnelle (LP)</option><option value=\"Licence Fondamentale (LF)\">Licence Fondamentale (LF)</option><option value=\"Licence Tout Cours\">Licence</option><option value=\"AUTRES\">AUTRES</option>", 5)]), 34 /* CLASS, NEED_HYDRATION */)), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.etudiant.typelicence]]) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     key: 1
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Input avec bouton annuler "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_51, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Input Field with Modern Cancel Button "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
-    id: "type_diplome_obtenu",
-    "onUpdate:modelValue": _cache[59] || (_cache[59] = function ($event) {
-      return $data.etudiant.type_diplome_obtenu = $event;
+    id: "typelicence",
+    "onUpdate:modelValue": _cache[29] || (_cache[29] = function ($event) {
+      return $data.etudiant.typelicence = $event;
     }),
-    placeholder: "Taper le type de diplôme",
+    placeholder: "Taper votre type de licence",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.type_diplome_obtenu
+      'input-error': $data.errors.typelicence
     }),
-    onInput: _cache[60] || (_cache[60] = function ($event) {
-      return $options.validateStep('type_diplome_obtenu');
+    onInput: _cache[30] || (_cache[30] = function ($event) {
+      return $options.validateStep('typelicence');
     }),
-    onFocus: _cache[61] || (_cache[61] = function ($event) {
-      return $data.currentField = 'type_diplome_obtenu';
+    onFocus: _cache[31] || (_cache[31] = function ($event) {
+      return $data.currentField = 'typelicence';
     }),
     style: {
       "padding-right": "3rem"
     }
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.type_diplome_obtenu]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.typelicence]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "close-icon",
-    onClick: _cache[62] || (_cache[62] = function () {
-      return $options.cancelInputDiplome && $options.cancelInputDiplome.apply($options, arguments);
+    onClick: _cache[32] || (_cache[32] = function () {
+      return $options.cancelInput && $options.cancelInput.apply($options, arguments);
     }),
     title: "Annuler"
-  }, _cache[143] || (_cache[143] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "×", -1 /* HOISTED */)]))])], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Message d'erreur "), $data.errors.type_diplome_obtenu ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_52, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.type_diplome_obtenu), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_53, [_cache[145] || (_cache[145] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "specialitediplome"
-  }, "Spécialité du Diplome", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    id: "specialitediplome",
-    "onUpdate:modelValue": _cache[63] || (_cache[63] = function ($event) {
-      return $data.etudiant.specialitediplome = $event;
+  }, _cache[80] || (_cache[80] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "×", -1 /* HOISTED */)]))])], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Error Message "), $data.errors.typelicence ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_32, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.typelicence), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [_cache[83] || (_cache[83] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "mentionlp"
+  }, "Mention de Licence", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+    id: "mentionlp",
+    "onUpdate:modelValue": _cache[33] || (_cache[33] = function ($event) {
+      return $data.etudiant.mentionlp = $event;
     }),
-    placeholder: "Entrez le spécialité du Diplome",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.specialitediplome
+      'input-error': $data.errors.mentionlp
     }),
-    onInput: _cache[64] || (_cache[64] = function ($event) {
-      return $options.validateStep('specialitediplome');
+    onChange: _cache[34] || (_cache[34] = function ($event) {
+      return $options.validateStep('mentionlp');
     }),
-    onFocus: _cache[65] || (_cache[65] = function ($event) {
-      return $data.currentField = 'specialitediplome';
+    onFocus: _cache[35] || (_cache[35] = function ($event) {
+      return $data.currentField = 'mentionlp';
     })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.specialitediplome]]), $data.errors.specialitediplome ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_54, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.specialitediplome), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"form-group\" dir=\"ltr\">\n\t\t\t\t\t<label for=\"etblsmtdeug\" >Etablissement</label>\n\t\t\t\t\t<input\n\t\t\t\t\t\ttype=\"text\"\n\t\t\t\t\t\tid=\"etblsmtdeug\"\n\t\t\t\t\t\tv-model=\"etudiant.etblsmtdeug\"\n\t\t\t\t\t\tplaceholder=\"Entrez l'établissement\"\n\t\t\t\t\t\t:class=\"{ 'input-error': errors.etblsmtdeug }\"\n\t\t\t\t\t\t@input=\"validateStep('etblsmtdeug')\"\n\t\t\t\t\t\t@focus=\"currentField = 'etblsmtdeug'\"\n\n\t\t\t\t\t/>\n\t\t\t\t\t<span v-if=\"errors.etblsmtdeug\" class=\"error-icon\" >✖ {{ errors.etblsmtdeug }}</span>\n\t\t\t\t</div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_55, [_cache[146] || (_cache[146] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "ville_etablissement_diplome"
+  }, _cache[82] || (_cache[82] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"\" disabled>MENTION</option><option value=\"PASSABLE\">PASSABLE</option><option value=\"ASSEZ BIEN\">ASSEZ BIEN</option><option value=\"BIEN\">BIEN</option><option value=\"TRES BIEN\">TRES BIEN</option>", 5)]), 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.etudiant.mentionlp]]), $data.errors.mentionlp ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_34, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.mentionlp), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [_cache[84] || (_cache[84] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "specialitelp"
+  }, "Spécialité du Licence", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "specialitelp",
+    "onUpdate:modelValue": _cache[36] || (_cache[36] = function ($event) {
+      return $data.etudiant.specialitelp = $event;
+    }),
+    placeholder: "Entrez le spécialité du Licence",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.specialitelp
+    }),
+    onInput: _cache[37] || (_cache[37] = function ($event) {
+      return $options.validateStep('specialitelp');
+    }),
+    onFocus: _cache[38] || (_cache[38] = function ($event) {
+      return $data.currentField = 'specialitelp';
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.specialitelp]]), $data.errors.specialitelp ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_36, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.specialitelp), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [_cache[85] || (_cache[85] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "etblsmtLp"
   }, "Etablissement", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
-    id: "ville_etablissement_diplome",
-    "onUpdate:modelValue": _cache[66] || (_cache[66] = function ($event) {
-      return $data.etudiant.ville_etablissement_diplome = $event;
+    id: "etblsmtLp",
+    "onUpdate:modelValue": _cache[39] || (_cache[39] = function ($event) {
+      return $data.etudiant.etblsmtLp = $event;
     }),
     placeholder: "Entrez l'établissement",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.ville_etablissement_diplome
+      'input-error': $data.errors.etblsmtLp
     }),
-    onInput: _cache[67] || (_cache[67] = function ($event) {
-      return $options.validateStep('ville_etablissement_diplome');
+    onInput: _cache[40] || (_cache[40] = function ($event) {
+      return $options.validateStep('etblsmtLp');
     }),
-    onFocus: _cache[68] || (_cache[68] = function ($event) {
-      return $data.currentField = 'ville_etablissement_diplome';
+    onFocus: _cache[41] || (_cache[41] = function ($event) {
+      return $data.currentField = 'etblsmtLp';
     })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.ville_etablissement_diplome]]), $data.errors.ville_etablissement_diplome ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_56, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.ville_etablissement_diplome), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_57, [_cache[147] || (_cache[147] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "date_optention_diplome"
-  }, "Date Obtention de Diplome", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.etblsmtLp]]), $data.errors.etblsmtLp ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_38, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.etblsmtLp), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [_cache[86] || (_cache[86] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "ville_etablissement_licence"
+  }, "Ville d'établissement", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "ville_etablissement_licence",
+    "onUpdate:modelValue": _cache[42] || (_cache[42] = function ($event) {
+      return $data.etudiant.ville_etablissement_licence = $event;
+    }),
+    placeholder: "Entrez la ville",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.ville_etablissement_licence
+    }),
+    onInput: _cache[43] || (_cache[43] = function ($event) {
+      return $options.validateStep('ville_etablissement_licence');
+    }),
+    onFocus: _cache[44] || (_cache[44] = function ($event) {
+      return $data.currentField = 'ville_etablissement_licence';
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.ville_etablissement_licence]]), $data.errors.ville_etablissement_licence ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_40, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.ville_etablissement_licence), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [_cache[87] || (_cache[87] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "Date obtention bac+3"
+  }, "Date Obtention de Licence", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "date",
-    id: "date_optention_diplome",
-    "onUpdate:modelValue": _cache[69] || (_cache[69] = function ($event) {
-      return $data.etudiant.date_optention_diplome = $event;
+    id: "Date obtention bac+3",
+    "onUpdate:modelValue": _cache[45] || (_cache[45] = function ($event) {
+      return $data.etudiant.date_obtention_LP = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.date_optention_diplome
+      'input-error': $data.errors.date_obtention_LP
     }),
-    onInput: _cache[70] || (_cache[70] = function ($event) {
-      return $options.validateStep('date_optention_diplome');
+    onInput: _cache[46] || (_cache[46] = function ($event) {
+      return $options.validateStep('date_obtention_LP');
     }),
-    onFocus: _cache[71] || (_cache[71] = function ($event) {
-      return $data.currentField = 'date_optention_diplome';
+    onFocus: _cache[47] || (_cache[47] = function ($event) {
+      return $data.currentField = 'date_obtention_LP';
     })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.date_optention_diplome]]), $data.errors.date_optention_diplome ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_58, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.date_optention_diplome), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("fieldset", null, [_cache[156] || (_cache[156] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.date_obtention_LP]]), $data.errors.date_obtention_LP ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_42, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.date_obtention_LP), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_43, [_cache[88] || (_cache[88] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "note"
+  }, "Moyenne du Licence", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "note",
+    "onUpdate:modelValue": _cache[48] || (_cache[48] = function ($event) {
+      return $data.etudiant.moyenne_licence = $event;
+    }),
+    placeholder: "Entrez une note (ex: 16.50, 14)",
+    onInput: _cache[49] || (_cache[49] = function ($event) {
+      return $options.validateStep('moyenne_licence');
+    }),
+    onFocus: _cache[50] || (_cache[50] = function ($event) {
+      return $data.currentField = 'moyenne_licence';
+    }),
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'input-error': $data.errors.moyenne_licence
+    })
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.moyenne_licence]]), $data.errors.moyenne_licence ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_44, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.moyenne_licence), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("fieldset", null, [_cache[92] || (_cache[92] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
     "class": "legend4"
-  }, "Expérience", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_59, [_cache[150] || (_cache[150] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "fonctionnaire"
-  }, "Fonctionnaire", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
-    id: "fonctionnaire",
-    "onUpdate:modelValue": _cache[72] || (_cache[72] = function ($event) {
-      return $data.etudiant.fonctionnaire = $event;
-    }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.fonctionnaire
-    }),
-    onChange: _cache[73] || (_cache[73] = function ($event) {
-      return $options.validateStep('fonctionnaire');
-    }),
-    onFocus: _cache[74] || (_cache[74] = function ($event) {
-      return $data.currentField = 'fonctionnaire';
-    })
-  }, _cache[149] || (_cache[149] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "",
-    disabled: ""
-  }, "Fonctionnaire", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "OUI"
-  }, "OUI", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-    value: "NON"
-  }, "NON", -1 /* HOISTED */)]), 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.etudiant.fonctionnaire]]), $data.errors.fonctionnaire ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_60, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.fonctionnaire), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), $data.etudiant.fonctionnaire === 'OUI' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_61, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_62, [_cache[151] || (_cache[151] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, "Expérience Professionnelle", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_45, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_46, [_cache[90] || (_cache[90] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "secteur"
   }, "Secteur", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "secteur",
-    "onUpdate:modelValue": _cache[75] || (_cache[75] = function ($event) {
+    "onUpdate:modelValue": _cache[51] || (_cache[51] = function ($event) {
       return $data.etudiant.secteur = $event;
     }),
     placeholder: "Entrez le secteur",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'input-error': $data.errors.secteur
     }),
-    onInput: _cache[76] || (_cache[76] = function ($event) {
+    onInput: _cache[52] || (_cache[52] = function ($event) {
       return $options.validateStep('secteur');
     }),
-    onFocus: _cache[77] || (_cache[77] = function ($event) {
+    onFocus: _cache[53] || (_cache[53] = function ($event) {
       return $data.currentField = 'secteur';
     })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.secteur]]), $data.errors.secteur ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_63, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.secteur), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_64, [_cache[152] || (_cache[152] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "nombreannee"
-  }, "Nombre d'années", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "number",
-    id: "nombreannee",
-    "onUpdate:modelValue": _cache[78] || (_cache[78] = function ($event) {
-      return $data.etudiant.nombreannee = $event;
-    }),
-    min: "0",
-    step: "1",
-    placeholder: "Nombre d'années d'expérience",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.nombreannee
-    }),
-    onInput: _cache[79] || (_cache[79] = function ($event) {
-      return $options.validateStep('nombreannee');
-    }),
-    onFocus: _cache[80] || (_cache[80] = function ($event) {
-      return $data.currentField = 'nombreannee';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.nombreannee]]), $data.errors.nombreannee ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_65, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.nombreannee), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_66, [_cache[153] || (_cache[153] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.secteur]]), $data.errors.secteur ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_47, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.secteur), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_48, [_cache[91] || (_cache[91] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "poste"
   }, "Poste", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "poste",
-    "onUpdate:modelValue": _cache[81] || (_cache[81] = function ($event) {
+    "onUpdate:modelValue": _cache[54] || (_cache[54] = function ($event) {
       return $data.etudiant.poste = $event;
     }),
     placeholder: "Entrez votre poste",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'input-error': $data.errors.poste
     }),
-    onInput: _cache[82] || (_cache[82] = function ($event) {
+    onInput: _cache[55] || (_cache[55] = function ($event) {
       return $options.validateStep('poste');
     }),
-    onFocus: _cache[83] || (_cache[83] = function ($event) {
+    onFocus: _cache[56] || (_cache[56] = function ($event) {
       return $data.currentField = 'poste';
     })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.poste]]), $data.errors.poste ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_67, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.poste), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_68, [_cache[154] || (_cache[154] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "lieutravail"
-  }, "Lieu de travail", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    id: "lieutravail",
-    "onUpdate:modelValue": _cache[84] || (_cache[84] = function ($event) {
-      return $data.etudiant.lieutravail = $event;
-    }),
-    placeholder: "Lieu de travail",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.lieutravail
-    }),
-    onInput: _cache[85] || (_cache[85] = function ($event) {
-      return $options.validateStep('lieutravail');
-    }),
-    onFocus: _cache[86] || (_cache[86] = function ($event) {
-      return $data.currentField = 'lieutravail';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.lieutravail]]), $data.errors.lieutravail ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_69, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.lieutravail), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_70, [_cache[155] || (_cache[155] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "for": "villetravail"
-  }, "Ville de travail", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    id: "villetravail",
-    "onUpdate:modelValue": _cache[87] || (_cache[87] = function ($event) {
-      return $data.etudiant.villetravail = $event;
-    }),
-    placeholder: "Ville de travail",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors.villetravail
-    }),
-    onInput: _cache[88] || (_cache[88] = function ($event) {
-      return $options.validateStep('villetravail');
-    }),
-    onFocus: _cache[89] || (_cache[89] = function ($event) {
-      return $data.currentField = 'villetravail';
-    })
-  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.villetravail]]), $data.errors.villetravail ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_71, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.villetravail), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.currentStep === 3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_72, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" File Upload Field for PHOTO "), $props.etablissement.show_photo_input_master ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_73, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_74, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "file",
-    id: "path_photo",
-    onChange: _cache[90] || (_cache[90] = function ($event) {
-      return $options.handleFileUpload($event, 'path_photo');
-    }),
-    accept: ".jpg, .jpeg, .png",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error-student': $data.errors['path_photo']
-    }),
-    ref: "fileInput8",
-    style: {
-      "display": "none"
-    }
-  }, null, 34 /* CLASS, NEED_HYDRATION */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "file-upload-btn-student",
-    onClick: _cache[91] || (_cache[91] = function ($event) {
-      return $options.triggerFileInput('fileInput8');
-    })
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_75, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: $data.etudiant['path_photo'] && $data.etudiant['path_photo'].preview ? $data.etudiant['path_photo'].preview : '/form/images/etudiant.png',
-    alt: "Preview",
-    "class": "upload-img-student"
-  }, null, 8 /* PROPS */, _hoisted_76)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_77, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.etudiant['path_photo'] && $data.etudiant['path_photo'].preview ? 'Changer l\'image' : 'Choisir votre photo'), 1 /* TEXT */)])]), $data.errors['path_photo'] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_78, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors['path_photo']), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" File Upload Field for CIN "), $props.etablissement.show_cin_input_master ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_79, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" File Upload Field for Student Image "), _cache[158] || (_cache[158] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "class": "file-label"
-  }, "CIN", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_80, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "file",
-    id: "path_cin",
-    onChange: _cache[92] || (_cache[92] = function ($event) {
-      return $options.handleFileUpload($event, 'path_cin');
-    }),
-    accept: ".jpg, .jpeg, .png",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors['path_cin']
-    }),
-    ref: "fileInput7",
-    style: {
-      "display": "none"
-    }
-  }, null, 34 /* CLASS, NEED_HYDRATION */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "file-upload-btn",
-    onClick: _cache[93] || (_cache[93] = function ($event) {
-      return $options.triggerFileInput('fileInput7');
-    })
-  }, _cache[157] || (_cache[157] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-    "class": "btn-text"
-  }, "Choisir une image", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-    "class": "fa fa-upload"
-  }, null, -1 /* HOISTED */)])), $data.etudiant['path_cin'] && $data.etudiant['path_cin'].preview ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_81, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_82, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: $data.etudiant['path_cin'].preview,
-    alt: "Preview",
-    "class": "preview-img"
-  }, null, 8 /* PROPS */, _hoisted_83), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    onClick: _cache[94] || (_cache[94] = function ($event) {
-      return $options.removeFile('path_cin');
-    }),
-    "class": "remove-btn"
-  }, "✖")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.errors['path_cin'] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_84, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors['path_cin']), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" File Upload Field for Bac "), $props.etablissement.show_bac_input_master ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_85, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" File Upload Field for Student Image "), _cache[160] || (_cache[160] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "class": "file-label"
-  }, "Diplome de baccalauréat", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_86, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "file",
-    id: "path_bac",
-    onChange: _cache[95] || (_cache[95] = function ($event) {
-      return $options.handleFileUpload($event, 'path_bac');
-    }),
-    accept: ".jpg, .jpeg, .png",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors['path_bac']
-    }),
-    ref: "fileInput11",
-    style: {
-      "display": "none"
-    }
-  }, null, 34 /* CLASS, NEED_HYDRATION */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "file-upload-btn",
-    onClick: _cache[96] || (_cache[96] = function ($event) {
-      return $options.triggerFileInput('fileInput11');
-    })
-  }, _cache[159] || (_cache[159] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-    "class": "btn-text"
-  }, "Choisir une image", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-    "class": "fa fa-upload"
-  }, null, -1 /* HOISTED */)])), $data.etudiant['path_bac'] && $data.etudiant['path_bac'].preview ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_87, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_88, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: $data.etudiant['path_bac'].preview,
-    alt: "Preview",
-    "class": "preview-img"
-  }, null, 8 /* PROPS */, _hoisted_89), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    onClick: _cache[97] || (_cache[97] = function ($event) {
-      return $options.removeFile('path_bac');
-    }),
-    "class": "remove-btn"
-  }, "✖")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.errors['path_bac'] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_90, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors['path_bac']), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.etablissement.show_licence_input_master ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_91, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" File Upload Field for Student Image "), _cache[162] || (_cache[162] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "class": "file-label"
-  }, "Diplome de Licence(Attestation de réussite)", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_92, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "file",
-    id: "path_licence",
-    onChange: _cache[98] || (_cache[98] = function ($event) {
-      return $options.handleFileUpload($event, 'path_licence');
-    }),
-    accept: ".jpg, .jpeg, .png",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors['path_licence']
-    }),
-    ref: "fileInput12",
-    style: {
-      "display": "none"
-    }
-  }, null, 34 /* CLASS, NEED_HYDRATION */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "file-upload-btn",
-    onClick: _cache[99] || (_cache[99] = function ($event) {
-      return $options.triggerFileInput('fileInput12');
-    })
-  }, _cache[161] || (_cache[161] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-    "class": "btn-text"
-  }, "Choisir une image", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-    "class": "fa fa-upload"
-  }, null, -1 /* HOISTED */)])), $data.etudiant['path_licence'] && $data.etudiant['path_licence'].preview ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_93, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_94, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: $data.etudiant['path_licence'].preview,
-    alt: "Preview",
-    "class": "preview-img"
-  }, null, 8 /* PROPS */, _hoisted_95), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    onClick: _cache[100] || (_cache[100] = function ($event) {
-      return $options.removeFile('path_licence');
-    }),
-    "class": "remove-btn"
-  }, "✖")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.errors['path_licence'] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_96, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors['path_licence']), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.etablissement.show_attestation_no_emploi_input_master ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_97, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" File Upload Field for Student Image "), _cache[164] || (_cache[164] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "class": "file-label"
-  }, "Attestation de non-emploi", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_98, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "file",
-    id: "path_attestation_non_emploi",
-    onChange: _cache[101] || (_cache[101] = function ($event) {
-      return $options.handleFileUpload($event, 'path_attestation_non_emploi');
-    }),
-    accept: ".jpg, .jpeg, .png",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-      'input-error': $data.errors['path_attestation_non_emploi']
-    }),
-    ref: "fileInput13",
-    style: {
-      "display": "none"
-    }
-  }, null, 34 /* CLASS, NEED_HYDRATION */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "file-upload-btn",
-    onClick: _cache[102] || (_cache[102] = function ($event) {
-      return $options.triggerFileInput('fileInput13');
-    })
-  }, _cache[163] || (_cache[163] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-    "class": "btn-text"
-  }, "Choisir une image", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-    "class": "fa fa-upload"
-  }, null, -1 /* HOISTED */)])), $data.etudiant['path_attestation_non_emploi'] && $data.etudiant['path_attestation_non_emploi'].preview ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_99, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_100, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: $data.etudiant['path_attestation_non_emploi'].preview,
-    alt: "Preview",
-    "class": "preview-img"
-  }, null, 8 /* PROPS */, _hoisted_101), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    onClick: _cache[103] || (_cache[103] = function ($event) {
-      return $options.removeFile('path_attestation_non_emploi');
-    }),
-    "class": "remove-btn"
-  }, "✖")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.errors['path_attestation_non_emploi'] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_102, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors['path_attestation_non_emploi']), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.etablissement.show_cv_input_master ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_103, [_cache[166] || (_cache[166] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "class": "file-label-student"
-  }, "Curriculum Vitae (PDF)", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" PDF Upload Box "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "pdf-upload-container",
-    onClick: _cache[106] || (_cache[106] = function () {
-      return $options.triggerFileInputPDF && $options.triggerFileInputPDF.apply($options, arguments);
-    })
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "file",
-    ref: "fileInput",
-    onChange: _cache[104] || (_cache[104] = function () {
-      return $options.handleFileUploadPDF && $options.handleFileUploadPDF.apply($options, arguments);
-    }),
-    accept: ".pdf",
-    hidden: ""
-  }, null, 544 /* NEED_HYDRATION, NEED_PATCH */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" PDF Content Preview "), $data.pdfUrl ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_104, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("canvas", _hoisted_105, null, 512 /* NEED_PATCH */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "remove-file-btn",
-    onClick: _cache[105] || (_cache[105] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
-      return $options.removeFilePDF && $options.removeFilePDF.apply($options, arguments);
-    }, ["stop"]))
-  }, "✖")], 512 /* NEED_PATCH */)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    key: 1
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Placeholder "), _cache[165] || (_cache[165] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "pdf-upload-placeholder"
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-    "class": "fas fa-file-upload pdf-upload-icon"
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-    "class": "upload-text"
-  }, "Cliquez pour sélectionner un fichier PDF")], -1 /* HOISTED */))], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Error Message "), $data.errors['path_cv'] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_106, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors['path_cv']), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.currentStep === 4 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_107, [$props.etablissement.multiple_choix_filiere_master == 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_108, [_cache[168] || (_cache[168] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, null, 34 /* CLASS, NEED_HYDRATION */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.etudiant.poste]]), $data.errors.poste ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_49, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.poste), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"form-group\" dir=\"ltr\">\n\t\t\t\t\t\t<label for=\"lieutravail\">Lieu de travail</label>\n\t\t\t\t\t\t<input\n\t\t\t\t\t\t\ttype=\"text\"\n\t\t\t\t\t\t\tid=\"lieutravail\"\n\t\t\t\t\t\t\tv-model=\"etudiant.lieutravail\"\n\t\t\t\t\t\t\tplaceholder=\"Lieu de travail\"\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.lieutravail }\"\n\t\t\t\t\t\t\t@input=\"validateStep('lieutravail')\"\n\t\t\t\t\t\t\t@focus=\"currentField = 'lieutravail'\"\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<span v-if=\"errors.lieutravail\" class=\"error-icon\">✖ {{ errors.lieutravail }}</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"form-group\" dir=\"ltr\">\n\t\t\t\t\t\t<label for=\"villetravail\">Ville de travail</label>\n\t\t\t\t\t\t<input\n\t\t\t\t\t\t\ttype=\"text\"\n\t\t\t\t\t\t\tid=\"villetravail\"\n\t\t\t\t\t\t\tv-model=\"etudiant.villetravail\"\n\t\t\t\t\t\t\tplaceholder=\"Ville de travail\"\n\t\t\t\t\t\t\t:class=\"{ 'input-error': errors.villetravail }\"\n\t\t\t\t\t\t\t@input=\"validateStep('villetravail')\"\n\t\t\t\t\t\t\t@focus=\"currentField = 'villetravail'\"\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<span v-if=\"errors.villetravail\" class=\"error-icon\">✖ {{ errors.villetravail }}</span>\n\t\t\t\t\t</div> ")])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.currentStep === 3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_50, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_51, [_cache[93] || (_cache[93] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "class": "section-title"
-  }, "Sélectionnez une Filière", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_109, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.filieres, function (f) {
+  }, "Sélectionnez une Filière", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_52, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.filieres, function (f) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       key: f.id,
       "class": "filiere-card",
@@ -28465,62 +28012,31 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "radio",
       id: 'filiere_' + f.id,
-      "onUpdate:modelValue": _cache[107] || (_cache[107] = function ($event) {
+      "onUpdate:modelValue": _cache[57] || (_cache[57] = function ($event) {
         return $data.etudiant.filiere = $event;
       }),
       value: f.id,
       "class": "hidden-input",
-      onChange: _cache[108] || (_cache[108] = function ($event) {
+      onChange: _cache[58] || (_cache[58] = function ($event) {
         return $options.validateStep('filiere');
       })
-    }, null, 40 /* PROPS, NEED_HYDRATION */, _hoisted_111), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.etudiant.filiere]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    }, null, 40 /* PROPS, NEED_HYDRATION */, _hoisted_54), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.etudiant.filiere]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
       "for": 'filiere_' + f.id,
       "class": "filiere-content"
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_113, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(f.nom_abrv), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_114, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(f.nom_complet), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-      href: $props.appurl + f.document,
-      target: "_blank",
-      "class": "description-btn"
-    }, _toConsumableArray(_cache[167] || (_cache[167] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-      "class": "fas fa-file-alt"
-    }, null, -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Voir la description ")])), 8 /* PROPS */, _hoisted_115), $data.etudiant.filiere === f.id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_116, " ✔ Sélectionné ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 8 /* PROPS */, _hoisted_112)], 8 /* PROPS */, _hoisted_110);
-  }), 128 /* KEYED_FRAGMENT */))]), $data.errors.filiere ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_117, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.filiere), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_118, [_cache[170] || (_cache[170] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "class": "section-title"
-  }, "Choisissez jusqu'à 3 Filières", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_119, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.filieres, function (f) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-      key: f.id,
-      "class": "filiere-card"
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-      type: "checkbox",
-      id: 'filiere_choix_' + f.id,
-      value: f.id,
-      "onUpdate:modelValue": _cache[109] || (_cache[109] = function ($event) {
-        return $data.selectedFiliereChoices = $event;
-      }),
-      "class": "hidden-input",
-      disabled: $data.selectedFiliereChoices.length >= 3 && !$data.selectedFiliereChoices.includes(f.id)
-    }, null, 8 /* PROPS */, _hoisted_120), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.selectedFiliereChoices]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-      "for": 'filiere_choix_' + f.id,
-      "class": "filiere-content"
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_122, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(f.nom_abrv), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_123, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(f.nom_complet), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-      href: $props.appurl + f.document,
-      target: "_blank",
-      "class": "description-btn"
-    }, _toConsumableArray(_cache[169] || (_cache[169] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-      "class": "fas fa-file-alt"
-    }, null, -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Voir la description ")])), 8 /* PROPS */, _hoisted_124), $data.selectedFiliereChoices.includes(f.id) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_125, " ✔ Sélectionné (" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.choixText($data.selectedFiliereChoices.indexOf(f.id) + 1)) + ") ", 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 8 /* PROPS */, _hoisted_121)]);
-  }), 128 /* KEYED_FRAGMENT */))]), $data.errors.filiere_choix_1 || $data.errors.filiere_choix_2 || $data.errors.filiere_choix_3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_126, "✖ Le choix de trois filières est requis. Veuillez sélectionner trois filières.")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.currentStep === 5 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_127, [_cache[173] || (_cache[173] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_56, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(f.nom_abrv), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_57, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(f.nom_complet), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <a :href=\"appurl + f.document\" target=\"_blank\" class=\"description-btn\">\n\t\t\t\t\t\t\t\t<i class=\"fas fa-file-alt\"></i> Voir la description\n\t\t\t\t\t\t\t</a> "), $data.etudiant.filiere === f.id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_58, " ✔ Sélectionné ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 8 /* PROPS */, _hoisted_55)], 8 /* PROPS */, _hoisted_53);
+  }), 128 /* KEYED_FRAGMENT */))]), $data.errors.filiere ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_59, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.filiere), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.currentStep === 4 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_60, [_cache[96] || (_cache[96] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
     "class": "confirmation-note"
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "NB :"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Veuillez vérifier que vous avez rempli correctement toutes les informations demandées. L'inscription se fait uniquement une seule fois. ")], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_128, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Hidden checkbox for v-model "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "NB :"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Veuillez vérifier que vous avez rempli correctement toutes les informations demandées. L'inscription se fait uniquement une seule fois. ")], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_61, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Hidden checkbox for v-model "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     id: "check",
     type: "checkbox",
-    "onUpdate:modelValue": _cache[110] || (_cache[110] = function ($event) {
+    "onUpdate:modelValue": _cache[59] || (_cache[59] = function ($event) {
       return $data.etudiant.confirmation = $event;
     }),
     "class": "hidden-checkbox",
-    onChange: _cache[111] || (_cache[111] = function () {
+    onChange: _cache[60] || (_cache[60] = function () {
       return _ctx.validateCheckbox && _ctx.validateCheckbox.apply(_ctx, arguments);
     })
-  }, null, 544 /* NEED_HYDRATION, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.etudiant.confirmation]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Custom checkbox "), _cache[171] || (_cache[171] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, null, 544 /* NEED_HYDRATION, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.etudiant.confirmation]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Custom checkbox "), _cache[94] || (_cache[94] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "check",
     "class": "custom-checkbox"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
@@ -28528,24 +28044,24 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     viewBox: "0 0 24 24"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
     d: "M5 12l5 5L20 7"
-  })])], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Checkbox text "), _cache[172] || (_cache[172] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  })])], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Checkbox text "), _cache[95] || (_cache[95] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "checkbox-text"
-  }, " Je certifie sur l'honneur l'exactitude des informations déclarées et des documents téléchargés. ", -1 /* HOISTED */))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Error message "), $data.errors.confirmation ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_129, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.confirmation), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ErrorPopup, {
+  }, " Je certifie sur l'honneur l'exactitude des informations déclarées. ", -1 /* HOISTED */))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Error message "), $data.errors.confirmation ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_62, "✖ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.confirmation), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ErrorPopup, {
     ref: "errorPopup"
-  }, null, 512 /* NEED_PATCH */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Navigation Buttons "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_130, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, null, 512 /* NEED_PATCH */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Navigation Buttons "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_63, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn btn-secondary",
-    onClick: _cache[112] || (_cache[112] = function () {
+    onClick: _cache[61] || (_cache[61] = function () {
       return $options.prevStep && $options.prevStep.apply($options, arguments);
     }),
     disabled: $data.currentStep === 1
-  }, "Précédent", 8 /* PROPS */, _hoisted_131), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_132, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.currentStep === $data.steps.length ? 'Terminer' : 'Suivant'), 1 /* TEXT */)])], 32 /* NEED_HYDRATION */)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_133, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_134, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Logo "), _cache[178] || (_cache[178] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  }, "Précédent", 8 /* PROPS */, _hoisted_64), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_65, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.currentStep === $data.steps.length ? 'Terminer' : 'Suivant'), 1 /* TEXT */)])], 32 /* NEED_HYDRATION */)])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_66, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_67, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Logo "), _cache[103] || (_cache[103] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "modern-logo-box"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
     src: "/form/images/uh1-vertical.png",
     alt: "University Logo",
     "class": "modern-logo"
-  })], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Success Icon "), _cache[179] || (_cache[179] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  })], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Success Icon "), _cache[104] || (_cache[104] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "success-icon"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
     viewBox: "0 0 24 24",
@@ -28566,29 +28082,29 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     fill: "none",
     "stroke-linecap": "round",
     "stroke-linejoin": "round"
-  })])], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Success Message "), _cache[180] || (_cache[180] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+  })])], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Success Message "), _cache[105] || (_cache[105] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
     "class": "success-title"
-  }, "🎉 Félicitations !", -1 /* HOISTED */)), _cache[181] || (_cache[181] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  }, "🎉 Félicitations !", -1 /* HOISTED */)), _cache[106] || (_cache[106] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
     "class": "success-text"
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Votre inscription est "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "validée"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" et sera traitée par notre équipe. ")], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Account Info "), _cache[182] || (_cache[182] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"success-info text-dark p-3 rounded bg-light border\"><p><strong>Votre compte étudiant a été créé avec succès.</strong></p><p>Veuillez vous connecter à votre espace personnel pour :</p><ul><li><strong>Modifier</strong> votre candidature si nécessaire,</li><li><strong>Confirmer</strong> définitivement votre candidature,</li><li>et <strong>télécharger le reçu</strong> de votre préinscription.</li></ul><p class=\"mt-3\">Nous vous invitons à finaliser ces étapes dans les meilleurs délais.</p></div>", 1)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" User Credentials "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_135, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_cache[175] || (_cache[175] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Email :", -1 /* HOISTED */)), _cache[176] || (_cache[176] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)()), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.etudiant.email), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Smart Password Toggle "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Password field with dynamic type change "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_cache[177] || (_cache[177] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Mot de passe :", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Password display container "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Votre inscription est "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "validée"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" et sera traitée par notre équipe. ")], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Account Info "), $data.etudiant.exists === false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_68, _cache[98] || (_cache[98] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<p><strong>Votre compte étudiant a été créé avec succès.</strong></p><p>Veuillez vous connecter à votre espace personnel pour :</p><ul><li><strong>Modifier</strong> votre candidature si nécessaire,</li><li><strong>Confirmer</strong> définitivement votre candidature,</li><li>et <strong>télécharger le reçu</strong> de votre préinscription.</li></ul><p class=\"mt-3\">Nous vous invitons à finaliser ces étapes dans les meilleurs délais.</p>", 4)]))) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" User Credentials "), $data.etudiant.exists === false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_69, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_cache[99] || (_cache[99] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Email :", -1 /* HOISTED */)), _cache[100] || (_cache[100] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)()), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.etudiant.email), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_cache[101] || (_cache[101] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Mot de passe :", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["password-box", {
       'blurred': !$data.showPassword
     }])
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Use a span to display the password, it won't show in HTML source directly "), $data.showPassword ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_136, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.etudiant.CIN) + "@2025", 1 /* TEXT */)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_137, "********************************"))], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, [$data.showPassword ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_70, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.etudiant.CIN) + "@2025", 1 /* TEXT */)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_71, "********************************"))], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": "toggle-password",
-    onClick: _cache[114] || (_cache[114] = function () {
+    onClick: _cache[63] || (_cache[63] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.togglePassword && $options.togglePassword.apply($options, arguments);
-    }),
-    onMouseenter: _cache[115] || (_cache[115] = function ($event) {
+    }, ["prevent"])),
+    onMouseenter: _cache[64] || (_cache[64] = function ($event) {
       return $data.showTooltip = true;
     }),
-    onMouseleave: _cache[116] || (_cache[116] = function ($event) {
+    onMouseleave: _cache[65] || (_cache[65] = function ($event) {
       return $data.showTooltip = false;
     })
-  }, [$data.showPassword ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_138, "👁️‍🗨️")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_139, "🔒"))], 32 /* NEED_HYDRATION */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Tooltip "), $data.showTooltip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_140, [$data.showPassword ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_141, "Cliquez pour masquer le mot de passe")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_142, "Cliquez pour afficher le mot de passe"))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Login Button "), _cache[183] || (_cache[183] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  }, [$data.showPassword ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_72, "👁️‍🗨️")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_73, "🔒"))], 32 /* NEED_HYDRATION */), $data.showTooltip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_74, [$data.showPassword ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_75, "Cliquez pour masquer le mot de passe")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_76, "Cliquez pour afficher le mot de passe"))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Account Already Exists "), $data.etudiant.exists === true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_77, _cache[102] || (_cache[102] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Un compte existe déjà pour cet étudiant.")], -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Vous pouvez utiliser votre compte existant pour vous connecter à votre espace personnel et suivre votre candidature.", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Accédez à votre espace avec votre "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "email"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(".")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("En cas d’oubli de mot de passe, vous pouvez nous contacter à notre "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "adresse e-mail indiquée dans la page de contact"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(".")])], -1 /* HOISTED */)]))) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Login Button "), _cache[107] || (_cache[107] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     href: "/login",
     "class": "modern-button"
-  }, "Se connecter", -1 /* HOISTED */))])])], 64 /* STABLE_FRAGMENT */);
+  }, "Se connecter", -1 /* HOISTED */))])]))], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
@@ -30693,6 +30209,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\nbody {\n\tbackground: linear-gradien
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-8.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-8.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsBachelier.vue?vue&type=style&index=0&id=5558ae93&lang=css":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-8.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-8.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsBachelier.vue?vue&type=style&index=0&id=5558ae93&lang=css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody {\r\n\tbackground: linear-gradient(135deg, #f0f8ff, #e6f7ff);\r\n\tfont-family: \"Roboto\", sans-serif;\r\n\tmargin: 0;\r\n\tpadding: 0;\n}\n.form-container {\r\n\tmax-width: 1000px !important;\r\n\tmargin: 2rem auto;\r\n\tbackground: #ffffff;\r\n\tborder-radius: 15px;\r\n\tbox-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);\r\n\toverflow: hidden;\n}\n.progress-bar-container {\r\n\theight: 8px;\r\n\tbackground: #ddd;\r\n\twidth: 100%;\n}\n.progress-bar {\r\n\theight: 8px;\r\n\tbackground: #007bff;\r\n\ttransition: width 0.3s ease-in-out;\n}\n.form-header {\r\n\ttext-align: center;\r\n\tbackground: #0056b3;\r\n\tcolor: white;\r\n\tpadding: 2rem;\n}\n.logo-container {\r\n\tbackground: white;\r\n\tborder-radius: 50%;\r\n\tpadding: 1rem;\r\n\tdisplay: inline-block;\r\n\tbox-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n}\n.form-logo {\r\n\twidth: 100px;\n}\n.form-title {\r\n\tfont-size: 2.5rem;\r\n\tfont-weight: bold;\n}\n.form-subtitle {\r\n\tfont-size: 1.1rem;\r\n\tcolor: #ccc;\n}\n.progress-steps {\r\n\t\tdisplay: flex;\r\n\t\tjustify-content: space-between;\r\n\t\talign-items: flex-start; /* Aligns circles and labels better */\r\n\t\tpadding: 2rem 1rem;\r\n\t\tbackground-color: #f9f9f9;\r\n\t\tborder-radius: 10px;\r\n\t\tgap: 2rem; /* Adds space between steps */\n}\n.step {\r\n\t\tdisplay: flex;\r\n\t\tflex-direction: column;\r\n\t\talign-items: center;\r\n\t\tposition: relative;\r\n\t\tflex-grow: 1;\r\n\t\tcursor: pointer; /* Makes steps clickable */\r\n\t\ttransition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n.step:hover {\r\n\t\ttransform: translateY(-5px); /* Subtle hover effect */\r\n\t\tbox-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Add shadow for hover */\n}\n.step-circle {\r\n\t\twidth: 50px;\r\n\t\theight: 50px;\r\n\t\tborder-radius: 50%;\r\n\t\tbackground-color: #ddd;\r\n\t\tmargin-bottom: 8px;\r\n\t\tdisplay: flex;\r\n\t\talign-items: center;\r\n\t\tjustify-content: center;\r\n\t\tfont-size: 1.4rem;\r\n\t\tfont-weight: bold;\r\n\t\tcolor: #666;\r\n\t\ttransition: all 0.4s ease;\r\n\t\tbox-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n}\n.step-icon {\r\n\t\ttransition: color 0.3s ease;\n}\n.step-label {\r\n\t\tfont-size: 1rem;\r\n\t\tfont-weight: bold;\r\n\t\tcolor: #555;\r\n\t\tmargin-top: 8px;\r\n\t\ttext-align: center; /* Center-align the text */\r\n\t\twhite-space: pre-line; /* Preserve line breaks */\r\n\t\tline-height: 1.4; /* Adjust line height for better spacing */\n}\n.step-line {\r\n\t\tdisplay: block; /* Ensure each line is a block */\n}\n.step.completed .step-circle {\r\n\t\tbackground-color: #28a745;\n}\n.step.active .step-circle {\r\n\t\tbackground-color: #007bff;\r\n\t\ttransform: scale(1.1);\r\n\t\ttransform: scale(1.2);\r\n\t\tbox-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);\n}\n.step:not(:last-child)::after {\r\n\t\tcontent: '';\r\n\t\tposition: absolute;\r\n\t\ttop: 50%;\r\n\t\tright: 0;\r\n\t\twidth: 100%; /* Full width of the space between steps */\r\n\t\theight: 3px;\r\n\t\tbackground-color: #ddd;\r\n\t\tz-index: -1; /* Keep the line behind the circles */\r\n\t\ttransition: background-color 0.3s ease;\n}\n.step.completed:not(:last-child)::after {\r\n\t\tbackground-color: #28a745;\n}\n.step.active:not(:last-child)::after {\r\n\t\tbackground-color: #007bff;\n}\n.step.completed .step-icon {\r\n\t\tcolor: white;\n}\n.step.active .step-icon {\r\n\t\tcolor: white;\n}\n.step.completed::after {\r\n\t\tbackground-color: #28a745;\n}\n.step:hover .step-circle {\r\n\t\tbackground-color: #007bff;\r\n\t\ttransform: scale(1.1);\n}\n.step:hover .step-icon {\r\n\t\tcolor: white;\n}\n.step:hover .step-label {\r\n\t\tcolor: #007bff;\n}\n.progress-tooltip {\r\n\t\tdisplay: inline-block;\r\n\t\tfont-size: 0.85rem;\r\n\t\tfont-weight: 500;\r\n\t\tcolor: #fff;\r\n\t\tbackground: #007bff;\r\n\t\tborder-radius: 4px;\r\n\t\tpadding: 4px 8px;\r\n\t\tmargin-top: 25px;\r\n\t\tposition: absolute;\r\n\t\tleft: 50%;\r\n\t\ttransform: translateX(-50%);\r\n\t\topacity: 0;\r\n\t\tvisibility: hidden;\r\n\t\ttransition: opacity 0.3s ease, visibility 0.3s ease;\r\n\t\tbox-shadow: 0 2px 8px rgba(0, 123, 255, 0.4);\n}\n.step:hover .progress-tooltip {\r\n\t\topacity: 1;\r\n\t\tvisibility: visible;\n}\n.step.completed .step-icon,\r\n\t.step.active .step-icon {\r\n\t\tcolor: white;\n}\n.step-label:hover {\r\n\tcolor: #007bff; /* Highlight color */\r\n\ttransform: scale(1.05);\n}\n.step-label:hover .progress-tooltip {\r\n\topacity: 1;\r\n\tvisibility: visible;\r\n\tmargin-top: 12px;\n}\n.form-body {\r\n\tpadding: 2rem;\n}\n.section-title {\r\n\tfont-size: 1.5rem;\r\n\tmargin-bottom: 1rem;\n}\n.form-group {\r\n\tmargin-bottom: 1.5rem;\n}\ninput[type=\"text\"],\r\n\tinput[type=\"date\"],\r\n\tinput[type=\"number\"],\r\n\tselect,\r\n\ttextarea {\r\n\t\twidth: 100%;\r\n\t\tpadding: 0.8rem;\r\n\t\tborder: 1px solid #ddd;\r\n\t\tborder-radius: 8px;\r\n\t\tfont-size: 1rem;\r\n\t\tmargin-top: 0.5rem;\r\n\t\ttransition: border-color 0.3s ease;\n}\r\n\r\n\t/* Focus styles */\ninput[type=\"text\"]:focus,\r\n\tinput[type=\"date\"]:focus,\r\n\tinput[type=\"number\"]:focus,\r\n\tselect:focus,\r\n\ttextarea:focus {\r\n\t\tborder-color: #007bff;\n}\n.input-error {\r\n\tborder: 1px solid #e3342f !important;\n}\n.error-icon {\r\n\tcolor: #e3342f;\r\n\tfont-size: 0.8rem;\n}\n.form-actions {\r\n\tdisplay: flex;\r\n\tjustify-content: space-between;\r\n\tmargin-top: 1.5rem;\n}\nbutton {\r\n\tpadding: 0.8rem 2rem;\r\n\tfont-size: 1rem;\r\n\tborder-radius: 8px;\r\n\tborder: none;\r\n\tcursor: pointer;\n}\nbutton.btn-primary {\r\n\tbackground-color: #007bff;\r\n\tcolor: white;\r\n\ttransition: background-color 0.3s;\n}\nbutton.btn-primary:hover {\r\n\tbackground-color: #0056b3;\n}\nbutton.btn-secondary {\r\n\tbackground-color: #f0f0f0;\r\n\tcolor: #555;\r\n\ttransition: background-color 0.3s;\n}\nbutton.btn-secondary:hover {\r\n\tbackground-color: #ddd;\n}\n@media (max-width: 768px) {\n.form-container {\r\n    padding: 1rem;\r\n    margin: 1rem;\n}\n.progress-steps {\r\n    flex-direction: column;\r\n    gap: 1.5rem;\n}\n.step {\r\n    width: 100%;\n}\n.form-header {\r\n    padding: 1rem;\n}\n.form-title {\r\n    font-size: 2rem;\n}\n.form-subtitle {\r\n    font-size: 1rem;\n}\n.form-body {\r\n    padding: 1rem;\n}\n.section-title {\r\n    font-size: 1.25rem;\n}\nbutton {\r\n    width: 100%;\r\n    padding: 1rem;\n}\n}\n@media (max-width: 480px) {\n.form-logo {\r\n    width: 80px;\n}\n.form-title {\r\n    font-size: 1.75rem;\n}\n.form-subtitle {\r\n    font-size: 0.9rem;\n}\n.progress-tooltip {\r\n    font-size: 0.75rem;\r\n    padding: 4px 6px;\r\n\tposition: absolute;\r\n    top: 73%;\n}\n}\r\n\r\n\r\n\r\n/* Style for the form group */\n.form-group {\r\n  margin-bottom: 1.5rem;\r\n  position: relative;\n}\r\n\r\n\r\n/* Change border color when there is an error */\ninput[type=\"text\"].input-error {\r\n  border-color: #e74c3c; /* Red border for error */\n}\r\n\r\n/* Style for the error message */\n.error-message {\r\n  color: #e74c3c; /* Red color for error text */\r\n  font-size: 14px;\r\n  margin-top: 5px;\r\n  display: block;\r\n  font-weight: 600;\r\n  padding-left: 5px;\n}\r\n\r\n/* Add some styles for the input focus */\ninput[type=\"text\"]:focus {\r\n  outline: none;\r\n  border-color: #3498db; /* Blue border when focused */\n}\r\n\r\n/* Add some styling to the label */\nlabel {\r\n  font-size: 14px;\r\n  margin-bottom: 0px;\r\n  font-weight: 600;\r\n  color: #333;\n}\r\n\r\n\r\n/* Apply RTL to the entire form group */\n.form-group[dir=\"rtl\"] {\r\n  text-align: right !important;  /* Align text to the right */\r\n  direction: rtl !important;     /* Set the direction of the form group to RTL */\n}\r\n\r\n/* Apply RTL to Arabic labels */\n.form-group[dir=\"rtl\"] .rtl-label {\r\n  text-align: right !important;\r\n  direction: rtl !important;\n}\r\n\r\n/* Apply RTL to input fields within Arabic form groups */\n.form-group[dir=\"rtl\"] input {\r\n  text-align: right !important;  /* Align text to the right for RTL inputs */\r\n  direction: rtl !important;     /* Set input direction to RTL */\n}\r\n\r\n/* Apply RTL to error messages within Arabic form groups */\n.form-group[dir=\"rtl\"] .error-message {\r\n  text-align: right !important;\r\n  direction: rtl !important;\n}\r\n\r\n/* Ensure French inputs remain left-aligned (default behavior) */\ninput:not([dir=\"rtl\"]) {\r\n  text-align: left;\r\n  direction: ltr;\n}\n.close-icon {\r\n    position: absolute;\r\n    top: 50%;\r\n    right: 0.5rem;\r\n    transform: translateY(-50%);\r\n    width: 1.5rem;\r\n    height: 1.5rem;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background: linear-gradient(135deg, #ff6b6b, #ff4757);\r\n    border-radius: 50%;\r\n    cursor: pointer;\r\n    transition: transform 0.3s ease, box-shadow 0.3s ease;\r\n    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);\n}\n.close-icon span {\r\n    color: white;\r\n    font-size: 1.2rem;\r\n    font-weight: bold;\r\n    line-height: 1;\n}\r\n\r\n\r\n\r\n\r\n/* Fieldset Styling */\nfieldset {\r\n  border: 2px solid #0078d7;\r\n  border-radius: 15px;\r\n  padding: 25px 20px;\r\n  background: #f5f8fa;\r\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\r\n  margin-bottom: 30px;\r\n  position: relative;\r\n  overflow: hidden; /* Ensures cleaner clipping */\n}\r\n\r\n/* Legend Styling */\nlegend {\r\n  text-align: right;\r\n  font-size: 1.2rem;\r\n  font-weight: 600;\r\n  color: #ffffff;\r\n  background: #0078d7;\r\n  padding: 10px 20px;\r\n  border-radius: 8px;\r\n  text-transform: uppercase;\r\n  position: absolute;\r\n  top: -11px;\r\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\r\n  white-space: nowrap; /* Prevents wrapping */\n}\n.legend1{\r\n\tleft: -571px !important;\n}\n.legend2{\r\n\tleft: -438px !important;\n}\n.legend3{\r\n\tleft: -644px !important;\n}\n.legend4{\r\n\tleft: -582px !important;\n}\n.legend5{\r\n\tleft: -630px;\n}\r\n\r\n/* Hover Effect on Fieldset */\nfieldset:hover {\r\n  border-color: #0056a6;\r\n  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);\n}\r\n\r\n/* Responsive Adjustments */\n@media (max-width: 768px) {\nlegend {\r\n    text-align: right;\r\n    font-size: 0.8rem;\r\n    font-weight: 600;\r\n    color: #ffffff;\r\n    background: #0078d7;\r\n    padding: 10px 20px;\r\n    border-radius: 8px;\r\n    text-transform: uppercase;\r\n    position: absolute;\r\n    top: -7px;\r\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\r\n    white-space: nowrap;\n}\n.legend1{\r\n\tleft: -46px;\n}\n.legend2{\r\n\tleft: -110px !important;\n}\n.legend3{\r\n\tleft: -95px;\n}\n}\r\n\r\n\r\n\r\n/* Style de la notification */\n.notification {\r\n  position: fixed;\r\n  top: 20px;\r\n  right: 20px;\r\n  background: #007bff;\r\n  color: white;\r\n  padding: 15px;\r\n  border-radius: 8px;\r\n  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);\r\n  max-width: 320px;\r\n  font-size: 14px;\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 10px;\r\n  z-index: 1000;\r\n  animation: fadeIn 0.3s ease-in-out;\n}\r\n\r\n/* Style du texte dans la notification */\n.notification p {\r\n  margin: 0;\r\n  flex: 1;\n}\r\n\r\n/* Style du bouton */\n.notification button {\r\n  background: white;\r\n  color: #007bff;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 5px;\r\n  cursor: pointer;\r\n  font-weight: bold;\n}\n.notification button:hover {\r\n  background: #f1f1f1;\n}\r\n\r\n/* Responsive design */\n@media (max-width: 768px) {\n.notification {\r\n    top: auto;\r\n    bottom: 20px;\r\n    right: 10px;\r\n    left: 10px;\r\n    width: auto;\r\n    max-width: none;\r\n    font-size: 13px;\r\n    padding: 12px;\r\n    flex-direction: column;\r\n    text-align: center;\n}\n.notification button {\r\n    margin-top: 5px;\r\n    width: 100%;\n}\n}\r\n\r\n/* Animation */\n@keyframes fadeIn {\nfrom {\r\n    opacity: 0;\r\n    transform: translateY(-10px);\n}\nto {\r\n    opacity: 1;\r\n    transform: translateY(0);\n}\n}\r\n\r\n\r\n\r\n\r\n/* Wrapper for the file input */\n.file-upload-wrapper {\r\n  position: relative;\r\n  display: inline-block;\r\n  width: 100%;\r\n  text-align: left;\r\n  background-color: #f9f9f9;\r\n  border-radius: 12px;\r\n  padding: 20px;\r\n  border: 2px solid #ccc;\r\n  transition: all 0.3s ease-in-out;\r\n  box-sizing: border-box;\r\n  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);\r\n  background: linear-gradient(135deg, #f0f7ff, #c0d9e8);\n}\r\n\r\n/* Custom button for file upload */\n.file-upload-btn {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  padding: 14px 28px;\r\n  background-color: #4CAF50;\r\n  color: white;\r\n  border-radius: 8px;\r\n  cursor: pointer;\r\n  font-size: 18px;\r\n  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;\r\n  width: 100%;\r\n  margin: 0;\n}\n.file-upload-btn:hover {\r\n  background-color: #45a049;\r\n  transform: scale(1.05);\r\n  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);\n}\n.file-upload-btn i {\r\n  margin-left: 8px;\n}\r\n\r\n/* Hidden native file input */\n.file-input {\r\n  display: none;\n}\r\n\r\n/* File Preview Section */\n.file-preview {\r\n  position: relative;\r\n  margin-top: 20px;\r\n  display: flex;\r\n  justify-content: center;\r\n  transition: all 0.3s ease-in-out;\n}\r\n\r\n/* Preview container with magic */\n.preview-container {\r\n  position: relative;\r\n  display: inline-block;\r\n  max-width: 100%;\r\n  margin-bottom: 10px;\r\n  border-radius: 15px;\r\n  overflow: hidden;\r\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);\r\n  transition: all 0.3s ease-in-out;\n}\n.preview-container:hover {\r\n  transform: scale(1.05) rotate(3deg);\r\n  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);\r\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n.preview-img {\r\n  width: 100%;\r\n  height: auto;\r\n  max-height: 150px;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n  border-radius: 12px;\r\n  transition: transform 0.3s ease-in-out;\n}\n.preview-img:hover {\r\n  transform: scale(1.05);\n}\r\n\r\n/* Remove button for file preview */\n.remove-btn {\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 5px;\r\n  background: rgba(255, 0, 0, 0.7);\r\n  color: white;\r\n  font-size: 18px;\r\n  border: none;\r\n  padding: 6px 12px;\r\n  border-radius: 50%;\r\n  cursor: pointer;\r\n  transition: background 0.3s ease, transform 0.3s ease;\n}\n.remove-btn:hover {\r\n  background: red;\r\n  transform: scale(1.1);\n}\r\n\r\n/* Label styling */\n.file-label {\r\n  font-size: 18px;\r\n  margin-bottom: 12px;\r\n  color: #333;\r\n  font-weight: 600;\r\n  display: block;\r\n  transition: color 0.3s ease;\n}\r\n\r\n/* Error Message Styling */\n.input-error {\r\n  border-color: #f44336;\r\n  background-color: #ffe6e6;\n}\n@keyframes glow {\n0% {\r\n    text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red, 0 0 40px red;\n}\n50% {\r\n    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 60px red;\n}\n100% {\r\n    text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red, 0 0 40px red;\n}\n}\r\n\r\n/* Responsive Styles */\n@media screen and (max-width: 768px) {\n.file-upload-btn {\r\n    font-size: 16px;\r\n    padding: 12px 24px;\n}\n.preview-img {\r\n    max-height: 120px;\n}\n.remove-btn{\r\n\twidth: 52% !important;\n}\n}\n@media screen and (max-width: 480px) {\n.file-upload-btn {\r\n    font-size: 14px;\r\n    padding: 10px 20px;\n}\n.file-label {\r\n    font-size: 16px;\n}\n.preview-img {\r\n    max-height: 100px;\n}\n}\r\n\r\n\r\n/* etudiant image file */\r\n/* Main container */\n.form-group.student-image-upload {\r\n    margin-top: 40px;\r\n    font-family: 'Roboto', sans-serif;\r\n    text-align: center;\r\n    padding: 30px;\n}\r\n\r\n/* Wrapper for the file upload button */\n.file-upload-wrapper-student {\r\n    position: relative;\r\n    display: inline-block;\r\n    cursor: pointer;\r\n    transition: transform 0.3s ease;\n}\r\n\r\n/* Circular file upload button with shadow */\n.file-upload-btn-student {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    flex-direction: column;\r\n    width: 280px;\r\n    height: 280px;\r\n    background: linear-gradient(135deg, #4CAF50, #4CAF50);\r\n    border-radius: 50%;\r\n    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);\r\n    position: relative;\r\n    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;\n}\n.file-upload-btn-student:hover {\r\n    transform: scale(1.05);\r\n    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);\n}\r\n\r\n/* Image container (circle) with hover zoom effect */\n.file-upload-image-student {\r\n    width: 180px;\r\n    height: 180px;\r\n    border-radius: 50%;\r\n    background-color: #f0f0f0;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    border: 4px solid #ffffff;\r\n    overflow: hidden;\r\n    transition: transform 0.3s ease;\n}\n.upload-img-student {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    transition: transform 0.3s ease;\n}\r\n\r\n/* Button text in the center */\n.upload-text-student {\r\n    font-size: 18px;\r\n    color: #ffffff;\r\n    font-weight: 500;\r\n    position: absolute;\r\n    bottom: 20px;\r\n    transition: opacity 0.3s ease-in-out;\n}\r\n\r\n/* Hover effect for image zoom */\n.file-upload-btn-student:hover .upload-img-student {\r\n    transform: scale(1.1);\n}\r\n\r\n/* Hover effect for text change */\n.file-upload-btn-student:hover .upload-text-student {\r\n    opacity: 1;\n}\r\n\r\n/* File input (hidden but accessible) */\ninput[type=\"file\"] {\r\n    opacity: 0;\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    cursor: pointer;\r\n    z-index: 2;\n}\r\n\r\n/* Error state */\n.input-error-student {\r\n    border: 2px solid #ff5722;\r\n    background-color: rgba(255, 87, 34, 0.1);\n}\r\n\r\n/* Image preview section */\n.file-upload-preview-student {\r\n    margin-top: 30px;\r\n    text-align: center;\n}\r\n\r\n/* Circular preview image with soft shadow */\n.preview-img-student {\r\n    width: 120px;\r\n    height: 120px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    border-radius: 50%;\r\n    border: 4px solid #00bcd4;\r\n    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.2);\r\n    transition: transform 0.3s ease;\n}\r\n\r\n/* Hover effect for preview image */\n.preview-img-student:hover {\r\n    transform: scale(1.05);\n}\r\n\r\n/* Remove image button */\n.remove-btn-student {\r\n    background-color: #ff5722;\r\n    color: white;\r\n    border: none;\r\n    padding: 8px 16px;\r\n    border-radius: 8px;\r\n    font-size: 16px;\r\n    cursor: pointer;\r\n    transition: background-color 0.3s ease;\n}\n.remove-btn-student:hover {\r\n    background-color: #e64a19;\n}\r\n\r\n/* Responsive design */\n@media (max-width: 768px) {\n.file-upload-btn-student {\r\n        width: 220px;\r\n        height: 220px;\n}\n.file-upload-image-student {\r\n        width: 150px;\r\n        height: 150px;\n}\n.upload-text-student {\r\n        font-size: 16px;\r\n        bottom: 15px;\n}\n}\n@media (max-width: 480px) {\n.file-upload-btn-student {\r\n        width: 180px;\r\n        height: 180px;\n}\n.file-upload-image-student {\r\n        width: 120px;\r\n        height: 120px;\n}\n.upload-text-student {\r\n        font-size: 14px;\r\n        bottom: 10px;\n}\n}\r\n/* end etudiant image file*/\r\n\r\n\r\n/* start etudiant pdf file*/\n.pdf-upload-container {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  flex-direction: column;\r\n  width: 100%;\r\n  height: auto;\r\n  min-height: 200px;\r\n  border: 2px dashed #4CAF50;\r\n  border-radius: 12px;\r\n  cursor: pointer;\r\n  background: rgba(255, 255, 255, 0.9);\r\n  transition: all 0.3s ease-in-out;\r\n  padding: 10px;\n}\r\n\r\n/* Hover effect */\n.pdf-upload-container:hover {\r\n  background: rgba(255, 255, 255, 1);\r\n  border-color: #4CAF50;\n}\r\n\r\n/* PDF Preview */\n.pdf-preview-container {\r\n  position: relative;\r\n  width: 100%;\r\n  max-width: 100%;\r\n  max-height: 350px; /* Adjust based on viewport */\r\n  overflow-y: auto; /* Enable vertical scrolling */\r\n  display: flex;\r\n  justify-content: flex-start; /* Ensures content starts from the top */\r\n  align-items: center;\r\n  background: white;\r\n  border-radius: 12px;\r\n  padding: 5px;\r\n  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);\n}\r\n\r\n/* Canvas - Ensure it scales properly */\ncanvas {\r\n  width: 100%;\r\n  height: auto;\r\n  max-width: 100%;\r\n  border-radius: 8px;\r\n  background: white;\r\n  display: block;\n}\r\n\r\n/* Remove Button */\n.remove-file-btn {\r\n  position: absolute;\r\n  top: 25px;\r\n  right: 5px;\r\n  background: red;\r\n  color: white;\r\n  border: none;\r\n  border-radius: 50%;\r\n  width: 20px; /* Smaller size */\r\n  height: 20px;\r\n  font-size: 12px; /* Smaller icon */\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  cursor: pointer;\r\n  transition: all 0.2s ease-in-out;\n}\r\n\r\n/* Hover Effect */\n.remove-file-btn:hover {\r\n  background: darkred;\n}\r\n\r\n/* Error Message */\n.error-message {\r\n  color: red;\r\n  font-size: 14px;\r\n  margin-top: 5px;\r\n  text-align: center;\r\n  font-weight: bold;\n}\r\n\r\n/* Responsive Fix */\n@media (min-width: 1024px) {\n.pdf-preview-container {\r\n    max-height: 940px; /* Increase height for larger screens */\n}\n}\n@media (max-width: 768px) {\n.pdf-upload-placeholder{\r\n\t\ttext-align: center;\n}\n.remove-file-btn {\r\n\t\twidth: 18px; /* Even smaller for mobile */\r\n\t\theight: 18px;\r\n\t\tfont-size: 10px;\r\n\t\ttop: 3px;\r\n\t\tright: 3px;\n}\n}\r\n\r\n/* end etudiant pdf file*/\r\n\r\n/*  filiere step  */\n.filiere-container {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    gap: 15px;\r\n    justify-content: center;\n}\n.filiere-card {\r\n    position: relative;\r\n    width: 280px;\r\n    height: 180px;\r\n    background: #ffffff;\r\n    border-radius: 12px;\r\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\r\n    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;\r\n    overflow: hidden;\r\n    border: 2px solid transparent;\r\n    cursor: pointer;\n}\n.filiere-card:hover {\r\n    transform: scale(1.05);\r\n    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);\r\n    border: 2px solid #007bff;\n}\n.hidden-input {\r\n    display: none;\n}\n.filiere-content {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 100%;\r\n    cursor: pointer;\r\n    text-align: center;\r\n    padding: 10px;\n}\n.filiere-title {\r\n    font-size: 18px;\r\n    font-weight: bold;\r\n    color: #007bff;\n}\n.filiere-name {\r\n    font-size: 14px;\r\n    color: #333;\r\n    margin-top: 5px;\n}\r\n\r\n/* Bouton Voir la description */\n.description-btn {\r\n    margin-top: 8px;\r\n    font-size: 14px;\r\n    font-weight: bold;\r\n    background: linear-gradient(135deg, #007bff, #0056b3);\r\n    color: white;\r\n    padding: 8px 12px;\r\n    border-radius: 20px;\r\n    border: none;\r\n    cursor: pointer;\r\n    transition: all 0.3s ease;\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\n}\n.description-btn i {\r\n    font-size: 16px;\n}\n.description-btn:hover {\r\n    background: linear-gradient(135deg, #e0e2e3, #a7a7a7);\r\n    transform: scale(1.05);\n}\r\n\r\n/* Effet pour les cases cochées */\n.hidden-input:checked + .filiere-content,\r\n.filiere-card.selected {\r\n    background: #007bff;\r\n    color: white;\r\n    border: 2px solid #0056b3;\n}\n.hidden-input:checked + .filiere-content .filiere-title,\r\n.filiere-card.selected .filiere-title {\r\n    color: white;\n}\n.hidden-input:checked + .filiere-content .description-btn,\r\n.filiere-card.selected .description-btn {\r\n    background: #ffeeab;\r\n    color: #333;\n}\n.hidden-input:checked + .filiere-content .description-btn:hover,\r\n.filiere-card.selected .description-btn:hover {\r\n    background: #ffc107;\n}\r\n\r\n/* Icône de sélection */\n.selected-icon {\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 10px;\r\n    background: #28a745;\r\n    color: white;\r\n    font-size: 14px;\r\n    font-weight: bold;\r\n    padding: 5px 10px;\r\n    border-radius: 20px;\r\n    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);\n}\r\n\r\n\r\n/* end filiere step  */\r\n\r\n\r\n\r\n/* --- confirmation step --- */\n.confirmation-container {\r\n    padding: 20px;\r\n    background: rgba(255, 255, 255, 0.1);\r\n    -webkit-backdrop-filter: blur(12px);\r\n            backdrop-filter: blur(12px);\r\n    border-radius: 16px;\r\n    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);\r\n    transition: all 0.3s ease-in-out;\r\n    max-width: 600px;\r\n    margin: auto;\n}\r\n\r\n/* --- Important Note --- */\n.confirmation-note {\r\n\ttext-align: center;\r\n    color: #d32f2f;\r\n    font-weight: bold;\r\n    font-size: 16px;\r\n    margin-bottom: 15px;\n}\r\n\r\n/* --- Checkbox Wrapper (Flex for Same Line) --- */\n.checkbox-wrapper {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 12px;\r\n    padding: 10px;\r\n    cursor: pointer;\n}\r\n\r\n/* --- Hide Default Checkbox --- */\n.hidden-checkbox {\r\n    display: none;\n}\r\n\r\n/* --- Custom Checkbox --- */\n.custom-checkbox {\r\n    width: 29px;\r\n    height: 24px;\r\n    border: 2px solid #4CAF50;\r\n    border-radius: 6px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    background-color: rgba(255, 255, 255, 0.2);\r\n    transition: all 0.3s ease-in-out;\r\n    cursor: pointer;\r\n    position: relative;\r\n    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);\n}\r\n\r\n/* --- Checkmark Icon (Now Appears When Checked) --- */\n.check-icon {\r\n    width: 16px;\r\n    height: 16px;\r\n    stroke: white;\r\n    stroke-width: 3;\r\n    fill: none;\r\n    stroke-linecap: round;\r\n    stroke-linejoin: round;\r\n    display: none; /* Initially Hidden */\r\n    transition: all 0.2s ease-in-out;\n}\r\n\r\n/* --- Checkbox Checked State (Fixed) --- */\n.hidden-checkbox:checked + .custom-checkbox {\r\n    background-color: #4CAF50;\r\n    border-color: #4CAF50;\r\n    box-shadow: 0px 0px 15px rgba(76, 175, 80, 0.6);\n}\r\n\r\n/* --- Ensure Checkmark Appears When Checked --- */\n.hidden-checkbox:checked + .custom-checkbox .check-icon {\r\n    display: block;\n}\r\n\r\n/* --- Checkbox Text (Aligned with Checkbox) --- */\n.checkbox-text {\r\n    font-size: 16px;\r\n    color: #333;\r\n    font-weight: 500;\r\n    transition: color 0.3s ease-in-out;\r\n    line-height: 1.4;\n}\r\n\r\n/* --- Responsive Design --- */\n@media (max-width: 768px) {\n.confirmation-container {\r\n        padding: 15px;\r\n        width: 90%;\n}\n.confirmation-note {\r\n        font-size: 14px;\n}\n.custom-checkbox {\r\n        width: 60px;\r\n        height: 22px;\n}\n.checkbox-text {\r\n        font-size: 14px;\n}\n}\r\n\r\n\r\n/* loader  */\n.loading-overlay {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  background: rgba(0, 0, 0, 0.85);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  flex-direction: column;\r\n  color: #fff;\r\n  font-size: 18px;\r\n  z-index: 9999;\r\n  overflow: hidden;\n}\r\n\r\n/* Effet lumineux derrière le logo */\n.loader-logo-container {\r\n  position: relative;\r\n  background: linear-gradient(135deg, rgba(0, 123, 255, 0.4), rgba(0, 0, 0, 0.6)); /* Gradient for a modern feel */\r\n  padding: 20px;\r\n  border-radius: 15px; /* Rounded corners */\r\n  box-shadow: 0 0 30px rgba(0, 123, 255, 0.6); /* Soft glow around the container */\r\n  animation: logoGlow 3s infinite alternate ease-in-out;\n}\r\n\r\n/* Pulse animation for the logo container */\n@keyframes logoGlow {\n0% { box-shadow: 0 0 30px rgba(0, 123, 255, 0.6);\n}\n100% { box-shadow: 0 0 50px rgba(0, 123, 255, 1);\n}\n}\n.loader-logo {\r\n  width: 150px;\r\n  height: auto;\r\n  filter: drop-shadow(0 0 15px rgba(0, 123, 255, 0.8));\r\n  animation: pulse 2s infinite alternate ease-in-out;\n}\r\n\r\n/* Effet de pulsation du logo */\n@keyframes pulse {\n0% {\r\n    transform: scale(1);\r\n    filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.6));\n}\n100% {\r\n    transform: scale(1.05);\r\n    filter: drop-shadow(0 0 20px rgba(0, 123, 255, 1));\n}\n}\r\n\r\n/* Vague lumineuse en arrière-plan */\n.loader-glow {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  width: 200px;\r\n  height: 200px;\r\n  background: radial-gradient(circle, rgba(0, 123, 255, 0.4) 10%, transparent 60%);\r\n  border-radius: 50%;\r\n  transform: translate(-50%, -50%);\r\n  animation: glowwave 2.5s infinite alternate ease-in-out;\r\n  filter: blur(20px);\n}\n@keyframes glowwave {\n0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8;\n}\n100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.5;\n}\n}\r\n\r\n/* Spinner fluide */\n.spinner {\r\n  width: 60px;\r\n  height: 60px;\r\n  border: 4px solid rgba(255, 255, 255, 0.2);\r\n  border-top: 4px solid #007bff;\r\n  border-radius: 50%;\r\n  animation: spin 1s linear infinite;\r\n  margin-top: 20px;\n}\n@keyframes spin {\n0% { transform: rotate(0deg);\n}\n100% { transform: rotate(360deg);\n}\n}\r\n\r\n/* Texte statique et élégant */\n.loading-text {\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n  margin-top: 15px;\r\n  color: rgba(255, 255, 255, 0.8);\r\n  text-shadow: 0 0 10px rgba(0, 123, 255, 0.6);\r\n  letter-spacing: 1px;\n}\r\n\r\n/* Particules dynamiques pour l'effet magique */\n.particles {\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100%;\r\n  pointer-events: none;\r\n  background: radial-gradient(circle, rgba(0, 123, 255, 0.2) 10%, transparent 70%);\r\n  animation: floating 3s infinite ease-in-out alternate;\n}\n@keyframes floating {\n0% { transform: translateY(0); opacity: 0.7;\n}\n100% { transform: translateY(-20px); opacity: 1;\n}\n}\r\n\r\n\r\n\r\n/*  success submit form  */\n.success-container {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  padding: 20px;\n}\r\n\r\n/* 🎨 Success Card */\n.success-card {\r\n  background: rgba(255, 255, 255, 0.95);\r\n  border-radius: 15px;\r\n  padding: 40px;\r\n  max-width: 600px;\r\n  width: 100%;\r\n  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);\r\n  text-align: center;\r\n  animation: fadeInUp 1s ease-out;\n}\r\n\r\n/* 🌟 Success Icon */\n.success-icon {\r\n  margin: 20px 0;\n}\n.glow {\r\n  filter: drop-shadow(0px 0px 15px #d4af37);\r\n  animation: glowEffect 1.5s infinite alternate;\n}\r\n\r\n/* 🏆 Title & Message */\n.success-title {\r\n  font-size: 26px;\r\n  color: #002147;\r\n  font-weight: bold;\r\n  margin-bottom: 10px;\n}\n.success-text {\r\n  font-size: 16px;\r\n  color: #333;\r\n  margin-bottom: 20px;\n}\r\n\r\n/* 📜 User Info */\n.success-info {\r\n  background: rgba(0, 33, 71, 0.1);\r\n  padding: 15px;\r\n  border-radius: 10px;\r\n  margin-bottom: 15px;\r\n  font-weight: 500;\r\n  color: #002147;\n}\r\n\r\n/* 🔑 Credentials */\n.success-credentials {\r\n  background: rgba(212, 175, 55, 0.1);\r\n  padding: 15px;\r\n  border-radius: 10px;\r\n  margin-bottom: 20px;\r\n  font-weight: bold;\r\n  color: #002147;\r\n  position: relative;\n}\r\n\r\n/* 🎭 Smart Password Box */\n.password-box {\r\n  display: inline-block;\r\n  padding: 4px 10px;\r\n  border-radius: 5px;\r\n  transition: all 0.3s ease-in-out;\r\n  font-weight: bold;\r\n  font-size: 16px;\n}\r\n\r\n/* Blur effect when hidden */\n.blurred {\r\n  color: transparent;\r\n  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);\r\n  background: rgba(0, 0, 0, 0.1);\r\n  padding: 4px 10px;\r\n  border-radius: 5px;\n}\r\n\r\n/* 🎛️ Password Toggle Button */\n.toggle-password {\r\n  background: none;\r\n  border: none;\r\n  font-size: 18px;\r\n  cursor: pointer;\r\n  margin-left: 0px;\r\n  transition: transform 0.2s ease-in-out;\n}\n.toggle-password:hover {\r\n  transform: scale(1.1);\n}\r\n\r\n\r\n/* 🎨 Stylish Button */\n.modern-button {\r\n  display: inline-block;\r\n  padding: 12px 20px;\r\n  background: linear-gradient(135deg, #d4af37, #ffcc5c);\r\n  color: #002147;\r\n  font-size: 16px;\r\n  font-weight: bold;\r\n  text-decoration: none;\r\n  border-radius: 12px;\r\n  transition: all 0.3s ease-in-out;\r\n  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);\n}\n.modern-button:hover {\r\n  transform: scale(1.05);\r\n  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.4);\n}\r\n\r\n/* 🔥 Animations */\n@keyframes glowEffect {\nfrom {\r\n    filter: drop-shadow(0px 0px 10px #d4af37);\n}\nto {\r\n    filter: drop-shadow(0px 0px 20px #d4af37);\n}\n}\n@keyframes fadeInUp {\nfrom {\r\n    opacity: 0;\r\n    transform: translateY(50px);\n}\nto {\r\n    opacity: 1;\r\n    transform: translateY(0);\n}\n}\n.modern-logo-box {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  background: rgba(255, 255, 255, 0.9); /* Keep a subtle background */\r\n  padding: 10px; /* Smaller padding around the logo */\r\n  border-radius: 10px; /* Rounded corners for the background */\r\n  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for the background */\r\n  margin-bottom: 20px; /* Keep the margin below the logo */\r\n  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;\n}\r\n\r\n/* 🖼️ Logo Image */\n.modern-logo {\r\n  width: 120px; /* Adjust logo size */\r\n  height: auto;\r\n  filter: drop-shadow(2px 2px 8px rgba(0, 33, 71, 0.2)); /* Subtle shadow on the logo */\n}\r\n\r\n/* Logo Hover Effect */\n.modern-logo-box:hover {\r\n  transform: translateY(-5px);\r\n  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);\n}\n.password-tooltip {\r\n  position: absolute;\r\n  background: rgba(0, 33, 71, 0.9);\r\n  color: #fff;\r\n  padding: 6px 12px;\r\n  border-radius: 6px;\r\n  font-size: 14px;\r\n  top: 33px;\r\n  left: 85%;\r\n  transform: translateX(-50%);\r\n  white-space: nowrap;\r\n  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);\n}\r\n\r\n\r\n\r\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-8.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-8.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsExcellence.vue?vue&type=style&index=0&id=7e511e68&lang=css":
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-8.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-8.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsExcellence.vue?vue&type=style&index=0&id=7e511e68&lang=css ***!
@@ -30710,7 +30250,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbody {\n\tbackground: linear-gradient(135deg, #f0f8ff, #e6f7ff);\n\tfont-family: \"Roboto\", sans-serif;\n\tmargin: 0;\n\tpadding: 0;\n}\n.form-container {\n\tmax-width: 800px;\n\tmargin: 2rem auto;\n\tbackground: #ffffff;\n\tborder-radius: 15px;\n\tbox-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);\n\toverflow: hidden;\n}\n.progress-bar-container {\n\theight: 8px;\n\tbackground: #ddd;\n\twidth: 100%;\n}\n.progress-bar {\n\theight: 8px;\n\tbackground: #007bff;\n\ttransition: width 0.3s ease-in-out;\n}\n.form-header {\n\ttext-align: center;\n\tbackground: #0056b3;\n\tcolor: white;\n\tpadding: 2rem;\n}\n.logo-container {\n\tbackground: white;\n\tborder-radius: 50%;\n\tpadding: 1rem;\n\tdisplay: inline-block;\n\tbox-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n}\n.form-logo {\n\twidth: 100px;\n}\n.form-title {\n\tfont-size: 2.5rem;\n\tfont-weight: bold;\n}\n.form-subtitle {\n\tfont-size: 1.1rem;\n\tcolor: #ccc;\n}\n.progress-steps {\n\t\tdisplay: flex;\n\t\tjustify-content: space-between;\n\t\talign-items: flex-start; /* Aligns circles and labels better */\n\t\tpadding: 2rem 1rem;\n\t\tbackground-color: #f9f9f9;\n\t\tborder-radius: 10px;\n\t\tgap: 2rem; /* Adds space between steps */\n}\n.step {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t\tposition: relative;\n\t\tflex-grow: 1;\n\t\tcursor: pointer; /* Makes steps clickable */\n\t\ttransition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n.step:hover {\n\t\ttransform: translateY(-5px); /* Subtle hover effect */\n\t\tbox-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Add shadow for hover */\n}\n.step-circle {\n\t\twidth: 50px;\n\t\theight: 50px;\n\t\tborder-radius: 50%;\n\t\tbackground-color: #ddd;\n\t\tmargin-bottom: 8px;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n\t\tfont-size: 1.4rem;\n\t\tfont-weight: bold;\n\t\tcolor: #666;\n\t\ttransition: all 0.4s ease;\n\t\tbox-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n}\n.step-icon {\n\t\ttransition: color 0.3s ease;\n}\n.step-label {\n\t\tfont-size: 1rem;\n\t\tfont-weight: bold;\n\t\tcolor: #555;\n\t\tmargin-top: 8px;\n\t\ttext-align: center; /* Center-align the text */\n\t\twhite-space: pre-line; /* Preserve line breaks */\n\t\tline-height: 1.4; /* Adjust line height for better spacing */\n}\n.step-line {\n\t\tdisplay: block; /* Ensure each line is a block */\n}\n.step.completed .step-circle {\n\t\tbackground-color: #28a745;\n}\n.step.active .step-circle {\n\t\tbackground-color: #007bff;\n\t\ttransform: scale(1.1);\n\t\ttransform: scale(1.2);\n\t\tbox-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);\n}\n.step:not(:last-child)::after {\n\t\tcontent: '';\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tright: 0;\n\t\twidth: 100%; /* Full width of the space between steps */\n\t\theight: 3px;\n\t\tbackground-color: #ddd;\n\t\tz-index: -1; /* Keep the line behind the circles */\n\t\ttransition: background-color 0.3s ease;\n}\n.step.completed:not(:last-child)::after {\n\t\tbackground-color: #28a745;\n}\n.step.active:not(:last-child)::after {\n\t\tbackground-color: #007bff;\n}\n.step.completed .step-icon {\n\t\tcolor: white;\n}\n.step.active .step-icon {\n\t\tcolor: white;\n}\n.step.completed::after {\n\t\tbackground-color: #28a745;\n}\n.step:hover .step-circle {\n\t\tbackground-color: #007bff;\n\t\ttransform: scale(1.1);\n}\n.step:hover .step-icon {\n\t\tcolor: white;\n}\n.step:hover .step-label {\n\t\tcolor: #007bff;\n}\n.progress-tooltip {\n\t\tdisplay: inline-block;\n\t\tfont-size: 0.85rem;\n\t\tfont-weight: 500;\n\t\tcolor: #fff;\n\t\tbackground: #007bff;\n\t\tborder-radius: 4px;\n\t\tpadding: 4px 8px;\n\t\tmargin-top: 25px;\n\t\tposition: absolute;\n\t\tleft: 50%;\n\t\ttransform: translateX(-50%);\n\t\topacity: 0;\n\t\tvisibility: hidden;\n\t\ttransition: opacity 0.3s ease, visibility 0.3s ease;\n\t\tbox-shadow: 0 2px 8px rgba(0, 123, 255, 0.4);\n}\n.step:hover .progress-tooltip {\n\t\topacity: 1;\n\t\tvisibility: visible;\n}\n.step.completed .step-icon,\n\t.step.active .step-icon {\n\t\tcolor: white;\n}\n.step-label:hover {\n\tcolor: #007bff; /* Highlight color */\n\ttransform: scale(1.05);\n}\n.step-label:hover .progress-tooltip {\n\topacity: 1;\n\tvisibility: visible;\n\tmargin-top: 12px;\n}\n.form-body {\n\tpadding: 2rem;\n}\n.section-title {\n\tfont-size: 1.5rem;\n\tmargin-bottom: 1rem;\n}\n.form-group {\n\tmargin-bottom: 1.5rem;\n}\ninput[type=\"text\"],\n\tinput[type=\"date\"],\n\tinput[type=\"number\"],\n\tselect,\n\ttextarea {\n\t\twidth: 100%;\n\t\tpadding: 0.8rem;\n\t\tborder: 1px solid #ddd;\n\t\tborder-radius: 8px;\n\t\tfont-size: 1rem;\n\t\tmargin-top: 0.5rem;\n\t\ttransition: border-color 0.3s ease;\n}\n\n\t/* Focus styles */\ninput[type=\"text\"]:focus,\n\tinput[type=\"date\"]:focus,\n\tinput[type=\"number\"]:focus,\n\tselect:focus,\n\ttextarea:focus {\n\t\tborder-color: #007bff;\n}\n.input-error {\n\tborder: 1px solid #e3342f !important;\n}\n.error-icon {\n\tcolor: #e3342f;\n\tfont-size: 0.8rem;\n}\n.form-actions {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tmargin-top: 1.5rem;\n}\nbutton {\n\tpadding: 0.8rem 2rem;\n\tfont-size: 1rem;\n\tborder-radius: 8px;\n\tborder: none;\n\tcursor: pointer;\n}\nbutton.btn-primary {\n\tbackground-color: #007bff;\n\tcolor: white;\n\ttransition: background-color 0.3s;\n}\nbutton.btn-primary:hover {\n\tbackground-color: #0056b3;\n}\nbutton.btn-secondary {\n\tbackground-color: #f0f0f0;\n\tcolor: #555;\n\ttransition: background-color 0.3s;\n}\nbutton.btn-secondary:hover {\n\tbackground-color: #ddd;\n}\n@media (max-width: 768px) {\n.form-container {\n    padding: 1rem;\n    margin: 1rem;\n}\n.progress-steps {\n    flex-direction: column;\n    gap: 1.5rem;\n}\n.step {\n    width: 100%;\n}\n.form-header {\n    padding: 1rem;\n}\n.form-title {\n    font-size: 2rem;\n}\n.form-subtitle {\n    font-size: 1rem;\n}\n.form-body {\n    padding: 1rem;\n}\n.section-title {\n    font-size: 1.25rem;\n}\nbutton {\n    width: 100%;\n    padding: 1rem;\n}\n}\n@media (max-width: 480px) {\n.form-logo {\n    width: 80px;\n}\n.form-title {\n    font-size: 1.75rem;\n}\n.form-subtitle {\n    font-size: 0.9rem;\n}\n.progress-tooltip {\n    font-size: 0.75rem;\n    padding: 4px 6px;\n\tposition: absolute;\n    top: 73%;\n}\n}\n\n\n\n/* Style for the form group */\n.form-group {\n  margin-bottom: 1.5rem;\n  position: relative;\n}\n\n\n/* Change border color when there is an error */\ninput[type=\"text\"].input-error {\n  border-color: #e74c3c; /* Red border for error */\n}\n\n/* Style for the error message */\n.error-message {\n  color: #e74c3c; /* Red color for error text */\n  font-size: 14px;\n  margin-top: 5px;\n  display: block;\n  font-weight: 600;\n  padding-left: 5px;\n}\n\n/* Add some styles for the input focus */\ninput[type=\"text\"]:focus {\n  outline: none;\n  border-color: #3498db; /* Blue border when focused */\n}\n\n/* Add some styling to the label */\nlabel {\n  font-size: 14px;\n  margin-bottom: 0px;\n  font-weight: 600;\n  color: #333;\n}\n\n\n/* Apply RTL to the entire form group */\n.form-group[dir=\"rtl\"] {\n  text-align: right !important;  /* Align text to the right */\n  direction: rtl !important;     /* Set the direction of the form group to RTL */\n}\n\n/* Apply RTL to Arabic labels */\n.form-group[dir=\"rtl\"] .rtl-label {\n  text-align: right !important;\n  direction: rtl !important;\n}\n\n/* Apply RTL to input fields within Arabic form groups */\n.form-group[dir=\"rtl\"] input {\n  text-align: right !important;  /* Align text to the right for RTL inputs */\n  direction: rtl !important;     /* Set input direction to RTL */\n}\n\n/* Apply RTL to error messages within Arabic form groups */\n.form-group[dir=\"rtl\"] .error-message {\n  text-align: right !important;\n  direction: rtl !important;\n}\n\n/* Ensure French inputs remain left-aligned (default behavior) */\ninput:not([dir=\"rtl\"]) {\n  text-align: left;\n  direction: ltr;\n}\n.close-icon {\n    position: absolute;\n    top: 50%;\n    right: 0.5rem;\n    transform: translateY(-50%);\n    width: 1.5rem;\n    height: 1.5rem;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background: linear-gradient(135deg, #ff6b6b, #ff4757);\n    border-radius: 50%;\n    cursor: pointer;\n    transition: transform 0.3s ease, box-shadow 0.3s ease;\n    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);\n}\n.close-icon span {\n    color: white;\n    font-size: 1.2rem;\n    font-weight: bold;\n    line-height: 1;\n}\n\n\n\n\n/* Fieldset Styling */\nfieldset {\n  border: 2px solid #0078d7;\n  border-radius: 15px;\n  padding: 25px 20px;\n  background: #f5f8fa;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n  margin-bottom: 30px;\n  position: relative;\n  overflow: hidden; /* Ensures cleaner clipping */\n}\n\n/* Legend Styling */\nlegend {\n  text-align: right;\n  font-size: 1.2rem;\n  font-weight: 600;\n  color: #ffffff;\n  background: #0078d7;\n  padding: 10px 20px;\n  border-radius: 8px;\n  text-transform: uppercase;\n  position: absolute;\n  top: -11px;\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n  white-space: nowrap; /* Prevents wrapping */\n}\n.legend1{\n\tleft: -365px;\n}\n.legend2{\n\tleft: -460px;\n}\n.legend3{\n\tleft: -440px;\n}\n.legend4{\n\tleft: -573px;\n}\n.legend5{\n\tleft: -630px;\n}\n\n/* Hover Effect on Fieldset */\nfieldset:hover {\n  border-color: #0056a6;\n  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);\n}\n\n/* Responsive Adjustments */\n@media (max-width: 768px) {\nlegend {\n    text-align: right;\n    font-size: 0.8rem;\n    font-weight: 600;\n    color: #ffffff;\n    background: #0078d7;\n    padding: 10px 20px;\n    border-radius: 8px;\n    text-transform: uppercase;\n    position: absolute;\n    top: -7px;\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n    white-space: nowrap;\n}\n.legend1{\n\tleft: -46px;\n}\n.legend2{\n\tleft: -110px;\n}\n.legend3{\n\tleft: -95px;\n}\n}\n\n\n\n/* Style de la notification */\n.notification {\n  position: fixed;\n  top: 20px;\n  right: 20px;\n  background: #007bff;\n  color: white;\n  padding: 15px;\n  border-radius: 8px;\n  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);\n  max-width: 320px;\n  font-size: 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  z-index: 1000;\n  animation: fadeIn 0.3s ease-in-out;\n}\n\n/* Style du texte dans la notification */\n.notification p {\n  margin: 0;\n  flex: 1;\n}\n\n/* Style du bouton */\n.notification button {\n  background: white;\n  color: #007bff;\n  border: none;\n  padding: 5px 10px;\n  border-radius: 5px;\n  cursor: pointer;\n  font-weight: bold;\n}\n.notification button:hover {\n  background: #f1f1f1;\n}\n\n/* Responsive design */\n@media (max-width: 768px) {\n.notification {\n    top: auto;\n    bottom: 20px;\n    right: 10px;\n    left: 10px;\n    width: auto;\n    max-width: none;\n    font-size: 13px;\n    padding: 12px;\n    flex-direction: column;\n    text-align: center;\n}\n.notification button {\n    margin-top: 5px;\n    width: 100%;\n}\n}\n\n/* Animation */\n@keyframes fadeIn {\nfrom {\n    opacity: 0;\n    transform: translateY(-10px);\n}\nto {\n    opacity: 1;\n    transform: translateY(0);\n}\n}\n\n\n\n\n/* Wrapper for the file input */\n.file-upload-wrapper {\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  text-align: left;\n  background-color: #f9f9f9;\n  border-radius: 12px;\n  padding: 20px;\n  border: 2px solid #ccc;\n  transition: all 0.3s ease-in-out;\n  box-sizing: border-box;\n  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);\n  background: linear-gradient(135deg, #f0f7ff, #c0d9e8);\n}\n\n/* Custom button for file upload */\n.file-upload-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 14px 28px;\n  background-color: #4CAF50;\n  color: white;\n  border-radius: 8px;\n  cursor: pointer;\n  font-size: 18px;\n  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;\n  width: 100%;\n  margin: 0;\n}\n.file-upload-btn:hover {\n  background-color: #45a049;\n  transform: scale(1.05);\n  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);\n}\n.file-upload-btn i {\n  margin-left: 8px;\n}\n\n/* Hidden native file input */\n.file-input {\n  display: none;\n}\n\n/* File Preview Section */\n.file-preview {\n  position: relative;\n  margin-top: 20px;\n  display: flex;\n  justify-content: center;\n  transition: all 0.3s ease-in-out;\n}\n\n/* Preview container with magic */\n.preview-container {\n  position: relative;\n  display: inline-block;\n  max-width: 100%;\n  margin-bottom: 10px;\n  border-radius: 15px;\n  overflow: hidden;\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);\n  transition: all 0.3s ease-in-out;\n}\n.preview-container:hover {\n  transform: scale(1.05) rotate(3deg);\n  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n.preview-img {\n  width: 100%;\n  height: auto;\n  max-height: 150px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 12px;\n  transition: transform 0.3s ease-in-out;\n}\n.preview-img:hover {\n  transform: scale(1.05);\n}\n\n/* Remove button for file preview */\n.remove-btn {\n  position: absolute;\n  top: 5px;\n  right: 5px;\n  background: rgba(255, 0, 0, 0.7);\n  color: white;\n  font-size: 18px;\n  border: none;\n  padding: 6px 12px;\n  border-radius: 50%;\n  cursor: pointer;\n  transition: background 0.3s ease, transform 0.3s ease;\n}\n.remove-btn:hover {\n  background: red;\n  transform: scale(1.1);\n}\n\n/* Label styling */\n.file-label {\n  font-size: 18px;\n  margin-bottom: 12px;\n  color: #333;\n  font-weight: 600;\n  display: block;\n  transition: color 0.3s ease;\n}\n\n/* Error Message Styling */\n.input-error {\n  border-color: #f44336;\n  background-color: #ffe6e6;\n}\n@keyframes glow {\n0% {\n    text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red, 0 0 40px red;\n}\n50% {\n    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 60px red;\n}\n100% {\n    text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red, 0 0 40px red;\n}\n}\n\n/* Responsive Styles */\n@media screen and (max-width: 768px) {\n.file-upload-btn {\n    font-size: 16px;\n    padding: 12px 24px;\n}\n.preview-img {\n    max-height: 120px;\n}\n.remove-btn{\n\twidth: 52% !important;\n}\n}\n@media screen and (max-width: 480px) {\n.file-upload-btn {\n    font-size: 14px;\n    padding: 10px 20px;\n}\n.file-label {\n    font-size: 16px;\n}\n.preview-img {\n    max-height: 100px;\n}\n}\n\n\n/* etudiant image file */\n/* Main container */\n.form-group.student-image-upload {\n    margin-top: 40px;\n    font-family: 'Roboto', sans-serif;\n    text-align: center;\n    padding: 30px;\n}\n\n/* Wrapper for the file upload button */\n.file-upload-wrapper-student {\n    position: relative;\n    display: inline-block;\n    cursor: pointer;\n    transition: transform 0.3s ease;\n}\n\n/* Circular file upload button with shadow */\n.file-upload-btn-student {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n    width: 280px;\n    height: 280px;\n    background: linear-gradient(135deg, #4CAF50, #4CAF50);\n    border-radius: 50%;\n    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);\n    position: relative;\n    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;\n}\n.file-upload-btn-student:hover {\n    transform: scale(1.05);\n    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);\n}\n\n/* Image container (circle) with hover zoom effect */\n.file-upload-image-student {\n    width: 180px;\n    height: 180px;\n    border-radius: 50%;\n    background-color: #f0f0f0;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    border: 4px solid #ffffff;\n    overflow: hidden;\n    transition: transform 0.3s ease;\n}\n.upload-img-student {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    transition: transform 0.3s ease;\n}\n\n/* Button text in the center */\n.upload-text-student {\n    font-size: 18px;\n    color: #ffffff;\n    font-weight: 500;\n    position: absolute;\n    bottom: 20px;\n    transition: opacity 0.3s ease-in-out;\n}\n\n/* Hover effect for image zoom */\n.file-upload-btn-student:hover .upload-img-student {\n    transform: scale(1.1);\n}\n\n/* Hover effect for text change */\n.file-upload-btn-student:hover .upload-text-student {\n    opacity: 1;\n}\n\n/* File input (hidden but accessible) */\ninput[type=\"file\"] {\n    opacity: 0;\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    cursor: pointer;\n    z-index: 2;\n}\n\n/* Error state */\n.input-error-student {\n    border: 2px solid #ff5722;\n    background-color: rgba(255, 87, 34, 0.1);\n}\n\n/* Image preview section */\n.file-upload-preview-student {\n    margin-top: 30px;\n    text-align: center;\n}\n\n/* Circular preview image with soft shadow */\n.preview-img-student {\n    width: 120px;\n    height: 120px;\n    -o-object-fit: cover;\n       object-fit: cover;\n    border-radius: 50%;\n    border: 4px solid #00bcd4;\n    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.2);\n    transition: transform 0.3s ease;\n}\n\n/* Hover effect for preview image */\n.preview-img-student:hover {\n    transform: scale(1.05);\n}\n\n/* Remove image button */\n.remove-btn-student {\n    background-color: #ff5722;\n    color: white;\n    border: none;\n    padding: 8px 16px;\n    border-radius: 8px;\n    font-size: 16px;\n    cursor: pointer;\n    transition: background-color 0.3s ease;\n}\n.remove-btn-student:hover {\n    background-color: #e64a19;\n}\n\n/* Responsive design */\n@media (max-width: 768px) {\n.file-upload-btn-student {\n        width: 220px;\n        height: 220px;\n}\n.file-upload-image-student {\n        width: 150px;\n        height: 150px;\n}\n.upload-text-student {\n        font-size: 16px;\n        bottom: 15px;\n}\n}\n@media (max-width: 480px) {\n.file-upload-btn-student {\n        width: 180px;\n        height: 180px;\n}\n.file-upload-image-student {\n        width: 120px;\n        height: 120px;\n}\n.upload-text-student {\n        font-size: 14px;\n        bottom: 10px;\n}\n}\n/* end etudiant image file*/\n\n\n/* start etudiant pdf file*/\n.pdf-upload-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  width: 100%;\n  height: auto;\n  min-height: 200px;\n  border: 2px dashed #4CAF50;\n  border-radius: 12px;\n  cursor: pointer;\n  background: rgba(255, 255, 255, 0.9);\n  transition: all 0.3s ease-in-out;\n  padding: 10px;\n}\n\n/* Hover effect */\n.pdf-upload-container:hover {\n  background: rgba(255, 255, 255, 1);\n  border-color: #4CAF50;\n}\n\n/* PDF Preview */\n.pdf-preview-container {\n  position: relative;\n  width: 100%;\n  max-width: 100%;\n  max-height: 350px; /* Adjust based on viewport */\n  overflow-y: auto; /* Enable vertical scrolling */\n  display: flex;\n  justify-content: flex-start; /* Ensures content starts from the top */\n  align-items: center;\n  background: white;\n  border-radius: 12px;\n  padding: 5px;\n  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);\n}\n\n/* Canvas - Ensure it scales properly */\ncanvas {\n  width: 100%;\n  height: auto;\n  max-width: 100%;\n  border-radius: 8px;\n  background: white;\n  display: block;\n}\n\n/* Remove Button */\n.remove-file-btn {\n  position: absolute;\n  top: 5px;\n  right: 5px;\n  background: red;\n  color: white;\n  border: none;\n  border-radius: 50%;\n  width: 20px; /* Smaller size */\n  height: 20px;\n  font-size: 12px; /* Smaller icon */\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  transition: all 0.2s ease-in-out;\n}\n\n/* Hover Effect */\n.remove-file-btn:hover {\n  background: darkred;\n}\n\n/* Error Message */\n.error-message {\n  color: red;\n  font-size: 14px;\n  margin-top: 5px;\n  text-align: center;\n  font-weight: bold;\n}\n\n/* Responsive Fix */\n@media (min-width: 1024px) {\n.pdf-preview-container {\n    max-height: 940px; /* Increase height for larger screens */\n}\n}\n@media (max-width: 768px) {\n.pdf-upload-placeholder{\n\t\ttext-align: center;\n}\n.remove-file-btn {\n\t\twidth: 18px; /* Even smaller for mobile */\n\t\theight: 18px;\n\t\tfont-size: 10px;\n\t\ttop: 3px;\n\t\tright: 3px;\n}\n}\n\n/* end etudiant pdf file*/\n\n/*  filiere step  */\n.filiere-container {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 15px;\n    justify-content: center;\n}\n.filiere-card {\n    position: relative;\n    width: 280px;\n    height: 180px;\n    background: #ffffff;\n    border-radius: 12px;\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;\n    overflow: hidden;\n    border: 2px solid transparent;\n    cursor: pointer;\n}\n.filiere-card:hover {\n    transform: scale(1.05);\n    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);\n    border: 2px solid #007bff;\n}\n.hidden-input {\n    display: none;\n}\n.filiere-content {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    height: 100%;\n    cursor: pointer;\n    text-align: center;\n    padding: 10px;\n}\n.filiere-title {\n    font-size: 18px;\n    font-weight: bold;\n    color: #007bff;\n}\n.filiere-name {\n    font-size: 14px;\n    color: #333;\n    margin-top: 5px;\n}\n\n/* Bouton Voir la description */\n.description-btn {\n    margin-top: 8px;\n    font-size: 14px;\n    font-weight: bold;\n    background: linear-gradient(135deg, #007bff, #0056b3);\n    color: white;\n    padding: 8px 12px;\n    border-radius: 20px;\n    border: none;\n    cursor: pointer;\n    transition: all 0.3s ease;\n    display: flex;\n    align-items: center;\n    gap: 8px;\n}\n.description-btn i {\n    font-size: 16px;\n}\n.description-btn:hover {\n    background: linear-gradient(135deg, #e0e2e3, #a7a7a7);\n    transform: scale(1.05);\n}\n\n/* Effet pour les cases cochées */\n.hidden-input:checked + .filiere-content,\n.filiere-card.selected {\n    background: #007bff;\n    color: white;\n    border: 2px solid #0056b3;\n}\n.hidden-input:checked + .filiere-content .filiere-title,\n.filiere-card.selected .filiere-title {\n    color: white;\n}\n.hidden-input:checked + .filiere-content .description-btn,\n.filiere-card.selected .description-btn {\n    background: #ffeeab;\n    color: #333;\n}\n.hidden-input:checked + .filiere-content .description-btn:hover,\n.filiere-card.selected .description-btn:hover {\n    background: #ffc107;\n}\n\n/* Icône de sélection */\n.selected-icon {\n    position: absolute;\n    top: 10px;\n    right: 10px;\n    background: #28a745;\n    color: white;\n    font-size: 14px;\n    font-weight: bold;\n    padding: 5px 10px;\n    border-radius: 20px;\n    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);\n}\n\n\n/* end filiere step  */\n\n\n\n/* --- confirmation step --- */\n.confirmation-container {\n    padding: 20px;\n    background: rgba(255, 255, 255, 0.1);\n    -webkit-backdrop-filter: blur(12px);\n            backdrop-filter: blur(12px);\n    border-radius: 16px;\n    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);\n    transition: all 0.3s ease-in-out;\n    max-width: 600px;\n    margin: auto;\n}\n\n/* --- Important Note --- */\n.confirmation-note {\n\ttext-align: center;\n    color: #d32f2f;\n    font-weight: bold;\n    font-size: 16px;\n    margin-bottom: 15px;\n}\n\n/* --- Checkbox Wrapper (Flex for Same Line) --- */\n.checkbox-wrapper {\n    display: flex;\n    align-items: center;\n    gap: 12px;\n    padding: 10px;\n    cursor: pointer;\n}\n\n/* --- Hide Default Checkbox --- */\n.hidden-checkbox {\n    display: none;\n}\n\n/* --- Custom Checkbox --- */\n.custom-checkbox {\n    width: 29px;\n    height: 24px;\n    border: 2px solid #4CAF50;\n    border-radius: 6px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: rgba(255, 255, 255, 0.2);\n    transition: all 0.3s ease-in-out;\n    cursor: pointer;\n    position: relative;\n    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);\n}\n\n/* --- Checkmark Icon (Now Appears When Checked) --- */\n.check-icon {\n    width: 16px;\n    height: 16px;\n    stroke: white;\n    stroke-width: 3;\n    fill: none;\n    stroke-linecap: round;\n    stroke-linejoin: round;\n    display: none; /* Initially Hidden */\n    transition: all 0.2s ease-in-out;\n}\n\n/* --- Checkbox Checked State (Fixed) --- */\n.hidden-checkbox:checked + .custom-checkbox {\n    background-color: #4CAF50;\n    border-color: #4CAF50;\n    box-shadow: 0px 0px 15px rgba(76, 175, 80, 0.6);\n}\n\n/* --- Ensure Checkmark Appears When Checked --- */\n.hidden-checkbox:checked + .custom-checkbox .check-icon {\n    display: block;\n}\n\n/* --- Checkbox Text (Aligned with Checkbox) --- */\n.checkbox-text {\n    font-size: 16px;\n    color: #333;\n    font-weight: 500;\n    transition: color 0.3s ease-in-out;\n    line-height: 1.4;\n}\n\n/* --- Responsive Design --- */\n@media (max-width: 768px) {\n.confirmation-container {\n        padding: 15px;\n        width: 90%;\n}\n.confirmation-note {\n        font-size: 14px;\n}\n.custom-checkbox {\n        width: 60px;\n        height: 22px;\n}\n.checkbox-text {\n        font-size: 14px;\n}\n}\n\n\n/* loader  */\n.loading-overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.85);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  color: #fff;\n  font-size: 18px;\n  z-index: 9999;\n  overflow: hidden;\n}\n\n/* Effet lumineux derrière le logo */\n.loader-logo-container {\n  position: relative;\n  background: linear-gradient(135deg, rgba(0, 123, 255, 0.4), rgba(0, 0, 0, 0.6)); /* Gradient for a modern feel */\n  padding: 20px;\n  border-radius: 15px; /* Rounded corners */\n  box-shadow: 0 0 30px rgba(0, 123, 255, 0.6); /* Soft glow around the container */\n  animation: logoGlow 3s infinite alternate ease-in-out;\n}\n\n/* Pulse animation for the logo container */\n@keyframes logoGlow {\n0% { box-shadow: 0 0 30px rgba(0, 123, 255, 0.6);\n}\n100% { box-shadow: 0 0 50px rgba(0, 123, 255, 1);\n}\n}\n.loader-logo {\n  width: 150px;\n  height: auto;\n  filter: drop-shadow(0 0 15px rgba(0, 123, 255, 0.8));\n  animation: pulse 2s infinite alternate ease-in-out;\n}\n\n/* Effet de pulsation du logo */\n@keyframes pulse {\n0% {\n    transform: scale(1);\n    filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.6));\n}\n100% {\n    transform: scale(1.05);\n    filter: drop-shadow(0 0 20px rgba(0, 123, 255, 1));\n}\n}\n\n/* Vague lumineuse en arrière-plan */\n.loader-glow {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  width: 200px;\n  height: 200px;\n  background: radial-gradient(circle, rgba(0, 123, 255, 0.4) 10%, transparent 60%);\n  border-radius: 50%;\n  transform: translate(-50%, -50%);\n  animation: glowwave 2.5s infinite alternate ease-in-out;\n  filter: blur(20px);\n}\n@keyframes glowwave {\n0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8;\n}\n100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.5;\n}\n}\n\n/* Spinner fluide */\n.spinner {\n  width: 60px;\n  height: 60px;\n  border: 4px solid rgba(255, 255, 255, 0.2);\n  border-top: 4px solid #007bff;\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n  margin-top: 20px;\n}\n@keyframes spin {\n0% { transform: rotate(0deg);\n}\n100% { transform: rotate(360deg);\n}\n}\n\n/* Texte statique et élégant */\n.loading-text {\n  font-size: 20px;\n  font-weight: bold;\n  margin-top: 15px;\n  color: rgba(255, 255, 255, 0.8);\n  text-shadow: 0 0 10px rgba(0, 123, 255, 0.6);\n  letter-spacing: 1px;\n}\n\n/* Particules dynamiques pour l'effet magique */\n.particles {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  pointer-events: none;\n  background: radial-gradient(circle, rgba(0, 123, 255, 0.2) 10%, transparent 70%);\n  animation: floating 3s infinite ease-in-out alternate;\n}\n@keyframes floating {\n0% { transform: translateY(0); opacity: 0.7;\n}\n100% { transform: translateY(-20px); opacity: 1;\n}\n}\n\n\n\n/*  success submit form  */\n.success-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 20px;\n}\n\n/* 🎨 Success Card */\n.success-card {\n  background: rgba(255, 255, 255, 0.95);\n  border-radius: 15px;\n  padding: 40px;\n  max-width: 600px;\n  width: 100%;\n  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);\n  text-align: center;\n  animation: fadeInUp 1s ease-out;\n}\n\n/* 🌟 Success Icon */\n.success-icon {\n  margin: 20px 0;\n}\n.glow {\n  filter: drop-shadow(0px 0px 15px #d4af37);\n  animation: glowEffect 1.5s infinite alternate;\n}\n\n/* 🏆 Title & Message */\n.success-title {\n  font-size: 26px;\n  color: #002147;\n  font-weight: bold;\n  margin-bottom: 10px;\n}\n.success-text {\n  font-size: 16px;\n  color: #333;\n  margin-bottom: 20px;\n}\n\n/* 📜 User Info */\n.success-info {\n  background: rgba(0, 33, 71, 0.1);\n  padding: 15px;\n  border-radius: 10px;\n  margin-bottom: 15px;\n  font-weight: 500;\n  color: #002147;\n}\n\n/* 🔑 Credentials */\n.success-credentials {\n  background: rgba(212, 175, 55, 0.1);\n  padding: 15px;\n  border-radius: 10px;\n  margin-bottom: 20px;\n  font-weight: bold;\n  color: #002147;\n  position: relative;\n}\n\n/* 🎭 Smart Password Box */\n.password-box {\n  display: inline-block;\n  padding: 4px 10px;\n  border-radius: 5px;\n  transition: all 0.3s ease-in-out;\n  font-weight: bold;\n  font-size: 16px;\n}\n\n/* Blur effect when hidden */\n.blurred {\n  color: transparent;\n  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);\n  background: rgba(0, 0, 0, 0.1);\n  padding: 4px 10px;\n  border-radius: 5px;\n}\n\n/* 🎛️ Password Toggle Button */\n.toggle-password {\n  background: none;\n  border: none;\n  font-size: 18px;\n  cursor: pointer;\n  margin-left: 0px;\n  transition: transform 0.2s ease-in-out;\n}\n.toggle-password:hover {\n  transform: scale(1.1);\n}\n\n\n/* 🎨 Stylish Button */\n.modern-button {\n  display: inline-block;\n  padding: 12px 20px;\n  background: linear-gradient(135deg, #d4af37, #ffcc5c);\n  color: #002147;\n  font-size: 16px;\n  font-weight: bold;\n  text-decoration: none;\n  border-radius: 12px;\n  transition: all 0.3s ease-in-out;\n  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);\n}\n.modern-button:hover {\n  transform: scale(1.05);\n  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.4);\n}\n\n/* 🔥 Animations */\n@keyframes glowEffect {\nfrom {\n    filter: drop-shadow(0px 0px 10px #d4af37);\n}\nto {\n    filter: drop-shadow(0px 0px 20px #d4af37);\n}\n}\n@keyframes fadeInUp {\nfrom {\n    opacity: 0;\n    transform: translateY(50px);\n}\nto {\n    opacity: 1;\n    transform: translateY(0);\n}\n}\n.modern-logo-box {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background: rgba(255, 255, 255, 0.9); /* Keep a subtle background */\n  padding: 10px; /* Smaller padding around the logo */\n  border-radius: 10px; /* Rounded corners for the background */\n  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for the background */\n  margin-bottom: 20px; /* Keep the margin below the logo */\n  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;\n}\n\n/* 🖼️ Logo Image */\n.modern-logo {\n  width: 120px; /* Adjust logo size */\n  height: auto;\n  filter: drop-shadow(2px 2px 8px rgba(0, 33, 71, 0.2)); /* Subtle shadow on the logo */\n}\n\n/* Logo Hover Effect */\n.modern-logo-box:hover {\n  transform: translateY(-5px);\n  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);\n}\n.password-tooltip {\n  position: absolute;\n  background: rgba(0, 33, 71, 0.9);\n  color: #fff;\n  padding: 6px 12px;\n  border-radius: 6px;\n  font-size: 14px;\n  top: 33px;\n  left: 85%;\n  transform: translateX(-50%);\n  white-space: nowrap;\n  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);\n}\n\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody {\n\tbackground: linear-gradient(135deg, #f0f8ff, #e6f7ff);\n\tfont-family: \"Roboto\", sans-serif;\n\tmargin: 0;\n\tpadding: 0;\n}\n.form-container {\n\tmax-width: 1000px !important;\n\tmargin: 2rem auto;\n\tbackground: #ffffff;\n\tborder-radius: 15px;\n\tbox-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);\n\toverflow: hidden;\n}\n.progress-bar-container {\n\theight: 8px;\n\tbackground: #ddd;\n\twidth: 100%;\n}\n.progress-bar {\n\theight: 8px;\n\tbackground: #007bff;\n\ttransition: width 0.3s ease-in-out;\n}\n.form-header {\n\ttext-align: center;\n\tbackground: #0056b3;\n\tcolor: white;\n\tpadding: 2rem;\n}\n.logo-container {\n\tbackground: white;\n\tborder-radius: 50%;\n\tpadding: 1rem;\n\tdisplay: inline-block;\n\tbox-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n}\n.form-logo {\n\twidth: 100px;\n}\n.form-title {\n\tfont-size: 2.5rem;\n\tfont-weight: bold;\n}\n.form-subtitle {\n\tfont-size: 1.1rem;\n\tcolor: #ccc;\n}\n.progress-steps {\n\t\tdisplay: flex;\n\t\tjustify-content: space-between;\n\t\talign-items: flex-start; /* Aligns circles and labels better */\n\t\tpadding: 2rem 1rem;\n\t\tbackground-color: #f9f9f9;\n\t\tborder-radius: 10px;\n\t\tgap: 2rem; /* Adds space between steps */\n}\n.step {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t\tposition: relative;\n\t\tflex-grow: 1;\n\t\tcursor: pointer; /* Makes steps clickable */\n\t\ttransition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n.step:hover {\n\t\ttransform: translateY(-5px); /* Subtle hover effect */\n\t\tbox-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Add shadow for hover */\n}\n.step-circle {\n\t\twidth: 50px;\n\t\theight: 50px;\n\t\tborder-radius: 50%;\n\t\tbackground-color: #ddd;\n\t\tmargin-bottom: 8px;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n\t\tfont-size: 1.4rem;\n\t\tfont-weight: bold;\n\t\tcolor: #666;\n\t\ttransition: all 0.4s ease;\n\t\tbox-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n}\n.step-icon {\n\t\ttransition: color 0.3s ease;\n}\n.step-label {\n\t\tfont-size: 1rem;\n\t\tfont-weight: bold;\n\t\tcolor: #555;\n\t\tmargin-top: 8px;\n\t\ttext-align: center; /* Center-align the text */\n\t\twhite-space: pre-line; /* Preserve line breaks */\n\t\tline-height: 1.4; /* Adjust line height for better spacing */\n}\n.step-line {\n\t\tdisplay: block; /* Ensure each line is a block */\n}\n.step.completed .step-circle {\n\t\tbackground-color: #28a745;\n}\n.step.active .step-circle {\n\t\tbackground-color: #007bff;\n\t\ttransform: scale(1.1);\n\t\ttransform: scale(1.2);\n\t\tbox-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);\n}\n.step:not(:last-child)::after {\n\t\tcontent: '';\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tright: 0;\n\t\twidth: 100%; /* Full width of the space between steps */\n\t\theight: 3px;\n\t\tbackground-color: #ddd;\n\t\tz-index: -1; /* Keep the line behind the circles */\n\t\ttransition: background-color 0.3s ease;\n}\n.step.completed:not(:last-child)::after {\n\t\tbackground-color: #28a745;\n}\n.step.active:not(:last-child)::after {\n\t\tbackground-color: #007bff;\n}\n.step.completed .step-icon {\n\t\tcolor: white;\n}\n.step.active .step-icon {\n\t\tcolor: white;\n}\n.step.completed::after {\n\t\tbackground-color: #28a745;\n}\n.step:hover .step-circle {\n\t\tbackground-color: #007bff;\n\t\ttransform: scale(1.1);\n}\n.step:hover .step-icon {\n\t\tcolor: white;\n}\n.step:hover .step-label {\n\t\tcolor: #007bff;\n}\n.progress-tooltip {\n\t\tdisplay: inline-block;\n\t\tfont-size: 0.85rem;\n\t\tfont-weight: 500;\n\t\tcolor: #fff;\n\t\tbackground: #007bff;\n\t\tborder-radius: 4px;\n\t\tpadding: 4px 8px;\n\t\tmargin-top: 25px;\n\t\tposition: absolute;\n\t\tleft: 50%;\n\t\ttransform: translateX(-50%);\n\t\topacity: 0;\n\t\tvisibility: hidden;\n\t\ttransition: opacity 0.3s ease, visibility 0.3s ease;\n\t\tbox-shadow: 0 2px 8px rgba(0, 123, 255, 0.4);\n}\n.step:hover .progress-tooltip {\n\t\topacity: 1;\n\t\tvisibility: visible;\n}\n.step.completed .step-icon,\n\t.step.active .step-icon {\n\t\tcolor: white;\n}\n.step-label:hover {\n\tcolor: #007bff; /* Highlight color */\n\ttransform: scale(1.05);\n}\n.step-label:hover .progress-tooltip {\n\topacity: 1;\n\tvisibility: visible;\n\tmargin-top: 12px;\n}\n.form-body {\n\tpadding: 2rem;\n}\n.section-title {\n\tfont-size: 1.5rem;\n\tmargin-bottom: 1rem;\n}\n.form-group {\n\tmargin-bottom: 1.5rem;\n}\ninput[type=\"text\"],\n\tinput[type=\"date\"],\n\tinput[type=\"number\"],\n\tselect,\n\ttextarea {\n\t\twidth: 100%;\n\t\tpadding: 0.8rem;\n\t\tborder: 1px solid #ddd;\n\t\tborder-radius: 8px;\n\t\tfont-size: 1rem;\n\t\tmargin-top: 0.5rem;\n\t\ttransition: border-color 0.3s ease;\n}\n\n\t/* Focus styles */\ninput[type=\"text\"]:focus,\n\tinput[type=\"date\"]:focus,\n\tinput[type=\"number\"]:focus,\n\tselect:focus,\n\ttextarea:focus {\n\t\tborder-color: #007bff;\n}\n.input-error {\n\tborder: 1px solid #e3342f !important;\n}\n.error-icon {\n\tcolor: #e3342f;\n\tfont-size: 0.8rem;\n}\n.form-actions {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tmargin-top: 1.5rem;\n}\nbutton {\n\tpadding: 0.8rem 2rem;\n\tfont-size: 1rem;\n\tborder-radius: 8px;\n\tborder: none;\n\tcursor: pointer;\n}\nbutton.btn-primary {\n\tbackground-color: #007bff;\n\tcolor: white;\n\ttransition: background-color 0.3s;\n}\nbutton.btn-primary:hover {\n\tbackground-color: #0056b3;\n}\nbutton.btn-secondary {\n\tbackground-color: #f0f0f0;\n\tcolor: #555;\n\ttransition: background-color 0.3s;\n}\nbutton.btn-secondary:hover {\n\tbackground-color: #ddd;\n}\n@media (max-width: 768px) {\n.form-container {\n    padding: 1rem;\n    margin: 1rem;\n}\n.progress-steps {\n    flex-direction: column;\n    gap: 1.5rem;\n}\n.step {\n    width: 100%;\n}\n.form-header {\n    padding: 1rem;\n}\n.form-title {\n    font-size: 2rem;\n}\n.form-subtitle {\n    font-size: 1rem;\n}\n.form-body {\n    padding: 1rem;\n}\n.section-title {\n    font-size: 1.25rem;\n}\nbutton {\n    width: 100%;\n    padding: 1rem;\n}\n}\n@media (max-width: 480px) {\n.form-logo {\n    width: 80px;\n}\n.form-title {\n    font-size: 1.75rem;\n}\n.form-subtitle {\n    font-size: 0.9rem;\n}\n.progress-tooltip {\n    font-size: 0.75rem;\n    padding: 4px 6px;\n\tposition: absolute;\n    top: 73%;\n}\n}\n\n\n\n/* Style for the form group */\n.form-group {\n  margin-bottom: 1.5rem;\n  position: relative;\n}\n\n\n/* Change border color when there is an error */\ninput[type=\"text\"].input-error {\n  border-color: #e74c3c; /* Red border for error */\n}\n\n/* Style for the error message */\n.error-message {\n  color: #e74c3c; /* Red color for error text */\n  font-size: 14px;\n  margin-top: 5px;\n  display: block;\n  font-weight: 600;\n  padding-left: 5px;\n}\n\n/* Add some styles for the input focus */\ninput[type=\"text\"]:focus {\n  outline: none;\n  border-color: #3498db; /* Blue border when focused */\n}\n\n/* Add some styling to the label */\nlabel {\n  font-size: 14px;\n  margin-bottom: 0px;\n  font-weight: 600;\n  color: #333;\n}\n\n\n/* Apply RTL to the entire form group */\n.form-group[dir=\"rtl\"] {\n  text-align: right !important;  /* Align text to the right */\n  direction: rtl !important;     /* Set the direction of the form group to RTL */\n}\n\n/* Apply RTL to Arabic labels */\n.form-group[dir=\"rtl\"] .rtl-label {\n  text-align: right !important;\n  direction: rtl !important;\n}\n\n/* Apply RTL to input fields within Arabic form groups */\n.form-group[dir=\"rtl\"] input {\n  text-align: right !important;  /* Align text to the right for RTL inputs */\n  direction: rtl !important;     /* Set input direction to RTL */\n}\n\n/* Apply RTL to error messages within Arabic form groups */\n.form-group[dir=\"rtl\"] .error-message {\n  text-align: right !important;\n  direction: rtl !important;\n}\n\n/* Ensure French inputs remain left-aligned (default behavior) */\ninput:not([dir=\"rtl\"]) {\n  text-align: left;\n  direction: ltr;\n}\n.close-icon {\n    position: absolute;\n    top: 50%;\n    right: 0.5rem;\n    transform: translateY(-50%);\n    width: 1.5rem;\n    height: 1.5rem;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background: linear-gradient(135deg, #ff6b6b, #ff4757);\n    border-radius: 50%;\n    cursor: pointer;\n    transition: transform 0.3s ease, box-shadow 0.3s ease;\n    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);\n}\n.close-icon span {\n    color: white;\n    font-size: 1.2rem;\n    font-weight: bold;\n    line-height: 1;\n}\n\n\n\n\n/* Fieldset Styling */\nfieldset {\n  border: 2px solid #0078d7;\n  border-radius: 15px;\n  padding: 25px 20px;\n  background: #f5f8fa;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n  margin-bottom: 30px;\n  position: relative;\n  overflow: hidden; /* Ensures cleaner clipping */\n}\n\n/* Legend Styling */\nlegend {\n  text-align: right;\n  font-size: 1.2rem;\n  font-weight: 600;\n  color: #ffffff;\n  background: #0078d7;\n  padding: 10px 20px;\n  border-radius: 8px;\n  text-transform: uppercase;\n  position: absolute;\n  top: -11px;\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n  white-space: nowrap; /* Prevents wrapping */\n}\n.legend1{\n\tleft: -571px !important;\n}\n.legend2{\n\tleft: -438px !important;\n}\n.legend3{\n\tleft: -644px !important;\n}\n.legend4{\n\tleft: -582px !important;\n}\n.legend5{\n\tleft: -630px;\n}\n\n/* Hover Effect on Fieldset */\nfieldset:hover {\n  border-color: #0056a6;\n  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);\n}\n\n/* Responsive Adjustments */\n@media (max-width: 768px) {\nlegend {\n    text-align: right;\n    font-size: 0.8rem;\n    font-weight: 600;\n    color: #ffffff;\n    background: #0078d7;\n    padding: 10px 20px;\n    border-radius: 8px;\n    text-transform: uppercase;\n    position: absolute;\n    top: -7px;\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n    white-space: nowrap;\n}\n.legend1{\n\tleft: -46px;\n}\n.legend2{\n\tleft: -110px !important;\n}\n.legend3{\n\tleft: -95px;\n}\n}\n\n\n\n/* Style de la notification */\n.notification {\n  position: fixed;\n  top: 20px;\n  right: 20px;\n  background: #007bff;\n  color: white;\n  padding: 15px;\n  border-radius: 8px;\n  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);\n  max-width: 320px;\n  font-size: 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  z-index: 1000;\n  animation: fadeIn 0.3s ease-in-out;\n}\n\n/* Style du texte dans la notification */\n.notification p {\n  margin: 0;\n  flex: 1;\n}\n\n/* Style du bouton */\n.notification button {\n  background: white;\n  color: #007bff;\n  border: none;\n  padding: 5px 10px;\n  border-radius: 5px;\n  cursor: pointer;\n  font-weight: bold;\n}\n.notification button:hover {\n  background: #f1f1f1;\n}\n\n/* Responsive design */\n@media (max-width: 768px) {\n.notification {\n    top: auto;\n    bottom: 20px;\n    right: 10px;\n    left: 10px;\n    width: auto;\n    max-width: none;\n    font-size: 13px;\n    padding: 12px;\n    flex-direction: column;\n    text-align: center;\n}\n.notification button {\n    margin-top: 5px;\n    width: 100%;\n}\n}\n\n/* Animation */\n@keyframes fadeIn {\nfrom {\n    opacity: 0;\n    transform: translateY(-10px);\n}\nto {\n    opacity: 1;\n    transform: translateY(0);\n}\n}\n\n\n\n\n/* Wrapper for the file input */\n.file-upload-wrapper {\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  text-align: left;\n  background-color: #f9f9f9;\n  border-radius: 12px;\n  padding: 20px;\n  border: 2px solid #ccc;\n  transition: all 0.3s ease-in-out;\n  box-sizing: border-box;\n  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);\n  background: linear-gradient(135deg, #f0f7ff, #c0d9e8);\n}\n\n/* Custom button for file upload */\n.file-upload-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 14px 28px;\n  background-color: #4CAF50;\n  color: white;\n  border-radius: 8px;\n  cursor: pointer;\n  font-size: 18px;\n  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;\n  width: 100%;\n  margin: 0;\n}\n.file-upload-btn:hover {\n  background-color: #45a049;\n  transform: scale(1.05);\n  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);\n}\n.file-upload-btn i {\n  margin-left: 8px;\n}\n\n/* Hidden native file input */\n.file-input {\n  display: none;\n}\n\n/* File Preview Section */\n.file-preview {\n  position: relative;\n  margin-top: 20px;\n  display: flex;\n  justify-content: center;\n  transition: all 0.3s ease-in-out;\n}\n\n/* Preview container with magic */\n.preview-container {\n  position: relative;\n  display: inline-block;\n  max-width: 100%;\n  margin-bottom: 10px;\n  border-radius: 15px;\n  overflow: hidden;\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);\n  transition: all 0.3s ease-in-out;\n}\n.preview-container:hover {\n  transform: scale(1.05) rotate(3deg);\n  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n.preview-img {\n  width: 100%;\n  height: auto;\n  max-height: 150px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 12px;\n  transition: transform 0.3s ease-in-out;\n}\n.preview-img:hover {\n  transform: scale(1.05);\n}\n\n/* Remove button for file preview */\n.remove-btn {\n  position: absolute;\n  top: 5px;\n  right: 5px;\n  background: rgba(255, 0, 0, 0.7);\n  color: white;\n  font-size: 18px;\n  border: none;\n  padding: 6px 12px;\n  border-radius: 50%;\n  cursor: pointer;\n  transition: background 0.3s ease, transform 0.3s ease;\n}\n.remove-btn:hover {\n  background: red;\n  transform: scale(1.1);\n}\n\n/* Label styling */\n.file-label {\n  font-size: 18px;\n  margin-bottom: 12px;\n  color: #333;\n  font-weight: 600;\n  display: block;\n  transition: color 0.3s ease;\n}\n\n/* Error Message Styling */\n.input-error {\n  border-color: #f44336;\n  background-color: #ffe6e6;\n}\n@keyframes glow {\n0% {\n    text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red, 0 0 40px red;\n}\n50% {\n    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 60px red;\n}\n100% {\n    text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red, 0 0 40px red;\n}\n}\n\n/* Responsive Styles */\n@media screen and (max-width: 768px) {\n.file-upload-btn {\n    font-size: 16px;\n    padding: 12px 24px;\n}\n.preview-img {\n    max-height: 120px;\n}\n.remove-btn{\n\twidth: 52% !important;\n}\n}\n@media screen and (max-width: 480px) {\n.file-upload-btn {\n    font-size: 14px;\n    padding: 10px 20px;\n}\n.file-label {\n    font-size: 16px;\n}\n.preview-img {\n    max-height: 100px;\n}\n}\n\n\n/* etudiant image file */\n/* Main container */\n.form-group.student-image-upload {\n    margin-top: 40px;\n    font-family: 'Roboto', sans-serif;\n    text-align: center;\n    padding: 30px;\n}\n\n/* Wrapper for the file upload button */\n.file-upload-wrapper-student {\n    position: relative;\n    display: inline-block;\n    cursor: pointer;\n    transition: transform 0.3s ease;\n}\n\n/* Circular file upload button with shadow */\n.file-upload-btn-student {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n    width: 280px;\n    height: 280px;\n    background: linear-gradient(135deg, #4CAF50, #4CAF50);\n    border-radius: 50%;\n    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);\n    position: relative;\n    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;\n}\n.file-upload-btn-student:hover {\n    transform: scale(1.05);\n    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);\n}\n\n/* Image container (circle) with hover zoom effect */\n.file-upload-image-student {\n    width: 180px;\n    height: 180px;\n    border-radius: 50%;\n    background-color: #f0f0f0;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    border: 4px solid #ffffff;\n    overflow: hidden;\n    transition: transform 0.3s ease;\n}\n.upload-img-student {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    transition: transform 0.3s ease;\n}\n\n/* Button text in the center */\n.upload-text-student {\n    font-size: 18px;\n    color: #ffffff;\n    font-weight: 500;\n    position: absolute;\n    bottom: 20px;\n    transition: opacity 0.3s ease-in-out;\n}\n\n/* Hover effect for image zoom */\n.file-upload-btn-student:hover .upload-img-student {\n    transform: scale(1.1);\n}\n\n/* Hover effect for text change */\n.file-upload-btn-student:hover .upload-text-student {\n    opacity: 1;\n}\n\n/* File input (hidden but accessible) */\ninput[type=\"file\"] {\n    opacity: 0;\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    cursor: pointer;\n    z-index: 2;\n}\n\n/* Error state */\n.input-error-student {\n    border: 2px solid #ff5722;\n    background-color: rgba(255, 87, 34, 0.1);\n}\n\n/* Image preview section */\n.file-upload-preview-student {\n    margin-top: 30px;\n    text-align: center;\n}\n\n/* Circular preview image with soft shadow */\n.preview-img-student {\n    width: 120px;\n    height: 120px;\n    -o-object-fit: cover;\n       object-fit: cover;\n    border-radius: 50%;\n    border: 4px solid #00bcd4;\n    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.2);\n    transition: transform 0.3s ease;\n}\n\n/* Hover effect for preview image */\n.preview-img-student:hover {\n    transform: scale(1.05);\n}\n\n/* Remove image button */\n.remove-btn-student {\n    background-color: #ff5722;\n    color: white;\n    border: none;\n    padding: 8px 16px;\n    border-radius: 8px;\n    font-size: 16px;\n    cursor: pointer;\n    transition: background-color 0.3s ease;\n}\n.remove-btn-student:hover {\n    background-color: #e64a19;\n}\n\n/* Responsive design */\n@media (max-width: 768px) {\n.file-upload-btn-student {\n        width: 220px;\n        height: 220px;\n}\n.file-upload-image-student {\n        width: 150px;\n        height: 150px;\n}\n.upload-text-student {\n        font-size: 16px;\n        bottom: 15px;\n}\n}\n@media (max-width: 480px) {\n.file-upload-btn-student {\n        width: 180px;\n        height: 180px;\n}\n.file-upload-image-student {\n        width: 120px;\n        height: 120px;\n}\n.upload-text-student {\n        font-size: 14px;\n        bottom: 10px;\n}\n}\n/* end etudiant image file*/\n\n\n/* start etudiant pdf file*/\n.pdf-upload-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  width: 100%;\n  height: auto;\n  min-height: 200px;\n  border: 2px dashed #4CAF50;\n  border-radius: 12px;\n  cursor: pointer;\n  background: rgba(255, 255, 255, 0.9);\n  transition: all 0.3s ease-in-out;\n  padding: 10px;\n}\n\n/* Hover effect */\n.pdf-upload-container:hover {\n  background: rgba(255, 255, 255, 1);\n  border-color: #4CAF50;\n}\n\n/* PDF Preview */\n.pdf-preview-container {\n  position: relative;\n  width: 100%;\n  max-width: 100%;\n  max-height: 350px; /* Adjust based on viewport */\n  overflow-y: auto; /* Enable vertical scrolling */\n  display: flex;\n  justify-content: flex-start; /* Ensures content starts from the top */\n  align-items: center;\n  background: white;\n  border-radius: 12px;\n  padding: 5px;\n  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);\n}\n\n/* Canvas - Ensure it scales properly */\ncanvas {\n  width: 100%;\n  height: auto;\n  max-width: 100%;\n  border-radius: 8px;\n  background: white;\n  display: block;\n}\n\n/* Remove Button */\n.remove-file-btn {\n  position: absolute;\n  top: 25px;\n  right: 5px;\n  background: red;\n  color: white;\n  border: none;\n  border-radius: 50%;\n  width: 20px; /* Smaller size */\n  height: 20px;\n  font-size: 12px; /* Smaller icon */\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  transition: all 0.2s ease-in-out;\n}\n\n/* Hover Effect */\n.remove-file-btn:hover {\n  background: darkred;\n}\n\n/* Error Message */\n.error-message {\n  color: red;\n  font-size: 14px;\n  margin-top: 5px;\n  text-align: center;\n  font-weight: bold;\n}\n\n/* Responsive Fix */\n@media (min-width: 1024px) {\n.pdf-preview-container {\n    max-height: 940px; /* Increase height for larger screens */\n}\n}\n@media (max-width: 768px) {\n.pdf-upload-placeholder{\n\t\ttext-align: center;\n}\n.remove-file-btn {\n\t\twidth: 18px; /* Even smaller for mobile */\n\t\theight: 18px;\n\t\tfont-size: 10px;\n\t\ttop: 3px;\n\t\tright: 3px;\n}\n}\n\n/* end etudiant pdf file*/\n\n/*  filiere step  */\n.filiere-container {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 15px;\n    justify-content: center;\n}\n.filiere-card {\n    position: relative;\n    width: 280px;\n    height: 180px;\n    background: #ffffff;\n    border-radius: 12px;\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;\n    overflow: hidden;\n    border: 2px solid transparent;\n    cursor: pointer;\n}\n.filiere-card:hover {\n    transform: scale(1.05);\n    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);\n    border: 2px solid #007bff;\n}\n.hidden-input {\n    display: none;\n}\n.filiere-content {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    height: 100%;\n    cursor: pointer;\n    text-align: center;\n    padding: 10px;\n}\n.filiere-title {\n    font-size: 18px;\n    font-weight: bold;\n    color: #007bff;\n}\n.filiere-name {\n    font-size: 14px;\n    color: #333;\n    margin-top: 5px;\n}\n\n/* Bouton Voir la description */\n.description-btn {\n    margin-top: 8px;\n    font-size: 14px;\n    font-weight: bold;\n    background: linear-gradient(135deg, #007bff, #0056b3);\n    color: white;\n    padding: 8px 12px;\n    border-radius: 20px;\n    border: none;\n    cursor: pointer;\n    transition: all 0.3s ease;\n    display: flex;\n    align-items: center;\n    gap: 8px;\n}\n.description-btn i {\n    font-size: 16px;\n}\n.description-btn:hover {\n    background: linear-gradient(135deg, #e0e2e3, #a7a7a7);\n    transform: scale(1.05);\n}\n\n/* Effet pour les cases cochées */\n.hidden-input:checked + .filiere-content,\n.filiere-card.selected {\n    background: #007bff;\n    color: white;\n    border: 2px solid #0056b3;\n}\n.hidden-input:checked + .filiere-content .filiere-title,\n.filiere-card.selected .filiere-title {\n    color: white;\n}\n.hidden-input:checked + .filiere-content .description-btn,\n.filiere-card.selected .description-btn {\n    background: #ffeeab;\n    color: #333;\n}\n.hidden-input:checked + .filiere-content .description-btn:hover,\n.filiere-card.selected .description-btn:hover {\n    background: #ffc107;\n}\n\n/* Icône de sélection */\n.selected-icon {\n    position: absolute;\n    top: 10px;\n    right: 10px;\n    background: #28a745;\n    color: white;\n    font-size: 14px;\n    font-weight: bold;\n    padding: 5px 10px;\n    border-radius: 20px;\n    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);\n}\n\n\n/* end filiere step  */\n\n\n\n/* --- confirmation step --- */\n.confirmation-container {\n    padding: 20px;\n    background: rgba(255, 255, 255, 0.1);\n    -webkit-backdrop-filter: blur(12px);\n            backdrop-filter: blur(12px);\n    border-radius: 16px;\n    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);\n    transition: all 0.3s ease-in-out;\n    max-width: 600px;\n    margin: auto;\n}\n\n/* --- Important Note --- */\n.confirmation-note {\n\ttext-align: center;\n    color: #d32f2f;\n    font-weight: bold;\n    font-size: 16px;\n    margin-bottom: 15px;\n}\n\n/* --- Checkbox Wrapper (Flex for Same Line) --- */\n.checkbox-wrapper {\n    display: flex;\n    align-items: center;\n    gap: 12px;\n    padding: 10px;\n    cursor: pointer;\n}\n\n/* --- Hide Default Checkbox --- */\n.hidden-checkbox {\n    display: none;\n}\n\n/* --- Custom Checkbox --- */\n.custom-checkbox {\n    width: 29px;\n    height: 24px;\n    border: 2px solid #4CAF50;\n    border-radius: 6px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: rgba(255, 255, 255, 0.2);\n    transition: all 0.3s ease-in-out;\n    cursor: pointer;\n    position: relative;\n    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);\n}\n\n/* --- Checkmark Icon (Now Appears When Checked) --- */\n.check-icon {\n    width: 16px;\n    height: 16px;\n    stroke: white;\n    stroke-width: 3;\n    fill: none;\n    stroke-linecap: round;\n    stroke-linejoin: round;\n    display: none; /* Initially Hidden */\n    transition: all 0.2s ease-in-out;\n}\n\n/* --- Checkbox Checked State (Fixed) --- */\n.hidden-checkbox:checked + .custom-checkbox {\n    background-color: #4CAF50;\n    border-color: #4CAF50;\n    box-shadow: 0px 0px 15px rgba(76, 175, 80, 0.6);\n}\n\n/* --- Ensure Checkmark Appears When Checked --- */\n.hidden-checkbox:checked + .custom-checkbox .check-icon {\n    display: block;\n}\n\n/* --- Checkbox Text (Aligned with Checkbox) --- */\n.checkbox-text {\n    font-size: 16px;\n    color: #333;\n    font-weight: 500;\n    transition: color 0.3s ease-in-out;\n    line-height: 1.4;\n}\n\n/* --- Responsive Design --- */\n@media (max-width: 768px) {\n.confirmation-container {\n        padding: 15px;\n        width: 90%;\n}\n.confirmation-note {\n        font-size: 14px;\n}\n.custom-checkbox {\n        width: 60px;\n        height: 22px;\n}\n.checkbox-text {\n        font-size: 14px;\n}\n}\n\n\n/* loader  */\n.loading-overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.85);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  color: #fff;\n  font-size: 18px;\n  z-index: 9999;\n  overflow: hidden;\n}\n\n/* Effet lumineux derrière le logo */\n.loader-logo-container {\n  position: relative;\n  background: linear-gradient(135deg, rgba(0, 123, 255, 0.4), rgba(0, 0, 0, 0.6)); /* Gradient for a modern feel */\n  padding: 20px;\n  border-radius: 15px; /* Rounded corners */\n  box-shadow: 0 0 30px rgba(0, 123, 255, 0.6); /* Soft glow around the container */\n  animation: logoGlow 3s infinite alternate ease-in-out;\n}\n\n/* Pulse animation for the logo container */\n@keyframes logoGlow {\n0% { box-shadow: 0 0 30px rgba(0, 123, 255, 0.6);\n}\n100% { box-shadow: 0 0 50px rgba(0, 123, 255, 1);\n}\n}\n.loader-logo {\n  width: 150px;\n  height: auto;\n  filter: drop-shadow(0 0 15px rgba(0, 123, 255, 0.8));\n  animation: pulse 2s infinite alternate ease-in-out;\n}\n\n/* Effet de pulsation du logo */\n@keyframes pulse {\n0% {\n    transform: scale(1);\n    filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.6));\n}\n100% {\n    transform: scale(1.05);\n    filter: drop-shadow(0 0 20px rgba(0, 123, 255, 1));\n}\n}\n\n/* Vague lumineuse en arrière-plan */\n.loader-glow {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  width: 200px;\n  height: 200px;\n  background: radial-gradient(circle, rgba(0, 123, 255, 0.4) 10%, transparent 60%);\n  border-radius: 50%;\n  transform: translate(-50%, -50%);\n  animation: glowwave 2.5s infinite alternate ease-in-out;\n  filter: blur(20px);\n}\n@keyframes glowwave {\n0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8;\n}\n100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.5;\n}\n}\n\n/* Spinner fluide */\n.spinner {\n  width: 60px;\n  height: 60px;\n  border: 4px solid rgba(255, 255, 255, 0.2);\n  border-top: 4px solid #007bff;\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n  margin-top: 20px;\n}\n@keyframes spin {\n0% { transform: rotate(0deg);\n}\n100% { transform: rotate(360deg);\n}\n}\n\n/* Texte statique et élégant */\n.loading-text {\n  font-size: 20px;\n  font-weight: bold;\n  margin-top: 15px;\n  color: rgba(255, 255, 255, 0.8);\n  text-shadow: 0 0 10px rgba(0, 123, 255, 0.6);\n  letter-spacing: 1px;\n}\n\n/* Particules dynamiques pour l'effet magique */\n.particles {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  pointer-events: none;\n  background: radial-gradient(circle, rgba(0, 123, 255, 0.2) 10%, transparent 70%);\n  animation: floating 3s infinite ease-in-out alternate;\n}\n@keyframes floating {\n0% { transform: translateY(0); opacity: 0.7;\n}\n100% { transform: translateY(-20px); opacity: 1;\n}\n}\n\n\n\n/*  success submit form  */\n.success-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 20px;\n}\n\n/* 🎨 Success Card */\n.success-card {\n  background: rgba(255, 255, 255, 0.95);\n  border-radius: 15px;\n  padding: 40px;\n  max-width: 600px;\n  width: 100%;\n  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);\n  text-align: center;\n  animation: fadeInUp 1s ease-out;\n}\n\n/* 🌟 Success Icon */\n.success-icon {\n  margin: 20px 0;\n}\n.glow {\n  filter: drop-shadow(0px 0px 15px #d4af37);\n  animation: glowEffect 1.5s infinite alternate;\n}\n\n/* 🏆 Title & Message */\n.success-title {\n  font-size: 26px;\n  color: #002147;\n  font-weight: bold;\n  margin-bottom: 10px;\n}\n.success-text {\n  font-size: 16px;\n  color: #333;\n  margin-bottom: 20px;\n}\n\n/* 📜 User Info */\n.success-info {\n  background: rgba(0, 33, 71, 0.1);\n  padding: 15px;\n  border-radius: 10px;\n  margin-bottom: 15px;\n  font-weight: 500;\n  color: #002147;\n}\n\n/* 🔑 Credentials */\n.success-credentials {\n  background: rgba(212, 175, 55, 0.1);\n  padding: 15px;\n  border-radius: 10px;\n  margin-bottom: 20px;\n  font-weight: bold;\n  color: #002147;\n  position: relative;\n}\n\n/* 🎭 Smart Password Box */\n.password-box {\n  display: inline-block;\n  padding: 4px 10px;\n  border-radius: 5px;\n  transition: all 0.3s ease-in-out;\n  font-weight: bold;\n  font-size: 16px;\n}\n\n/* Blur effect when hidden */\n.blurred {\n  color: transparent;\n  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);\n  background: rgba(0, 0, 0, 0.1);\n  padding: 4px 10px;\n  border-radius: 5px;\n}\n\n/* 🎛️ Password Toggle Button */\n.toggle-password {\n  background: none;\n  border: none;\n  font-size: 18px;\n  cursor: pointer;\n  margin-left: 0px;\n  transition: transform 0.2s ease-in-out;\n}\n.toggle-password:hover {\n  transform: scale(1.1);\n}\n\n\n/* 🎨 Stylish Button */\n.modern-button {\n  display: inline-block;\n  padding: 12px 20px;\n  background: linear-gradient(135deg, #d4af37, #ffcc5c);\n  color: #002147;\n  font-size: 16px;\n  font-weight: bold;\n  text-decoration: none;\n  border-radius: 12px;\n  transition: all 0.3s ease-in-out;\n  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);\n}\n.modern-button:hover {\n  transform: scale(1.05);\n  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.4);\n}\n\n/* 🔥 Animations */\n@keyframes glowEffect {\nfrom {\n    filter: drop-shadow(0px 0px 10px #d4af37);\n}\nto {\n    filter: drop-shadow(0px 0px 20px #d4af37);\n}\n}\n@keyframes fadeInUp {\nfrom {\n    opacity: 0;\n    transform: translateY(50px);\n}\nto {\n    opacity: 1;\n    transform: translateY(0);\n}\n}\n.modern-logo-box {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background: rgba(255, 255, 255, 0.9); /* Keep a subtle background */\n  padding: 10px; /* Smaller padding around the logo */\n  border-radius: 10px; /* Rounded corners for the background */\n  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for the background */\n  margin-bottom: 20px; /* Keep the margin below the logo */\n  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;\n}\n\n/* 🖼️ Logo Image */\n.modern-logo {\n  width: 120px; /* Adjust logo size */\n  height: auto;\n  filter: drop-shadow(2px 2px 8px rgba(0, 33, 71, 0.2)); /* Subtle shadow on the logo */\n}\n\n/* Logo Hover Effect */\n.modern-logo-box:hover {\n  transform: translateY(-5px);\n  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);\n}\n.password-tooltip {\n  position: absolute;\n  background: rgba(0, 33, 71, 0.9);\n  color: #fff;\n  padding: 6px 12px;\n  border-radius: 6px;\n  font-size: 14px;\n  top: 33px;\n  left: 85%;\n  transform: translateX(-50%);\n  white-space: nowrap;\n  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);\n}\n\n\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -30734,7 +30274,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbody {\n\tbackground: linear-gradient(135deg, #f0f8ff, #e6f7ff);\n\tfont-family: \"Roboto\", sans-serif;\n\tmargin: 0;\n\tpadding: 0;\n}\n.form-container {\n\tmax-width: 800px;\n\tmargin: 2rem auto;\n\tbackground: #ffffff;\n\tborder-radius: 15px;\n\tbox-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);\n\toverflow: hidden;\n}\n.progress-bar-container {\n\theight: 8px;\n\tbackground: #ddd;\n\twidth: 100%;\n}\n.progress-bar {\n\theight: 8px;\n\tbackground: #007bff;\n\ttransition: width 0.3s ease-in-out;\n}\n.form-header {\n\ttext-align: center;\n\tbackground: #0056b3;\n\tcolor: white;\n\tpadding: 2rem;\n}\n.logo-container {\n\tbackground: white;\n\tborder-radius: 50%;\n\tpadding: 1rem;\n\tdisplay: inline-block;\n\tbox-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n}\n.form-logo {\n\twidth: 100px;\n}\n.form-title {\n\tfont-size: 2.5rem;\n\tfont-weight: bold;\n}\n.form-subtitle {\n\tfont-size: 1.1rem;\n\tcolor: #ccc;\n}\n.progress-steps {\n\t\tdisplay: flex;\n\t\tjustify-content: space-between;\n\t\talign-items: flex-start; /* Aligns circles and labels better */\n\t\tpadding: 2rem 1rem;\n\t\tbackground-color: #f9f9f9;\n\t\tborder-radius: 10px;\n\t\tgap: 2rem; /* Adds space between steps */\n}\n.step {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t\tposition: relative;\n\t\tflex-grow: 1;\n\t\tcursor: pointer; /* Makes steps clickable */\n\t\ttransition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n.step:hover {\n\t\ttransform: translateY(-5px); /* Subtle hover effect */\n\t\tbox-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Add shadow for hover */\n}\n.step-circle {\n\t\twidth: 50px;\n\t\theight: 50px;\n\t\tborder-radius: 50%;\n\t\tbackground-color: #ddd;\n\t\tmargin-bottom: 8px;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n\t\tfont-size: 1.4rem;\n\t\tfont-weight: bold;\n\t\tcolor: #666;\n\t\ttransition: all 0.4s ease;\n\t\tbox-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n}\n.step-icon {\n\t\ttransition: color 0.3s ease;\n}\n.step-label {\n\t\tfont-size: 1rem;\n\t\tfont-weight: bold;\n\t\tcolor: #555;\n\t\tmargin-top: 8px;\n\t\ttext-align: center; /* Center-align the text */\n\t\twhite-space: pre-line; /* Preserve line breaks */\n\t\tline-height: 1.4; /* Adjust line height for better spacing */\n}\n.step-line {\n\t\tdisplay: block; /* Ensure each line is a block */\n}\n.step.completed .step-circle {\n\t\tbackground-color: #28a745;\n}\n.step.active .step-circle {\n\t\tbackground-color: #007bff;\n\t\ttransform: scale(1.1);\n\t\ttransform: scale(1.2);\n\t\tbox-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);\n}\n.step:not(:last-child)::after {\n\t\tcontent: '';\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tright: 0;\n\t\twidth: 100%; /* Full width of the space between steps */\n\t\theight: 3px;\n\t\tbackground-color: #ddd;\n\t\tz-index: -1; /* Keep the line behind the circles */\n\t\ttransition: background-color 0.3s ease;\n}\n.step.completed:not(:last-child)::after {\n\t\tbackground-color: #28a745;\n}\n.step.active:not(:last-child)::after {\n\t\tbackground-color: #007bff;\n}\n.step.completed .step-icon {\n\t\tcolor: white;\n}\n.step.active .step-icon {\n\t\tcolor: white;\n}\n.step.completed::after {\n\t\tbackground-color: #28a745;\n}\n.step:hover .step-circle {\n\t\tbackground-color: #007bff;\n\t\ttransform: scale(1.1);\n}\n.step:hover .step-icon {\n\t\tcolor: white;\n}\n.step:hover .step-label {\n\t\tcolor: #007bff;\n}\n.progress-tooltip {\n\t\tdisplay: inline-block;\n\t\tfont-size: 0.85rem;\n\t\tfont-weight: 500;\n\t\tcolor: #fff;\n\t\tbackground: #007bff;\n\t\tborder-radius: 4px;\n\t\tpadding: 4px 8px;\n\t\tmargin-top: 25px;\n\t\tposition: absolute;\n\t\tleft: 50%;\n\t\ttransform: translateX(-50%);\n\t\topacity: 0;\n\t\tvisibility: hidden;\n\t\ttransition: opacity 0.3s ease, visibility 0.3s ease;\n\t\tbox-shadow: 0 2px 8px rgba(0, 123, 255, 0.4);\n}\n.step:hover .progress-tooltip {\n\t\topacity: 1;\n\t\tvisibility: visible;\n}\n.step.completed .step-icon,\n\t.step.active .step-icon {\n\t\tcolor: white;\n}\n.step-label:hover {\n\tcolor: #007bff; /* Highlight color */\n\ttransform: scale(1.05);\n}\n.step-label:hover .progress-tooltip {\n\topacity: 1;\n\tvisibility: visible;\n\tmargin-top: 12px;\n}\n.form-body {\n\tpadding: 2rem;\n}\n.section-title {\n\tfont-size: 1.5rem;\n\tmargin-bottom: 1rem;\n}\n.form-group {\n\tmargin-bottom: 1.5rem;\n}\ninput[type=\"text\"],\n\tinput[type=\"date\"],\n\tinput[type=\"number\"],\n\tselect,\n\ttextarea {\n\t\twidth: 100%;\n\t\tpadding: 0.8rem;\n\t\tborder: 1px solid #ddd;\n\t\tborder-radius: 8px;\n\t\tfont-size: 1rem;\n\t\tmargin-top: 0.5rem;\n\t\ttransition: border-color 0.3s ease;\n}\n\n\t/* Focus styles */\ninput[type=\"text\"]:focus,\n\tinput[type=\"date\"]:focus,\n\tinput[type=\"number\"]:focus,\n\tselect:focus,\n\ttextarea:focus {\n\t\tborder-color: #007bff;\n}\n.input-error {\n\tborder: 1px solid #e3342f !important;\n}\n.error-icon {\n\tcolor: #e3342f;\n\tfont-size: 0.8rem;\n}\n.form-actions {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tmargin-top: 1.5rem;\n}\nbutton {\n\tpadding: 0.8rem 2rem;\n\tfont-size: 1rem;\n\tborder-radius: 8px;\n\tborder: none;\n\tcursor: pointer;\n}\nbutton.btn-primary {\n\tbackground-color: #007bff;\n\tcolor: white;\n\ttransition: background-color 0.3s;\n}\nbutton.btn-primary:hover {\n\tbackground-color: #0056b3;\n}\nbutton.btn-secondary {\n\tbackground-color: #f0f0f0;\n\tcolor: #555;\n\ttransition: background-color 0.3s;\n}\nbutton.btn-secondary:hover {\n\tbackground-color: #ddd;\n}\n@media (max-width: 768px) {\n.form-container {\n    padding: 1rem;\n    margin: 1rem;\n}\n.progress-steps {\n    flex-direction: column;\n    gap: 1.5rem;\n}\n.step {\n    width: 100%;\n}\n.form-header {\n    padding: 1rem;\n}\n.form-title {\n    font-size: 2rem;\n}\n.form-subtitle {\n    font-size: 1rem;\n}\n.form-body {\n    padding: 1rem;\n}\n.section-title {\n    font-size: 1.25rem;\n}\nbutton {\n    width: 100%;\n    padding: 1rem;\n}\n}\n@media (max-width: 480px) {\n.form-logo {\n    width: 80px;\n}\n.form-title {\n    font-size: 1.75rem;\n}\n.form-subtitle {\n    font-size: 0.9rem;\n}\n.progress-tooltip {\n    font-size: 0.75rem;\n    padding: 4px 6px;\n\tposition: absolute;\n    top: 73%;\n}\n}\n\n\n\n/* Style for the form group */\n.form-group {\n  margin-bottom: 1.5rem;\n  position: relative;\n}\n\n\n/* Change border color when there is an error */\ninput[type=\"text\"].input-error {\n  border-color: #e74c3c; /* Red border for error */\n}\n\n/* Style for the error message */\n.error-message {\n  color: #e74c3c; /* Red color for error text */\n  font-size: 14px;\n  margin-top: 5px;\n  display: block;\n  font-weight: 600;\n  padding-left: 5px;\n}\n\n/* Add some styles for the input focus */\ninput[type=\"text\"]:focus {\n  outline: none;\n  border-color: #3498db; /* Blue border when focused */\n}\n\n/* Add some styling to the label */\nlabel {\n  font-size: 14px;\n  margin-bottom: 0px;\n  font-weight: 600;\n  color: #333;\n}\n\n\n/* Apply RTL to the entire form group */\n.form-group[dir=\"rtl\"] {\n  text-align: right !important;  /* Align text to the right */\n  direction: rtl !important;     /* Set the direction of the form group to RTL */\n}\n\n/* Apply RTL to Arabic labels */\n.form-group[dir=\"rtl\"] .rtl-label {\n  text-align: right !important;\n  direction: rtl !important;\n}\n\n/* Apply RTL to input fields within Arabic form groups */\n.form-group[dir=\"rtl\"] input {\n  text-align: right !important;  /* Align text to the right for RTL inputs */\n  direction: rtl !important;     /* Set input direction to RTL */\n}\n\n/* Apply RTL to error messages within Arabic form groups */\n.form-group[dir=\"rtl\"] .error-message {\n  text-align: right !important;\n  direction: rtl !important;\n}\n\n/* Ensure French inputs remain left-aligned (default behavior) */\ninput:not([dir=\"rtl\"]) {\n  text-align: left;\n  direction: ltr;\n}\n.close-icon {\n    position: absolute;\n    top: 50%;\n    right: 0.5rem;\n    transform: translateY(-50%);\n    width: 1.5rem;\n    height: 1.5rem;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background: linear-gradient(135deg, #ff6b6b, #ff4757);\n    border-radius: 50%;\n    cursor: pointer;\n    transition: transform 0.3s ease, box-shadow 0.3s ease;\n    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);\n}\n.close-icon span {\n    color: white;\n    font-size: 1.2rem;\n    font-weight: bold;\n    line-height: 1;\n}\n\n\n\n\n/* Fieldset Styling */\nfieldset {\n  border: 2px solid #0078d7;\n  border-radius: 15px;\n  padding: 25px 20px;\n  background: #f5f8fa;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n  margin-bottom: 30px;\n  position: relative;\n  overflow: hidden; /* Ensures cleaner clipping */\n}\n\n/* Legend Styling */\nlegend {\n  text-align: right;\n  font-size: 1.2rem;\n  font-weight: 600;\n  color: #ffffff;\n  background: #0078d7;\n  padding: 10px 20px;\n  border-radius: 8px;\n  text-transform: uppercase;\n  position: absolute;\n  top: -11px;\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n  white-space: nowrap; /* Prevents wrapping */\n}\n.legend1{\n\tleft: -365px;\n}\n.legend2{\n\tleft: -438px !important;\n}\n.legend3{\n\tleft: -440px;\n}\n.legend4{\n\tleft: -573px;\n}\n.legend5{\n\tleft: -630px;\n}\n\n/* Hover Effect on Fieldset */\nfieldset:hover {\n  border-color: #0056a6;\n  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);\n}\n\n/* Responsive Adjustments */\n@media (max-width: 768px) {\nlegend {\n    text-align: right;\n    font-size: 0.8rem;\n    font-weight: 600;\n    color: #ffffff;\n    background: #0078d7;\n    padding: 10px 20px;\n    border-radius: 8px;\n    text-transform: uppercase;\n    position: absolute;\n    top: -7px;\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n    white-space: nowrap;\n}\n.legend1{\n\tleft: -46px;\n}\n.legend2{\n\tleft: -110px !important;\n}\n.legend3{\n\tleft: -95px;\n}\n}\n\n\n\n/* Style de la notification */\n.notification {\n  position: fixed;\n  top: 20px;\n  right: 20px;\n  background: #007bff;\n  color: white;\n  padding: 15px;\n  border-radius: 8px;\n  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);\n  max-width: 320px;\n  font-size: 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  z-index: 1000;\n  animation: fadeIn 0.3s ease-in-out;\n}\n\n/* Style du texte dans la notification */\n.notification p {\n  margin: 0;\n  flex: 1;\n}\n\n/* Style du bouton */\n.notification button {\n  background: white;\n  color: #007bff;\n  border: none;\n  padding: 5px 10px;\n  border-radius: 5px;\n  cursor: pointer;\n  font-weight: bold;\n}\n.notification button:hover {\n  background: #f1f1f1;\n}\n\n/* Responsive design */\n@media (max-width: 768px) {\n.notification {\n    top: auto;\n    bottom: 20px;\n    right: 10px;\n    left: 10px;\n    width: auto;\n    max-width: none;\n    font-size: 13px;\n    padding: 12px;\n    flex-direction: column;\n    text-align: center;\n}\n.notification button {\n    margin-top: 5px;\n    width: 100%;\n}\n}\n\n/* Animation */\n@keyframes fadeIn {\nfrom {\n    opacity: 0;\n    transform: translateY(-10px);\n}\nto {\n    opacity: 1;\n    transform: translateY(0);\n}\n}\n\n\n\n\n/* Wrapper for the file input */\n.file-upload-wrapper {\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  text-align: left;\n  background-color: #f9f9f9;\n  border-radius: 12px;\n  padding: 20px;\n  border: 2px solid #ccc;\n  transition: all 0.3s ease-in-out;\n  box-sizing: border-box;\n  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);\n  background: linear-gradient(135deg, #f0f7ff, #c0d9e8);\n}\n\n/* Custom button for file upload */\n.file-upload-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 14px 28px;\n  background-color: #4CAF50;\n  color: white;\n  border-radius: 8px;\n  cursor: pointer;\n  font-size: 18px;\n  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;\n  width: 100%;\n  margin: 0;\n}\n.file-upload-btn:hover {\n  background-color: #45a049;\n  transform: scale(1.05);\n  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);\n}\n.file-upload-btn i {\n  margin-left: 8px;\n}\n\n/* Hidden native file input */\n.file-input {\n  display: none;\n}\n\n/* File Preview Section */\n.file-preview {\n  position: relative;\n  margin-top: 20px;\n  display: flex;\n  justify-content: center;\n  transition: all 0.3s ease-in-out;\n}\n\n/* Preview container with magic */\n.preview-container {\n  position: relative;\n  display: inline-block;\n  max-width: 100%;\n  margin-bottom: 10px;\n  border-radius: 15px;\n  overflow: hidden;\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);\n  transition: all 0.3s ease-in-out;\n}\n.preview-container:hover {\n  transform: scale(1.05) rotate(3deg);\n  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n.preview-img {\n  width: 100%;\n  height: auto;\n  max-height: 150px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 12px;\n  transition: transform 0.3s ease-in-out;\n}\n.preview-img:hover {\n  transform: scale(1.05);\n}\n\n/* Remove button for file preview */\n.remove-btn {\n  position: absolute;\n  top: 5px;\n  right: 5px;\n  background: rgba(255, 0, 0, 0.7);\n  color: white;\n  font-size: 18px;\n  border: none;\n  padding: 6px 12px;\n  border-radius: 50%;\n  cursor: pointer;\n  transition: background 0.3s ease, transform 0.3s ease;\n}\n.remove-btn:hover {\n  background: red;\n  transform: scale(1.1);\n}\n\n/* Label styling */\n.file-label {\n  font-size: 18px;\n  margin-bottom: 12px;\n  color: #333;\n  font-weight: 600;\n  display: block;\n  transition: color 0.3s ease;\n}\n\n/* Error Message Styling */\n.input-error {\n  border-color: #f44336;\n  background-color: #ffe6e6;\n}\n@keyframes glow {\n0% {\n    text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red, 0 0 40px red;\n}\n50% {\n    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 60px red;\n}\n100% {\n    text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red, 0 0 40px red;\n}\n}\n\n/* Responsive Styles */\n@media screen and (max-width: 768px) {\n.file-upload-btn {\n    font-size: 16px;\n    padding: 12px 24px;\n}\n.preview-img {\n    max-height: 120px;\n}\n.remove-btn{\n\twidth: 52% !important;\n}\n}\n@media screen and (max-width: 480px) {\n.file-upload-btn {\n    font-size: 14px;\n    padding: 10px 20px;\n}\n.file-label {\n    font-size: 16px;\n}\n.preview-img {\n    max-height: 100px;\n}\n}\n\n\n/* etudiant image file */\n/* Main container */\n.form-group.student-image-upload {\n    margin-top: 40px;\n    font-family: 'Roboto', sans-serif;\n    text-align: center;\n    padding: 30px;\n}\n\n/* Wrapper for the file upload button */\n.file-upload-wrapper-student {\n    position: relative;\n    display: inline-block;\n    cursor: pointer;\n    transition: transform 0.3s ease;\n}\n\n/* Circular file upload button with shadow */\n.file-upload-btn-student {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n    width: 280px;\n    height: 280px;\n    background: linear-gradient(135deg, #4CAF50, #4CAF50);\n    border-radius: 50%;\n    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);\n    position: relative;\n    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;\n}\n.file-upload-btn-student:hover {\n    transform: scale(1.05);\n    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);\n}\n\n/* Image container (circle) with hover zoom effect */\n.file-upload-image-student {\n    width: 180px;\n    height: 180px;\n    border-radius: 50%;\n    background-color: #f0f0f0;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    border: 4px solid #ffffff;\n    overflow: hidden;\n    transition: transform 0.3s ease;\n}\n.upload-img-student {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    transition: transform 0.3s ease;\n}\n\n/* Button text in the center */\n.upload-text-student {\n    font-size: 18px;\n    color: #ffffff;\n    font-weight: 500;\n    position: absolute;\n    bottom: 20px;\n    transition: opacity 0.3s ease-in-out;\n}\n\n/* Hover effect for image zoom */\n.file-upload-btn-student:hover .upload-img-student {\n    transform: scale(1.1);\n}\n\n/* Hover effect for text change */\n.file-upload-btn-student:hover .upload-text-student {\n    opacity: 1;\n}\n\n/* File input (hidden but accessible) */\ninput[type=\"file\"] {\n    opacity: 0;\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    cursor: pointer;\n    z-index: 2;\n}\n\n/* Error state */\n.input-error-student {\n    border: 2px solid #ff5722;\n    background-color: rgba(255, 87, 34, 0.1);\n}\n\n/* Image preview section */\n.file-upload-preview-student {\n    margin-top: 30px;\n    text-align: center;\n}\n\n/* Circular preview image with soft shadow */\n.preview-img-student {\n    width: 120px;\n    height: 120px;\n    -o-object-fit: cover;\n       object-fit: cover;\n    border-radius: 50%;\n    border: 4px solid #00bcd4;\n    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.2);\n    transition: transform 0.3s ease;\n}\n\n/* Hover effect for preview image */\n.preview-img-student:hover {\n    transform: scale(1.05);\n}\n\n/* Remove image button */\n.remove-btn-student {\n    background-color: #ff5722;\n    color: white;\n    border: none;\n    padding: 8px 16px;\n    border-radius: 8px;\n    font-size: 16px;\n    cursor: pointer;\n    transition: background-color 0.3s ease;\n}\n.remove-btn-student:hover {\n    background-color: #e64a19;\n}\n\n/* Responsive design */\n@media (max-width: 768px) {\n.file-upload-btn-student {\n        width: 220px;\n        height: 220px;\n}\n.file-upload-image-student {\n        width: 150px;\n        height: 150px;\n}\n.upload-text-student {\n        font-size: 16px;\n        bottom: 15px;\n}\n}\n@media (max-width: 480px) {\n.file-upload-btn-student {\n        width: 180px;\n        height: 180px;\n}\n.file-upload-image-student {\n        width: 120px;\n        height: 120px;\n}\n.upload-text-student {\n        font-size: 14px;\n        bottom: 10px;\n}\n}\n/* end etudiant image file*/\n\n\n/* start etudiant pdf file*/\n.pdf-upload-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  width: 100%;\n  height: auto;\n  min-height: 200px;\n  border: 2px dashed #4CAF50;\n  border-radius: 12px;\n  cursor: pointer;\n  background: rgba(255, 255, 255, 0.9);\n  transition: all 0.3s ease-in-out;\n  padding: 10px;\n}\n\n/* Hover effect */\n.pdf-upload-container:hover {\n  background: rgba(255, 255, 255, 1);\n  border-color: #4CAF50;\n}\n\n/* PDF Preview */\n.pdf-preview-container {\n  position: relative;\n  width: 100%;\n  max-width: 100%;\n  max-height: 350px; /* Adjust based on viewport */\n  overflow-y: auto; /* Enable vertical scrolling */\n  display: flex;\n  justify-content: flex-start; /* Ensures content starts from the top */\n  align-items: center;\n  background: white;\n  border-radius: 12px;\n  padding: 5px;\n  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);\n}\n\n/* Canvas - Ensure it scales properly */\ncanvas {\n  width: 100%;\n  height: auto;\n  max-width: 100%;\n  border-radius: 8px;\n  background: white;\n  display: block;\n}\n\n/* Remove Button */\n.remove-file-btn {\n  position: absolute;\n  top: 25px;\n  right: 5px;\n  background: red;\n  color: white;\n  border: none;\n  border-radius: 50%;\n  width: 20px; /* Smaller size */\n  height: 20px;\n  font-size: 12px; /* Smaller icon */\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  transition: all 0.2s ease-in-out;\n}\n\n/* Hover Effect */\n.remove-file-btn:hover {\n  background: darkred;\n}\n\n/* Error Message */\n.error-message {\n  color: red;\n  font-size: 14px;\n  margin-top: 5px;\n  text-align: center;\n  font-weight: bold;\n}\n\n/* Responsive Fix */\n@media (min-width: 1024px) {\n.pdf-preview-container {\n    max-height: 940px; /* Increase height for larger screens */\n}\n}\n@media (max-width: 768px) {\n.pdf-upload-placeholder{\n\t\ttext-align: center;\n}\n.remove-file-btn {\n\t\twidth: 18px; /* Even smaller for mobile */\n\t\theight: 18px;\n\t\tfont-size: 10px;\n\t\ttop: 3px;\n\t\tright: 3px;\n}\n}\n\n/* end etudiant pdf file*/\n\n/*  filiere step  */\n.filiere-container {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 15px;\n    justify-content: center;\n}\n.filiere-card {\n    position: relative;\n    width: 280px;\n    height: 180px;\n    background: #ffffff;\n    border-radius: 12px;\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;\n    overflow: hidden;\n    border: 2px solid transparent;\n    cursor: pointer;\n}\n.filiere-card:hover {\n    transform: scale(1.05);\n    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);\n    border: 2px solid #007bff;\n}\n.hidden-input {\n    display: none;\n}\n.filiere-content {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    height: 100%;\n    cursor: pointer;\n    text-align: center;\n    padding: 10px;\n}\n.filiere-title {\n    font-size: 18px;\n    font-weight: bold;\n    color: #007bff;\n}\n.filiere-name {\n    font-size: 14px;\n    color: #333;\n    margin-top: 5px;\n}\n\n/* Bouton Voir la description */\n.description-btn {\n    margin-top: 8px;\n    font-size: 14px;\n    font-weight: bold;\n    background: linear-gradient(135deg, #007bff, #0056b3);\n    color: white;\n    padding: 8px 12px;\n    border-radius: 20px;\n    border: none;\n    cursor: pointer;\n    transition: all 0.3s ease;\n    display: flex;\n    align-items: center;\n    gap: 8px;\n}\n.description-btn i {\n    font-size: 16px;\n}\n.description-btn:hover {\n    background: linear-gradient(135deg, #e0e2e3, #a7a7a7);\n    transform: scale(1.05);\n}\n\n/* Effet pour les cases cochées */\n.hidden-input:checked + .filiere-content,\n.filiere-card.selected {\n    background: #007bff;\n    color: white;\n    border: 2px solid #0056b3;\n}\n.hidden-input:checked + .filiere-content .filiere-title,\n.filiere-card.selected .filiere-title {\n    color: white;\n}\n.hidden-input:checked + .filiere-content .description-btn,\n.filiere-card.selected .description-btn {\n    background: #ffeeab;\n    color: #333;\n}\n.hidden-input:checked + .filiere-content .description-btn:hover,\n.filiere-card.selected .description-btn:hover {\n    background: #ffc107;\n}\n\n/* Icône de sélection */\n.selected-icon {\n    position: absolute;\n    top: 10px;\n    right: 10px;\n    background: #28a745;\n    color: white;\n    font-size: 14px;\n    font-weight: bold;\n    padding: 5px 10px;\n    border-radius: 20px;\n    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);\n}\n\n\n/* end filiere step  */\n\n\n\n/* --- confirmation step --- */\n.confirmation-container {\n    padding: 20px;\n    background: rgba(255, 255, 255, 0.1);\n    -webkit-backdrop-filter: blur(12px);\n            backdrop-filter: blur(12px);\n    border-radius: 16px;\n    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);\n    transition: all 0.3s ease-in-out;\n    max-width: 600px;\n    margin: auto;\n}\n\n/* --- Important Note --- */\n.confirmation-note {\n\ttext-align: center;\n    color: #d32f2f;\n    font-weight: bold;\n    font-size: 16px;\n    margin-bottom: 15px;\n}\n\n/* --- Checkbox Wrapper (Flex for Same Line) --- */\n.checkbox-wrapper {\n    display: flex;\n    align-items: center;\n    gap: 12px;\n    padding: 10px;\n    cursor: pointer;\n}\n\n/* --- Hide Default Checkbox --- */\n.hidden-checkbox {\n    display: none;\n}\n\n/* --- Custom Checkbox --- */\n.custom-checkbox {\n    width: 29px;\n    height: 24px;\n    border: 2px solid #4CAF50;\n    border-radius: 6px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: rgba(255, 255, 255, 0.2);\n    transition: all 0.3s ease-in-out;\n    cursor: pointer;\n    position: relative;\n    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);\n}\n\n/* --- Checkmark Icon (Now Appears When Checked) --- */\n.check-icon {\n    width: 16px;\n    height: 16px;\n    stroke: white;\n    stroke-width: 3;\n    fill: none;\n    stroke-linecap: round;\n    stroke-linejoin: round;\n    display: none; /* Initially Hidden */\n    transition: all 0.2s ease-in-out;\n}\n\n/* --- Checkbox Checked State (Fixed) --- */\n.hidden-checkbox:checked + .custom-checkbox {\n    background-color: #4CAF50;\n    border-color: #4CAF50;\n    box-shadow: 0px 0px 15px rgba(76, 175, 80, 0.6);\n}\n\n/* --- Ensure Checkmark Appears When Checked --- */\n.hidden-checkbox:checked + .custom-checkbox .check-icon {\n    display: block;\n}\n\n/* --- Checkbox Text (Aligned with Checkbox) --- */\n.checkbox-text {\n    font-size: 16px;\n    color: #333;\n    font-weight: 500;\n    transition: color 0.3s ease-in-out;\n    line-height: 1.4;\n}\n\n/* --- Responsive Design --- */\n@media (max-width: 768px) {\n.confirmation-container {\n        padding: 15px;\n        width: 90%;\n}\n.confirmation-note {\n        font-size: 14px;\n}\n.custom-checkbox {\n        width: 60px;\n        height: 22px;\n}\n.checkbox-text {\n        font-size: 14px;\n}\n}\n\n\n/* loader  */\n.loading-overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.85);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  color: #fff;\n  font-size: 18px;\n  z-index: 9999;\n  overflow: hidden;\n}\n\n/* Effet lumineux derrière le logo */\n.loader-logo-container {\n  position: relative;\n  background: linear-gradient(135deg, rgba(0, 123, 255, 0.4), rgba(0, 0, 0, 0.6)); /* Gradient for a modern feel */\n  padding: 20px;\n  border-radius: 15px; /* Rounded corners */\n  box-shadow: 0 0 30px rgba(0, 123, 255, 0.6); /* Soft glow around the container */\n  animation: logoGlow 3s infinite alternate ease-in-out;\n}\n\n/* Pulse animation for the logo container */\n@keyframes logoGlow {\n0% { box-shadow: 0 0 30px rgba(0, 123, 255, 0.6);\n}\n100% { box-shadow: 0 0 50px rgba(0, 123, 255, 1);\n}\n}\n.loader-logo {\n  width: 150px;\n  height: auto;\n  filter: drop-shadow(0 0 15px rgba(0, 123, 255, 0.8));\n  animation: pulse 2s infinite alternate ease-in-out;\n}\n\n/* Effet de pulsation du logo */\n@keyframes pulse {\n0% {\n    transform: scale(1);\n    filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.6));\n}\n100% {\n    transform: scale(1.05);\n    filter: drop-shadow(0 0 20px rgba(0, 123, 255, 1));\n}\n}\n\n/* Vague lumineuse en arrière-plan */\n.loader-glow {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  width: 200px;\n  height: 200px;\n  background: radial-gradient(circle, rgba(0, 123, 255, 0.4) 10%, transparent 60%);\n  border-radius: 50%;\n  transform: translate(-50%, -50%);\n  animation: glowwave 2.5s infinite alternate ease-in-out;\n  filter: blur(20px);\n}\n@keyframes glowwave {\n0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8;\n}\n100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.5;\n}\n}\n\n/* Spinner fluide */\n.spinner {\n  width: 60px;\n  height: 60px;\n  border: 4px solid rgba(255, 255, 255, 0.2);\n  border-top: 4px solid #007bff;\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n  margin-top: 20px;\n}\n@keyframes spin {\n0% { transform: rotate(0deg);\n}\n100% { transform: rotate(360deg);\n}\n}\n\n/* Texte statique et élégant */\n.loading-text {\n  font-size: 20px;\n  font-weight: bold;\n  margin-top: 15px;\n  color: rgba(255, 255, 255, 0.8);\n  text-shadow: 0 0 10px rgba(0, 123, 255, 0.6);\n  letter-spacing: 1px;\n}\n\n/* Particules dynamiques pour l'effet magique */\n.particles {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  pointer-events: none;\n  background: radial-gradient(circle, rgba(0, 123, 255, 0.2) 10%, transparent 70%);\n  animation: floating 3s infinite ease-in-out alternate;\n}\n@keyframes floating {\n0% { transform: translateY(0); opacity: 0.7;\n}\n100% { transform: translateY(-20px); opacity: 1;\n}\n}\n\n\n\n/*  success submit form  */\n.success-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 20px;\n}\n\n/* 🎨 Success Card */\n.success-card {\n  background: rgba(255, 255, 255, 0.95);\n  border-radius: 15px;\n  padding: 40px;\n  max-width: 600px;\n  width: 100%;\n  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);\n  text-align: center;\n  animation: fadeInUp 1s ease-out;\n}\n\n/* 🌟 Success Icon */\n.success-icon {\n  margin: 20px 0;\n}\n.glow {\n  filter: drop-shadow(0px 0px 15px #d4af37);\n  animation: glowEffect 1.5s infinite alternate;\n}\n\n/* 🏆 Title & Message */\n.success-title {\n  font-size: 26px;\n  color: #002147;\n  font-weight: bold;\n  margin-bottom: 10px;\n}\n.success-text {\n  font-size: 16px;\n  color: #333;\n  margin-bottom: 20px;\n}\n\n/* 📜 User Info */\n.success-info {\n  background: rgba(0, 33, 71, 0.1);\n  padding: 15px;\n  border-radius: 10px;\n  margin-bottom: 15px;\n  font-weight: 500;\n  color: #002147;\n}\n\n/* 🔑 Credentials */\n.success-credentials {\n  background: rgba(212, 175, 55, 0.1);\n  padding: 15px;\n  border-radius: 10px;\n  margin-bottom: 20px;\n  font-weight: bold;\n  color: #002147;\n  position: relative;\n}\n\n/* 🎭 Smart Password Box */\n.password-box {\n  display: inline-block;\n  padding: 4px 10px;\n  border-radius: 5px;\n  transition: all 0.3s ease-in-out;\n  font-weight: bold;\n  font-size: 16px;\n}\n\n/* Blur effect when hidden */\n.blurred {\n  color: transparent;\n  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);\n  background: rgba(0, 0, 0, 0.1);\n  padding: 4px 10px;\n  border-radius: 5px;\n}\n\n/* 🎛️ Password Toggle Button */\n.toggle-password {\n  background: none;\n  border: none;\n  font-size: 18px;\n  cursor: pointer;\n  margin-left: 0px;\n  transition: transform 0.2s ease-in-out;\n}\n.toggle-password:hover {\n  transform: scale(1.1);\n}\n\n\n/* 🎨 Stylish Button */\n.modern-button {\n  display: inline-block;\n  padding: 12px 20px;\n  background: linear-gradient(135deg, #d4af37, #ffcc5c);\n  color: #002147;\n  font-size: 16px;\n  font-weight: bold;\n  text-decoration: none;\n  border-radius: 12px;\n  transition: all 0.3s ease-in-out;\n  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);\n}\n.modern-button:hover {\n  transform: scale(1.05);\n  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.4);\n}\n\n/* 🔥 Animations */\n@keyframes glowEffect {\nfrom {\n    filter: drop-shadow(0px 0px 10px #d4af37);\n}\nto {\n    filter: drop-shadow(0px 0px 20px #d4af37);\n}\n}\n@keyframes fadeInUp {\nfrom {\n    opacity: 0;\n    transform: translateY(50px);\n}\nto {\n    opacity: 1;\n    transform: translateY(0);\n}\n}\n.modern-logo-box {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background: rgba(255, 255, 255, 0.9); /* Keep a subtle background */\n  padding: 10px; /* Smaller padding around the logo */\n  border-radius: 10px; /* Rounded corners for the background */\n  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for the background */\n  margin-bottom: 20px; /* Keep the margin below the logo */\n  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;\n}\n\n/* 🖼️ Logo Image */\n.modern-logo {\n  width: 120px; /* Adjust logo size */\n  height: auto;\n  filter: drop-shadow(2px 2px 8px rgba(0, 33, 71, 0.2)); /* Subtle shadow on the logo */\n}\n\n/* Logo Hover Effect */\n.modern-logo-box:hover {\n  transform: translateY(-5px);\n  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);\n}\n.password-tooltip {\n  position: absolute;\n  background: rgba(0, 33, 71, 0.9);\n  color: #fff;\n  padding: 6px 12px;\n  border-radius: 6px;\n  font-size: 14px;\n  top: 33px;\n  left: 85%;\n  transform: translateX(-50%);\n  white-space: nowrap;\n  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);\n}\n\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody {\n\tbackground: linear-gradient(135deg, #f0f8ff, #e6f7ff);\n\tfont-family: \"Roboto\", sans-serif;\n\tmargin: 0;\n\tpadding: 0;\n}\n.form-container {\n\tmax-width: 1000px !important;\n\tmargin: 2rem auto;\n\tbackground: #ffffff;\n\tborder-radius: 15px;\n\tbox-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);\n\toverflow: hidden;\n}\n.progress-bar-container {\n\theight: 8px;\n\tbackground: #ddd;\n\twidth: 100%;\n}\n.progress-bar {\n\theight: 8px;\n\tbackground: #007bff;\n\ttransition: width 0.3s ease-in-out;\n}\n.form-header {\n\ttext-align: center;\n\tbackground: #0056b3;\n\tcolor: white;\n\tpadding: 2rem;\n}\n.logo-container {\n\tbackground: white;\n\tborder-radius: 50%;\n\tpadding: 1rem;\n\tdisplay: inline-block;\n\tbox-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n}\n.form-logo {\n\twidth: 100px;\n}\n.form-title {\n\tfont-size: 2.5rem;\n\tfont-weight: bold;\n}\n.form-subtitle {\n\tfont-size: 1.1rem;\n\tcolor: #ccc;\n}\n.progress-steps {\n\t\tdisplay: flex;\n\t\tjustify-content: space-between;\n\t\talign-items: flex-start; /* Aligns circles and labels better */\n\t\tpadding: 2rem 1rem;\n\t\tbackground-color: #f9f9f9;\n\t\tborder-radius: 10px;\n\t\tgap: 2rem; /* Adds space between steps */\n}\n.step {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t\tposition: relative;\n\t\tflex-grow: 1;\n\t\tcursor: pointer; /* Makes steps clickable */\n\t\ttransition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n.step:hover {\n\t\ttransform: translateY(-5px); /* Subtle hover effect */\n\t\tbox-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Add shadow for hover */\n}\n.step-circle {\n\t\twidth: 50px;\n\t\theight: 50px;\n\t\tborder-radius: 50%;\n\t\tbackground-color: #ddd;\n\t\tmargin-bottom: 8px;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n\t\tfont-size: 1.4rem;\n\t\tfont-weight: bold;\n\t\tcolor: #666;\n\t\ttransition: all 0.4s ease;\n\t\tbox-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n}\n.step-icon {\n\t\ttransition: color 0.3s ease;\n}\n.step-label {\n\t\tfont-size: 1rem;\n\t\tfont-weight: bold;\n\t\tcolor: #555;\n\t\tmargin-top: 8px;\n\t\ttext-align: center; /* Center-align the text */\n\t\twhite-space: pre-line; /* Preserve line breaks */\n\t\tline-height: 1.4; /* Adjust line height for better spacing */\n}\n.step-line {\n\t\tdisplay: block; /* Ensure each line is a block */\n}\n.step.completed .step-circle {\n\t\tbackground-color: #28a745;\n}\n.step.active .step-circle {\n\t\tbackground-color: #007bff;\n\t\ttransform: scale(1.1);\n\t\ttransform: scale(1.2);\n\t\tbox-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);\n}\n.step:not(:last-child)::after {\n\t\tcontent: '';\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tright: 0;\n\t\twidth: 100%; /* Full width of the space between steps */\n\t\theight: 3px;\n\t\tbackground-color: #ddd;\n\t\tz-index: -1; /* Keep the line behind the circles */\n\t\ttransition: background-color 0.3s ease;\n}\n.step.completed:not(:last-child)::after {\n\t\tbackground-color: #28a745;\n}\n.step.active:not(:last-child)::after {\n\t\tbackground-color: #007bff;\n}\n.step.completed .step-icon {\n\t\tcolor: white;\n}\n.step.active .step-icon {\n\t\tcolor: white;\n}\n.step.completed::after {\n\t\tbackground-color: #28a745;\n}\n.step:hover .step-circle {\n\t\tbackground-color: #007bff;\n\t\ttransform: scale(1.1);\n}\n.step:hover .step-icon {\n\t\tcolor: white;\n}\n.step:hover .step-label {\n\t\tcolor: #007bff;\n}\n.progress-tooltip {\n\t\tdisplay: inline-block;\n\t\tfont-size: 0.85rem;\n\t\tfont-weight: 500;\n\t\tcolor: #fff;\n\t\tbackground: #007bff;\n\t\tborder-radius: 4px;\n\t\tpadding: 4px 8px;\n\t\tmargin-top: 25px;\n\t\tposition: absolute;\n\t\tleft: 50%;\n\t\ttransform: translateX(-50%);\n\t\topacity: 0;\n\t\tvisibility: hidden;\n\t\ttransition: opacity 0.3s ease, visibility 0.3s ease;\n\t\tbox-shadow: 0 2px 8px rgba(0, 123, 255, 0.4);\n}\n.step:hover .progress-tooltip {\n\t\topacity: 1;\n\t\tvisibility: visible;\n}\n.step.completed .step-icon,\n\t.step.active .step-icon {\n\t\tcolor: white;\n}\n.step-label:hover {\n\tcolor: #007bff; /* Highlight color */\n\ttransform: scale(1.05);\n}\n.step-label:hover .progress-tooltip {\n\topacity: 1;\n\tvisibility: visible;\n\tmargin-top: 12px;\n}\n.form-body {\n\tpadding: 2rem;\n}\n.section-title {\n\tfont-size: 1.5rem;\n\tmargin-bottom: 1rem;\n}\n.form-group {\n\tmargin-bottom: 1.5rem;\n}\ninput[type=\"text\"],\n\tinput[type=\"date\"],\n\tinput[type=\"number\"],\n\tselect,\n\ttextarea {\n\t\twidth: 100%;\n\t\tpadding: 0.8rem;\n\t\tborder: 1px solid #ddd;\n\t\tborder-radius: 8px;\n\t\tfont-size: 1rem;\n\t\tmargin-top: 0.5rem;\n\t\ttransition: border-color 0.3s ease;\n}\n\n\t/* Focus styles */\ninput[type=\"text\"]:focus,\n\tinput[type=\"date\"]:focus,\n\tinput[type=\"number\"]:focus,\n\tselect:focus,\n\ttextarea:focus {\n\t\tborder-color: #007bff;\n}\n.input-error {\n\tborder: 1px solid #e3342f !important;\n}\n.error-icon {\n\tcolor: #e3342f;\n\tfont-size: 0.8rem;\n}\n.form-actions {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tmargin-top: 1.5rem;\n}\nbutton {\n\tpadding: 0.8rem 2rem;\n\tfont-size: 1rem;\n\tborder-radius: 8px;\n\tborder: none;\n\tcursor: pointer;\n}\nbutton.btn-primary {\n\tbackground-color: #007bff;\n\tcolor: white;\n\ttransition: background-color 0.3s;\n}\nbutton.btn-primary:hover {\n\tbackground-color: #0056b3;\n}\nbutton.btn-secondary {\n\tbackground-color: #f0f0f0;\n\tcolor: #555;\n\ttransition: background-color 0.3s;\n}\nbutton.btn-secondary:hover {\n\tbackground-color: #ddd;\n}\n@media (max-width: 768px) {\n.form-container {\n    padding: 1rem;\n    margin: 1rem;\n}\n.progress-steps {\n    flex-direction: column;\n    gap: 1.5rem;\n}\n.step {\n    width: 100%;\n}\n.form-header {\n    padding: 1rem;\n}\n.form-title {\n    font-size: 2rem;\n}\n.form-subtitle {\n    font-size: 1rem;\n}\n.form-body {\n    padding: 1rem;\n}\n.section-title {\n    font-size: 1.25rem;\n}\nbutton {\n    width: 100%;\n    padding: 1rem;\n}\n}\n@media (max-width: 480px) {\n.form-logo {\n    width: 80px;\n}\n.form-title {\n    font-size: 1.75rem;\n}\n.form-subtitle {\n    font-size: 0.9rem;\n}\n.progress-tooltip {\n    font-size: 0.75rem;\n    padding: 4px 6px;\n\tposition: absolute;\n    top: 73%;\n}\n}\n\n\n\n/* Style for the form group */\n.form-group {\n  margin-bottom: 1.5rem;\n  position: relative;\n}\n\n\n/* Change border color when there is an error */\ninput[type=\"text\"].input-error {\n  border-color: #e74c3c; /* Red border for error */\n}\n\n/* Style for the error message */\n.error-message {\n  color: #e74c3c; /* Red color for error text */\n  font-size: 14px;\n  margin-top: 5px;\n  display: block;\n  font-weight: 600;\n  padding-left: 5px;\n}\n\n/* Add some styles for the input focus */\ninput[type=\"text\"]:focus {\n  outline: none;\n  border-color: #3498db; /* Blue border when focused */\n}\n\n/* Add some styling to the label */\nlabel {\n  font-size: 14px;\n  margin-bottom: 0px;\n  font-weight: 600;\n  color: #333;\n}\n\n\n/* Apply RTL to the entire form group */\n.form-group[dir=\"rtl\"] {\n  text-align: right !important;  /* Align text to the right */\n  direction: rtl !important;     /* Set the direction of the form group to RTL */\n}\n\n/* Apply RTL to Arabic labels */\n.form-group[dir=\"rtl\"] .rtl-label {\n  text-align: right !important;\n  direction: rtl !important;\n}\n\n/* Apply RTL to input fields within Arabic form groups */\n.form-group[dir=\"rtl\"] input {\n  text-align: right !important;  /* Align text to the right for RTL inputs */\n  direction: rtl !important;     /* Set input direction to RTL */\n}\n\n/* Apply RTL to error messages within Arabic form groups */\n.form-group[dir=\"rtl\"] .error-message {\n  text-align: right !important;\n  direction: rtl !important;\n}\n\n/* Ensure French inputs remain left-aligned (default behavior) */\ninput:not([dir=\"rtl\"]) {\n  text-align: left;\n  direction: ltr;\n}\n.close-icon {\n    position: absolute;\n    top: 50%;\n    right: 0.5rem;\n    transform: translateY(-50%);\n    width: 1.5rem;\n    height: 1.5rem;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background: linear-gradient(135deg, #ff6b6b, #ff4757);\n    border-radius: 50%;\n    cursor: pointer;\n    transition: transform 0.3s ease, box-shadow 0.3s ease;\n    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);\n}\n.close-icon span {\n    color: white;\n    font-size: 1.2rem;\n    font-weight: bold;\n    line-height: 1;\n}\n\n\n\n\n/* Fieldset Styling */\nfieldset {\n  border: 2px solid #0078d7;\n  border-radius: 15px;\n  padding: 25px 20px;\n  background: #f5f8fa;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n  margin-bottom: 30px;\n  position: relative;\n  overflow: hidden; /* Ensures cleaner clipping */\n}\n\n/* Legend Styling */\nlegend {\n  text-align: right;\n  font-size: 1.2rem;\n  font-weight: 600;\n  color: #ffffff;\n  background: #0078d7;\n  padding: 10px 20px;\n  border-radius: 8px;\n  text-transform: uppercase;\n  position: absolute;\n  top: -11px;\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n  white-space: nowrap; /* Prevents wrapping */\n}\n.legend1{\n\tleft: -571px !important;\n}\n.legend2{\n\tleft: -438px !important;\n}\n.legend3{\n\tleft: -644px !important;\n}\n.legend4{\n\tleft: -582px !important;\n}\n.legend5{\n\tleft: -630px;\n}\n\n/* Hover Effect on Fieldset */\nfieldset:hover {\n  border-color: #0056a6;\n  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);\n}\n\n/* Responsive Adjustments */\n@media (max-width: 768px) {\nlegend {\n    text-align: right;\n    font-size: 0.8rem;\n    font-weight: 600;\n    color: #ffffff;\n    background: #0078d7;\n    padding: 10px 20px;\n    border-radius: 8px;\n    text-transform: uppercase;\n    position: absolute;\n    top: -7px;\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n    white-space: nowrap;\n}\n.legend1{\n\tleft: -46px;\n}\n.legend2{\n\tleft: -110px !important;\n}\n.legend3{\n\tleft: -95px;\n}\n}\n\n\n\n/* Style de la notification */\n.notification {\n  position: fixed;\n  top: 20px;\n  right: 20px;\n  background: #007bff;\n  color: white;\n  padding: 15px;\n  border-radius: 8px;\n  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);\n  max-width: 320px;\n  font-size: 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  z-index: 1000;\n  animation: fadeIn 0.3s ease-in-out;\n}\n\n/* Style du texte dans la notification */\n.notification p {\n  margin: 0;\n  flex: 1;\n}\n\n/* Style du bouton */\n.notification button {\n  background: white;\n  color: #007bff;\n  border: none;\n  padding: 5px 10px;\n  border-radius: 5px;\n  cursor: pointer;\n  font-weight: bold;\n}\n.notification button:hover {\n  background: #f1f1f1;\n}\n\n/* Responsive design */\n@media (max-width: 768px) {\n.notification {\n    top: auto;\n    bottom: 20px;\n    right: 10px;\n    left: 10px;\n    width: auto;\n    max-width: none;\n    font-size: 13px;\n    padding: 12px;\n    flex-direction: column;\n    text-align: center;\n}\n.notification button {\n    margin-top: 5px;\n    width: 100%;\n}\n}\n\n/* Animation */\n@keyframes fadeIn {\nfrom {\n    opacity: 0;\n    transform: translateY(-10px);\n}\nto {\n    opacity: 1;\n    transform: translateY(0);\n}\n}\n\n\n\n\n/* Wrapper for the file input */\n.file-upload-wrapper {\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  text-align: left;\n  background-color: #f9f9f9;\n  border-radius: 12px;\n  padding: 20px;\n  border: 2px solid #ccc;\n  transition: all 0.3s ease-in-out;\n  box-sizing: border-box;\n  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);\n  background: linear-gradient(135deg, #f0f7ff, #c0d9e8);\n}\n\n/* Custom button for file upload */\n.file-upload-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 14px 28px;\n  background-color: #4CAF50;\n  color: white;\n  border-radius: 8px;\n  cursor: pointer;\n  font-size: 18px;\n  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;\n  width: 100%;\n  margin: 0;\n}\n.file-upload-btn:hover {\n  background-color: #45a049;\n  transform: scale(1.05);\n  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);\n}\n.file-upload-btn i {\n  margin-left: 8px;\n}\n\n/* Hidden native file input */\n.file-input {\n  display: none;\n}\n\n/* File Preview Section */\n.file-preview {\n  position: relative;\n  margin-top: 20px;\n  display: flex;\n  justify-content: center;\n  transition: all 0.3s ease-in-out;\n}\n\n/* Preview container with magic */\n.preview-container {\n  position: relative;\n  display: inline-block;\n  max-width: 100%;\n  margin-bottom: 10px;\n  border-radius: 15px;\n  overflow: hidden;\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);\n  transition: all 0.3s ease-in-out;\n}\n.preview-container:hover {\n  transform: scale(1.05) rotate(3deg);\n  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n.preview-img {\n  width: 100%;\n  height: auto;\n  max-height: 150px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 12px;\n  transition: transform 0.3s ease-in-out;\n}\n.preview-img:hover {\n  transform: scale(1.05);\n}\n\n/* Remove button for file preview */\n.remove-btn {\n  position: absolute;\n  top: 5px;\n  right: 5px;\n  background: rgba(255, 0, 0, 0.7);\n  color: white;\n  font-size: 18px;\n  border: none;\n  padding: 6px 12px;\n  border-radius: 50%;\n  cursor: pointer;\n  transition: background 0.3s ease, transform 0.3s ease;\n}\n.remove-btn:hover {\n  background: red;\n  transform: scale(1.1);\n}\n\n/* Label styling */\n.file-label {\n  font-size: 18px;\n  margin-bottom: 12px;\n  color: #333;\n  font-weight: 600;\n  display: block;\n  transition: color 0.3s ease;\n}\n\n/* Error Message Styling */\n.input-error {\n  border-color: #f44336;\n  background-color: #ffe6e6;\n}\n@keyframes glow {\n0% {\n    text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red, 0 0 40px red;\n}\n50% {\n    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 60px red;\n}\n100% {\n    text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red, 0 0 40px red;\n}\n}\n\n/* Responsive Styles */\n@media screen and (max-width: 768px) {\n.file-upload-btn {\n    font-size: 16px;\n    padding: 12px 24px;\n}\n.preview-img {\n    max-height: 120px;\n}\n.remove-btn{\n\twidth: 52% !important;\n}\n}\n@media screen and (max-width: 480px) {\n.file-upload-btn {\n    font-size: 14px;\n    padding: 10px 20px;\n}\n.file-label {\n    font-size: 16px;\n}\n.preview-img {\n    max-height: 100px;\n}\n}\n\n\n/* etudiant image file */\n/* Main container */\n.form-group.student-image-upload {\n    margin-top: 40px;\n    font-family: 'Roboto', sans-serif;\n    text-align: center;\n    padding: 30px;\n}\n\n/* Wrapper for the file upload button */\n.file-upload-wrapper-student {\n    position: relative;\n    display: inline-block;\n    cursor: pointer;\n    transition: transform 0.3s ease;\n}\n\n/* Circular file upload button with shadow */\n.file-upload-btn-student {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n    width: 280px;\n    height: 280px;\n    background: linear-gradient(135deg, #4CAF50, #4CAF50);\n    border-radius: 50%;\n    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);\n    position: relative;\n    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;\n}\n.file-upload-btn-student:hover {\n    transform: scale(1.05);\n    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);\n}\n\n/* Image container (circle) with hover zoom effect */\n.file-upload-image-student {\n    width: 180px;\n    height: 180px;\n    border-radius: 50%;\n    background-color: #f0f0f0;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    border: 4px solid #ffffff;\n    overflow: hidden;\n    transition: transform 0.3s ease;\n}\n.upload-img-student {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    transition: transform 0.3s ease;\n}\n\n/* Button text in the center */\n.upload-text-student {\n    font-size: 18px;\n    color: #ffffff;\n    font-weight: 500;\n    position: absolute;\n    bottom: 20px;\n    transition: opacity 0.3s ease-in-out;\n}\n\n/* Hover effect for image zoom */\n.file-upload-btn-student:hover .upload-img-student {\n    transform: scale(1.1);\n}\n\n/* Hover effect for text change */\n.file-upload-btn-student:hover .upload-text-student {\n    opacity: 1;\n}\n\n/* File input (hidden but accessible) */\ninput[type=\"file\"] {\n    opacity: 0;\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    cursor: pointer;\n    z-index: 2;\n}\n\n/* Error state */\n.input-error-student {\n    border: 2px solid #ff5722;\n    background-color: rgba(255, 87, 34, 0.1);\n}\n\n/* Image preview section */\n.file-upload-preview-student {\n    margin-top: 30px;\n    text-align: center;\n}\n\n/* Circular preview image with soft shadow */\n.preview-img-student {\n    width: 120px;\n    height: 120px;\n    -o-object-fit: cover;\n       object-fit: cover;\n    border-radius: 50%;\n    border: 4px solid #00bcd4;\n    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.2);\n    transition: transform 0.3s ease;\n}\n\n/* Hover effect for preview image */\n.preview-img-student:hover {\n    transform: scale(1.05);\n}\n\n/* Remove image button */\n.remove-btn-student {\n    background-color: #ff5722;\n    color: white;\n    border: none;\n    padding: 8px 16px;\n    border-radius: 8px;\n    font-size: 16px;\n    cursor: pointer;\n    transition: background-color 0.3s ease;\n}\n.remove-btn-student:hover {\n    background-color: #e64a19;\n}\n\n/* Responsive design */\n@media (max-width: 768px) {\n.file-upload-btn-student {\n        width: 220px;\n        height: 220px;\n}\n.file-upload-image-student {\n        width: 150px;\n        height: 150px;\n}\n.upload-text-student {\n        font-size: 16px;\n        bottom: 15px;\n}\n}\n@media (max-width: 480px) {\n.file-upload-btn-student {\n        width: 180px;\n        height: 180px;\n}\n.file-upload-image-student {\n        width: 120px;\n        height: 120px;\n}\n.upload-text-student {\n        font-size: 14px;\n        bottom: 10px;\n}\n}\n/* end etudiant image file*/\n\n\n/* start etudiant pdf file*/\n.pdf-upload-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  width: 100%;\n  height: auto;\n  min-height: 200px;\n  border: 2px dashed #4CAF50;\n  border-radius: 12px;\n  cursor: pointer;\n  background: rgba(255, 255, 255, 0.9);\n  transition: all 0.3s ease-in-out;\n  padding: 10px;\n}\n\n/* Hover effect */\n.pdf-upload-container:hover {\n  background: rgba(255, 255, 255, 1);\n  border-color: #4CAF50;\n}\n\n/* PDF Preview */\n.pdf-preview-container {\n  position: relative;\n  width: 100%;\n  max-width: 100%;\n  max-height: 350px; /* Adjust based on viewport */\n  overflow-y: auto; /* Enable vertical scrolling */\n  display: flex;\n  justify-content: flex-start; /* Ensures content starts from the top */\n  align-items: center;\n  background: white;\n  border-radius: 12px;\n  padding: 5px;\n  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);\n}\n\n/* Canvas - Ensure it scales properly */\ncanvas {\n  width: 100%;\n  height: auto;\n  max-width: 100%;\n  border-radius: 8px;\n  background: white;\n  display: block;\n}\n\n/* Remove Button */\n.remove-file-btn {\n  position: absolute;\n  top: 25px;\n  right: 5px;\n  background: red;\n  color: white;\n  border: none;\n  border-radius: 50%;\n  width: 20px; /* Smaller size */\n  height: 20px;\n  font-size: 12px; /* Smaller icon */\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  transition: all 0.2s ease-in-out;\n}\n\n/* Hover Effect */\n.remove-file-btn:hover {\n  background: darkred;\n}\n\n/* Error Message */\n.error-message {\n  color: red;\n  font-size: 14px;\n  margin-top: 5px;\n  text-align: center;\n  font-weight: bold;\n}\n\n/* Responsive Fix */\n@media (min-width: 1024px) {\n.pdf-preview-container {\n    max-height: 940px; /* Increase height for larger screens */\n}\n}\n@media (max-width: 768px) {\n.pdf-upload-placeholder{\n\t\ttext-align: center;\n}\n.remove-file-btn {\n\t\twidth: 18px; /* Even smaller for mobile */\n\t\theight: 18px;\n\t\tfont-size: 10px;\n\t\ttop: 3px;\n\t\tright: 3px;\n}\n}\n\n/* end etudiant pdf file*/\n\n/*  filiere step  */\n.filiere-container {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 15px;\n    justify-content: center;\n}\n.filiere-card {\n    position: relative;\n    width: 280px;\n    height: 180px;\n    background: #ffffff;\n    border-radius: 12px;\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;\n    overflow: hidden;\n    border: 2px solid transparent;\n    cursor: pointer;\n}\n.filiere-card:hover {\n    transform: scale(1.05);\n    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);\n    border: 2px solid #007bff;\n}\n.hidden-input {\n    display: none;\n}\n.filiere-content {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    height: 100%;\n    cursor: pointer;\n    text-align: center;\n    padding: 10px;\n}\n.filiere-title {\n    font-size: 18px;\n    font-weight: bold;\n    color: #007bff;\n}\n.filiere-name {\n    font-size: 14px;\n    color: #333;\n    margin-top: 5px;\n}\n\n/* Bouton Voir la description */\n.description-btn {\n    margin-top: 8px;\n    font-size: 14px;\n    font-weight: bold;\n    background: linear-gradient(135deg, #007bff, #0056b3);\n    color: white;\n    padding: 8px 12px;\n    border-radius: 20px;\n    border: none;\n    cursor: pointer;\n    transition: all 0.3s ease;\n    display: flex;\n    align-items: center;\n    gap: 8px;\n}\n.description-btn i {\n    font-size: 16px;\n}\n.description-btn:hover {\n    background: linear-gradient(135deg, #e0e2e3, #a7a7a7);\n    transform: scale(1.05);\n}\n\n/* Effet pour les cases cochées */\n.hidden-input:checked + .filiere-content,\n.filiere-card.selected {\n    background: #007bff;\n    color: white;\n    border: 2px solid #0056b3;\n}\n.hidden-input:checked + .filiere-content .filiere-title,\n.filiere-card.selected .filiere-title {\n    color: white;\n}\n.hidden-input:checked + .filiere-content .description-btn,\n.filiere-card.selected .description-btn {\n    background: #ffeeab;\n    color: #333;\n}\n.hidden-input:checked + .filiere-content .description-btn:hover,\n.filiere-card.selected .description-btn:hover {\n    background: #ffc107;\n}\n\n/* Icône de sélection */\n.selected-icon {\n    position: absolute;\n    top: 10px;\n    right: 10px;\n    background: #28a745;\n    color: white;\n    font-size: 14px;\n    font-weight: bold;\n    padding: 5px 10px;\n    border-radius: 20px;\n    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);\n}\n\n\n/* end filiere step  */\n\n\n\n/* --- confirmation step --- */\n.confirmation-container {\n    padding: 20px;\n    background: rgba(255, 255, 255, 0.1);\n    -webkit-backdrop-filter: blur(12px);\n            backdrop-filter: blur(12px);\n    border-radius: 16px;\n    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);\n    transition: all 0.3s ease-in-out;\n    max-width: 600px;\n    margin: auto;\n}\n\n/* --- Important Note --- */\n.confirmation-note {\n\ttext-align: center;\n    color: #d32f2f;\n    font-weight: bold;\n    font-size: 16px;\n    margin-bottom: 15px;\n}\n\n/* --- Checkbox Wrapper (Flex for Same Line) --- */\n.checkbox-wrapper {\n    display: flex;\n    align-items: center;\n    gap: 12px;\n    padding: 10px;\n    cursor: pointer;\n}\n\n/* --- Hide Default Checkbox --- */\n.hidden-checkbox {\n    display: none;\n}\n\n/* --- Custom Checkbox --- */\n.custom-checkbox {\n    width: 29px;\n    height: 24px;\n    border: 2px solid #4CAF50;\n    border-radius: 6px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: rgba(255, 255, 255, 0.2);\n    transition: all 0.3s ease-in-out;\n    cursor: pointer;\n    position: relative;\n    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);\n}\n\n/* --- Checkmark Icon (Now Appears When Checked) --- */\n.check-icon {\n    width: 16px;\n    height: 16px;\n    stroke: white;\n    stroke-width: 3;\n    fill: none;\n    stroke-linecap: round;\n    stroke-linejoin: round;\n    display: none; /* Initially Hidden */\n    transition: all 0.2s ease-in-out;\n}\n\n/* --- Checkbox Checked State (Fixed) --- */\n.hidden-checkbox:checked + .custom-checkbox {\n    background-color: #4CAF50;\n    border-color: #4CAF50;\n    box-shadow: 0px 0px 15px rgba(76, 175, 80, 0.6);\n}\n\n/* --- Ensure Checkmark Appears When Checked --- */\n.hidden-checkbox:checked + .custom-checkbox .check-icon {\n    display: block;\n}\n\n/* --- Checkbox Text (Aligned with Checkbox) --- */\n.checkbox-text {\n    font-size: 16px;\n    color: #333;\n    font-weight: 500;\n    transition: color 0.3s ease-in-out;\n    line-height: 1.4;\n}\n\n/* --- Responsive Design --- */\n@media (max-width: 768px) {\n.confirmation-container {\n        padding: 15px;\n        width: 90%;\n}\n.confirmation-note {\n        font-size: 14px;\n}\n.custom-checkbox {\n        width: 60px;\n        height: 22px;\n}\n.checkbox-text {\n        font-size: 14px;\n}\n}\n\n\n/* loader  */\n.loading-overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.85);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  color: #fff;\n  font-size: 18px;\n  z-index: 9999;\n  overflow: hidden;\n}\n\n/* Effet lumineux derrière le logo */\n.loader-logo-container {\n  position: relative;\n  background: linear-gradient(135deg, rgba(0, 123, 255, 0.4), rgba(0, 0, 0, 0.6)); /* Gradient for a modern feel */\n  padding: 20px;\n  border-radius: 15px; /* Rounded corners */\n  box-shadow: 0 0 30px rgba(0, 123, 255, 0.6); /* Soft glow around the container */\n  animation: logoGlow 3s infinite alternate ease-in-out;\n}\n\n/* Pulse animation for the logo container */\n@keyframes logoGlow {\n0% { box-shadow: 0 0 30px rgba(0, 123, 255, 0.6);\n}\n100% { box-shadow: 0 0 50px rgba(0, 123, 255, 1);\n}\n}\n.loader-logo {\n  width: 150px;\n  height: auto;\n  filter: drop-shadow(0 0 15px rgba(0, 123, 255, 0.8));\n  animation: pulse 2s infinite alternate ease-in-out;\n}\n\n/* Effet de pulsation du logo */\n@keyframes pulse {\n0% {\n    transform: scale(1);\n    filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.6));\n}\n100% {\n    transform: scale(1.05);\n    filter: drop-shadow(0 0 20px rgba(0, 123, 255, 1));\n}\n}\n\n/* Vague lumineuse en arrière-plan */\n.loader-glow {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  width: 200px;\n  height: 200px;\n  background: radial-gradient(circle, rgba(0, 123, 255, 0.4) 10%, transparent 60%);\n  border-radius: 50%;\n  transform: translate(-50%, -50%);\n  animation: glowwave 2.5s infinite alternate ease-in-out;\n  filter: blur(20px);\n}\n@keyframes glowwave {\n0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8;\n}\n100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.5;\n}\n}\n\n/* Spinner fluide */\n.spinner {\n  width: 60px;\n  height: 60px;\n  border: 4px solid rgba(255, 255, 255, 0.2);\n  border-top: 4px solid #007bff;\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n  margin-top: 20px;\n}\n@keyframes spin {\n0% { transform: rotate(0deg);\n}\n100% { transform: rotate(360deg);\n}\n}\n\n/* Texte statique et élégant */\n.loading-text {\n  font-size: 20px;\n  font-weight: bold;\n  margin-top: 15px;\n  color: rgba(255, 255, 255, 0.8);\n  text-shadow: 0 0 10px rgba(0, 123, 255, 0.6);\n  letter-spacing: 1px;\n}\n\n/* Particules dynamiques pour l'effet magique */\n.particles {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  pointer-events: none;\n  background: radial-gradient(circle, rgba(0, 123, 255, 0.2) 10%, transparent 70%);\n  animation: floating 3s infinite ease-in-out alternate;\n}\n@keyframes floating {\n0% { transform: translateY(0); opacity: 0.7;\n}\n100% { transform: translateY(-20px); opacity: 1;\n}\n}\n\n\n\n/*  success submit form  */\n.success-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 20px;\n}\n\n/* 🎨 Success Card */\n.success-card {\n  background: rgba(255, 255, 255, 0.95);\n  border-radius: 15px;\n  padding: 40px;\n  max-width: 600px;\n  width: 100%;\n  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);\n  text-align: center;\n  animation: fadeInUp 1s ease-out;\n}\n\n/* 🌟 Success Icon */\n.success-icon {\n  margin: 20px 0;\n}\n.glow {\n  filter: drop-shadow(0px 0px 15px #d4af37);\n  animation: glowEffect 1.5s infinite alternate;\n}\n\n/* 🏆 Title & Message */\n.success-title {\n  font-size: 26px;\n  color: #002147;\n  font-weight: bold;\n  margin-bottom: 10px;\n}\n.success-text {\n  font-size: 16px;\n  color: #333;\n  margin-bottom: 20px;\n}\n\n/* 📜 User Info */\n.success-info {\n  background: rgba(0, 33, 71, 0.1);\n  padding: 15px;\n  border-radius: 10px;\n  margin-bottom: 15px;\n  font-weight: 500;\n  color: #002147;\n}\n\n/* 🔑 Credentials */\n.success-credentials {\n  background: rgba(212, 175, 55, 0.1);\n  padding: 15px;\n  border-radius: 10px;\n  margin-bottom: 20px;\n  font-weight: bold;\n  color: #002147;\n  position: relative;\n}\n\n/* 🎭 Smart Password Box */\n.password-box {\n  display: inline-block;\n  padding: 4px 10px;\n  border-radius: 5px;\n  transition: all 0.3s ease-in-out;\n  font-weight: bold;\n  font-size: 16px;\n}\n\n/* Blur effect when hidden */\n.blurred {\n  color: transparent;\n  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);\n  background: rgba(0, 0, 0, 0.1);\n  padding: 4px 10px;\n  border-radius: 5px;\n}\n\n/* 🎛️ Password Toggle Button */\n.toggle-password {\n  background: none;\n  border: none;\n  font-size: 18px;\n  cursor: pointer;\n  margin-left: 0px;\n  transition: transform 0.2s ease-in-out;\n}\n.toggle-password:hover {\n  transform: scale(1.1);\n}\n\n\n/* 🎨 Stylish Button */\n.modern-button {\n  display: inline-block;\n  padding: 12px 20px;\n  background: linear-gradient(135deg, #d4af37, #ffcc5c);\n  color: #002147;\n  font-size: 16px;\n  font-weight: bold;\n  text-decoration: none;\n  border-radius: 12px;\n  transition: all 0.3s ease-in-out;\n  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);\n}\n.modern-button:hover {\n  transform: scale(1.05);\n  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.4);\n}\n\n/* 🔥 Animations */\n@keyframes glowEffect {\nfrom {\n    filter: drop-shadow(0px 0px 10px #d4af37);\n}\nto {\n    filter: drop-shadow(0px 0px 20px #d4af37);\n}\n}\n@keyframes fadeInUp {\nfrom {\n    opacity: 0;\n    transform: translateY(50px);\n}\nto {\n    opacity: 1;\n    transform: translateY(0);\n}\n}\n.modern-logo-box {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background: rgba(255, 255, 255, 0.9); /* Keep a subtle background */\n  padding: 10px; /* Smaller padding around the logo */\n  border-radius: 10px; /* Rounded corners for the background */\n  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for the background */\n  margin-bottom: 20px; /* Keep the margin below the logo */\n  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;\n}\n\n/* 🖼️ Logo Image */\n.modern-logo {\n  width: 120px; /* Adjust logo size */\n  height: auto;\n  filter: drop-shadow(2px 2px 8px rgba(0, 33, 71, 0.2)); /* Subtle shadow on the logo */\n}\n\n/* Logo Hover Effect */\n.modern-logo-box:hover {\n  transform: translateY(-5px);\n  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);\n}\n.password-tooltip {\n  position: absolute;\n  background: rgba(0, 33, 71, 0.9);\n  color: #fff;\n  padding: 6px 12px;\n  border-radius: 6px;\n  font-size: 14px;\n  top: 33px;\n  left: 85%;\n  transform: translateX(-50%);\n  white-space: nowrap;\n  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);\n}\n\n\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -31241,6 +30781,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-8.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-8.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsBachelier.vue?vue&type=style&index=0&id=5558ae93&lang=css":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-8.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-8.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsBachelier.vue?vue&type=style&index=0&id=5558ae93&lang=css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_8_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_8_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_FormStepsBachelier_vue_vue_type_style_index_0_id_5558ae93_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-8.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-8.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./FormStepsBachelier.vue?vue&type=style&index=0&id=5558ae93&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-8.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-8.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsBachelier.vue?vue&type=style&index=0&id=5558ae93&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_8_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_8_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_FormStepsBachelier_vue_vue_type_style_index_0_id_5558ae93_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_8_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_8_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_FormStepsBachelier_vue_vue_type_style_index_0_id_5558ae93_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-8.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-8.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsExcellence.vue?vue&type=style&index=0&id=7e511e68&lang=css":
 /*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-8.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-8.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsExcellence.vue?vue&type=style&index=0&id=7e511e68&lang=css ***!
@@ -31726,6 +31296,37 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/components/FormStepsBachelier.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/components/FormStepsBachelier.vue ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _FormStepsBachelier_vue_vue_type_template_id_5558ae93__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormStepsBachelier.vue?vue&type=template&id=5558ae93 */ "./resources/js/components/FormStepsBachelier.vue?vue&type=template&id=5558ae93");
+/* harmony import */ var _FormStepsBachelier_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormStepsBachelier.vue?vue&type=script&lang=js */ "./resources/js/components/FormStepsBachelier.vue?vue&type=script&lang=js");
+/* harmony import */ var _FormStepsBachelier_vue_vue_type_style_index_0_id_5558ae93_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormStepsBachelier.vue?vue&type=style&index=0&id=5558ae93&lang=css */ "./resources/js/components/FormStepsBachelier.vue?vue&type=style&index=0&id=5558ae93&lang=css");
+/* harmony import */ var _node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+
+
+const __exports__ = /*#__PURE__*/(0,_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_FormStepsBachelier_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_FormStepsBachelier_vue_vue_type_template_id_5558ae93__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/FormStepsBachelier.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/components/FormStepsExcellence.vue":
 /*!*********************************************************!*\
   !*** ./resources/js/components/FormStepsExcellence.vue ***!
@@ -31852,6 +31453,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/FormStepsBachelier.vue?vue&type=script&lang=js":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/FormStepsBachelier.vue?vue&type=script&lang=js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_FormStepsBachelier_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_FormStepsBachelier_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./FormStepsBachelier.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsBachelier.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/components/FormStepsExcellence.vue?vue&type=script&lang=js":
 /*!*********************************************************************************!*\
   !*** ./resources/js/components/FormStepsExcellence.vue?vue&type=script&lang=js ***!
@@ -31948,6 +31565,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/FormStepsBachelier.vue?vue&type=template&id=5558ae93":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/FormStepsBachelier.vue?vue&type=template&id=5558ae93 ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_FormStepsBachelier_vue_vue_type_template_id_5558ae93__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_FormStepsBachelier_vue_vue_type_template_id_5558ae93__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./FormStepsBachelier.vue?vue&type=template&id=5558ae93 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsBachelier.vue?vue&type=template&id=5558ae93");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/FormStepsExcellence.vue?vue&type=template&id=7e511e68":
 /*!***************************************************************************************!*\
   !*** ./resources/js/components/FormStepsExcellence.vue?vue&type=template&id=7e511e68 ***!
@@ -32028,6 +31661,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_8_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_8_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_FormStepsBacAcceOuvert_vue_vue_type_style_index_0_id_151b9a87_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-8.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-8.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./FormStepsBacAcceOuvert.vue?vue&type=style&index=0&id=151b9a87&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-8.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-8.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsBacAcceOuvert.vue?vue&type=style&index=0&id=151b9a87&lang=css");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/FormStepsBachelier.vue?vue&type=style&index=0&id=5558ae93&lang=css":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/components/FormStepsBachelier.vue?vue&type=style&index=0&id=5558ae93&lang=css ***!
+  \****************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_8_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_8_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_FormStepsBachelier_vue_vue_type_style_index_0_id_5558ae93_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-8.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-8.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./FormStepsBachelier.vue?vue&type=style&index=0&id=5558ae93&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-8.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-8.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/FormStepsBachelier.vue?vue&type=style&index=0&id=5558ae93&lang=css");
 
 
 /***/ }),
@@ -43592,7 +43238,7 @@ async function node_utils_fetchData(url) {
 class NodeFilterFactory extends BaseFilterFactory {}
 class NodeCanvasFactory extends BaseCanvasFactory {
   _createCanvas(width, height) {
-    const require = process.getBuiltinModule("module").createRequire("file:///C:/laragon/www/pre-inscription-formation-continue/node_modules/pdfjs-dist/build/pdf.mjs");
+    const require = process.getBuiltinModule("module").createRequire("file:///C:/laragon/www/pre-inscription-temps-amenage/node_modules/pdfjs-dist/build/pdf.mjs");
     const canvas = require("@napi-rs/canvas");
     return canvas.createCanvas(width, height);
   }
@@ -58945,10 +58591,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _components_FormStepsMaster_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/FormStepsMaster.vue */ "./resources/js/components/FormStepsMaster.vue");
 /* harmony import */ var _components_FormStepsExcellence_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/FormStepsExcellence.vue */ "./resources/js/components/FormStepsExcellence.vue");
-/* harmony import */ var _components_FormStepsBacAcceOuvert_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/FormStepsBacAcceOuvert.vue */ "./resources/js/components/FormStepsBacAcceOuvert.vue");
-/* harmony import */ var _components_FormQuick_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/FormQuick.vue */ "./resources/js/components/FormQuick.vue");
-/* harmony import */ var _components_FormFiliereChoisen_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/FormFiliereChoisen.vue */ "./resources/js/components/FormFiliereChoisen.vue");
-/* harmony import */ var _components_ErrorPopup_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/ErrorPopup.vue */ "./resources/js/components/ErrorPopup.vue");
+/* harmony import */ var _components_FormStepsBachelier_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/FormStepsBachelier.vue */ "./resources/js/components/FormStepsBachelier.vue");
+/* harmony import */ var _components_FormStepsBacAcceOuvert_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/FormStepsBacAcceOuvert.vue */ "./resources/js/components/FormStepsBacAcceOuvert.vue");
+/* harmony import */ var _components_FormQuick_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/FormQuick.vue */ "./resources/js/components/FormQuick.vue");
+/* harmony import */ var _components_FormFiliereChoisen_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/FormFiliereChoisen.vue */ "./resources/js/components/FormFiliereChoisen.vue");
+/* harmony import */ var _components_ErrorPopup_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/ErrorPopup.vue */ "./resources/js/components/ErrorPopup.vue");
+
 
 
 
@@ -58961,10 +58609,11 @@ var app = (0,vue__WEBPACK_IMPORTED_MODULE_1__.createApp)({
   components: {
     Formstepsmaster: _components_FormStepsMaster_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     Formstepsexcellence: _components_FormStepsExcellence_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    Formstepsbacacceouvert: _components_FormStepsBacAcceOuvert_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    Formquick: _components_FormQuick_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-    Formfilierechoisen: _components_FormFiliereChoisen_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
-    ErrorPopup: _components_ErrorPopup_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
+    Formstepsbachelier: _components_FormStepsBachelier_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    Formstepsbacacceouvert: _components_FormStepsBacAcceOuvert_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    Formquick: _components_FormQuick_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+    Formfilierechoisen: _components_FormFiliereChoisen_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
+    ErrorPopup: _components_ErrorPopup_vue__WEBPACK_IMPORTED_MODULE_8__["default"]
   }
 });
 app.mount('#app');

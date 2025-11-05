@@ -23,7 +23,10 @@
           <a href="{{route('sup-admin.serie_bac.index')}}" class="nav-link"><i data-feather="layers"></i><span>Diplomes du baccalaureat</span></a>
         </li>
         <li class="dropdown {{ Route::currentRouteNamed('sup-admin.diplomebacplusdeux.index') ? 'active' : '' }}">
-          <a href="{{route('sup-admin.diplomebacplusdeux.index')}}" class="nav-link"><i data-feather="layers"></i><span>Diplomes du Bac+2</span></a>
+          <a href="{{route('sup-admin.diplomebacplusdeux.index')}}" class="nav-link"><i data-feather="book-open"></i><span>Diplomes du Bac+2</span></a>
+        </li>
+        <li class="dropdown {{ Route::currentRouteNamed('sup-admin.calendrier.index') ? 'active' : '' }}">
+          <a href="{{route('sup-admin.calendrier.index')}}" class="nav-link"><i data-feather="calendar"></i><span>Calendrier</span></a>
         </li>
 
       </ul>

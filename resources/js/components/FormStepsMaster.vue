@@ -21,7 +21,7 @@
 		<div class="logo-container">
 		  <img src="/form/images/uh1-vertical.png" alt="University Logo" class="form-logo" />
 		</div>
-		<h1 class="form-title">Préinscription Universitaire</h1>
+		<h1 class="form-title">Préinscription Master</h1>
 		<p class="form-subtitle">Remplissez les étapes ci-dessous pour finaliser votre inscription</p>
 	  </div>
 
@@ -72,8 +72,6 @@
 						:class="{ 'input-error': errors.CNE }"
 						@input="validateStep('CNE')"
 						@focus="currentField = 'CNE'"
-						readonly
-						disabled
 					/>
 					<span v-if="errors.CNE" class="error-icon" >✖ {{ errors.CNE }}</span>
 				</div>
@@ -87,8 +85,6 @@
 						:class="{ 'input-error': errors.CIN }"
 						@input="validateStep('CIN')"
 						@focus="currentField = 'CIN'"
-						readonly
-						disabled
 					/>
 					<span v-if="errors.CIN" class="error-icon" >✖ {{ errors.CIN }}</span>
 				</div>
@@ -120,8 +116,10 @@
 					/>
 					<span v-if="errors.prenom" class="error-icon" >✖ {{ errors.prenom }}</span>
 				</div>
-				<div class="form-group" dir="rtl">
-					<!-- Apply RTL to the entire form group for Arabic fields -->
+
+			<!-- 
+
+			    <div class="form-group" dir="rtl">
 					<label for="الاسم العائلي" class="rtl-label">الاسم العائلي</label>
 					<input
 						type="text"
@@ -137,7 +135,6 @@
 					</span>
 				</div>
 				<div class="form-group" dir="rtl">
-					<!-- Apply RTL to the entire form group for Arabic fields -->
 					<label for="الاسم الشخصي" class="rtl-label"> الاسم الشخصي</label>
 					<input
 						type="text"
@@ -210,7 +207,6 @@
 					<span v-if="errors.villenais" class="error-icon" >✖ {{ errors.villenais }}</span>
 				</div>
 				<div class="form-group" dir="rtl">
-					<!-- Apply RTL to the entire form group for Arabic fields -->
 					<label for="مكان الازدياد" class="rtl-label">مكان الازدياد</label>
 					<input
 						type="text"
@@ -237,7 +233,8 @@
 						rows="4"
 					></textarea>
 					<span v-if="errors.adresse" class="error-icon">✖ {{ errors.adresse }}</span>
-				</div>
+				</div> 
+			-->
 
 				<div class="form-group" dir="ltr">
 					<label for="email" >Email</label>
@@ -315,157 +312,142 @@
                     <!-- Message d'erreur -->
                     <span v-if="errors.serie" class="error-icon">✖ {{ errors.serie }}</span>
                 </div>
-
-				<div class="form-group" dir="ltr">
-					<label for="Date BAC" >Date D'obtention du BAC</label>
-					<input
-						type="date"
-						id="Date BAC"
-						v-model="etudiant.Anneebac"
-						:class="{ 'input-error': errors.Anneebac }"
-						@input="validateStep('Anneebac')"
-						@focus="currentField = 'Anneebac'"
-
-					/>
-					<span v-if="errors.Anneebac" class="error-icon" >✖ {{ errors.Anneebac }}</span>
-				</div>
-
 			</fieldset>
 			<fieldset>
-				<legend class="legend2">Information du Diplome</legend>
+				<legend class="legend3">Information du Licence</legend>
 				<div class="form-group" style="margin-top: 20px;" dir="ltr">
-					<label for="dernier_diplome_obtenu">Dernier Diplome Obtenu</label>
+					<label for="typelicence">Type de licence</label>
+	
+					<!-- Select Dropdown -->
 					<select
-						id="dernier_diplome_obtenu"
-						v-model="etudiant.dernier_diplome_obtenu"
-						:class="{ 'input-error': errors.dernier_diplome_obtenu }"
-						@change="validateStep('dernier_diplome_obtenu')"
-						@focus="currentField = 'dernier_diplome_obtenu'"
+						v-if="!showInputTypeLicence"
+						id="typelicence"
+						v-model="etudiant.typelicence"
+						:class="{ 'input-error': errors.typelicence }"
+						@change="handleLicenceChange"
+						@focus="currentField = 'typelicence'"
 					>
-						<option value="" disabled>Choisir</option>
-						<option value="BAC+3" >Bac+3</option>
-						<option value="BAC+4" >Bac+4</option>
-						<option value="BAC+5" >Bac+5</option>
+						<option value="" disabled>Type de licence</option>
+						<option value="Licence Professionnelle (LP)">Licence Professionnelle (LP)</option>
+						<option value="Licence Fondamentale (LF)">Licence Fondamentale (LF)</option>
+						<option value="Licence Tout Cours">Licence</option>
+						<option value="AUTRES">AUTRES</option>
 					</select>
-					<span v-if="errors.dernier_diplome_obtenu" class="error-icon">✖ {{ errors.dernier_diplome_obtenu }}</span>
+	
+					<!-- Input Field with Modern Cancel Button -->
+					<div v-else style="position: relative;">
+						<input
+						type="text"
+						id="typelicence"
+						v-model="etudiant.typelicence"
+						placeholder="Taper votre type de licence"
+						:class="{ 'input-error': errors.typelicence }"
+						@input="validateStep('typelicence')"
+						@focus="currentField = 'typelicence'"
+						style="padding-right: 3rem;"
+						/>
+						<div
+						class="close-icon"
+						@click="cancelInput"
+						title="Annuler"
+						>
+						<span>×</span>
+						</div>
+					</div>
+	
+					<!-- Error Message -->
+					<span v-if="errors.typelicence" class="error-icon">✖ {{ errors.typelicence }}</span>
 				</div>
-                <div class="form-group" dir="ltr">
-                    <label for="type_diplome_obtenu">Type de Diplôme Obtenu</label>
-
-                    <!-- Select -->
-                    <select
-                        v-if="!showInputTypeDiplome"
-                        id="type_diplome_obtenu"
-                        v-model="etudiant.type_diplome_obtenu"
-                        :class="{ 'input-error': errors.type_diplome_obtenu }"
-                        @change="handleDiplomeChange"
-                        @focus="currentField = 'type_diplome_obtenu'"
-                    >
-                        <option value="" disabled>Choisir</option>
-                        <option value="PUBLIC">Public</option>
-                        <option value="PRIVEE">Privée</option>
-                        <option value="AUTRES">AUTRES</option>
-                    </select>
-
-                    <!-- Input avec bouton annuler -->
-                    <div v-else style="position: relative;">
-                        <input
-                            type="text"
-                            id="type_diplome_obtenu"
-                            v-model="etudiant.type_diplome_obtenu"
-                            placeholder="Taper le type de diplôme"
-                            :class="{ 'input-error': errors.type_diplome_obtenu }"
-                            @input="validateStep('type_diplome_obtenu')"
-                            @focus="currentField = 'type_diplome_obtenu'"
-                            style="padding-right: 3rem;"
-                        />
-                        <div
-                            class="close-icon"
-                            @click="cancelInputDiplome"
-                            title="Annuler"
-                        >
-                            <span>×</span>
-                        </div>
-                    </div>
-
-                    <!-- Message d'erreur -->
-                    <span v-if="errors.type_diplome_obtenu" class="error-icon">✖ {{ errors.type_diplome_obtenu }}</span>
-                </div>
-
-				 <div class="form-group" dir="ltr">
-					<label for="specialitediplome" >Spécialité du Diplome</label>
-					<input
-						type="text"
-						id="specialitediplome"
-						v-model="etudiant.specialitediplome"
-						placeholder="Entrez le spécialité du Diplome"
-						:class="{ 'input-error': errors.specialitediplome }"
-						@input="validateStep('specialitediplome')"
-						@focus="currentField = 'specialitediplome'"
-
-					/>
-					<span v-if="errors.specialitediplome" class="error-icon" >✖ {{ errors.specialitediplome }}</span>
-				</div>
-				<!-- <div class="form-group" dir="ltr">
-					<label for="etblsmtdeug" >Etablissement</label>
-					<input
-						type="text"
-						id="etblsmtdeug"
-						v-model="etudiant.etblsmtdeug"
-						placeholder="Entrez l'établissement"
-						:class="{ 'input-error': errors.etblsmtdeug }"
-						@input="validateStep('etblsmtdeug')"
-						@focus="currentField = 'etblsmtdeug'"
-
-					/>
-					<span v-if="errors.etblsmtdeug" class="error-icon" >✖ {{ errors.etblsmtdeug }}</span>
-				</div> -->
-				<div class="form-group" dir="ltr">
-					<label for="ville_etablissement_diplome" >Etablissement</label>
-					<input
-						type="text"
-						id="ville_etablissement_diplome"
-						v-model="etudiant.ville_etablissement_diplome"
-						placeholder="Entrez l'établissement"
-						:class="{ 'input-error': errors.ville_etablissement_diplome }"
-						@input="validateStep('ville_etablissement_diplome')"
-						@focus="currentField = 'ville_etablissement_diplome'"
-
-					/>
-					<span v-if="errors.ville_etablissement_diplome" class="error-icon" >✖ {{ errors.ville_etablissement_diplome }}</span>
+				<div class="form-group"  dir="ltr">
+					<label for="mentionlp">Mention de Licence</label>
+					<select
+						id="mentionlp"
+						v-model="etudiant.mentionlp"
+						:class="{ 'input-error': errors.mentionlp }"
+						@change="validateStep('mentionlp')"
+						@focus="currentField = 'mentionlp'"
+					>
+						<option value="" disabled>MENTION</option>
+						<option value="PASSABLE" >PASSABLE</option>
+						<option value="ASSEZ BIEN" >ASSEZ BIEN</option>
+						<option value="BIEN" >BIEN</option>
+						<option value="TRES BIEN" >TRES BIEN</option>
+					</select>
+					<span v-if="errors.mentionlp" class="error-icon">✖ {{ errors.mentionlp }}</span>
 				</div>
 				<div class="form-group" dir="ltr">
-					<label for="date_optention_diplome" >Date Obtention de Diplome</label>
+					<label for="specialitelp" >Spécialité du Licence</label>
+					<input
+						type="text"
+						id="specialitelp"
+						v-model="etudiant.specialitelp"
+						placeholder="Entrez le spécialité du Licence"
+						:class="{ 'input-error': errors.specialitelp }"
+						@input="validateStep('specialitelp')"
+						@focus="currentField = 'specialitelp'"
+						
+					/>
+					<span v-if="errors.specialitelp" class="error-icon" >✖ {{ errors.specialitelp }}</span>
+				</div>
+				<div class="form-group" dir="ltr">
+					<label for="etblsmtLp" >Etablissement</label>
+					<input
+						type="text"
+						id="etblsmtLp"
+						v-model="etudiant.etblsmtLp"
+						placeholder="Entrez l'établissement"
+						:class="{ 'input-error': errors.etblsmtLp }"
+						@input="validateStep('etblsmtLp')"
+						@focus="currentField = 'etblsmtLp'"
+						
+					/>
+					<span v-if="errors.etblsmtLp" class="error-icon" >✖ {{ errors.etblsmtLp }}</span>
+				</div>
+				<div class="form-group" dir="ltr">
+					<label for="ville_etablissement_licence" >Ville d'établissement</label>
+					<input
+						type="text"
+						id="ville_etablissement_licence"
+						v-model="etudiant.ville_etablissement_licence"
+						placeholder="Entrez la ville"
+						:class="{ 'input-error': errors.ville_etablissement_licence }"
+						@input="validateStep('ville_etablissement_licence')"
+						@focus="currentField = 'ville_etablissement_licence'"
+						
+					/>
+					<span v-if="errors.ville_etablissement_licence" class="error-icon" >✖ {{ errors.ville_etablissement_licence }}</span>
+				</div>
+				<div class="form-group" dir="ltr">
+					<label for="Date obtention bac+3" >Date Obtention de Licence</label>
 					<input
 						type="date"
-						id="date_optention_diplome"
-						v-model="etudiant.date_optention_diplome"
-						:class="{ 'input-error': errors.date_optention_diplome }"
-						@input="validateStep('date_optention_diplome')"
-						@focus="currentField = 'date_optention_diplome'"
-
+						id="Date obtention bac+3"
+						v-model="etudiant.date_obtention_LP"
+						:class="{ 'input-error': errors.date_obtention_LP }"
+						@input="validateStep('date_obtention_LP')"
+						@focus="currentField = 'date_obtention_LP'"
+						
 					/>
-					<span v-if="errors.date_optention_diplome" class="error-icon" >✖ {{ errors.date_optention_diplome }}</span>
+					<span v-if="errors.date_obtention_LP" class="error-icon" >✖ {{ errors.date_obtention_LP }}</span>
+				</div>
+				<div class="form-group">
+					<label for="note">Moyenne du Licence</label>
+					<input
+						type="text"
+						id="note"
+						v-model="etudiant.moyenne_licence"
+						placeholder="Entrez une note (ex: 16.50, 14)"
+						@input="validateStep('moyenne_licence')"
+						@focus="currentField = 'moyenne_licence'"
+						:class="{ 'input-error': errors.moyenne_licence }"
+					/>
+					<span v-if="errors.moyenne_licence" class="error-icon">✖ {{ errors.moyenne_licence }}</span>
 				</div>
 			</fieldset>
 			<fieldset>
-				<legend class="legend4">Expérience</legend>
-				<div class="form-group" style="margin-top: 20px;" dir="ltr">
-					<label for="fonctionnaire">Fonctionnaire</label>
-					<select
-						id="fonctionnaire"
-						v-model="etudiant.fonctionnaire"
-						:class="{ 'input-error': errors.fonctionnaire }"
-						@change="validateStep('fonctionnaire')"
-						@focus="currentField = 'fonctionnaire'"
-					>
-						<option value="" disabled>Fonctionnaire</option>
-						<option value="OUI" >OUI</option>
-						<option value="NON" >NON</option>
-					</select>
-					<span v-if="errors.fonctionnaire" class="error-icon">✖ {{ errors.fonctionnaire }}</span>
-				</div>
-				<div v-if="etudiant.fonctionnaire === 'OUI'">
+				<legend class="legend4">Expérience Professionnelle</legend>
+				
+				<div style="margin-top: 20px;">
 					<div class="form-group" dir="ltr">
 						<label for="secteur">Secteur</label>
 						<input
@@ -478,22 +460,6 @@
 							@focus="currentField = 'secteur'"
 						/>
 						<span v-if="errors.secteur" class="error-icon">✖ {{ errors.secteur }}</span>
-					</div>
-
-					<div class="form-group" dir="ltr">
-						<label for="nombreannee">Nombre d'années</label>
-						<input
-							type="number"
-							id="nombreannee"
-							v-model="etudiant.nombreannee"
-							min="0"
-							step="1"
-							placeholder="Nombre d'années d'expérience"
-							:class="{ 'input-error': errors.nombreannee }"
-							@input="validateStep('nombreannee')"
-							@focus="currentField = 'nombreannee'"
-						/>
-						<span v-if="errors.nombreannee" class="error-icon">✖ {{ errors.nombreannee }}</span>
 					</div>
 
 					<div class="form-group" dir="ltr">
@@ -510,7 +476,7 @@
 						<span v-if="errors.poste" class="error-icon">✖ {{ errors.poste }}</span>
 					</div>
 
-					<div class="form-group" dir="ltr">
+					<!-- <div class="form-group" dir="ltr">
 						<label for="lieutravail">Lieu de travail</label>
 						<input
 							type="text"
@@ -536,7 +502,7 @@
 							@focus="currentField = 'villetravail'"
 						/>
 						<span v-if="errors.villetravail" class="error-icon">✖ {{ errors.villetravail }}</span>
-					</div>
+					</div> -->
 				</div>
 			</fieldset>
 
@@ -544,176 +510,7 @@
 		  </div>
 
 		<div v-if="currentStep === 3">
-
-			<!-- File Upload Field for PHOTO -->
-			<div class="form-group student-image-upload" v-if="etablissement.show_photo_input_master">
-				<div class="file-upload-wrapper-student">
-					<input
-						type="file"
-						id="path_photo"
-						@change="handleFileUpload($event, 'path_photo')"
-						accept=".jpg, .jpeg, .png"
-						:class="{ 'input-error-student': errors['path_photo'] }"
-						ref="fileInput8"
-						style="display: none;"
-					/>
-					<div class="file-upload-btn-student" @click="triggerFileInput('fileInput8')">
-						<div class="file-upload-image-student">
-							<img :src="etudiant['path_photo'] && etudiant['path_photo'].preview ? etudiant['path_photo'].preview : '/form/images/etudiant.png'"
-								alt="Preview" class="upload-img-student"/>
-						</div>
-						<div class="upload-text-student">
-							<span>{{ etudiant['path_photo'] && etudiant['path_photo'].preview ? 'Changer l\'image' : 'Choisir votre photo' }}</span>
-						</div>
-					</div>
-					<span v-if="errors['path_photo']" class="error-icon">✖ {{ errors['path_photo'] }}</span>
-				</div>
-			</div>
-
-			<!-- File Upload Field for CIN -->
-			<div v-if="etablissement.show_cin_input_master" class="form-group" style="margin-top: 20px;">
-				<!-- File Upload Field for Student Image -->
-				<label class="file-label">CIN</label>
-				<div class="file-upload-wrapper">
-					<input
-					type="file"
-					id="path_cin"
-					@change="handleFileUpload($event, 'path_cin')"
-					accept=".jpg, .jpeg, .png"
-					:class="{ 'input-error': errors['path_cin'] }"
-					ref="fileInput7"
-					style="display: none;"
-					/>
-					<div class="file-upload-btn" @click="triggerFileInput('fileInput7')">
-					<span class="btn-text">Choisir une image</span>
-					<i class="fa fa-upload"></i>
-					</div>
-					<div class="file-preview" v-if="etudiant['path_cin'] && etudiant['path_cin'].preview">
-					<div class="preview-container">
-						<img :src="etudiant['path_cin'].preview" alt="Preview" class="preview-img" />
-						<button @click="removeFile('path_cin')" class="remove-btn">✖</button>
-					</div>
-					</div>
-					<span v-if="errors['path_cin']" class="error-icon">✖ {{ errors['path_cin'] }}</span>
-				</div>
-			</div>
-
-			<!-- File Upload Field for Bac -->
-			<div v-if="etablissement.show_bac_input_master" class="form-group" style="margin-top: 20px;">
-				<!-- File Upload Field for Student Image -->
-				<label class="file-label">Diplome de baccalauréat</label>
-				<div class="file-upload-wrapper">
-					<input
-					type="file"
-					id="path_bac"
-					@change="handleFileUpload($event, 'path_bac')"
-					accept=".jpg, .jpeg, .png"
-					:class="{ 'input-error': errors['path_bac'] }"
-					ref="fileInput11"
-					style="display: none;"
-					/>
-					<div class="file-upload-btn" @click="triggerFileInput('fileInput11')">
-					<span class="btn-text">Choisir une image</span>
-					<i class="fa fa-upload"></i>
-					</div>
-					<div class="file-preview" v-if="etudiant['path_bac'] && etudiant['path_bac'].preview">
-					<div class="preview-container">
-						<img :src="etudiant['path_bac'].preview" alt="Preview" class="preview-img" />
-						<button @click="removeFile('path_bac')" class="remove-btn">✖</button>
-					</div>
-					</div>
-					<span v-if="errors['path_bac']" class="error-icon">✖ {{ errors['path_bac'] }}</span>
-				</div>
-			</div>
-
-			<div v-if="etablissement.show_licence_input_master" class="form-group" style="margin-top: 20px;">
-				<!-- File Upload Field for Student Image -->
-				<label class="file-label">Diplome de Licence(Attestation de réussite)</label>
-				<div class="file-upload-wrapper">
-					<input
-					type="file"
-					id="path_licence"
-					@change="handleFileUpload($event, 'path_licence')"
-					accept=".jpg, .jpeg, .png"
-					:class="{ 'input-error': errors['path_licence'] }"
-					ref="fileInput12"
-					style="display: none;"
-					/>
-					<div class="file-upload-btn" @click="triggerFileInput('fileInput12')">
-					<span class="btn-text">Choisir une image</span>
-					<i class="fa fa-upload"></i>
-					</div>
-					<div class="file-preview" v-if="etudiant['path_licence'] && etudiant['path_licence'].preview">
-					<div class="preview-container">
-						<img :src="etudiant['path_licence'].preview" alt="Preview" class="preview-img" />
-						<button @click="removeFile('path_licence')" class="remove-btn">✖</button>
-					</div>
-					</div>
-					<span v-if="errors['path_licence']" class="error-icon">✖ {{ errors['path_licence'] }}</span>
-				</div>
-			</div>
-
-			<div v-if="etablissement.show_attestation_no_emploi_input_master" class="form-group" style="margin-top: 20px;">
-				<!-- File Upload Field for Student Image -->
-				<label class="file-label">Attestation de non-emploi</label>
-				<div class="file-upload-wrapper">
-					<input
-					type="file"
-					id="path_attestation_non_emploi"
-					@change="handleFileUpload($event, 'path_attestation_non_emploi')"
-					accept=".jpg, .jpeg, .png"
-					:class="{ 'input-error': errors['path_attestation_non_emploi'] }"
-					ref="fileInput13"
-					style="display: none;"
-					/>
-					<div class="file-upload-btn" @click="triggerFileInput('fileInput13')">
-					<span class="btn-text">Choisir une image</span>
-					<i class="fa fa-upload"></i>
-					</div>
-					<div class="file-preview" v-if="etudiant['path_attestation_non_emploi'] && etudiant['path_attestation_non_emploi'].preview">
-					<div class="preview-container">
-						<img :src="etudiant['path_attestation_non_emploi'].preview" alt="Preview" class="preview-img" />
-						<button @click="removeFile('path_attestation_non_emploi')" class="remove-btn">✖</button>
-					</div>
-					</div>
-					<span v-if="errors['path_attestation_non_emploi']" class="error-icon">✖ {{ errors['path_attestation_non_emploi'] }}</span>
-				</div>
-			</div>
-
-			<div class="form-group student-pdf-upload" v-if="etablissement.show_cv_input_master">
-				<label class="file-label-student">Curriculum Vitae (PDF)</label>
-
-				<!-- PDF Upload Box -->
-				<div class="pdf-upload-container" @click="triggerFileInputPDF">
-					<input
-					type="file"
-					ref="fileInput"
-					@change="handleFileUploadPDF"
-					accept=".pdf"
-					hidden
-					/>
-
-					<!-- PDF Content Preview -->
-					<div v-if="pdfUrl" ref="pdfContainer" class="pdf-preview-container">
-					<canvas ref="pdfCanvas"></canvas>
-					<button class="remove-file-btn" @click.stop="removeFilePDF">✖</button>
-					</div>
-
-					<!-- Placeholder -->
-					<div v-else class="pdf-upload-placeholder">
-					<i class="fas fa-file-upload pdf-upload-icon"></i>
-					<span class="upload-text">Cliquez pour sélectionner un fichier PDF</span>
-					</div>
-				</div>
-
-				<!-- Error Message -->
-				<span v-if="errors['path_cv']" class="error-icon">✖ {{ errors['path_cv'] }}</span>
-			</div>
-
-		</div>
-
-		<div v-if="currentStep === 4">
-			<div v-if="etablissement.multiple_choix_filiere_master == 0" class="form-groupp">
+			<div class="form-groupp">
 				<label class="section-title">Sélectionnez une Filière</label>
 
 				<div class="filiere-container">
@@ -730,9 +527,9 @@
 							<div class="filiere-title">{{ f.nom_abrv }}</div>
 							<div class="filiere-name">{{ f.nom_complet }}</div>
 
-							<a :href="appurl + f.document" target="_blank" class="description-btn">
+							<!-- <a :href="appurl + f.document" target="_blank" class="description-btn">
 								<i class="fas fa-file-alt"></i> Voir la description
-							</a>
+							</a> -->
 
 							<div v-if="etudiant.filiere === f.id" class="selected-icon">
 								✔ Sélectionné
@@ -744,39 +541,9 @@
 				<span v-if="errors.filiere" class="error-icon">✖ {{ errors.filiere }}</span>
 			</div>
 
-			<div v-else class="form-groupp">
-				<label class="section-title">Choisissez jusqu'à 3 Filières</label>
-
-				<div class="filiere-container">
-					<div v-for="(f) in filieres" :key="f.id" class="filiere-card">
-						<input
-							type="checkbox"
-							:id="'filiere_choix_' + f.id"
-							:value="f.id"
-							v-model="selectedFiliereChoices"
-							class="hidden-input"
-							:disabled="selectedFiliereChoices.length >= 3 && !selectedFiliereChoices.includes(f.id)"
-						/>
-						<label :for="'filiere_choix_' + f.id" class="filiere-content">
-							<div class="filiere-title">{{ f.nom_abrv }}</div>
-							<div class="filiere-name">{{ f.nom_complet }}</div>
-
-							<a :href="appurl + f.document" target="_blank" class="description-btn">
-								<i class="fas fa-file-alt"></i> Voir la description
-							</a>
-
-							<div v-if="selectedFiliereChoices.includes(f.id)" class="selected-icon">
-								✔ Sélectionné ({{ choixText(selectedFiliereChoices.indexOf(f.id) + 1) }})
-							</div>
-						</label>
-					</div>
-				</div>
-
-				<span v-if="errors.filiere_choix_1 || errors.filiere_choix_2 || errors.filiere_choix_3" class="error-icon">✖ Le choix de trois filières est requis. Veuillez sélectionner trois filières.</span>
-			</div>
 		</div>
 
-		<div v-if="currentStep === 5" class="confirmation-container">
+		<div v-if="currentStep === 4" class="confirmation-container">
 			<p class="confirmation-note">
 				<strong>NB :</strong> Veuillez vérifier que vous avez rempli correctement toutes les informations demandées.
 				L'inscription se fait uniquement une seule fois.
@@ -800,7 +567,7 @@
 
 				<!-- Checkbox text -->
 				<span class="checkbox-text">
-					Je certifie sur l'honneur l'exactitude des informations déclarées et des documents téléchargés.
+					Je certifie sur l'honneur l'exactitude des informations déclarées.
 				</span>
 			</div>
 
@@ -827,8 +594,7 @@
 	</div>
 
 
-
-	<div class="success-container" >
+	<div class="success-container" v-else>
 		<div class="success-card">
 			<!-- Logo -->
 			<div class="modern-logo-box">
@@ -850,7 +616,7 @@
 			</p>
 
 			<!-- Account Info -->
-			<div class="success-info text-dark p-3 rounded bg-light border">
+			<div class="success-info text-dark p-3 rounded bg-light border" v-if="etudiant.exists === false">
 				<p><strong>Votre compte étudiant a été créé avec succès.</strong></p>
 				<p>Veuillez vous connecter à votre espace personnel pour :</p>
 				<ul>
@@ -862,29 +628,33 @@
 			</div>
 
 			<!-- User Credentials -->
-			<div class="success-credentials">
-				<p><strong>Email :</strong> <span>{{ etudiant.email }}</span></p>
+			<div class="success-credentials" v-if="etudiant.exists === false">
+                    <p><strong>Email :</strong> <span>{{ etudiant.email }}</span></p>
+                    <p>
+                        <strong>Mot de passe :</strong>
+                        <span class="password-box" :class="{ 'blurred': !showPassword }">
+                        <span v-if="showPassword">{{ etudiant.CIN }}@2025</span>
+                        <span v-else>********************************</span>
+                        </span>
+                        <button class="toggle-password" @click.prevent="togglePassword" @mouseenter="showTooltip = true" @mouseleave="showTooltip = false">
+                        <span v-if="showPassword">👁️‍🗨️</span>
+                        <span v-else>🔒</span>
+                        </button>
+                        <span v-if="showTooltip" class="password-tooltip">
+                        <span v-if="showPassword">Cliquez pour masquer le mot de passe</span>
+                        <span v-else>Cliquez pour afficher le mot de passe</span>
+                        </span>
+                    </p>
+            </div>
 
-				<!-- Smart Password Toggle -->
-				<!-- Password field with dynamic type change -->
-				<p><strong>Mot de passe :</strong>
-					<!-- Password display container -->
-					<span class="password-box" :class="{ 'blurred': !showPassword }">
-						<!-- Use a span to display the password, it won't show in HTML source directly -->
-						<span v-if="showPassword">{{ etudiant.CIN }}@2025</span>
-						<span v-else>********************************</span>
-					</span>
-					<button class="toggle-password" @click="togglePassword" @mouseenter="showTooltip = true" @mouseleave="showTooltip = false">
-						<span v-if="showPassword">👁️‍🗨️</span>
-						<span v-else>🔒</span>
-					</button>
-					<!-- Tooltip -->
-					<span v-if="showTooltip" class="password-tooltip">
-						<span v-if="showPassword">Cliquez pour masquer le mot de passe</span>
-						<span v-else>Cliquez pour afficher le mot de passe</span>
-					</span>
-				</p>
-
+			<!-- Account Already Exists -->
+			<div class="alert alert-warning text-dark p-3 rounded bg-light border" v-if="etudiant.exists === true">
+				<p><strong>Un compte existe déjà pour cet étudiant.</strong></p>
+				<p>Vous pouvez utiliser votre compte existant pour vous connecter à votre espace personnel et suivre votre candidature.</p>
+				<ul>
+					<li>Accédez à votre espace avec votre <strong>email</strong>.</li>
+					<li>En cas d’oubli de mot de passe, vous pouvez nous contacter à notre <strong>adresse e-mail indiquée dans la page de contact</strong>.</li>
+				</ul>
 			</div>
 
 			<!-- Login Button -->
@@ -906,7 +676,7 @@
 
 
   export default {
-	props: ['appurl','cne','cin','etablissement','filieres'],
+	props: ['appurl','etablissement','filieres','filiere'],
 	components:{
 		ErrorPopup
 	},
@@ -924,7 +694,6 @@
 		steps: [
 			{ title: "IDENTITE" },
 			{ title: "INFORMATIONS\nACADEMIQUES" },
-			{ title: "DOCUMENT" },
 			{ title: "CHOIX\nDE FILIERE" },
 			{ title: "CONFIRMATION" },
 		],
@@ -934,45 +703,41 @@
         	CIN: "",
         	nom: "",
         	prenom: "",
-        	nomar: "",
-        	prenomar: "",
-			datenais: "",
-			sexe: "",
-			payschamp: "",
-			villenais: "",
-			villechamp: "",
-			adresse: "",
+        	// nomar: "",
+        	// prenomar: "",
+			// datenais: "",
+			// sexe: "",
+			// payschamp: "",
+			// villenais: "",
+			// villechamp: "",
+			// adresse: "",
 			email: "",
 			phone: "",
 
 			serie: "",  //bac
-			Anneebac: "",
+			
 
-			dernier_diplome_obtenu:"",//Diplome
-			type_diplome_obtenu: "",
-			specialitediplome: "",
-			ville_etablissement_diplome: "",
-			date_optention_diplome: "",
+			typelicence: "",
+			mentionlp: "",
+			specialitelp: "",
+			etblsmtLp: "",
+			ville_etablissement_licence: "",
+			date_obtention_LP: "",
+			moyenne_licence:"",
 
 
-			fonctionnaire: "",
 			secteur: "",
-			nombreannee: "",
 			poste: "",
-			lieutravail: "",
-			villetravail: "",
+			// lieutravail: "",
+			// villetravail: "",
 
 
-			path_photo: { file: null, preview: null },
-			path_cin: { file: null, preview: null },
-			path_bac: { file: null, preview: null },
-			path_licence: { file: null, preview: null },
-			path_attestation_non_emploi: { file: null, preview: null },
-			path_cv: { file: null, preview: null },
 			filiere: "",
 			filiere_choix_1: "",
 			filiere_choix_2: "",
 			filiere_choix_3: "",
+
+			etablissement_id: "",
 			confirmation: ""
 		},
 		selectedFiliereChoices: [],
@@ -981,39 +746,36 @@
           CIN: null,
           nom: null,
           prenom: null,
-          nomar: null,
-          prenomar: null,
-		  datenais: null,
-		  sexe: null,
-		  payschamp: null,
-		  villenais: null,
-		  villechamp: null,
-		  adresse: null,
+        //   nomar: null,
+        //   prenomar: null,
+		//   datenais: null,
+		//   sexe: null,
+		//   payschamp: null,
+		//   villenais: null,
+		//   villechamp: null,
+		//   adresse: null,
 		  email: null,
 		  phone: null,
 
 		  serie: null,
-		  Anneebac: null,
 
-		  dernier_diplome_obtenu: null,
-		  type_diplome_obtenu: null,
-		  specialitediplome: null,
-		  ville_etablissement_diplome: null,
-		  date_optention_diplome: null,
 
-		  fonctionnaire: null,
+		  typelicence: null,
+		  mentionlp: null,
+		  specialitelp: null,
+		  etblsmtLp: null,
+		  ville_etablissement_licence: null,
+		  date_obtention_LP: null,
+		  moyenne_licence: null,
+
+
+		  
 		  secteur: null,
 		  nombreannee: null,
 		  poste: null,
-		  lieutravail: null,
-		  villetravail: null,
+		//   lieutravail: null,
+		//   villetravail: null,
 
-		  path_photo:null,
-		  path_cin: null,
-		  path_bac: null,
-		  path_licence:null,
-		  path_attestation_non_emploi: null,
-		  path_cv: null,
 
 		  filiere: null,
 		  filiere_choix_1: null,
@@ -1021,7 +783,7 @@
 		  filiere_choix_3: null,
 		  confirmation: null
 		},
-        showInputTypeDiplome: false,
+		showInputTypeLicence:false,
         showInputSerie: false,
 		showNotification: false,
 	  };
@@ -1109,51 +871,41 @@
 			this.validateStep("serie_bac");
 		}
 		},
-		"etudiant.Anneebac"(newValue) {
-		if (this.currentField === "Anneebac") {
-			this.validateStep("Anneebac");
-		}
-		},
+	
 
-		"etudiant.dernier_diplome_obtenu"(newValue) {
-		if (this.currentField === "dernier_diplome_obtenu") {
-			this.validateStep("dernier_diplome_obtenu");
+		"etudiant.typelicence"(newValue) {
+		if (this.currentField === "typelicence") {
+			this.validateStep("typelicence");
 		}
 		},
-		"etudiant.type_diplome_obtenu"(newValue) {
-		if (this.currentField === "type_diplome_obtenu") {
-			this.validateStep("type_diplome_obtenu");
+		"etudiant.mentionlp"(newValue) {
+		if (this.currentField === "mentionlp") {
+			this.validateStep("mentionlp");
 		}
 		},
-		"etudiant.specialitediplome"(newValue) {
-		if (this.currentField === "specialitediplome") {
-			this.validateStep("specialitediplome");
+		"etudiant.specialitelp"(newValue) {
+		if (this.currentField === "specialitelp") {
+			this.validateStep("specialitelp");
 		}
 		},
-		"etudiant.ville_etablissement_diplome"(newValue) {
-		if (this.currentField === "ville_etablissement_diplome") {
-			this.validateStep("ville_etablissement_diplome");
+		"etudiant.etblsmtLp"(newValue) {
+		if (this.currentField === "etblsmtLp") {
+			this.validateStep("etblsmtLp");
 		}
 		},
-		"etudiant.date_optention_diplome"(newValue) {
-		if (this.currentField === "date_optention_diplome") {
-			this.validateStep("date_optention_diplome");
+		"etudiant.ville_etablissement_licence"(newValue) {
+		if (this.currentField === "ville_etablissement_licence") {
+			this.validateStep("ville_etablissement_licence");
 		}
 		},
-
-		"etudiant.fonctionnaire"(newValue) {
-		if (this.currentField === "fonctionnaire") {
-			this.validateStep("fonctionnaire");
+		"etudiant.date_obtention_LP"(newValue) {
+		if (this.currentField === "date_obtention_LP") {
+			this.validateStep("date_obtention_LP");
 		}
 		},
 		"etudiant.secteur"(newValue) {
 		if (this.currentField === "secteur") {
 			this.validateStep("secteur");
-		}
-		},
-		"etudiant.nombreannee"(newValue) {
-		if (this.currentField === "nombreannee") {
-			this.validateStep("nombreannee");
 		}
 		},
 		"etudiant.poste"(newValue) {
@@ -1216,154 +968,19 @@
             this.showInputSerie = false;
             this.etudiant.serie = "";
         },
-        handleDiplomeChange() {
-            if (this.etudiant.type_diplome_obtenu === "AUTRES") {
-                this.showInputTypeDiplome = true;
-                this.etudiant.type_diplome_obtenu = "";
-            } else {
-                this.showInputTypeDiplome = false;
-                this.validateStep("type_diplome_obtenu");
-            }
-        },
-        cancelInputDiplome() {
-            this.showInputTypeDiplome = false;
-            this.etudiant.type_diplome_obtenu = "";
-        },
-
-
-		triggerFileInput(refName) {
-			// Check if the reference exists before attempting to click
-			const input = this.$refs[refName];
-			if (input) {
-				input.click();
+        handleLicenceChange() {
+			if (this.etudiant.typelicence === "AUTRES") {
+			this.showInputTypeLicence = true; 
+			this.etudiant.typelicence = ""; 
 			} else {
-				console.error(`Reference ${refName} not found in $refs`);
+			this.showInputTypeLicence = false; 
+			this.validateStep("typelicence"); 
 			}
 		},
-
-		// Function to handle file upload and validation
-		handleFileUpload(event, path) {
-			const file = event.target.files[0]; // Obtenir le premier fichier sélectionné
-
-			if (!file) return;
-
-			const maxSize = 300 * 1024; // 300 KB
-			const allowedTypes = ["image/jpeg", "image/png", "image/jpg"];
-
-			if (!allowedTypes.includes(file.type)) {
-				this.errors[path] = "Seules les images (.jpg, .jpeg, .png) sont autorisées.";
-				return; // Arrêter l'exécution si le type de fichier n'est pas valide
-			}
-
-			if (file.size > maxSize) {
-				this.errors[path] = "La taille de l'image ne doit pas dépasser 300 Ko.";
-				return; // Arrêter l'exécution si le fichier est trop volumineux
-			}
-
-			this.etudiant[path] = file; // Stocker uniquement l'objet fichier
-			this.previewImage(file, path); // Générer un aperçu si nécessaire
-			this.errors[path] = null; // Effacer les erreurs précédentes si le fichier est valide
+		cancelInput() {
+			this.showInputTypeLicence = false;
+			this.etudiant.typelicence = ""; 
 		},
-
-		previewImage(file, path) {
-			const reader = new FileReader();
-			reader.onload = (e) => {
-				// Storing preview along with the file object
-				this.etudiant[path] = {
-					file: file, // Keep the original file object
-					preview: e.target.result // Store preview separately
-				};
-			};
-			reader.readAsDataURL(file);
-		},
-
-		// Function to remove the uploaded file and clear input
-		removeFile(path) {
-			console.log(`Removing file for ${path}`);
-			console.log('Current file data:', this.etudiant[path]);
-
-			if (this.etudiant[path]) {
-				this.etudiant[path] = {
-					file: null,
-					preview: null
-				};
-				console.log('After removal:', this.etudiant[path]);
-			} else {
-				console.error('No file found for', path);
-			}
-		},
-
-		triggerFileInputPDF() {
-			this.$refs.fileInput.click();
-		},
-
-		handleFileUploadPDF(event) {
-			const file = event.target.files[0];
-
-			if (!file) return;
-
-			const maxSize = 350 * 1024; // 350 KB
-
-			if (file.type !== "application/pdf") {
-				this.errors["path_cv"] = "Veuillez sélectionner un fichier PDF valide.";
-				return;
-			}
-
-			if (file.size > maxSize) {
-				this.errors["path_cv"] = "La taille du fichier ne doit pas dépasser 350 Ko.";
-				return;
-			}
-
-			this.pdfUrl = URL.createObjectURL(file);
-			this.etudiant.path_cv = { file: file, preview: this.pdfUrl };
-			this.renderPdf(this.pdfUrl);
-			this.errors["path_cv"] = null; // Effacer les erreurs précédentes si le fichier est valide
-		},
-
-		renderPdf(pdfUrl) {
-			const loadingTask = pdfjsLib.getDocument(pdfUrl);
-			loadingTask.promise.then((pdf) => {
-				pdf.getPage(1).then((page) => {
-				nextTick(() => {
-					const canvas = this.$refs.pdfCanvas;
-					const container = this.$refs.pdfContainer; // Ensure container reference exists
-
-					if (!canvas || !container) {
-					console.error('Canvas element not found!');
-					return;
-					}
-
-					const context = canvas.getContext('2d');
-					const viewport = page.getViewport({ scale: 1 });
-
-					// Use container width to adjust scale dynamically
-					const containerWidth = container.getBoundingClientRect().width;
-					const scale = containerWidth / viewport.width;
-					const scaledViewport = page.getViewport({ scale });
-
-					// Set canvas size dynamically
-					canvas.width = scaledViewport.width;
-					canvas.height = scaledViewport.height;
-
-					const renderContext = {
-					canvasContext: context,
-					viewport: scaledViewport,
-					};
-
-					page.render(renderContext).promise.then(() => {
-					// Ensure full top view on all devices
-					container.scrollTop = 0;
-					});
-				});
-				});
-			});
-		},
-
-		removeFilePDF() {
-			this.pdfUrl = null;
-			this.$refs.fileInput.value = null;
-		},
-
 
 		toggleSelection(id) {
 			this.etudiant.filiere = id;
@@ -1425,94 +1042,94 @@
 					}
 					break;
 
-				case "nomar":
-					if (!this.etudiant.nomar) {
-					this.errors.nomar = "الاسم العائلي مطلوب";
-					} else if (this.etudiant.nomar.length < 2 || this.etudiant.nomar.length > 50) {
-					this.errors.nomar = "يجب أن يحتوي الاسم العائلي على ما بين 2 و 50 حرفًا.";
-					} else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.nomar)) {
-					this.errors.nomar = "يرجى إدخال الاسم العائلي باللغة العربية فقط";
-					} else {
-					this.errors.nomar = null;
-					}
-					break;
+				// case "nomar":
+				// 	if (!this.etudiant.nomar) {
+				// 	this.errors.nomar = "الاسم العائلي مطلوب";
+				// 	} else if (this.etudiant.nomar.length < 2 || this.etudiant.nomar.length > 50) {
+				// 	this.errors.nomar = "يجب أن يحتوي الاسم العائلي على ما بين 2 و 50 حرفًا.";
+				// 	} else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.nomar)) {
+				// 	this.errors.nomar = "يرجى إدخال الاسم العائلي باللغة العربية فقط";
+				// 	} else {
+				// 	this.errors.nomar = null;
+				// 	}
+				// 	break;
 
-				case "prenomar":
-					if (!this.etudiant.prenomar) {
-					this.errors.prenomar = "الاسم الشخصي مطلوب";
-					} else if (this.etudiant.prenomar.length < 2 || this.etudiant.prenomar.length > 50) {
-					this.errors.prenomar = "يجب أن يحتوي الاسم الشخصي على ما بين 2 و 50 حرفًا.";
-					} else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.prenomar)) {
-					this.errors.prenomar = "يرجى إدخال الاسم الشخصي باللغة العربية فقط";
-					} else {
-					this.errors.prenomar = null;
-					}
+				// case "prenomar":
+				// 	if (!this.etudiant.prenomar) {
+				// 	this.errors.prenomar = "الاسم الشخصي مطلوب";
+				// 	} else if (this.etudiant.prenomar.length < 2 || this.etudiant.prenomar.length > 50) {
+				// 	this.errors.prenomar = "يجب أن يحتوي الاسم الشخصي على ما بين 2 و 50 حرفًا.";
+				// 	} else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.prenomar)) {
+				// 	this.errors.prenomar = "يرجى إدخال الاسم الشخصي باللغة العربية فقط";
+				// 	} else {
+				// 	this.errors.prenomar = null;
+				// 	}
 
-					break;
+				// 	break;
 
-				case "datenais":
-					if (!this.etudiant.datenais) {
-					this.errors.datenais = "La date de naissance est requis.";
-					} else {
-					this.errors.datenais = null;
-					}
-					break;
+				// case "datenais":
+				// 	if (!this.etudiant.datenais) {
+				// 	this.errors.datenais = "La date de naissance est requis.";
+				// 	} else {
+				// 	this.errors.datenais = null;
+				// 	}
+				// 	break;
 
-				case "sexe":
-					if (!this.etudiant.sexe) {
-					this.errors.sexe = "Le sexe est requis.";
-					} else {
-					this.errors.sexe = null;
-					}
-					break;
+				// case "sexe":
+				// 	if (!this.etudiant.sexe) {
+				// 	this.errors.sexe = "Le sexe est requis.";
+				// 	} else {
+				// 	this.errors.sexe = null;
+				// 	}
+				// 	break;
 
-				case "payschamp":
-					if (!this.etudiant.payschamp) {
-					this.errors.payschamp = "Le nom du pays est requis.";
-					}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.payschamp)) {
-						this.errors.payschamp = "Le nom du pays doit être écrit uniquement en français.";
-					} else if (this.etudiant.payschamp.length < 2 || this.etudiant.payschamp.length > 70) {
-					this.errors.payschamp = "Le nom du pays doit contenir entre 2 et 70 caractères.";
-					} else {
-					this.errors.payschamp = null;
-					}
-					break;
+				// case "payschamp":
+				// 	if (!this.etudiant.payschamp) {
+				// 	this.errors.payschamp = "Le nom du pays est requis.";
+				// 	}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.payschamp)) {
+				// 		this.errors.payschamp = "Le nom du pays doit être écrit uniquement en français.";
+				// 	} else if (this.etudiant.payschamp.length < 2 || this.etudiant.payschamp.length > 70) {
+				// 	this.errors.payschamp = "Le nom du pays doit contenir entre 2 et 70 caractères.";
+				// 	} else {
+				// 	this.errors.payschamp = null;
+				// 	}
+				// 	break;
 
-				case "villenais":
-					if (!this.etudiant.villenais) {
-					this.errors.villenais = "Le nom de la ville est requis.";
-					}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.villenais)) {
-						this.errors.villenais = "Le nom de la ville doit être écrit uniquement en français.";
-					} else if (this.etudiant.villenais.length < 2 || this.etudiant.villenais.length > 70) {
-					this.errors.villenais = "Le nom de la ville doit contenir entre 2 et 70 caractères.";
-					} else {
-					this.errors.villenais = null;
-					}
-					break;
+				// case "villenais":
+				// 	if (!this.etudiant.villenais) {
+				// 	this.errors.villenais = "Le nom de la ville est requis.";
+				// 	}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.villenais)) {
+				// 		this.errors.villenais = "Le nom de la ville doit être écrit uniquement en français.";
+				// 	} else if (this.etudiant.villenais.length < 2 || this.etudiant.villenais.length > 70) {
+				// 	this.errors.villenais = "Le nom de la ville doit contenir entre 2 et 70 caractères.";
+				// 	} else {
+				// 	this.errors.villenais = null;
+				// 	}
+				// 	break;
 
-				case "villechamp":
-					if (!this.etudiant.villechamp) {
-					this.errors.villechamp = "مكان الازدياد مطلوب";
-					} else if (this.etudiant.villechamp.length < 2 || this.etudiant.villechamp.length > 70) {
-					this.errors.villechamp = "يجب أن يحتوي مكان الازدياد على ما بين 2 و 70 حرفًا.";
-					} else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.villechamp)) {
-					this.errors.villechamp = "يرجى إدخال مكان الازدياد باللغة العربية فقط";
-					} else {
-					this.errors.villechamp = null;
-					}
-					break;
+				// case "villechamp":
+				// 	if (!this.etudiant.villechamp) {
+				// 	this.errors.villechamp = "مكان الازدياد مطلوب";
+				// 	} else if (this.etudiant.villechamp.length < 2 || this.etudiant.villechamp.length > 70) {
+				// 	this.errors.villechamp = "يجب أن يحتوي مكان الازدياد على ما بين 2 و 70 حرفًا.";
+				// 	} else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.villechamp)) {
+				// 	this.errors.villechamp = "يرجى إدخال مكان الازدياد باللغة العربية فقط";
+				// 	} else {
+				// 	this.errors.villechamp = null;
+				// 	}
+				// 	break;
 
-				case "adresse":
-				if (!this.etudiant.adresse) {
-					this.errors.adresse = "L'adresse est requise.";
-				} else if (/[^A-Za-zÀ-ÿ0-9\s-]/.test(this.etudiant.adresse)) {
-					this.errors.adresse = "L'adresse doit être écrite uniquement en français et peut contenir des chiffres.";
-				} else if (this.etudiant.adresse.length < 10 || this.etudiant.adresse.length > 250) {
-					this.errors.adresse = "L'adresse doit contenir entre 10 et 250 caractères.";
-				} else {
-					this.errors.adresse = null;
-				}
-					break;
+				// case "adresse":
+				// if (!this.etudiant.adresse) {
+				// 	this.errors.adresse = "L'adresse est requise.";
+				// } else if (/[^A-Za-zÀ-ÿ0-9\s-]/.test(this.etudiant.adresse)) {
+				// 	this.errors.adresse = "L'adresse doit être écrite uniquement en français et peut contenir des chiffres.";
+				// } else if (this.etudiant.adresse.length < 10 || this.etudiant.adresse.length > 250) {
+				// 	this.errors.adresse = "L'adresse doit contenir entre 10 et 250 caractères.";
+				// } else {
+				// 	this.errors.adresse = null;
+				// }
+				// 	break;
 
 				case "email":
 					if (!this.etudiant.email) {
@@ -1544,194 +1161,141 @@
 				const notePattern = /^(?:\d{1,2}(?:\.\d{1,2})?)$/;
 				switch (field) {
 					case "serie":
-                        if (!this.etudiant.serie) {
-                            this.errors.serie = "Série de bac est requise.";
-                        } else if (
-                            this.etudiant.serie !== "AUTRES" &&
-                            !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\(\)\-]{2,200}$/.test(this.etudiant.serie)
-                        ) {
-                            this.errors.serie =
-                                "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
-                        } else {
-                            this.errors.serie = null;
-                        }
-                        break;
-
-					case "Anneebac":
-						if (!this.etudiant.Anneebac) {
-						this.errors.Anneebac = "Année de bac est requis.";
+						if (!this.etudiant.serie) {
+							this.errors.serie = "Série de bac est requise.";
+						} else if (
+							this.etudiant.serie !== "AUTRES" &&
+							!/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s()\/:\-\.]{2,200}$/.test(this.etudiant.serie)
+						) {
+							this.errors.serie =
+								"Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
 						} else {
-						this.errors.Anneebac = null;
+							this.errors.serie = null;
 						}
 						break;
 
 
 
-					case "dernier_diplome_obtenu":
-						if (!this.etudiant.dernier_diplome_obtenu) {
-						this.errors.dernier_diplome_obtenu = "Ce champs est requis.";
+					case "typelicence":
+						if (!this.etudiant.typelicence) {
+						this.errors.typelicence = "Ce champ est requis.";
+						} else if (this.etudiant.typelicence !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\(\)\-]{2,200}$/.test(this.etudiant.typelicence)) {
+						this.errors.typelicence = "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
 						} else {
-						this.errors.dernier_diplome_obtenu = null;
+						this.errors.typelicence = null;
 						}
 						break;
 
-                        case "type_diplome_obtenu":
-                            if (!this.etudiant.type_diplome_obtenu) {
-                                this.errors.type_diplome_obtenu = "Ce champ est requis.";
-                            } else if (
-                                this.etudiant.type_diplome_obtenu !== "AUTRES" &&
-                                !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\(\)\-]{2,200}$/.test(this.etudiant.type_diplome_obtenu)
-                            ) {
-                                this.errors.type_diplome_obtenu =
-                                    "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
-                            } else {
-                                this.errors.type_diplome_obtenu = null;
-                            }
-                            break;
-
-					case "specialitediplome":
-						if (!this.etudiant.specialitediplome) {
-						this.errors.specialitediplome = "Le spécialité du diplome est requis.";
-						}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.specialitediplome)) {
-						this.errors.specialitediplome = "Ce champs doit être écrit uniquement en français.";
-						} else if (this.etudiant.specialitediplome.length < 2 || this.etudiant.specialitediplome.length > 200) {
-						this.errors.specialitediplome = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
+					case "mentionlp":
+						if (!this.etudiant.mentionlp) {
+						this.errors.mentionlp = "Mention de licence est requis.";
 						} else {
-						this.errors.specialitediplome = null;
+						this.errors.mentionlp = null;
 						}
 						break;
 
-					// case "etblsmtdeug":
-					// 	if (!this.etudiant.etblsmtdeug) {
-					// 	this.errors.etblsmtdeug = "Ce champs est requis.";
-					// 	}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.etblsmtdeug)) {
-					// 	this.errors.etblsmtdeug = "Ce champs doit être écrit uniquement en français.";
-					// 	} else if (this.etudiant.etblsmtdeug.length < 2 || this.etudiant.etblsmtdeug.length > 200) {
-					// 	this.errors.etblsmtdeug = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
+					case "specialitelp":
+						if (!this.etudiant.specialitelp) {
+						this.errors.specialitelp = "Le spécialité du licence est requis.";
+						} else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.specialitelp)) {
+						this.errors.specialitelp = "Ce champs doit être écrit uniquement en français.";
+						} else if (this.etudiant.specialitelp.length < 2 || this.etudiant.specialitelp.length > 200) {
+						this.errors.specialitelp = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
+						} else {
+						this.errors.specialitelp = null;
+						}
+						break;
+
+					case "etblsmtLp":
+						if (!this.etudiant.etblsmtLp) {
+						this.errors.etblsmtLp = "Ce champs est requis.";
+						} else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.etblsmtLp)) {
+						this.errors.etblsmtLp = "Ce champs doit être écrit uniquement en français.";
+						} else if (this.etudiant.etblsmtLp.length < 2 || this.etudiant.etblsmtLp.length > 200) {
+						this.errors.etblsmtLp = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
+						} else {
+						this.errors.etblsmtLp = null;
+						}
+						break;
+
+					case "ville_etablissement_licence":
+						if (!this.etudiant.ville_etablissement_licence) {
+						this.errors.ville_etablissement_licence = "Ce champs est requis.";
+						} else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.ville_etablissement_licence)) {
+						this.errors.ville_etablissement_licence = "Ce champs doit être écrit uniquement en français.";
+						} else if (this.etudiant.ville_etablissement_licence.length < 2 || this.etudiant.ville_etablissement_licence.length > 150) {
+						this.errors.ville_etablissement_licence = "Ce champs doit contenir entre 2 et 150 caractères alphanumériques.";
+						} else {
+						this.errors.ville_etablissement_licence = null;
+						}
+						break;
+
+					case "date_obtention_LP":
+						if (!this.etudiant.date_obtention_LP) {
+						this.errors.date_obtention_LP = "Ce champs est requis.";
+						} else {
+						this.errors.date_obtention_LP = null;
+						}
+						break;
+
+					case "moyenne_licence":
+						if (!this.etudiant.moyenne_licence) {
+							this.errors.moyenne_licence = "Ce champ est requis.";
+						} else if (!notePattern.test(this.etudiant.moyenne_licence)) {
+							this.errors.moyenne_licence = "Entrez une note valide (exemple: 16 | 16.50).";
+						} else {
+							this.errors.moyenne_licence = null;
+						}
+						break;
+
+						
+
+					case "secteur":
+						if (!this.etudiant.secteur) {
+						this.errors.secteur = "Ce champ est requis.";
+						} else if (this.etudiant.secteur.length < 2 || this.etudiant.secteur.length > 200) {
+						this.errors.secteur = "Le secteur doit contenir entre 2 et 200 caractères.";
+						} else {
+						this.errors.secteur = null;
+						}
+						break;
+
+	
+					case "poste":
+						if (!this.etudiant.poste) {
+						this.errors.poste = "Ce champ est requis.";
+						} else if (this.etudiant.poste.length < 2 || this.etudiant.poste.length > 200) {
+						this.errors.poste = "Le poste doit contenir entre 2 et 200 caractères.";
+						} else {
+						this.errors.poste = null;
+						}
+						break;
+
+					// case "lieutravail":
+					// 	if (!this.etudiant.lieutravail) {
+					// 	this.errors.lieutravail = "Ce champ est requis.";
+					// 	} else if (this.etudiant.lieutravail.length < 2 || this.etudiant.lieutravail.length > 200) {
+					// 	this.errors.lieutravail = "Le lieu de travail doit contenir entre 2 et 200 caractères.";
 					// 	} else {
-					// 	this.errors.etblsmtdeug = null;
+					// 	this.errors.lieutravail = null;
 					// 	}
 					// 	break;
 
-					case "ville_etablissement_diplome":
-						if (!this.etudiant.ville_etablissement_diplome) {
-						this.errors.ville_etablissement_diplome = "Ce champs est requis.";
-						}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.ville_etablissement_diplome)) {
-						this.errors.ville_etablissement_diplome = "Ce champs doit être écrit uniquement en français.";
-						} else if (this.etudiant.ville_etablissement_diplome.length < 2 || this.etudiant.ville_etablissement_diplome.length > 150) {
-						this.errors.ville_etablissement_diplome = "Ce champs doit contenir entre 2 et 150 caractères alphanumériques.";
-						} else {
-						this.errors.ville_etablissement_diplome = null;
-						}
-						break;
-
-					case "date_optention_diplome":
-						if (!this.etudiant.date_optention_diplome) {
-						this.errors.date_optention_diplome = "Ce champs est requis.";
-						} else {
-						this.errors.date_optention_diplome = null;
-						}
-						break;
-
-						case "fonctionnaire":
-							if (!this.etudiant.fonctionnaire) {
-								this.errors.fonctionnaire = "Ce champ est requis.";
-							} else {
-								this.errors.fonctionnaire = null;
-								// Si "NON" est sélectionné, vider les autres champs
-								if (this.etudiant.fonctionnaire === "NON") {
-									this.etudiant.secteur = "";
-									this.etudiant.nombreannee = "";
-									this.etudiant.poste = "";
-									this.etudiant.lieutravail = "";
-									this.etudiant.villetravail = "";
-									this.errors.secteur = null;
-									this.errors.nombreannee = null;
-									this.errors.poste = null;
-									this.errors.lieutravail = null;
-									this.errors.villetravail = null;
-								}
-							}
-							break;
-
-						case "secteur":
-							if (this.etudiant.fonctionnaire === "OUI") {
-							if (!this.etudiant.secteur) {
-							this.errors.secteur = "Ce champ est requis.";
-							} else if (this.etudiant.secteur.length < 2 || this.etudiant.secteur.length > 200) {
-							this.errors.secteur = "Le secteur doit contenir entre 2 et 200 caractères.";
-							} else {
-							this.errors.secteur = null;
-							}
-							}
-							break;
-
-						case "nombreannee":
-							if (this.etudiant.fonctionnaire === "OUI") {
-							if (!this.etudiant.nombreannee) {
-							this.errors.nombreannee = "Ce champ est requis.";
-							} else if (!Number.isInteger(Number(this.etudiant.nombreannee))) {
-							this.errors.nombreannee = "Entrez un nombre entier valide.";
-							} else if (this.etudiant.nombreannee < 0) {
-							this.errors.nombreannee = "Le nombre d'années ne peut pas être négatif.";
-							} else {
-							this.errors.nombreannee = null;
-							}
-							}
-							break;
-
-						case "poste":
-							if (this.etudiant.fonctionnaire === "OUI") {
-							if (!this.etudiant.poste) {
-							this.errors.poste = "Ce champ est requis.";
-							} else if (this.etudiant.poste.length < 2 || this.etudiant.poste.length > 200) {
-							this.errors.poste = "Le poste doit contenir entre 2 et 200 caractères.";
-							} else {
-							this.errors.poste = null;
-							}
-							}
-							break;
-
-						case "lieutravail":
-							if (this.etudiant.fonctionnaire === "OUI") {
-							if (!this.etudiant.lieutravail) {
-							this.errors.lieutravail = "Ce champ est requis.";
-							} else if (this.etudiant.lieutravail.length < 2 || this.etudiant.lieutravail.length > 200) {
-							this.errors.lieutravail = "Le lieu de travail doit contenir entre 2 et 200 caractères.";
-							} else {
-							this.errors.lieutravail = null;
-							}
-							}
-							break;
-
-						case "villetravail":
-							if (this.etudiant.fonctionnaire === "OUI") {
-							if (!this.etudiant.villetravail) {
-							this.errors.villetravail = "Ce champ est requis.";
-							} else if (this.etudiant.villetravail.length < 2 || this.etudiant.villetravail.length > 200) {
-							this.errors.villetravail = "La ville de travail doit contenir entre 2 et 200 caractères.";
-							} else {
-							this.errors.villetravail = null;
-							}
-							}
-           					break;
-
-						case "type_bac":
-							if (!this.etudiant.type_bac) {
-								this.errors.type_bac = "Veuillez sélectionner ce champs.";
-							} else {
-								this.errors.type_bac = null;
-							}
-							break;
-
+					// case "villetravail":
+					// 	if (!this.etudiant.villetravail) {
+					// 	this.errors.villetravail = "Ce champ est requis.";
+					// 	} else if (this.etudiant.villetravail.length < 2 || this.etudiant.villetravail.length > 200) {
+					// 	this.errors.villetravail = "La ville de travail doit contenir entre 2 et 200 caractères.";
+					// 	} else {
+					// 	this.errors.villetravail = null;
+					// 	}
+           			// 	break;
 				}
 			}
 
-			if(this.currentStep == 3){
-				//empty
-			}
+	
 
-			if(this.currentStep == 4){
+			if(this.currentStep == 3){
 				if(this.etablissement.multiple_choix_filiere_master == 0){
 					switch (field) {
 						case "filiere":
@@ -1776,12 +1340,13 @@
 				}
 			}
 
-			if(this.currentStep == 5){
+			if(this.currentStep == 4){
 				//empty
 			}
   		},
 		validateStepp() {
 			this.errors = {};
+			const notePattern = /^(?:\d{1,2}(?:\.\d{1,2})?)$/;
 
 			if(this.currentStep == 1){
 				if (!this.etudiant.CNE) {
@@ -1820,77 +1385,77 @@
 				this.errors.prenom = null;
 				}
 
-				if (!this.etudiant.nomar) {
-				this.errors.nomar = "الاسم العائلي مطلوب";
-				} else if (this.etudiant.nomar.length < 2 || this.etudiant.nomar.length > 50) {
-				this.errors.nomar = "يجب أن يحتوي الاسم العائلي على ما بين 2 و 50 حرفًا.";
-				} else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.nomar)) {
-				this.errors.nomar = "يرجى إدخال الاسم العائلي باللغة العربية فقط";
-				} else {
-				this.errors.nomar = null;
-				}
+				// if (!this.etudiant.nomar) {
+				// this.errors.nomar = "الاسم العائلي مطلوب";
+				// } else if (this.etudiant.nomar.length < 2 || this.etudiant.nomar.length > 50) {
+				// this.errors.nomar = "يجب أن يحتوي الاسم العائلي على ما بين 2 و 50 حرفًا.";
+				// } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.nomar)) {
+				// this.errors.nomar = "يرجى إدخال الاسم العائلي باللغة العربية فقط";
+				// } else {
+				// this.errors.nomar = null;
+				// }
 
-				if (!this.etudiant.prenomar) {
-				this.errors.prenomar = "الاسم الشخصي مطلوب";
-				} else if (this.etudiant.prenomar.length < 2 || this.etudiant.prenomar.length > 50) {
-				this.errors.prenomar = "يجب أن يحتوي الاسم الشخصي على ما بين 2 و 50 حرفًا.";
-				} else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.prenomar)) {
-				this.errors.prenomar = "يرجى إدخال الاسم الشخصي باللغة العربية فقط";
-				} else {
-				this.errors.prenomar = null;
-				}
+				// if (!this.etudiant.prenomar) {
+				// this.errors.prenomar = "الاسم الشخصي مطلوب";
+				// } else if (this.etudiant.prenomar.length < 2 || this.etudiant.prenomar.length > 50) {
+				// this.errors.prenomar = "يجب أن يحتوي الاسم الشخصي على ما بين 2 و 50 حرفًا.";
+				// } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.prenomar)) {
+				// this.errors.prenomar = "يرجى إدخال الاسم الشخصي باللغة العربية فقط";
+				// } else {
+				// this.errors.prenomar = null;
+				// }
 
-				if (!this.etudiant.datenais) {
-				this.errors.datenais = "La date de naissance est requis.";
-				} else {
-				this.errors.datenais = null;
-				}
+				// if (!this.etudiant.datenais) {
+				// this.errors.datenais = "La date de naissance est requis.";
+				// } else {
+				// this.errors.datenais = null;
+				// }
 
-				if (!this.etudiant.sexe) {
-				this.errors.sexe = "Le sexe est requis.";
-				} else {
-				this.errors.sexe = null;
-				}
+				// if (!this.etudiant.sexe) {
+				// this.errors.sexe = "Le sexe est requis.";
+				// } else {
+				// this.errors.sexe = null;
+				// }
 
-				if (!this.etudiant.payschamp) {
-				this.errors.payschamp = "Le nom du pays est requis.";
-				}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.payschamp)) {
-					this.errors.payschamp = "Le nom du pays doit être écrit uniquement en français.";
-				} else if (this.etudiant.payschamp.length < 2 || this.etudiant.payschamp.length > 70) {
-				this.errors.payschamp = "Le nom du pays doit contenir entre 2 et 70 caractères.";
-				} else {
-				this.errors.payschamp = null;
-				}
+				// if (!this.etudiant.payschamp) {
+				// this.errors.payschamp = "Le nom du pays est requis.";
+				// }else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.payschamp)) {
+				// 	this.errors.payschamp = "Le nom du pays doit être écrit uniquement en français.";
+				// } else if (this.etudiant.payschamp.length < 2 || this.etudiant.payschamp.length > 70) {
+				// this.errors.payschamp = "Le nom du pays doit contenir entre 2 et 70 caractères.";
+				// } else {
+				// this.errors.payschamp = null;
+				// }
 
-				if (!this.etudiant.villenais) {
-				this.errors.villenais = "Le nom de la ville est requis.";
-				}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.villenais)) {
-					this.errors.villenais = "Le nom de la ville doit être écrit uniquement en français.";
-				} else if (this.etudiant.villenais.length < 2 || this.etudiant.villenais.length > 70) {
-				this.errors.villenais = "Le nom de la ville doit contenir entre 2 et 70 caractères.";
-				} else {
-				this.errors.villenais = null;
-				}
+				// if (!this.etudiant.villenais) {
+				// this.errors.villenais = "Le nom de la ville est requis.";
+				// }else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.villenais)) {
+				// 	this.errors.villenais = "Le nom de la ville doit être écrit uniquement en français.";
+				// } else if (this.etudiant.villenais.length < 2 || this.etudiant.villenais.length > 70) {
+				// this.errors.villenais = "Le nom de la ville doit contenir entre 2 et 70 caractères.";
+				// } else {
+				// this.errors.villenais = null;
+				// }
 
-				if (!this.etudiant.villechamp) {
-				this.errors.villechamp = "مكان الازدياد مطلوب";
-				} else if (this.etudiant.villechamp.length < 2 || this.etudiant.villechamp.length > 70) {
-				this.errors.villechamp = "يجب أن يحتوي مكان الازدياد على ما بين 2 و 70 حرفًا.";
-				} else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.villechamp)) {
-				this.errors.villechamp = "يرجى إدخال مكان الازدياد باللغة العربية فقط";
-				} else {
-				this.errors.villechamp = null;
-				}
+				// if (!this.etudiant.villechamp) {
+				// this.errors.villechamp = "مكان الازدياد مطلوب";
+				// } else if (this.etudiant.villechamp.length < 2 || this.etudiant.villechamp.length > 70) {
+				// this.errors.villechamp = "يجب أن يحتوي مكان الازدياد على ما بين 2 و 70 حرفًا.";
+				// } else if (!/^[\u0621-\u064A\u0660-\u0669\s]+$/i.test(this.etudiant.villechamp)) {
+				// this.errors.villechamp = "يرجى إدخال مكان الازدياد باللغة العربية فقط";
+				// } else {
+				// this.errors.villechamp = null;
+				// }
 
-				if (!this.etudiant.adresse) {
-					this.errors.adresse = "L'adresse est requise.";
-				} else if (/[^A-Za-zÀ-ÿ0-9\s-]/.test(this.etudiant.adresse)) {
-					this.errors.adresse = "L'adresse doit être écrite uniquement en français et peut contenir des chiffres.";
-				} else if (this.etudiant.adresse.length < 10 || this.etudiant.adresse.length > 250) {
-					this.errors.adresse = "L'adresse doit contenir entre 10 et 250 caractères.";
-				} else {
-					this.errors.adresse = null;
-				}
+				// if (!this.etudiant.adresse) {
+				// 	this.errors.adresse = "L'adresse est requise.";
+				// } else if (/[^A-Za-zÀ-ÿ0-9\s-]/.test(this.etudiant.adresse)) {
+				// 	this.errors.adresse = "L'adresse doit être écrite uniquement en français et peut contenir des chiffres.";
+				// } else if (this.etudiant.adresse.length < 10 || this.etudiant.adresse.length > 250) {
+				// 	this.errors.adresse = "L'adresse doit contenir entre 10 et 250 caractères.";
+				// } else {
+				// 	this.errors.adresse = null;
+				// }
 
 				if (!this.etudiant.email) {
 				this.errors.email = "L'email est requis.";
@@ -1912,220 +1477,120 @@
 			}
 			if(this.currentStep == 2){
 				if (!this.etudiant.serie) {
-                    this.errors.serie = "Série de bac est requise.";
-                } else if (
-                    this.etudiant.serie !== "AUTRES" &&
-                    !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\(\)\-]{2,200}$/.test(this.etudiant.serie)
-                ) {
-                    this.errors.serie =
-                        "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
-                } else {
-                    this.errors.serie = null;
-                }
-
-				if (!this.etudiant.Anneebac) {
-				this.errors.Anneebac = "Année de bac est requis.";
+					this.errors.serie = "Série de bac est requise.";
+				} else if (
+					this.etudiant.serie !== "AUTRES" &&
+					!/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s()\/:\-\.]{2,200}$/.test(this.etudiant.serie)
+				) {
+					this.errors.serie =
+						"Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
 				} else {
-				this.errors.Anneebac = null;
+					this.errors.serie = null;
 				}
 
 
 
-				if (!this.etudiant.dernier_diplome_obtenu) {
-				this.errors.dernier_diplome_obtenu = "Ce champs est requis.";
+				if (!this.etudiant.typelicence) {
+				this.errors.typelicence = "Ce champ est requis.";
+				} else if (this.etudiant.typelicence !== "AUTRES" && !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\(\)\-]{2,200}$/.test(this.etudiant.typelicence)) {
+				this.errors.typelicence = "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
 				} else {
-				this.errors.dernier_diplome_obtenu = null;
+				this.errors.typelicence = null;
 				}
+				
 
-				if (!this.etudiant.type_diplome_obtenu) {
-                    this.errors.type_diplome_obtenu = "Ce champ est requis.";
-                } else if (
-                    this.etudiant.type_diplome_obtenu !== "AUTRES" &&
-                    !/^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\(\)\-]{2,200}$/.test(this.etudiant.type_diplome_obtenu)
-                ) {
-                    this.errors.type_diplome_obtenu =
-                        "Ce champ doit contenir entre 2 et 200 caractères, et doit être écrit uniquement en français.";
-                } else {
-                    this.errors.type_diplome_obtenu = null;
-                }
-
-				if (!this.etudiant.specialitediplome) {
-				this.errors.specialitediplome = "Le spécialité du diplome est requis.";
-				}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.specialitediplome)) {
-				this.errors.specialitediplome = "Ce champs doit être écrit uniquement en français.";
-				} else if (this.etudiant.specialitediplome.length < 2 || this.etudiant.specialitediplome.length > 200) {
-				this.errors.specialitediplome = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
+				if (!this.etudiant.mentionlp) {
+				this.errors.mentionlp = "Mention de licence est requis.";
 				} else {
-				this.errors.specialitediplome = null;
+				this.errors.mentionlp = null;
 				}
 
-
-				if (!this.etudiant.ville_etablissement_diplome) {
-				this.errors.ville_etablissement_diplome = "Ce champs est requis.";
-				}else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.ville_etablissement_diplome)) {
-				this.errors.ville_etablissement_diplome = "Ce champs doit être écrit uniquement en français.";
-				} else if (this.etudiant.ville_etablissement_diplome.length < 2 || this.etudiant.ville_etablissement_diplome.length > 150) {
-				this.errors.ville_etablissement_diplome = "Ce champs doit contenir entre 2 et 150 caractères alphanumériques.";
+				if (!this.etudiant.specialitelp) {
+				this.errors.specialitelp = "Le spécialité du licence est requis.";
+				} else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.specialitelp)) {
+				this.errors.specialitelp = "Ce champs doit être écrit uniquement en français.";
+				} else if (this.etudiant.specialitelp.length < 2 || this.etudiant.specialitelp.length > 200) {
+				this.errors.specialitelp = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
 				} else {
-				this.errors.ville_etablissement_diplome = null;
+				this.errors.specialitelp = null;
 				}
 
-				if (!this.etudiant.date_optention_diplome) {
-				this.errors.date_optention_diplome = "Ce champs est requis.";
+				if (!this.etudiant.etblsmtLp) {
+				this.errors.etblsmtLp = "Ce champs est requis.";
+				} else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.etblsmtLp)) {
+				this.errors.etblsmtLp = "Ce champs doit être écrit uniquement en français.";
+				} else if (this.etudiant.etblsmtLp.length < 2 || this.etudiant.etblsmtLp.length > 200) {
+				this.errors.etblsmtLp = "Ce champs doit contenir entre 2 et 200 caractères alphanumériques.";
 				} else {
-				this.errors.date_optention_diplome = null;
+				this.errors.etblsmtLp = null;
 				}
 
-
-
-				if (!this.etudiant.fonctionnaire) {
-					this.errors.fonctionnaire = "Ce champ est requis.";
+				if (!this.etudiant.ville_etablissement_licence) {
+				this.errors.ville_etablissement_licence = "Ce champs est requis.";
+				} else if (/[^A-Za-zÀ-ÿ0-9\s\-'.]/.test(this.etudiant.ville_etablissement_licence)) {
+				this.errors.ville_etablissement_licence = "Ce champs doit être écrit uniquement en français.";
+				} else if (this.etudiant.ville_etablissement_licence.length < 2 || this.etudiant.ville_etablissement_licence.length > 150) {
+				this.errors.ville_etablissement_licence = "Ce champs doit contenir entre 2 et 150 caractères alphanumériques.";
 				} else {
-					this.errors.fonctionnaire = null;
-					// Si "NON" est sélectionné, vider les autres champs
-					if (this.etudiant.fonctionnaire === "NON") {
-						this.etudiant.secteur = "";
-						this.etudiant.nombreannee = "";
-						this.etudiant.poste = "";
-						this.etudiant.lieutravail = "";
-						this.etudiant.villetravail = "";
-						this.errors.secteur = null;
-						this.errors.nombreannee = null;
-						this.errors.poste = null;
-						this.errors.lieutravail = null;
-						this.errors.villetravail = null;
-					}
-				}
-				if (this.etudiant.fonctionnaire === "OUI") {
-					if (!this.etudiant.secteur) {
-					this.errors.secteur = "Ce champ est requis.";
-					} else if (this.etudiant.secteur.length < 2 || this.etudiant.secteur.length > 200) {
-					this.errors.secteur = "Le secteur doit contenir entre 2 et 200 caractères.";
-					} else {
-					this.errors.secteur = null;
-					}
+				this.errors.ville_etablissement_licence = null;
 				}
 
-				if (this.etudiant.fonctionnaire === "OUI") {
-					if (!this.etudiant.nombreannee) {
-					this.errors.nombreannee = "Ce champ est requis.";
-					} else if (!Number.isInteger(Number(this.etudiant.nombreannee))) {
-					this.errors.nombreannee = "Entrez un nombre entier valide.";
-					} else if (this.etudiant.nombreannee < 0) {
-					this.errors.nombreannee = "Le nombre d'années ne peut pas être négatif.";
-					} else {
-					this.errors.nombreannee = null;
-					}
-				}
-
-				if (this.etudiant.fonctionnaire === "OUI") {
-					if (!this.etudiant.poste) {
-					this.errors.poste = "Ce champ est requis.";
-					} else if (this.etudiant.poste.length < 2 || this.etudiant.poste.length > 200) {
-					this.errors.poste = "Le poste doit contenir entre 2 et 200 caractères.";
-					} else {
-					this.errors.poste = null;
-					}
-				}
-				if (this.etudiant.fonctionnaire === "OUI") {
-					if (!this.etudiant.lieutravail) {
-					this.errors.lieutravail = "Ce champ est requis.";
-					} else if (this.etudiant.lieutravail.length < 2 || this.etudiant.lieutravail.length > 200) {
-					this.errors.lieutravail = "Le lieu de travail doit contenir entre 2 et 200 caractères.";
-					} else {
-					this.errors.lieutravail = null;
-					}
-				}
-
-				if (this.etudiant.fonctionnaire === "OUI") {
-					if (!this.etudiant.villetravail) {
-					this.errors.villetravail = "Ce champ est requis.";
-					} else if (this.etudiant.villetravail.length < 2 || this.etudiant.villetravail.length > 200) {
-					this.errors.villetravail = "La ville de travail doit contenir entre 2 et 200 caractères.";
-					} else {
-					this.errors.villetravail = null;
-					}
+				if (!this.etudiant.date_obtention_LP) {
+				this.errors.date_obtention_LP = "Ce champs est requis.";
+				} else {
+				this.errors.date_obtention_LP = null;
 				}
 
 
+
+				if (!this.etudiant.moyenne_licence) {
+					this.errors.moyenne_licence = "Ce champ est requis.";
+				} else if (!notePattern.test(this.etudiant.moyenne_licence)) {
+					this.errors.moyenne_licence = "Entrez une note valide (exemple: 16 | 16.50).";
+				} else {
+					this.errors.moyenne_licence = null;
+				}
+				
+
+		
+				if (!this.etudiant.secteur) {
+				this.errors.secteur = "Ce champ est requis.";
+				} else if (this.etudiant.secteur.length < 2 || this.etudiant.secteur.length > 200) {
+				this.errors.secteur = "Le secteur doit contenir entre 2 et 200 caractères.";
+				} else {
+				this.errors.secteur = null;
+				}
+				
+
+				if (!this.etudiant.poste) {
+				this.errors.poste = "Ce champ est requis.";
+				} else if (this.etudiant.poste.length < 2 || this.etudiant.poste.length > 200) {
+				this.errors.poste = "Le poste doit contenir entre 2 et 200 caractères.";
+				} else {
+				this.errors.poste = null;
+				}
+				
+				// if (!this.etudiant.lieutravail) {
+				// this.errors.lieutravail = "Ce champ est requis.";
+				// } else if (this.etudiant.lieutravail.length < 2 || this.etudiant.lieutravail.length > 200) {
+				// this.errors.lieutravail = "Le lieu de travail doit contenir entre 2 et 200 caractères.";
+				// } else {
+				// this.errors.lieutravail = null;
+				// }
+
+
+				// if (!this.etudiant.villetravail) {
+				// this.errors.villetravail = "Ce champ est requis.";
+				// } else if (this.etudiant.villetravail.length < 2 || this.etudiant.villetravail.length > 200) {
+				// this.errors.villetravail = "La ville de travail doit contenir entre 2 et 200 caractères.";
+				// } else {
+				// this.errors.villetravail = null;
+				// }
 
 
 			}
 
-			if (this.currentStep == 3) {
-				const fileFields = [
-
-				];
-
-				if (this.etablissement.show_photo_input_master) {
-					fileFields.push("path_photo");
-				}
-
-				if (this.etablissement.show_cin_input_master) {
-					fileFields.push("path_cin");
-				}
-
-				if (this.etablissement.show_bac_input_master) {
-					fileFields.push("path_bac");
-				}
-
-				if (this.etablissement.show_licence_input_master) {
-					fileFields.push("path_licence");
-				}
-
-				if (this.etablissement.show_attestation_no_emploi_input_master) {
-					fileFields.push("path_attestation_non_emploi");
-				}
-
-
-
-				fileFields.forEach((path) => {
-					const file = this.etudiant[path];
-
-					// Check if a file is selected
-					if (!file || !file.preview) {
-						this.errors[path] = "Ce fichier est requis.";
-					} else {
-						// Validate file type (Only images allowed)
-						const allowedTypes = ["image/jpeg", "image/png", "image/jpg"];
-						if (!allowedTypes.includes(file.file.type)) {
-							this.errors[path] = "Seules les images (.jpg, .jpeg, .png) sont autorisées.";
-						}
-
-
-						// Validate file size (Max 300 Ko)
-						const maxSize = 300 * 1024; // 300 Ko in bytes
-						if (file.size > maxSize) {
-							this.errors[path] = "Le fichier ne doit pas dépasser 300 Ko.";
-						}
-					}
-				});
-
-
-				// Validation for CV PDF
-				if(this.etablissement.show_cv_input_master){
-					const cvFile = this.etudiant["path_cv"];
-					if (!cvFile || !cvFile.preview) {
-						this.errors["path_cv"] = "Le CV est requis.";
-					} else {
-						// Validate file type (Only PDF allowed)
-						if (cvFile.file.type !== "application/pdf") {
-							this.errors["path_cv"] = "Seul le format PDF est autorisé.";
-						}
-
-						// Validate file size (Max 2 MB)
-						const maxCVSize = 2 * 1024 * 1024; // 2 MB in bytes
-						if (cvFile.size > maxCVSize) {
-							this.errors["path_cv"] = "Le fichier ne doit pas dépasser 2 Mo.";
-						}
-					}
-				}
-				console.log(fileFields)
-				console.log(this.errors)
-			}
-
-
-			if(this.currentStep == 4){
+			if(this.currentStep == 3){
 				if(this.etablissement.multiple_choix_filiere_master == 0){
 					if (!this.etudiant.filiere) {
 						this.errors.filiere = "Le choix d'une seule filière est requis. Veuillez sélectionner une seule filière.";
@@ -2151,7 +1616,7 @@
 				}
 			}
 
-			if(this.currentStep == 5){
+			if(this.currentStep == 4){
 				if (!this.etudiant.confirmation) {
 					this.errors.confirmation = "L'inscription ne peut pas être validée sans confirmation. Veuillez cocher la case pour continuer.";
 				} else {
@@ -2162,13 +1627,13 @@
 			return !Object.values(this.errors).some(error => error !== null);
     	},
 		nextStep() {
-			/*if(this.currentStep == 1 || this.currentStep == 1 || this.currentStep == 2){
-				if (this.currentStep < this.steps.length) {
-					this.currentStep++;
-					// document.querySelector('.section-title')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-				}
-			}
-			else{*/
+			// if(this.currentStep == 1 || this.currentStep == 1 || this.currentStep == 2){
+			// 	if (this.currentStep < this.steps.length) {
+			// 		this.currentStep++;
+			// 		// document.querySelector('.section-title')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			// 	}
+			// }
+			// else{
 				if (this.validateStepp()) {
 					if (this.currentStep < this.steps.length) {
 						document.querySelector('.section-title')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -2206,35 +1671,6 @@
 			this.loading = true; // Show loading screen
 
 			try {
-				if (!this.etablissement.show_photo_input_master) {
-					this.etudiant.path_photo = null
-				}
-
-				if (!this.etablissement.show_cin_input_master) {
-					this.etudiant.path_cin = null
-				}
-
-				if (!this.etablissement.show_bac_input_master) {
-					this.etudiant.path_bac = null
-				}
-
-				if (!this.etablissement.show_licence_input_master) {
-					this.etudiant.path_licence = null
-				}
-
-				if (!this.etablissement.show_attestation_no_emploi_input_master) {
-					this.etudiant.path_attestation_non_emploi = null
-				}
-
-				if(!this.etablissement.show_cv_input_master){
-					this.etudiant.path_cv = null
-				}
-
-				if (this.etudiant.type_bac === "bac+3") {
-					this.etudiant.path_note7 = null
-					this.etudiant.path_note8 = null
-				}
-
 				let formData = new FormData();
 
 				// Append text fields
@@ -2249,45 +1685,6 @@
 
 				];
 
-				if (this.etablissement.show_photo_input_master) {
-					fileFields.push("path_photo");
-				}
-
-				if (this.etablissement.show_cin_input_master) {
-					fileFields.push("path_cin");
-				}
-
-				if (this.etablissement.show_bac_input_master) {
-					fileFields.push("path_bac");
-				}
-
-				if (this.etablissement.show_licence_input_master) {
-					fileFields.push("path_licence");
-				}
-
-				if (this.etablissement.show_attestation_no_emploi_input_master) {
-					fileFields.push("path_attestation_non_emploi");
-				}
-
-				if(this.etablissement.show_cv_input_master){
-					fileFields.push("path_cv");
-				}
-
-				fileFields.forEach(path => {
-					console.log(path)
-					const fileData = this.etudiant[path];
-					if (fileData && fileData.file instanceof File) {
-						formData.append(path, fileData.file, fileData.file.name);  // Append the actual file
-					} else {
-						console.warn(`⚠️ File missing or invalid for: ${path}`);
-					}
-				});
-
-
-				// Debugging: Log formData entries to the console
-				// for (let pair of formData.entries()) {
-				// 	console.log(pair[0], pair[1]);
-				// }
 
 				// Send form data
 				const response = await axios.post("/api/submit/form/master", formData, {
@@ -2295,12 +1692,27 @@
 						"Content-Type": "multipart/form-data",
 					},
 				});
-
-				if (response.data.status == 1) {
-					this.successForm = true;
-				} else {
-					this.$refs.errorPopup.show("Une erreur au niveau du serveur est survenue.");
+				
+				if(response.data.status === 2){
+					this.loading = false;
+					this.$refs.errorPopup.show(response.data.message);
+					return;
 				}
+
+				if (response.data.status === 1) {
+                    // Mettre à jour les infos pour affichage dans la modale
+					const email = this.etudiant.email
+					const CIN = this.etudiant.CIN
+                    this.etudiant = {
+                        email: email,
+                        CIN: CIN,
+                        exists: response.data.user.exists
+                    };
+                    this.successForm = true;
+                } else {
+                    alert(`⚠️ ${response.data.message}`);
+                }
+
 			} catch (error) {
 				console.error("Error submitting form:", error);
 				if (error.response && error.response.data && error.response.data.errors) {
@@ -2320,9 +1732,9 @@
 
 	},
 	mounted() {
-		this.etudiant.CNE = this.cne
-		this.etudiant.CIN = this.cin
 		this.serie_bac = this.etablissement.serie_bac
+		this.etudiant.etablissement_id = this.etablissement.id
+		this.etudiant.filiere = this.filiere.id
 		this.etudiant.etablissement_id = this.etablissement.id
 		this.diplomeBacPlus2 = this.etablissement.diplomebacplus2
 		// console.log(this.appurl)
@@ -2342,7 +1754,7 @@
   }
 
   .form-container {
-	max-width: 800px;
+	max-width: 1000px !important;
 	margin: 2rem auto;
 	background: #ffffff;
 	border-radius: 15px;
@@ -2821,7 +2233,7 @@ legend {
 }
 
 .legend1{
-	left: -365px;
+	left: -571px !important;
 }
 
 .legend2{
@@ -2829,11 +2241,11 @@ legend {
 }
 
 .legend3{
-	left: -440px;
+	left: -644px !important;
   }
 
   .legend4{
-	left: -573px;
+	left: -582px !important;
   }
 
   .legend5{

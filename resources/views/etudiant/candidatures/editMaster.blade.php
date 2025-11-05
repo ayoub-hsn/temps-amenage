@@ -202,10 +202,6 @@
                           aria-selected="false">INFORMATIONS ACADEMIQUES</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" id="profile-tab2" data-toggle="tab" href="#document" role="tab"
-                          aria-selected="false">DOCUMENT</a>
-                      </li>
-                      <li class="nav-item">
                         <a class="nav-link" id="profile-tab2" data-toggle="tab" href="#choixFiliere" role="tab"
                           aria-selected="false">CHOIX DE FILIERE</a>
                       </li>
@@ -269,7 +265,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6">
+                                        {{-- <div class="col-lg-6">
                                             <div class="form-group text-right" style="direction: rtl;">
                                                 <label for="nomar">الاسم العائلي</label>
                                                 <input type="text" name="nomar" value="{{ old('nomar', $etudiant->nomar) }}"
@@ -373,7 +369,7 @@
                                                     </div>
                                                 @endif
                                             </div>
-                                        </div>
+                                        </div> --}}
 
                                         <div class="col-lg-6">
                                             <div class="form-group">
@@ -428,119 +424,89 @@
                                                 </div>
                                             </div>
 
-                                            <!-- Date d'obtention du BAC -->
+
+                                            <!-- Bac+3 (Licence) Information -->
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="Anneebac">Date d'obtention du BAC</label>
-                                                    <input type="date" name="Anneebac" value="{{ old('Anneebac',$etudiant->Anneebac) }}" class="form-control {{ $errors->has('Anneebac') ? 'is-invalid' : '' }}">
-                                                    @if($errors->has('Anneebac'))
+                                                    <label for="typelicence">Type de Licence</label>
+                                                    <input type="text" name="typelicence" value="{{ old('typelicence',$etudiant->typelicence) }}" class="form-control {{ $errors->has('typelicence') ? 'is-invalid' : '' }}">
+                                                    @if($errors->has('typelicence'))
                                                         <div class="invalid-feedback">
-                                                            {{ $errors->first('Anneebac') }}
+                                                            {{ $errors->first('typelicence') }}
                                                         </div>
                                                     @endif
                                                 </div>
                                             </div>
-
-
-
-                                            <!-- Derniere diplome Information -->
+                                        
+                                            <!-- Mention de Licence -->
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="dernier_diplome_obtenu">Dernier Diplome Obtenu</label>
-                                                    <select name="dernier_diplome_obtenu" class="form-control {{ $errors->has('dernier_diplome_obtenu') ? 'is-invalid' : '' }}">
-                                                        <option value="BAC+3" {{ old('dernier_diplome_obtenu',$etudiant->dernier_diplome_obtenu) == "BAC+3" ? 'selected' : '' }}>Bac+3</option>
-                                                        <option value="BAC+4" {{ old('dernier_diplome_obtenu',$etudiant->dernier_diplome_obtenu) == "BAC+4" ? 'selected' : '' }}>Bac+4</option>
-                                                        <option value="BAC+5" {{ old('dernier_diplome_obtenu',$etudiant->dernier_diplome_obtenu) == "BAC+5" ? 'selected' : '' }}>Bac+5</option>
+                                                    <label for="mentionlp">Mention de Licence</label>
+                                                    <select name="mentionlp" class="form-control {{ $errors->has('mentionlp') ? 'is-invalid' : '' }}">
+                                                        <option value="PASSABLE" {{ old('mentionlp',$etudiant->mentionlp) == 'PASSABLE' ? 'selected' : '' }}>PASSABLE</option>
+                                                        <option value="ASSEZ BIEN" {{ old('mentionlp',$etudiant->mentionlp) == 'ASSEZ BIEN' ? 'selected' : '' }}>ASSEZ BIEN</option>
+                                                        <option value="BIEN" {{ old('mentionlp',$etudiant->mentionlp) == 'BIEN' ? 'selected' : '' }}>BIEN</option>
+                                                        <option value="TRES BIEN" {{ old('mentionlp',$etudiant->mentionlp) == 'TRES BIEN' ? 'selected' : '' }}>TRES BIEN</option>
                                                     </select>
-                                                    @if($errors->has('dernier_diplome_obtenu'))
+                                                    @if($errors->has('mentionlp'))
                                                         <div class="invalid-feedback">
-                                                            {{ $errors->first('dernier_diplome_obtenu') }}
+                                                            {{ $errors->first('mentionlp') }}
                                                         </div>
                                                     @endif
                                                 </div>
                                             </div>
-
-                                            <!-- Type du Diplome -->
+                                        
+                                            <!-- Spécialité de Licence -->
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="type_diplome_obtenu">Type du Diplome</label>
-                                                    <input type="text" name="type_diplome_obtenu" value="{{ old('type_diplome_obtenu',$etudiant->type_diplome_obtenu) }}" class="form-control {{ $errors->has('type_diplome_obtenu') ? 'is-invalid' : '' }}">
-                                                    @if($errors->has('type_diplome_obtenu'))
+                                                    <label for="specialitelp">Spécialité de Licence</label>
+                                                    <input type="text" name="specialitelp" value="{{ old('specialitelp',$etudiant->specialitelp) }}" class="form-control {{ $errors->has('specialitelp') ? 'is-invalid' : '' }}">
+                                                    @if($errors->has('specialitelp'))
                                                         <div class="invalid-feedback">
-                                                            {{ $errors->first('type_diplome_obtenu') }}
+                                                            {{ $errors->first('specialitelp') }}
                                                         </div>
                                                     @endif
                                                 </div>
                                             </div>
-
-                                            <!-- Spécialité du Diplome -->
+                                        
+                                            <!-- Etablissement de Licence -->
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="specialitediplome">Spécialité du Diplome</label>
-                                                    <input type="text" name="specialitediplome" value="{{ old('specialitediplome',$etudiant->specialitediplome) }}" class="form-control {{ $errors->has('specialitediplome') ? 'is-invalid' : '' }}">
-                                                    @if($errors->has('specialitediplome'))
+                                                    <label for="etblsmtLp">Etablissement de Licence</label>
+                                                    <input type="text" name="etblsmtLp" value="{{ old('etblsmtLp',$etudiant->etblsmtLp) }}" class="form-control {{ $errors->has('etblsmtLp') ? 'is-invalid' : '' }}">
+                                                    @if($errors->has('etblsmtLp'))
                                                         <div class="invalid-feedback">
-                                                            {{ $errors->first('specialitediplome') }}
+                                                            {{ $errors->first('etblsmtLp') }}
                                                         </div>
                                                     @endif
                                                 </div>
                                             </div>
-
-                                            {{-- <!-- Etablissement Bac+2 -->
+                                       
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="etblsmtdeug">Etablissement Bac+2</label>
-                                                    <input type="text" name="etblsmtdeug" value="{{ old('etblsmtdeug',$etudiant->etblsmtdeug) }}" class="form-control {{ $errors->has('etblsmtdeug') ? 'is-invalid' : '' }}">
-                                                    @if($errors->has('etblsmtdeug'))
+                                                    <label for="date_obtention_LP">Date Obtention de Licence</label>
+                                                    <input type="date" name="date_obtention_LP" value="{{ old('date_obtention_LP',$etudiant->date_obtention_LP) }}" class="form-control {{ $errors->has('date_obtention_deug') ? 'is-invalid' : '' }}">
+                                                    @if($errors->has('date_obtention_LP'))
                                                         <div class="invalid-feedback">
-                                                            {{ $errors->first('etblsmtdeug') }}
+                                                            {{ $errors->first('date_obtention_LP') }}
                                                         </div>
                                                     @endif
                                                 </div>
-                                            </div> --}}
+                                            </div> 
 
-                                            <!-- Etablissement du diplome -->
+                                           
+
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="ville_etablissement_diplome">Etablissement</label>
-                                                    <input type="text" name="ville_etablissement_diplome" value="{{ old('ville_etablissement_diplome',$etudiant->ville_etablissement_diplome) }}" class="form-control {{ $errors->has('ville_etablissement_diplome') ? 'is-invalid' : '' }}">
-                                                    @if($errors->has('ville_etablissement_diplome'))
-                                                        <div class="invalid-feedback">
-                                                            {{ $errors->first('ville_etablissement_diplome') }}
-                                                        </div>
+                                                    <label for="moyenne_licence">Moyenne du Licence</label>
+                                                    <input type="number" step="0.01" name="moyenne_licence" value="{{ old('moyenne_licence', $etudiant->moyenne_licence) }}" class="form-control {{ $errors->has('moyenne_licence') ? 'is-invalid' : '' }}">
+                                                    @if($errors->has('moyenne_licence'))
+                                                        <div class="invalid-feedback">{{ $errors->first('moyenne_licence') }}</div>
                                                     @endif
                                                 </div>
                                             </div>
+                                          
 
-                                            <!-- Date d'obtention de Diplome -->
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="date_optention_diplome">Date d'obtention du Diplome</label>
-                                                    <input type="date" name="date_optention_diplome" value="{{ old('date_optention_diplome',$etudiant->date_optention_diplome) }}" class="form-control {{ $errors->has('date_optention_diplome') ? 'is-invalid' : '' }}">
-                                                    @if($errors->has('date_optention_diplome'))
-                                                        <div class="invalid-feedback">
-                                                            {{ $errors->first('date_optention_diplome') }}
-                                                        </div>
-                                                    @endif
-                                                </div>
-                                            </div>
-
-
-
-                                            <!-- Fonctionnaire -->
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="fonctionnaire">Fonctionnaire</label>
-                                                    <select name="fonctionnaire" class="form-control {{ $errors->has('fonctionnaire') ? 'is-invalid' : '' }}">
-                                                        <option value="">-- Sélectionner --</option>
-                                                        <option value="1" {{ old('fonctionnaire', $etudiant->fonctionnaire) == '1' ? 'selected' : '' }}>Oui</option>
-                                                        <option value="0" {{ old('fonctionnaire', $etudiant->fonctionnaire) == '0' ? 'selected' : '' }}>Non</option>
-                                                    </select>
-                                                    @if($errors->has('fonctionnaire'))
-                                                        <div class="invalid-feedback">{{ $errors->first('fonctionnaire') }}</div>
-                                                    @endif
-                                                </div>
-                                            </div>
 
                                             <!-- Secteur -->
                                             <div class="col-lg-6">
@@ -553,16 +519,7 @@
                                                 </div>
                                             </div>
 
-                                            <!-- Nombre d'années -->
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="nombreannee">Nombre d'années</label>
-                                                    <input type="number" name="nombreannee" value="{{ old('nombreannee', $etudiant->nombreannee) }}" class="form-control {{ $errors->has('nombreannee') ? 'is-invalid' : '' }}">
-                                                    @if($errors->has('nombreannee'))
-                                                        <div class="invalid-feedback">{{ $errors->first('nombreannee') }}</div>
-                                                    @endif
-                                                </div>
-                                            </div>
+                                           
 
                                             <!-- Poste -->
                                             <div class="col-lg-6">
@@ -575,7 +532,7 @@
                                                 </div>
                                             </div>
 
-                                            <!-- Lieu de travail -->
+                                            {{-- <!-- Lieu de travail -->
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="lieutravail">Lieu de travail</label>
@@ -596,7 +553,7 @@
                                                     @endif
                                                 </div>
                                             </div>
-
+ --}}
 
 
 
@@ -608,131 +565,6 @@
                             </form>
                         </div>
 
-                        <div class="tab-pane fade" id="document" role="tabpanel" aria-labelledby="profile-tab2">
-                            <form method="POST" action="{{route('etudiant.candidatures.master.document.update',['etudiant' => $etudiant->id])}}" enctype="multipart/form-data">
-                                @csrf
-                                @method('PUT')
-                                <div class="card-header">
-                                <h4>Modifier Mes Documents</h4>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-
-                                        @if ($etablissement->show_photo_input_master)
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="path_photo">Photo</label>
-                                                    <div class="custom-file-input-wrapper">
-                                                        <input type="file" name="path_photo" id="path_photo" class="custom-file-input {{ $errors->has('path_photo') ? 'is-invalid' : '' }}" onchange="previewImage(this)">
-                                                        <label class="custom-file-label" for="path_photo"><i class="fas fa-upload"></i> Choisir une image</label>
-                                                    </div>
-                                                    @if($errors->has('path_photo'))
-                                                        <div class="invalid-feedback d-block">{{ $errors->first('path_photo') }}</div>
-                                                    @endif
-                                                    <div class="mt-2">
-                                                        <img src="{{ asset($etudiant->path_photo) }}" alt="Photo" class="preview-img" id="preview_path_photo">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endif
-
-                                        @if ($etablissement->show_cin_input_master)
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="path_cin">CIN</label>
-                                                    <div class="custom-file-input-wrapper">
-                                                        <input type="file" name="path_cin" id="path_cin" class="custom-file-input {{ $errors->has('path_cin') ? 'is-invalid' : '' }}" onchange="previewImage(this)">
-                                                        <label class="custom-file-label" for="path_cin"><i class="fas fa-upload"></i> Choisir une image</label>
-                                                    </div>
-                                                    @if($errors->has('path_cin'))
-                                                        <div class="invalid-feedback d-block">{{ $errors->first('path_cin') }}</div>
-                                                    @endif
-                                                    <div class="mt-2">
-                                                        <img src="{{ asset($etudiant->path_cin) }}" alt="CIN" class="preview-img" id="preview_path_cin">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endif
-
-                                        @if ($etablissement->show_bac_input_master)
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="path_bac">Diplome Du Baccalauréat</label>
-                                                    <div class="custom-file-input-wrapper">
-                                                        <input type="file" name="path_bac" id="path_bac" class="custom-file-input {{ $errors->has('path_bac') ? 'is-invalid' : '' }}" onchange="previewImage(this)">
-                                                        <label class="custom-file-label" for="path_bac"><i class="fas fa-upload"></i> Choisir une image</label>
-                                                    </div>
-                                                    @if($errors->has('path_bac'))
-                                                        <div class="invalid-feedback d-block">{{ $errors->first('path_bac') }}</div>
-                                                    @endif
-                                                    <div class="mt-2">
-                                                        <img src="{{ asset($etudiant->path_bac) }}" alt="BAC" class="preview-img" id="preview_path_bac">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endif
-
-                                        @if ($etablissement->show_licence_input_master)
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="path_licence">Diplome Du Licence(Attestaion de réussite)</label>
-                                                    <div class="custom-file-input-wrapper">
-                                                        <input type="file" name="path_licence" id="path_licence" class="custom-file-input {{ $errors->has('path_licence') ? 'is-invalid' : '' }}" onchange="previewImage(this)">
-                                                        <label class="custom-file-label" for="path_licence"><i class="fas fa-upload"></i> Choisir une image</label>
-                                                    </div>
-                                                    @if($errors->has('path_licence'))
-                                                        <div class="invalid-feedback d-block">{{ $errors->first('path_licence') }}</div>
-                                                    @endif
-                                                    <div class="mt-2">
-                                                        <img src="{{ asset($etudiant->path_licence) }}" alt="LICENCE" class="preview-img" id="preview_path_licence">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endif
-
-                                        @if ($etablissement->show_attestation_no_emploi_input_master)
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="path_attestation_non_emploi">Attestation de non-emploi</label>
-                                                    <div class="custom-file-input-wrapper">
-                                                        <input type="file" name="path_attestation_non_emploi" id="path_attestation_non_emploi" class="custom-file-input {{ $errors->has('path_attestation_non_emploi') ? 'is-invalid' : '' }}" onchange="previewImage(this)">
-                                                        <label class="custom-file-label" for="path_attestation_non_emploi"><i class="fas fa-upload"></i> Choisir une image</label>
-                                                    </div>
-                                                    @if($errors->has('path_attestation_non_emploi'))
-                                                        <div class="invalid-feedback d-block">{{ $errors->first('path_attestation_non_emploi') }}</div>
-                                                    @endif
-                                                    <div class="mt-2">
-                                                        <img src="{{ asset($etudiant->path_attestation_non_emploi) }}" alt="NONEMPLOI" class="preview-img" id="preview_path_attestation_non_emploi">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endif
-
-                                        @if ($etablissement->show_cv_input_master)
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="path_cv">CV (PDF)</label>
-                                                    <div class="custom-file-input-wrapper">
-                                                        <input type="file" name="path_cv" class="custom-file-input {{ $errors->has('path_cv') ? 'is-invalid' : '' }}" onchange="previewPDF(this)">
-                                                        <label class="custom-file-label" for="path_cv"><i class="fas fa-file-pdf"></i> Choisir un fichier PDF</label>
-                                                    </div>
-                                                    @if($errors->has('path_cv'))
-                                                        <div class="invalid-feedback d-block">{{ $errors->first('path_cv') }}</div>
-                                                    @endif
-                                                    <div class="mt-2">
-                                                        <iframe src="{{ asset($etudiant->path_cv) }}" width="100%" height="400px" style="border:1px solid #ccc;" id="preview_path_cv"></iframe>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endif
-
-                                        <div class="col-lg-12">
-                                            <button class="btn btn-primary btn-block">Modifier</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
 
                         <div class="tab-pane fade" id="choixFiliere" role="tabpanel" aria-labelledby="profile-tab2">
                             <form method="POST" action="{{ route('etudiant.candidatures.master.choixFiliere.update', ['etudiant' => $etudiant->id]) }}" enctype="multipart/form-data">

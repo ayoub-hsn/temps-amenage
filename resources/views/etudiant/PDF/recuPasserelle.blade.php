@@ -2,7 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Fiche de Préinscription - Fomation conitnue</title>
+    <title>Fiche de Préinscription - Formation Initiale en Temps Aménagé</title>
+    <link rel="icon" href="{{ asset('images/favicon-uh1.png') }}" type="image/x-icon">
     <style>
         @page {
             size: A4;
@@ -208,7 +209,7 @@
         </header>
 
         <div class="center-title">
-            <h1>FICHE DE PRÉINSCRIPTION - Formation Initiale à Temps Aménagé</h1>
+            <h1>FICHE DE PRÉINSCRIPTION</h1>
         </div>
 
         <div class="qr-logo-container">
@@ -237,8 +238,6 @@
                 </tr>
                 <tr><td class="label">CIN</td><td>{{ $etudiant->CIN }}</td></tr>
                 <tr><td class="label">Nom - Prénom</td><td>{{ $etudiant->nom }} {{ $etudiant->prenom }}</td></tr>
-                <tr><td class="label">Date de Naissance</td><td>{{ $etudiant->datenais }}</td></tr>
-                <tr><td class="label">Ville de Naissance</td><td>{{ $etudiant->villenais }}</td></tr>
                 <tr><td class="label">Téléphone</td><td>{{ $etudiant->phone }}</td></tr>
                 <tr><td class="label">Email</td><td>{{ $etudiant->email }}</td></tr>
             </table>
@@ -248,9 +247,9 @@
             <div class="section-title">INFORMATIONS ACADÉMIQUES</div>
             <table>
                 <tr><td class="label">Série du Bac</td><td>{{ $etudiant->serie }}</td></tr>
-                <tr><td class="label">Année d'Obtention</td><td>{{ $etudiant->Anneebac }}</td></tr>
-                <tr><td class="label">Spécialité du Diplome</td><td>{{ $etudiant->specialitediplome }}</td></tr>
-                <tr><td class="label">Année d'Obtention</td><td>{{ $etudiant->date_optention_diplome }}</td></tr>
+                <tr><td class="label">Diplome</td><td>{{ $etudiant->diplomedeug }}</td></tr>
+                <tr><td class="label">Spécialité du Diplome</td><td>{{ $etudiant->specialitedeug }}</td></tr>
+                <tr><td class="label">Moyenne du Diplome</td><td>{{ $etudiant->moyenne_deug }}</td></tr>
                 
             </table>
         </div>

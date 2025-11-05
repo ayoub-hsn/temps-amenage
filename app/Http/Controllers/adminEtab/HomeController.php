@@ -4,6 +4,7 @@ namespace App\Http\Controllers\adminEtab;
 
 use Carbon\Carbon;
 use App\Models\Filiere;
+use App\Models\Bachelier;
 use Illuminate\Http\Request;
 use App\Models\StudentMaster;
 use App\Models\StudentPasserelle;
@@ -23,6 +24,7 @@ class HomeController extends Controller
          // Total counts
          $studentMasterCount = StudentMaster::where('etablissement_id', $etablissementId)->count();
          $studentPasserelleCount = StudentPasserelle::where('etablissement_id', $etablissementId)->count();
+         $studentBachelierCount = Bachelier::where('etablissement_id', $etablissementId)->count();
      
          // === Passerelle stats ===
          $beforeTodayPasserelle = StudentPasserelle::where('etablissement_id', $etablissementId)
@@ -55,6 +57,22 @@ class HomeController extends Controller
              $percentageIncreaseMaster = $todayMaster > 0 ? 100 : 0;
          }
          $percentageIncreaseMaster = round($percentageIncreaseMaster, 2);
+
+         // === Bachelier stats ===
+        $beforeTodayBachelier = Bachelier::where('etablissement_id', $etablissementId)
+            ->where('created_at', '<', Carbon::today())
+            ->count();
+
+        $todayBachelier = Bachelier::where('etablissement_id', $etablissementId)
+            ->whereDate('created_at', Carbon::today())
+            ->count();
+
+        if ($beforeTodayBachelier > 0) {
+            $percentageIncreaseBachelier = ($todayBachelier / $beforeTodayBachelier) * 100;
+        } else {
+            $percentageIncreaseBachelier = $todayBachelier > 0 ? 100 : 0;
+        }
+        $percentageIncreaseBachelier = round($percentageIncreaseBachelier, 2);
 
 
          // === Filiere stats ===
@@ -119,7 +137,7 @@ class HomeController extends Controller
         }
 
 
-        // === Global Passerelle stats ===
+        // === Global Licences (Accès S5) stats ===
         $multipleChoixFilierePasserelle = auth()->user()->etablissement->multiple_choix_filiere_passerelle == 1;
 
         if (!$multipleChoixFilierePasserelle) {
@@ -132,12 +150,12 @@ class HomeController extends Controller
                     DB::raw('COUNT(student_passerelles.id) as postulants_count')
                 )
                 ->where('filieres.etablissement_id', $etablissementId)
-                ->where('filieres.type', 2) // type 2 for passerelle
+                ->where('filieres.type', 2) // type 2 for Licences (Accès S5)
                 ->groupBy('filieres.id', 'filieres.nom_complet')
                 ->get();
 
         } else {
-            // Multiple filiere choices per passerelle student
+            // Multiple filiere choices per Licences (Accès S5) student
 
             $choice1 = DB::table('student_passerelles')
                 ->select('filieres.id', 'filieres.nom_complet', DB::raw('count(student_passerelles.id) as postulants_count'))
@@ -170,15 +188,70 @@ class HomeController extends Controller
 
         }
 
+
+        // === Global Licences (Accès S1) stats ===
+        $multipleChoixFilierePasserelle = auth()->user()->etablissement->multiple_choix_filiere_passerelle == 1;
+
+        if (!$multipleChoixFilierePasserelle) {
+            // Single filiere per student - simple group by filiere
+            $statsBachelier = DB::table('filieres')
+                ->leftJoin('bacheliers', 'filieres.id', '=', 'bacheliers.filiere')
+                ->select(
+                    'filieres.id',
+                    'filieres.nom_complet',
+                    DB::raw('COUNT(bacheliers.id) as postulants_count')
+                )
+                ->where('filieres.etablissement_id', $etablissementId)
+                ->where('filieres.type', 3) // type 3 for Licences (Accès S1)
+                ->groupBy('filieres.id', 'filieres.nom_complet')
+                ->get();
+
+        } else {
+            // Multiple filiere choices per Licences (Accès S1) student
+
+            $choice1 = DB::table('bacheliers')
+                ->select('filieres.id', 'filieres.nom_complet', DB::raw('count(bacheliers.id) as postulants_count'))
+                ->join('filieres', 'bacheliers.filiere_choix_1', '=', 'filieres.id')
+                ->where('filieres.etablissement_id', $etablissementId)
+                ->where('filieres.type', 3)
+                ->groupBy('filieres.id', 'filieres.nom_complet');
+
+            $choice2 = DB::table('bacheliers')
+                ->select('filieres.id', 'filieres.nom_complet', DB::raw('count(bacheliers.id) as postulants_count'))
+                ->join('filieres', 'bacheliers.filiere_choix_2', '=', 'filieres.id')
+                ->where('filieres.etablissement_id', $etablissementId)
+                ->where('filieres.type', 3)
+                ->groupBy('filieres.id', 'filieres.nom_complet');
+
+            $choice3 = DB::table('bacheliers')
+                ->select('filieres.id', 'filieres.nom_complet', DB::raw('count(bacheliers.id) as postulants_count'))
+                ->join('filieres', 'bacheliers.filiere_choix_3', '=', 'filieres.id')
+                ->where('filieres.etablissement_id', $etablissementId)
+                ->where('filieres.type', 3)
+                ->groupBy('filieres.id', 'filieres.nom_complet');
+
+            $union = $choice1->unionAll($choice2)->unionAll($choice3);
+
+            $statsBachelier = DB::table(DB::raw("({$union->toSql()}) as sub"))
+                ->mergeBindings($union) // fix: mergeBindings directly on $union, not $union->getQuery()
+                ->select('id', 'nom_complet', DB::raw('SUM(postulants_count) as postulants_count'))
+                ->groupBy('id', 'nom_complet')
+                ->get();
+
+        }
+
      
          return view("admin-etab.dashboard", compact(
              'studentMasterCount',
              'studentPasserelleCount',
+             'studentBachelierCount',
              'percentageIncreasepasserelle',
              'percentageIncreaseMaster',
+             'percentageIncreaseBachelier',
              'filieresCount',
              'statsMaster',
-             'statsPasserelle'
+             'statsPasserelle',
+             'statsBachelier'
          ));
      }
      

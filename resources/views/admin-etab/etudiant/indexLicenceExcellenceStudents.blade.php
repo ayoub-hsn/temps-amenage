@@ -33,12 +33,12 @@
                                         <th>CIN</th>
                                         <th>Email</th>
                                         <th>Téléphone</th>
-                                        <th>Dernier Diplome</th>
-                                        <th>Type de diplome</th>
+                                        <th>Diplome</th>
                                         <th>Spécialité</th>
-                                        <th>Etablissement</th>
+                                        <th>Mention</th>
+                                        <th>Moyenne du Diplome</th>
                                         <th>Verification</th>
-                                        {{-- <th class="no-export">Action</th> --}}
+                                        <th class="no-export">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -82,19 +82,19 @@
                 { data: 'CIN', name: 'CIN' },
                 { data: 'email', name: 'email' },
                 { data: 'phone', name: 'phone' },
-                { data: 'dernier_diplome_obtenu', name: 'dernier_diplome_obtenu' },
-                { data: 'type_diplome_obtenu', name: 'type_diplome_obtenu' },
-                { data: 'specialitediplome', name: 'specialitediplome' },
-                { data: 'ville_etablissement_diplome', name: 'ville_etablissement_diplome' },
+                { data: 'diplomedeug', name: 'diplomedeug' },
+                { data: 'specialitedeug', name: 'specialitedeug' },
+                { data: 'mentiondeug', name: 'mentiondeug' },
+                { data: 'moyenne_deug', name: 'moyenne_deug' },
                 { data: 'verif', name: 'verif' },
-                // {
-                //     data: 'id',
-                //     orderable: false,
-                //     searchable: false,
-                //     render: function (data, type, row) {
-                //         return '<a href="/admin-etab/filiere/' + filiereId + '/licenceExcellence/etudiant/' + data + '" class="btn btn-info btn-sm mr-1">Afficher</a>';
-                //     }
-                // }
+                {
+                    data: 'id',
+                    orderable: false,
+                    searchable: false,
+                    render: function (data, type, row) {
+                        return '<a href="/admin-etab/filiere/' + filiereId + '/licenceExcellence/etudiant/' + data + '" class="btn btn-info btn-sm mr-1">Afficher</a>';
+                    }
+                }
             ],
             order: [[0, 'desc']],
             pageLength: 10,

@@ -27,4 +27,6 @@ Route::post('/submit/form/master',[FormController::class, 'submitFormMaster'])->
 
 Route::post('/submit/form/licencexcellence',[FormController::class, 'submitFormLicenceExcellence'])->name('form.licencexcellence.submit');
 
+Route::post('/submit/form/bachelier',[FormController::class, 'submitFormBachelier'])->name('form.bachelier.submit');
+
 Route::post('/submit/form/bac/acceeouvert',[FormBacController::class, 'submitFormBacAcceeOuvert'])->name('form.licencexcellence.submit');

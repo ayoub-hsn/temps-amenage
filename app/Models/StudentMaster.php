@@ -23,59 +23,41 @@ class StudentMaster extends Model
         'sexe',
         'payschamp',
         'villenais',
-        'villechamp',//en arabe
+        'villechamp',
         'adresse',
         'email',
         'phone',
-
-
-
-        'serie',
-        'Anneebac',
-
-        'dernier_diplome_obtenu',// bac+3; bac+4; bac+5
-        'type_diplome_obtenu',//privee; public; autre
-        'specialitediplome',
-        'ville_etablissement_diplome',
-        'date_optention_diplome',
-
-
-
-
-        'fonctionnaire',
-        'secteur',
-        'nombreannee',
-        'poste',
-        'lieutravail',
-        'villetravail',
-
-
-
-
-        'path_photo',
-        'path_cin',
-        'path_bac',
-        'path_licence',
-        'path_attestation_non_emploi',
-        'path_cv',
-
-
-
 
         'filiere',
         'filiere_choix_1',
         'filiere_choix_2',
         'filiere_choix_3',
 
+        'serie',
 
+        'typelicence',
+        'etblsmtLp',
+        'specialitelp',
+        'date_obtention_LP',
+        'mentionlp',
+        'moyenne_licence',
 
-       'etablissement_id',
+        
 
-        'verif',
-        'motif',
+        'secteur',
+        'lieutravail',
+        'villetravail',
+        'poste',
+
+    
+
         'user_id',
-
         'confirmation_student',
+
+        'etablissement_id',
+        
+        'verif',
+        'motif'
     ];
 
     public function etablissement(){

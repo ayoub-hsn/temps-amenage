@@ -91,7 +91,7 @@
 
 
     <footer>
-        <p>&copy; 2025 Université Hassan 1er. Tous droits réservés.</p>
+        <p>&copy; 2025 Made By Ayoub Hassnioui. Tous droits réservés.</p>
         <div class="social-links">
             <a href="https://www.instagram.com/universitehassan/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com/uh1" target="_blank"><i class="fab fa-facebook"></i></a>

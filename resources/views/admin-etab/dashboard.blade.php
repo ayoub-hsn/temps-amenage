@@ -2,129 +2,129 @@
 
 
 @section('content')
+  <style>
+    .dashboard-card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      min-height: 220px;
+      transition: all 0.3s ease;
+    }
+
+    .dashboard-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .dashboard-card h2 {
+      font-size: 2rem;
+    }
+
+    .dashboard-card .card-img {
+      width: 80px;
+      height: auto;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 767px) {
+      .dashboard-card {
+        min-height: 180px;
+        padding: 1rem;
+      }
+      .dashboard-card h2 {
+        font-size: 1.6rem;
+      }
+      .dashboard-card .card-img {
+        width: 65px;
+      }
+    }
+  </style>
+
   <div class="main-content">
     <section class="section">
-      <div class="row ">
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <div class="card">
-            <div class="card-statistic-4">
-              <div class="align-items-center justify-content-between">
-                @php
-                    $totalPercentageIncrease = $percentageIncreaseMaster + $percentageIncreasepasserelle;
-                    $colorTotal = 'col-red';
+      <div class="row g-4">
 
-                    if ($totalPercentageIncrease >= 10) {
-                        $colorTotal = 'col-green';
-                    } elseif ($totalPercentageIncrease >= 1) {
-                        $colorTotal = 'col-orange';
-                    }
-                @endphp
-                <div class="row ">
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                    <div class="card-content">
-                      <h5 class="font-15">Etudiants en Total</h5>
-                      <h2 class="mb-3 font-18">{{ $studentMasterCount + $studentPasserelleCount }}</h2>
-                      <p class="mb-0"><span class="{{ $colorTotal }}">{{ $percentageIncreaseMaster + $percentageIncreasepasserelle }}%</span> Increase</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                    <div class="banner-img">
-                      <img style="max-width: 81%;" src="{{asset('dashboard/img/banner/students-total.png')}}" alt="">
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <!-- === Étudiants en Total === -->
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+          <div class="card dashboard-card shadow-sm border-0 rounded-4 text-center p-3 d-flex flex-column justify-content-between h-100">
+            @php
+                $totalPercentageIncrease = $percentageIncreaseMaster + $percentageIncreasepasserelle;
+                $colorTotal = 'text-danger';
+                if ($totalPercentageIncrease >= 10) $colorTotal = 'text-success';
+                elseif ($totalPercentageIncrease >= 1) $colorTotal = 'text-warning';
+            @endphp
+            <div>
+              <h6 class="text-muted mb-2">Étudiants - Total</h6>
+              <h2 class="fw-bold text-gray">{{ $studentMasterCount + $studentPasserelleCount }}</h2>
+              <p class="mb-0"><span class="{{ $colorTotal }}">{{ $totalPercentageIncrease }}%</span> d’augmentation</p>
             </div>
+            <img src="{{ asset('dashboard/img/banner/students-total.png') }}" alt="Total" class="card-img mx-auto">
           </div>
         </div>
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <div class="card">
-            <div class="card-statistic-4">
-              <div class="align-items-center justify-content-between">
-                @php
-                    $colorPasserelle = 'col-red';
 
-                    if ($percentageIncreasepasserelle >= 10) {
-                        $colorPasserelle = 'col-green';
-                    } elseif ($percentageIncreasepasserelle >= 1) {
-                        $colorPasserelle = 'col-orange';
-                    }
-                @endphp
-
-                <div class="row ">
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                    <div class="card-content">
-                      <h5 class="font-15">Etudiants - Licence</h5>
-                      <h2 class="mb-3 font-18">{{ $studentPasserelleCount }}</h2>
-                      <p class="mb-0"><span class="{{ $colorPasserelle }}">{{ $percentageIncreasepasserelle }}%</span> Increase</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                    <div class="banner-img">
-                      <img style="max-width: 81%;" src="{{asset('dashboard/img/banner/bachelor.png')}}" alt="">
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <!-- === Étudiants Master === -->
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+          <div class="card dashboard-card shadow-sm border-0 rounded-4 text-center p-3 d-flex flex-column justify-content-between h-100">
+            @php
+                $colorMaster = 'text-danger';
+                if ($percentageIncreaseMaster >= 10) $colorMaster = 'text-success';
+                elseif ($percentageIncreaseMaster >= 1) $colorMaster = 'text-warning';
+            @endphp
+            <div>
+              <h6 class="text-muted mb-2">Étudiants - Master</h6>
+              <h2 class="fw-bold {{ $colorMaster }}">{{ $studentMasterCount }}</h2>
+              <p class="mb-0"><span class="{{ $colorMaster }}">{{ $percentageIncreaseMaster }}%</span> d’augmentation</p>
             </div>
+            <img src="{{ asset('dashboard/img/banner/master.png') }}" alt="Master" class="card-img mx-auto">
           </div>
         </div>
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <div class="card">
-            <div class="card-statistic-4">
-              <div class="align-items-center justify-content-between">
-                @php
-                    $colorMaster = 'col-red';
 
-                    if ($percentageIncreaseMaster >= 10) {
-                        $colorMaster = 'col-green';
-                    } elseif ($percentageIncreaseMaster >= 1) {
-                        $colorMaster = 'col-orange';
-                    }
-                @endphp
-                <div class="row ">
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                    <div class="card-content">
-                      <h5 class="font-15">Etudiants - Master</h5>
-                      <h2 class="mb-3 font-18">{{ $studentMasterCount }}</h2>
-                      <p class="mb-0"><span class="{{ $colorMaster }}">{{ $percentageIncreaseMaster }}%</span>
-                        Increase</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                    <div class="banner-img">
-                      <img style="max-width: 81%;" src="{{asset('dashboard/img/banner/master.png')}}" alt="">
-                    </div>
-                  </div>
-                </div>
+        <!-- === Étudiants Licence (S5 + S1) === -->
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+          <div class="card dashboard-card shadow-sm border-0 rounded-4 text-center p-3 d-flex flex-column justify-content-between h-100">
+            @php
+                $colorPasserelle = 'text-danger';
+                if ($percentageIncreasepasserelle >= 10) $colorPasserelle = 'text-success';
+                elseif ($percentageIncreasepasserelle >= 1) $colorPasserelle = 'text-warning';
+
+                $colorBachelier = 'text-danger';
+                if ($percentageIncreaseBachelier >= 10) $colorBachelier = 'text-success';
+                elseif ($percentageIncreaseBachelier >= 1) $colorBachelier = 'text-warning';
+            @endphp
+
+            <div>
+              <h6 class="text-muted mb-2">Étudiants - Licences (Accès S5 + S1)</h6>
+              <div class="d-flex flex-column gap-1">
+                <span class="fw-bold {{ $colorPasserelle }}">S5 : {{ $studentPasserelleCount }} 
+                  <small>({{ $percentageIncreasepasserelle }}%)</small>
+                </span>
+                <span class="fw-bold {{ $colorBachelier }}">S1 : {{ $studentBachelierCount }} 
+                  <small>({{ $percentageIncreaseBachelier }}%)</small>
+                </span>
               </div>
             </div>
+
+            <img src="{{ asset('dashboard/img/banner/bachelor.png') }}" alt="Licence" class="card-img mx-auto">
           </div>
         </div>
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <div class="card">
-            <div class="card-statistic-4">
-              <div class="align-items-center justify-content-between">
-                <div class="row ">
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                    <div class="card-content">
-                      <h5 class="font-15">Filieres</h5>
-                      <h2 class="mb-3 font-18">{{ $filieresCount }}</h2>
-                      <p class="mb-0" style="visibility: hidden;"><span class="col-green">42%</span> Increase</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                    <div class="banner-img">
-                      <img style="max-width: 81%;" src="{{asset('dashboard/img/banner/courses.png')}}" alt="">
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+        <!-- === Filières === -->
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+          <div class="card dashboard-card shadow-sm border-0 rounded-4 text-center p-3 d-flex flex-column justify-content-between h-100">
+            <div>
+              <h6 class="text-muted mb-2">Filières</h6>
+              <h2 class="fw-bold text-gray">{{ $filieresCount }}</h2>
+              <p class="mb-0 text-transparent">.</p>
             </div>
+            <img src="{{ asset('dashboard/img/banner/courses.png') }}" alt="Filières" class="card-img mx-auto">
           </div>
         </div>
+
       </div>
-      <div class="row">
+
+
+      <!-- === statistiques bars === -->
+      <div class="row mt-5">
         <div class="col-12">
           <div class="card">
             <div class="card-header">
@@ -141,7 +141,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h4 class="mb-0">Licence</h4>
+              <h4 class="mb-0">Licences (Accès S5)</h4>
             </div>
             <div class="card-body">
               <canvas id="filiereChartPasserelle" height="450"></canvas>
@@ -150,100 +150,23 @@
         </div>
       </div>
 
-
-
-    </section>
-    <div class="settingSidebar">
-      <a href="javascript:void(0)" class="settingPanelToggle"> <i class="fa fa-spin fa-cog"></i>
-      </a>
-      <div class="settingSidebar-body ps-container ps-theme-default">
-        <div class=" fade show active">
-          <div class="setting-panel-header">Setting Panel
-          </div>
-          <div class="p-15 border-bottom">
-            <h6 class="font-medium m-b-10">Select Layout</h6>
-            <div class="selectgroup layout-color w-50">
-              <label class="selectgroup-item">
-                <input type="radio" name="value" value="1" class="selectgroup-input-radio select-layout" checked>
-                <span class="selectgroup-button">Light</span>
-              </label>
-              <label class="selectgroup-item">
-                <input type="radio" name="value" value="2" class="selectgroup-input-radio select-layout">
-                <span class="selectgroup-button">Dark</span>
-              </label>
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="mb-0">Licences (Accès S1)</h4>
             </div>
-          </div>
-          <div class="p-15 border-bottom">
-            <h6 class="font-medium m-b-10">Sidebar Color</h6>
-            <div class="selectgroup selectgroup-pills sidebar-color">
-              <label class="selectgroup-item">
-                <input type="radio" name="icon-input" value="1" class="selectgroup-input select-sidebar">
-                <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
-                  data-original-title="Light Sidebar"><i class="fas fa-sun"></i></span>
-              </label>
-              <label class="selectgroup-item">
-                <input type="radio" name="icon-input" value="2" class="selectgroup-input select-sidebar" checked>
-                <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
-                  data-original-title="Dark Sidebar"><i class="fas fa-moon"></i></span>
-              </label>
+            <div class="card-body">
+              <canvas id="filiereChartBachelier" height="450"></canvas>
             </div>
-          </div>
-          <div class="p-15 border-bottom">
-            <h6 class="font-medium m-b-10">Color Theme</h6>
-            <div class="theme-setting-options">
-              <ul class="choose-theme list-unstyled mb-0">
-                <li title="white" class="active">
-                  <div class="white"></div>
-                </li>
-                <li title="cyan">
-                  <div class="cyan"></div>
-                </li>
-                <li title="black">
-                  <div class="black"></div>
-                </li>
-                <li title="purple">
-                  <div class="purple"></div>
-                </li>
-                <li title="orange">
-                  <div class="orange"></div>
-                </li>
-                <li title="green">
-                  <div class="green"></div>
-                </li>
-                <li title="red">
-                  <div class="red"></div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="p-15 border-bottom">
-            <div class="theme-setting-options">
-              <label class="m-b-0">
-                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
-                  id="mini_sidebar_setting">
-                <span class="custom-switch-indicator"></span>
-                <span class="control-label p-l-10">Mini Sidebar</span>
-              </label>
-            </div>
-          </div>
-          <div class="p-15 border-bottom">
-            <div class="theme-setting-options">
-              <label class="m-b-0">
-                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
-                  id="sticky_header_setting">
-                <span class="custom-switch-indicator"></span>
-                <span class="control-label p-l-10">Sticky Header</span>
-              </label>
-            </div>
-          </div>
-          <div class="mt-4 mb-4 p-3 align-center rt-sidebar-last-ele">
-            <a href="#" class="btn btn-icon icon-left btn-primary btn-restore-theme">
-              <i class="fas fa-undo"></i> Restore Default
-            </a>
           </div>
         </div>
       </div>
-    </div>
+
+
+
+    </section>
+
   </div>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
@@ -363,14 +286,24 @@ $(document).ready(function () {
         '#5c6bc0'
     );
 
-    // Render Licence Chart
+    // Render Licences (Accès S5) Chart
     createChart(
         'filiereChartPasserelle',
         @json($statsPasserelle->pluck('nom_complet')),
         @json($statsPasserelle->pluck('postulants_count')),
-        "Candidatures Licences d'excellence",
+        "Candidatures Licences (Accès S5)",
         '#388e3c',
         '#66bb6a'
+    );
+
+    // Render Licences (Accès S1) Chart
+    createChart(
+        'filiereChartBachelier',
+        @json($statsBachelier->pluck('nom_complet')),
+        @json($statsBachelier->pluck('postulants_count')),
+        "Candidatures Licences (Accès S1)",
+        '#360e3c',
+        '#33ab6a'
     );
 });
 </script>
