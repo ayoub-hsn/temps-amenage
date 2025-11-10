@@ -569,7 +569,7 @@
                             <button class="btn-description no-doc btn-desc" data-filiere="{{ $filiere->nom_complet }}">📘 Voir le descriptif</button>
                         @endif
 
-                        <a href="{{ route('master.nosformationChoisen', ['id' => $filiere->id]) }}" class="btn-preinscription">
+                        <a href="{{ route('licence.nosformationChoisen', ['id' => $filiere->id]) }}" class="btn-preinscription">
                             📥 Préinscription
                         </a>
                     </div>
