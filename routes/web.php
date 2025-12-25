@@ -10,6 +10,7 @@ use App\Http\Controllers\FormBacController;
 use App\Http\Controllers\supAdmin\HomeController;
 use App\Http\Controllers\supAdmin\UserController;
 use App\Http\Controllers\adminEtab\FiliereController;
+use App\Http\Controllers\adminEtab\PaymentController;
 use App\Http\Controllers\supAdmin\SerieBacController;
 use App\Http\Controllers\adminEtab\CandidatController;
 use App\Http\Controllers\adminEtab\ProvinceController;
@@ -106,6 +107,10 @@ Route::group(['as'=>'sup-admin.', 'prefix' => 'sup-admin','middleware' => ['auth
 
 
     Route::get('/dashboard',[HomeController::class, 'index'])->name('dashboard');
+    Route::post('/data/telecharger',[HomeController::class, 'downloadDataByEtab'])->name('data.telecharger.etablissement');
+    Route::post('/data/telecharger/filiere', [HomeController::class, 'downloadDataByFiliere'])
+    ->name('data.telecharger.filiere');
+
 
     //etablissements management
     Route::get('/etablissement',[EtablissementController::class, 'index'])->name('etablissement.index');
@@ -232,6 +237,9 @@ Route::group(['as'=>'admin-etab.', 'prefix' => 'admin-etab','middleware' => ['au
     Route::get('/filiere/{etablissement}/multiplechoix/master/etudiant/excel/download',[FiliereController::class, 'downloadStudentsMasterMultiplechoix'])->name('filiere.multiplechoix.master.etudiants.excel.download');
     Route::get('/filiere/{filiere}/master/etudiant/{etudiant}',[FiliereController::class, 'showDetailStudentMaster'])->name('filiere.master.etudiants.show');
     Route::get('/filiere/{filiere}/master/listStudentsToSelect',[FiliereController::class, 'ShowStudentsMasterToSelect'])->name('filiere.master.etudiants.listToselect');
+    Route::get('/filiere/{filiere}/master/etudiant/{etudiant}/valider',[FiliereController::class, 'validerStudentMaster'])->name('filiere.master.etudiant.valider');
+    Route::get('/filiere/{filiere}/master/etudiant/{etudiant}/anullerValidation',[FiliereController::class, 'annulerValidationStudentMaster'])->name('filiere.master.etudiant.annulerValidation');
+
 
 
     Route::get('/filiere/{filiere}/licenceExcellence/etudiant',[FiliereController::class, 'showStudentsLicenceExcellence'])->name('filiere.licenceExcellence.etudiants.index');
@@ -239,13 +247,34 @@ Route::group(['as'=>'admin-etab.', 'prefix' => 'admin-etab','middleware' => ['au
     Route::post('/filiere/{filiere}/licenceExcellence/etudiant/excel/download',[FiliereController::class, 'downloadStudentsLicenceExcellence'])->name('filiere.licenceExcellence.etudiants.excel.download');
     Route::get('/filiere/{etablissement}/multiplechoix/licenceExcellence/etudiant/excel/download',[FiliereController::class, 'downloadStudentsLicenceExcellenceMultiplechoix'])->name('filiere.multiplechoix.licenceExcellence.etudiants.excel.download');
     Route::get('/filiere/{filiere}/licenceExcellence/listStudentsToSelect',[FiliereController::class, 'ShowStudentsLicenceExcellenceToSelect'])->name('filiere.licenceExcellence.etudiants.listToselect');
+    Route::get('/filiere/{filiere}/licenceExcellence/etudiant/{etudiant}/valider',[FiliereController::class, 'validerStudentLicence'])->name('filiere.licenceExcellence.etudiant.valider');
+    Route::get('/filiere/{filiere}/licenceExcellence/etudiant/{etudiant}/anullerValidation',[FiliereController::class, 'annulerValidationStudentLicence'])->name('filiere.licenceExcellence.etudiant.annulerValidation');
 
 
 
     Route::get('/filiere/{filiere}/bachelier/etudiant',[FiliereController::class, 'showStudentsBacheliers'])->name('filiere.bachelier.etudiants.index');
     Route::get('/filiere/{filiere}/bachelier/etudiant/{etudiant}',[FiliereController::class, 'showDetailStudentBachelier'])->name('filiere.bachelier.etudiants.show');
+    Route::get('/filiere/{filiere}/bachelier/etudiant/{etudiant}/valider',[FiliereController::class, 'validerStudentBachelier'])->name('filiere.bachelier.etudiant.valider');
+    Route::get('/filiere/{filiere}/bachelier/etudiant/{etudiant}/anullerValidation',[FiliereController::class, 'annulerValidationStudentBachelier'])->name('filiere.bachelier.etudiant.annulerValidation');
 
+    
 
+    //payment
+    Route::get('payment/master/filiere',[PaymentController::class, 'paymentFiliereMaster'])->name('payment.master.filiere.index');
+    Route::get('payment/master/filiere/{filiere}/students',[PaymentController::class, 'paymentFiliereMasterStudents'])->name('payment.master.filiere.students');
+    Route::get('payment/master/filiere/{filiere}/student/{etudiant}/show',[PaymentController::class, 'paymentFiliereMasterShowStudent'])->name('payment.master.filiere.student.show');
+    Route::post('payment/master/filiere/{filiere}/student/{etudiant}/store',[PaymentController::class, 'paymentFiliereMasterStore'])->name('payment.master.filiere.student.store');
+    Route::get('payment/licence/filiere',[PaymentController::class, 'paymentFiliereLicence'])->name('payment.licence.filiere.index');
+    Route::get('payment/licence/filiere/{filiere}/students',[PaymentController::class, 'paymentFiliereLicenceStudents'])->name('payment.licence.filiere.students');
+    Route::get('payment/licence/filiere/{filiere}/student/{etudiant}/show',[PaymentController::class, 'paymentFiliereLicenceShowStudent'])->name('payment.licence.filiere.student.show');
+    Route::post('payment/licence/filiere/{filiere}/student/{etudiant}/store',[PaymentController::class, 'paymentFiliereLicenceStore'])->name('payment.licence.filiere.student.store');
+    Route::get('payment/bachelier/filiere',[PaymentController::class, 'paymentFiliereBachelier'])->name('payment.bachelier.filiere.index');
+    Route::get('payment/bachelier/filiere/{filiere}/students',[PaymentController::class, 'paymentFiliereBachelierStudents'])->name('payment.bachelier.filiere.students');
+    Route::get('payment/bachelier/filiere/{filiere}/student/{etudiant}/show',[PaymentController::class, 'paymentFiliereBachelierShowStudent'])->name('payment.bachelier.filiere.student.show');
+    Route::post('payment/bachelier/filiere/{filiere}/student/{etudiant}/store',[PaymentController::class, 'paymentFiliereBachelierStore'])->name('payment.bachelier.filiere.student.store');
+    Route::post('/paiement/storemedia',[PaymentController::class, 'storeMedia'])->name('paiement.storeMedia');
+
+    
 
     Route::get('/filiere/{filiere}/licenceAcceeOuvert/etudiant',[FiliereController::class, 'showStudentsLicenceAcceeOuvert'])->name('filiere.licenceAcceeOuvert.etudiants.index');
     Route::get('/filiere/{filiere}/licenceAcceeOuvert/etudiant/{etudiant}',[FiliereController::class, 'showDetailStudentLicenceAcceeOuvert'])->name('filiere.licenceAcceeOuvert.etudiants.show');

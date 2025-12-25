@@ -22,7 +22,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header" style="justify-content: space-between;">
-                        <h4>Liste des étudiants</h4>
+                        <h4>Liste des étudiants - Licences (Accès S1) - {{ $filiere->nom_abrv }}</h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -92,7 +92,17 @@
                     orderable: false,
                     searchable: false,
                     render: function (data, type, row) {
-                        return '<a href="/admin-etab/filiere/' + filiereId + '/bachelier/etudiant/' + data + '" class="btn btn-info btn-sm mr-1">Afficher</a>';
+                        let btnShow = '<a href="/admin-etab/filiere/' + filiereId + '/bachelier/etudiant/' + data + '" class="btn btn-info btn-sm mr-1">Afficher</a>' ;
+
+                            // Si étudiant est validé
+                            if (row.verifText === 'VERIFIER') { // Use the raw verif value if needed, see note below
+                                return btnShow +
+                                    '<button data-url="/admin-etab/filiere/' + filiereId + '/bachelier/etudiant/' + data + '/anullerValidation" class="btn btn-danger btn-sm mr-1 btn-annuler">Annuler la validation</button>';
+                            }
+
+                            // Si étudiant n’est pas encore validé
+                            return btnShow +
+                                '<button data-url="/admin-etab/filiere/' + filiereId + '/bachelier/etudiant/' + data + '/valider" class="btn btn-success btn-sm mr-1 btn-valider">Valider</button>';
                     }
                 }
             ],
@@ -140,6 +150,49 @@
                     }
                 },
             ].filter(Boolean)
+        });
+    });
+</script>
+<script>
+    $(document).on('click', '.btn-valider', function(e) {
+        e.preventDefault();
+
+        let url = $(this).data('url');
+
+        Swal.fire({
+            title: "Confirmation",
+            text: "Voulez-vous vraiment valider cet étudiant ?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#28a745",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Oui, valider",
+            cancelButtonText: "Annuler"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = url;
+            }
+        });
+    });
+
+    // Annuler la validation button
+    $(document).on('click', '.btn-annuler', function(e) {
+        e.preventDefault();
+        let url = $(this).data('url');
+
+        Swal.fire({
+            title: "Confirmation",
+            text: "Voulez-vous vraiment annuler la validation de cet étudiant ?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#dc3545",
+            cancelButtonColor: "#6c757d",
+            confirmButtonText: "Oui, annuler",
+            cancelButtonText: "Annuler"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = url;
+            }
         });
     });
 </script>

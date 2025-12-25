@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Bachelier extends Model
 {
     use HasFactory,Notifiable;
+    use SoftDeletes;
 
     protected $fillable = [
         'CNE',

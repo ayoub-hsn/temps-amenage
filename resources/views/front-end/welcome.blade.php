@@ -761,7 +761,7 @@
                                     <div class="etab-wrapper"><span data-id="4">⚙️ ENSA</span></div> --}}
                                     <div class="etab-wrapper"><span data-id="1">⚖️ FSJP</span></div>
                                     <div class="etab-wrapper"><span data-id="7">📚 ESEF</span></div>
-                                    {{-- <div class="etab-wrapper"><span data-id="3">🔬 FST</span></div> --}}
+                                    <div class="etab-wrapper"><span data-id="3">🔬 FST</span></div>
                                     <div class="etab-wrapper"><span data-id="5">🩺 ISSS</span></div>
                                     {{-- <div class="etab-wrapper"><span data-id="6">🏃‍♂️ ISS</span></div> --}}
                                     <div class="etab-wrapper"><span data-id="9">📊 FEG</span></div>

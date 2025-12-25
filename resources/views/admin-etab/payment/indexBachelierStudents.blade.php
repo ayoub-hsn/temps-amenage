@@ -22,7 +22,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header" style="justify-content: space-between;">
-                        <h4>Liste des étudiants Licences (Accès S5) - {{ $filiere->nom_abrv }}</h4>
+                        <h4>Liste des étudiants - Licence (Accès S1) - {{ $filiere->nom_abrv }}</h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -33,11 +33,10 @@
                                         <th>CIN</th>
                                         <th>Email</th>
                                         <th>Téléphone</th>
-                                        <th>Diplome</th>
-                                        <th>Spécialité</th>
-                                        <th>Mention</th>
-                                        <th>Moyenne du Diplome</th>
-                                        <th>Verification</th>
+                                        <th>Semestre</th>
+                                        <th>Montant</th>
+                                        <th>Date Paiement</th>
+                                        <th>Etat de paiement</th>
                                         <th class="no-export">Action</th>
                                     </tr>
                                 </thead>
@@ -63,14 +62,12 @@
 </script>
 
 <script>
-    var showDownloadButton = @json($etablissement->multiple_choix_filiere_passerelle == 1);
-    var filiereId = {{ $filiere->id }}; // Ensure this is available globally
-
+    var showDownloadButton = @json($etablissement->multiple_choix_filiere_master == 1);
     $(document).ready(function () {
         $('#etudiant-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('admin-etab.filiere.licenceExcellence.etudiants.index',['filiere' => $filiere->id]) }}",
+            ajax: "{{ route('admin-etab.payment.bachelier.filiere.students',['filiere' => $filiere->id]) }}",
             columns: [
                 {
                     data: null,
@@ -82,33 +79,24 @@
                 { data: 'CIN', name: 'CIN' },
                 { data: 'email', name: 'email' },
                 { data: 'phone', name: 'phone' },
-                { data: 'diplomedeug', name: 'diplomedeug' },
-                { data: 'specialitedeug', name: 'specialitedeug' },
-                { data: 'mentiondeug', name: 'mentiondeug' },
-                { data: 'moyenne_deug', name: 'moyenne_deug' },
-                { data: 'verif', name: 'verif' },
+                { data: 'semestre', name: 'semestre' },
+                { data: 'montant', name: 'montant' },
+                { data: 'date_inscription', name: 'date_inscription' },
+                { data: 'etat_payment', name: 'etat_payment' },
                 {
                     data: 'id',
                     orderable: false,
                     searchable: false,
                     render: function (data, type, row) {
-                        let btnShow = '<a href="/admin-etab/filiere/' + filiereId + '/licenceExcellence/etudiant/' + data + '" class="btn btn-info btn-sm mr-1">Afficher</a>' ;
-
-                        // Si étudiant est validé
-                        if (row.verifText === 'VERIFIER') { // Use the raw verif value if needed, see note below
-                            return btnShow +
-                                '<button data-url="/admin-etab/filiere/' + filiereId + '/licenceExcellence/etudiant/' + data + '/anullerValidation" class="btn btn-danger btn-sm mr-1 btn-annuler">Annuler la validation</button>';
-                        }
-
-                        // Si étudiant n’est pas encore validé
-                        return btnShow +
-                            '<button data-url="/admin-etab/filiere/' + filiereId + '/licenceExcellence/etudiant/' + data + '/valider" class="btn btn-success btn-sm mr-1 btn-valider">Valider</button>';
+                        let btnShow = '<a href="/admin-etab/payment/bachelier/filiere/' + filiereId + '/student/' + data + '/show" class="btn btn-info btn-sm mr-1">Afficher</a>';
+                        return btnShow;
+                        
                     }
                 }
             ],
-            order: [[0, 'desc']],
-            pageLength: 10,
-            lengthMenu: [[10, 25, 50, 100, 200], [10, 25, 50, 100, 200]],
+            order: [[0, 'desc']], // Default sorting by first column
+            pageLength: 10, // Number of records per page
+            lengthMenu: [[10, 25, 50, 100, 200], [10, 25, 50, 100, 200]], // Options for number of records per page
             language: {
                 "paginate": {
                     "previous": "Précédent",
@@ -127,26 +115,26 @@
             drawCallback: function () {
                 $('#etudiant-table_paginate .pagination li').each(function() {
                     var pageNum = $(this).text();
-                    var href = "{{ route('admin-etab.filiere.licenceExcellence.etudiants.index',['filiere' => $filiere->id]) }}?page=" + pageNum;
+                    var href = "{{ route('admin-etab.payment.bachelier.filiere.students',['filiere' => $filiere->id]) }}?page=" + pageNum;
                     $(this).find('a').attr('href', href);
                 });
             },
             dom:
-                "<'row'<'col-sm-6'l><'col-sm-6'fB>>" +
-                "<'row'<'col-sm-12'rt>>" +
-                "<'row'<'col-sm-12'i>>" +
-                "<'row'<'col-sm-12'p>>",
+            "<'row'<'col-sm-6'l><'col-sm-6'fB>>" +
+            "<'row'<'col-sm-12'rt>>" +
+            "<'row'<'col-sm-12'i>>" +
+            "<'row'<'col-sm-12'p>>",
             buttons: [
                 {
                     extend: 'excelHtml5',
                     exportOptions: {
-                        columns: ':not(.no-export)'
+                        columns: ':not(.no-export)' // Exclude columns with the class 'no-export'
                     }
                 },
                 {
                     extend: 'pdfHtml5',
                     exportOptions: {
-                        columns: ':not(.no-export)'
+                        columns: ':not(.no-export)' // Exclude columns with the class 'no-export'
                     }
                 },
                 // !showDownloadButton ? {
@@ -154,7 +142,7 @@
                 //     action: function (e, dt, node, config) {
                 //         let form = document.createElement('form');
                 //         form.method = 'POST';
-                //         form.action = '{{ route('admin-etab.filiere.licenceExcellence.etudiants.excel.download', ['filiere' => $filiere->id]) }}';
+                //         form.action = '{{ route('admin-etab.filiere.master.etudiants.excel.download', ['filiere' => $filiere->id]) }}';
 
                 //         let csrfInput = document.createElement('input');
                 //         csrfInput.type = 'hidden';
@@ -171,10 +159,11 @@
                 //     text: 'Liste des étudiants sélectionnés',
                 //     className: 'btn btn-success',
                 //     action: function () {
-                //         window.location.href = "{{ route('admin-etab.filiere.licenceExcellence.etudiants.listToselect', ['filiere' => $filiere->id]) }}";
+                //         window.location.href = "{{ route('admin-etab.filiere.master.etudiants.listToselect', ['filiere' => $filiere->id]) }}";
                 //     }
                 // }
             ].filter(Boolean)
+
         });
     });
 </script>
@@ -221,6 +210,5 @@
         });
     });
 </script>
-
 
 @endsection

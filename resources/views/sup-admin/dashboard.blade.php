@@ -57,43 +57,37 @@
 
     <!-- ===== Chart Section ===== -->
     <div class="row mt-4">
-      <div class="col-12">
-        <div class="card shadow-lg border-0 rounded-4">
-          <div class="card-header bg-primary text-white rounded-top-4">
-            <h5 class="mb-0">Répartition des Candidats par Établissement</h5>
+    <div class="col-12">
+      <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-primary text-white rounded-top-4 d-flex justify-content-between align-items-center">
+          <h5 class="mb-0">Répartition des Candidats par Établissement</h5>
+          <div class="d-flex">
+            <form action="{{ route('sup-admin.data.telecharger.etablissement') }}" method="POST">
+              @csrf
+              <button type="submit" class="btn btn-light btn-sm me-2">
+                <i class="fas fa-download"></i> Télécharger les données par établissement
+              </button>
+            </form>
+            <form action="{{ route('sup-admin.data.telecharger.filiere') }}" method="POST">
+              @csrf
+              <button type="submit" class="btn btn-light btn-sm">
+                <i class="fas fa-download"></i> Télécharger par Filière
+              </button>
+            </form>
           </div>
-          <div class="card-body bg-light rounded-bottom-4">
-            <div style="height: 400px;">
-              <canvas id="beautifulChart"></canvas>
-            </div>
+        </div>
+        <div class="card-body bg-light rounded-bottom-4">
+          <div style="height: 400px;">
+            <canvas id="beautifulChart"></canvas>
           </div>
         </div>
       </div>
     </div>
+</div>
+
   </section>
 
-  <!-- ====== Sidebar Settings ====== -->
-  <div class="settingSidebar">
-    <a href="javascript:void(0)" class="settingPanelToggle"><i class="fa fa-spin fa-cog"></i></a>
-    <div class="settingSidebar-body ps-container ps-theme-default">
-      <div class="fade show active">
-        <div class="setting-panel-header">Setting Panel</div>
-        <div class="p-15 border-bottom">
-          <h6 class="font-medium m-b-10">Select Layout</h6>
-          <div class="selectgroup layout-color w-50">
-            <label class="selectgroup-item">
-              <input type="radio" name="value" value="1" class="selectgroup-input-radio select-layout" checked>
-              <span class="selectgroup-button">Light</span>
-            </label>
-            <label class="selectgroup-item">
-              <input type="radio" name="value" value="2" class="selectgroup-input-radio select-layout">
-              <span class="selectgroup-button">Dark</span>
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
 </div>
 
 <!-- === Styles to unify card size and improve responsiveness === -->

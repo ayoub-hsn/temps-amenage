@@ -244,19 +244,25 @@ class HomeController extends Controller
         return view('front-end.form-formation-licence-choisen',compact('filiere','etablissement','filieres'));
     }
 
-    public function nosFormationBachelierChosisir($id){
+    public function nosFormationBachelierChosisir($id)
+    {
         $filiere = Filiere::whereId($id)
-        ->with(['etablissement' => function($q){
-            $q->with(['serie_bac']);
-        }])
-        ->first();
+            ->with(['etablissement' => function($q) {
+                $q->with(['serie_bac']);
+            }])
+            ->first();
 
+        // If $filiere is null, $etablissement will be null instead of causing an error
+        $etablissement = $filiere->etablissement ?? null;
 
-        $etablissement = $filiere->etablissement;
-        $filieres = Filiere::where('etablissement_id',$filiere->etablissement_id)->where('type',3)->where('active',1)->get();
-       
-        return view('front-end.form-formation-bachelier-choisen',compact('filiere','etablissement','filieres'));
+        $filieres = Filiere::where('etablissement_id', $filiere->etablissement_id ?? 0)
+            ->where('type', 3)
+            ->where('active', 1)
+            ->get();
+
+        return view('front-end.form-formation-bachelier-choisen', compact('filiere', 'etablissement', 'filieres'));
     }
+
 
     public function guideFilieres(){
         return view('front-end.parcours');

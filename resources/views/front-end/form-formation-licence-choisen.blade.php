@@ -196,7 +196,7 @@
     </div>
 </section>
 
-@if ($etablissement->passerelle_ouvert == 1)
+@if ($etablissement && $etablissement->passerelle_ouvert == 1)
     <div id="app">
         <Formstepsexcellence 
             :appurl="'{{ config('app.url') }}'"

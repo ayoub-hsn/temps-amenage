@@ -304,7 +304,7 @@ class FiliereController extends Controller
                 });
             }
 
-            $query->inRandomOrder();
+            $query->orderBy('id', 'desc');
 
             // Paginate the query based on the requested page
             $perPage = $request->input('length', 10); // Number of items per page
@@ -332,6 +332,7 @@ class FiliereController extends Controller
                     'specialitelp'   => $etudiant->specialitelp,
                     'moyenne_licence'   => $etudiant->moyenne_licence,
                     'verif'         => '<span class="' . $badgeClass . '">' . $etudiant->verif . '</span>',
+                    'verifText'     => $etudiant->verif,
                     'actions' => '<a href="'.route('admin-etab.filiere.master.etudiants.show', ['filiere' => $filiere->id,'etudiant' => $etudiant->id]).'" class="btn btn-info btn-sm mr-1">Afficher</a>',
                 ];
             });
@@ -479,6 +480,16 @@ class FiliereController extends Controller
         return view('admin-etab.etudiant.detailEtudiantMaster',compact('multipleChoixFiliereMaster','filiere','etudiant','etablissement'));
     }
 
+    public function validerStudentMaster(Filiere $filiere,StudentMaster $etudiant){
+        $etudiant->update(['verif' => 'VERIFIER']);
+        return back()->with('message','Vous avez validé cet étudiant avec succès');
+    }
+
+    public function annulerValidationStudentMaster(Filiere $filiere,StudentMaster $etudiant){
+        $etudiant->update(['verif' => 'EN COURS']);
+        return back()->with('message','Vous avez annulé la validation de cet étudiant avec succès');
+    }
+
 
     public function showStudentsLicenceExcellence(Filiere $filiere,Request $request){
         if ($filiere->etablissement_id != auth()->user()->etablissement->id) {
@@ -513,7 +524,7 @@ class FiliereController extends Controller
                 });
             }
 
-            $query->inRandomOrder();
+            $query->orderBy('id', 'desc');
 
             // Paginate the query based on the requested page
             $perPage = $request->input('length', 10); // Number of items per page
@@ -542,6 +553,7 @@ class FiliereController extends Controller
                     'mentiondeug'   => $etudiant->mentiondeug,
                     'moyenne_deug'   => $etudiant->moyenne_deug,
                     'verif'         => '<span class="' . $badgeClass . '">' . $etudiant->verif . '</span>',
+                    'verifText'     => $etudiant->verif,
                     'actions' => '<a href="'.route('admin-etab.filiere.licenceExcellence.etudiants.show', ['filiere' => $filiere->id,'etudiant' => $etudiant->id]).'" class="btn btn-info btn-sm mr-1">Afficher</a>',
                 ];
             });
@@ -689,6 +701,16 @@ class FiliereController extends Controller
         return Excel::download(new StudentPasserelleExport($etablissement, $etudiants), $nameFile);
     }
 
+    public function validerStudentLicence(Filiere $filiere,StudentPasserelle $etudiant){
+        $etudiant->update(['verif' => 'VERIFIER']);
+        return back()->with('message','Vous avez validé cet étudiant avec succès');
+    }
+
+    public function annulerValidationStudentLicence(Filiere $filiere,StudentPasserelle $etudiant){
+        $etudiant->update(['verif' => 'EN COURS']);
+        return back()->with('message','Vous avez annulé la validation de cet étudiant avec succès');
+    }
+
 
 
     public function showStudentsBacheliers(Filiere $filiere,Request $request){
@@ -724,7 +746,7 @@ class FiliereController extends Controller
                 });
             }
 
-            $query->inRandomOrder();
+            $query->orderBy('id', 'desc');
 
             // Paginate the query based on the requested page
             $perPage = $request->input('length', 10); // Number of items per page
@@ -753,6 +775,7 @@ class FiliereController extends Controller
                     'poste'         => $etudiant->poste,
                     'moyenne_bac'   => $etudiant->moyenne_bac,
                     'verif'         => '<span class="' . $badgeClass . '">' . $etudiant->verif . '</span>',
+                    'verifText'     => $etudiant->verif,
                     'actions' => '<a href="'.route('admin-etab.filiere.bachelier.etudiants.show', ['filiere' => $filiere->id,'etudiant' => $etudiant->id]).'" class="btn btn-info btn-sm mr-1">Afficher</a>',
                 ];
             });
@@ -812,9 +835,17 @@ class FiliereController extends Controller
         return view('admin-etab.etudiant.detailEtudiantBachelier',compact('multipleChoixFiliereLicenceExcellence','filiere','etudiant','etablissement'));
     }
 
+    public function validerStudentBachelier(Filiere $filiere,Bachelier $etudiant){
+        $etudiant->update(['verif' => 'VERIFIER']);
+        return back()->with('message','Vous avez validé cet étudiant avec succès');
+    }
 
+    public function annulerValidationStudentBachelier(Filiere $filiere,Bachelier $etudiant){
+        $etudiant->update(['verif' => 'EN COURS']);
+        return back()->with('message','Vous avez annulé la validation de cet étudiant avec succès');
+    }
 
-
+    
 
     public function storeMedia(Request $request){
         // Validates file size

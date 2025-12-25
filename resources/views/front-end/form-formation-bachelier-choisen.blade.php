@@ -196,7 +196,7 @@
     </div>
 </section>
 
-@if ($etablissement->bachelier_ouvert == 1)
+@if ($etablissement && $etablissement->bachelier_ouvert == 1)
     <div id="app">
         <Formstepsbachelier 
             :appurl="'{{ config('app.url') }}'"

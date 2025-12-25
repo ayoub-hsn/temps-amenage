@@ -109,7 +109,7 @@ class FiliereController extends Controller
                 });
             }
 
-            $query->inRandomOrder();
+            $query->orderBy('id', 'desc');
     
             // Paginate the query based on the requested page
             $perPage = $request->input('length', 10); // Number of items per page
@@ -247,7 +247,7 @@ class FiliereController extends Controller
                 });
             }
 
-            $query->inRandomOrder();
+            $query->orderBy('id', 'desc');
     
             // Paginate the query based on the requested page
             $perPage = $request->input('length', 10); // Number of items per page
@@ -390,7 +390,7 @@ class FiliereController extends Controller
                 });
             }
 
-            $query->inRandomOrder();
+            $query->orderBy('id', 'desc');
 
             // Paginate the query based on the requested page
             $perPage = $request->input('length', 10); // Number of items per page
@@ -542,6 +542,9 @@ class FiliereController extends Controller
                     $query->whereNotNull('student_masters.filiere');
                 }
             })
+            ->when($filiere->etablissement_id == 9, function ($query) {
+                $query->where('student_masters.created_at', '>=', '2025-12-16');
+            })
             ->get();
 
 
@@ -592,6 +595,9 @@ class FiliereController extends Controller
                     $query->whereNotNull('student_passerelles.filiere');
                 }
             })
+            ->when($filiere->etablissement_id == 9, function ($query) {
+                $query->where('student_passerelles.created_at', '>=', '2025-12-16');
+            })
             ->get();
 
 
@@ -640,6 +646,12 @@ class FiliereController extends Controller
                     // Exclude students with NULL filiere in single-choice mode
                     $query->whereNotNull('bacheliers.filiere');
                 }
+            })
+            ->when($filiere->etablissement_id == 5, function ($query) {
+                $query->where('bacheliers.created_at', '>=', '2025-12-18');
+            })
+            ->when($filiere->etablissement_id == 9, function ($query) {
+                $query->where('bacheliers.created_at', '>=', '2025-12-16');
             })
             ->get();
 

@@ -120,7 +120,7 @@ class FiliereController extends Controller
                 });
             }
 
-            $query->inRandomOrder();
+            $query->orderBy('id', 'desc');
 
             // Paginate the query based on the requested page
             $perPage = $request->input('length', 10); // Number of items per page
@@ -415,7 +415,7 @@ class FiliereController extends Controller
                 });
             }
 
-            $query->inRandomOrder();
+            $query->orderBy('id', 'desc');
 
             // Paginate the query based on the requested page
             $perPage = $request->input('length', 10); // Number of items per page

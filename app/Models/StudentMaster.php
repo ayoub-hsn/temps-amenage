@@ -116,6 +116,8 @@ class StudentMaster extends Model
     //     return $this->belongsTo(Filiere::class, 'filiere');
     // }
 
+    
+
 
     public function getEtablissementId()
     {
