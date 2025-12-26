@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Université Hassan 1er - LicencesFormation Initiale en Temps Aménagé</title>
+<title>Université Hassan 1er - Formation Initiale en Temps Aménagé - Licences (Accès S1)</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 <link rel="stylesheet" href="{{ asset('css/style-welcome.css') }}" />
@@ -577,7 +577,7 @@
             @empty
                 <div class="no-filiere text-center" style="grid-column: 1 / -1; padding: 40px; color: white;">
                     <i class="fas fa-info-circle fa-2x mb-3"></i>
-                    <p>Aucune filière Master trouvée pour le moment.</p>
+                    <p>Aucune filière licence trouvée pour le moment.</p>
                 </div>
             @endforelse
         </div>
