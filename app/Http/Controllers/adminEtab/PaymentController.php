@@ -97,6 +97,7 @@ class PaymentController extends Controller
                     'type_master'   => $etudiant->type_master,
                     'montant'       => $etudiant->montant_paye,
                     'date_inscription' => $etudiant->date_inscription,
+                    'student_id'    => $etudiant->student_id,
                     'etat_payment'  => '<span class="' . $badgeClass . '">' . $etudiant->etat_payment . '</span>',
                     'actions' => '<a href="'.route('admin-etab.payment.master.filiere.student.show', ['filiere' => $filiere->id,'etudiant' => $etudiant->id]).'" class="btn btn-info btn-sm mr-1">Afficher</a>',
                 ];
@@ -152,9 +153,11 @@ class PaymentController extends Controller
         ->where('student_masters.id', $etudiant)  // Filter by the student ID
         ->first(); // Use `first()` to get a single record
 
+        $payments = PaymentMaster::where('student_id',$etudiant->id)->get();
+
         // If the student exists, $etudiant will contain the data; otherwise, it will be null
 
-        return view('admin-etab.payment.showStudentMaster',compact('multipleChoixFiliereMaster','filiere','etudiant','etablissement'));
+        return view('admin-etab.payment.showStudentPaymentMaster',compact('multipleChoixFiliereMaster','filiere','etudiant','etablissement','payments'));
     }
 
     public function paymentFiliereMasterStore(Filiere $filiere,StudentMaster $etudiant,Request $request){
@@ -171,8 +174,12 @@ class PaymentController extends Controller
             'type_master'       => 'required',
             'etat_payment'      => 'required',
             'montant_paye'      => 'required',
-            'file'              => 'required'
         ]);
+        if($request->etat_payment != "Complete(Fonctionnaire à l'UH1)"){
+            $request->validate([
+                'file'          => 'required'
+            ]);
+        }
         
         if ($request->file) {
             $fileName = $request->file;
@@ -273,6 +280,7 @@ class PaymentController extends Controller
                     'phone'         => $etudiant->phone,
                     'montant'       => $etudiant->montant_paye,
                     'date_inscription' => $etudiant->date_inscription,
+                    'student_id'    => $etudiant->student_id,
                     'etat_payment'  => '<span class="' . $badgeClass . '">' . $etudiant->etat_payment . '</span>',
                     'actions' => '<a href="'.route('admin-etab.payment.licence.filiere.student.show', ['filiere' => $filiere->id,'etudiant' => $etudiant->id]).'" class="btn btn-info btn-sm mr-1">Afficher</a>',
                 ];
@@ -303,8 +311,12 @@ class PaymentController extends Controller
             'date_inscription'  => 'required',
             'etat_payment'      => 'required',
             'montant_paye'      => 'required',
-            'file'              => 'required'
         ]);
+        if($request->etat_payment != "Complete(Fonctionnaire à l'UH1)"){
+            $request->validate([
+                'file'          => 'required'
+            ]);
+        }
         
         if ($request->file) {
             $fileName = $request->file;
@@ -330,6 +342,52 @@ class PaymentController extends Controller
             $request->all()
         );
         return redirect()->route('admin-etab.payment.licence.filiere.students',$request->filiere)->with('message','Le paiement a été enregistré avec succès');
+    }
+
+    public function paymentFiliereLicenceShowStudent(Filiere $filiere,$etudiant){
+        if ($filiere->etablissement_id != auth()->user()->etablissement->id) {
+            abort(403);
+        }
+        $filiere->load('etablissement');
+        $etablissement = $filiere->etablissement;
+
+        $multipleChoixFilierePasserelles = auth()->user() && auth()->user()->etablissement->multiple_choix_filiere_passerelle == 1;
+
+        $etudiant = DB::table('student_passerelles')
+        ->select('student_passerelles.*',
+            // Separate columns for each filiere choice if multiple choices are allowed
+            DB::raw($multipleChoixFilierePasserelles ?
+                "filiere1.nom_complet AS filiere_choix_1_name,
+                filiere2.nom_complet AS filiere_choix_2_name,
+                filiere3.nom_complet AS filiere_choix_3_name"
+                :
+                "filiere.nom_complet AS filiere_name", // Only one column for the single filiere
+            )
+        )
+        ->leftJoin('filieres AS filiere1', 'student_passerelles.filiere_choix_1', '=', 'filiere1.id')
+        ->leftJoin('filieres AS filiere2', 'student_passerelles.filiere_choix_2', '=', 'filiere2.id')
+        ->leftJoin('filieres AS filiere3', 'student_passerelles.filiere_choix_3', '=', 'filiere3.id')
+        ->leftJoin('filieres AS filiere', function ($join) {
+            $join->on('student_passerelles.filiere', '=', 'filiere.id');
+        })
+        ->where(function ($query) use ($filiere, $multipleChoixFilierePasserelles) {
+            // Ensure we are filtering based on the provided filiere ID
+            if ($multipleChoixFilierePasserelles) {
+                $query->where('filiere1.id', $filiere->id)
+                    ->orWhere('filiere2.id', $filiere->id)
+                    ->orWhere('filiere3.id', $filiere->id);
+            } else {
+                $query->where('student_passerelles.filiere', $filiere->id);
+            }
+        })
+        ->where('student_passerelles.id', $etudiant)  // Filter by the student ID
+        ->first(); // Use `first()` to get a single record
+
+        $payments = PaymentPasserelle::where('student_id',$etudiant->id)->get();
+
+        // If the student exists, $etudiant will contain the data; otherwise, it will be null
+
+        return view('admin-etab.payment.showStudentPaymentPasserelles',compact('multipleChoixFilierePasserelles','filiere','etudiant','etablissement','payments'));
     }
 
     public function paymentFiliereBachelier(){
@@ -362,7 +420,7 @@ class PaymentController extends Controller
 
         if ($request->ajax()) {
 
-            $query = PaymentPasserelle::where('filiere',$filiere->id);
+            $query = PaymentBacheliers::where('filiere',$filiere->id);
             
 
             // Apply search filters if any
@@ -401,8 +459,10 @@ class PaymentController extends Controller
                     'CIN'           => $etudiant->CIN,
                     'email'         => $etudiant->email,
                     'phone'         => $etudiant->phone,
+                    'semestre'      => $etudiant->semestre,
                     'montant'       => $etudiant->montant_paye,
                     'date_inscription' => $etudiant->date_inscription,
+                    'student_id'    => $etudiant->student_id,
                     'etat_payment'  => '<span class="' . $badgeClass . '">' . $etudiant->etat_payment . '</span>',
                     'actions' => '<a href="'.route('admin-etab.payment.licence.filiere.student.show', ['filiere' => $filiere->id,'etudiant' => $etudiant->id]).'" class="btn btn-info btn-sm mr-1">Afficher</a>',
                 ];
@@ -433,8 +493,13 @@ class PaymentController extends Controller
             'semestre'          => 'required',
             'etat_payment'      => 'required',
             'montant_paye'      => 'required',
-            'file'              => 'required'
         ]);
+
+        if($request->etat_payment != "Complete(Fonctionnaire à l'UH1)"){
+            $request->validate([
+                'file'          => 'required'
+            ]);
+        }
         
         if ($request->file) {
             $fileName = $request->file;
@@ -460,6 +525,52 @@ class PaymentController extends Controller
             $request->all()
         );
         return redirect()->route('admin-etab.payment.bachelier.filiere.students',$request->filiere)->with('message','Le paiement a été enregistré avec succès');
+    }
+
+    public function paymentFiliereBachelierShowStudent(Filiere $filiere,$etudiant){
+        if ($filiere->etablissement_id != auth()->user()->etablissement->id) {
+            abort(403);
+        }
+        $filiere->load('etablissement');
+        $etablissement = $filiere->etablissement;
+
+        $multipleChoixFiliereBacheliers = auth()->user() && auth()->user()->etablissement->multiple_choix_filiere == 1;
+
+        $etudiant = DB::table('bacheliers')
+        ->select('bacheliers.*',
+            // Separate columns for each filiere choice if multiple choices are allowed
+            DB::raw($multipleChoixFiliereBacheliers ?
+                "filiere1.nom_complet AS filiere_choix_1_name,
+                filiere2.nom_complet AS filiere_choix_2_name,
+                filiere3.nom_complet AS filiere_choix_3_name"
+                :
+                "filiere.nom_complet AS filiere_name", // Only one column for the single filiere
+            )
+        )
+        ->leftJoin('filieres AS filiere1', 'bacheliers.filiere_choix_1', '=', 'filiere1.id')
+        ->leftJoin('filieres AS filiere2', 'bacheliers.filiere_choix_2', '=', 'filiere2.id')
+        ->leftJoin('filieres AS filiere3', 'bacheliers.filiere_choix_3', '=', 'filiere3.id')
+        ->leftJoin('filieres AS filiere', function ($join) {
+            $join->on('bacheliers.filiere', '=', 'filiere.id');
+        })
+        ->where(function ($query) use ($filiere, $multipleChoixFiliereBacheliers) {
+            // Ensure we are filtering based on the provided filiere ID
+            if ($multipleChoixFiliereBacheliers) {
+                $query->where('filiere1.id', $filiere->id)
+                    ->orWhere('filiere2.id', $filiere->id)
+                    ->orWhere('filiere3.id', $filiere->id);
+            } else {
+                $query->where('bacheliers.filiere', $filiere->id);
+            }
+        })
+        ->where('bacheliers.id', $etudiant)  // Filter by the student ID
+        ->first(); // Use `first()` to get a single record
+
+        $payments = PaymentBacheliers::where('student_id',$etudiant->id)->get();
+
+        // If the student exists, $etudiant will contain the data; otherwise, it will be null
+
+        return view('admin-etab.payment.showStudentPaymentBacheliers',compact('multipleChoixFiliereBacheliers','filiere','etudiant','etablissement','payments'));
     }
 
     /**

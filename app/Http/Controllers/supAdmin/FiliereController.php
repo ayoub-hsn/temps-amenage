@@ -542,6 +542,9 @@ class FiliereController extends Controller
                     $query->whereNotNull('student_masters.filiere');
                 }
             })
+            ->when($filiere->etablissement_id == 7, function ($query) {
+                $query->where('student_masters.created_at', '>=', '2026-01-12');
+            })
             ->when($filiere->etablissement_id == 9, function ($query) {
                 $query->where('student_masters.created_at', '>=', '2025-12-16');
             })
@@ -550,6 +553,57 @@ class FiliereController extends Controller
 
 
         $nameFile = 'List-etudiant-Master-' . $filiere->nom_abrv . '.xlsx';
+
+        return Excel::download(new StudentMasterExport($etablissement, $etudiants), $nameFile);
+
+    }
+
+    public function downloadStudentsVerifiedMaster(Filiere $filiere){
+        $filiere->load('etablissement');
+        $etablissement = $filiere->etablissement;
+
+        $multipleChoixFiliereMaster = $etablissement->multiple_choix_filiere_master == 1;
+
+        $etudiants = DB::table('student_masters')
+            ->select('student_masters.*',
+                DB::raw($multipleChoixFiliereMaster ?
+                    "filiere1.nom_complet AS filiere_choix_1_name,
+                    filiere2.nom_complet AS filiere_choix_2_name,
+                    filiere3.nom_complet AS filiere_choix_3_name"
+                    :
+                    "filiere.nom_complet AS filiere_name"
+                )
+            )
+            ->leftJoin('filieres AS filiere1', 'student_masters.filiere_choix_1', '=', 'filiere1.id')
+            ->leftJoin('filieres AS filiere2', 'student_masters.filiere_choix_2', '=', 'filiere2.id')
+            ->leftJoin('filieres AS filiere3', 'student_masters.filiere_choix_3', '=', 'filiere3.id')
+            ->leftJoin('filieres AS filiere', 'student_masters.filiere', '=', 'filiere.id')
+            ->where(function ($query) use ($filiere, $multipleChoixFiliereMaster) {
+                if ($multipleChoixFiliereMaster) {
+                    $query->where('filiere1.id', $filiere->id)
+                        ->orWhere('filiere2.id', $filiere->id)
+                        ->orWhere('filiere3.id', $filiere->id);
+                } else {
+                    $query->where('student_masters.filiere', $filiere->id);
+                }
+            })
+            ->where(function ($query) use ($multipleChoixFiliereMaster) {
+                if ($multipleChoixFiliereMaster) {
+                    // Exclude students where all filiere choices are NULL
+                    $query->whereNotNull('student_masters.filiere_choix_1')
+                        ->orWhereNotNull('student_masters.filiere_choix_2')
+                        ->orWhereNotNull('student_masters.filiere_choix_3');
+                } else {
+                    // Exclude students with NULL filiere in single-choice mode
+                    $query->whereNotNull('student_masters.filiere');
+                }
+            })
+            ->where('student_masters.verif','VERIFIER')
+            ->get();
+
+
+
+        $nameFile = 'List-etudiant-valider-Master-' . $filiere->nom_abrv . '.xlsx';
 
         return Excel::download(new StudentMasterExport($etablissement, $etudiants), $nameFile);
 
@@ -603,6 +657,56 @@ class FiliereController extends Controller
 
 
         $nameFile = 'List-etudiant-Licences (Accès S5)-' . $filiere->nom_abrv . '.xlsx';
+
+        return Excel::download(new StudentPasserelleExport($etablissement, $etudiants), $nameFile);
+    }
+
+    public function downloadStudentsVerifiedLicence(Filiere $filiere){
+        $filiere->load('etablissement');
+        $etablissement = $filiere->etablissement;
+
+        $multiple_choix_filiere_passerelle = $etablissement->multiple_choix_filiere_passerelle == 1;
+
+        $etudiants = DB::table('student_passerelles')
+            ->select('student_passerelles.*',
+                DB::raw($multiple_choix_filiere_passerelle ?
+                    "filiere1.nom_complet AS filiere_choix_1_name,
+                    filiere2.nom_complet AS filiere_choix_2_name,
+                    filiere3.nom_complet AS filiere_choix_3_name"
+                    :
+                    "filiere.nom_complet AS filiere_name"
+                )
+            )
+            ->leftJoin('filieres AS filiere1', 'student_passerelles.filiere_choix_1', '=', 'filiere1.id')
+            ->leftJoin('filieres AS filiere2', 'student_passerelles.filiere_choix_2', '=', 'filiere2.id')
+            ->leftJoin('filieres AS filiere3', 'student_passerelles.filiere_choix_3', '=', 'filiere3.id')
+            ->leftJoin('filieres AS filiere', 'student_passerelles.filiere', '=', 'filiere.id')
+            ->where(function ($query) use ($filiere, $multiple_choix_filiere_passerelle) {
+                if ($multiple_choix_filiere_passerelle) {
+                    $query->where('filiere1.id', $filiere->id)
+                        ->orWhere('filiere2.id', $filiere->id)
+                        ->orWhere('filiere3.id', $filiere->id);
+                } else {
+                    $query->where('student_passerelles.filiere', $filiere->id);
+                }
+            })
+            ->where(function ($query) use ($multiple_choix_filiere_passerelle) {
+                if ($multiple_choix_filiere_passerelle) {
+                    // Exclude students where all filiere choices are NULL
+                    $query->whereNotNull('student_passerelles.filiere_choix_1')
+                        ->orWhereNotNull('student_passerelles.filiere_choix_2')
+                        ->orWhereNotNull('student_passerelles.filiere_choix_3');
+                } else {
+                    // Exclude students with NULL filiere in single-choice mode
+                    $query->whereNotNull('student_passerelles.filiere');
+                }
+            })
+            ->where('student_passerelles.verif','VERIFIER')
+            ->get();
+
+
+
+        $nameFile = 'List-etudiant-valider-Licences (Accès S5)-' . $filiere->nom_abrv . '.xlsx';
 
         return Excel::download(new StudentPasserelleExport($etablissement, $etudiants), $nameFile);
     }
@@ -662,6 +766,56 @@ class FiliereController extends Controller
         return Excel::download(new BachelierStudentExport($etablissement, $etudiants), $nameFile);
     }
 
+    public function downloadStudentsVerifiedBachelier(Filiere $filiere){
+        $filiere->load('etablissement');
+        $etablissement = $filiere->etablissement;
+
+        $multiple_choix_filiere_passerelle = $etablissement->multiple_choix_filiere_passerelle == 1;
+
+        $etudiants = DB::table('bacheliers')
+            ->select('bacheliers.*',
+                DB::raw($multiple_choix_filiere_passerelle ?
+                    "filiere1.nom_complet AS filiere_choix_1_name,
+                    filiere2.nom_complet AS filiere_choix_2_name,
+                    filiere3.nom_complet AS filiere_choix_3_name"
+                    :
+                    "filiere.nom_complet AS filiere_name"
+                )
+            )
+            ->leftJoin('filieres AS filiere1', 'bacheliers.filiere_choix_1', '=', 'filiere1.id')
+            ->leftJoin('filieres AS filiere2', 'bacheliers.filiere_choix_2', '=', 'filiere2.id')
+            ->leftJoin('filieres AS filiere3', 'bacheliers.filiere_choix_3', '=', 'filiere3.id')
+            ->leftJoin('filieres AS filiere', 'bacheliers.filiere', '=', 'filiere.id')
+            ->where(function ($query) use ($filiere, $multiple_choix_filiere_passerelle) {
+                if ($multiple_choix_filiere_passerelle) {
+                    $query->where('filiere1.id', $filiere->id)
+                        ->orWhere('filiere2.id', $filiere->id)
+                        ->orWhere('filiere3.id', $filiere->id);
+                } else {
+                    $query->where('bacheliers.filiere', $filiere->id);
+                }
+            })
+            ->where(function ($query) use ($multiple_choix_filiere_passerelle) {
+                if ($multiple_choix_filiere_passerelle) {
+                    // Exclude students where all filiere choices are NULL
+                    $query->whereNotNull('bacheliers.filiere_choix_1')
+                        ->orWhereNotNull('bacheliers.filiere_choix_2')
+                        ->orWhereNotNull('bacheliers.filiere_choix_3');
+                } else {
+                    // Exclude students with NULL filiere in single-choice mode
+                    $query->whereNotNull('bacheliers.filiere');
+                }
+            })
+            ->where('bacheliers.verif','VERIFIER')
+            ->get();
+
+
+
+        $nameFile = 'List-etudiant-valider-Licences (Accès S1)-' . $filiere->nom_abrv . '.xlsx';
+
+        return Excel::download(new BachelierStudentExport($etablissement, $etudiants), $nameFile);
+    }
+
     
     /**
      * Display a listing of the resource.
@@ -717,5 +871,27 @@ class FiliereController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function activer(Filiere $filiere){
+        $filiere->update([
+            'active' => 1
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Filière activée avec succès.'
+        ]);
+    }
+
+    public function desactiver(Filiere $filiere){
+        $filiere->update([
+            'active' => 0
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Filière désactivée avec succès.'
+        ]);
     }
 }

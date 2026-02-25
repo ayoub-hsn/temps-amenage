@@ -314,6 +314,7 @@
                             <option value="En attente" {{ old('etat_payment') == 'En attente' ? 'selected' : '' }}>En attente</option>
                             <option value="Partielle" {{ old('etat_payment') == 'Partielle' ? 'selected' : '' }}>Partielle</option>
                             <option value="Complete" {{ old('etat_payment') == 'Complete' ? 'selected' : '' }}>Complète</option>
+                            <option value="Complete(Fonctionnaire à l'UH1)" {{ old('etat_payment') == "Complete(Fonctionnaire à l'UH1)" ? 'selected' : '' }}>Complète(Fonctionnaire à l'UH1)</option>
                         </select>
                         @error('etat_payment')
                             <div class="text-danger mt-1">{{ $message }}</div>

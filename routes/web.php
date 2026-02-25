@@ -142,13 +142,17 @@ Route::group(['as'=>'sup-admin.', 'prefix' => 'sup-admin','middleware' => ['auth
     Route::get('/filiere/{filiere}/bachelier/etudiant/{etudiant}',[SupAdminFiliereController::class, 'showDetailStudentBachelier'])->name('filiere.bachelier.etudiants.show');
     Route::get('bachelier/candidats/{candidat}/edit',[SupAdminFiliereController::class, 'editBachelierCandidat'])->name('bachelier.candidat.edit');
     Route::put('bachelier/candidats/{candidat}/update',[SupAdminFiliereController::class, 'updateBachelierCandidat'])->name('bachelier.candidat.update');
-
+    Route::post('filiere/{filiere}/active',[SupAdminFiliereController::class, 'activer'])->name('filiere.active');
+    Route::post('filiere/{filiere}/desactive',[SupAdminFiliereController::class, 'desactiver'])->name('filiere.desactive');
 
     
     //Download
     Route::post('/filiere/{filiere}/master/etudiant/excel/download',[SupAdminFiliereController::class, 'downloadStudentsMaster'])->name('filiere.master.etudiants.excel.download');
+    Route::post('/filiere/{filiere}/master/etudiant/verified/excel/download',[SupAdminFiliereController::class, 'downloadStudentsVerifiedMaster'])->name('filiere.master.etudiants.verified.excel.download');
     Route::post('/filiere/{filiere}/licence/etudiant/excel/download',[SupAdminFiliereController::class, 'downloadStudentsLicence'])->name('filiere.licence.etudiants.excel.download');
+    Route::post('/filiere/{filiere}/licence/etudiant/verified/excel/download',[SupAdminFiliereController::class, 'downloadStudentsVerifiedLicence'])->name('filiere.licence.etudiants.verified.excel.download');
     Route::post('/filiere/{filiere}/bachelier/etudiant/excel/download',[SupAdminFiliereController::class, 'downloadStudentsBachelier'])->name('filiere.bachelier.etudiants.excel.download');
+    Route::post('/filiere/{filiere}/bachelier/etudiant/verified/excel/download',[SupAdminFiliereController::class, 'downloadStudentsVerifiedBachelier'])->name('filiere.bachelier.etudiants.verified.excel.download');
 
 
     

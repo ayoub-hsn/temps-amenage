@@ -82,7 +82,7 @@
                 { data: 'date_inscription', name: 'date_inscription' },
                 { data: 'etat_payment', name: 'etat_payment' },
                 {
-                    data: 'id',
+                    data: 'student_id',
                     orderable: false,
                     searchable: false,
                     render: function (data, type, row) {
