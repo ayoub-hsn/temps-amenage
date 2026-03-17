@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\adminEtab;
 
 use App\Models\Filiere;
+use App\Models\Bachelier;
 use Illuminate\Http\Request;
 use App\Models\Etablissement;
 use App\Models\PaymentMaster;
 use App\Models\StudentMaster;
 use App\Models\PaymentBacheliers;
 use App\Models\PaymentPasserelle;
+use App\Models\StudentPasserelle;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -21,7 +23,104 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        //
+        $etablissement = DB::table('etablissements as e')
+            ->select(
+
+                'e.*',
+
+                /* ================= MASTER ================= */
+                DB::raw('(SELECT COUNT(*) 
+                    FROM student_masters sm 
+                    WHERE sm.etablissement_id = e.id
+                ) as master_total'),
+
+                DB::raw('(SELECT COUNT(*) 
+                    FROM student_masters sm 
+                    WHERE sm.etablissement_id = e.id
+                    AND EXISTS (
+                        SELECT 1 FROM payment_masters pm 
+                        WHERE pm.student_id = sm.id
+                    )
+                ) as master_paid'),
+
+                DB::raw('(SELECT COALESCE(SUM(pm.montant_paye),0)
+                    FROM payment_masters pm
+                    JOIN student_masters sm2 ON sm2.id = pm.student_id
+                    WHERE sm2.etablissement_id = e.id
+                ) as master_revenue'),
+
+                /* ================= PASSERELLE ================= */
+                DB::raw('(SELECT COUNT(*) 
+                    FROM student_passerelles sp 
+                    WHERE sp.etablissement_id = e.id
+                ) as passerelle_total'),
+
+                DB::raw('(SELECT COUNT(*) 
+                    FROM student_passerelles sp 
+                    WHERE sp.etablissement_id = e.id
+                    AND EXISTS (
+                        SELECT 1 FROM payment_passerelles pp 
+                        WHERE pp.student_id = sp.id
+                    )
+                ) as passerelle_paid'),
+
+                DB::raw('(SELECT COALESCE(SUM(pp.montant_paye),0)
+                    FROM payment_passerelles pp
+                    JOIN student_passerelles sp2 ON sp2.id = pp.student_id
+                    WHERE sp2.etablissement_id = e.id
+                ) as passerelle_revenue'),
+
+                /* ================= BACHELIER ================= */
+                DB::raw('(SELECT COUNT(*) 
+                    FROM bacheliers b 
+                    WHERE b.etablissement_id = e.id
+                ) as bachelier_total'),
+
+                DB::raw('(SELECT COUNT(*) 
+                    FROM bacheliers b 
+                    WHERE b.etablissement_id = e.id
+                    AND EXISTS (
+                        SELECT 1 FROM payment_bacheliers pb 
+                        WHERE pb.student_id = b.id
+                    )
+                ) as bachelier_paid'),
+
+                DB::raw('(SELECT COALESCE(SUM(pb.montant_paye),0)
+                    FROM payment_bacheliers pb
+                    JOIN bacheliers b2 ON b2.id = pb.student_id
+                    WHERE b2.etablissement_id = e.id
+                ) as bachelier_revenue'),
+
+                /* ================= TOTAL REVENUE ================= */
+                DB::raw('(
+                    COALESCE((SELECT SUM(pm.montant_paye)
+                    FROM payment_masters pm
+                    JOIN student_masters sm2 ON sm2.id = pm.student_id
+                    WHERE sm2.etablissement_id = e.id),0)
+                    +
+                    COALESCE((SELECT SUM(pp.montant_paye)
+                    FROM payment_passerelles pp
+                    JOIN student_passerelles sp2 ON sp2.id = pp.student_id
+                    WHERE sp2.etablissement_id = e.id),0)
+                    +
+                    COALESCE((SELECT SUM(pb.montant_paye)
+                    FROM payment_bacheliers pb
+                    JOIN bacheliers b2 ON b2.id = pb.student_id
+                    WHERE b2.etablissement_id = e.id),0)
+                ) as total_revenue')
+
+            )
+            /* Only one établissement for the responsable */
+            ->where('e.responsable_id', Auth::id())
+            ->whereExists(function($query){
+                $query->select(DB::raw(1))
+                    ->from('filieres')
+                    ->whereColumn('filieres.etablissement_id','e.id');
+            })
+            ->orderByDesc('total_revenue')
+            ->first(); // fetch only one
+
+        return view('admin-etab.payment.index', compact('etablissement'));
     }
 
     public function paymentFiliereMaster()
@@ -87,6 +186,18 @@ class PaymentController extends Controller
                     default      => 'badge bg-secondary',
                 };
 
+                $verificationLabel = '';
+
+                if ($etudiant->verification == 0) {
+                    $verificationLabel = '<span class="badge badge-warning">En cours de traitement</span>';
+                } 
+                elseif ($etudiant->verification == 1) {
+                    $verificationLabel = '<span class="badge badge-success">Montant valide</span>';
+                } 
+                elseif ($etudiant->verification == 2) {
+                    $verificationLabel = '<span class="badge badge-danger">Une information nécessite votre vérification</span>';
+                }
+
                 return [
                     'id'            => $etudiant->id,
                     'nom'           => $etudiant->nom,
@@ -97,6 +208,8 @@ class PaymentController extends Controller
                     'type_master'   => $etudiant->type_master,
                     'montant'       => $etudiant->montant_paye,
                     'date_inscription' => $etudiant->date_inscription,
+                    'montant_detecter' => $etudiant->montant_detecter !== null ? $etudiant->montant_detecter . " DH" : '<span class="badge bg-warning text-white">En attente</span>',
+                    'verification' => $verificationLabel,
                     'student_id'    => $etudiant->student_id,
                     'etat_payment'  => '<span class="' . $badgeClass . '">' . $etudiant->etat_payment . '</span>',
                     'actions' => '<a href="'.route('admin-etab.payment.master.filiere.student.show', ['filiere' => $filiere->id,'etudiant' => $etudiant->id]).'" class="btn btn-info btn-sm mr-1">Afficher</a>',
@@ -271,6 +384,18 @@ class PaymentController extends Controller
                     default      => 'badge bg-secondary',
                 };
 
+                $verificationLabel = '';
+
+                if ($etudiant->verification == 0) {
+                    $verificationLabel = '<span class="badge badge-warning">En cours de traitement</span>';
+                } 
+                elseif ($etudiant->verification == 1) {
+                    $verificationLabel = '<span class="badge badge-success">Montant valide</span>';
+                } 
+                elseif ($etudiant->verification == 2) {
+                    $verificationLabel = '<span class="badge badge-danger">Une information nécessite votre vérification</span>';
+                }
+
                 return [
                     'id'            => $etudiant->id,
                     'nom'           => $etudiant->nom,
@@ -280,6 +405,8 @@ class PaymentController extends Controller
                     'phone'         => $etudiant->phone,
                     'montant'       => $etudiant->montant_paye,
                     'date_inscription' => $etudiant->date_inscription,
+                    'montant_detecter' => $etudiant->montant_detecter !== null ? $etudiant->montant_detecter . " DH" : '<span class="badge bg-warning text-white">En attente</span>',
+                    'verification' => $verificationLabel,
                     'student_id'    => $etudiant->student_id,
                     'etat_payment'  => '<span class="' . $badgeClass . '">' . $etudiant->etat_payment . '</span>',
                     'actions' => '<a href="'.route('admin-etab.payment.licence.filiere.student.show', ['filiere' => $filiere->id,'etudiant' => $etudiant->id]).'" class="btn btn-info btn-sm mr-1">Afficher</a>',
@@ -298,7 +425,7 @@ class PaymentController extends Controller
     }
 
 
-    public function paymentFiliereLicenceStore(Filiere $filiere,StudentMaster $etudiant,Request $request){
+    public function paymentFiliereLicenceStore(Filiere $filiere,StudentPasserelle $etudiant,Request $request){
         $request->validate([
             'student_id'        => 'required',
             'CNE'               => 'required',
@@ -452,6 +579,18 @@ class PaymentController extends Controller
                     default      => 'badge bg-secondary',
                 };
 
+                $verificationLabel = '';
+
+                if ($etudiant->verification == 0) {
+                    $verificationLabel = '<span class="badge badge-warning">En cours de traitement</span>';
+                } 
+                elseif ($etudiant->verification == 1) {
+                    $verificationLabel = '<span class="badge badge-success">Montant valide</span>';
+                } 
+                elseif ($etudiant->verification == 2) {
+                    $verificationLabel = '<span class="badge badge-danger">Une information nécessite votre vérification</span>';
+                }
+
                 return [
                     'id'            => $etudiant->id,
                     'nom'           => $etudiant->nom,
@@ -462,6 +601,8 @@ class PaymentController extends Controller
                     'semestre'      => $etudiant->semestre,
                     'montant'       => $etudiant->montant_paye,
                     'date_inscription' => $etudiant->date_inscription,
+                    'montant_detecter' => $etudiant->montant_detecter !== null ? $etudiant->montant_detecter . " DH" : '<span class="badge bg-warning text-white">En attente</span>',
+                    'verification' => $verificationLabel,
                     'student_id'    => $etudiant->student_id,
                     'etat_payment'  => '<span class="' . $badgeClass . '">' . $etudiant->etat_payment . '</span>',
                     'actions' => '<a href="'.route('admin-etab.payment.licence.filiere.student.show', ['filiere' => $filiere->id,'etudiant' => $etudiant->id]).'" class="btn btn-info btn-sm mr-1">Afficher</a>',
@@ -479,7 +620,7 @@ class PaymentController extends Controller
         return view('admin-etab.payment.indexBachelierStudents',compact('etablissement','filiere'));
     }
 
-    public function paymentFiliereBachelierStore(Filiere $filiere,StudentMaster $etudiant,Request $request){
+    public function paymentFiliereBachelierStore(Filiere $filiere,Bachelier $etudiant,Request $request){
         $request->validate([
             'student_id'        => 'required',
             'CNE'               => 'required',

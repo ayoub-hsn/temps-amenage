@@ -46,6 +46,30 @@ class HomeController extends Controller
         $dataMaster = $etablissementStats->pluck('student_master_count'); // Master student counts
         $dataPasserelle = $etablissementStats->pluck('student_passerelle_count'); // Licence (Accées S5) student counts
         $dataBachelier = $etablissementStats->pluck('student_bachelier_count'); // Licence (Accées S1) student counts
+
+        $etablissementsPayments = Etablissement::has('filiere')->withCount([
+
+            'studentMaster as master_paid' => function($query){
+                $query->whereHas('PaymentStudent');
+            },
+
+            'studentPasserelle as passerelle_paid' => function($query){
+                $query->whereHas('PaymentStudent');
+            },
+
+            'studentBachelier as bachelier_paid' => function($query){
+                $query->whereHas('PaymentStudent');
+            }
+
+        ])->get();
+
+        $paymentLabels = $etablissementsPayments->pluck('nom_abrev');
+
+        $masterPaid = $etablissementsPayments->pluck('master_paid');
+        $passerellePaid = $etablissementsPayments->pluck('passerelle_paid');
+        $bachelierPaid = $etablissementsPayments->pluck('bachelier_paid');
+
+   
         return view('sup-admin.dashboard',compact(
             'FilieresMasterCount',
             'filieresPasserelleCount',
@@ -56,7 +80,12 @@ class HomeController extends Controller
             'labels',
             'dataMaster',
             'dataPasserelle',
-            'dataBachelier'
+            'dataBachelier',
+            'etablissementsPayments',
+            'paymentLabels',
+            'masterPaid',
+            'passerellePaid',
+            'bachelierPaid'
         ));
     }
 

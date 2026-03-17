@@ -37,6 +37,8 @@
                                         <th>Montant</th>
                                         <th>Date Paiement</th>
                                         <th>Etat de paiement</th>
+                                        <th>Verification</th>
+                                        <th>Montant scanné</th>
                                         <th class="no-export">Action</th>
                                     </tr>
                                 </thead>
@@ -83,6 +85,8 @@
                 { data: 'montant', name: 'montant' },
                 { data: 'date_inscription', name: 'date_inscription' },
                 { data: 'etat_payment', name: 'etat_payment' },
+                { data: 'verification', name: 'verification' },
+                { data: 'montant_detecter', name: 'montant_detecter' },
                 {
                     data: 'student_id',
                     orderable: false,

@@ -83,4 +83,8 @@ class StudentPasserelle extends Model
         // Default case if multiple choices are not enabled
         return $this->belongsTo(Filiere::class, 'filiere');
     }
+
+    public function PaymentStudent(){
+        return $this->hasMany(PaymentPasserelle::class, 'student_id');
+    }
 }

@@ -55,4 +55,8 @@ class Bachelier extends Model
         'verif',
         'motif'
     ];
+
+    public function PaymentStudent(){
+        return $this->hasMany(PaymentBacheliers::class, 'student_id');
+    }
 }

@@ -1,4 +1,4 @@
-@extends('admin-etab.layouts.master')
+@extends('sup-admin.layouts.master')
 @section('content')
 <head>
     <!-- DataTables CSS -->
@@ -68,7 +68,7 @@
         $('#etudiant-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('admin-etab.payment.licence.filiere.students',['filiere' => $filiere->id]) }}",
+            ajax: "{{ route('sup-admin.payment.licence.filiere.students',['filiere' => $filiere->id]) }}",
             columns: [
                 {
                     data: null,
@@ -90,8 +90,11 @@
                     orderable: false,
                     searchable: false,
                     render: function (data, type, row) {
-                        let btnShow = '<a href="/admin-etab/payment/licence/filiere/' + filiereId + '/student/' + data + '/show" class="btn btn-info btn-sm mr-1">Afficher</a>';
-                        return btnShow;
+                        let btnShow = '<a href="/sup-admin/paiement/licence/filiere/' + filiereId + '/student/' + data + '/show" class="btn btn-info btn-sm mr-1">Afficher</a>';
+                        let btnCheck =
+                            '<button data-id="' + row.id + '" class="btn btn-warning btn-sm btn-check" style="margin-left:5px;">Check</button>';
+
+                        return btnShow + btnCheck;
                         
                     }
                 }
@@ -117,7 +120,7 @@
             drawCallback: function () {
                 $('#etudiant-table_paginate .pagination li').each(function() {
                     var pageNum = $(this).text();
-                    var href = "{{ route('admin-etab.payment.licence.filiere.students',['filiere' => $filiere->id]) }}?page=" + pageNum;
+                    var href = "{{ route('sup-admin.payment.licence.filiere.students',['filiere' => $filiere->id]) }}?page=" + pageNum;
                     $(this).find('a').attr('href', href);
                 });
             },
@@ -139,77 +142,133 @@
                         columns: ':not(.no-export)' // Exclude columns with the class 'no-export'
                     }
                 },
-                // !showDownloadButton ? {
-                //     text: 'Télécharger la liste Complète',
-                //     action: function (e, dt, node, config) {
-                //         let form = document.createElement('form');
-                //         form.method = 'POST';
-                //         form.action = '{{ route('admin-etab.filiere.master.etudiants.excel.download', ['filiere' => $filiere->id]) }}';
-
-                //         let csrfInput = document.createElement('input');
-                //         csrfInput.type = 'hidden';
-                //         csrfInput.name = '_token';
-                //         csrfInput.value = '{{ csrf_token() }}';
-                //         form.appendChild(csrfInput);
-
-                //         document.body.appendChild(form);
-                //         form.submit();
-                //     },
-                //     className: 'btn btn-primary mr-2'
-                // } : null,
-                // {
-                //     text: 'Liste des étudiants sélectionnés',
-                //     className: 'btn btn-success',
-                //     action: function () {
-                //         window.location.href = "{{ route('admin-etab.filiere.master.etudiants.listToselect', ['filiere' => $filiere->id]) }}";
-                //     }
-                // }
+                
             ].filter(Boolean)
 
         });
     });
 </script>
 <script>
-    $(document).on('click', '.btn-valider', function(e) {
-        e.preventDefault();
+    $(document).on('click', '.btn-check', function () {
 
-        let url = $(this).data('url');
+        let button = $(this);
+        let paymentId = button.data('id');
 
-        Swal.fire({
-            title: "Confirmation",
-            text: "Voulez-vous vraiment valider cet étudiant ?",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#28a745",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Oui, valider",
-            cancelButtonText: "Annuler"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = url;
-            }
-        });
-    });
-
-    // Annuler la validation button
-    $(document).on('click', '.btn-annuler', function(e) {
-        e.preventDefault();
-        let url = $(this).data('url');
+        button.prop('disabled', true);
 
         Swal.fire({
-            title: "Confirmation",
-            text: "Voulez-vous vraiment annuler la validation de cet étudiant ?",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#dc3545",
-            cancelButtonColor: "#6c757d",
-            confirmButtonText: "Oui, annuler",
-            cancelButtonText: "Annuler"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = url;
+            title: 'Analyse du reçu...',
+            html: 'Veuillez patienter pendant l\'analyse OCR',
+            allowOutsideClick: false,
+            didOpen: () => Swal.showLoading()
+        });
+
+        $.ajax({
+            url: '/sup-admin/paiement/' + paymentId + '/check/licence',
+            type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+
+            success: function (response) {
+                $('#etudiant-table').DataTable().ajax.reload(null, false);
+                button.prop('disabled', false);
+
+                /*
+                =====================================================
+                STATUS = 1 → VALID RECEIPT
+                =====================================================
+                */
+                if (response.status === true) {
+
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Reçu Valide ✅',
+                        html: `
+                            <b>Montant détecté :</b> ${response.detected_amount} DH<br>
+                            <b>Montant attendu :</b> ${response.expected_amount} DH
+                        `
+                    }).then(() => {
+                        // Refresh DataTable
+                        $('#etudiant-table').DataTable().ajax.reload(null, false);
+
+                    });
+
+                    return;
+                }
+
+                /*
+                =====================================================
+                STATUS = 2 → MANUAL CHECK REQUIRED
+                =====================================================
+                */
+                if (response.status === false && response.detected_amount > 0) {
+
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Vérification manuelle ⚠',
+                        html: `
+                            <b>Montant détecté :</b> ${response.detected_amount} DH<br>
+                            <b>Montant attendu :</b> ${response.expected_amount} DH<br><br>
+
+                            <b>Texte OCR :</b>
+                            <pre style="text-align:left;
+                            font-size:12px;
+                            background:#f4f4f4;
+                            padding:10px;
+                            max-height:200px;
+                            overflow:auto">
+                            ${response.raw_text}
+                            </pre>
+                        `
+                    }).then(() => {
+                        // Refresh DataTable
+                        $('#etudiant-table').DataTable().ajax.reload(null, false);
+
+                    });
+
+                    return;
+                }
+
+                /*
+                =====================================================
+                STATUS = 0 → OCR / API PROBLEM
+                =====================================================
+                */
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erreur OCR ❌',
+                    html: `
+                        <b>Impossible d’analyser le reçu</b><br><br>
+
+                        <b>Texte brut :</b>
+                        <pre style="text-align:left;
+                        font-size:12px;
+                        background:#f4f4f4;
+                        padding:10px;
+                        max-height:200px;
+                        overflow:auto">
+                        ${response.raw_text ?? 'Aucun texte'}
+                        </pre>
+                    `
+                });
+
+            },
+
+            error: function () {
+
+                button.prop('disabled', false);
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erreur serveur',
+                    text: 'Impossible de contacter le serveur'
+                });
+
             }
         });
+
     });
 </script>
 

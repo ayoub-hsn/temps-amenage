@@ -11,6 +11,7 @@ use App\Http\Controllers\supAdmin\HomeController;
 use App\Http\Controllers\supAdmin\UserController;
 use App\Http\Controllers\adminEtab\FiliereController;
 use App\Http\Controllers\adminEtab\PaymentController;
+use App\Http\Controllers\supAdmin\PaiementController;
 use App\Http\Controllers\supAdmin\SerieBacController;
 use App\Http\Controllers\adminEtab\CandidatController;
 use App\Http\Controllers\adminEtab\ProvinceController;
@@ -144,7 +145,7 @@ Route::group(['as'=>'sup-admin.', 'prefix' => 'sup-admin','middleware' => ['auth
     Route::put('bachelier/candidats/{candidat}/update',[SupAdminFiliereController::class, 'updateBachelierCandidat'])->name('bachelier.candidat.update');
     Route::post('filiere/{filiere}/active',[SupAdminFiliereController::class, 'activer'])->name('filiere.active');
     Route::post('filiere/{filiere}/desactive',[SupAdminFiliereController::class, 'desactiver'])->name('filiere.desactive');
-
+    Route::get('/filiere/{filiere}/show',[SupAdminFiliereController::class, 'show'])->name('filiere.show');
     
     //Download
     Route::post('/filiere/{filiere}/master/etudiant/excel/download',[SupAdminFiliereController::class, 'downloadStudentsMaster'])->name('filiere.master.etudiants.excel.download');
@@ -155,7 +156,34 @@ Route::group(['as'=>'sup-admin.', 'prefix' => 'sup-admin','middleware' => ['auth
     Route::post('/filiere/{filiere}/bachelier/etudiant/verified/excel/download',[SupAdminFiliereController::class, 'downloadStudentsVerifiedBachelier'])->name('filiere.bachelier.etudiants.verified.excel.download');
 
 
+    //paiement
+    Route::get('/paiement',[PaiementController::class, 'index'])->name('payment.index');
     
+    Route::get('paiement/{etablissement}/master/filiere',[PaiementController::class, 'paymentFiliereMaster'])->name('payment.master.filiere.index');
+    Route::get('paiement/master/filiere/{filiere}/students',[PaiementController::class, 'paymentFiliereMasterStudents'])->name('payment.master.filiere.students');
+    Route::get('paiement/master/filiere/{filiere}/student/{etudiant}/show',[PaiementController::class, 'paymentFiliereMasterShowStudent'])->name('payment.master.filiere.student.show');
+    Route::post('paiement/checkAll/master', [PaiementController::class, 'checkReceiptMasterAllStudents'])->name('payment.master.checkAll');
+    Route::get('paiement/checkAllProgress/master', [PaiementController::class, 'checkReceiptMasterProgress'])->name('payment.master.checkAllProgress');
+    Route::post('paiement/{payment}/check/master', [PaiementController::class, 'checkReceiptMaster'])->name('payment.master.check');
+    Route::post('paiement/{payment}/check/master/auto', [PaiementController::class, 'checkAutoReceiptMaster'])->name('payment.master.check.auto');
+
+    Route::get('paiement/licence/{etablissement}/filiere',[PaiementController::class, 'paymentFiliereLicence'])->name('payment.licence.filiere.index');
+    Route::get('paiement/licence/filiere/{filiere}/students',[PaiementController::class, 'paymentFiliereLicenceStudents'])->name('payment.licence.filiere.students');
+    Route::get('paiement/licence/filiere/{filiere}/student/{etudiant}/show',[PaiementController::class, 'paymentFiliereLicenceShowStudent'])->name('payment.licence.filiere.student.show');
+    Route::post('paiement/checkAll/licence', [PaiementController::class, 'checkReceiptLicenceAllStudents'])->name('payment.licence.checkAll');
+    Route::get('paiement/checkAllProgress/licence', [PaiementController::class, 'checkReceiptLicenceProgress'])->name('payment.licence.checkAllProgress');
+    Route::post('paiement/{payment}/check/licence', [PaiementController::class, 'checkReceiptLicence'])->name('payment.licence.check');
+    Route::post('paiement/{payment}/check/licence/auto', [PaiementController::class, 'checkAutoReceiptLicence'])->name('payment.licence.check.auto');
+    
+    Route::get('paiement/{etablissement}//bachelier/filiere',[PaiementController::class, 'paymentFiliereBachelier'])->name('payment.bachelier.filiere.index');
+    Route::get('paiement/bachelier/filiere/{filiere}/students',[PaiementController::class, 'paymentFiliereBachelierStudents'])->name('payment.bachelier.filiere.students');
+    Route::get('paiement/bachelier/filiere/{filiere}/student/{etudiant}/show',[PaiementController::class, 'paymentFiliereBachelierShowStudent'])->name('payment.bachelier.filiere.student.show');
+    Route::post('paiement/checkAll/bachelier', [PaiementController::class, 'checkReceiptBachelierAllStudents'])->name('payment.bachelier.checkAll');
+    Route::get('paiement/checkAllProgress/bachelier', [PaiementController::class, 'checkReceiptBachelierProgress'])->name('payment.bachelier.checkAllProgress');
+    Route::post('paiement/{payment}/check/bachelier', [PaiementController::class, 'checkReceiptBachelier'])->name('payment.bachelier.check');
+    Route::post('paiement/{payment}/check/bachelier/auto', [PaiementController::class, 'checkAutoReceiptBachelier'])->name('payment.bachelier.check.auto');
+    
+
     
     //actualite management
     Route::get('actualite',[ActualiteController::class, 'index'])->name('actualite.index');
@@ -264,6 +292,8 @@ Route::group(['as'=>'admin-etab.', 'prefix' => 'admin-etab','middleware' => ['au
     
 
     //payment
+    Route::get('/payment',[PaymentController::class, 'index'])->name('payment.index');
+
     Route::get('payment/master/filiere',[PaymentController::class, 'paymentFiliereMaster'])->name('payment.master.filiere.index');
     Route::get('payment/master/filiere/{filiere}/students',[PaymentController::class, 'paymentFiliereMasterStudents'])->name('payment.master.filiere.students');
     Route::get('payment/master/filiere/{filiere}/student/{etudiant}/show',[PaymentController::class, 'paymentFiliereMasterShowStudent'])->name('payment.master.filiere.student.show');

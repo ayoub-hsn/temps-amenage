@@ -69,9 +69,16 @@ class Filiere extends Model
     }
 
 
-    public function provinces(){
-        return $this->belongsToMany(Province::class, 'filiere_provinces','filiere_id','province_id');
+    public function PaymentStudentsMaster(){
+        $this->hasMany(PaymentMaster::class, 'filiere');
     }
 
+    public function PaymentsStudentsPasserelle(){
+        $this->hasMany(PaymentPasserelle::class, 'filiere');
+    }
+
+    public function PaymentsStudentsBacheliers(){
+        $this->hasMany(PaymentBacheliers::class, 'filiere');
+    }
 
 }

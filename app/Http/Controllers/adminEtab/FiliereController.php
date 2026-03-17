@@ -481,13 +481,25 @@ class FiliereController extends Controller
     }
 
     public function validerStudentMaster(Filiere $filiere,StudentMaster $etudiant){
-        $etudiant->update(['verif' => 'VERIFIER']);
-        return back()->with('message','Vous avez validé cet étudiant avec succès');
+        $etudiant->update([
+            'verif' => 'VERIFIER'
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Étudiant validé avec succès'
+        ]);
     }
 
     public function annulerValidationStudentMaster(Filiere $filiere,StudentMaster $etudiant){
-        $etudiant->update(['verif' => 'EN COURS']);
-        return back()->with('message','Vous avez annulé la validation de cet étudiant avec succès');
+        $etudiant->update([
+            'verif' => 'EN COURS'
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Validation annulée avec succès'
+        ]);
     }
 
 
@@ -702,13 +714,25 @@ class FiliereController extends Controller
     }
 
     public function validerStudentLicence(Filiere $filiere,StudentPasserelle $etudiant){
-        $etudiant->update(['verif' => 'VERIFIER']);
-        return back()->with('message','Vous avez validé cet étudiant avec succès');
+        $etudiant->update([
+            'verif' => 'VERIFIER'
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Étudiant validé avec succès'
+        ]);
     }
 
     public function annulerValidationStudentLicence(Filiere $filiere,StudentPasserelle $etudiant){
-        $etudiant->update(['verif' => 'EN COURS']);
-        return back()->with('message','Vous avez annulé la validation de cet étudiant avec succès');
+        $etudiant->update([
+            'verif' => 'EN COURS'
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Validation annulée avec succès'
+        ]);
     }
 
 
@@ -836,13 +860,25 @@ class FiliereController extends Controller
     }
 
     public function validerStudentBachelier(Filiere $filiere,Bachelier $etudiant){
-        $etudiant->update(['verif' => 'VERIFIER']);
-        return back()->with('message','Vous avez validé cet étudiant avec succès');
+        $etudiant->update([
+            'verif' => 'VERIFIER'
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Étudiant validé avec succès'
+        ]);
     }
 
     public function annulerValidationStudentBachelier(Filiere $filiere,Bachelier $etudiant){
-        $etudiant->update(['verif' => 'EN COURS']);
-        return back()->with('message','Vous avez annulé la validation de cet étudiant avec succès');
+        $etudiant->update([
+            'verif' => 'EN COURS'
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Validation annulée avec succès'
+        ]);
     }
 
     

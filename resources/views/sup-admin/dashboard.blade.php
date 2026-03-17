@@ -84,6 +84,22 @@
       </div>
     </div>
 </div>
+<div class="row mt-3">
+    <div class="col-12">
+        <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-header bg-success text-white rounded-top-4">
+              <h5 class="mb-0">
+              💰 Statistiques des paiements des étudiants
+              </h5>
+            </div>
+            <div class="card-body bg-light rounded-bottom-4">
+              <div style="height: 400px;">
+                <canvas id="paymentChart"></canvas>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
 
   </section>
 
@@ -197,6 +213,72 @@
     },
     plugins: [ChartDataLabels]
   });
+</script>
+<script>
+
+const paymentCtx = document.getElementById('paymentChart').getContext('2d');
+
+const g1 = paymentCtx.createLinearGradient(0,0,0,400);
+g1.addColorStop(0,'rgba(40,167,69,0.9)');
+g1.addColorStop(1,'rgba(40,167,69,0.2)');
+
+const g2 = paymentCtx.createLinearGradient(0,0,0,400);
+g2.addColorStop(0,'rgba(0,123,255,0.9)');
+g2.addColorStop(1,'rgba(0,123,255,0.2)');
+
+const g3 = paymentCtx.createLinearGradient(0,0,0,400);
+g3.addColorStop(0,'rgba(255,193,7,0.9)');
+g3.addColorStop(1,'rgba(255,193,7,0.2)');
+
+new Chart(paymentCtx,{
+    type:'bar',
+
+    data:{
+        labels:@json($paymentLabels),
+
+        datasets:[
+            {
+                label:'Masters Payés',
+                data:@json($masterPaid),
+                backgroundColor:g1,
+                borderRadius:10,
+                barThickness:30
+            },
+            {
+                label:'Licence (Accès S5) Payés',
+                data:@json($passerellePaid),
+                backgroundColor:g2,
+                borderRadius:10,
+                barThickness:30
+            },
+            {
+                label:'Licence (Accès S1) Payés',
+                data:@json($bachelierPaid),
+                backgroundColor:g3,
+                borderRadius:10,
+                barThickness:30
+            }
+        ]
+    },
+
+    options:{
+        responsive:true,
+        maintainAspectRatio:false,
+
+        plugins:{
+            legend:{
+                position:'top'
+            }
+        },
+
+        scales:{
+            x:{ grid:{display:false} },
+            y:{ beginAtZero:true }
+        }
+    }
+
+});
+
 </script>
 
 @endsection

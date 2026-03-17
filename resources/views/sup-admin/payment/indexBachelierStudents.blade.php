@@ -1,4 +1,4 @@
-@extends('admin-etab.layouts.master')
+@extends('sup-admin.layouts.master')
 @section('content')
 <head>
     <!-- DataTables CSS -->
@@ -22,7 +22,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header" style="justify-content: space-between;">
-                        <h4>Liste des étudiants - Licence (Accès S5) - {{ $filiere->nom_abrv }}</h4>
+                        <h4>Liste des étudiants - Licence (Accès S1) - {{ $filiere->nom_abrv }}</h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -33,6 +33,7 @@
                                         <th>CIN</th>
                                         <th>Email</th>
                                         <th>Téléphone</th>
+                                        <th>Semestre</th>
                                         <th>Montant</th>
                                         <th>Date Paiement</th>
                                         <th>Etat de paiement</th>
@@ -68,7 +69,7 @@
         $('#etudiant-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('admin-etab.payment.licence.filiere.students',['filiere' => $filiere->id]) }}",
+            ajax: "{{ route('sup-admin.payment.bachelier.filiere.students',['filiere' => $filiere->id]) }}",
             columns: [
                 {
                     data: null,
@@ -80,6 +81,7 @@
                 { data: 'CIN', name: 'CIN' },
                 { data: 'email', name: 'email' },
                 { data: 'phone', name: 'phone' },
+                { data: 'semestre', name: 'semestre' },
                 { data: 'montant', name: 'montant' },
                 { data: 'date_inscription', name: 'date_inscription' },
                 { data: 'etat_payment', name: 'etat_payment' },
@@ -90,8 +92,10 @@
                     orderable: false,
                     searchable: false,
                     render: function (data, type, row) {
-                        let btnShow = '<a href="/admin-etab/payment/licence/filiere/' + filiereId + '/student/' + data + '/show" class="btn btn-info btn-sm mr-1">Afficher</a>';
-                        return btnShow;
+                        let btnShow = '<a href="/sup-admin/paiement/bachelier/filiere/' + filiereId + '/student/' + data + '/show" class="btn btn-info btn-sm mr-1">Afficher</a>';
+                        let btnCheck =
+                            '<button data-id="' + row.id + '" class="btn btn-warning btn-sm btn-check" style="margin-left:5px;">Check</button>';
+                        return btnShow + btnCheck;
                         
                     }
                 }
@@ -117,7 +121,7 @@
             drawCallback: function () {
                 $('#etudiant-table_paginate .pagination li').each(function() {
                     var pageNum = $(this).text();
-                    var href = "{{ route('admin-etab.payment.licence.filiere.students',['filiere' => $filiere->id]) }}?page=" + pageNum;
+                    var href = "{{ route('sup-admin.payment.bachelier.filiere.students',['filiere' => $filiere->id]) }}?page=" + pageNum;
                     $(this).find('a').attr('href', href);
                 });
             },
@@ -139,31 +143,7 @@
                         columns: ':not(.no-export)' // Exclude columns with the class 'no-export'
                     }
                 },
-                // !showDownloadButton ? {
-                //     text: 'Télécharger la liste Complète',
-                //     action: function (e, dt, node, config) {
-                //         let form = document.createElement('form');
-                //         form.method = 'POST';
-                //         form.action = '{{ route('admin-etab.filiere.master.etudiants.excel.download', ['filiere' => $filiere->id]) }}';
-
-                //         let csrfInput = document.createElement('input');
-                //         csrfInput.type = 'hidden';
-                //         csrfInput.name = '_token';
-                //         csrfInput.value = '{{ csrf_token() }}';
-                //         form.appendChild(csrfInput);
-
-                //         document.body.appendChild(form);
-                //         form.submit();
-                //     },
-                //     className: 'btn btn-primary mr-2'
-                // } : null,
-                // {
-                //     text: 'Liste des étudiants sélectionnés',
-                //     className: 'btn btn-success',
-                //     action: function () {
-                //         window.location.href = "{{ route('admin-etab.filiere.master.etudiants.listToselect', ['filiere' => $filiere->id]) }}";
-                //     }
-                // }
+               
             ].filter(Boolean)
 
         });
@@ -212,5 +192,127 @@
         });
     });
 </script>
+<script>
+    $(document).on('click', '.btn-check', function () {
 
+        let button = $(this);
+        let paymentId = button.data('id');
+
+        button.prop('disabled', true);
+
+        Swal.fire({
+            title: 'Analyse du reçu...',
+            html: 'Veuillez patienter pendant l\'analyse OCR',
+            allowOutsideClick: false,
+            didOpen: () => Swal.showLoading()
+        });
+
+        $.ajax({
+            url: '/sup-admin/paiement/' + paymentId + '/check/bachelier',
+            type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+
+            success: function (response) {
+                $('#etudiant-table').DataTable().ajax.reload(null, false);
+                button.prop('disabled', false);
+
+                /*
+                =====================================================
+                STATUS = 1 → VALID RECEIPT
+                =====================================================
+                */
+                if (response.status === true) {
+
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Reçu Valide ✅',
+                        html: `
+                            <b>Montant détecté :</b> ${response.detected_amount} DH<br>
+                            <b>Montant attendu :</b> ${response.expected_amount} DH
+                        `
+                    }).then(() => {
+                        // Refresh DataTable
+                        $('#etudiant-table').DataTable().ajax.reload(null, false);
+
+                    });
+
+                    return;
+                }
+
+                /*
+                =====================================================
+                STATUS = 2 → MANUAL CHECK REQUIRED
+                =====================================================
+                */
+                if (response.status === false && response.detected_amount > 0) {
+
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Vérification manuelle ⚠',
+                        html: `
+                            <b>Montant détecté :</b> ${response.detected_amount} DH<br>
+                            <b>Montant attendu :</b> ${response.expected_amount} DH<br><br>
+
+                            <b>Texte OCR :</b>
+                            <pre style="text-align:left;
+                            font-size:12px;
+                            background:#f4f4f4;
+                            padding:10px;
+                            max-height:200px;
+                            overflow:auto">
+                            ${response.raw_text}
+                            </pre>
+                        `
+                    }).then(() => {
+                        // Refresh DataTable
+                        $('#etudiant-table').DataTable().ajax.reload(null, false);
+
+                    });
+
+                    return;
+                }
+
+                /*
+                =====================================================
+                STATUS = 0 → OCR / API PROBLEM
+                =====================================================
+                */
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erreur OCR ❌',
+                    html: `
+                        <b>Impossible d’analyser le reçu</b><br><br>
+
+                        <b>Texte brut :</b>
+                        <pre style="text-align:left;
+                        font-size:12px;
+                        background:#f4f4f4;
+                        padding:10px;
+                        max-height:200px;
+                        overflow:auto">
+                        ${response.raw_text ?? 'Aucun texte'}
+                        </pre>
+                    `
+                });
+
+            },
+
+            error: function () {
+
+                button.prop('disabled', false);
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erreur serveur',
+                    text: 'Impossible de contacter le serveur'
+                });
+
+            }
+        });
+
+    });
+</script>
 @endsection

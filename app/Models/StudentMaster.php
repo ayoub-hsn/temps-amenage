@@ -125,4 +125,8 @@ class StudentMaster extends Model
         return $filiere ? $filiere->etablissement_id : null;
     }
 
+    public function PaymentStudent(){
+        return $this->hasMany(PaymentMaster::class, 'student_id');
+    }
+
 }

@@ -22,7 +22,14 @@ class FiliereController extends Controller
 
     public function categorie(Etablissement $etablissement){
       $filieresMaster = DB::table('filieres')
-        ->select('filieres.*', 'users.name as responsable', DB::raw('COUNT(student_masters.id) as students_count'))
+        ->select(
+            'filieres.*',
+            'users.name as responsable',
+            // ✅ Total students
+            DB::raw('COUNT(student_masters.id) as students_count'),
+            //  Accepted students only
+            DB::raw("SUM(CASE WHEN student_masters.verif = 'VERIFIER' THEN 1 ELSE 0 END) as accepted_count")
+        )
         ->leftJoin('student_masters', function ($join) use ($etablissement) {
             if ($etablissement->multiple_choix_filiere_master == 1) {
                 $join->on(function ($q) {
@@ -40,7 +47,14 @@ class FiliereController extends Controller
         ->groupBy('filieres.id', 'users.name')
         ->get();
         $filieresPasserelle = DB::table('filieres')
-        ->select('filieres.*', 'users.name as responsable', DB::raw('COUNT(student_passerelles.id) as students_count'))
+        ->select(
+            'filieres.*',
+            'users.name as responsable',
+            // Total students
+            DB::raw('COUNT(student_passerelles.id) as students_count'),
+            // Accepted students only
+            DB::raw("SUM(CASE WHEN student_passerelles.verif = 'VERIFIER' THEN 1 ELSE 0 END) as accepted_count")
+        )
         ->leftJoin('student_passerelles', function ($join) use ($etablissement) {
             if ($etablissement->multiple_choix_filiere_passerelle == 1) {
                 $join->on(function ($q) {
@@ -58,9 +72,16 @@ class FiliereController extends Controller
         ->groupBy('filieres.id', 'users.name')
         ->get();
         $filieresBachelier = DB::table('filieres')
-        ->select('filieres.*', 'users.name as responsable', DB::raw('COUNT(bacheliers.id) as students_count'))
+        ->select(
+            'filieres.*',
+            'users.name as responsable',
+            // Total students
+            DB::raw('COUNT(bacheliers.id) as students_count'),
+            // Accepted students only
+            DB::raw("SUM(CASE WHEN bacheliers.verif = 'VERIFIER' THEN 1 ELSE 0 END) as accepted_count")
+        )
         ->leftJoin('bacheliers', function ($join) use ($etablissement) {
-            if ($etablissement->multiple_choix_filiere_passerelle == 1) {
+            if ($etablissement->multiple_choix_filiere_bachelier == 1) {
                 $join->on(function ($q) {
                     $q->on('bacheliers.filiere_choix_1', '=', 'filieres.id')
                     ->orOn('bacheliers.filiere_choix_2', '=', 'filieres.id')

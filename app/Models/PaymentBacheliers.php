@@ -24,6 +24,12 @@ class PaymentBacheliers extends Model
         'semestre',
         'etat_payment',
         'montant_paye',
-        'document'
+        'document',
+        'montant_detecter',
+        'verification'   // 0 = still nothing checked ; 1 = verification is succeeded ; 2 = need my own verification
     ];
+
+    public function student(){
+        return $this->belongsTo(Bachelier::class, 'student_id');
+    }
 }

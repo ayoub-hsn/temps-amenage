@@ -58,124 +58,120 @@
         color: #333;
     }
 
-/* =========================================
-   ULTRA PREMIUM 2026 TOGGLE DESIGN
-========================================= */
+    .status-toggle {
+        position: absolute;
+        top: 18px;
+        right: 20px;
 
-.status-toggle {
-    position: absolute;
-    top: 18px;
-    right: 20px;
+        width: 150px;
+        height: 44px;
 
-    width: 150px;
-    height: 44px;
+        border-radius: 40px;
 
-    border-radius: 40px;
+        cursor: pointer;
 
-    cursor: pointer;
+        backdrop-filter: blur(12px);
+        background: rgba(255,255,255,0.7);
 
-    backdrop-filter: blur(12px);
-    background: rgba(255,255,255,0.7);
+        box-shadow:
+            0 8px 25px rgba(0,0,0,0.12),
+            inset 0 2px 8px rgba(255,255,255,0.9);
 
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.12),
-        inset 0 2px 8px rgba(255,255,255,0.9);
+        overflow: hidden;
 
-    overflow: hidden;
+        transition: all 0.4s ease;
+    }
 
-    transition: all 0.4s ease;
-}
+    /* Sliding glass layer */
+    .status-toggle .toggle-glass {
+        position: absolute;
+        width: 50%;
+        height: 90%;
+        top: 2px;
 
-/* Sliding glass layer */
-.status-toggle .toggle-glass {
-    position: absolute;
-    width: 50%;
-    height: 90%;
-    top: 2px;
+        border-radius: 40px;
 
-    border-radius: 40px;
+        transition: all 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+    }
 
-    transition: all 0.4s cubic-bezier(.68,-0.55,.27,1.55);
-}
+    /* Track text */
+    .toggle-track {
+        position: relative;
+        z-index: 2;
 
-/* Track text */
-.toggle-track {
-    position: relative;
-    z-index: 2;
+        height: 100%;
 
-    height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+    .toggle-text {
+        width: 50%;
+        text-align: center;
 
-.toggle-text {
-    width: 50%;
-    text-align: center;
+        font-weight: 700;
+        font-size: 0.85rem;
 
-    font-weight: 700;
-    font-size: 0.85rem;
+        transition: all 0.3s ease;
+    }
 
-    transition: all 0.3s ease;
-}
+    /* ACTIVE STATE */
+    .status-toggle.active {
+        border: 1px solid rgba(40,167,69,0.3);
+    }
 
-/* ACTIVE STATE */
-.status-toggle.active {
-    border: 1px solid rgba(40,167,69,0.3);
-}
+    .status-toggle.active .toggle-glass {
+        left: 3px;
 
-.status-toggle.active .toggle-glass {
-    left: 3px;
+        background: linear-gradient(
+            135deg,
+            #28a745,
+            #20c997
+        );
 
-    background: linear-gradient(
-        135deg,
-        #28a745,
-        #20c997
-    );
+        box-shadow:
+            0 6px 18px rgba(40,167,69,0.5);
+    }
 
-    box-shadow:
-        0 6px 18px rgba(40,167,69,0.5);
-}
+    .status-toggle.active .active-text {
+        color: white;
+    }
 
-.status-toggle.active .active-text {
-    color: white;
-}
+    .status-toggle.active .inactive-text {
+        color: #999;
+    }
 
-.status-toggle.active .inactive-text {
-    color: #999;
-}
+    /* INACTIVE STATE */
+    .status-toggle.inactive {
+        border: 1px solid rgba(220,53,69,0.3);
+    }
 
-/* INACTIVE STATE */
-.status-toggle.inactive {
-    border: 1px solid rgba(220,53,69,0.3);
-}
+    .status-toggle.inactive .toggle-glass {
+        left: 50%;
 
-.status-toggle.inactive .toggle-glass {
-    left: 50%;
+        background: linear-gradient(
+            135deg,
+            #dc3545,
+            #ff6b81
+        );
 
-    background: linear-gradient(
-        135deg,
-        #dc3545,
-        #ff6b81
-    );
+        box-shadow:
+            0 6px 18px rgba(220,53,69,0.5);
+    }
 
-    box-shadow:
-        0 6px 18px rgba(220,53,69,0.5);
-}
+    .status-toggle.inactive .inactive-text {
+        color: white;
+    }
 
-.status-toggle.inactive .inactive-text {
-    color: white;
-}
+    .status-toggle.inactive .active-text {
+        color: #999;
+    }
 
-.status-toggle.inactive .active-text {
-    color: #999;
-}
-
-/* Hover effect */
-.status-toggle:hover {
-    transform: scale(1.07);
-}
+    /* Hover effect */
+    .status-toggle:hover {
+        transform: scale(1.07);
+    }
 
     .filiere-info {
         font-size: 0.95rem;
@@ -188,6 +184,84 @@
     .filiere-info i {
         margin-right: 6px;
         color: #004e92;
+    }
+
+    /* =========================================
+    PREMIUM CIRCULAR ADMISSION KPI
+    ========================================= */
+
+    .admission-kpi {
+        margin-top: 18px;
+        padding: 18px;
+        border-radius: 18px;
+
+        background: linear-gradient(135deg, #ffffff, #f3f6fb);
+        box-shadow:
+            0 12px 30px rgba(0,0,0,0.08);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+
+        transition: all 0.3s ease;
+    }
+
+    .admission-kpi:hover {
+        transform: translateY(-5px);
+        box-shadow:
+            0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    /* Circular Progress */
+    .circle-wrapper {
+        position: relative;
+        width: 80px;
+        height: 80px;
+    }
+
+    .circle-wrapper svg {
+        transform: rotate(-90deg);
+    }
+
+    .circle-bg {
+        fill: none;
+        stroke: #e6ecf2;
+        stroke-width: 8;
+    }
+
+    .circle-progress {
+        fill: none;
+        stroke-width: 8;
+        stroke-linecap: round;
+        transition: stroke-dashoffset 0.8s ease;
+    }
+
+    /* Center Percentage */
+    .circle-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: 700;
+        font-size: 0.9rem;
+    }
+
+    /* Text Side */
+    .admission-info {
+        flex: 1;
+    }
+
+    .admission-title {
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    .admission-numbers {
+        font-size: 0.85rem;
+        color: #666;
     }
 
     .btn-view, .btn-doc, .btn-download {
@@ -320,12 +394,62 @@
                                     </div>
                                 </div>
 
-                                <p class="filiere-info">
-                                    <i data-feather="users"></i>
-                                    Étudiants postulants : <strong>{{ $filiere->students_count }}</strong>
-                                </p>
+                                @php
+                                    $accepted = $filiere->accepted_count ?? 0;
+                                    $total = $filiere->students_count ?? 0;
+                                    $percentage = $total > 0 ? round(($accepted / $total) * 100, 1) : 0;
 
-                                <p class="filiere-info">
+                                    // Dynamic color
+                                    if($percentage >= 70){
+                                        $color = '#28a745'; // Green
+                                    } elseif($percentage >= 40){
+                                        $color = '#f39c12'; // Orange
+                                    } else {
+                                        $color = '#dc3545'; // Red
+                                    }
+
+                                    $radius = 32;
+                                    $circumference = 2 * pi() * $radius;
+                                    $offset = $circumference - ($percentage / 100) * $circumference;
+                                @endphp
+
+                                <div class="admission-kpi">
+
+                                    <div class="circle-wrapper">
+                                        <svg width="80" height="80">
+                                            <circle 
+                                                class="circle-bg"
+                                                cx="40" cy="40"
+                                                r="{{ $radius }}" />
+
+                                            <circle 
+                                                class="circle-progress"
+                                                cx="40" cy="40"
+                                                r="{{ $radius }}"
+                                                stroke="{{ $color }}"
+                                                stroke-dasharray="{{ $circumference }}"
+                                                stroke-dashoffset="{{ $offset }}" />
+                                        </svg>
+
+                                        <div class="circle-text" style="color: {{ $color }}">
+                                            {{ $percentage }}%
+                                        </div>
+                                    </div>
+
+                                    <div class="admission-info">
+                                        <div class="admission-title">
+                                            🎓 Taux d'admission
+                                        </div>
+
+                                        <div class="admission-numbers">
+                                            Admis : <strong>{{ $accepted }}</strong> <br>
+                                            Total : <strong>{{ $total }}</strong>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <p class="filiere-info mt-3">
                                     <i data-feather="user"></i>
                                     Responsable : <strong>{{ $filiere->responsable ?? '-' }}</strong>
                                 </p>
@@ -394,12 +518,62 @@
                                     </div>
                                 </div>
 
-                                <p class="filiere-info">
-                                    <i data-feather="users"></i>
-                                    Étudiants postulants : <strong>{{ $filiere->students_count }}</strong>
-                                </p>
+                                @php
+                                    $accepted = $filiere->accepted_count ?? 0;
+                                    $total = $filiere->students_count ?? 0;
+                                    $percentage = $total > 0 ? round(($accepted / $total) * 100, 1) : 0;
 
-                                <p class="filiere-info">
+                                    // Dynamic color
+                                    if($percentage >= 70){
+                                        $color = '#28a745'; // Green
+                                    } elseif($percentage >= 40){
+                                        $color = '#f39c12'; // Orange
+                                    } else {
+                                        $color = '#dc3545'; // Red
+                                    }
+
+                                    $radius = 32;
+                                    $circumference = 2 * pi() * $radius;
+                                    $offset = $circumference - ($percentage / 100) * $circumference;
+                                @endphp
+
+                                <div class="admission-kpi">
+
+                                    <div class="circle-wrapper">
+                                        <svg width="80" height="80">
+                                            <circle 
+                                                class="circle-bg"
+                                                cx="40" cy="40"
+                                                r="{{ $radius }}" />
+
+                                            <circle 
+                                                class="circle-progress"
+                                                cx="40" cy="40"
+                                                r="{{ $radius }}"
+                                                stroke="{{ $color }}"
+                                                stroke-dasharray="{{ $circumference }}"
+                                                stroke-dashoffset="{{ $offset }}" />
+                                        </svg>
+
+                                        <div class="circle-text" style="color: {{ $color }}">
+                                            {{ $percentage }}%
+                                        </div>
+                                    </div>
+
+                                    <div class="admission-info">
+                                        <div class="admission-title">
+                                            🎓 Taux d'admission
+                                        </div>
+
+                                        <div class="admission-numbers">
+                                            Admis : <strong>{{ $accepted }}</strong> <br>
+                                            Total : <strong>{{ $total }}</strong>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <p class="filiere-info mt-3">
                                     <i data-feather="user"></i>
                                     Responsable : <strong>{{ $filiere->responsable ?? '-' }}</strong>
                                 </p>
@@ -467,12 +641,62 @@
                                     </div>
                                 </div>
 
-                                <p class="filiere-info">
-                                    <i data-feather="users"></i>
-                                    Étudiants postulants : <strong>{{ $filiere->students_count }}</strong>
-                                </p>
+                                @php
+                                    $accepted = $filiere->accepted_count ?? 0;
+                                    $total = $filiere->students_count ?? 0;
+                                    $percentage = $total > 0 ? round(($accepted / $total) * 100, 1) : 0;
 
-                                <p class="filiere-info">
+                                    // Dynamic color
+                                    if($percentage >= 70){
+                                        $color = '#28a745'; // Green
+                                    } elseif($percentage >= 40){
+                                        $color = '#f39c12'; // Orange
+                                    } else {
+                                        $color = '#dc3545'; // Red
+                                    }
+
+                                    $radius = 32;
+                                    $circumference = 2 * pi() * $radius;
+                                    $offset = $circumference - ($percentage / 100) * $circumference;
+                                @endphp
+
+                                <div class="admission-kpi">
+
+                                    <div class="circle-wrapper">
+                                        <svg width="80" height="80">
+                                            <circle 
+                                                class="circle-bg"
+                                                cx="40" cy="40"
+                                                r="{{ $radius }}" />
+
+                                            <circle 
+                                                class="circle-progress"
+                                                cx="40" cy="40"
+                                                r="{{ $radius }}"
+                                                stroke="{{ $color }}"
+                                                stroke-dasharray="{{ $circumference }}"
+                                                stroke-dashoffset="{{ $offset }}" />
+                                        </svg>
+
+                                        <div class="circle-text" style="color: {{ $color }}">
+                                            {{ $percentage }}%
+                                        </div>
+                                    </div>
+
+                                    <div class="admission-info">
+                                        <div class="admission-title">
+                                            🎓 Taux d'admission
+                                        </div>
+
+                                        <div class="admission-numbers">
+                                            Admis : <strong>{{ $accepted }}</strong> <br>
+                                            Total : <strong>{{ $total }}</strong>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <p class="filiere-info mt-3">
                                     <i data-feather="user"></i>
                                     Responsable : <strong>{{ $filiere->responsable ?? '-' }}</strong>
                                 </p>

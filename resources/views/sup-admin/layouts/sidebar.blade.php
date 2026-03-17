@@ -16,6 +16,9 @@
         <li class="dropdown {{ Route::currentRouteNamed('sup-admin.user.index') ? 'active' : '' }}">
           <a href="{{route('sup-admin.user.index')}}" class="nav-link"><i data-feather="users"></i><span>Utilisateurs</span></a>
         </li>
+        <li class="dropdown {{ Route::currentRouteNamed('sup-admin.payment.index') ? 'active' : '' }}">
+          <a href="{{route('sup-admin.payment.index')}}" class="nav-link"><i data-feather="dollar-sign"></i><span>Paiement</span></a>
+        </li>
         <li class="dropdown {{ Route::currentRouteNamed('sup-admin.actualite.index') ? 'active' : '' }}">
           <a href="{{route('sup-admin.actualite.index')}}" class="nav-link"><i data-feather="book"></i><span>Actualités</span></a>
         </li>

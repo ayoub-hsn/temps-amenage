@@ -34,9 +34,10 @@
         {{-- <li class="dropdown {{ Route::currentRouteNamed('admin-etab.actualite.index') ? 'active' : '' }}">
           <a href="{{route('admin-etab.actualite.index')}}" class="nav-link"><i data-feather="book"></i><span>Actualités</span></a>
         </li> --}}
-        <li class="dropdown {{ Route::currentRouteNamed('admin-etab.payment.master.filiere.index') ? 'active' : '' }}">
+        <li class="dropdown {{ (Route::currentRouteNamed('admin-etab.payment.index') || Route::currentRouteNamed('admin-etab.payment.master.filiere.index') || Route::currentRouteNamed('admin-etab.payment.licence.filiere.index') || Route::currentRouteNamed('admin-etab.payment.bachelier.filiere.index')) ? 'active' : '' }}">
             <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="dollar-sign"></i><span>Paiement</span></a>
             <ul class="dropdown-menu">
+              <li class="{{ Route::currentRouteNamed('admin-etab.payment.index') ? 'active' : '' }}"><a href="{{ route('admin-etab.payment.index') }}">Dashboard</a></li>
               <li class="{{ Route::currentRouteNamed('admin-etab.payment.master.filiere.index') ? 'active' : '' }}"><a href="{{ route('admin-etab.payment.master.filiere.index') }}">Master</a></li>
               <li class="{{ Route::currentRouteNamed('admin-etab.payment.licence.filiere.index') ? 'active' : '' }}"><a href="{{ route('admin-etab.payment.licence.filiere.index') }}">Licence</a></li>
               <li class="{{ Route::currentRouteNamed('admin-etab.payment.bachelier.filiere.index') ? 'active' : '' }}"><a href="{{ route('admin-etab.payment.bachelier.filiere.index') }}">Bachelier</a></li>

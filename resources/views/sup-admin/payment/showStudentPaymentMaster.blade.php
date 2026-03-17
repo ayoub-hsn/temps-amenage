@@ -1,4 +1,4 @@
-@extends('admin-etab.layouts.master')
+@extends('sup-admin.layouts.master')
 
 @section('content')
 
@@ -302,48 +302,7 @@
         background: linear-gradient(135deg, #002244, #003f7f);
     }
 
-    /* ================= IMAGE MODAL ================= */
-
-    .image-modal {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,.75);
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-    }
-
-    .image-modal img {
-        max-width: 85%;
-        max-height: 85%;
-        border-radius: 12px;
-        box-shadow: 0 20px 60px rgba(0,0,0,.4);
-    }
-
-    .image-modal.active {
-        display: flex;
-    }
-
-    .badge-complete {
-        background: rgba(46, 204, 113, .15);
-        color: #27ae60;
-    }
-
-    .badge-pending {
-        background: rgba(243, 156, 18, .15);
-        color: #e67e22;
-    }
-
-    .badge-partielle {
-        background: rgba(52, 152, 219, .15);
-        color: #2980b9;
-    }
-
-    .badge-special {
-        background: rgba(155, 89, 182, .15);
-        color: #8e44ad;
-    }
+    
 </style>
 <style>
 
@@ -519,6 +478,179 @@
         border-radius:20px;
     }
 </style>
+<style>
+   /* ================= MANUAL VERIFICATION PANEL ================= */
+
+    .manual-verif-card{
+
+        margin-top:30px;
+        padding:26px;
+
+        border-radius:16px;
+
+        background:linear-gradient(
+            135deg,
+            #fff,
+            #f9fbff
+        );
+
+        border:1px solid #e6edf5;
+
+        position:relative;
+
+        box-shadow:
+            0 15px 40px rgba(0,0,0,.08);
+
+        overflow:hidden;
+
+        transition:.3s;
+    }
+
+    /* LEFT HIGHLIGHT BAR */
+
+    .manual-verif-card::before{
+        content:"";
+        position:absolute;
+        left:0;
+        top:0;
+        bottom:0;
+        width:6px;
+
+        background:linear-gradient(
+            180deg,
+            #ff4d4f,
+            #ff7a45
+        );
+    }
+
+    /* HEADER */
+
+    .manual-verif-header{
+        display:flex;
+        align-items:center;
+        gap:12px;
+        margin-bottom:10px;
+    }
+
+    .manual-verif-header i{
+
+        width:38px;
+        height:38px;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        border-radius:10px;
+
+        background:linear-gradient(
+            135deg,
+            #ff4d4f,
+            #ff7a45
+        );
+
+        color:white;
+        font-size:16px;
+
+        box-shadow:
+            0 8px 20px rgba(255,77,79,.35);
+    }
+
+    .manual-verif-header h4{
+        font-size:1.05rem;
+        font-weight:700;
+        color:#b91c1c;
+    }
+
+    /* DESCRIPTION */
+
+    .manual-verif-card p{
+        font-size:.88rem;
+        color:#64748b;
+        margin-bottom:18px;
+    }
+
+    /* INPUT GROUP */
+
+    .manual-input-wrapper{
+        position:relative;
+    }
+
+    .manual-input-wrapper span{
+
+        position:absolute;
+        left:12px;
+        top:50%;
+        transform:translateY(-50%);
+
+        font-weight:700;
+        color:#94a3b8;
+    }
+
+    /* INPUT */
+
+    .manual-verif-card input{
+
+        width:100%;
+        padding:12px 14px 12px 45px;
+
+        border-radius:10px;
+        border:1px solid #dbe2ea;
+
+        font-weight:600;
+
+        transition:.25s;
+    }
+
+    .manual-verif-card input:focus{
+
+        border-color:#ff4d4f;
+
+        box-shadow:
+            0 0 0 3px rgba(255,77,79,.15);
+
+        outline:none;
+    }
+
+    /* ACTION BUTTON */
+
+    .manual-verif-card .btn-save{
+
+        margin-top:15px;
+
+        width:100%;
+        padding:12px;
+
+        border:none;
+
+        border-radius:12px;
+
+        font-weight:700;
+        letter-spacing:.3px;
+
+        background:linear-gradient(
+            135deg,
+            #ff4d4f,
+            #d9363e
+        );
+
+        color:white;
+
+        transition:.25s;
+    }
+
+    .manual-verif-card .btn-save:hover{
+
+        transform:translateY(-2px);
+
+        box-shadow:
+            0 10px 25px rgba(255,77,79,.35);
+    }
+
+    .swal-container-high {
+        z-index: 100000 !important;
+    }
+</style>
 <div class="page-wrapper">
 
     <div class="profile-grid">
@@ -663,19 +795,20 @@
                             </div>
                         </div>
 
-                        
-
                         @if($payment->etat_payment !== "Complete(Fonctionnaire à l'UH1)")
                             {{-- Preview Button --}}
                             <button class="preview-btn"
                                 onclick="openImage(
                                     '{{ asset($payment->document) }}',
                                     '{{ $payment->montant_detecter }}',
-                                    '{{ $payment->verification }}'
+                                    '{{ $payment->verification }}',
+                                    '{{ $payment->id }}'
                                 )">
                                 Voir le reçu
                             </button>
                         @endif
+
+                        
 
                     </div>
 
@@ -693,6 +826,7 @@
 
     </div>
     <div class="image-modal" id="imageModal">
+
         <div class="receipt-modal-box">
 
             <div class="receipt-modal-header">
@@ -709,56 +843,206 @@
 
                 <!-- RIGHT = INFO PANEL -->
                 <div class="receipt-info">
+
                     <h4>Analyse du Reçu</h4>
+
                     <div class="receipt-info-row">
                         <span>Montant détecté</span>
                         <span id="ocrAmount"></span>
                     </div>
+
                     <div class="receipt-info-row">
                         <span>Statut vérification</span>
                         <span id="ocrStatus"></span>
                     </div>
+
+                    <!-- ===== VERIFICATION MANUELLE FORM ===== -->
+                    <div id="manualVerificationForm" style="display:none; margin-top:25px;">
+
+                        <div class="manual-verif-card">
+                            <div class="manual-verif-header">
+                                <i class="fa-solid fa-user-check"></i>
+                                <h4>Vérification manuelle</h4>
+                            </div>
+
+                            <p>Vous pouvez saisir le montant correct détecté pour ce paiement. Cette action est unique et valide directement le reçu.</p>
+
+                            <form id="manualVerifyForm">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="manualMontant">Montant détecté (MAD)</label>
+                                    <input type="number" step="0.01" class="form-control" id="manualMontant" name="montant_detecte" placeholder="Ex: 1200" required>
+                                </div>
+                                <button type="submit" class="btn-save">Valider</button>
+                            </form>
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
 
         </div>
+
     </div>
-</div>
 
     <script>
-        function openImage(src, montant, verification) {
-            // Set the image
+        function openImage(src, montant, verification, paymentId){
+
             document.getElementById("modalImage").src = src;
 
-            // Set the info
             let amountBox = document.getElementById("ocrAmount");
             let statusBox = document.getElementById("ocrStatus");
+            let manualForm = document.getElementById("manualVerificationForm");
+            let manualMontant = document.getElementById("manualMontant");
 
-            if (montant && montant !== "null") {
+            if(montant && montant !== "null"){
                 amountBox.innerHTML = new Intl.NumberFormat('fr-FR').format(montant) + " MAD";
-            } else {
+                manualMontant.value = montant;
+            }else{
                 amountBox.innerHTML = '<span class="ocr-progress">Aucun montant détecté</span>';
+                manualMontant.value = '';
             }
 
-            if (verification == 0) {
+            if(verification == 0){
                 statusBox.innerHTML = '<span class="ocr-progress">Analyse OCR en cours...</span>';
-            } else if (verification == 1) {
+                manualForm.style.display = "block";
+            }
+            else if(verification == 1){
                 statusBox.innerHTML = '<span class="ocr-valid">Montant validé ✅</span>';
-            } else if (verification == 2) {
+                manualForm.style.display = "none";
+            }
+            else if(verification == 2){
                 statusBox.innerHTML = '<span class="ocr-manual">Vérification manuelle requise ⚠️</span>';
+                manualForm.style.display = "block";
             }
 
-            // Show the modal
+            manualForm.dataset.paymentId = paymentId;
+
             document.getElementById("imageModal").classList.add("active");
         }
-
-
 
         function closeImage() {
             document.getElementById('imageModal').classList.remove('active');
         }
+        
+        $('#manualVerifyForm').submit(function(e){
+
+            e.preventDefault();
+
+            let paymentId = $('#manualVerificationForm').data('paymentId');
+            let montant = $('#manualMontant').val();
+            let token = $('input[name="_token"]').val();
+
+            $.ajax({
+                url: `/sup-admin/paiement/${paymentId}/check/master/auto`,
+                type: "POST",
+                data: {
+                    _token: token,
+                    montant_detecte: montant
+                },
+
+                success: function(res){
+
+                    let paymentId = $('#manualVerificationForm').data('paymentId');
+                    let formatted = new Intl.NumberFormat('fr-FR').format(res.montant) + " MAD";
+
+                    // Update modal
+                    $('#ocrAmount').html(formatted);
+
+                    // Update payment card amount
+                    $('#paymentAmount'+paymentId).find('strong').remove();
+                    $('#paymentAmount'+paymentId).prepend('<strong>'+formatted+'</strong>');
+
+                    if(res.verification == 1){
+
+                        $('#ocrStatus').html('<span class="ocr-valid">Montant validé ✅</span>');
+
+                        $('#paymentStatus'+paymentId)
+                            .text('Montant validé')
+                            .removeClass()
+                            .addClass('badge badge-complete');
+
+                        $('#manualVerificationForm').hide();
+
+                        // SweetAlert for success
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Montant validé',
+                            text: `Le montant de ${formatted} a été validé avec succès.`,
+                            timer: 2500,
+                            showConfirmButton: false,
+                            // ADD THIS:
+                            customClass: {
+                                container: 'swal-container-high'
+                            }
+                        });
+
+                    } 
+                    else if(res.verification == 2){
+
+                        $('#ocrStatus').html('<span class="ocr-manual">Vérification manuelle requise ⚠️</span>');
+
+                        $('#paymentStatus'+paymentId)
+                            .text('Vérification manuelle nécessaire')
+                            .removeClass()
+                            .addClass('badge badge-rejected');
+
+                        // SweetAlert for warning
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Vérification manuelle nécessaire',
+                            text: `Veuillez vérifier manuellement le montant de ${formatted}.`,
+                            timer: 3000,
+                            showConfirmButton: true,
+                            customClass: {
+                                container: 'swal-container-high'
+                            }
+                        });
+
+                    }
+
+                },
+
+                error: function(xhr){
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Erreur serveur',
+                        text: 'Une erreur est survenue, veuillez réessayer.',
+                        confirmButtonText: 'OK',
+                        customClass: {
+                            container: 'swal-container-high'
+                        }
+                    });
+
+                }
+
+            });
+
+        });
     </script>
+    <script>
+
+        
+
+        function closeImage(){
+            document.getElementById("imageModal").classList.remove("active");
+        }
+
+        // Close modal when clicking outside
+        document.getElementById("imageModal").addEventListener("click", function(e){
+
+            const modalBox = document.querySelector(".receipt-modal-box");
+
+            if(!modalBox.contains(e.target)){
+                closeImage();
+            }
+
+        });
+
+</script>
 </div>
 
 @endsection
